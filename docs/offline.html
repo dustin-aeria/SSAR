@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - SSAR RPOC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a4f7a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+        }
+        .icon {
+            font-size: 80px;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .retry-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: white;
+            color: #1e3a5f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .emergency-info {
+            margin-top: 48px;
+            padding: 24px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            text-align: left;
+        }
+        .emergency-info h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+        .emergency-info a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            font-size: 1.1rem;
+        }
+        .emergency-info a:hover {
+            text-decoration: underline;
+        }
+        .emergency-info span {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">📡</div>
+        <h1>You're Offline</h1>
+        <p>The SSAR RPOC Manual requires an internet connection to load. Please check your connection and try again.</p>
+        <a href="/" class="retry-btn" onclick="window.location.reload(); return false;">Try Again</a>
+
+        <div class="emergency-info">
+            <h2>Emergency Contacts (Always Available)</h2>
+            <a href="tel:1-866-541-4101">
+                FIC Kamloops: 1-866-541-4101
+                <span>Flight Information Centre</span>
+            </a>
+            <a href="tel:1-866-992-7433">
+                NAV CANADA: 1-866-992-7433
+                <span>Air Traffic Services</span>
+            </a>
+            <a href="tel:1-819-994-3741">
+                TSB Hotline: 1-819-994-3741
+                <span>Transportation Safety Board</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

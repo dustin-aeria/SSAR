@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="64" fill="#1e3a5f"/>
+  <g fill="white">
+    <!-- Drone body -->
+    <ellipse cx="256" cy="280" rx="80" ry="30"/>
+    <!-- Drone arms -->
+    <rect x="120" y="200" width="120" height="12" rx="6" transform="rotate(-30 180 206)"/>
+    <rect x="272" y="200" width="120" height="12" rx="6" transform="rotate(30 332 206)"/>
+    <rect x="120" y="340" width="120" height="12" rx="6" transform="rotate(30 180 346)"/>
+    <rect x="272" y="340" width="120" height="12" rx="6" transform="rotate(-30 332 346)"/>
+    <!-- Propellers -->
+    <circle cx="130" cy="170" r="40" fill="none" stroke="white" stroke-width="8" opacity="0.8"/>
+    <circle cx="382" cy="170" r="40" fill="none" stroke="white" stroke-width="8" opacity="0.8"/>
+    <circle cx="130" cy="390" r="40" fill="none" stroke="white" stroke-width="8" opacity="0.8"/>
+    <circle cx="382" cy="390" r="40" fill="none" stroke="white" stroke-width="8" opacity="0.8"/>
+    <!-- Camera -->
+    <rect x="236" y="295" width="40" height="25" rx="4" fill="#3498db"/>
+    <circle cx="256" cy="307" r="8" fill="white"/>
+  </g>
+  <!-- SSAR text -->
+  <text x="256" y="450" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">SSAR</text>
+</svg>

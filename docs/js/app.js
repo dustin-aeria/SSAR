@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const printBtn = document.getElementById('print-btn');
     const backToTop = document.getElementById('back-to-top');
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
 
     // State
     let currentSection = 'operations';
@@ -38,12 +40,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function setupEventListeners() {
+        // Mobile menu toggle
+        if (menuToggle && sidebar) {
+            // Create overlay element
+            var overlay = document.createElement('div');
+            overlay.className = 'sidebar-overlay';
+            document.body.appendChild(overlay);
+
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+            });
+
+            overlay.addEventListener('click', function() {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
         // Navigation clicks
         navItems.forEach(function(item) {
             item.addEventListener('click', function() {
                 var section = item.dataset.section;
                 setActiveNav(item);
                 loadSection(section);
+                // Close mobile menu after selection
+                if (sidebar) {
+                    sidebar.classList.remove('open');
+                    var overlay = document.querySelector('.sidebar-overlay');
+                    if (overlay) overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             });
         });
 
