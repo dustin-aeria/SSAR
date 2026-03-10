@@ -14,12 +14,13 @@ The interactive web tool provides searchable access to all policy manuals with q
 
 ### Consolidated Manuals
 
-| Manual | Documents | Description |
-|--------|-----------|-------------|
-| [Operations Manual](1_OPERATIONS_MANUAL.md) | 11 | CONOPS, Standard Scenarios, Site Survey, Search Operations |
-| [Safety & Emergency Manual](2_SAFETY_EMERGENCY_MANUAL.md) | 12 | SMS, Emergency Procedures, SORA, Incident Reporting |
-| [People & Equipment Manual](3_PEOPLE_EQUIPMENT_MANUAL.md) | 14 | Training, Competency, Roles, PPE, Insurance |
-| [Forms & Maintenance Manual](4_FORMS_MAINTENANCE_MANUAL.md) | 5 | MCM, Checklists, Battery Management, Firmware |
+| Manual | Sections | Description |
+|--------|----------|-------------|
+| [Operations Manual](1_OPERATIONS_MANUAL.md) | 13 | CONOPS, Standard Scenarios, Site Survey, Search Operations |
+| [Safety & Emergency Manual](2_SAFETY_EMERGENCY_MANUAL.md) | 9 | SMS, Emergency Procedures, SORA, Incident Reporting |
+| [People & Equipment Manual](3_PEOPLE_EQUIPMENT_MANUAL.md) | 9 | Roles, PPE, Equipment Testing, Insurance |
+| [Forms & Maintenance Manual](4_FORMS_MAINTENANCE_MANUAL.md) | 8 | MCM, Checklists, Battery Management, Firmware |
+| [Training Program Manual](5_TRAINING_MANUAL.md) | 13 | Foundation, Advanced, STSC Training, Recurrency, Trainer Qualifications |
 
 ### Regulatory Compliance
 

@@ -935,11 +935,259 @@ Responsibilities:
 `
     },
 
+    training: {
+        title: "Training Program Manual",
+        icon: "fa-graduation-cap",
+        docCount: 13,
+        content: `# SSAR RPAS Training Program Manual
+
+## Squamish Search and Rescue - RPAS Operations Program
+
+---
+
+| Document | TRN-MANUAL |
+|----------|------------|
+| Version | 1.0 |
+| Effective | March 2026 |
+| Regulatory Reference | CAR 901.220, 901.56, 901.65, 901.66, Standard 922 |
+
+---
+
+## 1. Training Program Overview
+
+### 1.1 Purpose
+
+This Training Program Manual establishes the comprehensive training requirements, pathways, and assessment standards for all SSAR RPAS operations personnel.
+
+### 1.2 Training Philosophy
+
+1. **Safety First:** No operational pressure justifies compromising training standards
+2. **Competency-Based Progression:** Advancement is based on demonstrated skill, not time served
+3. **Continuous Improvement:** Training evolves with lessons learned
+
+### 1.3 Training Program Structure
+
+| Level | Title | Operations Authorized |
+|-------|-------|----------------------|
+| Trainee | Pilot Under Training | Training aircraft only (supervised) |
+| Stage 1 | Pilot (Basic) | VLOS <400' AGL |
+| Stage 2 | Pilot (Advanced) | VLOS + controlled airspace |
+| Stage 3 | Standard Scenario | STSC-003 / STSC-004 |
+| Stage 4 | Senior Pilot | All authorized operations |
+| Stage 5 | Flight Reviewer | Conduct assessments |
+
+---
+
+## 2. Crew Competency Standards
+
+### 2.1 General Requirements
+
+| Requirement | Standard |
+|-------------|----------|
+| Age | Minimum 18 years |
+| Compliance | Strict adherence to SSAR RPAS Manual and CARs |
+| Fitness for Duty | Physically and mentally fit |
+
+### 2.2 Fatigue Management - CAR 901.29
+
+| Requirement | Standard |
+|-------------|----------|
+| **Minimum Rest** | 10 hours of rest prior to reporting for duty |
+| **Maximum Duty** | No more than 10 consecutive hours without rest |
+| **Operational Breaks** | No more than 2 hours continuous ops without 15-minute break |
+
+### 2.3 Substance Use - Zero Tolerance (CAR 901.19)
+
+| Substance | Requirement |
+|-----------|-------------|
+| **Alcohol** | 12-hour "bottle-to-throttle" rule |
+| **Drugs** | Must not use any drug that impairs faculties |
+
+### 2.4 IMSAFE Self-Assessment
+
+Before every operation, all crew members complete:
+
+| Letter | Factor | Question |
+|--------|--------|----------|
+| **I** | Illness | Am I suffering from any illness? |
+| **M** | Medication | Am I taking impairing medication? |
+| **S** | Stress | Am I under psychological pressure? |
+| **A** | Alcohol | Have I consumed alcohol in 12 hours? |
+| **F** | Fatigue | Have I had adequate sleep and rest? |
+| **E** | Eating | Have I eaten and am I hydrated? |
+
+> **Any "YES" to illness, medication impairment, alcohol, or fatigue is a NO-GO.**
+
+### 2.5 Emergency Medical
+
+> **At least one crew member must hold current Emergency First Aid & CPR certification.**
+
+---
+
+## 3. Foundation Training Program
+
+### 3.1 Purpose
+
+Foundation Training builds core competencies in aircraft handling, site surveys, team dynamics, and procedural execution.
+
+### 3.2 Foundation Training Modules
+
+| Module | Title | Duration |
+|--------|-------|----------|
+| Class 1 | Introduction & Foundations | 3 hours |
+| Class 2 | Practical Application | 3 hours |
+| Class 3 | Procedures & Role Play | 3 hours |
+| Class 4 | Operational Readiness | 3 hours |
+
+---
+
+## 4. Advanced Training Program
+
+### 4.1 Flight Hour Requirements
+
+| Requirement | Standard |
+|-------------|----------|
+| **Minimum Hours** | 5 hours per RPAS type |
+| **Supervised Flights** | Include flights with certified trainer |
+| **Proficiency** | Must maintain throughout training |
+
+---
+
+## 5. Standard Scenario Training
+
+### 5.1 STSC-003 High Altitude VLOS Training (12 hours)
+
+| Topic | Duration |
+|-------|----------|
+| ATC Coordination Procedures | 3 hours |
+| High Altitude Weather | 2 hours |
+| Airspace and Traffic | 2 hours |
+| Emergency Procedures | 2 hours |
+| SORA for High Altitude | 3 hours |
+
+### 5.2 STSC-004 BVLOS Training (16 hours)
+
+| Topic | Duration |
+|-------|----------|
+| SORA for BVLOS | 4 hours |
+| Lost Link Procedures | 2 hours |
+| Navigation Without VLOS | 3 hours |
+| Emergency Procedures BVLOS | 3 hours |
+| Population Density Assessment | 2 hours |
+| Controlled Ground Area | 2 hours |
+
+---
+
+## 6. Visual Observer Training
+
+### 6.1 Rapid VO Training (On-Site)
+
+| Item | Training Point |
+|------|----------------|
+| Your Role | "Watch the sky, not the drone." |
+| Scanning | "Look in all directions, including behind." |
+| Communication | "If you see anything, say 'TRAFFIC' and point." |
+| Emergency | "If I say 'DESCEND,' step back immediately." |
+
+---
+
+## 7. Trainer Qualifications
+
+### 7.1 Certified Trainer Requirements
+
+| Requirement | Standard |
+|-------------|----------|
+| Flight Hours | Minimum 50 hours logged |
+| Operational Experience | Minimum 1 year as SSAR pilot |
+| Certification | All Standard Scenario endorsements |
+| Training | Complete SSAR Train-the-Trainer module |
+
+---
+
+## 8. Training Progression Pathway
+
+### 8.1 Pathway Overview
+
+Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training (4-8 weeks per type) -> Trainer Sign-Off -> Operational Authorization -> Standard Scenario Training
+
+---
+
+## 9. Competency Assessment
+
+### 9.1 Knowledge Assessment
+
+| Topic | Minimum Score |
+|-------|---------------|
+| CARs Part IX | 80% |
+| STSC-003 & STSC-004 | 85% |
+| Emergency procedures | 90% |
+
+---
+
+## 10. Recurrency Training
+
+### 10.1 Currency Requirements
+
+| Requirement | Period |
+|-------------|--------|
+| General Flight Currency | 90 days (3 flights) |
+| Aircraft Type Currency | 90 days (1 flight per type) |
+| Monthly Flight Hours | 1 hour per aircraft type |
+| Annual Proficiency Check | 12 months |
+
+---
+
+## 11. Operational Training Program
+
+### 11.1 Training Cadence
+
+| Requirement | Standard |
+|-------------|----------|
+| Training Frequency | Every 2 weeks |
+| Session Duration | 2-3 hours |
+| Annual Flight Hours | Minimum 20 hours |
+| Summit Events | 2 per year (Spring and Fall) |
+
+### 11.2 Seasonal Focus
+
+| Season | Focus Areas |
+|--------|-------------|
+| Winter | SOPs review, certifications, scenario integration |
+| Spring | Location familiarization, dense canopy, rope rescue |
+| Summer | Trail searches, steep terrain, alpine reconnaissance |
+| Fall | Night ops, integrated exercises, cold weather prep |
+
+---
+
+## 12. Training Records
+
+### 12.1 Records Retention (CAR 901.222)
+
+| Record Type | Retention Period |
+|-------------|------------------|
+| Individual Pilot Records | Employment + 2 years |
+| Training Records | 5 years |
+| Assessment Results | 5 years |
+| Endorsement Records | Duration + 2 years |
+
+---
+
+## 13. Document Control
+
+| Role | Name | Date |
+|------|------|------|
+| Accountable Executive | Dustin Wales | 2026-03-09 |
+| Chief Pilot | Dustin Wales | 2026-03-09 |
+
+**END OF TRAINING PROGRAM MANUAL**
+\`
+    },
+
     forms: {
         title: "Forms & Maintenance Manual",
         icon: "fa-clipboard-list",
         docCount: 5,
-        content: `# SSAR Forms & Maintenance Manual
+        content: \`# SSAR Forms & Maintenance Manual
 
 ## Squamish Search and Rescue - RPAS Operations Program
 

@@ -327,7 +327,93 @@ When RTK required:
 | GPS/GNSS lock obtained | [ ] | |
 | Motor start test completed | [ ] | |
 
-### 4.7 In-Flight Monitoring Checklist
+### 4.7 Battery Swap Procedures (Hot/Cold Turnaround)
+
+#### 4.7.1 Hot Turnaround (Immediate Re-launch)
+
+For time-critical SAR operations requiring minimum downtime between flights:
+
+| Step | Action | Check |
+|------|--------|-------|
+| 1 | Call "BATTERY SWAP" to crew | [ ] |
+| 2 | Land aircraft in designated area | [ ] |
+| 3 | Keep aircraft powered ON | [ ] |
+| 4 | VO maintains airspace watch | [ ] |
+| 5 | Remove depleted battery (note: may be hot) | [ ] |
+| 6 | Visual inspect aircraft for damage | [ ] |
+| 7 | Insert fresh battery (>95% charge) | [ ] |
+| 8 | Verify battery lock engaged | [ ] |
+| 9 | Confirm telemetry: battery level, GPS, link | [ ] |
+| 10 | Conduct abbreviated pre-flight (4.8) | [ ] |
+| 11 | Resume mission | [ ] |
+
+**Target Time:** 2-3 minutes
+
+> **CRITICAL:** Hot batteries may exceed 50°C. Handle with gloves. Place in fireproof container immediately.
+
+#### 4.7.2 Cold Turnaround (Standard Battery Swap)
+
+For non-urgent operations or when full inspection is warranted:
+
+| Step | Action | Check |
+|------|--------|-------|
+| 1 | Land and power down aircraft | [ ] |
+| 2 | Remove battery to fireproof container | [ ] |
+| 3 | Complete full post-flight inspection | [ ] |
+| 4 | Document any anomalies | [ ] |
+| 5 | Allow aircraft to cool if needed | [ ] |
+| 6 | Insert fresh battery | [ ] |
+| 7 | Power on and complete full pre-flight | [ ] |
+| 8 | Resume mission | [ ] |
+
+**Target Time:** 5-10 minutes
+
+#### 4.7.3 Multi-Battery Operations Planning
+
+| Battery Set | Status | Notes |
+|-------------|--------|-------|
+| Battery A | In Use | Currently flying |
+| Battery B | Charged (>95%) | Ready for swap |
+| Battery C | Charging | Next available |
+| Battery D | Cooling | Recently used |
+
+> **Best Practice:** For extended SAR operations, bring minimum 4 batteries per aircraft to maintain continuous operations with proper cooling cycles.
+
+---
+
+### 4.8 Abbreviated Pre-Flight Checklist
+
+For use during Hot Turnaround battery swaps when full pre-flight was completed earlier in the mission:
+
+| Item | Check |
+|------|-------|
+| **Visual Quick Scan** | |
+| Airframe intact - no new damage | [ ] |
+| Propellers secure - no visible damage | [ ] |
+| Camera/gimbal moves freely | [ ] |
+| **Battery Verification** | |
+| Battery seated and locked | [ ] |
+| Battery level >90% | [ ] |
+| Battery temperature in range | [ ] |
+| **System Quick Check** | |
+| GPS lock confirmed | [ ] |
+| Home point set | [ ] |
+| Telemetry link strong | [ ] |
+| No error messages | [ ] |
+| **Crew Confirmation** | |
+| VO positioned | [ ] |
+| Airspace clear | [ ] |
+| "READY FOR LAUNCH" called | [ ] |
+
+> **NOTE:** This abbreviated checklist is ONLY valid when:
+> - Full pre-flight was completed within the last 60 minutes
+> - Aircraft has not been transported
+> - No incidents or anomalies occurred on previous flight
+> - Same crew is conducting operations
+
+---
+
+### 4.9 In-Flight Monitoring Checklist
 
 | Parameter | Monitor For |
 |-----------|-------------|
@@ -341,7 +427,7 @@ When RTK required:
 | Obstacle proximity | Sensor warnings |
 | Airspace | Traffic or incursion alerts |
 
-### 4.8 Post-Flight Checklist
+### 4.10 Post-Flight Checklist
 
 | Item | Check | Initial |
 |------|-------|---------|
@@ -357,7 +443,7 @@ When RTK required:
 | Site cleared | [ ] | |
 | Post-flight brief conducted | [ ] | |
 
-### 4.9 Emergency Quick Reference
+### 4.11 Emergency Quick Reference
 
 | Emergency | Immediate Action |
 |-----------|------------------|
