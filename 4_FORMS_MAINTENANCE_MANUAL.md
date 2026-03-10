@@ -21,9 +21,10 @@
 4. [Mission Checklists](#4-mission-checklists)
 5. [Battery Management](#5-battery-management)
 6. [Firmware Management](#6-firmware-management)
-7. [Maintenance Records](#7-maintenance-records)
-8. [Document Control](#8-document-control)
-9. [Quick Reference Cards](#9-quick-reference-cards)
+7. [Equipment Testing Program](#7-equipment-testing-program)
+8. [Maintenance Records](#8-maintenance-records)
+9. [Document Control](#9-document-control)
+10. [Quick Reference Cards](#10-quick-reference-cards)
 
 ---
 
@@ -705,11 +706,254 @@ If a firmware update causes operational issues:
 
 ---
 
-## 7. Maintenance Records
+## 7. Equipment Testing Program
 
-### 7.1 Maintenance Schedule
+### 7.1 Purpose
 
-#### 7.1.1 Pre-Flight Inspection (Every Flight)
+To ensure the operational reliability and airworthiness of all SSAR RPAS equipment. This section mandates a systematic testing regimen to verify that all systems function within manufacturer specifications and regulatory requirements (CAR 901.29) prior to operational deployment.
+
+### 7.2 Testing Philosophy - "Crawl, Walk, Run"
+
+All equipment testing follows a progressive "Crawl, Walk, Run" approach:
+
+| Phase | Name | Description | Risk Level |
+|-------|------|-------------|------------|
+| **Phase 1** | CRAWL | Ground checks - systems verification without flight | Minimal |
+| **Phase 2** | WALK | Hover & basic handling - low altitude, close proximity | Low |
+| **Phase 3** | WALK | Systems & sensors - full capability verification | Low |
+| **Phase 4** | RUN | Emergency logic - failsafe and emergency system test | Controlled |
+
+> **Never skip phases. Each phase confirms systems are ready for the next level of testing.**
+
+### 7.3 Testing Triggers
+
+Equipment testing is **MANDATORY** under the following conditions:
+
+| Trigger | Testing Level | Authorization to Return |
+|---------|---------------|------------------------|
+| **New Equipment (Acceptance)** | Full Phase 1-4 | Chief Pilot sign-off required |
+| **Post-Maintenance/Repair** | Phase 1-4 for affected systems | Chief Pilot sign-off required |
+| **Post-Firmware Update** | Full Phase 1-4 | Chief Pilot sign-off required |
+| **Annual Recurrence** | Full Phase 1-4 | Chief Pilot sign-off required |
+| **Extended Storage (>30 days)** | Phase 1-2 minimum | PIC verification |
+| **Post-Incident (No Damage)** | Full Phase 1-4 | Chief Pilot sign-off required |
+
+> **IMPORTANT:** Firmware updates frequently reset safety parameters like RTH altitude. Full testing is required after every firmware update.
+
+### 7.4 Phase 1: Ground Checks
+
+**Location:** Safe, controlled environment
+**Duration:** 10-15 minutes
+**Personnel:** PIC minimum
+
+#### 7.4.1 Pre-Power Inspection
+
+| Check | Method | Pass Criteria |
+|-------|--------|---------------|
+| Airframe Visual | Visual inspection, all surfaces | No cracks, dents, loose components |
+| Arms/Hinges | Unfold, check locks | All arms lock securely with audible click |
+| Propellers | Visual and tactile | No chips, cracks, or looseness |
+| Motors | Spin by hand | Free rotation, no grinding or resistance |
+| Gimbal | Visual | Camera secure, gimbal moves freely |
+| Battery Bay | Visual | Clean contacts, no debris, no corrosion |
+| Sensors | Visual | All sensor windows clean and undamaged |
+
+#### 7.4.2 Power-Up Verification
+
+| Check | Method | Pass Criteria |
+|-------|--------|---------------|
+| Startup | Power on, observe | Chime plays, lights activate, no error messages |
+| IMU Status | App/GCS display | IMU initialized, no calibration required |
+| Compass Status | App/GCS display | Compass OK, no calibration warning |
+| GPS Lock | App/GCS display | Satellite count >10, coordinates displayed |
+| Controller Link | App/GCS display | Strong signal, HD video displayed |
+| Firmware Version | App/GCS display | Verified against records, current |
+
+#### 7.4.3 Control Station Verification
+
+| Check | Method | Pass Criteria |
+|-------|--------|---------------|
+| Stick Mode | Test inputs | Correct mode (Mode 2 standard) |
+| Transmission Quality | Signal display | 100% signal strength at <10m |
+| Screen Brightness | Visual | Adequate for conditions |
+| App Functions | Navigate menus | All functions accessible |
+| Button Functions | Press each button | Each button responds correctly |
+
+### 7.5 Phase 2: Hover & Basic Handling
+
+**Location:** Open area, controlled ground, clear sky
+**Duration:** 5-10 minutes
+**Personnel:** PIC + VO recommended
+
+#### 7.5.1 Launch and Hover Test
+
+| Step | Action | Pass Criteria |
+|------|--------|---------------|
+| 1 | Execute auto-takeoff to 2m | Smooth lift, no drift |
+| 2 | Hover hands-off for 30 seconds | Position hold ±1m, no oscillation |
+| 3 | Check for "toilet-bowling" | No circular drift pattern |
+| 4 | Listen to motors | Even sound, no grinding or irregular noise |
+| 5 | Observe lights | All position lights functional |
+
+#### 7.5.2 Control Response Test
+
+| Input | Test Method | Pass Criteria |
+|-------|-------------|---------------|
+| Pitch Forward | Short stick input | Smooth response, returns to neutral |
+| Pitch Back | Short stick input | Smooth response, returns to neutral |
+| Roll Left | Short stick input | Smooth response, returns to neutral |
+| Roll Right | Short stick input | Smooth response, returns to neutral |
+| Yaw Left | Short stick input | Smooth rotation, no drift |
+| Yaw Right | Short stick input | Smooth rotation, no drift |
+| Throttle Up | Short stick input | Responsive climb |
+| Throttle Down | Short stick input | Responsive descent |
+
+### 7.6 Phase 3: Systems & Sensors
+
+**Location:** Open area with soft obstacles (cones, people at safe distance)
+**Duration:** 10-15 minutes
+**Personnel:** PIC + VO + soft target person
+
+#### 7.6.1 Obstacle Avoidance Test
+
+| Direction | Test Method | Pass Criteria |
+|-----------|-------------|---------------|
+| Forward | Fly slowly toward person/cone | Stops at warning distance, displays alert |
+| Backward | Back toward obstacle | Stops or alerts (if rear sensors equipped) |
+| Lateral | Side-fly toward obstacle | Stops or alerts (if side sensors equipped) |
+| Downward | Descend toward ground slowly | Landing protection activates |
+
+> **CAUTION:** Test with soft targets only. Person should be prepared to move.
+
+#### 7.6.2 Flight Mode Test
+
+| Mode | Test Method | Pass Criteria |
+|------|-------------|---------------|
+| P-Mode (Position) | Normal flight, hands-off | Holds position precisely |
+| S-Mode (Sport) | Toggle mode, brief flight | Increased responsiveness, no GPS features |
+| ATTI Mode (if available) | Simulate GPS loss | Aircraft responds, drifts with wind but controllable |
+
+#### 7.6.3 Payload Test
+
+| Test | Method | Pass Criteria |
+|------|--------|---------------|
+| Gimbal Range | Tilt full up/down via wheel | Full smooth range of motion |
+| Camera Zoom | Zoom in/out | Smooth zoom, clear image |
+| Thermal Switching | Switch to thermal view | Thermal image displays, palette functional |
+| Photo Capture | Take photo | Photo captured, saved to SD |
+| Video Record | Start/stop recording | Recording indicator, file saved |
+| Laser Rangefinder (M30T) | Point at known distance | Accurate reading (±2%) |
+
+### 7.7 Phase 4: Emergency Logic
+
+**Location:** Open area, minimum 200m x 200m clear
+**Duration:** 10-15 minutes
+**Personnel:** PIC + VO
+
+#### 7.7.1 Return-to-Home Test
+
+| Step | Action | Pass Criteria |
+|------|--------|---------------|
+| 1 | Fly aircraft >50m from home point | Aircraft at distance, home point confirmed on map |
+| 2 | Press RTH button | RTH initiates, climbs to set altitude |
+| 3 | Monitor return path | Direct line back to home point |
+| 4 | At 50m from home, cancel RTH | Responds to cancel, PIC takes control |
+| 5 | Repeat, allow full RTH | Aircraft returns, hovers over home, descends, lands |
+| 6 | Verify landing accuracy | Lands within 1m of marked home point |
+
+#### 7.7.2 Low Battery Response Test
+
+| Test | Method | Pass Criteria |
+|------|--------|---------------|
+| Warning Level | Observe at 30% battery | Warning displayed, no auto-action |
+| RTH Level | Observe at 20% battery | RTH warning, countdown begins |
+| Critical Level | Observe at 10% battery | Auto-landing initiates |
+
+> **Note:** Battery depletion test may be simulated by observing behavior during normal operations rather than intentionally depleting batteries.
+
+#### 7.7.3 Failsafe Settings Verification
+
+| Setting | Verification Method | Required Setting |
+|---------|---------------------|------------------|
+| RTH Altitude | Check in app settings | Higher than tallest obstacle in area |
+| Loss of Link Action | Check in app settings | Return to Home (NOT Hover) |
+| Low Battery Action | Check in app settings | RTH or Land |
+| Max Altitude | Check in app settings | Per operational requirements |
+| Max Distance | Check in app settings | Per operational requirements |
+
+### 7.8 Test Documentation
+
+#### 7.8.1 RPAS Functional Flight Test (FFT) Log
+
+| Field | Information |
+|-------|-------------|
+| **Date:** | |
+| **Aircraft:** | [ ] M30T  [ ] M4TD |
+| **Serial Number:** | |
+| **Firmware Version:** | |
+| **Test Technician:** | |
+| **Test Trigger:** | [ ] New  [ ] Repair  [ ] Firmware  [ ] Annual  [ ] Storage |
+
+**Phase 1 - Ground Checks:**
+
+| Item | Pass | Fail | Notes |
+|------|------|------|-------|
+| Airframe inspection | [ ] | [ ] | |
+| Propeller condition | [ ] | [ ] | |
+| Motor check | [ ] | [ ] | |
+| Power-up clean | [ ] | [ ] | |
+| GPS lock | [ ] | [ ] | |
+| Controller link | [ ] | [ ] | |
+| Firmware verified | [ ] | [ ] | |
+
+**Phase 2 - Hover & Handling:**
+
+| Item | Pass | Fail | Notes |
+|------|------|------|-------|
+| Stable hover | [ ] | [ ] | |
+| Control response | [ ] | [ ] | |
+| No toilet-bowling | [ ] | [ ] | |
+| Motor sound normal | [ ] | [ ] | |
+
+**Phase 3 - Systems & Sensors:**
+
+| Item | Pass | Fail | Notes |
+|------|------|------|-------|
+| Obstacle avoidance | [ ] | [ ] | |
+| Mode switching | [ ] | [ ] | |
+| Gimbal function | [ ] | [ ] | |
+| Camera/thermal | [ ] | [ ] | |
+| Recording function | [ ] | [ ] | |
+
+**Phase 4 - Emergency Logic:**
+
+| Item | Pass | Fail | Notes |
+|------|------|------|-------|
+| RTH function | [ ] | [ ] | |
+| Landing accuracy | [ ] | [ ] | |
+| Failsafe settings | [ ] | [ ] | |
+
+**Test Result:**
+
+| Status | Action |
+|--------|--------|
+| [ ] **CLEAR** | Equipment returned to service |
+| [ ] **LOCKOUT** | Equipment grounded - describe issue: |
+
+**Signatures:**
+
+| Role | Name | Signature | Date |
+|------|------|-----------|------|
+| Test Technician | | | |
+| Chief Pilot Approval | | | |
+
+---
+
+## 8. Maintenance Records
+
+### 8.1 Maintenance Schedule
+
+#### 8.1.1 Pre-Flight Inspection (Every Flight)
 
 - Visual inspection of airframe for damage
 - Propeller condition check (no chips, cracks, wear)
@@ -719,7 +963,7 @@ If a firmware update causes operational issues:
 - Compass calibration if required
 - Firmware version verification
 
-#### 7.1.2 Post-Flight Inspection (Every Flight)
+#### 8.1.2 Post-Flight Inspection (Every Flight)
 
 - Visual inspection for flight damage
 - Motor temperature check (should not be excessively hot)
@@ -727,7 +971,7 @@ If a firmware update causes operational issues:
 - Log flight data (time, location, anomalies)
 - Clean sensors and lenses if needed
 
-#### 7.1.3 Weekly Maintenance
+#### 8.1.3 Weekly Maintenance
 
 - Detailed airframe inspection
 - Propeller replacement assessment
@@ -736,7 +980,7 @@ If a firmware update causes operational issues:
 - Firmware update check
 - Flight log backup
 
-#### 7.1.4 Monthly Maintenance
+#### 8.1.4 Monthly Maintenance
 
 - Complete system diagnostic
 - Motor and ESC inspection
@@ -745,7 +989,7 @@ If a firmware update causes operational issues:
 - Battery cycle count review
 - Accessory inspection (charging station, cases)
 
-#### 7.1.5 Annual Maintenance
+#### 8.1.5 Annual Maintenance
 
 - Comprehensive airframe inspection
 - Full propulsion system inspection
@@ -754,9 +998,9 @@ If a firmware update causes operational issues:
 - Manufacturer service if available
 - Documentation review and update
 
-### 7.2 Defect Recording and Tracking
+### 8.2 Defect Recording and Tracking
 
-#### 7.2.1 Defect Categories
+#### 8.2.1 Defect Categories
 
 | Category | Code | Description | Operational Impact | Resolution Timeline |
 |----------|------|-------------|-------------------|---------------------|
@@ -765,7 +1009,7 @@ If a firmware update causes operational issues:
 | **C - Monitor** | DEF-C | Defect requires monitoring | Normal operations, enhanced monitoring | Resolve within 30 days |
 | **D - Cosmetic** | DEF-D | Cosmetic issue only | No operational impact | Resolve at next scheduled maintenance |
 
-#### 7.2.2 Category A (Grounding) Defects
+#### 8.2.2 Category A (Grounding) Defects
 
 The following defects require immediate grounding - NO FLIGHT PERMITTED:
 
@@ -778,7 +1022,7 @@ The following defects require immediate grounding - NO FLIGHT PERMITTED:
 | C2 link failure | No connection, intermittent link, range severely degraded | Ground, troubleshoot, repair |
 | Safety system failure | RTH not functioning, geofence disabled, failsafe not responding | Ground, reset and verify |
 
-#### 7.2.3 Category B (Limitation) Defects
+#### 8.2.3 Category B (Limitation) Defects
 
 | Defect | Examples | Operational Limitation |
 |--------|----------|----------------------|
@@ -788,7 +1032,7 @@ The following defects require immediate grounding - NO FLIGHT PERMITTED:
 | Transmission degraded | Range reduced but functional | Reduced operational range |
 | Minor structural | Cosmetic crack, loose non-critical component | Reduced maneuvering, avoid heavy loads |
 
-#### 7.2.4 Defect Reporting Procedure
+#### 8.2.4 Defect Reporting Procedure
 
 | Step | Action | Responsibility | Timeline |
 |------|--------|----------------|----------|
@@ -803,7 +1047,7 @@ The following defects require immediate grounding - NO FLIGHT PERMITTED:
 | 9 | **TEST** conduct functional test after repair | Maintenance Manager | After repair |
 | 10 | **RELEASE** document return to service | Chief Pilot | After successful test |
 
-#### 7.2.5 Equipment Status Tags
+#### 8.2.5 Equipment Status Tags
 
 | Tag Color | Status | Meaning | Action Required |
 |-----------|--------|---------|-----------------|
@@ -812,7 +1056,7 @@ The following defects require immediate grounding - NO FLIGHT PERMITTED:
 | **RED** | GROUNDED / LOCKOUT | Category A defect, DO NOT FLY | No flight until repair and release |
 | **WHITE** | MAINTENANCE | In scheduled maintenance | Not available until maintenance complete |
 
-#### 7.2.6 Defect Report Form
+#### 8.2.6 Defect Report Form
 
 | SSAR RPAS DEFECT REPORT | |
 |-------------------------|---|
@@ -846,7 +1090,7 @@ The following defects require immediate grounding - NO FLIGHT PERMITTED:
 | **Return to Service Date:** | |
 | **Authorizing Signature:** | _________________________ Date: _________ |
 
-#### 7.2.7 Defect Tracking Register
+#### 8.2.7 Defect Tracking Register
 
 | Defect ID | Date | Aircraft | Category | Description | Status | Resolution Date |
 |-----------|------|----------|----------|-------------|--------|-----------------|
@@ -856,7 +1100,7 @@ The following defects require immediate grounding - NO FLIGHT PERMITTED:
 
 **Status Options:** Open, In Progress, Resolved, Deferred, Closed
 
-#### 7.2.8 Recurring Defect Analysis
+#### 8.2.8 Recurring Defect Analysis
 
 If the same or similar defect occurs three or more times:
 
@@ -871,7 +1115,7 @@ If the same or similar defect occurs three or more times:
 5. **MONITOR** for recurrence
 6. **REPORT** to Accountable Executive if safety-significant
 
-### 7.3 Maintenance Log Template
+### 8.3 Maintenance Log Template
 
 | Date | Aircraft | Type | Description | Technician | Sign-off |
 |------|----------|------|-------------|------------|----------|
@@ -881,7 +1125,7 @@ If the same or similar defect occurs three or more times:
 | | | | | | |
 | | | | | | |
 
-### 7.4 Aircraft Technical Log
+### 8.4 Aircraft Technical Log
 
 Each aircraft maintains a Technical Log containing:
 
@@ -896,7 +1140,7 @@ Each aircraft maintains a Technical Log containing:
 | Inspection Record | Results of all inspections | After each inspection |
 | Return to Service | All RTS authorizations | After each RTS |
 
-### 7.5 Records Retention
+### 8.5 Records Retention
 
 | Record Type | Retention Period | Storage Method |
 |-------------|------------------|----------------|
@@ -908,7 +1152,7 @@ Each aircraft maintains a Technical Log containing:
 | Return to Service Records | Life of aircraft | With Technical Log |
 | Firmware Update Records | Life of aircraft | Digital log |
 
-### 7.6 Maintenance Signatory Authority
+### 8.6 Maintenance Signatory Authority
 
 | Maintenance Level | Authorization | Return to Service Authority |
 |-------------------|---------------|-----------------------------|
@@ -918,9 +1162,9 @@ Each aircraft maintains a Technical Log containing:
 
 ---
 
-## 8. Document Control
+## 9. Document Control
 
-### 8.1 Document Approval
+### 9.1 Document Approval
 
 | Role | Name | Date |
 |------|------|------|
@@ -929,7 +1173,7 @@ Each aircraft maintains a Technical Log containing:
 
 Signatures on file. Original signed document retained per QAP-001.
 
-### 8.2 Amendment / Revision History
+### 9.2 Amendment / Revision History
 
 | Date | Version | Description of Change | Approved By |
 |------|---------|----------------------|-------------|
@@ -937,7 +1181,7 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 8.3 Document Sources
+### 9.3 Document Sources
 
 This consolidated Forms & Maintenance Manual incorporates content from the following source documents:
 
@@ -951,15 +1195,15 @@ This consolidated Forms & Maintenance Manual incorporates content from the follo
 
 ---
 
-## 9. Quick Reference Cards
+## 10. Quick Reference Cards
 
-### 9.1 Emergency Fly-Away Script
+### 10.1 Emergency Fly-Away Script
 
 > **CRITICAL CONTACT: FIC Kamloops Direct Line: 250-376-7045**
 
 When experiencing a fly-away or lost link emergency requiring ATC notification:
 
-#### 9.1.1 Fly-Away Communication Script
+#### 10.1.1 Fly-Away Communication Script
 
 **Step 1 - Initial Contact:**
 > "FIC Kamloops, this is [PILOT NAME] with Squamish Search and Rescue RPAS Operations. We are experiencing a fly-away emergency."
@@ -984,7 +1228,7 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 > - Record time of notification
 > - Record any instructions provided
 
-#### 9.1.2 DESCEND Protocol (Fly-Away)
+#### 10.1.2 DESCEND Protocol (Fly-Away)
 
 | Step | Letter | Action |
 |------|--------|--------|
@@ -1000,9 +1244,9 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 
 ---
 
-### 9.2 Traffic De-Conflict Quick Reference
+### 10.2 Traffic De-Conflict Quick Reference
 
-#### 9.2.1 De-Conflict Scenarios Matrix
+#### 10.2.1 De-Conflict Scenarios Matrix
 
 | Scenario | Situation | Action | Priority |
 |----------|-----------|--------|----------|
@@ -1012,7 +1256,7 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 | **4** | Multiple RPAS in same airspace | Stagger altitudes by minimum 100'; establish communication | Coordination required |
 | **5** | Emergency aircraft (MEDEVAC, etc.) | IMMEDIATE LAND - no exceptions | Land and disable immediately |
 
-#### 9.2.2 Traffic Communication
+#### 10.2.2 Traffic Communication
 
 **When traffic spotted:**
 > "TRAFFIC! [Position - clock direction], [altitude estimate], [aircraft type if known], [direction of travel]"
@@ -1025,7 +1269,7 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 2. PIC announces intended action: "DESCENDING" or "LANDING" or "HOLDING"
 3. VO confirms traffic clear before resuming
 
-#### 9.2.3 Altitude Quick Reference
+#### 10.2.3 Altitude Quick Reference
 
 | Airspace | Max RPAS Altitude | Notes |
 |----------|-------------------|-------|
@@ -1037,7 +1281,7 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 
 ---
 
-### 9.3 Rapid Site Survey Checklist
+### 10.3 Rapid Site Survey Checklist
 
 **5-Point Field Assessment for Time-Critical Operations**
 
@@ -1051,7 +1295,7 @@ Complete within 2-3 minutes for urgent SAR deployment:
 | **4** | **PEOPLE** | Identify bystanders, establish safety perimeter (30m minimum) | [ ] |
 | **5** | **WEATHER** | Wind speed/direction, visibility, precipitation, temperature | [ ] |
 
-#### 9.3.1 Rapid Survey Decision Matrix
+#### 10.3.1 Rapid Survey Decision Matrix
 
 | Condition | Action |
 |-----------|--------|
@@ -1059,7 +1303,7 @@ Complete within 2-3 minutes for urgent SAR deployment:
 | 1-2 checks MARGINAL | Proceed with documented mitigations |
 | Any check FAIL | DO NOT FLY - relocate or stand down |
 
-#### 9.3.2 Quick Weather Assessment
+#### 10.3.2 Quick Weather Assessment
 
 | Parameter | GO | CAUTION | NO-GO |
 |-----------|-----|---------|-------|
@@ -1071,7 +1315,7 @@ Complete within 2-3 minutes for urgent SAR deployment:
 
 ---
 
-### 9.4 Emergency Contacts Quick Reference
+### 10.4 Emergency Contacts Quick Reference
 
 | Contact | Number | When to Use |
 |---------|--------|-------------|
@@ -1083,7 +1327,7 @@ Complete within 2-3 minutes for urgent SAR deployment:
 
 ---
 
-### 9.5 Battery Status Quick Reference
+### 10.5 Battery Status Quick Reference
 
 | Indicator | Status | Action |
 |-----------|--------|--------|

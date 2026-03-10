@@ -26,8 +26,9 @@
 9. [Environmental Operations](#9-environmental-operations)
 10. [Weather Minimums](#10-weather-minimums)
 11. [Advanced Procedures](#11-advanced-procedures)
-12. [Emergency Contacts](#12-emergency-contacts)
-13. [Document Control](#13-document-control)
+12. [General Flight Procedures](#12-general-flight-procedures)
+13. [Emergency Contacts](#13-emergency-contacts)
+14. [Document Control](#14-document-control)
 
 ---
 
@@ -1225,9 +1226,326 @@ You may fly closer than 30m to a non-participating person/building IF an obstacl
 
 ---
 
-## 12. Emergency Contacts
+## 12. General Flight Procedures
 
-### 12.1 Aviation Stakeholders
+### 12.1 Purpose
+
+To establish a standardized, sequential workflow for all SSAR RPAS operations. This section ensures consistency in flight execution, reduces human error during high-stress missions, and ensures compliance with Canadian Aviation Regulations (CARs) 901.23 (Procedures for Normal Operations).
+
+### 12.2 Scope
+
+This section applies to every flight operation conducted by SSAR, including:
+- **Operational Flights:** Active search and rescue tasks
+- **Training Flights:** Proficiency checks and practice scenarios
+- **Maintenance Flights:** Functional tests and system validations
+
+It is binding on all flight crew members (Pilot in Command, Visual Observer, and Payload Operator) regardless of the RPAS make/model being utilized.
+
+> **Note:** Mission urgency never justifies skipping checklist items or violating safety minimums.
+
+### 12.3 Pre-Deployment & Kit Preparation
+
+Before leaving for any operation, complete the following:
+
+| Step | Action | Verification |
+|------|--------|--------------|
+| 1 | **Inventory Check:** Verify all necessary aircraft, batteries, tablets, and backup equipment are accounted for | [ ] Complete |
+| 2 | **Airworthiness:** Confirm equipment meets "Pre-Operation" maintenance requirements (no visible damage, no open defects) | [ ] Complete |
+| 3 | **Battery Status:** Ensure all flight batteries and controller batteries are fully charged (>90%) and properly stored | [ ] Complete |
+| 4 | **Software Currency:** Verify flight control app, firmware, and navigation databases are current | [ ] Complete |
+| 5 | **Documentation:** Pack all required documents - Certificates, SFOC copy, Emergency Procedures card, Site Survey forms | [ ] Complete |
+| 6 | **Support Equipment:** Verify landing pad, pylons, signage, anemometer, and fire extinguisher are packed | [ ] Complete |
+
+### 12.4 On-Site: Team Briefing & Rapid VO Training
+
+Upon arrival at the operational site, conduct the following briefing:
+
+#### 12.4.1 Team Briefing Agenda
+
+| Topic | Content | Duration |
+|-------|---------|----------|
+| **Objectives** | Discuss operational goals, search areas, and expected outcomes | 2 min |
+| **Roles** | Assign Pilot in Command (PIC) and Visual Observer (VO) | 1 min |
+| **Safety** | Review emergency escape routes, nearest medical facility, and "Lost Link" procedures | 2 min |
+| **Airspace** | Confirm airspace classification, NOTAMs, and any active restrictions | 1 min |
+| **Weather** | Current conditions, forecast, and decision criteria | 1 min |
+| **Communications** | Confirm radio channels, callsigns, and backup communication methods | 1 min |
+
+#### 12.4.2 Rapid VO Training (Mandatory for All VOs)
+
+Before any flight, ensure every Visual Observer has been briefed on:
+
+| Item | Content | VO Confirms |
+|------|---------|-------------|
+| **Core Duties** | Airspace watch is PRIMARY. Maintain sterile cockpit. Monitor PIC battery calls. | [ ] Understood |
+| **Site Risks** | Review site-specific risks identified in Rapid Site Survey and control measures in place | [ ] Understood |
+| **Urgent Risks** | Manned aircraft conflict triggers IMMEDIATE "TRAFFIC" call. Emergency Descend Protocol execution. | [ ] Understood |
+| **Hand Signals** | Review backup visual signals: Thumbs Up (clear), Wave Off (land), Point (traffic direction) | [ ] Understood |
+| **Confirmation** | VO verbally confirms comfort with responsibilities | [ ] Confirmed |
+
+### 12.5 On-Site: Site Setup & Rapid Site Survey
+
+#### 12.5.1 Physical Site Setup
+
+| Step | Action |
+|------|--------|
+| 1 | **Area Inspection:** Walk the Takeoff/Landing Zone (TO/ALZ). Identify trip hazards, wires, overhead obstacles, or debris |
+| 2 | **Perimeter:** Establish a safety perimeter using cones/tape around the launch site (minimum 5m radius) |
+| 3 | **Signage:** Deploy "DRONE OPERATIONS IN PROGRESS" signage if in public area |
+| 4 | **Wind Assessment:** Deploy anemometer or assess wind using visual indicators |
+| 5 | **Landing Pad:** Position landing pad on level ground, oriented into wind if possible |
+
+#### 12.5.2 Rapid Site Survey Completion
+
+Complete the Rapid Site Survey checklist (Section 6.7) addressing:
+
+| Category | Items to Verify |
+|----------|-----------------|
+| **Flight Plan** | Review and discuss flight plan considering site realities and objectives |
+| **Terrain** | Discuss terrain profile of flight path/surrounding area, concerns, and mitigation measures |
+| **Air Risks** | Discuss known/potential air risks and controls (airspace management, traffic expectation) |
+| **Ground Risks** | Discuss known/potential ground risks and controls (controlled ground area, bystanders) |
+| **Weather** | Observe current weather and changing conditions. Adjust flight plans if necessary |
+| **Scenario Selection** | Determine STSC-003 vs STSC-004 based on notification timeline availability |
+
+### 12.6 RPAS Assembly & Setup
+
+#### 12.6.1 Aircraft Preparation Sequence
+
+| Step | Action | Verification |
+|------|--------|--------------|
+| 1 | **Unpack:** Remove RPAS from case, place on landing pad | [ ] |
+| 2 | **Assembly:** Unfold arms. Ensure locking mechanisms are ENGAGED and SECURE (audible click) | [ ] |
+| 3 | **Propellers:** Verify all propellers are secure, undamaged, and correctly installed (check rotation direction) | [ ] |
+| 4 | **Payload:** Remove gimbal guard/cover. Verify camera/payload is secure and lens is unobstructed | [ ] |
+| 5 | **Battery Inspection:** Inspect battery for swelling, damage, or corrosion. Do NOT use damaged batteries | [ ] |
+| 6 | **Battery Install:** Insert fully charged battery until audible "click" confirms engagement | [ ] |
+| 7 | **SD Card:** Verify SD card is installed and has sufficient space | [ ] |
+
+#### 12.6.2 Ground Control Station Setup
+
+| Step | Action | Verification |
+|------|--------|--------------|
+| 1 | **Power On Tablet/GCS:** Power on the ground control station FIRST | [ ] |
+| 2 | **App Launch:** Launch flight control application (DJI Pilot 2 or FlightHub) | [ ] |
+| 3 | **Pilot Credentials:** Confirm pilot credentials are logged in | [ ] |
+| 4 | **AirData Sync:** Confirm AirData is synced with ground control software | [ ] |
+| 5 | **Controller Battery:** Verify controller battery is >50% | [ ] |
+| 6 | **Antenna Position:** Position controller antennas for optimal signal (pointed toward flight area) | [ ] |
+
+### 12.7 System Power-Up & Pre-Flight
+
+#### 12.7.1 Power-Up Sequence
+
+| Step | Action | Expected Result |
+|------|--------|-----------------|
+| 1 | **GCS Ready:** Ensure Ground Control Station is powered and app is running | App displaying "Ready to Connect" |
+| 2 | **Energize Aircraft:** Announce loudly: **"RPAS ON!"** and power on aircraft | Startup chime, lights illuminate |
+| 3 | **Link Check:** Confirm stable connection between GCS and aircraft | "Connected" status, HD video feed |
+| 4 | **GPS Lock:** Wait for sufficient GPS satellites (minimum 10 recommended) | GPS icon green, coordinates displayed |
+| 5 | **Compass Status:** Verify compass is calibrated. Calibrate if prompted or if moved >50km | No compass warnings |
+| 6 | **Home Point:** Verify Home Point is set correctly at launch location | Home point icon at launch position |
+| 7 | **Gimbal Check:** Test gimbal movement - tilt up/down, pan left/right | Smooth movement, no obstructions |
+| 8 | **Camera Settings:** Verify camera settings (exposure, focus, recording mode) | Settings as required for mission |
+
+### 12.8 Pre-Flight Checklists
+
+#### 12.8.1 Standard Pre-Flight Checklist
+
+The VO reads the **Callout**, the PIC performs the check and states the **Response**.
+
+| # | VO Callout | PIC Response | Notes |
+|---|------------|--------------|-------|
+| 1 | "Wind and Weather" | "[Speed] m/s, **Within Limits**" | Verify against aircraft limits |
+| 2 | "Air Vehicle Batteries" | "**[N]%**" | Must be >90% for operational flight |
+| 3 | "Ground Control Batteries" | "**[N]%**" | Must be >50% |
+| 4 | "Ground Control Application" | "**Ready**, **[N] Satellites**" | Minimum 10 satellites |
+| 5 | "Payload Check" | *Test gimbal movement* "**Working**" | Full range of motion |
+| 6 | "Failsafe Settings" | "RTH at **[N] meters**" | Must clear highest terrain |
+| 7 | "SD Card Check" | *Check space/recording* "**Recording**" | Verify recording active |
+| 8 | "Area and Airspace" | *Conduct visual scan* "**Clear**" | 360° scan for traffic |
+| 9 | "Cleared for Takeoff" | "**CLEAR**" | Final confirmation |
+
+#### 12.8.2 Abbreviated Pre-Flight Checklist (Rapid Launch)
+
+Use **ONLY** for urgent re-deployments (e.g., hot battery swaps) where site conditions have NOT changed.
+
+| # | VO Callout | PIC Response |
+|---|------------|--------------|
+| 1 | "Air Vehicle Batteries" | "**[N]%**" |
+| 2 | "Ground Control Batteries" | "**[N]%**" |
+| 3 | "Area and Airspace" | *Conduct visual scan* "**Clear**" |
+| 4 | "Cleared for Takeoff" | "**CLEAR**" |
+
+### 12.9 Launch Flow
+
+#### 12.9.1 Launch Sequence
+
+| Step | Action | Announcement |
+|------|--------|--------------|
+| 1 | **Arm Motors:** Initiate motor start command | "ARMING" |
+| 2 | **Takeoff:** Execute takeoff to 2-3 meters AGL | "TAKING OFF" |
+| 3 | **Hover Check:** Verify stable hover - no drift, no oscillation | "HOVER STABLE" |
+| 4 | **Control Response:** Test pitch forward/back, roll left/right, yaw left/right | "CONTROLS RESPONSIVE" |
+| 5 | **Telemetry Verify:** Confirm battery voltage is stable under load | "TELEMETRY NORMAL" |
+| 6 | **Proceed:** Begin transition to mission | "PROCEEDING TO MISSION" |
+
+#### 12.9.2 Post-Launch Systems Check (MANDATORY)
+
+> **Immediately following launch on EVERY flight, the PIC shall conduct an Attitude and Movements Check at a safe hover altitude (3-5 meters AGL) before proceeding:**
+
+| Check | Method | Pass Criteria |
+|-------|--------|---------------|
+| Stable Hover | Hands-off hover for 5 seconds | No drift, no oscillation |
+| Pitch Response | Push forward, pull back | Smooth, proportional response |
+| Roll Response | Push left, push right | Smooth, proportional response |
+| Yaw Response | Rotate left, rotate right | Smooth, proportional response |
+| Altitude Hold | Release throttle | Maintains altitude ±1m |
+| Camera/Gimbal | Tilt up/down via wheel | Smooth movement |
+| Telemetry | Check GCS display | All values normal, GPS lock maintained |
+
+> **CRITICAL: If ANY abnormality is detected, LAND IMMEDIATELY and troubleshoot before continuing.**
+
+### 12.10 In-Flight Operations
+
+#### 12.10.1 PIC Continuous Duties
+
+| Duty | Frequency | Method |
+|------|-----------|--------|
+| Battery Monitoring | Every 60 seconds | Verbal callout: "Battery [N]%" |
+| Link Quality | Continuous | Monitor signal bars on GCS |
+| GPS Status | Continuous | Verify satellite count remains >8 |
+| Telemetry Scan | Every 2 minutes | Check altitude, distance, speed |
+| Airspace Scan | Continuous | Visual and ADS-B monitoring |
+| Weather Awareness | Continuous | Monitor for changing conditions |
+
+#### 12.10.2 VO Continuous Duties
+
+| Duty | Method |
+|------|--------|
+| Visual Line of Sight | Maintain VLOS on aircraft at all times (where required) |
+| Airspace Scan | Systematic 360° scanning using Block Method |
+| Traffic Detection | Listen for engine/rotor noise; watch for movement |
+| Communication | Maintain open radio link with PIC |
+| Traffic Calls | Immediate callout: "TRAFFIC - [direction], [type], [heading]" |
+| Status Requests | Authorized to request: "Battery Check", "Link Status" |
+
+#### 12.10.3 Crew Communication Standards
+
+| Type | Format | Example |
+|------|--------|---------|
+| Position Update | "Aircraft at [location/altitude]" | "Aircraft at north boundary, 80 meters" |
+| Battery Update | "Battery [N]%" | "Battery 65%" |
+| Traffic Alert | "TRAFFIC - [direction]" | "TRAFFIC - Northwest, helicopter, southbound" |
+| Hazard Alert | "HAZARD - [description]" | "HAZARD - Wind increasing from west" |
+| Emergency | "[Emergency Type]!" | "FLY-AWAY! FLY-AWAY!" |
+
+### 12.11 Approach & Landing Flow
+
+#### 12.11.1 Return & Landing Sequence
+
+| Step | Action | Announcement |
+|------|--------|--------------|
+| 1 | **Battery Assessment:** Verify sufficient battery for return (minimum 30%) | "BATTERY SUFFICIENT FOR RETURN" |
+| 2 | **Landing Zone Check:** Confirm landing zone is clear of obstructions and personnel | "LANDING ZONE CLEAR" |
+| 3 | **Approach:** Begin return to launch point | "INBOUND FOR LANDING" |
+| 4 | **Position:** Arrive over landing pad at 5-10m AGL | "OVER LANDING ZONE" |
+| 5 | **Descent:** Descend slowly and vertically | "DESCENDING" |
+| 6 | **Touchdown:** Touch down on landing pad | "TOUCHDOWN" |
+| 7 | **Disarm:** Disarm motors | "MOTORS OFF" |
+| 8 | **Secure:** Announce aircraft safe | "RPAS SAFE" |
+| 9 | **Power Down:** Power off aircraft FIRST, then GCS | "POWERING DOWN" |
+
+### 12.12 Battery Swap (Hot/Cold Turnaround)
+
+For rapid re-deployment with a fresh battery:
+
+| Step | Role | Action |
+|------|------|--------|
+| 1 | PIC | Confirm aircraft is disarmed and motors are stopped |
+| 2 | VO | Approach disarmed RPAS on the landing pad |
+| 3 | VO | Perform rapid visual inspection of props/arms for damage |
+| 4 | VO | Remove depleted battery, place in cooling area |
+| 5 | VO | Install fresh battery (>90% charge), confirm click |
+| 6 | VO | Move to safe observation distance |
+| 7 | VO | Announce: "READY FOR PRE-FLIGHT" |
+| 8 | PIC | Return to Section 12.7 (Power-Up) or Section 12.8.2 (Abbreviated Checklist) |
+
+**Battery Handling:**
+- Mark depleted batteries immediately (use colored bands or labels)
+- Do not stack hot batteries
+- Allow batteries to cool before recharging
+- Never swap batteries with motors running
+
+### 12.13 Recovery & Post-Flight
+
+#### 12.13.1 Post-Flight Inspection
+
+| Inspection Item | Method | Action if Issue Found |
+|-----------------|--------|----------------------|
+| Propellers | Visual and tactile - check for cracks, chips, looseness | Replace immediately |
+| Arms/Frame | Visual - check for stress cracks, loose screws | Tag LOCKOUT if structural |
+| Motors | Listen/feel - check for heat, grinding, unusual noise | Tag LOCKOUT |
+| Gimbal/Camera | Visual - check for damage, loose mounting | Tag LOCKOUT if damaged |
+| Battery | Visual - check for swelling, heat, damage | Dispose safely if damaged |
+| Landing Gear | Visual - check for cracks, proper attachment | Repair before next flight |
+
+#### 12.13.2 Equipment Teardown
+
+| Step | Action |
+|------|--------|
+| 1 | Remove battery, store in fire-safe bag |
+| 2 | Remove propellers (if required for transport) |
+| 3 | Install gimbal guard/cover |
+| 4 | Fold arms, verify locks engaged |
+| 5 | Place RPAS in protective case |
+| 6 | Verify SD cards are secured or removed for data transfer |
+
+#### 12.13.3 Site Cleanup
+
+| Step | Action |
+|------|--------|
+| 1 | Remove all cones, tape, and signage |
+| 2 | Collect all equipment, cables, and accessories |
+| 3 | Conduct sweep for any dropped items |
+| 4 | Leave site in original condition |
+
+### 12.14 Debrief & Data Management
+
+#### 12.14.1 Team Debrief
+
+Conduct a brief team debrief before departing the site:
+
+| Topic | Discussion Points |
+|-------|-------------------|
+| Objectives | Did we meet mission objectives? |
+| Safety | Any safety issues, near-misses, or concerns? |
+| Equipment | Any equipment issues or damage observed? |
+| Procedures | Any procedural improvements identified? |
+| Lessons | What can we do better next time? |
+
+#### 12.14.2 Data Management
+
+| Task | Method | Timeline |
+|------|--------|----------|
+| Flight Log Sync | Upload flight logs to AirData | Same day |
+| Imagery Transfer | Offload photos/video to mission folder | Same day |
+| Incident Documentation | Complete incident report if applicable | Within 24 hours |
+| Equipment Status | Update equipment status in maintenance log | Same day |
+
+#### 12.14.3 Equipment Status Marking
+
+| Status | Marking | Meaning |
+|--------|---------|---------|
+| **CLEAR** | Green tag/label | Ready for operations |
+| **CAUTION** | Yellow tag/label | Minor issue, usable with awareness |
+| **LOCKOUT** | Red tag + "DO NOT FLY" | Grounded until repaired and tested |
+
+---
+
+## 13. Emergency Contacts
+
+### 13.1 Aviation Stakeholders
 
 | Organization | Type | Phone |
 |--------------|------|-------|
@@ -1235,7 +1553,7 @@ You may fly closer than 30m to a non-participating person/building IF an obstacl
 | Sea To Sky Air | Fixed Wing | 604-898-1975 |
 | Black Tusk Helicopter | Helicopter | 604-898-4800 |
 
-### 12.2 Emergency Contacts
+### 13.2 Emergency Contacts
 
 | Contact | When | Phone |
 |---------|------|-------|
@@ -1244,7 +1562,7 @@ You may fly closer than 30m to a non-participating person/building IF an obstacl
 | Emergency Services | Critical situation | 911 |
 | Squamish General Hospital | Closest medical facility | 38140 Behrner Drive, Squamish |
 
-### 12.3 Aerodromes in SSAR Area
+### 13.3 Aerodromes in SSAR Area
 
 | Name | Code | Type | Radio | Phone | Location |
 |------|------|------|-------|-------|----------|
@@ -1253,7 +1571,7 @@ You may fly closer than 30m to a non-participating person/building IF an obstacl
 | Squamish Municipal | CYSE | Airport | 122.8 | 604-892-5217 | Squamish Municipality |
 | Green Lake Whistler | CAE5 | Seaplane Base | n/a | 604-932-6615 | Whistler |
 
-### 12.4 Emergency Fly-Away Call Script
+### 13.4 Emergency Fly-Away Call Script
 
 **Call FIC Kamloops: 1-866-541-4101**
 
@@ -1268,9 +1586,9 @@ You may fly closer than 30m to a non-participating person/building IF an obstacl
 
 ---
 
-## 13. Document Control
+## 14. Document Control
 
-### 13.1 Document Approval
+### 14.1 Document Approval
 
 | Role | Name | Date |
 |------|------|------|
@@ -1279,7 +1597,7 @@ You may fly closer than 30m to a non-participating person/building IF an obstacl
 
 Signatures on file. Original signed document retained per QAP-001.
 
-### 13.2 Amendment / Revision History
+### 14.2 Amendment / Revision History
 
 | Date | Version | Description of Change | Approved By |
 |------|---------|----------------------|-------------|
@@ -1287,7 +1605,7 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 13.3 Document Sources
+### 14.3 Document Sources
 
 This consolidated Operations Manual incorporates content from the following source documents:
 

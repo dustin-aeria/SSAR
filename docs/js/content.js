@@ -5,7 +5,7 @@ const RPOC_CONTENT = {
     operations: {
         title: "Operations Manual",
         icon: "fa-plane",
-        docCount: 11,
+        docCount: 14,
         content: `# SSAR RPAS Operations Manual
 
 ## Squamish Search and Rescue - RPAS Operations Program
@@ -351,9 +351,82 @@ Follow natural terrain at 80-120m AGL.
 
 ---
 
-## 12. Emergency Contacts
+## 12. General Flight Procedures
 
-### 12.1 Emergency Fly-Away Call Script
+### 12.1 Pre-Deployment Kit Preparation
+
+| Item | Check |
+|------|-------|
+| Aircraft condition verified | [ ] |
+| Batteries charged (>95%) | [ ] |
+| Controller charged (>80%) | [ ] |
+| Spare propellers available | [ ] |
+| PPE available | [ ] |
+
+### 12.2 Standard Pre-Flight Checklist
+
+**VO Callout / PIC Response Protocol:**
+
+| VO Callout | PIC Response |
+|------------|--------------|
+| "Propellers?" | "Propellers secure, no damage." |
+| "Gimbal?" | "Gimbal free, lens clean." |
+| "Arms?" | "Arms locked." |
+| "Battery?" | "Battery seated, [%] charge." |
+| "GPS?" | "[X] satellites, Home Point set." |
+| "Failsafe?" | "RTH at [X] meters, Lost Link: RTH." |
+| "Airspace?" | "Clear of restrictions." |
+| "Weather?" | "Wind [X] m/s, visibility good." |
+| "Crew ready?" | "Crew ready, launching." |
+
+### 12.3 Post-Launch Systems Check (MANDATORY)
+
+> **Immediately following launch on EVERY flight:**
+
+| Check | Verify |
+|-------|--------|
+| Stable hover | No drift or oscillation |
+| Control response | All axes respond correctly |
+| Altitude hold | Maintains position |
+| Telemetry | All readings normal |
+| GPS lock | Confirmed |
+
+> **CRITICAL: If ANY abnormality is detected, LAND IMMEDIATELY.**
+
+### 12.4 Battery Swap Procedures
+
+**Hot Turnaround (Time-Critical):**
+
+| Step | Action |
+|------|--------|
+| 1 | Call "BATTERY SWAP" |
+| 2 | Land aircraft, keep powered ON |
+| 3 | VO maintains airspace watch |
+| 4 | Remove depleted battery (may be hot) |
+| 5 | Insert fresh battery (>95%) |
+| 6 | Abbreviated pre-flight |
+| 7 | Resume mission |
+
+**Target Time:** 2-3 minutes
+
+> **CAUTION:** Hot batteries may exceed 50°C. Handle with gloves.
+
+### 12.5 Recovery and Post-Flight
+
+| Step | Action |
+|------|--------|
+| 1 | Power down aircraft |
+| 2 | Remove battery to fireproof container |
+| 3 | Inspect for damage |
+| 4 | Clean sensors/lenses |
+| 5 | Download flight logs |
+| 6 | Document any anomalies |
+
+---
+
+## 13. Emergency Contacts
+
+### 13.1 Emergency Fly-Away Call Script
 
 **Call FIC Kamloops: 1-866-541-4101**
 
@@ -367,7 +440,7 @@ Follow natural terrain at 80-120m AGL.
 
 ---
 
-## 13. Document Control
+## 14. Document Control
 
 | Role | Name | Date |
 |------|------|------|
@@ -491,16 +564,28 @@ Committed to:
 | RPAS Heading | "[n] feet ASL, heading [heading] at [n] knots." |
 | Battery | "Max flight time: [n] min. Remaining: [n]%." |
 
-### 2.5 The Descend Protocol
+### 2.5 The DESCEND Protocol
 
 Emergency maneuver to clear airspace for manned aviation:
 
-| Step | Action |
-|------|--------|
-| 1 | **IDENTIFY** threat |
-| 2 | **CALL** "DESCEND, DESCEND, DESCEND" |
-| 3 | **SWITCH** to Manual Control |
-| 4 | **MANEUVER** downward to safe altitude |
+| Letter | Action | Details |
+|--------|--------|---------|
+| **D** | DESCEND IMMEDIATELY | Announce "DESCEND, DESCEND, DESCEND" |
+| **E** | EVALUATE | Assess threat trajectory and closure rate |
+| **S** | SWITCH | Manual control if not already |
+| **C** | CLEAR | Move away from threat path |
+| **E** | EXECUTE | Rapid descent to <200' AGL |
+| **N** | NOTIFY | Inform crew when clear |
+| **D** | DOCUMENT | Record for incident report |
+
+**Threat Level Response:**
+
+| Level | Definition | Action |
+|-------|------------|--------|
+| 1-2 | Planned/Announced | Ground or restrict to <400' |
+| 3 | Non-Threat | Continue with increased vigilance |
+| 4 | Potential Conflict | RTH or Hover |
+| 5 | Critical Threat | **FULL DESCEND PROTOCOL** |
 
 ### 2.6 Battery Emergency
 
@@ -1362,7 +1447,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
     forms: {
         title: "Forms & Maintenance Manual",
         icon: "fa-clipboard-list",
-        docCount: 5,
+        docCount: 10,
         content: `# SSAR Forms & Maintenance Manual
 
 ## Squamish Search and Rescue - RPAS Operations Program
@@ -1606,9 +1691,61 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ---
 
-## 7. Maintenance Records
+## 7. Equipment Testing Program
 
-### 7.1 Maintenance Schedule
+### 7.1 Testing Philosophy - "Crawl, Walk, Run"
+
+| Phase | Name | Description |
+|-------|------|-------------|
+| Phase 1 | CRAWL | Ground checks - systems verification |
+| Phase 2 | WALK | Hover & basic handling - low altitude |
+| Phase 3 | WALK | Systems & sensors - full capability |
+| Phase 4 | RUN | Emergency logic - failsafe testing |
+
+> **Never skip phases. Each phase confirms readiness for the next.**
+
+### 7.2 Testing Triggers
+
+| Trigger | Testing Level | Authorization |
+|---------|---------------|---------------|
+| New Equipment | Full Phase 1-4 | Chief Pilot |
+| Post-Maintenance | Phase 1-4 for affected systems | Chief Pilot |
+| Post-Firmware Update | Full Phase 1-4 | Chief Pilot |
+| Annual Recurrence | Full Phase 1-4 | Chief Pilot |
+| Extended Storage (>30 days) | Phase 1-2 minimum | PIC |
+| Post-Incident | Full Phase 1-4 | Chief Pilot |
+
+### 7.3 Phase 1: Ground Checks
+
+| Check | Pass Criteria |
+|-------|---------------|
+| Airframe Visual | No cracks, dents, loose components |
+| Arms/Hinges | All arms lock securely |
+| Propellers | No chips, cracks, or looseness |
+| Motors | Free rotation, no grinding |
+| Startup | Chime plays, no errors |
+| GPS Lock | >10 satellites |
+
+### 7.4 Phase 4: Emergency Logic
+
+| Test | Pass Criteria |
+|------|---------------|
+| RTH Test | Returns to home point, lands within 1m |
+| Low Battery Response | Warning at 30%, RTH at 20% |
+| Failsafe Settings | RTH altitude correct, Lost Link: RTH |
+
+### 7.5 Test Status
+
+| Status | Meaning |
+|--------|---------|
+| **CLEAR** | Equipment returned to service |
+| **LOCKOUT** | Equipment grounded - issue noted |
+
+---
+
+## 8. Maintenance Records
+
+### 8.1 Maintenance Schedule
 
 | Interval | Activity |
 |----------|----------|
@@ -1618,7 +1755,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 | Monthly | Complete diagnostic, sensor calibration |
 | Annual | Comprehensive inspection, service |
 
-### 7.2 Defect Categories
+### 8.2 Defect Categories
 
 | Category | Code | Impact | Timeline |
 |----------|------|--------|----------|
@@ -1627,7 +1764,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 | **C - Monitor** | DEF-C | Enhanced monitoring | 30 days |
 | **D - Cosmetic** | DEF-D | No operational impact | Next maintenance |
 
-### 7.3 Equipment Status Tags
+### 8.3 Equipment Status Tags
 
 | Tag | Status | Action |
 |-----|--------|--------|
@@ -1636,7 +1773,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 | **RED** | GROUNDED | DO NOT FLY |
 | **WHITE** | MAINTENANCE | Not available |
 
-### 7.4 Records Retention
+### 8.4 Records Retention
 
 | Record Type | Retention Period |
 |-------------|------------------|
@@ -1648,7 +1785,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ---
 
-## 8. Document Control
+## 9. Document Control
 
 | Role | Name | Date |
 |------|------|------|
@@ -1657,9 +1794,9 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ---
 
-## 9. Quick Reference Cards
+## 10. Quick Reference Cards
 
-### 9.1 Emergency Fly-Away Script
+### 10.1 Emergency Fly-Away Script
 
 > **CRITICAL CONTACT: FIC Kamloops Direct Line: 250-376-7045**
 
@@ -1693,7 +1830,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ---
 
-### 9.2 Traffic De-Conflict Quick Reference
+### 10.2 Traffic De-Conflict Quick Reference
 
 | Scenario | Situation | Action | Priority |
 |----------|-----------|--------|----------|
@@ -1708,7 +1845,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ---
 
-### 9.3 Rapid Site Survey (5-Point Field Assessment)
+### 10.3 Rapid Site Survey (5-Point Field Assessment)
 
 | # | Check | Details |
 |---|-------|---------|
@@ -1726,7 +1863,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ---
 
-### 9.4 Emergency Contacts Quick Reference
+### 10.4 Emergency Contacts Quick Reference
 
 | Contact | Number | When to Use |
 |---------|--------|-------------|
@@ -1736,7 +1873,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ---
 
-### 9.5 Battery Status Quick Reference
+### 10.5 Battery Status Quick Reference
 
 | Indicator | Status | Action |
 |-----------|--------|--------|

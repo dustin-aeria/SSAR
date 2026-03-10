@@ -431,32 +431,66 @@ Upon ADS-B alert or visual sighting:
 | 4 | YIELD - Manned aircraft ALWAYS has right of way |
 | 5 | RESUME only when traffic is clear |
 
-#### 2.10.2 The Descend Protocol (Emergency Maneuver)
+#### 2.10.2 The DESCEND Protocol (Critical Traffic Threat - Emergency Maneuver)
 
-Emergency maneuver to clear airspace for manned aviation.
+> **The DESCEND Protocol is a 7-step mnemonic for immediate response to critical traffic threats. This is the PRIMARY evasive maneuver for clearing airspace for manned aviation.**
 
-**Without Visual Observer (Pilot Only):**
+**The DESCEND Mnemonic:**
 
-| Step | Action |
-|------|--------|
-| 1 | **IDENTIFY** threat |
-| 2 | **CALL** out: "DESCEND, DESCEND, DESCEND" |
-| 3 | **SWITCH** to Manual Control (if in automated mode) |
-| 4 | **MANEUVER** RPAS in a straight downward path to a safe holding altitude |
+| Letter | Action | Execution |
+|--------|--------|-----------|
+| **D** | **DESCEND IMMEDIATELY** | Announce: "DESCEND, DESCEND, DESCEND" - Begin immediate descent |
+| **E** | **EVALUATE** | Assess threat trajectory - Where is the aircraft going? |
+| **S** | **SWITCH** | Switch to Manual Control if in automated mode |
+| **C** | **CLEAR** | Maneuver away from the aircraft's projected flight path |
+| **E** | **EXECUTE** | Execute rapid descent to lowest safe altitude (<200' AGL) |
+| **N** | **NOTIFY** | Inform crew: "Clear of traffic" when safe |
+| **D** | **DOCUMENT** | Record encounter details for incident report |
 
-**With Visual Observer:**
+**Execution Without Visual Observer (PIC Only):**
 
-| Step | Action |
-|------|--------|
-| 1 | VO **IDENTIFIES** threat and calls: "Critical Threat! DESCEND, DESCEND, DESCEND" |
-| 2 | PIC **IMMEDIATELY** executes descent as above |
+| Step | Action | Communication |
+|------|--------|---------------|
+| 1 | PIC identifies threat visually or via ADS-B | Internal awareness |
+| 2 | PIC shouts: **"DESCEND, DESCEND, DESCEND"** | Alert to self/bystanders |
+| 3 | PIC switches to Manual Control (if in P-mode) | Mode switch |
+| 4 | PIC maneuvers RPAS in straight downward path | Stick input: full down |
+| 5 | PIC descends to lowest safe altitude (terrain aware) | Monitor altitude |
+| 6 | PIC holds position until threat clears | Hover and scan |
+| 7 | PIC documents encounter when safe | Post-event |
+
+**Execution With Visual Observer:**
+
+| Step | Role | Action | Communication |
+|------|------|--------|---------------|
+| 1 | VO | Identifies threat | "TRAFFIC - [direction]!" |
+| 2 | VO | Assesses as critical threat | "CRITICAL THREAT! DESCEND, DESCEND, DESCEND!" |
+| 3 | PIC | Immediately executes descent | "DESCENDING" |
+| 4 | PIC | Descends to lowest safe altitude | *No communication - focus on execution* |
+| 5 | VO | Tracks threat until clear | "Traffic passing [direction]" |
+| 6 | VO | Confirms area clear | "AREA CLEAR" |
+| 7 | PIC | Acknowledges and resumes or RTH | "Resuming" or "Returning to home" |
+
+**Target Altitude:** Descend to <200' AGL when possible. Manned aircraft (including SAR helicopters) rarely operate below 200' AGL in transit. This provides the maximum vertical separation.
 
 #### 2.10.3 Safety Constraints
 
-| Constraint | Description |
-|------------|-------------|
-| Terrain Awareness | Do not crash into terrain - descend to the lowest SAFE altitude |
-| Divergence | If a vertical descent is unsafe or insufficient, maneuver the RPAS downward and away from the aircraft's projected path |
+| Constraint | Description | Action |
+|------------|-------------|--------|
+| **Terrain Awareness** | Do not crash into terrain | Descend to the lowest SAFE altitude - not the lowest POSSIBLE |
+| **Divergence** | If vertical descent is unsafe or insufficient | Maneuver the RPAS downward AND away from the aircraft's projected path |
+| **Obstacles** | Be aware of trees, wires, towers | Use telemetry to verify safe altitude before descent |
+| **Recovery** | After threat passes | Climb only when confirmed clear, resume mission or RTH |
+
+#### 2.10.4 Threat Level Response Matrix
+
+| Threat Level | Definition | Response Time | Action |
+|--------------|------------|---------------|--------|
+| **Level 1** - Planned Approach | Aircraft is known/expected, flight path communicated | Before arrival | Ground RPAS prior to aircraft arrival |
+| **Level 2** - Announced Entry | Aircraft enters area with radio communication/notice | 60+ seconds | Restrict RPAS to <400' AGL, maintain 1 km horizontal separation |
+| **Level 3** - Non-Threat | Unannounced aircraft detected; trajectory poses no risk | Continuous | Continue operation with increased vigilance |
+| **Level 4** - Potential Conflict | Unannounced aircraft; trajectory may intersect | 30 seconds | RTH or Hover & Hold at safe/low altitude |
+| **Level 5** - Critical Threat | Unannounced aircraft; immediate collision risk | **IMMEDIATE** | **EXECUTE DESCEND PROTOCOL** |
 
 ### 2.11 CFIT (Controlled Flight Into Terrain) Prevention
 
