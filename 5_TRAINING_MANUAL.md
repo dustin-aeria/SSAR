@@ -610,45 +610,253 @@ VOs participating in Extended Visual Line of Sight operations must:
 
 ### 7.1 Certified Trainer Requirements
 
-Only personnel meeting the following criteria may serve as certified trainers:
+Only personnel meeting the following criteria may serve as certified SSAR RPAS trainers:
 
-| Requirement | Standard |
-|-------------|----------|
-| Flight Hours | Minimum 50 hours logged flight time |
-| Operational Experience | Minimum 1 year as operational SSAR RPAS pilot |
-| Certification | All Standard Scenario endorsements |
-| Training | Complete SSAR Train-the-Trainer module |
-| Currency | Maintain trainer recurrency requirements |
+| Requirement | Standard | Verification |
+|-------------|----------|--------------|
+| Flight Hours | Minimum 50 hours logged flight time on SSAR operational equipment | AirData logs |
+| Operational Experience | Minimum 1 year as operational SSAR RPAS pilot | Personnel records |
+| Certification | Valid Advanced RPAS Operator Certificate | TC certificate |
+| Scenario Endorsements | All Standard Scenario endorsements (STSC-003, STSC-004) | Endorsement records |
+| Risk Proficiency | Demonstrated proficiency in risk/hazard identification and control | Practical assessment |
+| Training | Complete SSAR Train-the-Trainer module | Training record |
+| Currency | Maintain trainer recurrency requirements | Currency tracking |
+| Character | Good standing within SSAR, no serious safety violations | AE review |
 
 ### 7.2 Train-the-Trainer Module
 
-**Duration:** 8 hours
+**Duration:** 8 hours (minimum)
+**Prerequisites:** Meet all Section 7.1 requirements except this module
+**Delivery:** Operations Manager or designated senior trainer
+**Assessment:** Practical teaching demonstration with evaluation
 
-| Topic | Duration |
-|-------|----------|
-| Adult learning principles | 2 hours |
-| Assessment techniques | 2 hours |
-| Feedback delivery | 1 hour |
-| Documentation requirements | 1 hour |
-| Practical teaching exercise | 2 hours |
+#### 7.2.1 Module 1: Adult Learning Principles (2 hours)
 
-### 7.3 Trainer Recurrency
+**Learning Objectives:**
+- Understand how adults learn differently from children
+- Apply adult learning theory to RPAS training
+- Recognize individual learning styles and adapt instruction
+
+**Content:**
+
+| Topic | Duration | Key Points |
+|-------|----------|------------|
+| Andragogy vs Pedagogy | 30 min | Self-direction, experience-based, problem-centered, immediate application |
+| Learning Styles | 30 min | Visual, auditory, kinesthetic learners; adapting delivery |
+| Motivation Factors | 30 min | Intrinsic vs extrinsic motivation, relevance, competence, autonomy |
+| Barriers to Learning | 30 min | Prior experience (positive/negative), anxiety, time pressure, physical factors |
+
+**Practical Exercise:** Identify learning style preferences of current SSAR pilots; design approach for each type.
+
+#### 7.2.2 Module 2: Instructional Techniques (2 hours)
+
+**Learning Objectives:**
+- Structure effective training sessions
+- Demonstrate skills progressively
+- Manage the training environment
+
+**Content:**
+
+| Topic | Duration | Key Points |
+|-------|----------|------------|
+| Tell-Show-Do-Review | 30 min | Four-step instructional method for skill training |
+| Briefing Structure | 30 min | Objectives, content, assessment criteria, questions |
+| Demonstration Techniques | 30 min | Positioning, narration, pace, common errors to highlight |
+| Training Environment | 30 min | Distraction management, safety, equipment readiness |
+
+**Tell-Show-Do-Review Method:**
+
+| Step | Trainer Action | Trainee Action |
+|------|----------------|----------------|
+| **TELL** | Explain the skill, procedure, or concept | Listen, ask clarifying questions |
+| **SHOW** | Demonstrate while narrating actions | Observe, take notes if needed |
+| **DO** | Observe and coach | Perform the skill with guidance |
+| **REVIEW** | Provide feedback, identify areas for improvement | Self-assess, ask questions |
+
+#### 7.2.3 Module 3: Assessment Techniques (2 hours)
+
+**Learning Objectives:**
+- Design fair, consistent assessments
+- Evaluate performance objectively
+- Document assessment results properly
+
+**Content:**
+
+| Topic | Duration | Key Points |
+|-------|----------|------------|
+| Assessment Types | 30 min | Formative (during training), summative (end of training), practical, oral, written |
+| Competency Standards | 30 min | Using rating scales (1-4), defining "meets standard," calibrating assessors |
+| Observation Skills | 30 min | What to watch for, common errors, safety indicators |
+| Documentation | 30 min | Recording results, providing evidence, maintaining objectivity |
+
+**Assessment Best Practices:**
+
+| Practice | Description |
+|----------|-------------|
+| Pre-brief criteria | Always explain what will be assessed before the exercise |
+| Observe silently | Minimize intervention during assessment (unless safety concern) |
+| Take notes | Document specific observations, not just pass/fail |
+| Be consistent | Apply same standard to all trainees |
+| Assess against standard | Compare to published standard, not to other trainees |
+
+#### 7.2.4 Module 4: Feedback Delivery (1 hour)
+
+**Learning Objectives:**
+- Deliver constructive feedback effectively
+- Handle difficult conversations professionally
+- Motivate trainees for continued improvement
+
+**Content:**
+
+| Topic | Duration | Key Points |
+|-------|----------|------------|
+| Feedback Principles | 20 min | Timely, specific, balanced, actionable |
+| The Feedback Model | 20 min | Situation-Behavior-Impact (SBI) model |
+| Difficult Conversations | 20 min | Underperformance, attitude issues, failure notification |
+
+**SBI Feedback Model:**
+
+| Component | Description | Example |
+|-----------|-------------|---------|
+| **Situation** | Describe the specific situation | "During the emergency landing drill today..." |
+| **Behavior** | Describe the observed behavior | "...you forgot to announce 'Emergency Landing' to the crew before descending." |
+| **Impact** | Explain the impact of the behavior | "This meant the VO wasn't prepared and couldn't clear the landing zone." |
+| **Forward** | Suggest improvement | "Next time, ensure the announcement is the first action before any control inputs." |
+
+#### 7.2.5 Module 5: Documentation Requirements (1 hour)
+
+**Learning Objectives:**
+- Complete all required training documentation
+- Maintain accurate, auditable records
+- Understand retention requirements
+
+**Content:**
+
+| Document | When Completed | Retention |
+|----------|----------------|-----------|
+| Training Session Log | After each session | 5 years |
+| Competency Assessment Form | After each assessment | 5 years |
+| Flight Review Record | After flight review | 5 years |
+| Endorsement Record | Upon endorsement | Duration + 2 years |
+| Remediation Plan | When trainee needs additional work | 5 years |
+| Sign-Off Authorization | Upon progression | 5 years |
+
+**Documentation Standards:**
+- All entries dated and signed by trainer
+- Specific observations recorded, not just checkmarks
+- Any deficiencies clearly described with remediation plan
+- Electronic records backed up; paper records secured
+
+#### 7.2.6 Module 6: Practical Teaching Exercise (2 hours)
+
+**Learning Objectives:**
+- Demonstrate instructional competence
+- Receive feedback on teaching effectiveness
+- Identify personal development areas
+
+**Exercise Structure:**
+
+| Phase | Duration | Activity |
+|-------|----------|----------|
+| Preparation | 30 min | Candidate prepares a 15-minute training segment on assigned topic |
+| Delivery | 20 min | Candidate delivers training to volunteer trainee(s) |
+| Assessment | 10 min | Assessor observes and documents performance |
+| Feedback | 20 min | Assessor provides detailed feedback using SBI model |
+| Discussion | 20 min | Review of overall readiness, areas for development |
+| Decision | 20 min | Pass/fail determination, certification issuance |
+
+**Practical Assessment Criteria:**
+
+| Area | Criteria | Standard |
+|------|----------|----------|
+| Preparation | Material organized, objectives clear | All materials ready, objectives stated |
+| Delivery | Clear communication, appropriate pace | Trainee understands, no confusion |
+| Demonstration | Proper technique, good positioning | Trainee can observe all key elements |
+| Engagement | Questions encouraged, trainee involved | Active participation achieved |
+| Assessment | Observes trainee attempt, provides feedback | Correct errors identified, feedback constructive |
+| Safety | Maintains safety throughout | No safety concerns during training |
+
+### 7.3 Trainer Designation Process
+
+| Step | Action | Responsible | Documentation |
+|------|--------|-------------|---------------|
+| 1 | Candidate meets all prerequisites (Section 7.1) | Candidate | Self-assessment |
+| 2 | Candidate requests trainer designation | Candidate | Written request |
+| 3 | Operations Manager verifies prerequisites | Operations Manager | Verification checklist |
+| 4 | Candidate completes Train-the-Trainer module | Candidate | Training record |
+| 5 | Candidate passes practical teaching exercise | Assessor | Assessment form |
+| 6 | Accountable Executive approves designation | AE | Designation letter |
+| 7 | Trainer added to authorized trainer list | Operations Manager | Trainer registry |
+
+### 7.4 Trainer Recurrency
+
+| Requirement | Standard | Verification |
+|-------------|----------|--------------|
+| Flight Currency | Minimum 2 hours per month | AirData logs |
+| Training Activity | Conduct training at least quarterly | Training records |
+| Pilot Recurrency | Maintain all pilot recurrency requirements (Section 10) | Currency tracking |
+| Evaluation | Operations Manager evaluation every 24 months | Evaluation record |
+| Development | Attend at least one professional development activity annually | Training record |
+
+#### 7.4.1 Trainer Evaluation (24-Month)
+
+Every 24 months, the Operations Manager evaluates each trainer on:
+
+| Area | Assessment Method |
+|------|-------------------|
+| Training Effectiveness | Review of trainee outcomes, feedback from trainees |
+| Documentation Quality | Audit of training records for completeness and accuracy |
+| Currency Maintenance | Verification of flight hours and recurrency requirements |
+| Safety Record | Review of any safety incidents during training |
+| Professional Development | Evidence of continued learning and development |
+| Trainee Feedback | Anonymous feedback from trainees (if available) |
+
+### 7.5 Trainer Authority and Responsibilities
+
+#### 7.5.1 Authority
+
+Trainers have authority to:
+- Evaluate and sign off pilots for progression through training stages
+- Place pilots on training hold for proficiency concerns
+- Require additional training, scenarios, or flight hours
+- Ground pilots pending remediation for safety concerns
+- Recommend pilots for Flight Reviewer designation
+- Adapt training delivery to individual trainee needs
+- Determine readiness for assessment
+
+#### 7.5.2 Responsibilities
+
+Trainers are responsible for:
+- Maintaining personal proficiency at the highest level
+- Preparing thoroughly for each training session
+- Creating a supportive learning environment
+- Providing honest, constructive feedback
+- Documenting all training accurately and completely
+- Reporting any safety concerns to Operations Manager
+- Mentoring developing pilots beyond formal training
+- Contributing to training program improvement
+
+#### 7.5.3 Limitations
+
+Trainers may NOT:
+- Assess or sign off family members or close personal relationships (conflict of interest)
+- Conduct training while fatigued, ill, or otherwise unfit
+- Lower standards to pass a struggling trainee
+- Provide endorsements without required documentation
+- Conduct training outside their own currency/endorsement scope
+
+### 7.6 Flight Reviewer Designation
+
+Flight Reviewers are senior trainers authorized to conduct formal proficiency assessments and issue endorsements. Flight Reviewer designation requires:
 
 | Requirement | Standard |
 |-------------|----------|
-| Flight Currency | Minimum 2 hours per month |
-| Training Activity | Conduct training at least quarterly |
-| Evaluation | Operations Manager evaluation every 24 months |
-| Proficiency | Must maintain all pilot recurrency requirements |
-
-### 7.4 Trainer Authority
-
-Trainers have authority to:
-- Evaluate and sign off pilots for progression
-- Place pilots on training hold for proficiency concerns
-- Require additional training or scenarios
-- Ground pilots pending remediation for safety concerns
-- Recommend pilots for Flight Reviewer designation
+| Trainer Status | Current certified trainer for minimum 12 months |
+| Training Conducted | Successfully trained minimum 5 pilots to operational status |
+| Total Flight Hours | Minimum 100 hours |
+| All Endorsements | Current STSC-003 and STSC-004 endorsements |
+| Additional Training | Complete Flight Reviewer standardization |
+| AE Designation | Written designation from Accountable Executive |
 
 ---
 

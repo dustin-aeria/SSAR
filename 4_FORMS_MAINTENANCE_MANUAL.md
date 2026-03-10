@@ -556,30 +556,152 @@ Retire batteries when:
 
 ### 6.1 Firmware Update Policy
 
-- All aircraft firmware must be maintained at current stable versions
-- Beta/experimental firmware is not authorized for SAR operations
-- Firmware updates must be tested before operational deployment
-- Update logs must be maintained for each aircraft
+| Policy Element | Requirement |
+|----------------|-------------|
+| Version Standard | All aircraft firmware must be maintained at current stable versions |
+| Beta Restriction | Beta/experimental firmware is NOT authorized for SAR operations |
+| Testing | Firmware updates must be tested before operational deployment |
+| Documentation | Update logs must be maintained for each aircraft |
+| Notification | All pilots must be briefed on operational changes from updates |
+| Approval | Chief Pilot approval required before fleet-wide deployment |
 
-### 6.2 Firmware Version Tracking
+### 6.2 Firmware Components
 
-| Aircraft | Serial # | Current FW | Update Date | Updated By |
-|----------|----------|------------|-------------|------------|
-| M30T-001 | [Serial] | [Version] | [Date] | [Name] |
-| M30T-002 | [Serial] | [Version] | [Date] | [Name] |
-| M4TD-001 | [Serial] | [Version] | [Date] | [Name] |
-| M4TD-002 | [Serial] | [Version] | [Date] | [Name] |
+Each RPAS system includes multiple firmware components that must be tracked:
 
-### 6.3 Firmware Update Procedure
+#### 6.2.1 DJI M30T Firmware Components
 
-1. Check DJI release notes for new firmware version
-2. Review changes for any safety-related items
-3. Download firmware to DJI Pilot 2 or RC controller
-4. Perform update in controlled environment
-5. Verify successful update and system function
-6. Conduct test flight if update includes flight control changes
-7. Record update in firmware log
-8. Brief all pilots on any operational changes
+| Component | Current Version | Update Source |
+|-----------|-----------------|---------------|
+| Aircraft Firmware | [Version] | DJI Pilot 2 / Assistant |
+| Remote Controller | [Version] | DJI Pilot 2 |
+| TB30 Battery | [Version] | DJI Pilot 2 |
+| BS30 Charging Station | [Version] | DJI Assistant |
+| DJI Pilot 2 App | [Version] | App Store / DJI |
+
+#### 6.2.2 DJI Matrice 4TD Firmware Components
+
+| Component | Current Version | Update Source |
+|-----------|-----------------|---------------|
+| Aircraft Firmware | [Version] | DJI Pilot 2 / Assistant |
+| Remote Controller | [Version] | DJI Pilot 2 |
+| Battery | [Version] | DJI Pilot 2 |
+| DJI Pilot 2 App | [Version] | App Store / DJI |
+
+### 6.3 Firmware Version Tracking Log
+
+| Aircraft ID | Serial # | Component | Current FW | Previous FW | Update Date | Updated By | Test Flight |
+|-------------|----------|-----------|------------|-------------|-------------|------------|-------------|
+| M30T-001 | [Serial] | Aircraft | [Version] | [Version] | [Date] | [Name] | [ ] Yes [ ] No |
+| M30T-001 | [Serial] | RC | [Version] | [Version] | [Date] | [Name] | N/A |
+| M30T-001 | [Serial] | Battery | [Version] | [Version] | [Date] | [Name] | N/A |
+| M30T-002 | [Serial] | Aircraft | [Version] | [Version] | [Date] | [Name] | [ ] Yes [ ] No |
+| M4TD-001 | [Serial] | Aircraft | [Version] | [Version] | [Date] | [Name] | [ ] Yes [ ] No |
+| M4TD-002 | [Serial] | Aircraft | [Version] | [Version] | [Date] | [Name] | [ ] Yes [ ] No |
+
+### 6.4 Firmware Update Procedure
+
+#### 6.4.1 Pre-Update Assessment
+
+| Step | Action | Check |
+|------|--------|-------|
+| 1 | **CHECK** DJI release notes for new firmware version | [ ] |
+| 2 | **REVIEW** changelog for safety-related items | [ ] |
+| 3 | **RESEARCH** community feedback on new version stability | [ ] |
+| 4 | **ASSESS** operational impact of changes | [ ] |
+| 5 | **DECIDE** if update is required (safety critical) or optional (feature) | [ ] |
+| 6 | **OBTAIN** Chief Pilot approval for fleet update | [ ] |
+
+#### 6.4.2 Update Execution
+
+| Step | Action | Check |
+|------|--------|-------|
+| 1 | **BACKUP** current settings and waypoints | [ ] |
+| 2 | **CHARGE** aircraft and controller to >50% | [ ] |
+| 3 | **DOWNLOAD** firmware to DJI Pilot 2 or controller | [ ] |
+| 4 | **UPDATE** in controlled environment (indoor or calm conditions) | [ ] |
+| 5 | **VERIFY** update completed successfully (no errors) | [ ] |
+| 6 | **CHECK** all firmware components match expected versions | [ ] |
+
+#### 6.4.3 Post-Update Verification
+
+| Step | Action | Check |
+|------|--------|-------|
+| 1 | **VERIFY** RTH altitude setting (often reset by updates) | [ ] |
+| 2 | **VERIFY** geofence settings | [ ] |
+| 3 | **VERIFY** failsafe settings (lost link behavior) | [ ] |
+| 4 | **VERIFY** maximum altitude settings | [ ] |
+| 5 | **VERIFY** obstacle avoidance settings | [ ] |
+| 6 | **VERIFY** camera/gimbal settings | [ ] |
+| 7 | **CALIBRATE** compass and IMU if prompted | [ ] |
+| 8 | **TEST** all sensors and controls on ground | [ ] |
+
+> **CRITICAL:** Firmware updates frequently reset safety parameters like RTH Altitude. ALWAYS verify settings after any update.
+
+#### 6.4.4 Test Flight Requirements
+
+A test flight is REQUIRED after any firmware update that includes:
+- Flight controller changes
+- GPS/navigation changes
+- Motor/ESC changes
+- Failsafe logic changes
+- Obstacle avoidance changes
+
+| Test Flight Element | Check |
+|---------------------|-------|
+| Stable hover (30 seconds) | [ ] |
+| Control response (pitch, roll, yaw) | [ ] |
+| GPS position hold | [ ] |
+| RTH function test | [ ] |
+| Camera/gimbal operation | [ ] |
+| Obstacle avoidance (if applicable) | [ ] |
+| No abnormal warnings or behavior | [ ] |
+
+#### 6.4.5 Documentation and Communication
+
+| Step | Action | Check |
+|------|--------|-------|
+| 1 | **RECORD** update in firmware log (Section 6.3) | [ ] |
+| 2 | **DOCUMENT** any setting resets or anomalies | [ ] |
+| 3 | **BRIEF** all pilots on operational changes | [ ] |
+| 4 | **UPDATE** relevant checklists if procedures changed | [ ] |
+| 5 | **FILE** DJI release notes for reference | [ ] |
+
+### 6.5 Firmware Rollback Procedure
+
+If a firmware update causes operational issues:
+
+| Step | Action |
+|------|--------|
+| 1 | **GROUND** affected aircraft immediately |
+| 2 | **DOCUMENT** issues observed |
+| 3 | **CONTACT** DJI support if safety-related |
+| 4 | **ROLLBACK** to previous version using DJI Assistant (if available) |
+| 5 | **TEST** aircraft after rollback |
+| 6 | **REPORT** issues to DJI and Chief Pilot |
+| 7 | **DELAY** fleet-wide update until issues resolved |
+
+### 6.6 Firmware Update Decision Matrix
+
+| Update Type | Risk Level | Testing Required | Approval Required |
+|-------------|------------|------------------|-------------------|
+| Security/safety critical | High | Full test flight | Chief Pilot |
+| Flight controller changes | High | Full test flight | Chief Pilot |
+| Feature additions | Medium | Ground test minimum | Chief Pilot |
+| App updates only | Low | Verify settings | PIC |
+| Battery firmware | Medium | Charge cycle test | Chief Pilot |
+
+### 6.7 Manufacturer Notice Monitoring
+
+| Source | Monitoring Frequency | Responsible |
+|--------|---------------------|-------------|
+| DJI Enterprise Support Portal | Weekly | Chief Pilot |
+| DJI Pilot 2 App Notifications | Each startup | PIC |
+| DJI Email Notifications | As received | Chief Pilot |
+| Transport Canada Airworthiness | Monthly | Chief Pilot |
+| Industry Forums/Groups | Weekly | Chief Pilot |
+
+> **Mandatory Action:** Any mandatory safety notice from DJI or Transport Canada must be complied with before next flight.
 
 ---
 
@@ -632,7 +754,124 @@ Retire batteries when:
 - Manufacturer service if available
 - Documentation review and update
 
-### 7.2 Maintenance Log Template
+### 7.2 Defect Recording and Tracking
+
+#### 7.2.1 Defect Categories
+
+| Category | Code | Description | Operational Impact | Resolution Timeline |
+|----------|------|-------------|-------------------|---------------------|
+| **A - Grounding** | DEF-A | Defect prevents safe flight | Aircraft GROUNDED immediately | Must resolve before flight |
+| **B - Limitation** | DEF-B | Defect limits operations | Operational restriction applies | Resolve within 7 days |
+| **C - Monitor** | DEF-C | Defect requires monitoring | Normal operations, enhanced monitoring | Resolve within 30 days |
+| **D - Cosmetic** | DEF-D | Cosmetic issue only | No operational impact | Resolve at next scheduled maintenance |
+
+#### 7.2.2 Category A (Grounding) Defects
+
+The following defects require immediate grounding - NO FLIGHT PERMITTED:
+
+| Defect | Examples | Action |
+|--------|----------|--------|
+| Structural damage | Cracked arm, bent motor mount, damaged landing gear | Ground, tag LOCKOUT, assess repair |
+| Propulsion failure | Motor not spinning, ESC failure, excessive motor heat | Ground, tag LOCKOUT, replace component |
+| Flight control failure | IMU error, compass failure, GPS failure (persistent) | Ground, calibrate or repair |
+| Battery critical | Swelling, physical damage, cell failure, fire risk | Remove from service, dispose properly |
+| C2 link failure | No connection, intermittent link, range severely degraded | Ground, troubleshoot, repair |
+| Safety system failure | RTH not functioning, geofence disabled, failsafe not responding | Ground, reset and verify |
+
+#### 7.2.3 Category B (Limitation) Defects
+
+| Defect | Examples | Operational Limitation |
+|--------|----------|----------------------|
+| Sensor degradation | Obstacle avoidance intermittent, one sensor offline | Fly VLOS only, increased crew vigilance |
+| Camera/gimbal issue | Gimbal drift, image quality degraded | Non-SAR flights only |
+| Minor battery issue | Reduced capacity (70-80%), one cell low | Reduced flight time, close monitoring |
+| Transmission degraded | Range reduced but functional | Reduced operational range |
+| Minor structural | Cosmetic crack, loose non-critical component | Reduced maneuvering, avoid heavy loads |
+
+#### 7.2.4 Defect Reporting Procedure
+
+| Step | Action | Responsibility | Timeline |
+|------|--------|----------------|----------|
+| 1 | **IDENTIFY** defect during pre-flight, post-flight, or operation | PIC / Crew | Immediately |
+| 2 | **ASSESS** defect category using 7.2.1 criteria | PIC | Immediately |
+| 3 | **DOCUMENT** defect on Defect Report Form (7.2.6) | PIC | Before leaving site |
+| 4 | **TAG** aircraft with appropriate status tag | PIC | Immediately |
+| 5 | **NOTIFY** Chief Pilot/Maintenance Manager | PIC | Within 2 hours |
+| 6 | **LOG** defect in Aircraft Technical Log | Chief Pilot | Within 24 hours |
+| 7 | **PLAN** repair/resolution | Maintenance Manager | Per category timeline |
+| 8 | **REPAIR** execute repair or send for service | Authorized personnel | Per category timeline |
+| 9 | **TEST** conduct functional test after repair | Maintenance Manager | After repair |
+| 10 | **RELEASE** document return to service | Chief Pilot | After successful test |
+
+#### 7.2.5 Equipment Status Tags
+
+| Tag Color | Status | Meaning | Action Required |
+|-----------|--------|---------|-----------------|
+| **GREEN** | SERVICEABLE | Equipment operational, no defects | Normal operations permitted |
+| **YELLOW** | LIMITED | Category B/C defect, operational with limitations | Fly with documented restrictions |
+| **RED** | GROUNDED / LOCKOUT | Category A defect, DO NOT FLY | No flight until repair and release |
+| **WHITE** | MAINTENANCE | In scheduled maintenance | Not available until maintenance complete |
+
+#### 7.2.6 Defect Report Form
+
+| SSAR RPAS DEFECT REPORT | |
+|-------------------------|---|
+| **Defect ID:** | DEF-[YEAR]-[NUMBER] |
+| **Date Discovered:** | |
+| **Discovered By:** | |
+| **Aircraft ID:** | |
+| **Aircraft Serial #:** | |
+| **Current Flight Hours:** | |
+| **Defect Category:** | [ ] A-Grounding  [ ] B-Limitation  [ ] C-Monitor  [ ] D-Cosmetic |
+| **Description of Defect:** | |
+| **How Discovered:** | [ ] Pre-flight  [ ] In-flight  [ ] Post-flight  [ ] Maintenance  [ ] Other |
+| **Immediate Action Taken:** | |
+| **Status Tag Applied:** | [ ] GREEN  [ ] YELLOW  [ ] RED  [ ] WHITE |
+| **Chief Pilot Notified:** | [ ] Yes  Date/Time: ___________ |
+| **Reporter Signature:** | _________________________ Date: _________ |
+
+---
+
+| DEFECT RESOLUTION | |
+|-------------------|---|
+| **Resolution Plan:** | |
+| **Parts Required:** | |
+| **Repair Performed By:** | |
+| **Repair Date:** | |
+| **Description of Repair:** | |
+| **Test Flight Required:** | [ ] Yes  [ ] No |
+| **Test Flight Date:** | |
+| **Test Flight Result:** | [ ] Pass  [ ] Fail |
+| **Return to Service Authorized By:** | |
+| **Return to Service Date:** | |
+| **Authorizing Signature:** | _________________________ Date: _________ |
+
+#### 7.2.7 Defect Tracking Register
+
+| Defect ID | Date | Aircraft | Category | Description | Status | Resolution Date |
+|-----------|------|----------|----------|-------------|--------|-----------------|
+| DEF-2026-001 | | | | | | |
+| DEF-2026-002 | | | | | | |
+| DEF-2026-003 | | | | | | |
+
+**Status Options:** Open, In Progress, Resolved, Deferred, Closed
+
+#### 7.2.8 Recurring Defect Analysis
+
+If the same or similar defect occurs three or more times:
+
+1. **IDENTIFY** the recurring pattern
+2. **INVESTIGATE** root cause using Safety Manual Section 4.6 procedures
+3. **ASSESS** whether the defect indicates:
+   - Design deficiency (notify manufacturer)
+   - Maintenance gap (revise maintenance procedures)
+   - Operational issue (revise operational procedures)
+   - Training need (enhance training)
+4. **IMPLEMENT** corrective action
+5. **MONITOR** for recurrence
+6. **REPORT** to Accountable Executive if safety-significant
+
+### 7.3 Maintenance Log Template
 
 | Date | Aircraft | Type | Description | Technician | Sign-off |
 |------|----------|------|-------------|------------|----------|
@@ -641,6 +880,41 @@ Retire batteries when:
 | | | | | | |
 | | | | | | |
 | | | | | | |
+
+### 7.4 Aircraft Technical Log
+
+Each aircraft maintains a Technical Log containing:
+
+| Section | Contents | Update Frequency |
+|---------|----------|------------------|
+| Aircraft Data | Serial number, registration, specifications | Upon acquisition |
+| Flight Hours | Total hours, hours since maintenance | After each flight |
+| Maintenance History | All scheduled and unscheduled maintenance | After each action |
+| Defect History | All defects recorded and resolved | As they occur |
+| Component Tracking | Propeller hours, motor hours, battery cycles | After each flight |
+| Modification Record | Any modifications or configuration changes | As performed |
+| Inspection Record | Results of all inspections | After each inspection |
+| Return to Service | All RTS authorizations | After each RTS |
+
+### 7.5 Records Retention
+
+| Record Type | Retention Period | Storage Method |
+|-------------|------------------|----------------|
+| Aircraft Technical Log | Life of aircraft + 2 years | Secure digital + backup |
+| Pre/Post Flight Records | 2 years minimum | Digital (AirData) |
+| Defect Reports | 5 years | Secure digital + backup |
+| Battery Records | Life of battery + 2 years | Digital spreadsheet |
+| Maintenance Actions | 2 years minimum | Digital + paper backup |
+| Return to Service Records | Life of aircraft | With Technical Log |
+| Firmware Update Records | Life of aircraft | Digital log |
+
+### 7.6 Maintenance Signatory Authority
+
+| Maintenance Level | Authorization | Return to Service Authority |
+|-------------------|---------------|-----------------------------|
+| Level 1 | All SSAR pilots | Pre/post-flight, propellers, batteries - PIC may RTS |
+| Level 2 | Chief Pilot authorized | Firmware, calibration, minor repairs - Chief Pilot RTS |
+| Level 3 | DJI Authorized Service | Major repairs, warranty work - Service Center RTS |
 
 ---
 

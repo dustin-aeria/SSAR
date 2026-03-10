@@ -650,16 +650,165 @@ Annual proficiency checks include:
 ### 5.1 Chief Pilot Designation
 
 **Chief Pilot: Dustin Wales**
+**Designation Date:** March 2026
+**Reports To:** Accountable Executive
+**Alternate:** [Designated Deputy Chief Pilot when appointed]
 
-### 5.2 Chief Pilot Responsibilities
+### 5.2 Chief Pilot Qualifications
 
-- Day-to-day RPAS operations management
-- Flight authorization
-- Pilot qualification verification
-- Currency monitoring
-- Regulatory compliance verification
+The Chief Pilot must meet and maintain the following minimum qualifications:
 
-### 5.3 Pilot Qualification Levels
+| Requirement | Standard | Evidence |
+|-------------|----------|----------|
+| RPAS Certificate | Valid Transport Canada Advanced RPAS Operator Certificate | TC Certificate |
+| Flight Hours | Minimum 100 hours total RPAS flight time | AirData logs |
+| Operational Experience | Minimum 2 years as operational SSAR RPAS pilot | Personnel records |
+| Scenario Endorsements | All Standard Scenario endorsements (STSC-003, STSC-004) | Endorsement records |
+| Trainer Status | Certified SSAR RPAS Trainer | Designation letter |
+| SMS Knowledge | Completed SMS training, demonstrated competency | Training records |
+| Regulatory Knowledge | Expert knowledge of CARs Part IX, Standard 922 | Assessment |
+| Leadership | Demonstrated leadership capability | AE assessment |
+
+### 5.3 Chief Pilot Responsibilities
+
+The Chief Pilot is responsible for the day-to-day management of RPAS operations, ensuring safety, regulatory compliance, and operational effectiveness.
+
+#### 5.3.1 Operations Management
+
+| Responsibility | Description | Frequency |
+|----------------|-------------|-----------|
+| Flight Authorization | Approve/deny operational flight requests based on risk assessment | Per request |
+| Mission Oversight | Monitor operational missions, available for consultation | Continuous |
+| Resource Allocation | Assign pilots and equipment to missions | Per mission |
+| Operational Decisions | Make time-critical decisions on operations | As required |
+| Weather Assessment | Final authority on weather-related GO/NO-GO decisions | Per operation |
+| Incident Response | Lead response to operational incidents | As required |
+
+#### 5.3.2 Pilot Management
+
+| Responsibility | Description | Frequency |
+|----------------|-------------|-----------|
+| Qualification Verification | Verify pilot qualifications before operational authorization | Per pilot |
+| Currency Monitoring | Track and enforce pilot currency requirements | Monthly |
+| Fitness Assessment | Ensure pilots meet fitness-for-duty requirements | Continuous |
+| Performance Review | Review pilot performance, address deficiencies | Ongoing |
+| Discipline | Address violations of SOPs or safety standards | As required |
+| Mentorship | Mentor developing pilots, provide guidance | Ongoing |
+
+#### 5.3.3 Regulatory Compliance
+
+| Responsibility | Description | Frequency |
+|----------------|-------------|-----------|
+| RPOC Compliance | Ensure all operations comply with RPOC conditions | Continuous |
+| CARs Adherence | Verify compliance with Canadian Aviation Regulations Part IX | Continuous |
+| SFOC Management | Manage any Special Flight Operations Certificates | As required |
+| Regulatory Liaison | Coordinate with Transport Canada on compliance matters | As required |
+| Documentation | Ensure all required documentation is current and accessible | Ongoing |
+| Audit Preparation | Prepare for and support regulatory audits | As required |
+
+#### 5.3.4 Safety Responsibilities
+
+| Responsibility | Description | Frequency |
+|----------------|-------------|-----------|
+| Risk Acceptance | Accept Medium-level risks per Risk Acceptance Authority (Safety Manual 1.3.2) | Per operation |
+| Hazard Management | Participate in hazard identification and risk assessment | Ongoing |
+| Safety Reporting Review | Review all safety reports, ensure follow-up | Within 7 days |
+| Incident Investigation | Lead or participate in incident investigations | As required |
+| SPI Monitoring | Monitor Safety Performance Indicators, report trends | Monthly |
+| Safety Culture | Promote and enforce safety-first culture | Continuous |
+
+#### 5.3.5 Training Oversight
+
+| Responsibility | Description | Frequency |
+|----------------|-------------|-----------|
+| Training Program | Oversee training program delivery and effectiveness | Ongoing |
+| Trainer Supervision | Supervise and evaluate trainers | Ongoing |
+| Curriculum Review | Review and approve training curriculum changes | Annual / as needed |
+| Training Records | Ensure training records are complete and accurate | Quarterly audit |
+| Recurrency Enforcement | Ensure all pilots complete recurrency requirements | Ongoing |
+| Standards Calibration | Ensure consistent assessment standards across trainers | Semi-annual |
+
+#### 5.3.6 Equipment Oversight
+
+| Responsibility | Description | Frequency |
+|----------------|-------------|-----------|
+| Fleet Readiness | Ensure aircraft are maintained and mission-ready | Continuous |
+| Maintenance Oversight | Oversee maintenance program execution | Ongoing |
+| Equipment Authorization | Authorize equipment for operational use | Per equipment |
+| Lockout Authority | Ground equipment for safety concerns | As required |
+| Procurement Input | Provide input on equipment acquisition decisions | As required |
+| Configuration Control | Approve firmware and configuration changes | Per change |
+
+### 5.4 Chief Pilot Authority
+
+The Chief Pilot has authority to:
+
+| Authority | Description |
+|-----------|-------------|
+| **Operational Authority** | |
+| Approve Operations | Authorize operational flights based on risk assessment |
+| Deny Operations | Refuse to authorize flights that exceed acceptable risk |
+| Abort Operations | Order immediate termination of any flight for safety reasons |
+| Modify Plans | Adjust mission plans based on conditions |
+| **Personnel Authority** | |
+| Ground Pilots | Suspend pilot operational authorization for cause |
+| Restore Currency | Authorize currency restoration training |
+| Assign Pilots | Assign specific pilots to specific missions |
+| Designate Acting | Designate acting Chief Pilot during absence |
+| **Equipment Authority** | |
+| Ground Aircraft | Remove aircraft from service for safety or maintenance |
+| Return to Service | Authorize aircraft return to service after maintenance |
+| Approve Modifications | Approve minor modifications or configurations |
+
+### 5.5 Chief Pilot Decision-Making
+
+#### 5.5.1 GO/NO-GO Authority
+
+The Chief Pilot has final GO/NO-GO authority for all operations. This authority may be delegated to the PIC for routine operations within established parameters, but the Chief Pilot retains override authority.
+
+| Factor | Chief Pilot Action |
+|--------|-------------------|
+| Weather Marginal | Assess risk, authorize with conditions or deny |
+| Pilot Currency Concern | Review records, require demonstration or deny |
+| Equipment Status | Review maintenance records, authorize or ground |
+| Airspace Complexity | Assess pilot capability, authorize or assign alternative |
+| Time Pressure | Resist pressure to approve unsafe operations |
+
+#### 5.5.2 Risk Acceptance Decisions
+
+Per Safety Manual Section 1.3.2, the Chief Pilot is the Risk Acceptance Authority for Medium-level risks.
+
+**Medium Risk Authorization Process:**
+1. Review risk assessment documentation
+2. Evaluate proposed mitigations
+3. Consider pilot experience and conditions
+4. Determine if risk is acceptable with mitigations
+5. Document decision with rationale
+6. Communicate conditions to PIC
+
+#### 5.5.3 Escalation
+
+The Chief Pilot must escalate to the Accountable Executive when:
+- Risk level is High or Extreme
+- Regulatory interpretation required
+- Significant resource decisions needed
+- Personnel discipline beyond Chief Pilot authority
+- Media or public relations implications
+- Potential legal or liability issues
+
+### 5.6 Chief Pilot Reporting
+
+| Report | Frequency | Recipient | Content |
+|--------|-----------|-----------|---------|
+| Operations Summary | Monthly | AE | Flight hours, missions, issues |
+| Pilot Currency Status | Monthly | AE | Currency status of all pilots |
+| Safety Summary | Monthly | AE | SPIs, incidents, hazards |
+| Training Progress | Quarterly | AE | Training pipeline, completions |
+| Equipment Status | Quarterly | AE | Fleet readiness, maintenance |
+| Regulatory Compliance | Semi-annual | AE | Compliance status, issues |
+| Annual Report | Annual | AE | Full program review |
+
+### 5.7 Pilot Qualification Levels
 
 | Level | Title | Requirements |
 |-------|-------|--------------|
@@ -908,61 +1057,212 @@ Maintenance shall be performed in accordance with the manufacturer's maintenance
 
 ### 8.1 Purpose
 
-This policy establishes insurance requirements for SSAR RPAS operations to ensure adequate coverage for all authorized operations including Standard Scenarios.
+This policy establishes insurance requirements and liability management procedures for SSAR RPAS operations to ensure adequate coverage for all authorized operations including Standard Scenarios, and to protect SSAR, its members, and third parties.
 
 ### 8.2 Insurance Requirements - CAR 901.06
 
-| MTOW Category | Minimum Coverage |
-|---------------|------------------|
-| Up to 1 kg | $100,000 |
-| 1 kg to 5 kg | $100,000 |
-| 5 kg to 25 kg | $500,000 |
-| Over 25 kg | $1,000,000 |
+Per Canadian Aviation Regulations, operators must maintain liability insurance:
+
+| MTOW Category | Minimum Coverage | SSAR Recommended |
+|---------------|------------------|------------------|
+| Up to 1 kg | $100,000 | $1,000,000 |
+| 1 kg to 5 kg | $100,000 | $2,000,000 |
+| 5 kg to 25 kg | $500,000 | $2,000,000 |
+| Over 25 kg | $1,000,000 | $5,000,000 |
+
+> **Note:** SSAR maintains coverage significantly exceeding minimum regulatory requirements due to SAR operational complexity and public safety responsibility.
 
 ### 8.3 SSAR Aircraft Coverage
 
-| Aircraft | MTOM | Minimum Required |
-|----------|------|------------------|
-| DJI M30T | 3.77 kg | $100,000 |
-| DJI Matrice 4TD | 2.3 kg | $100,000 |
+| Aircraft | MTOM | Category | Minimum Required | SSAR Actual |
+|----------|------|----------|------------------|-------------|
+| DJI M30T | 3.77 kg | 1-5 kg | $100,000 | [Policy Amount] |
+| DJI Matrice 4TD | 2.3 kg | 1-5 kg | $100,000 | [Policy Amount] |
 
-### 8.4 Aircraft Covered
+### 8.4 Policy Scope Requirements
 
-Any RPAS owned by the SSAR RPAS Program.
+#### 8.4.1 Aircraft Covered
 
-### 8.5 BVLOS Operations Coverage
+The insurance policy must cover:
+- All RPAS owned by the SSAR RPAS Program
+- All RPAS operated under SSAR authority
+- Attached payloads and accessories
+- Ground control stations and support equipment
 
-Insurance policy must explicitly cover or not exclude:
-- Beyond Visual Line of Sight operations
-- Operations in sparsely populated areas
-- Search and rescue support operations
-- Standard Scenario authorizations
+#### 8.4.2 Operations Covered
 
-### 8.6 High Altitude Operations Coverage
+The insurance policy must explicitly cover (not exclude):
 
-Insurance policy must cover:
-- Operations above 400 feet AGL
-- Operations up to 1000 feet AGL
+| Operation Type | Coverage Requirement | Verification |
+|----------------|---------------------|--------------|
+| VLOS Operations | Standard coverage | Policy review |
+| **BVLOS Operations** | Explicit coverage required | Written confirmation |
+| **High Altitude (>400' AGL)** | Explicit coverage required | Written confirmation |
+| Standard Scenario STSC-003 | Covered as high altitude | Written confirmation |
+| Standard Scenario STSC-004 | Covered as BVLOS | Written confirmation |
+| Search and Rescue Support | Explicit coverage | Written confirmation |
+| Sparsely Populated Areas | No exclusion | Policy review |
+| Night Operations | No exclusion | Policy review |
+| Emergency Response | Explicit coverage | Written confirmation |
 
-### 8.7 Coverage Types
+#### 8.4.3 Geographic Coverage
 
-- Third-Party Bodily Injury
-- Third-Party Property Damage
-- Hull Coverage (if applicable)
-- Personal Injury (privacy claims)
+| Area | Coverage Requirement |
+|------|---------------------|
+| Canada | Primary coverage |
+| British Columbia | Primary operating area |
+| SSAR Operational Boundary | Explicit coverage confirmation |
+| Adjacent areas (mutual aid) | Coverage verified |
 
-### 8.8 Documentation Requirements
+### 8.5 Coverage Types
 
-- Certificate of Insurance (current, valid)
-- Full policy document retained
-- Written confirmation for BVLOS/High Altitude coverage
+| Coverage Type | Description | Minimum |
+|---------------|-------------|---------|
+| **Third-Party Bodily Injury** | Injury to persons other than crew | Per policy limit |
+| **Third-Party Property Damage** | Damage to property of others | Per policy limit |
+| **Hull Coverage** | Physical damage to RPAS | Replacement value (if applicable) |
+| **Personal Injury** | Privacy claims, trespass | Per policy limit |
+| **Non-Owned Aviation** | Borrowed/rented equipment | If applicable |
+| **Premises Liability** | Launch/landing sites | Per policy limit |
 
-### 8.9 Incident Response
+### 8.6 Exclusions Review
 
-- Do NOT admit fault or liability
-- Document all facts
-- Notify insurer within 24 hours
-- Report to Chief Pilot immediately
+The following common exclusions must be reviewed and addressed:
+
+| Common Exclusion | SSAR Status | Mitigation |
+|------------------|-------------|------------|
+| BVLOS operations | Covered by endorsement | Obtain written confirmation |
+| Operations above 400' AGL | Covered by endorsement | Obtain written confirmation |
+| Commercial operations | SSAR is non-profit SAR | Confirm SAR support covered |
+| War/terrorism | Standard exclusion | Accept (standard) |
+| Nuclear | Standard exclusion | Accept (standard) |
+| Intentional acts | Standard exclusion | Accept (standard) |
+| Criminal acts | Standard exclusion | Accept (standard) |
+| Night operations | Must not be excluded | Verify coverage |
+| Unregistered aircraft | Must comply with CAR 901.02 | Maintain registration |
+| Uncertified pilots | Must comply with training | Maintain pilot records |
+
+### 8.7 Documentation Requirements
+
+#### 8.7.1 Required Documents
+
+| Document | Purpose | Retention |
+|----------|---------|-----------|
+| Certificate of Insurance | Proof of current coverage | Current + 2 years |
+| Full Policy Document | Complete terms and conditions | Current + 2 years |
+| BVLOS Endorsement | Confirmation of BVLOS coverage | Current + 2 years |
+| High Altitude Endorsement | Confirmation of >400' coverage | Current + 2 years |
+| SAR Operations Letter | Confirmation of SAR coverage | Current + 2 years |
+| Declarations Page | Coverage limits and effective dates | Current + 2 years |
+
+#### 8.7.2 Document Accessibility
+
+| Situation | Document Required | Location |
+|-----------|-------------------|----------|
+| All operations | Certificate of Insurance (copy) | Operations kit |
+| Transport Canada inquiry | Full policy + certificate | Within 24 hours |
+| Incident response | Full policy | Immediate access |
+| Annual audit | All insurance documents | Records file |
+
+### 8.8 Liability Management
+
+#### 8.8.1 Pre-Flight Liability Considerations
+
+Before each operation, the PIC must verify:
+
+| Item | Verification |
+|------|--------------|
+| Insurance Current | Certificate expiry date not exceeded |
+| Coverage Adequate | Operation type covered by policy |
+| Geographic Coverage | Operating location covered |
+| Aircraft Registered | Registration current per CAR 901.02 |
+| Pilot Qualified | Meets policy requirements |
+
+#### 8.8.2 Operational Liability Mitigation
+
+| Mitigation | Implementation |
+|------------|----------------|
+| Site Survey | Identify and document hazards |
+| Controlled Ground Area | Establish M1 mitigations |
+| Public Notice | Use signs, pylons where appropriate |
+| Documentation | Record all operations thoroughly |
+| Compliance | Follow all SOPs and regulations |
+
+### 8.9 Incident Response - Insurance Protocol
+
+#### 8.9.1 Immediate Actions (At Scene)
+
+| Priority | Action | Responsible |
+|----------|--------|-------------|
+| 1 | **SAFETY FIRST** - Secure scene, attend to injuries | PIC |
+| 2 | **DO NOT ADMIT FAULT** - Avoid statements of liability | All crew |
+| 3 | **DOCUMENT** - Photos, video, witness information | All crew |
+| 4 | **NOTIFY** - Chief Pilot immediately | PIC |
+| 5 | **PRESERVE** - Evidence, flight logs, aircraft | PIC |
+| 6 | **COOPERATE** - With emergency services | PIC |
+
+#### 8.9.2 Post-Incident Actions (Within 24 Hours)
+
+| Action | Timeline | Responsible |
+|--------|----------|-------------|
+| Notify insurer | Within 24 hours | Accountable Executive |
+| Complete incident report | Within 24 hours | PIC |
+| Preserve all evidence | Immediately | Chief Pilot |
+| Transport Canada notification (if required) | Per Section 6 reporting | Chief Pilot |
+| Document witness statements | Within 48 hours | Chief Pilot |
+| Secure aircraft (if applicable) | Immediately | PIC |
+
+#### 8.9.3 Claims Process
+
+| Step | Action | Timeline |
+|------|--------|----------|
+| 1 | Report to insurer via claims hotline | Within 24 hours |
+| 2 | Provide initial incident report | Within 24 hours |
+| 3 | Submit supporting documentation | Within 7 days |
+| 4 | Cooperate with adjuster investigation | As required |
+| 5 | Do not dispose of damaged equipment until authorized | Until claim closed |
+| 6 | Maintain communication log with insurer | Throughout process |
+
+#### 8.9.4 Statement Guidelines
+
+**DO:**
+- State only verified facts
+- Provide factual description of events
+- Cooperate with authorized investigators
+- Refer legal questions to legal counsel
+
+**DO NOT:**
+- Admit fault or liability
+- Speculate about causes
+- Discuss fault with media or public
+- Sign any documents without review
+- Make statements beyond factual observations
+
+### 8.10 Annual Insurance Review
+
+| Review Item | Frequency | Responsible |
+|-------------|-----------|-------------|
+| Policy renewal | 30 days before expiry | Accountable Executive |
+| Coverage adequacy | Annual | Chief Pilot |
+| Fleet changes | Upon acquisition/disposal | Chief Pilot |
+| Operations changes | Upon new operation type | Chief Pilot |
+| Claims history review | Annual | Accountable Executive |
+| Broker/carrier review | Annual | Accountable Executive |
+
+### 8.11 Insurance Verification Checklist
+
+Complete annually or upon policy change:
+
+| Item | Verification | Verified By | Date |
+|------|--------------|-------------|------|
+| Policy in force | Certificate current | | |
+| BVLOS covered | Written confirmation obtained | | |
+| High altitude covered | Written confirmation obtained | | |
+| SAR operations covered | Written confirmation obtained | | |
+| All aircraft listed | Declarations page reviewed | | |
+| Coverage limits adequate | Per Section 8.2 | | |
+| No excluded operations | Exclusions reviewed | | |
+| Documents filed | All docs accessible | | |
 
 ---
 

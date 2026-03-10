@@ -900,12 +900,176 @@ SSAR uses the JARUS SORA framework for systematic risk assessment:
 
 *Data source: Statistics Canada Census 2021, BC Stats, local knowledge.*
 
-### 4.6 Hazard Register Maintenance
+### 4.6 Reactive Risk Management (Incident-Based)
+
+All incidents reported via Section 6 (Incident Reporting) are analyzed to determine root cause and implement corrective actions. This reactive process ensures learning from events that have already occurred.
+
+#### 4.6.1 Root Cause Analysis Process
+
+| Step | Action | Responsible | Timeline |
+|------|--------|-------------|----------|
+| 1 | **RECEIVE** incident report via Section 6 procedures | Safety Manager | Upon receipt |
+| 2 | **CLASSIFY** incident severity using Section 4.2.3 definitions | Safety Manager | Within 24 hours |
+| 3 | **INVESTIGATE** using 5-Why methodology or Fishbone analysis | Safety Manager + PIC | Within 7 days |
+| 4 | **DETERMINE** root cause category (see below) | Safety Manager | Within 7 days |
+| 5 | **ASSIGN** corrective action with timeline and owner | Safety Manager | Within 7 days |
+| 6 | **IMPLEMENT** corrective action | Action Owner | Per assigned timeline |
+| 7 | **VERIFY** effectiveness of corrective action | Safety Manager | 30 days post-implementation |
+| 8 | **CLOSE** incident with documented resolution | Accountable Executive | Upon verification |
+
+#### 4.6.2 Root Cause Categories
+
+| Category | Examples | Typical Corrective Actions |
+|----------|----------|---------------------------|
+| Lack of Training | Pilot unfamiliar with procedure, skill gap | Additional training, curriculum update |
+| Equipment Failure | Mechanical defect, battery failure, sensor malfunction | Maintenance procedure update, equipment replacement |
+| Procedural Gap | SOP unclear, procedure missing, checklist incomplete | SOP revision, new procedure development |
+| Human Factors | Fatigue, distraction, complacency, communication failure | CRM training, duty limit enforcement, briefing improvements |
+| Environmental | Weather exceeded limits, unexpected conditions | Weather assessment procedure update, limit revision |
+| Design Deficiency | Aircraft limitation, software bug | Manufacturer notification, operational limitation |
+
+#### 4.6.3 Investigation Documentation
+
+All investigations must document:
+- Incident description and timeline
+- Environmental conditions at time of occurrence
+- Equipment involved (serial numbers, firmware versions)
+- Personnel involved
+- Evidence collected (flight logs, video, witness statements)
+- Root cause determination with supporting rationale
+- Corrective actions with owners and deadlines
+- Safety Manager and AE sign-off
+
+### 4.7 Proactive Risk Management (The Hazard Registry)
+
+SSAR maintains a Master Hazard Registry to proactively identify and manage hazards before they cause incidents. This aligns with SMS Pillar 2 (Safety Risk Management) and COR Element 2 (Hazard Identification).
+
+#### 4.7.1 Hazard Registry Structure
+
+The Master Hazard Registry (maintained in Excel/Database) contains:
+
+| Field | Description | Example |
+|-------|-------------|---------|
+| Hazard ID | Unique identifier | T01, O03, E05 |
+| Identified Hazard | Clear description of the hazard | "Cold Weather Battery Failure" |
+| Source | How hazard was identified | Incident, inspection, training, manufacturer notice |
+| Date Identified | When hazard was entered | 2026-03-01 |
+| Category | Technical, Operational, Environmental, Human Factors | Technical |
+| Likelihood | Probability rating (1-5) | 3 |
+| Severity | Severity rating (1-5) | 4 |
+| Initial Risk | Pre-mitigation risk level | High |
+| Mitigation | Control measures implemented | "Battery warmers required <5°C, pre-flight temp check" |
+| Residual Risk | Post-mitigation risk level | Medium |
+| Status | Open, In Progress, Closed, Monitoring | Monitoring |
+| Owner | Person responsible for hazard management | Chief Pilot |
+| Review Date | Next scheduled review | 2027-03-01 |
+
+#### 4.7.2 Hazard Identification Sources
+
+Hazards are identified through multiple channels:
+
+| Source | Mechanism | Frequency |
+|--------|-----------|-----------|
+| Incident Reports | Reactive - post-event | Continuous |
+| Safety Observations | Crew safety reports | Continuous |
+| Training Events | Observed during training | Per session |
+| Inspections | Pre/post-flight, maintenance | Per flight/interval |
+| Manufacturer Notices | DJI safety bulletins, firmware notes | As issued |
+| Regulatory Updates | Transport Canada, JARUS | As published |
+| Industry Events | Other operators, BCSARA network | As learned |
+| Operational Changes | New equipment, procedures, areas | Per change |
+
+#### 4.7.3 Hazard Registry Workflow
+
+```
+IDENTIFY → ASSESS → MITIGATE → DOCUMENT → MONITOR → REVIEW
+```
+
+**Step 1 - IDENTIFY:** Any crew member may submit a hazard identification via the Safety Report form or direct communication to Safety Manager.
+
+**Step 2 - ASSESS:** Safety Manager assesses likelihood and severity using Section 4.2.2 and 4.2.3 definitions, calculates initial risk level using Section 1.3.1 Risk Matrix.
+
+**Step 3 - MITIGATE:** Develop control measures using Hierarchy of Controls (Section 4.4.2). For High/Extreme risks, obtain AE approval before proceeding.
+
+**Step 4 - DOCUMENT:** Enter hazard into Master Registry with all required fields. Update relevant SOPs, checklists, or training materials.
+
+**Step 5 - MONITOR:** Track effectiveness of controls through SPIs (Section 1.4.1), incident reports, and crew feedback.
+
+**Step 6 - REVIEW:** Annual review of all hazards, or immediate review following any related incident.
+
+### 4.8 Change Management Process
+
+Before any significant change to RPAS operations, a Change Risk Assessment must be conducted to identify and mitigate new risks introduced by the change.
+
+#### 4.8.1 Change Triggers
+
+Change management is mandatory when:
+
+| Trigger Category | Examples |
+|------------------|----------|
+| **New Equipment** | New aircraft type, new payload, new controller, new software |
+| **New Operations** | BVLOS expansion, night operations, new geographic area |
+| **New Regulations** | Transport Canada updates, SFOC changes, airspace changes |
+| **New Personnel** | New role responsibilities, organizational changes |
+| **Modified Procedures** | SOP revisions, checklist changes, training updates |
+| **Infrastructure Changes** | New charging equipment, storage facilities, transport vehicles |
+
+#### 4.8.2 Change Risk Assessment Process
+
+| Step | Action | Responsible | Documentation |
+|------|--------|-------------|---------------|
+| 1 | **IDENTIFY** the change and its scope | Initiator | Change Request Form |
+| 2 | **ASSESS** potential impacts on current operations | Operations Manager | Impact Assessment |
+| 3 | **IDENTIFY** new hazards introduced by the change | Safety Manager | Hazard Identification |
+| 4 | **EVALUATE** risk using Section 4.2 methodology | Safety Manager | Risk Assessment |
+| 5 | **DEVELOP** mitigations for identified risks | Operations Manager | Mitigation Plan |
+| 6 | **APPROVE** change per risk acceptance authority (Section 1.3.2) | Per risk level | Approval Record |
+| 7 | **IMPLEMENT** change with appropriate training/communication | Operations Manager | Implementation Record |
+| 8 | **MONITOR** effectiveness post-implementation | Safety Manager | Monitoring Report |
+| 9 | **UPDATE** Hazard Registry with any new hazards | Safety Manager | Registry Update |
+
+#### 4.8.3 Change Assessment Questions
+
+The Change Risk Assessment must address:
+
+1. **What is changing?** Clear description of the proposed change
+2. **Why is the change needed?** Operational, regulatory, or safety driver
+3. **What could go wrong?** Identification of potential failure modes
+4. **How likely is failure?** Probability assessment
+5. **What are the consequences?** Severity assessment
+6. **Are current SOPs sufficient?** Gap analysis
+7. **What additional controls are needed?** Mitigation development
+8. **Who needs to know?** Communication plan
+9. **Who needs training?** Training requirements
+10. **How will effectiveness be verified?** Monitoring plan
+
+#### 4.8.4 Change Approval Authority
+
+| Risk Level Introduced | Approval Authority | Additional Requirements |
+|----------------------|-------------------|------------------------|
+| Low | Chief Pilot | Document decision |
+| Medium | Chief Pilot + Safety Manager | Risk assessment documented |
+| High | Accountable Executive | Full change package, board notification if required |
+| Extreme | Not Approved | Change not permitted without significant redesign |
+
+### 4.9 Hazard Register Maintenance
 
 - **Review frequency:** Annual or after any incident
 - **Update triggers:** New operations, equipment changes, incidents
 - **Responsible:** Chief Pilot with SMS Manager oversight
 - **Approval:** Accountable Executive for new High/Extreme risks
+- **Retention:** Hazard Registry records retained for minimum 5 years
+- **Audit:** Internal audit of Hazard Registry annually per Section 1.4.3
+
+#### 4.9.1 Hazard Status Definitions
+
+| Status | Definition | Action Required |
+|--------|------------|-----------------|
+| **Open** | Newly identified, awaiting assessment | Complete assessment within 7 days |
+| **In Progress** | Mitigations being developed/implemented | Complete implementation per timeline |
+| **Closed** | Risk reduced to acceptable level, controls verified | Annual review only |
+| **Monitoring** | Controls in place, ongoing monitoring required | Track SPIs, review quarterly |
+| **Archived** | No longer applicable (equipment retired, procedure eliminated) | Retain record, no active management |
 
 ---
 
@@ -1168,32 +1332,135 @@ Each controlled document includes:
 
 #### 7.5.1 Audit Schedule
 
-| Audit Area | Frequency |
-|------------|-----------|
-| Operations Compliance | Quarterly |
-| Maintenance Program | Quarterly |
-| Training Program | Semi-annual |
-| Full SMS Audit | Annual |
+| Audit Area | Frequency | Auditor | Scope |
+|------------|-----------|---------|-------|
+| Operations Compliance | Quarterly | Chief Pilot | Flight ops, site surveys, airspace |
+| Maintenance Program | Quarterly | Designated Auditor | Aircraft, batteries, equipment |
+| Training Program | Semi-annual | Chief Instructor | Records, currency, competency |
+| Safety Reporting | Semi-annual | Safety Manager | Reports, hazards, incidents |
+| SORA Compliance | Annual | External (if possible) | SORA documentation, OSOs |
+| Full SMS Audit | Annual | AE + External | Complete system review |
 
-#### 7.5.2 Annual System Audit
+#### 7.5.2 Internal Audit Process
 
-Once per year, the Safety Manager (or an external auditor/peer from another SAR group) shall conduct a System Audit.
+| Step | Action | Responsible | Timeline |
+|------|--------|-------------|----------|
+| 1 | **PLAN** - Develop audit plan with scope and criteria | Auditor | 2 weeks before |
+| 2 | **NOTIFY** - Inform auditees of audit schedule | Auditor | 1 week before |
+| 3 | **PREPARE** - Gather checklists, previous findings, records | Auditor | Before audit |
+| 4 | **CONDUCT** - Execute audit using checklist, interview personnel | Auditor | Per schedule |
+| 5 | **DOCUMENT** - Record findings with objective evidence | Auditor | During audit |
+| 6 | **REPORT** - Prepare audit report with findings classification | Auditor | Within 7 days |
+| 7 | **REVIEW** - Present findings to management | Auditor | Within 14 days |
+| 8 | **FOLLOW-UP** - Verify corrective actions completed | Auditor | Per timeline |
 
-**Audit Scope - Review a random sample of:**
+#### 7.5.3 Operations Compliance Audit Checklist
+
+| Ref | Audit Item | CAR Reference | Compliant | Finding |
+|-----|------------|---------------|-----------|---------|
+| OPS-01 | Site survey completed for each flight | 901.27 | [ ] | |
+| OPS-02 | Weather assessment documented | 901.34-35 | [ ] | |
+| OPS-03 | Crew fitness verified (IMSAFE) | 901.19 | [ ] | |
+| OPS-04 | Flight authorization obtained | OPS-001 | [ ] | |
+| OPS-05 | Airspace requirements met | 901.20-26 | [ ] | |
+| OPS-06 | VLOS/BVLOS parameters maintained | STSC-003/004 | [ ] | |
+| OPS-07 | Pre-flight inspection completed | 901.29 | [ ] | |
+| OPS-08 | Post-flight inspection completed | MCM-001 | [ ] | |
+| OPS-09 | Flight logs accurate and complete | 901.222 | [ ] | |
+| OPS-10 | Emergency procedures available | 901.217 | [ ] | |
+
+#### 7.5.4 Training Program Audit Checklist
+
+| Ref | Audit Item | CAR Reference | Compliant | Finding |
+|-----|------------|---------------|-----------|---------|
+| TRN-01 | Training program documented | 901.219 | [ ] | |
+| TRN-02 | All pilots have valid TC certificates | 901.54-66 | [ ] | |
+| TRN-03 | Flight currency maintained (90-day) | 901.56 | [ ] | |
+| TRN-04 | Annual proficiency check completed | TRN-301 | [ ] | |
+| TRN-05 | Standard Scenario endorsements current | 901.220 | [ ] | |
+| TRN-06 | Training records complete and accessible | 901.222 | [ ] | |
+| TRN-07 | Trainers meet qualification requirements | TRN-301 | [ ] | |
+| TRN-08 | Recurrency training completed on time | 901.219 | [ ] | |
+| TRN-09 | Competency assessments documented | 901.219 | [ ] | |
+| TRN-10 | Human factors training current | 901.219 | [ ] | |
+
+#### 7.5.5 Maintenance Program Audit Checklist
+
+| Ref | Audit Item | CAR Reference | Compliant | Finding |
+|-----|------------|---------------|-----------|---------|
+| MNT-01 | MCM current and accessible | 901.221 | [ ] | |
+| MNT-02 | PRM designated and qualified | 901.220 | [ ] | |
+| MNT-03 | Pre-flight inspections completed | 901.29 | [ ] | |
+| MNT-04 | Maintenance schedule followed | MCM-001 | [ ] | |
+| MNT-05 | Defects recorded and tracked | MCM-001 | [ ] | |
+| MNT-06 | Aircraft registration current | 901.02 | [ ] | |
+| MNT-07 | Markings visible and compliant | 901.03 | [ ] | |
+| MNT-08 | Firmware versions documented | MCM-001 | [ ] | |
+| MNT-09 | Battery records maintained | MCM-001 | [ ] | |
+| MNT-10 | Maintenance records retained (24 months) | 901.48 | [ ] | |
+
+#### 7.5.6 Safety Management Audit Checklist
+
+| Ref | Audit Item | CAR Reference | Compliant | Finding |
+|-----|------------|---------------|-----------|---------|
+| SMS-01 | Safety policy current and communicated | 901.218 | [ ] | |
+| SMS-02 | Hazard registry maintained | 901.218 | [ ] | |
+| SMS-03 | Risk assessments completed | 901.218 | [ ] | |
+| SMS-04 | Safety reports investigated | 901.218 | [ ] | |
+| SMS-05 | Corrective actions tracked to closure | 901.218 | [ ] | |
+| SMS-06 | SPIs monitored and reported | SMS-001 | [ ] | |
+| SMS-07 | Safety meetings conducted | SMS-001 | [ ] | |
+| SMS-08 | Non-punitive reporting protected | 901.218 | [ ] | |
+| SMS-09 | Change management applied | SMS-001 | [ ] | |
+| SMS-10 | Management review conducted | 901.218 | [ ] | |
+
+#### 7.5.7 Annual System Audit
+
+Once per year, the Safety Manager (or an external auditor/peer from another SAR group) shall conduct a Full System Audit covering all program areas.
+
+**Audit Scope - Sample Review:**
 - Flight Logs (AirData) vs. Site Surveys (Did we do a survey for every flight?)
 - Training Records (Are certifications current?)
 - Maintenance Logs (Was the firmware update tested?)
+- Hazard Registry (Are hazards actively managed?)
+- Incident Reports (Were corrective actions completed?)
+
+**Sample Size:** Minimum 10% of flights in the audit period, or 10 flights, whichever is greater.
 
 > **COR Alignment:** This audit also serves as the annual maintenance audit for the COR Safety Program.
 
-#### 7.5.3 Audit Findings Classification
+#### 7.5.8 Audit Findings Classification
 
-| Classification | Action Required |
-|----------------|-----------------|
-| Critical | Immediate corrective action |
-| Major | Corrective action within 30 days |
-| Minor | Corrective action within 90 days |
-| Observation | Address at next review |
+| Classification | Definition | Action Required | Timeline |
+|----------------|------------|-----------------|----------|
+| **Critical** | Immediate safety risk or regulatory violation | Stop operations, immediate corrective action | Immediate |
+| **Major** | Significant non-compliance affecting safety | Corrective action plan required | Within 30 days |
+| **Minor** | Minor non-compliance, low safety impact | Corrective action at next opportunity | Within 90 days |
+| **Observation** | Improvement opportunity, not non-compliance | Consider at next review | At discretion |
+
+#### 7.5.9 Audit Report Template
+
+| SSAR RPAS INTERNAL AUDIT REPORT | |
+|---------------------------------|---|
+| **Audit Number:** | AUD-[YEAR]-[NUMBER] |
+| **Audit Type:** | [ ] Operations  [ ] Training  [ ] Maintenance  [ ] SMS  [ ] Full System |
+| **Audit Date(s):** | |
+| **Auditor(s):** | |
+| **Audit Scope:** | |
+| **Documents Reviewed:** | |
+| **Personnel Interviewed:** | |
+| **Previous Audit Findings Status:** | |
+
+| Finding # | Classification | Description | Evidence | CAP Required |
+|-----------|----------------|-------------|----------|--------------|
+| | | | | |
+| | | | | |
+
+| **Audit Summary:** | |
+| **Total Findings:** | Critical: ___  Major: ___  Minor: ___  Observations: ___ |
+| **Overall Compliance:** | [ ] Satisfactory  [ ] Needs Improvement  [ ] Unsatisfactory |
+| **Auditor Signature:** | _________________________ Date: _________ |
+| **AE Review:** | _________________________ Date: _________ |
 
 ### 7.6 Corrective Action Process
 
