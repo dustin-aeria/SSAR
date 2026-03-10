@@ -2276,9 +2276,95 @@ function getFlightTerminationProcedure() {
 // ========================================
 
 function showFlyAwayScript() {
-    openQuickAccess('Fly-Away Emergency Script');
+    openQuickAccess('Fly-Away FIC Call Script');
     qaBackBtn.classList.add('hidden');
-    qaContent.innerHTML = getFlyAwayProcedure();
+
+    qaContent.innerHTML = `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon"><i class="fas fa-phone-volume"></i></div>
+                <div class="qa-procedure-title">FLY-AWAY FIC CALL SCRIPT</div>
+                <div class="qa-procedure-subtitle">Read this script when calling Flight Information Centre</div>
+            </div>
+
+            <div class="qa-emergency-call">
+                <div class="qa-emergency-call-title">CALL FIC KAMLOOPS</div>
+                <div class="qa-emergency-call-number"><a href="tel:250-376-7045">250-376-7045</a></div>
+                <div style="margin-top: 8px; font-size: 0.9rem; opacity: 0.9;">Toll-Free: 1-866-541-4101</div>
+            </div>
+
+            <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 24px; margin: 24px 0;">
+                <h4 style="margin: 0 0 16px; color: var(--text-primary); font-size: 1.1rem;">
+                    <i class="fas fa-microphone" style="margin-right: 8px; color: var(--danger-red);"></i>
+                    READ THIS SCRIPT:
+                </h4>
+
+                <div style="background: white; border-left: 4px solid var(--danger-red); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
+                        "Hello, my name is <strong style="color: var(--danger-red);">[YOUR NAME]</strong>.<br><br>
+                        I am an RPAS operator experiencing a <strong>fly-away situation</strong>."
+                    </p>
+                </div>
+
+                <div style="background: white; border-left: 4px solid var(--warning-orange); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
+                        "The RPAS is a <strong style="color: var(--warning-orange);">[COLOR]</strong>,
+                        <strong style="color: var(--warning-orange);">[MAKE/MODEL]</strong>,
+                        weighing <strong style="color: var(--warning-orange);">[WEIGHT]</strong> grams."
+                    </p>
+                </div>
+
+                <div style="background: white; border-left: 4px solid var(--accent-blue); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
+                        "My current location is <strong style="color: var(--accent-blue);">[DISTANCE] NM</strong> from
+                        <strong style="color: var(--accent-blue);">[AERODROME/LANDMARK]</strong>,
+                        bearing <strong style="color: var(--accent-blue);">[BEARING]</strong>."
+                    </p>
+                </div>
+
+                <div style="background: white; border-left: 4px solid var(--success-green); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
+                        "The RPAS is flying at <strong style="color: var(--success-green);">[ALTITUDE] feet ASL</strong>,
+                        heading <strong style="color: var(--success-green);">[HEADING]</strong>
+                        at <strong style="color: var(--success-green);">[SPEED] knots</strong>."
+                    </p>
+                </div>
+
+                <div style="background: white; border-left: 4px solid var(--extreme-purple); padding: 20px; border-radius: 0 8px 8px 0;">
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
+                        "Maximum flight time is <strong style="color: var(--extreme-purple);">[MAX TIME] minutes</strong>.<br>
+                        Estimated remaining battery: <strong style="color: var(--extreme-purple);">[BATTERY]%</strong>.<br>
+                        Maximum remaining travel distance: <strong style="color: var(--extreme-purple);">[DISTANCE] NM</strong>."
+                    </p>
+                </div>
+            </div>
+
+            <table class="qa-reference-table">
+                <tr><th>Information</th><th>M30T</th><th>M4TD</th></tr>
+                <tr><td>Color</td><td>Grey/Orange</td><td>Grey</td></tr>
+                <tr><td>Make/Model</td><td>DJI Matrice 30T</td><td>DJI Matrice 4TD</td></tr>
+                <tr><td>Weight</td><td>3,770 grams</td><td>2,300 grams</td></tr>
+                <tr><td>Max Flight Time</td><td>41 minutes</td><td>45 minutes</td></tr>
+                <tr><td>Max Speed</td><td>45 knots (82 km/h)</td><td>41 knots (76 km/h)</td></tr>
+            </table>
+
+            <div class="qa-warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Stay on the Line</h4>
+                    <p>FIC may ask follow-up questions. Keep your phone ready and continue tracking the aircraft visually if possible.</p>
+                </div>
+            </div>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>After the Call</h4>
+                    <p>Document all details for incident report. Preserve flight logs. Notify Chief Pilot immediately. TSB notification may be required.</p>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 // ========================================
