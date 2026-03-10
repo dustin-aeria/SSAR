@@ -1,26 +1,36 @@
 /* SSAR RPOC Web Tool - Professional Stylesheet */
-/* Transport Canada RPAS Operator Certificate System */
+/* Squamish Search and Rescue - RPAS Operator Certificate System */
 
 :root {
-    /* Primary Colors */
-    --primary-blue: #1e3a5f;
-    --primary-blue-light: #2a4f7a;
-    --accent-blue: #3498db;
-    --accent-blue-hover: #2980b9;
+    /* SSAR Brand Colors - from official logo */
+    --ssar-blue: #2B5A9C;           /* Logo ring/border blue */
+    --ssar-blue-dark: #1E4175;      /* Darker variant */
+    --ssar-blue-light: #4A7DC4;     /* Lighter variant */
+    --ssar-sky: #6BB3E0;            /* Mountain sky blue */
+    --ssar-forest: #2D6B4F;         /* Forest green from logo */
+    --ssar-forest-light: #3D8B66;   /* Lighter forest green */
+    --ssar-snow: #FFFFFF;           /* Snow/text white */
+    --ssar-mountain: #5A7D98;       /* Mountain gray-blue */
+
+    /* Primary Colors - mapped to SSAR brand */
+    --primary-blue: #2B5A9C;
+    --primary-blue-light: #3A6DB5;
+    --accent-blue: #4A9ED9;
+    --accent-blue-hover: #3A8BC6;
 
     /* Status Colors */
-    --success-green: #27ae60;
-    --success-green-bg: rgba(39, 174, 96, 0.15);
-    --warning-orange: #f39c12;
-    --warning-orange-bg: rgba(243, 156, 18, 0.15);
-    --danger-red: #e74c3c;
-    --danger-red-bg: rgba(231, 76, 60, 0.15);
-    --info-blue: #3498db;
-    --info-blue-bg: rgba(52, 152, 219, 0.15);
-    --caution-yellow: #f1c40f;
+    --success-green: #2D6B4F;
+    --success-green-bg: rgba(45, 107, 79, 0.15);
+    --warning-orange: #E67E22;
+    --warning-orange-bg: rgba(230, 126, 34, 0.15);
+    --danger-red: #C0392B;
+    --danger-red-bg: rgba(192, 57, 43, 0.15);
+    --info-blue: #4A9ED9;
+    --info-blue-bg: rgba(74, 158, 217, 0.15);
+    --caution-yellow: #F1C40F;
     --caution-yellow-bg: rgba(241, 196, 15, 0.15);
-    --extreme-purple: #9b59b6;
-    --extreme-purple-bg: rgba(155, 89, 182, 0.15);
+    --extreme-purple: #8E44AD;
+    --extreme-purple-bg: rgba(142, 68, 173, 0.15);
 
     /* Neutral Colors */
     --bg-primary: #f8f9fa;
@@ -50,17 +60,19 @@
     --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
 }
 
-/* Dark Mode Variables */
+/* Dark Mode Variables - SSAR themed */
 [data-theme="dark"] {
-    --bg-primary: #1a1a2e;
-    --bg-secondary: #16213e;
-    --bg-tertiary: #0f3460;
-    --text-primary: #eaeaea;
-    --text-secondary: #a0a0a0;
-    --text-muted: #6c757d;
-    --border-color: #2d3748;
-    --primary-blue: #0f3460;
-    --primary-blue-light: #16213e;
+    --bg-primary: #0D1B2A;
+    --bg-secondary: #1B2838;
+    --bg-tertiary: #1E4175;
+    --text-primary: #E8F1F8;
+    --text-secondary: #A0B8CC;
+    --text-muted: #6B8299;
+    --border-color: #2B4A6B;
+    --primary-blue: #4A7DC4;
+    --primary-blue-light: #3A6DB5;
+    --accent-blue: #6BB3E0;
+    --success-green: #3D8B66;
 }
 
 /* Reset & Base */
@@ -114,6 +126,16 @@ body {
 .logo-section i {
     font-size: 28px;
     color: var(--accent-blue);
+}
+
+.header-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: white;
+    padding: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .logo-text h1 {
