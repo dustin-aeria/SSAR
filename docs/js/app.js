@@ -325,14 +325,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Training headings
             if (text.includes('TRAINING') || text.includes('ASSESSMENT') || text.includes('COMPETENCY')) {
                 if (!heading.innerHTML.includes('fa-')) {
-                    heading.innerHTML = '<i class="fas fa-graduation-cap" style="margin-right: 8px; color: #27ae60;"></i>' + heading.innerHTML;
+                    heading.innerHTML = '<i class="fas fa-graduation-cap" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
                 }
             }
 
             // Maintenance headings
             if (text.includes('MAINTENANCE') || text.includes('INSPECTION')) {
                 if (!heading.innerHTML.includes('fa-')) {
-                    heading.innerHTML = '<i class="fas fa-tools" style="margin-right: 8px; color: #f39c12;"></i>' + heading.innerHTML;
+                    heading.innerHTML = '<i class="fas fa-tools" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
                 }
             }
         });
