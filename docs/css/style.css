@@ -373,6 +373,28 @@ body {
     font-weight: 500;
 }
 
+.copyright-notice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+.copyright-notice i {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.copyright-notice span {
+    opacity: 0.9;
+}
+
 /* Main Content Area */
 .main-content {
     margin-left: var(--sidebar-width);
@@ -1179,6 +1201,82 @@ td:contains("[ ]"), td:contains("[x]"), td:contains("[X]") {
 }
 
 /* ========================================
+   COPYRIGHT FOOTER
+   ======================================== */
+
+.copyright-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--ssar-blue-dark, #1E4175) 100%);
+    color: white;
+    padding: 8px 16px;
+    z-index: 1000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    padding: 1px;
+    flex-shrink: 0;
+}
+
+.copyright-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.7rem;
+    line-height: 1.3;
+}
+
+.copyright-text strong {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.copyright-text span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Adjust content to account for footer */
+.document-content {
+    padding-bottom: 80px !important;
+}
+
+/* Mobile copyright footer */
+@media (max-width: 600px) {
+    .copyright-footer {
+        padding: 6px 12px;
+    }
+
+    .copyright-logo {
+        width: 24px;
+        height: 24px;
+    }
+
+    .copyright-text {
+        font-size: 0.6rem;
+    }
+
+    .copyright-text strong {
+        font-size: 0.65rem;
+    }
+}
+
+/* ========================================
    PRINT STYLES
    ======================================== */
 
@@ -1187,7 +1285,8 @@ td:contains("[ ]"), td:contains("[x]"), td:contains("[X]") {
     .sidebar,
     .toc-sidebar,
     .back-to-top,
-    .search-overlay {
+    .search-overlay,
+    .copyright-footer {
         display: none !important;
     }
 
@@ -1198,6 +1297,7 @@ td:contains("[ ]"), td:contains("[x]"), td:contains("[X]") {
     .document-content {
         max-width: 100%;
         padding: 0;
+        padding-bottom: 0 !important;
     }
 
     .content-area h1 {
@@ -1211,6 +1311,40 @@ td:contains("[ ]"), td:contains("[x]"), td:contains("[X]") {
 
     .content-area table {
         page-break-inside: avoid;
+    }
+
+    /* Print copyright on every page */
+    @page {
+        margin: 1in;
+        @bottom-center {
+            content: "CONFIDENTIAL - Squamish Search and Rescue | Reproduction Prohibited Without Permission";
+            font-size: 8pt;
+            color: #666;
+        }
+    }
+
+    /* Print header and footer */
+    .content-area::before {
+        content: "SQUAMISH SEARCH AND RESCUE - CONFIDENTIAL";
+        display: block;
+        text-align: center;
+        font-size: 10pt;
+        color: #2B5A9C;
+        font-weight: bold;
+        padding: 8px 0;
+        border-bottom: 2px solid #2B5A9C;
+        margin-bottom: 20px;
+    }
+
+    .content-area::after {
+        content: "This document is the property of Squamish Search and Rescue. Reproduction or distribution without express written permission is prohibited.";
+        display: block;
+        text-align: center;
+        font-size: 8pt;
+        color: #666;
+        padding: 16px 0 0;
+        margin-top: 24px;
+        border-top: 1px solid #ccc;
     }
 
     .risk-extreme, .risk-high, .risk-medium, .risk-low,
