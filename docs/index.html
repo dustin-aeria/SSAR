@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSAR RPAS Operator Certificate - Policy Manual</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <i class="fas fa-drone"></i>
+                <div class="logo-text">
+                    <h1>SSAR RPOC</h1>
+                    <span class="subtitle">RPAS Policy & Operations Manual</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search policies...">
+                    <kbd>Ctrl+K</kbd>
+                </div>
+                <button id="print-btn" class="header-btn" title="Print Current Section">
+                    <i class="fas fa-print"></i>
+                </button>
+                <button id="theme-toggle" class="header-btn" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Results Overlay -->
+    <div id="search-overlay" class="search-overlay hidden">
+        <div class="search-modal">
+            <div class="search-modal-header">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-modal-input" placeholder="Search across all manuals...">
+                <button id="close-search" class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="search-results" class="search-results">
+                <p class="search-hint">Type to search through all policy documents...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="nav-section">
+                <div class="nav-section-title">
+                    <i class="fas fa-book"></i> Policy Manuals
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item active" data-section="operations">
+                        <i class="fas fa-plane"></i>
+                        <span>Operations Manual</span>
+                        <span class="doc-count">11 docs</span>
+                    </li>
+                    <li class="nav-item" data-section="safety">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Safety & Emergency</span>
+                        <span class="doc-count">12 docs</span>
+                    </li>
+                    <li class="nav-item" data-section="people">
+                        <i class="fas fa-users"></i>
+                        <span>People & Equipment</span>
+                        <span class="doc-count">14 docs</span>
+                    </li>
+                    <li class="nav-item" data-section="forms">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Forms & Maintenance</span>
+                        <span class="doc-count">5 docs</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">
+                    <i class="fas fa-bolt"></i> Quick Access
+                </div>
+                <ul class="nav-list quick-links">
+                    <li class="nav-item" data-jump="emergency-procedures">
+                        <i class="fas fa-exclamation-triangle text-danger"></i>
+                        <span>Emergency Procedures</span>
+                    </li>
+                    <li class="nav-item" data-jump="fly-away">
+                        <i class="fas fa-plane-departure text-warning"></i>
+                        <span>Fly-Away Script</span>
+                    </li>
+                    <li class="nav-item" data-jump="pre-flight">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Pre-Flight Checklist</span>
+                    </li>
+                    <li class="nav-item" data-jump="weather-minimums">
+                        <i class="fas fa-cloud-sun"></i>
+                        <span>Weather Minimums</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">
+                    <i class="fas fa-phone"></i> Emergency Contacts
+                </div>
+                <div class="emergency-contacts">
+                    <div class="contact-item">
+                        <span class="contact-label">FIC (Flight Info)</span>
+                        <a href="tel:1-866-541-4101" class="contact-number">1-866-541-4101</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">NAV CANADA</span>
+                        <a href="tel:1-866-992-7433" class="contact-number">1-866-992-7433</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">TSB Hotline</span>
+                        <a href="tel:1-819-994-3741" class="contact-number">1-819-994-3741</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="version-info">
+                    <span>RPOC Version 1.0</span>
+                    <span class="last-updated">Updated: March 2026</span>
+                </div>
+                <div class="regulatory-badge">
+                    <i class="fas fa-certificate"></i>
+                    <span>CAR Part IX Compliant</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Table of Contents Sidebar -->
+            <aside class="toc-sidebar">
+                <div class="toc-header">
+                    <i class="fas fa-list"></i> Contents
+                </div>
+                <div id="toc-content" class="toc-content">
+                    <!-- Dynamically populated -->
+                </div>
+            </aside>
+
+            <!-- Document Content -->
+            <article class="document-content">
+                <div id="content-area" class="content-area">
+                    <!-- Content loaded here -->
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Loading manual...</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/content.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
