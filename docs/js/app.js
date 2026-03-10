@@ -39,18 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setupEventListeners() {
         // Navigation clicks
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const section = item.dataset.section;
+        navItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var section = item.dataset.section;
                 setActiveNav(item);
                 loadSection(section);
             });
         });
 
         // Quick links
-        quickLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const jumpId = link.dataset.jump;
+        quickLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                var jumpId = link.dataset.jump;
                 handleQuickJump(jumpId);
             });
         });
@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('click', openSearch);
         searchInput.addEventListener('focus', openSearch);
         closeSearch.addEventListener('click', closeSearchModal);
-        searchOverlay.addEventListener('click', (e) => {
+        searchOverlay.addEventListener('click', function(e) {
             if (e.target === searchOverlay) closeSearchModal();
         });
         searchModalInput.addEventListener('input', handleSearch);
 
         // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
                 openSearch();
@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', toggleTheme);
 
         // Print button
-        printBtn.addEventListener('click', () => window.print());
+        printBtn.addEventListener('click', function() { window.print(); });
 
         // Back to top
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 backToTop.classList.remove('hidden');
             } else {
@@ -90,23 +90,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        backToTop.addEventListener('click', () => {
+        backToTop.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // TOC scroll spy
-        const mainContent = document.querySelector('.main-content');
+        var mainContent = document.querySelector('.main-content');
         mainContent.addEventListener('scroll', updateTocHighlight);
     }
 
     function setActiveNav(activeItem) {
-        navItems.forEach(item => item.classList.remove('active'));
+        navItems.forEach(function(item) { item.classList.remove('active'); });
         activeItem.classList.add('active');
     }
 
     function loadSection(sectionKey) {
         currentSection = sectionKey;
-        const section = RPOC_CONTENT[sectionKey];
+        var section = RPOC_CONTENT[sectionKey];
 
         if (!section) {
             contentArea.innerHTML = '<p>Section not found.</p>';
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Parse markdown and render
-        const html = marked.parse(section.content);
+        var html = marked.parse(section.content);
         contentArea.innerHTML = html;
         contentArea.classList.add('loaded');
 
@@ -126,28 +126,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function buildTOC() {
-        const headings = contentArea.querySelectorAll('h2, h3');
-        let tocHTML = '<ul>';
+        var headings = contentArea.querySelectorAll('h2, h3');
+        var tocHTML = '<ul>';
 
-        headings.forEach((heading, index) => {
-            const id = 'heading-' + index;
+        headings.forEach(function(heading, index) {
+            var id = 'heading-' + index;
             heading.id = id;
 
-            const level = heading.tagName.toLowerCase();
-            const text = heading.textContent;
+            var level = heading.tagName.toLowerCase();
+            var text = heading.textContent;
 
-            tocHTML += \`<li><a href="#\${id}" class="toc-\${level}">\${text}</a></li>\`;
+            tocHTML += '<li><a href="#' + id + '" class="toc-' + level + '">' + text + '</a></li>';
         });
 
         tocHTML += '</ul>';
         tocContent.innerHTML = tocHTML;
 
         // Add click handlers
-        tocContent.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
+        tocContent.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const targetId = link.getAttribute('href').slice(1);
-                const target = document.getElementById(targetId);
+                var targetId = link.getAttribute('href').slice(1);
+                var target = document.getElementById(targetId);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
@@ -156,36 +156,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateTocHighlight() {
-        const headings = contentArea.querySelectorAll('h2, h3');
-        const tocLinks = tocContent.querySelectorAll('a');
-        const scrollTop = window.scrollY;
+        var headings = contentArea.querySelectorAll('h2, h3');
+        var tocLinks = tocContent.querySelectorAll('a');
+        var scrollTop = window.scrollY;
 
-        let activeIndex = 0;
-        headings.forEach((heading, index) => {
+        var activeIndex = 0;
+        headings.forEach(function(heading, index) {
             if (heading.offsetTop <= scrollTop + 100) {
                 activeIndex = index;
             }
         });
 
-        tocLinks.forEach((link, index) => {
+        tocLinks.forEach(function(link, index) {
             link.classList.toggle('active', index === activeIndex);
         });
     }
 
     function handleQuickJump(jumpId) {
-        const jumpConfig = QUICK_ACCESS[jumpId];
+        var jumpConfig = QUICK_ACCESS[jumpId];
         if (!jumpConfig) return;
 
         // Switch to the section
-        const navItem = document.querySelector(\`[data-section="\${jumpConfig.section}"]\`);
+        var navItem = document.querySelector('[data-section="' + jumpConfig.section + '"]');
         if (navItem) {
             setActiveNav(navItem);
             loadSection(jumpConfig.section);
 
             // Wait for render then scroll to relevant content
-            setTimeout(() => {
-                const headings = contentArea.querySelectorAll('h2, h3, h4');
-                for (const heading of headings) {
+            setTimeout(function() {
+                var headings = contentArea.querySelectorAll('h2, h3, h4');
+                for (var i = 0; i < headings.length; i++) {
+                    var heading = headings[i];
                     if (heading.textContent.toLowerCase().includes(jumpConfig.search.toLowerCase())) {
                         heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         break;
@@ -207,14 +208,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleSearch() {
-        const query = searchModalInput.value.trim().toLowerCase();
+        var query = searchModalInput.value.trim().toLowerCase();
 
         if (query.length < 2) {
             searchResults.innerHTML = '<p class="search-hint">Type at least 2 characters to search...</p>';
             return;
         }
 
-        const results = searchIndex.filter(item => {
+        var results = searchIndex.filter(function(item) {
             return item.heading.toLowerCase().includes(query) ||
                    item.text.toLowerCase().includes(query);
         });
@@ -224,25 +225,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        let resultsHTML = '';
-        results.slice(0, 10).forEach(result => {
-            const excerpt = highlightText(result.text, query);
-            resultsHTML += \`
-                <div class="search-result-item" data-section="\${result.section}" data-heading="\${result.heading}">
-                    <div class="search-result-section">\${result.sectionTitle}</div>
-                    <div class="search-result-title">\${result.heading}</div>
-                    <div class="search-result-excerpt">\${excerpt}</div>
-                </div>
-            \`;
+        var resultsHTML = '';
+        results.slice(0, 10).forEach(function(result) {
+            var excerpt = highlightText(result.text, query);
+            resultsHTML += '<div class="search-result-item" data-section="' + result.section + '" data-heading="' + result.heading + '">' +
+                '<div class="search-result-section">' + result.sectionTitle + '</div>' +
+                '<div class="search-result-title">' + result.heading + '</div>' +
+                '<div class="search-result-excerpt">' + excerpt + '</div>' +
+                '</div>';
         });
 
         searchResults.innerHTML = resultsHTML;
 
         // Add click handlers to results
-        searchResults.querySelectorAll('.search-result-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const section = item.dataset.section;
-                const heading = item.dataset.heading;
+        searchResults.querySelectorAll('.search-result-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var section = item.dataset.section;
+                var heading = item.dataset.heading;
                 closeSearchModal();
                 navigateToResult(section, heading);
             });
@@ -250,26 +249,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function highlightText(text, query) {
-        const regex = new RegExp(\`(\${query})\`, 'gi');
+        var regex = new RegExp('(' + query + ')', 'gi');
         return text.replace(regex, '<mark>$1</mark>').substring(0, 200) + '...';
     }
 
     function navigateToResult(sectionKey, headingText) {
         // Switch to section
-        const navItem = document.querySelector(\`[data-section="\${sectionKey}"]\`);
+        var navItem = document.querySelector('[data-section="' + sectionKey + '"]');
         if (navItem) {
             setActiveNav(navItem);
             loadSection(sectionKey);
 
             // Scroll to heading
-            setTimeout(() => {
-                const headings = contentArea.querySelectorAll('h1, h2, h3, h4');
-                for (const heading of headings) {
+            setTimeout(function() {
+                var headings = contentArea.querySelectorAll('h1, h2, h3, h4');
+                for (var i = 0; i < headings.length; i++) {
+                    var heading = headings[i];
                     if (heading.textContent.trim() === headingText) {
                         heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         // Highlight briefly
                         heading.style.backgroundColor = 'rgba(52, 152, 219, 0.3)';
-                        setTimeout(() => {
+                        setTimeout(function() {
                             heading.style.backgroundColor = '';
                         }, 2000);
                         break;
