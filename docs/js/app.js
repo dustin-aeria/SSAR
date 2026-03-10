@@ -2713,112 +2713,59 @@ function showIMSAFEChecklist() {
                 <div class="qa-procedure-subtitle">Complete before every flight - Required for all crew members</div>
             </div>
 
-            <div class="qa-warning-box" style="margin-bottom: 24px;">
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                Before every operation, all crew members must complete the IMSAFE self-assessment:
+            </p>
+
+            <div style="overflow-x: auto;">
+                <table class="qa-reference-table">
+                    <tr>
+                        <th style="width: 80px;">Letter</th>
+                        <th style="width: 120px;">Factor</th>
+                        <th>Question</th>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; font-size: 1.2rem; color: var(--primary-blue);">I</td>
+                        <td><strong>Illness</strong></td>
+                        <td>Am I suffering from any illness or symptom?</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; font-size: 1.2rem; color: var(--primary-blue);">M</td>
+                        <td><strong>Medication</strong></td>
+                        <td>Am I taking any medication that could impair my performance?</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; font-size: 1.2rem; color: var(--primary-blue);">S</td>
+                        <td><strong>Stress</strong></td>
+                        <td>Am I under psychological pressure (work, family, financial)?</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; font-size: 1.2rem; color: var(--primary-blue);">A</td>
+                        <td><strong>Alcohol</strong></td>
+                        <td>Have I consumed alcohol within the last 12 hours?</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; font-size: 1.2rem; color: var(--primary-blue);">F</td>
+                        <td><strong>Fatigue</strong></td>
+                        <td>Have I had adequate sleep and rest? Am I fatigued?</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; font-size: 1.2rem; color: var(--primary-blue);">E</td>
+                        <td><strong>Eating</strong></td>
+                        <td>Have I eaten and am I properly hydrated?</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="qa-warning-box" style="margin-top: 24px;">
                 <i class="fas fa-exclamation-triangle"></i>
                 <div class="qa-info-box-content">
                     <h4>NO-GO Criteria</h4>
-                    <p>Any "YES" to illness, medication impairment, alcohol, or significant fatigue is an automatic NO-GO for flight operations.</p>
+                    <p>Any "YES" answer to illness, medication impairment, alcohol, or significant fatigue is a <strong>NO-GO</strong>.</p>
                 </div>
-            </div>
-
-            <div class="qa-checklist">
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-thermometer-half"></i> I - Illness</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I am NOT suffering from any illness or symptoms that could affect my performance</div>
-                    </div>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 8px 0 0 36px; font-style: italic;">
-                        Consider: cold, flu, headache, stomach issues, dizziness, vision problems
-                    </p>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-pills"></i> M - Medication</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I am NOT taking any medication that could impair my performance</div>
-                    </div>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 8px 0 0 36px; font-style: italic;">
-                        Includes: prescription, over-the-counter, antihistamines, sleep aids, pain medication
-                    </p>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-brain"></i> S - Stress</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I am NOT under excessive psychological pressure that affects my focus</div>
-                    </div>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 8px 0 0 36px; font-style: italic;">
-                        Consider: work stress, family issues, financial pressure, recent trauma
-                    </p>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-wine-glass-alt"></i> A - Alcohol</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I have NOT consumed alcohol within the last 12 hours</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I am NOT experiencing any residual effects from alcohol</div>
-                    </div>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 8px 0 0 36px; font-style: italic;">
-                        12-hour "bottle-to-throttle" rule applies (CAR 602.03)
-                    </p>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-bed"></i> F - Fatigue</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I have had adequate sleep (minimum 7-8 hours recommended)</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I am NOT experiencing fatigue that could impair my judgment</div>
-                    </div>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 8px 0 0 36px; font-style: italic;">
-                        Consider: hours awake, sleep quality, physical exhaustion from recent activity
-                    </p>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-utensils"></i> E - Eating/Emotion</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I have eaten properly and am adequately hydrated</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">I am in a stable emotional state suitable for safe operations</div>
-                    </div>
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 8px 0 0 36px; font-style: italic;">
-                        Low blood sugar and dehydration impair decision-making; strong emotions affect focus
-                    </p>
-                </div>
-            </div>
-
-            <div class="qa-info-box" style="margin-top: 24px;">
-                <i class="fas fa-info-circle"></i>
-                <div class="qa-info-box-content">
-                    <h4>When in Doubt</h4>
-                    <p>If you're uncertain about any factor, discuss with your crew. It's always better to stand down than to compromise safety. Another qualified pilot can take over if needed.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 24px; padding: 16px; background: var(--success-green-bg); border-radius: 8px; border-left: 4px solid var(--success-green);">
-                <p style="margin: 0; color: var(--success-green); font-weight: 600;">
-                    <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
-                    All items checked = FIT FOR DUTY
-                </p>
             </div>
         </div>
     `;
-
-    setupChecklistInteractivity();
 }
 
 // ========================================
