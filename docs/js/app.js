@@ -2308,11 +2308,11 @@ function showFlyAwayScript() {
                     </p>
                 </div>
 
-                <div style="background: white; border-left: 4px solid var(--warning-orange); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                <div style="background: white; border-left: 4px solid var(--accent-blue); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
                     <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
-                        "The RPAS is a <strong style="color: var(--warning-orange);">[COLOR]</strong>,
-                        <strong style="color: var(--warning-orange);">[MAKE/MODEL]</strong>,
-                        weighing <strong style="color: var(--warning-orange);">[WEIGHT]</strong> grams."
+                        "The RPAS is a <strong style="color: var(--accent-blue);">[COLOR]</strong>,
+                        <strong style="color: var(--accent-blue);">[MAKE/MODEL]</strong>,
+                        weighing <strong style="color: var(--accent-blue);">[WEIGHT]</strong> grams."
                     </p>
                 </div>
 
@@ -2324,19 +2324,19 @@ function showFlyAwayScript() {
                     </p>
                 </div>
 
-                <div style="background: white; border-left: 4px solid var(--success-green); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
+                <div style="background: white; border-left: 4px solid var(--accent-blue); padding: 20px; border-radius: 0 8px 8px 0; margin-bottom: 16px;">
                     <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
-                        "The RPAS is flying at <strong style="color: var(--success-green);">[ALTITUDE] feet ASL</strong>,
-                        heading <strong style="color: var(--success-green);">[HEADING]</strong>
-                        at <strong style="color: var(--success-green);">[SPEED] knots</strong>."
+                        "The RPAS is flying at <strong style="color: var(--accent-blue);">[ALTITUDE] feet ASL</strong>,
+                        heading <strong style="color: var(--accent-blue);">[HEADING]</strong>
+                        at <strong style="color: var(--accent-blue);">[SPEED] knots</strong>."
                     </p>
                 </div>
 
-                <div style="background: white; border-left: 4px solid var(--extreme-purple); padding: 20px; border-radius: 0 8px 8px 0;">
+                <div style="background: white; border-left: 4px solid var(--accent-blue); padding: 20px; border-radius: 0 8px 8px 0;">
                     <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-primary);">
-                        "Maximum flight time is <strong style="color: var(--extreme-purple);">[MAX TIME] minutes</strong>.<br>
-                        Estimated remaining battery: <strong style="color: var(--extreme-purple);">[BATTERY]%</strong>.<br>
-                        Maximum remaining travel distance: <strong style="color: var(--extreme-purple);">[DISTANCE] NM</strong>."
+                        "Maximum flight time is <strong style="color: var(--accent-blue);">[MAX TIME] minutes</strong>.<br>
+                        Estimated remaining battery: <strong style="color: var(--accent-blue);">[BATTERY]%</strong>.<br>
+                        Maximum remaining travel distance: <strong style="color: var(--accent-blue);">[DISTANCE] NM</strong>."
                     </p>
                 </div>
             </div>
@@ -2654,9 +2654,9 @@ function showRegulationsReference() {
             <table class="qa-reference-table" style="min-width: 700px;">
                 <tr>
                     <th style="width: 22%;">Capability</th>
-                    <th style="width: 26%; background: #85c1e9;">Basic Operations</th>
-                    <th style="width: 26%; background: #5dade2;">Advanced Operations</th>
-                    <th style="width: 26%; background: #27ae60;">Complex Level 1 (RPOC)</th>
+                    <th style="width: 26%;">Basic Operations</th>
+                    <th style="width: 26%;">Advanced Operations</th>
+                    <th style="width: 26%;">Complex Level 1 (RPOC)</th>
                 </tr>
                 <tr>
                     <td><strong>Controlled Airspace</strong></td>
@@ -2749,8 +2749,8 @@ function showRegulationsReference() {
             <table class="qa-reference-table">
                 <tr>
                     <th>Parameter</th>
-                    <th style="background: var(--warning-orange);">STSC-003 (High Alt VLOS)</th>
-                    <th style="background: var(--success-green);">STSC-004 (BVLOS)</th>
+                    <th>STSC-003 (High Alt VLOS)</th>
+                    <th>STSC-004 (BVLOS)</th>
                 </tr>
                 <tr>
                     <td><strong>Max Altitude</strong></td>
@@ -2812,41 +2812,41 @@ function showRegulationsReference() {
                 <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
                     <strong style="color: var(--primary-blue);">Q: Can I fly near an airport?</strong>
                     <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="display: inline-block; background: #85c1e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> Stay outside controlled airspace and 3 NM from airports.<br>
-                        <span style="display: inline-block; background: #5dade2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> Can request authorization via NAV Drone to fly closer.<br>
-                        <span style="display: inline-block; background: #27ae60; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> Per Standard Scenario + ATC coordination (24hr notice for STSC-003).
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> Stay outside controlled airspace and 3 NM from airports.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> Can request authorization via NAV Drone to fly closer.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> Per Standard Scenario + ATC coordination (24hr notice for STSC-003).
                     </p>
                 </div>
                 <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
                     <strong style="color: var(--primary-blue);">Q: Can I fly over people?</strong>
                     <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="display: inline-block; background: #85c1e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> No, never over bystanders.<br>
-                        <span style="display: inline-block; background: #5dade2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> Yes, maintain 30m horizontal distance from uninvolved persons.<br>
-                        <span style="display: inline-block; background: #27ae60; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> Controlled ground area required (M1 SORA mitigation).
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> No, never over bystanders.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> Yes, maintain 30m horizontal distance from uninvolved persons.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> Controlled ground area required (M1 SORA mitigation).
                     </p>
                 </div>
                 <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
                     <strong style="color: var(--primary-blue);">Q: Can I fly BVLOS (Beyond Visual Line of Sight)?</strong>
                     <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="display: inline-block; background: #85c1e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> No, VLOS required at all times.<br>
-                        <span style="display: inline-block; background: #5dade2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> No, VLOS required at all times.<br>
-                        <span style="display: inline-block; background: #27ae60; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> <strong>YES with STSC-004</strong> - sparsely populated (&lt;25/km²), max 400' AGL.
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> No, VLOS required at all times.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> No, VLOS required at all times.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> <strong>YES with STSC-004</strong> - sparsely populated (&lt;25/km²), max 400' AGL.
                     </p>
                 </div>
                 <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
                     <strong style="color: var(--primary-blue);">Q: Can I fly above 400 feet?</strong>
                     <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="display: inline-block; background: #85c1e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> No, 400' AGL is the absolute limit.<br>
-                        <span style="display: inline-block; background: #5dade2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> No, 400' AGL limit (unless SFOC obtained).<br>
-                        <span style="display: inline-block; background: #27ae60; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> <strong>YES with STSC-003</strong> - up to 1000' AGL with 24hr ATC notification.
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> No, 400' AGL is the absolute limit.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> No, 400' AGL limit (unless SFOC obtained).<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> <strong>YES with STSC-003</strong> - up to 1000' AGL with 24hr ATC notification.
                     </p>
                 </div>
                 <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
                     <strong style="color: var(--primary-blue);">Q: What documentation do I need?</strong>
                     <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="display: inline-block; background: #85c1e9; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> Pilot certificate, drone registration.<br>
-                        <span style="display: inline-block; background: #5dade2; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> Pilot certificate + flight review record, drone registration.<br>
-                        <span style="display: inline-block; background: #27ae60; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> RPOC, Operations Manual, SMS, MCM, pilot endorsements, SORA.
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Basic</span> Pilot certificate, drone registration.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Advanced</span> Pilot certificate + flight review record, drone registration.<br>
+                        <span style="display: inline-block; background: var(--text-secondary); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 4px;">Complex L1</span> RPOC, Operations Manual, SMS, MCM, pilot endorsements, SORA.
                     </p>
                 </div>
                 <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
