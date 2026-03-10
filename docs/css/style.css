@@ -10,9 +10,17 @@
 
     /* Status Colors */
     --success-green: #27ae60;
+    --success-green-bg: rgba(39, 174, 96, 0.15);
     --warning-orange: #f39c12;
+    --warning-orange-bg: rgba(243, 156, 18, 0.15);
     --danger-red: #e74c3c;
+    --danger-red-bg: rgba(231, 76, 60, 0.15);
     --info-blue: #3498db;
+    --info-blue-bg: rgba(52, 152, 219, 0.15);
+    --caution-yellow: #f1c40f;
+    --caution-yellow-bg: rgba(241, 196, 15, 0.15);
+    --extreme-purple: #9b59b6;
+    --extreme-purple-bg: rgba(155, 89, 182, 0.15);
 
     /* Neutral Colors */
     --bg-primary: #f8f9fa;
@@ -499,6 +507,10 @@ body {
     line-height: 1.6;
 }
 
+/* ========================================
+   ENHANCED TABLE STYLES
+   ======================================== */
+
 .content-area table {
     width: 100%;
     border-collapse: collapse;
@@ -510,16 +522,20 @@ body {
 }
 
 .content-area th {
-    background: var(--primary-blue);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
     color: white;
-    padding: 12px 16px;
+    padding: 14px 16px;
     text-align: left;
     font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
 .content-area td {
     padding: 12px 16px;
     border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
 }
 
 .content-area tr:nth-child(even) {
@@ -527,8 +543,151 @@ body {
 }
 
 .content-area tr:hover {
-    background: rgba(52, 152, 219, 0.05);
+    background: rgba(52, 152, 219, 0.08);
 }
+
+.content-area tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========================================
+   RISK LEVEL COLOR CODING
+   ======================================== */
+
+/* Risk Level Cells */
+.risk-extreme, td.risk-extreme {
+    background: var(--extreme-purple-bg) !important;
+    color: var(--extreme-purple);
+    font-weight: 700;
+    border-left: 4px solid var(--extreme-purple);
+}
+
+.risk-high, td.risk-high {
+    background: var(--danger-red-bg) !important;
+    color: var(--danger-red);
+    font-weight: 700;
+    border-left: 4px solid var(--danger-red);
+}
+
+.risk-medium, td.risk-medium {
+    background: var(--warning-orange-bg) !important;
+    color: #c27607;
+    font-weight: 600;
+    border-left: 4px solid var(--warning-orange);
+}
+
+.risk-low, td.risk-low {
+    background: var(--success-green-bg) !important;
+    color: var(--success-green);
+    font-weight: 600;
+    border-left: 4px solid var(--success-green);
+}
+
+/* Status Indicator Cells */
+.status-green, td.status-green {
+    background: var(--success-green-bg) !important;
+    color: var(--success-green);
+    font-weight: 600;
+}
+
+.status-yellow, td.status-yellow {
+    background: var(--caution-yellow-bg) !important;
+    color: #a68a00;
+    font-weight: 600;
+}
+
+.status-orange, td.status-orange {
+    background: var(--warning-orange-bg) !important;
+    color: #c27607;
+    font-weight: 600;
+}
+
+.status-red, td.status-red {
+    background: var(--danger-red-bg) !important;
+    color: var(--danger-red);
+    font-weight: 600;
+}
+
+/* Status Badges (inline) */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.green {
+    background: var(--success-green);
+    color: white;
+}
+
+.status-badge.yellow {
+    background: var(--caution-yellow);
+    color: #333;
+}
+
+.status-badge.orange {
+    background: var(--warning-orange);
+    color: white;
+}
+
+.status-badge.red {
+    background: var(--danger-red);
+    color: white;
+}
+
+/* ========================================
+   CATEGORY INDICATORS
+   ======================================== */
+
+.category-a, td.category-a {
+    background: var(--danger-red-bg) !important;
+    border-left: 4px solid var(--danger-red);
+}
+
+.category-b, td.category-b {
+    background: var(--warning-orange-bg) !important;
+    border-left: 4px solid var(--warning-orange);
+}
+
+.category-c, td.category-c {
+    background: var(--caution-yellow-bg) !important;
+    border-left: 4px solid var(--caution-yellow);
+}
+
+.category-d, td.category-d {
+    background: var(--success-green-bg) !important;
+    border-left: 4px solid var(--success-green);
+}
+
+/* ========================================
+   CHECKLIST STYLING
+   ======================================== */
+
+.content-area td:has(input[type="checkbox"]),
+.checklist-cell {
+    text-align: center;
+    width: 60px;
+}
+
+.content-area input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent-blue);
+}
+
+/* Checkbox placeholder styling [ ] */
+td:contains("[ ]"), td:contains("[x]"), td:contains("[X]") {
+    font-family: var(--font-mono);
+}
+
+/* ========================================
+   ENHANCED CODE BLOCKS
+   ======================================== */
 
 .content-area code {
     background: var(--bg-tertiary);
@@ -536,15 +695,17 @@ body {
     border-radius: 4px;
     font-family: var(--font-mono);
     font-size: 0.9em;
+    color: var(--danger-red);
 }
 
 .content-area pre {
-    background: var(--primary-blue);
+    background: linear-gradient(135deg, #1e3a5f 0%, #2c3e50 100%);
     color: #f8f8f2;
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
     margin: 24px 0;
+    border-left: 4px solid var(--accent-blue);
 }
 
 .content-area pre code {
@@ -553,19 +714,135 @@ body {
     color: inherit;
 }
 
+/* ========================================
+   ENHANCED BLOCKQUOTES / CALLOUTS
+   ======================================== */
+
 .content-area blockquote {
     border-left: 4px solid var(--accent-blue);
     padding: 16px 20px;
     margin: 24px 0;
-    background: rgba(52, 152, 219, 0.05);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(52, 152, 219, 0.03) 100%);
     border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.content-area blockquote::before {
+    content: "\f05a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: -12px;
+    top: 16px;
+    background: var(--accent-blue);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
 
 .content-area blockquote p:last-child {
     margin-bottom: 0;
 }
 
-/* Alert Boxes */
+/* Warning Blockquotes */
+.content-area blockquote.warning,
+.content-area blockquote:has(strong:first-child:contains("WARNING")),
+.content-area blockquote:has(strong:first-child:contains("CAUTION")) {
+    border-left-color: var(--warning-orange);
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(243, 156, 18, 0.03) 100%);
+}
+
+.content-area blockquote.warning::before {
+    content: "\f071";
+    background: var(--warning-orange);
+}
+
+/* Critical Blockquotes */
+.content-area blockquote.critical,
+.content-area blockquote:has(strong:first-child:contains("CRITICAL")),
+.content-area blockquote:has(strong:first-child:contains("IMPORTANT")) {
+    border-left-color: var(--danger-red);
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.03) 100%);
+}
+
+.content-area blockquote.critical::before {
+    content: "\f06a";
+    background: var(--danger-red);
+}
+
+/* Note Blockquotes */
+.content-area blockquote.note,
+.content-area blockquote:has(strong:first-child:contains("Note")) {
+    border-left-color: var(--info-blue);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0.03) 100%);
+}
+
+/* ========================================
+   EMERGENCY PROCEDURE STYLING
+   ======================================== */
+
+.emergency-section {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%);
+    border: 2px solid var(--danger-red);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.emergency-section h3,
+.emergency-section h4 {
+    color: var(--danger-red);
+    margin-top: 0;
+}
+
+/* DESCEND Protocol Styling */
+.protocol-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px;
+    margin: 8px 0;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-blue);
+}
+
+.protocol-letter {
+    width: 40px;
+    height: 40px;
+    background: var(--danger-red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   MNEMONIC / ACRONYM STYLING
+   ======================================== */
+
+.mnemonic-table td:first-child {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50px;
+    color: var(--danger-red);
+    background: var(--danger-red-bg);
+}
+
+/* ========================================
+   ALERT BOXES
+   ======================================== */
+
 .content-area .alert {
     padding: 16px 20px;
     border-radius: 8px;
@@ -576,49 +853,163 @@ body {
 }
 
 .content-area .alert-warning {
-    background: rgba(243, 156, 18, 0.1);
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.15) 0%, rgba(243, 156, 18, 0.08) 100%);
     border-left: 4px solid var(--warning-orange);
 }
 
 .content-area .alert-danger {
-    background: rgba(231, 76, 60, 0.1);
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.15) 0%, rgba(231, 76, 60, 0.08) 100%);
     border-left: 4px solid var(--danger-red);
 }
 
 .content-area .alert-info {
-    background: rgba(52, 152, 219, 0.1);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0.08) 100%);
     border-left: 4px solid var(--info-blue);
 }
 
 .content-area .alert-success {
-    background: rgba(39, 174, 96, 0.1);
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.15) 0%, rgba(39, 174, 96, 0.08) 100%);
     border-left: 4px solid var(--success-green);
 }
 
-/* Emergency Procedure Box */
-.emergency-box {
-    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%);
-    border: 2px solid var(--danger-red);
-    border-radius: 12px;
-    padding: 24px;
-    margin: 32px 0;
-}
+/* ========================================
+   SPECIAL SECTION HEADERS
+   ======================================== */
 
-.emergency-box h3 {
+/* Emergency Headings */
+.content-area h2.emergency-heading,
+.content-area h3.emergency-heading {
     color: var(--danger-red);
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    border-bottom-color: var(--danger-red);
 }
 
-.emergency-box h3::before {
-    content: "\f071";
+.content-area h2.emergency-heading::before,
+.content-area h3.emergency-heading::before {
+    content: "\f071 ";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
+    margin-right: 8px;
 }
 
-/* Search Overlay */
+/* Procedure Headings */
+.content-area h3.procedure-heading::before {
+    content: "\f0ae ";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 8px;
+    color: var(--accent-blue);
+}
+
+/* ========================================
+   RATING SCALES
+   ======================================== */
+
+.rating-4, td.rating-4 { background: var(--success-green-bg) !important; }
+.rating-3, td.rating-3 { background: var(--info-blue-bg) !important; }
+.rating-2, td.rating-2 { background: var(--warning-orange-bg) !important; }
+.rating-1, td.rating-1 { background: var(--danger-red-bg) !important; }
+
+/* ========================================
+   GO / NO-GO STYLING
+   ======================================== */
+
+.go-indicator, td.go-indicator {
+    background: var(--success-green) !important;
+    color: white !important;
+    font-weight: 700;
+    text-align: center;
+}
+
+.caution-indicator, td.caution-indicator {
+    background: var(--warning-orange) !important;
+    color: white !important;
+    font-weight: 700;
+    text-align: center;
+}
+
+.nogo-indicator, td.nogo-indicator {
+    background: var(--danger-red) !important;
+    color: white !important;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* ========================================
+   SAIL / SORA STYLING
+   ======================================== */
+
+.sail-1, td.sail-1 { background: #d4edda !important; color: #155724; }
+.sail-2, td.sail-2 { background: #cce5ff !important; color: #004085; }
+.sail-3, td.sail-3 { background: #fff3cd !important; color: #856404; }
+.sail-4, td.sail-4 { background: #f8d7da !important; color: #721c24; }
+.sail-5, td.sail-5 { background: #e2d5f1 !important; color: #4a235a; }
+.sail-6, td.sail-6 { background: #d6336c !important; color: white; }
+
+/* ========================================
+   WEATHER CONDITION STYLING
+   ======================================== */
+
+.weather-go { background: var(--success-green-bg) !important; }
+.weather-caution { background: var(--caution-yellow-bg) !important; }
+.weather-nogo { background: var(--danger-red-bg) !important; }
+
+/* ========================================
+   TAG COLORS FOR STATUS
+   ======================================== */
+
+.tag-green {
+    background: var(--success-green);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-yellow {
+    background: var(--caution-yellow);
+    color: #333;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-red {
+    background: var(--danger-red);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tag-white {
+    background: #f0f0f0;
+    color: #333;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+}
+
+/* ========================================
+   HORIZONTAL RULES
+   ======================================== */
+
+.content-area hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue) 0%, var(--border-color) 50%, var(--accent-blue) 100%);
+    margin: 40px 0;
+    border-radius: 2px;
+}
+
+/* ========================================
+   SEARCH OVERLAY
+   ======================================== */
+
 .search-overlay {
     position: fixed;
     top: 0;
@@ -727,7 +1118,10 @@ body {
     border-radius: 2px;
 }
 
-/* Back to Top Button */
+/* ========================================
+   BACK TO TOP BUTTON
+   ======================================== */
+
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -755,7 +1149,10 @@ body {
     transform: translateY(10px);
 }
 
-/* Print Styles */
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
 @media print {
     .main-header,
     .sidebar,
@@ -786,9 +1183,18 @@ body {
     .content-area table {
         page-break-inside: avoid;
     }
+
+    .risk-extreme, .risk-high, .risk-medium, .risk-low,
+    .status-green, .status-yellow, .status-orange, .status-red {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 }
 
-/* Responsive Design */
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
 @media (max-width: 1200px) {
     .toc-sidebar {
         display: none;
@@ -814,7 +1220,10 @@ body {
     }
 }
 
-/* Scrollbar Styling */
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -833,7 +1242,10 @@ body {
     background: var(--text-secondary);
 }
 
-/* Animation for content loading */
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -847,4 +1259,13 @@ body {
 
 .content-area.loaded {
     animation: fadeIn 0.3s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
 }
