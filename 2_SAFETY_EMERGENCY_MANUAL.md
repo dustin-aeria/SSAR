@@ -17,6 +17,21 @@
 
 1. [Safety Management System](#1-safety-management-system)
 2. [Emergency Procedures](#2-emergency-procedures)
+   - 2.4 System Failure Procedures
+   - 2.5 GPS Failure Procedures
+   - 2.6 Loss of Control Procedures
+   - 2.7 Fly-Away (Critical Emergency)
+   - 2.8 Emergency Landing
+   - 2.9 Battery Emergency
+   - 2.9A Icing Conditions
+   - 2.9B Fire Emergency
+   - 2.9C Injury Response
+   - 2.10 Traffic Conflict / DESCEND Protocol
+   - 2.11 CFIT Prevention
+   - 2.12 Inadvertent IMC Entry
+   - 2.13 Flight Termination and Crash
+   - 2.14 Time-Critical SAR Operations
+   - 2.15 Post-Emergency Actions
 3. [SORA Documentation](#3-sora-documentation)
 4. [Hazard Identification and Risk Assessment](#4-hazard-identification-and-risk-assessment)
 5. [Detect and Avoid](#5-detect-and-avoid)
@@ -416,6 +431,90 @@ An emergency landing is a procedure where the RPAS is brought down safely as qui
 | 3 | If fire: Use fire extinguisher, sand or dirt - **DO NOT USE WATER** |
 | 4 | Evacuate area - toxic fumes possible |
 | 5 | Call emergency services if uncontrolled |
+
+### 2.9A Icing Conditions
+
+> **CRITICAL: SSAR maintains ZERO TOLERANCE for known or forecast icing conditions per CAR 901.35.**
+
+#### 2.9A.1 Icing Recognition Indicators
+
+| Indicator |
+|-----------|
+| Visible ice on propellers or fuselage |
+| Unusual vibration or motor noise |
+| Decreased performance / higher power consumption |
+| Erratic flight behavior |
+| Ice buildup visible on camera feed |
+
+#### 2.9A.2 Icing Conditions Immediate Actions
+
+| Step | Action |
+|------|--------|
+| 1 | ANNOUNCE: "ICING SUSPECTED" or "ICING CONFIRMED" - Alert crew |
+| 2 | DESCEND: Move to warmer altitude if possible (temperature inversion) |
+| 3 | RETURN: Initiate immediate RTH or direct route to landing zone |
+| 4 | INCREASE POWER MARGIN: Fly slower, maintain extra altitude for approach |
+| 5 | CONTROLLED LANDING: Land immediately at safe location |
+
+#### 2.9A.3 Icing NO-GO Conditions
+
+Operations shall NOT commence or shall be immediately terminated when:
+
+| Condition | Requirement |
+|-----------|-------------|
+| Active precipitation + temps below 5°C | NO-GO |
+| Visible moisture + temps below 0°C | NO-GO |
+| Freezing fog present | NO-GO |
+| Ice observed on aircraft surfaces | LAND IMMEDIATELY |
+
+### 2.9B Fire Emergency
+
+#### 2.9B.1 LiPo Battery Fire Response
+
+> **CRITICAL: LiPo battery fires produce toxic fumes and can reignite. DO NOT use water.**
+
+| Step | Action |
+|------|--------|
+| 1 | **EVACUATE:** Shout "FIRE! FIRE!" - Clear all personnel to 10m minimum. Move upwind. |
+| 2 | **CALL 911:** If fire cannot be immediately controlled or is spreading |
+| 3 | **EXTINGUISH (if safe):** Use Class D extinguisher, dry sand, or fire blanket. **NO WATER on LiPo.** |
+| 4 | **CONTAIN:** If battery swelling but not yet on fire - move to fireproof container or sand |
+| 5 | **MONITOR:** LiPo fires can reignite. Monitor for 30+ minutes after fire out. |
+
+#### 2.9B.2 Battery Fire Warning Signs
+
+| Warning Sign | Action |
+|--------------|--------|
+| Swelling | Remove from aircraft, place in fire-safe container |
+| Hissing | EVACUATE immediately, prepare for fire |
+| Smoking | EVACUATE immediately, extinguisher ready |
+| Unusual heat | Remove from aircraft if safe, monitor |
+| Sweet/chemical smell | Investigate source, prepare for thermal event |
+
+### 2.9C Injury Response (Personnel Emergency)
+
+#### 2.9C.1 Injury Response Procedure
+
+| Step | Action |
+|------|--------|
+| 1 | **CEASE OPERATIONS:** Land aircraft immediately. All focus on injured person. |
+| 2 | **ASSESS:** Determine severity. Is person conscious? Breathing? Bleeding? |
+| 3 | **CALL FOR HELP:** 911 for serious injuries. SAR medical personnel if on-scene. |
+| 4 | **FIRST AID:** Provide first aid within your training level. Do not move suspected spine injuries. |
+| 5 | **DOCUMENT:** Record incident details. Report to Chief Pilot. TSB if serious. |
+
+#### 2.9C.2 TSB Reporting Requirement
+
+> **Serious injury (requiring hospitalization) involving RPAS operations must be reported to TSB within 24 hours: 1-800-387-3557**
+
+#### 2.9C.3 Injury Classification
+
+| Severity | Definition | Reporting |
+|----------|------------|-----------|
+| Minor | First aid only, no medical treatment required | Internal report within 24 hours |
+| Moderate | Medical treatment required, no hospitalization | Internal report + Transport Canada notification |
+| Serious | Hospitalization required | Internal + Transport Canada + TSB notification |
+| Fatal | Death resulting from RPAS operation | Immediate TSB notification, scene preservation |
 
 ### 2.10 Airspace Conflict / Traffic Conflict
 
