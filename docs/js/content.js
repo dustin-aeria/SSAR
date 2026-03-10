@@ -1180,14 +1180,14 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 | Chief Pilot | Dustin Wales | 2026-03-09 |
 
 **END OF TRAINING PROGRAM MANUAL**
-\`
+`
     },
 
     forms: {
         title: "Forms & Maintenance Manual",
         icon: "fa-clipboard-list",
         docCount: 5,
-        content: \`# SSAR Forms & Maintenance Manual
+        content: `# SSAR Forms & Maintenance Manual
 
 ## Squamish Search and Rescue - RPAS Operations Program
 
