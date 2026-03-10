@@ -363,9 +363,38 @@ A fly-away is when the aircraft does not respond to any control inputs and flies
 | RPAS Potential | "Max flight time: [n] minutes. Estimated remaining battery: [n]%." |
 | Maximum Travel | "Estimated maximum remaining travel distance: [n] NM." |
 
-### 2.8 Battery Emergency
+### 2.8 Emergency Landing
 
-#### 2.8.1 Low Battery Response
+An emergency landing is a procedure where the RPAS is brought down safely as quickly as possible due to an unforeseen issue or potential hazard. This is done to prevent accidents or further complications.
+
+#### 2.8.1 Emergency Landing Procedure
+
+| Step | Action |
+|------|--------|
+| 1 | **SITE SELECTION:** Quickly identify safe landing site free from people, structures, and hazards |
+| 2 | **ANNOUNCE:** "Emergency Landing" to crew and team |
+| 3 | **COMMUNICATE:** Inform local authorities if necessary |
+| 4 | **EXECUTE:** Execute emergency landing as practiced in training |
+| 5 | **SECURE:** Secure RPAS after landing and inspect for damage |
+| 6 | **DOCUMENT:** Record incident per Section 6 |
+
+#### 2.8.2 Site Selection Criteria
+
+| Priority | Criterion |
+|----------|-----------|
+| 1 | Clear of all persons |
+| 2 | Free from overhead obstructions (wires, branches) |
+| 3 | Level, solid surface if possible |
+| 4 | Away from roads, trails, waterways |
+| 5 | Accessible for recovery |
+
+> **NOTE:** In emergency conditions, a water landing may be preferable to risking injury to persons. Water (where people are not present) is recognized as a safe scuttle option.
+
+---
+
+### 2.9 Battery Emergency
+
+#### 2.9.1 Low Battery Response
 
 | Battery Level | Action |
 |---------------|--------|
@@ -376,7 +405,7 @@ A fly-away is when the aircraft does not respond to any control inputs and flies
 | 10% | Find and land safely, immediately |
 | Critical | Aircraft will auto-land - clear the area |
 
-#### 2.8.2 Battery Thermal Event
+#### 2.9.2 Battery Thermal Event
 
 **Symptoms:** Smoke, swelling, unusual heat, burning smell.
 
@@ -388,9 +417,9 @@ A fly-away is when the aircraft does not respond to any control inputs and flies
 | 4 | Evacuate area - toxic fumes possible |
 | 5 | Call emergency services if uncontrolled |
 
-### 2.9 Airspace Conflict / Traffic Conflict
+### 2.10 Airspace Conflict / Traffic Conflict
 
-#### 2.9.1 Traffic Alert Response
+#### 2.10.1 Traffic Alert Response
 
 Upon ADS-B alert or visual sighting:
 
@@ -402,7 +431,7 @@ Upon ADS-B alert or visual sighting:
 | 4 | YIELD - Manned aircraft ALWAYS has right of way |
 | 5 | RESUME only when traffic is clear |
 
-#### 2.9.2 The Descend Protocol (Emergency Maneuver)
+#### 2.10.2 The Descend Protocol (Emergency Maneuver)
 
 Emergency maneuver to clear airspace for manned aviation.
 
@@ -422,14 +451,14 @@ Emergency maneuver to clear airspace for manned aviation.
 | 1 | VO **IDENTIFIES** threat and calls: "Critical Threat! DESCEND, DESCEND, DESCEND" |
 | 2 | PIC **IMMEDIATELY** executes descent as above |
 
-#### 2.9.3 Safety Constraints
+#### 2.10.3 Safety Constraints
 
 | Constraint | Description |
 |------------|-------------|
 | Terrain Awareness | Do not crash into terrain - descend to the lowest SAFE altitude |
 | Divergence | If a vertical descent is unsafe or insufficient, maneuver the RPAS downward and away from the aircraft's projected path |
 
-### 2.10 CFIT (Controlled Flight Into Terrain) Prevention
+### 2.11 CFIT (Controlled Flight Into Terrain) Prevention
 
 For mountain operations:
 
@@ -441,7 +470,7 @@ For mountain operations:
 | Monitor AGL vs MSL carefully |
 | Immediate climb if terrain closure detected |
 
-### 2.11 Inadvertent IMC Entry
+### 2.12 Inadvertent IMC Entry
 
 If aircraft enters cloud, fog, or reduced visibility conditions:
 
@@ -455,9 +484,9 @@ If aircraft enters cloud, fog, or reduced visibility conditions:
 | 6 | ABORT - Use RTH function |
 | 7 | LAND - Land as soon as visual is regained |
 
-### 2.12 Flight Termination and Crash
+### 2.13 Flight Termination and Crash
 
-#### 2.12.1 Flight Termination (Kill Switch)
+#### 2.13.1 Flight Termination (Kill Switch)
 
 Use only when crash is imminent and uncontrolled flight poses greater risk.
 
@@ -467,7 +496,7 @@ Use only when crash is imminent and uncontrolled flight poses greater risk.
 | 2 | EXECUTE: Perform flight termination command (CSC or Stop Motors) |
 | 3 | WARN: Shout "LOOK OUT!" or "HEADS UP!" |
 
-#### 2.12.2 Crash Event / Post-Impact
+#### 2.13.2 Crash Event / Post-Impact
 
 | Step | Action |
 |------|--------|
@@ -477,7 +506,7 @@ Use only when crash is imminent and uncontrolled flight poses greater risk.
 | 4 | PRESERVATION: If crash involved injury or manned aircraft, DO NOT MOVE wreckage (secure scene for TSB investigation) |
 | 5 | REPORTING: Refer to Section 6 (Incident/Accident Reporting) |
 
-### 2.13 Time-Critical SAR Operations
+### 2.14 Time-Critical SAR Operations
 
 When SSAR receives an emergency SAR activation that does not permit standard 24-hour ATC notification:
 
@@ -496,7 +525,7 @@ When SSAR receives an emergency SAR activation that does not permit standard 24-
 
 **Note:** Thermal search effectiveness is maintained at sub-400' altitudes. The 80-120 meter optimal detection altitude falls within STSC-004 limits.
 
-### 2.14 Post-Emergency Actions
+### 2.15 Post-Emergency Actions
 
 After any emergency or abnormal event:
 

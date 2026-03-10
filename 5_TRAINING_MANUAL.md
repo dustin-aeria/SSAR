@@ -259,7 +259,119 @@ Upon completion of Foundation Training, trainees will be able to:
 
 ---
 
-### 3.9 Foundation Flight Review
+### 3.9 Foundation Flight Maneuvers (Detailed)
+
+All flights at this stage are conducted under manual control within a designated operational area (column of airspace under 400' AGL, VLOS maintained).
+
+#### 3.9.1 Manual Take-off, Hover, and Landing
+
+| Step | Description |
+|------|-------------|
+| 1 | Position RPAS on launch site so that pitching forward moves directly away from PIC |
+| 2 | Arm the RPAS |
+| 3 | Gradually increase throttle until lift-off |
+| 4 | Increase altitude to 5 meters (starting location for subsequent maneuvers) |
+| 5 | Hover the RPAS for minimum 30 seconds |
+| 6 | Descend and land safely |
+
+#### 3.9.2 Attitude and Movement Control
+
+Use short manual inputs (<2 seconds) for pitch, roll, throttle, and yaw:
+
+| Input | Direction 1 | Direction 2 |
+|-------|-------------|-------------|
+| Pitch | Forward | Backward |
+| Roll | Left | Right |
+| Throttle | Up | Down |
+| Yaw | Left | Right |
+
+Perform inputs individually and sequentially to develop muscle memory and control precision.
+
+#### 3.9.3 Vertical, Lateral, and Longitudinal Flight
+
+| Requirement | Standard |
+|-------------|----------|
+| Orientation | Pitching forward moves RPAS directly away from PIC |
+| Control Type | Longer manual inputs |
+| Minimum Horizontal Distance | 50 meters each direction |
+| Minimum Vertical Distance | 30 meters altitude increase |
+| Progressive Increase | Add 50m increments up to 200m as confidence grows |
+
+Inputs should be sequential and individual, moving in both directions.
+
+#### 3.9.4 Translating Flight
+
+Combine pitch and roll inputs to fly the RPAS along a diagonal path:
+
+- Fly out and back to distance of at least 50 meters
+- Perform in both roll directions (left diagonal and right diagonal)
+- Develop coordinated control inputs
+
+#### 3.9.5 RPAS Orientation
+
+| Step | Description |
+|------|-------------|
+| 1 | At home location, yaw RPAS 90 degrees |
+| 2 | Perform Lateral and Longitudinal Flight maneuvers |
+| 3 | Repeat with two additional 90-degree yaw rotations |
+| 4 | Enhances situational awareness from different orientations |
+
+#### 3.9.6 Point of Interest (POI)
+
+| Step | Description |
+|------|-------------|
+| 1 | Establish a target on test site (e.g., brightly colored traffic cone) |
+| 2 | Fly a path around target, maintaining constant distance |
+| 3 | Keep camera pointed at target by combining roll and yaw inputs |
+| 4 | PIC relies on VO communication while monitoring ground control screen |
+
+This maneuver simulates deviation during flight plan to avoid obstacles or monitor locations from multiple angles.
+
+#### 3.9.7 Circuit Flight Path
+
+| Parameter | Standard |
+|-----------|----------|
+| Circuit Shape | Rectangular - 50m narrow side, 100m long side |
+| Markers | Pylons or markers at all four corners |
+| Takeoff Position | Middle of one long side |
+| Circuit Direction | Left or right-handed (establish before flight) |
+| Pattern Altitude | 30 meters AGL |
+
+**Execution:**
+1. Takeoff to 5m hover
+2. Climb at ≤45° angle to first corner, level at 30m
+3. Complete circuit with coordinated turns at each corner
+4. On final leg, descend at ≤45° angle back to hover above launch
+5. Land
+
+RPAS orientation changes with each leg, giving practice with varying perspectives.
+
+#### 3.9.8 Return to Home Test and Recovery
+
+| Step | Description |
+|------|-------------|
+| 1 | Fly RPAS 200 meters from launch location |
+| 2 | Initiate RTH function |
+| 3 | Allow RPAS to return under automated control |
+| 4 | When 50-100m from launch, cancel RTH and take manual control |
+| 5 | Repeat, allowing RPAS to complete full RTH and auto-land |
+
+#### 3.9.9 Emergency Procedure Training
+
+Four emergency scenarios are conducted during Foundation Training:
+
+| Scenario | Type | Description |
+|----------|------|-------------|
+| 1 | Random Selection | Trainer selects from emergency procedures list |
+| 2 | Random Selection | Different scenario from procedures list |
+| 3 | **MANDATORY** | Fly-away scenario with FIC call simulation |
+| 4 | **MANDATORY** | DESCEND Protocol execution |
+
+Refer to Safety & Emergency Manual Section 2 for detailed emergency procedures.
+
+---
+
+### 3.10 Foundation Flight Review
 
 The Flight Review is the culminating assessment for Foundation Training.
 
@@ -294,7 +406,7 @@ If a trainee does not meet the required standard:
 
 ---
 
-### 3.10 Foundation Progression Outcome
+### 3.11 Foundation Progression Outcome
 
 > Upon successful completion of Foundation Training and flight review, pilots are authorized to operate the training aircraft they were trained on under the SSAR RPOC. Pilots may then progress to Advanced Training for operational equipment authorization.
 

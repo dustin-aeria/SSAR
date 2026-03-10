@@ -1442,6 +1442,99 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 | Accountable Executive | Dustin Wales | 2026-03-09 |
 | Chief Pilot | Dustin Wales | 2026-03-09 |
 
+---
+
+## 9. Quick Reference Cards
+
+### 9.1 Emergency Fly-Away Script
+
+> **CRITICAL CONTACT: FIC Kamloops Direct Line: 250-376-7045**
+
+**Fly-Away Communication Script:**
+
+**Step 1 - Initial Contact:**
+> "FIC Kamloops, this is [PILOT NAME] with Squamish Search and Rescue RPAS Operations. We are experiencing a fly-away emergency."
+
+**Step 2 - Provide Details:**
+> - Aircraft type: DJI [M30T/M4TD]
+> - Last known position: [LAT/LONG]
+> - Last known altitude: [XXX] feet AGL
+> - Last known heading: [direction]
+
+**Step 3 - Aircraft Description:**
+> - Small quadcopter, approximately [30cm/50cm] diameter
+> - Color: [grey/dark grey]
+> - Maximum endurance remaining: [XX] minutes
+
+#### DESCEND Protocol (Fly-Away)
+
+| Step | Letter | Action |
+|------|--------|--------|
+| 1 | **D** | DISCONNECT - Note time of lost link |
+| 2 | **E** | EVALUATE - Check last telemetry |
+| 3 | **S** | SCAN - Visual scan of last known direction |
+| 4 | **C** | CALL - Contact FIC Kamloops: 250-376-7045 |
+| 5 | **E** | EVACUATE - Clear expected flight path area |
+| 6 | **N** | NOTIFY - Alert all crew members |
+| 7 | **D** | DOCUMENT - Record all details |
+
+---
+
+### 9.2 Traffic De-Conflict Quick Reference
+
+| Scenario | Situation | Action | Priority |
+|----------|-----------|--------|----------|
+| **1** | Manned aircraft approaching | LAND IMMEDIATELY or descend below 50' AGL | Manned aircraft ALWAYS has right-of-way |
+| **2** | Helicopter in same area | Coordinate via radio; 500' separation | Coordinate before launch |
+| **3** | Fixed-wing transiting | Descend and hold | Monitor and yield |
+| **4** | Multiple RPAS | Stagger altitudes by 100' | Coordination required |
+| **5** | Emergency aircraft | IMMEDIATE LAND | Land and disable immediately |
+
+**Traffic Communication:**
+> "TRAFFIC! [Position - clock direction], [altitude estimate], [aircraft type], [direction of travel]"
+
+---
+
+### 9.3 Rapid Site Survey (5-Point Field Assessment)
+
+| # | Check | Details |
+|---|-------|---------|
+| **1** | **AIRSPACE** | Controlled airspace, NOTAMs, nearby airports |
+| **2** | **HAZARDS** | Power lines, towers, tall structures |
+| **3** | **TERRAIN** | Slopes, obstacles, landing clearance (3m radius) |
+| **4** | **PEOPLE** | Bystanders, safety perimeter (30m minimum) |
+| **5** | **WEATHER** | Wind, visibility, precipitation, temperature |
+
+| Condition | Action |
+|-----------|--------|
+| All 5 checks PASS | Proceed to pre-flight |
+| 1-2 checks MARGINAL | Proceed with documented mitigations |
+| Any check FAIL | DO NOT FLY |
+
+---
+
+### 9.4 Emergency Contacts Quick Reference
+
+| Contact | Number | When to Use |
+|---------|--------|-------------|
+| **FIC Kamloops (Direct)** | **250-376-7045** | Fly-away, airspace emergency |
+| **NAV CANADA** | 1-866-WXBRIEF | NOTAM, weather briefing |
+| **Emergency** | 911 | Critical situation |
+
+---
+
+### 9.5 Battery Status Quick Reference
+
+| Indicator | Status | Action |
+|-----------|--------|--------|
+| 100-60% | GREEN | Normal operations |
+| 59-40% | YELLOW | Plan return, monitor |
+| 39-25% | ORANGE | RTH immediately |
+| 24-15% | RED | Land ASAP, auto-RTH active |
+| <15% | CRITICAL | Auto-land imminent |
+
+> **SAR MINIMUM:** Start all SAR flights with >95% battery charge.
+
 **END OF FORMS & MAINTENANCE MANUAL**
 `
     }

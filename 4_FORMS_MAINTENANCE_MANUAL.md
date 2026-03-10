@@ -23,6 +23,7 @@
 6. [Firmware Management](#6-firmware-management)
 7. [Maintenance Records](#7-maintenance-records)
 8. [Document Control](#8-document-control)
+9. [Quick Reference Cards](#9-quick-reference-cards)
 
 ---
 
@@ -673,6 +674,152 @@ This consolidated Forms & Maintenance Manual incorporates content from the follo
 | MCM-001 | Maintenance Control Manual |
 | MAINT-001 | Maintenance Records |
 | MNT-002 | Firmware Updates & Battery Care |
+
+---
+
+## 9. Quick Reference Cards
+
+### 9.1 Emergency Fly-Away Script
+
+> **CRITICAL CONTACT: FIC Kamloops Direct Line: 250-376-7045**
+
+When experiencing a fly-away or lost link emergency requiring ATC notification:
+
+#### 9.1.1 Fly-Away Communication Script
+
+**Step 1 - Initial Contact:**
+> "FIC Kamloops, this is [PILOT NAME] with Squamish Search and Rescue RPAS Operations. We are experiencing a fly-away emergency."
+
+**Step 2 - Provide Details:**
+> - "Aircraft type: DJI [M30T/M4TD]"
+> - "Last known position: [LAT/LONG or description]"
+> - "Last known altitude: [XXX] feet AGL"
+> - "Last known heading: [direction]"
+> - "Time of lost contact: [time]"
+
+**Step 3 - Provide Aircraft Description:**
+> - "Aircraft is a small quadcopter, approximately [30cm/50cm] diameter"
+> - "Color: [grey/dark grey]"
+> - "Maximum endurance remaining: approximately [XX] minutes"
+
+**Step 4 - Request:**
+> "Request you advise aircraft in the area. Our contact number is [PHONE NUMBER]."
+
+**Step 5 - Document:**
+> - Record name of FIC controller
+> - Record time of notification
+> - Record any instructions provided
+
+#### 9.1.2 DESCEND Protocol (Fly-Away)
+
+| Step | Letter | Action |
+|------|--------|--------|
+| 1 | **D** | DISCONNECT - Note time of lost link |
+| 2 | **E** | EVALUATE - Check last telemetry: altitude, heading, speed |
+| 3 | **S** | SCAN - Visual scan of last known direction |
+| 4 | **C** | CALL - Contact FIC Kamloops: 250-376-7045 |
+| 5 | **E** | EVACUATE - Clear expected flight path area |
+| 6 | **N** | NOTIFY - Alert all crew members |
+| 7 | **D** | DOCUMENT - Record all details for incident report |
+
+> **IMPORTANT:** Aircraft programmed for auto-land at 0% battery. Expected flight time on full battery is approximately 40 minutes.
+
+---
+
+### 9.2 Traffic De-Conflict Quick Reference
+
+#### 9.2.1 De-Conflict Scenarios Matrix
+
+| Scenario | Situation | Action | Priority |
+|----------|-----------|--------|----------|
+| **1** | Manned aircraft approaching operating area | LAND IMMEDIATELY or descend below 50' AGL | Manned aircraft ALWAYS has right-of-way |
+| **2** | Helicopter operating in same area | Coordinate via radio; maintain minimum 500' horizontal separation | Coordinate before launch |
+| **3** | Fixed-wing traffic transiting area | Descend and hold position until traffic clear | Monitor and yield |
+| **4** | Multiple RPAS in same airspace | Stagger altitudes by minimum 100'; establish communication | Coordination required |
+| **5** | Emergency aircraft (MEDEVAC, etc.) | IMMEDIATE LAND - no exceptions | Land and disable immediately |
+
+#### 9.2.2 Traffic Communication
+
+**When traffic spotted:**
+> "TRAFFIC! [Position - clock direction], [altitude estimate], [aircraft type if known], [direction of travel]"
+
+**Example:**
+> "TRAFFIC! 2 o'clock, low, helicopter, moving north to south"
+
+**Response protocol:**
+1. PIC acknowledges traffic
+2. PIC announces intended action: "DESCENDING" or "LANDING" or "HOLDING"
+3. VO confirms traffic clear before resuming
+
+#### 9.2.3 Altitude Quick Reference
+
+| Airspace | Max RPAS Altitude | Notes |
+|----------|-------------------|-------|
+| Time-Critical SAR (no ATC) | 400' AGL | STSC-004 parameters |
+| STSC-003 (with 24hr ATC notice) | Up to 1000' AGL | ATC notification required |
+| STSC-004 BVLOS | 400' AGL | Low-risk corridor operations |
+| Near airports (controlled) | 0' without authorization | Requires specific authorization |
+| Near heliports | 0' without coordination | Direct coordination required |
+
+---
+
+### 9.3 Rapid Site Survey Checklist
+
+**5-Point Field Assessment for Time-Critical Operations**
+
+Complete within 2-3 minutes for urgent SAR deployment:
+
+| # | Check | Details | ✓ |
+|---|-------|---------|---|
+| **1** | **AIRSPACE** | Check for controlled airspace, NOTAMs, nearby airports/heliports | [ ] |
+| **2** | **HAZARDS** | Identify power lines, towers, tall structures, moving equipment | [ ] |
+| **3** | **TERRAIN** | Assess slopes, obstacles, landing zone clearance (min 3m radius) | [ ] |
+| **4** | **PEOPLE** | Identify bystanders, establish safety perimeter (30m minimum) | [ ] |
+| **5** | **WEATHER** | Wind speed/direction, visibility, precipitation, temperature | [ ] |
+
+#### 9.3.1 Rapid Survey Decision Matrix
+
+| Condition | Action |
+|-----------|--------|
+| All 5 checks PASS | Proceed to pre-flight |
+| 1-2 checks MARGINAL | Proceed with documented mitigations |
+| Any check FAIL | DO NOT FLY - relocate or stand down |
+
+#### 9.3.2 Quick Weather Assessment
+
+| Parameter | GO | CAUTION | NO-GO |
+|-----------|-----|---------|-------|
+| Wind (sustained) | <10 m/s | 10-15 m/s | >15 m/s |
+| Gusts | <12 m/s | 12-18 m/s | >18 m/s |
+| Visibility | >5 km | 3-5 km | <3 km |
+| Ceiling | >500' AGL | 200-500' AGL | <200' AGL |
+| Precipitation | None | Light | Moderate/Heavy |
+
+---
+
+### 9.4 Emergency Contacts Quick Reference
+
+| Contact | Number | When to Use |
+|---------|--------|-------------|
+| **FIC Kamloops (Direct)** | 250-376-7045 | Fly-away, airspace emergency |
+| **NAV CANADA** | 1-866-WXBRIEF | NOTAM, weather briefing |
+| **Squamish SAR Base** | [Insert Number] | SAR coordination |
+| **RCMP Squamish** | [Insert Number] | Ground emergency |
+| **BC Ambulance** | 911 | Medical emergency |
+
+---
+
+### 9.5 Battery Status Quick Reference
+
+| Indicator | Status | Action |
+|-----------|--------|--------|
+| 100-60% | GREEN | Normal operations |
+| 59-40% | YELLOW | Plan return, monitor |
+| 39-25% | ORANGE | RTH immediately |
+| 24-15% | RED | Land ASAP, auto-RTH active |
+| <15% | CRITICAL | Auto-land imminent |
+
+> **SAR MINIMUM:** Start all SAR flights with >95% battery charge.
 
 ---
 
