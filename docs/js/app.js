@@ -576,7 +576,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 var targetId = link.getAttribute('href').slice(1);
                 var target = document.getElementById(targetId);
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Calculate position accounting for fixed header (64px + 16px buffer)
+                    var headerOffset = 80;
+                    var elementPosition = target.getBoundingClientRect().top;
+                    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
