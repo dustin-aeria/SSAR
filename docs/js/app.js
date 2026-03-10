@@ -529,7 +529,20 @@ document.addEventListener('DOMContentLoaded', function() {
         var jumpConfig = QUICK_ACCESS[jumpId];
         if (!jumpConfig) return;
 
-        // Switch to the section
+        // Check if this is a modal-type quick access
+        if (jumpConfig.type === 'modal') {
+            // Call the appropriate modal handler
+            if (jumpConfig.handler === 'showEmergencyProcedures') {
+                showEmergencyProcedures();
+            } else if (jumpConfig.handler === 'showFlyAwayScript') {
+                showFlyAwayScript();
+            } else if (jumpConfig.handler === 'showPreFlightChecklist') {
+                showPreFlightChecklist();
+            }
+            return;
+        }
+
+        // Legacy jump behavior for weather minimums, etc.
         var navItem = document.querySelector('[data-section="' + jumpConfig.section + '"]');
         if (navItem) {
             setActiveNav(navItem);
@@ -676,13 +689,1005 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Quick Access Configuration
+// Quick Access Configuration - now with modal support
 var QUICK_ACCESS = {
-    'emergency-procedures': { section: 'safety', search: 'Emergency Procedures' },
-    'fly-away': { section: 'safety', search: 'Fly-Away' },
-    'pre-flight': { section: 'forms', search: 'Pre-Flight' },
-    'weather-minimums': { section: 'operations', search: 'Weather Minimum' }
+    'emergency-procedures': { type: 'modal', handler: 'showEmergencyProcedures' },
+    'fly-away': { type: 'modal', handler: 'showFlyAwayScript' },
+    'pre-flight': { type: 'modal', handler: 'showPreFlightChecklist' },
+    'weather-minimums': { type: 'jump', section: 'operations', search: 'Weather Minimum' }
 };
+
+// ========================================
+// QUICK ACCESS MODAL SYSTEM
+// ========================================
+
+var qaOverlay = document.getElementById('quick-access-overlay');
+var qaContent = document.getElementById('quick-access-content');
+var qaTitleText = document.getElementById('quick-access-title-text');
+var qaCloseBtn = document.getElementById('close-quick-access');
+var qaBackBtn = document.getElementById('quick-access-back');
+var qaCurrentView = 'main';
+
+// Close button handler
+if (qaCloseBtn) {
+    qaCloseBtn.addEventListener('click', closeQuickAccess);
+}
+
+// Back button handler
+if (qaBackBtn) {
+    qaBackBtn.addEventListener('click', function() {
+        showEmergencyProcedures();
+    });
+}
+
+// Close on overlay click
+if (qaOverlay) {
+    qaOverlay.addEventListener('click', function(e) {
+        if (e.target === qaOverlay) closeQuickAccess();
+    });
+}
+
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !qaOverlay.classList.contains('hidden')) {
+        closeQuickAccess();
+    }
+});
+
+function openQuickAccess(title) {
+    qaTitleText.textContent = title;
+    qaOverlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeQuickAccess() {
+    qaOverlay.classList.add('hidden');
+    document.body.style.overflow = '';
+    qaBackBtn.classList.add('hidden');
+    qaCurrentView = 'main';
+}
+
+// ========================================
+// EMERGENCY PROCEDURES - Card Selection
+// ========================================
+
+function showEmergencyProcedures() {
+    openQuickAccess('Emergency Procedures');
+    qaBackBtn.classList.add('hidden');
+    qaCurrentView = 'emergency-list';
+
+    qaContent.innerHTML = `
+        <div class="ep-card-grid">
+            <div class="ep-card critical" onclick="showProcedure('flyaway')">
+                <span class="ep-card-badge">Critical</span>
+                <div class="ep-card-icon"><i class="fas fa-plane-departure"></i></div>
+                <div class="ep-card-title">Fly-Away Response</div>
+                <div class="ep-card-description">Complete loss of aircraft control. Immediate FIC notification required.</div>
+            </div>
+
+            <div class="ep-card critical" onclick="showProcedure('descend')">
+                <span class="ep-card-badge">Critical</span>
+                <div class="ep-card-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="ep-card-title">DESCEND Protocol</div>
+                <div class="ep-card-description">Critical traffic threat response. Immediate altitude reduction.</div>
+            </div>
+
+            <div class="ep-card critical" onclick="showProcedure('crash')">
+                <span class="ep-card-badge">Critical</span>
+                <div class="ep-card-icon"><i class="fas fa-bomb"></i></div>
+                <div class="ep-card-title">Crash/Impact Response</div>
+                <div class="ep-card-description">Aircraft crash or collision with object, person, or structure.</div>
+            </div>
+
+            <div class="ep-card warning" onclick="showProcedure('lostlink')">
+                <span class="ep-card-badge">Warning</span>
+                <div class="ep-card-icon"><i class="fas fa-wifi"></i></div>
+                <div class="ep-card-title">Lost Link Procedure</div>
+                <div class="ep-card-description">Loss of command and control link with aircraft.</div>
+            </div>
+
+            <div class="ep-card warning" onclick="showProcedure('lowbattery')">
+                <span class="ep-card-badge">Warning</span>
+                <div class="ep-card-icon"><i class="fas fa-battery-quarter"></i></div>
+                <div class="ep-card-title">Low Battery Emergency</div>
+                <div class="ep-card-description">Critical battery level requiring immediate landing.</div>
+            </div>
+
+            <div class="ep-card warning" onclick="showProcedure('icing')">
+                <span class="ep-card-badge">Warning</span>
+                <div class="ep-card-icon"><i class="fas fa-snowflake"></i></div>
+                <div class="ep-card-title">Icing Conditions</div>
+                <div class="ep-card-description">Ice accumulation affecting aircraft performance.</div>
+            </div>
+
+            <div class="ep-card info" onclick="showProcedure('injury')">
+                <div class="ep-card-icon"><i class="fas fa-first-aid"></i></div>
+                <div class="ep-card-title">Injury Response</div>
+                <div class="ep-card-description">Crew or bystander injury during operations.</div>
+            </div>
+
+            <div class="ep-card info" onclick="showProcedure('fire')">
+                <div class="ep-card-icon"><i class="fas fa-fire"></i></div>
+                <div class="ep-card-title">Fire Emergency</div>
+                <div class="ep-card-description">Battery fire or equipment fire response.</div>
+            </div>
+        </div>
+    `;
+}
+
+function showProcedure(procedureId) {
+    qaBackBtn.classList.remove('hidden');
+    qaCurrentView = 'procedure-detail';
+
+    var procedures = {
+        'flyaway': getFlyAwayProcedure(),
+        'descend': getDescendProcedure(),
+        'crash': getCrashProcedure(),
+        'lostlink': getLostLinkProcedure(),
+        'lowbattery': getLowBatteryProcedure(),
+        'icing': getIcingProcedure(),
+        'injury': getInjuryProcedure(),
+        'fire': getFireProcedure()
+    };
+
+    qaContent.innerHTML = procedures[procedureId] || '<p>Procedure not found.</p>';
+
+    // Add checklist interactivity
+    setupChecklistInteractivity();
+}
+
+function setupChecklistInteractivity() {
+    var items = qaContent.querySelectorAll('.qa-checklist-item');
+    items.forEach(function(item) {
+        item.addEventListener('click', function() {
+            item.classList.toggle('checked');
+            var checkbox = item.querySelector('.qa-checklist-checkbox');
+            if (item.classList.contains('checked')) {
+                checkbox.innerHTML = '<i class="fas fa-check"></i>';
+            } else {
+                checkbox.innerHTML = '';
+            }
+        });
+    });
+}
+
+// ========================================
+// INDIVIDUAL EMERGENCY PROCEDURES
+// ========================================
+
+function getFlyAwayProcedure() {
+    qaTitleText.textContent = 'Fly-Away Response';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon"><i class="fas fa-plane-departure"></i></div>
+                <div class="qa-procedure-title">FLY-AWAY RESPONSE</div>
+                <div class="qa-procedure-subtitle">Complete loss of aircraft control - IMMEDIATE ACTION REQUIRED</div>
+            </div>
+
+            <div class="qa-critical-box">
+                <h4><i class="fas fa-exclamation-circle"></i> IMMEDIATE ACTIONS</h4>
+                <ul>
+                    <li><strong>ANNOUNCE:</strong> "FLY-AWAY! FLY-AWAY!" - Alert all crew</li>
+                    <li><strong>TOGGLE:</strong> Flight modes P → A → P rapidly</li>
+                    <li><strong>TRIGGER:</strong> Press RTH button immediately</li>
+                    <li><strong>VO TRACKS:</strong> Maintain visual, note heading and speed</li>
+                </ul>
+            </div>
+
+            <div class="qa-emergency-call">
+                <div class="qa-emergency-call-title">CALL FIC KAMLOOPS IMMEDIATELY</div>
+                <div class="qa-emergency-call-number"><a href="tel:250-376-7045">250-376-7045</a></div>
+            </div>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">1</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">ANNOUNCE</div>
+                        <div class="qa-mnemonic-action">"FLY-AWAY! FLY-AWAY!" - Shout clearly to alert all crew members</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">2</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">TOGGLE FLIGHT MODES</div>
+                        <div class="qa-mnemonic-action">Switch P → A → P rapidly (3 times minimum)</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">3</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">TRIGGER RTH</div>
+                        <div class="qa-mnemonic-action">Press and hold RTH button for 3 seconds</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">4</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">VO TRACKS</div>
+                        <div class="qa-mnemonic-action">Visual Observer maintains visual contact, reports heading, altitude, speed</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">5</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">CALL FIC</div>
+                        <div class="qa-mnemonic-action">250-376-7045 - Report: Aircraft type, last known position, heading, altitude</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">6</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DOCUMENT</div>
+                        <div class="qa-mnemonic-action">Record time, location, conditions, all actions taken. Pull flight logs.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>FIC Information to Provide</h4>
+                    <p>Aircraft: DJI M30T or M4TD • Last position/heading • Altitude AGL • Flight time remaining • Your contact info</p>
+                </div>
+            </div>
+
+            <table class="qa-reference-table">
+                <tr><th>Contact</th><th>Number</th><th>When</th></tr>
+                <tr><td>FIC Kamloops (Direct)</td><td><strong>250-376-7045</strong></td><td>IMMEDIATELY</td></tr>
+                <tr><td>FIC Kamloops (Toll-Free)</td><td>1-866-541-4101</td><td>Backup</td></tr>
+                <tr><td>TSB Hotline</td><td>1-800-387-3557</td><td>Within 24 hours</td></tr>
+                <tr><td>Chief Pilot</td><td>As per contact list</td><td>ASAP</td></tr>
+            </table>
+        </div>
+    `;
+}
+
+function getDescendProcedure() {
+    qaTitleText.textContent = 'DESCEND Protocol';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="qa-procedure-title">DESCEND PROTOCOL</div>
+                <div class="qa-procedure-subtitle">Critical Traffic Threat Response</div>
+            </div>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">D</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DESCEND IMMEDIATELY</div>
+                        <div class="qa-mnemonic-action">Announce "DESCEND, DESCEND, DESCEND" - Begin immediate altitude reduction</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">E</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">EVALUATE</div>
+                        <div class="qa-mnemonic-action">Assess threat trajectory, closure rate, and altitude</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">S</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">SWITCH</div>
+                        <div class="qa-mnemonic-action">Take manual control - disengage any automated modes</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">C</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">CLEAR</div>
+                        <div class="qa-mnemonic-action">Move laterally away from threat flight path</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">E</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">EXECUTE</div>
+                        <div class="qa-mnemonic-action">Rapid descent to safe altitude (below 50' AGL if needed)</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">N</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">NOTIFY</div>
+                        <div class="qa-mnemonic-action">Inform crew when clear: "CLEAR OF TRAFFIC"</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">D</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DOCUMENT</div>
+                        <div class="qa-mnemonic-action">Record aircraft type, altitude, heading for incident report</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Key Principle</h4>
+                    <p>Manned aircraft ALWAYS have right of way. Descend immediately - do not attempt to climb above traffic.</p>
+                </div>
+            </div>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>If Traffic Conflict Occurs</h4>
+                    <p>Report near-miss or actual collision to NAV CANADA and TSB immediately. Document everything.</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function getCrashProcedure() {
+    qaTitleText.textContent = 'Crash/Impact Response';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon"><i class="fas fa-bomb"></i></div>
+                <div class="qa-procedure-title">CRASH/IMPACT RESPONSE</div>
+                <div class="qa-procedure-subtitle">Aircraft crash or collision procedure</div>
+            </div>
+
+            <div class="qa-critical-box">
+                <h4><i class="fas fa-exclamation-circle"></i> PRIORITY ORDER</h4>
+                <ul>
+                    <li><strong>1. PEOPLE</strong> - Any injuries? Call 911 if needed</li>
+                    <li><strong>2. PROPERTY</strong> - Damage to structures, vehicles, other property?</li>
+                    <li><strong>3. AIRCRAFT</strong> - Secure and document</li>
+                </ul>
+            </div>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">1</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">SECURE THE AREA</div>
+                        <div class="qa-mnemonic-action">Clear bystanders, mark crash site, do not move aircraft</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">2</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">ASSESS INJURIES</div>
+                        <div class="qa-mnemonic-action">Check all personnel and bystanders. Call 911 if any injuries.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">3</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">BATTERY SAFETY</div>
+                        <div class="qa-mnemonic-action">If battery damaged/swelling: DO NOT TOUCH. Keep 10m distance. Have fire extinguisher ready.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">4</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DOCUMENT</div>
+                        <div class="qa-mnemonic-action">Photos from multiple angles. GPS coordinates. DO NOT move debris.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">5</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">NOTIFY</div>
+                        <div class="qa-mnemonic-action">Chief Pilot immediately. TSB if reportable occurrence.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>TSB Reportable?</h4>
+                    <p>Report to TSB (1-800-387-3557) if: Serious injury to any person, significant property damage, or aircraft lost.</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function getLostLinkProcedure() {
+    qaTitleText.textContent = 'Lost Link Procedure';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon warning"><i class="fas fa-wifi"></i></div>
+                <div class="qa-procedure-title">LOST LINK PROCEDURE</div>
+                <div class="qa-procedure-subtitle">Loss of command and control link</div>
+            </div>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Pre-Configured Failsafe Actions</h4>
+                    <p>M30T/M4TD will automatically execute RTH after signal loss timeout (default 11 seconds)</p>
+                </div>
+            </div>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">1</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">ANNOUNCE</div>
+                        <div class="qa-mnemonic-action">"LOST LINK" - Alert crew. Note time and last known position.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">2</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">VO TRACKS</div>
+                        <div class="qa-mnemonic-action">Visual Observer maintains visual contact. Reports aircraft behavior.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">3</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">WAIT FOR RTH</div>
+                        <div class="qa-mnemonic-action">Aircraft should initiate RTH within 11 seconds. Watch for climb to RTH altitude.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">4</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">REPOSITION</div>
+                        <div class="qa-mnemonic-action">If no RTH, move controller to clear line of sight with aircraft.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">5</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">PREPARE FOR LANDING</div>
+                        <div class="qa-mnemonic-action">Clear home point area. Be ready to take control when link restores.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>If Aircraft Does Not RTH</h4>
+                    <p>Treat as FLY-AWAY. Call FIC Kamloops: 250-376-7045</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function getLowBatteryProcedure() {
+    qaTitleText.textContent = 'Low Battery Emergency';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon warning"><i class="fas fa-battery-quarter"></i></div>
+                <div class="qa-procedure-title">LOW BATTERY EMERGENCY</div>
+                <div class="qa-procedure-subtitle">Critical battery level response</div>
+            </div>
+
+            <table class="qa-reference-table">
+                <tr><th>Battery Level</th><th>Action Required</th><th>Behavior</th></tr>
+                <tr style="background: rgba(243, 156, 18, 0.15)"><td><strong>30%</strong></td><td>Low Battery Warning</td><td>Return to home area</td></tr>
+                <tr style="background: rgba(231, 76, 60, 0.15)"><td><strong>20%</strong></td><td>Critical Battery</td><td>Initiate RTH</td></tr>
+                <tr style="background: rgba(231, 76, 60, 0.3)"><td><strong>10%</strong></td><td>Emergency Landing</td><td>Auto-land in place</td></tr>
+            </table>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">1</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">ANNOUNCE</div>
+                        <div class="qa-mnemonic-action">"LOW BATTERY - [percentage]%" - Alert crew to battery status</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">2</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">IDENTIFY LANDING ZONE</div>
+                        <div class="qa-mnemonic-action">Nearest safe landing area. Consider: terrain, obstacles, wind</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">3</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DIRECT ROUTE</div>
+                        <div class="qa-mnemonic-action">Fly direct to landing zone. Cancel any automated missions.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">4</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DESCEND</div>
+                        <div class="qa-mnemonic-action">Reduce altitude to minimize flight time to ground</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">5</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">LAND</div>
+                        <div class="qa-mnemonic-action">Controlled landing before forced auto-land</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Prevention</h4>
+                    <p>Plan missions to land with 30% minimum. Account for headwinds, altitude, and temperature effects on battery.</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function getIcingProcedure() {
+    qaTitleText.textContent = 'Icing Conditions';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon warning"><i class="fas fa-snowflake"></i></div>
+                <div class="qa-procedure-title">ICING CONDITIONS</div>
+                <div class="qa-procedure-subtitle">Ice accumulation response procedure</div>
+            </div>
+
+            <div class="qa-critical-box">
+                <h4><i class="fas fa-exclamation-circle"></i> ICING INDICATORS</h4>
+                <ul>
+                    <li>Visible ice on propellers or fuselage</li>
+                    <li>Unusual vibration or motor noise</li>
+                    <li>Decreased performance / higher power consumption</li>
+                    <li>Erratic flight behavior</li>
+                </ul>
+            </div>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">1</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">ANNOUNCE</div>
+                        <div class="qa-mnemonic-action">"ICING SUSPECTED" or "ICING CONFIRMED" - Alert crew</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">2</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DESCEND</div>
+                        <div class="qa-mnemonic-action">Move to warmer altitude if possible (inversion layer)</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">3</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">RETURN</div>
+                        <div class="qa-mnemonic-action">Initiate immediate RTH or direct route to landing zone</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">4</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">INCREASE POWER MARGIN</div>
+                        <div class="qa-mnemonic-action">Fly slower, maintain extra altitude margin for approach</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter warning">5</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">CONTROLLED LANDING</div>
+                        <div class="qa-mnemonic-action">Land immediately at safe location</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>NO-GO Conditions</h4>
+                    <p>Do not launch if: Active precipitation + temps below 5°C, visible moisture + temps below 0°C, or freezing fog present.</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function getInjuryProcedure() {
+    qaTitleText.textContent = 'Injury Response';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon info"><i class="fas fa-first-aid"></i></div>
+                <div class="qa-procedure-title">INJURY RESPONSE</div>
+                <div class="qa-procedure-subtitle">Crew or bystander injury procedure</div>
+            </div>
+
+            <div class="qa-emergency-call">
+                <div class="qa-emergency-call-title">LIFE-THREATENING INJURY?</div>
+                <div class="qa-emergency-call-number"><a href="tel:911">CALL 911</a></div>
+            </div>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter info">1</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">CEASE OPERATIONS</div>
+                        <div class="qa-mnemonic-action">Land aircraft immediately. All focus on injured person.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter info">2</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">ASSESS</div>
+                        <div class="qa-mnemonic-action">Determine severity. Is person conscious? Breathing? Bleeding?</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter info">3</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">CALL FOR HELP</div>
+                        <div class="qa-mnemonic-action">911 for serious injuries. SAR medical personnel if on-scene.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter info">4</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">FIRST AID</div>
+                        <div class="qa-mnemonic-action">Provide first aid within your training level. Do not move spine injuries.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter info">5</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">DOCUMENT</div>
+                        <div class="qa-mnemonic-action">Record incident details. Report to Chief Pilot. TSB if serious.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>TSB Reporting Requirement</h4>
+                    <p>Serious injury (requiring hospitalization) must be reported to TSB within 24 hours: 1-800-387-3557</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function getFireProcedure() {
+    qaTitleText.textContent = 'Fire Emergency';
+    return `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon"><i class="fas fa-fire"></i></div>
+                <div class="qa-procedure-title">FIRE EMERGENCY</div>
+                <div class="qa-procedure-subtitle">Battery fire or equipment fire response</div>
+            </div>
+
+            <div class="qa-critical-box">
+                <h4><i class="fas fa-exclamation-circle"></i> LIPO BATTERY FIRE - CRITICAL</h4>
+                <ul>
+                    <li><strong>DO NOT</strong> use water on lithium battery fires</li>
+                    <li><strong>EVACUATE</strong> all personnel to 10m minimum distance</li>
+                    <li><strong>TOXIC FUMES</strong> - Move upwind, do not inhale smoke</li>
+                    <li><strong>CALL 911</strong> if fire spreads or cannot be controlled</li>
+                </ul>
+            </div>
+
+            <div class="qa-mnemonic">
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">1</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">EVACUATE</div>
+                        <div class="qa-mnemonic-action">"FIRE! FIRE!" - Clear all personnel to 10m minimum. Move upwind.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">2</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">CALL 911</div>
+                        <div class="qa-mnemonic-action">If fire cannot be immediately controlled or is spreading</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">3</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">EXTINGUISH (if safe)</div>
+                        <div class="qa-mnemonic-action">Use Class D extinguisher, dry sand, or fire blanket. NO WATER on LiPo.</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">4</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">CONTAIN</div>
+                        <div class="qa-mnemonic-action">If battery is swelling but not yet on fire: move to fireproof container or sand</div>
+                    </div>
+                </div>
+                <div class="qa-mnemonic-step">
+                    <div class="qa-mnemonic-letter">5</div>
+                    <div class="qa-mnemonic-content">
+                        <div class="qa-mnemonic-word">MONITOR</div>
+                        <div class="qa-mnemonic-action">LiPo fires can reignite. Monitor for 30+ minutes after fire out.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Battery Fire Signs</h4>
+                    <p>Swelling, hissing, smoking, unusual heat, sweet/chemical smell. If any signs: EVACUATE and prepare for fire.</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// ========================================
+// FLY-AWAY SCRIPT (Direct Access)
+// ========================================
+
+function showFlyAwayScript() {
+    openQuickAccess('Fly-Away Emergency Script');
+    qaBackBtn.classList.add('hidden');
+    qaContent.innerHTML = getFlyAwayProcedure();
+}
+
+// ========================================
+// PRE-FLIGHT CHECKLIST (Direct Access)
+// ========================================
+
+function showPreFlightChecklist() {
+    openQuickAccess('Pre-Flight Checklist');
+    qaBackBtn.classList.add('hidden');
+
+    qaContent.innerHTML = `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon info"><i class="fas fa-clipboard-check"></i></div>
+                <div class="qa-procedure-title">PRE-FLIGHT CHECKLIST</div>
+                <div class="qa-procedure-subtitle">Complete before every flight - Click items to check off</div>
+            </div>
+
+            <div class="qa-checklist">
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-file-alt"></i> Documentation</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Pilot certificate and ID available</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">RPOC documentation accessible</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Site survey completed</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">NOTAM check completed</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Airspace authorization confirmed (if required)</div>
+                    </div>
+                </div>
+
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-user-check"></i> Crew Fitness (IMSAFE)</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>I</strong>llness - No illness affecting performance</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>M</strong>edication - No impairing medications</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>S</strong>tress - Stress levels manageable</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>A</strong>lcohol - No alcohol in past 12 hours, BAC 0.00</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>F</strong>atigue - Adequately rested</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>E</strong>motion - Emotionally fit for duty</div>
+                    </div>
+                </div>
+
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-cloud-sun"></i> Weather</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Current weather checked and within limits</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Wind speed: ≤15 m/s (M30T) / ≤12 m/s (M4TD)</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Visibility: ≥3 km (VLOS minimum)</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Temperature: -20°C to +45°C</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">No precipitation / icing conditions</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Forecast checked for mission duration</div>
+                    </div>
+                </div>
+
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-drone"></i> Aircraft Inspection</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Frame and arms: No cracks, damage, or loose components</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Propellers: No chips, cracks, or damage; securely mounted</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Motors: Spin freely, no debris or obstructions</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Gimbal: Moves freely, camera lens clean</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Sensors: Clean and unobstructed (all directions)</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Antennas: Properly positioned and undamaged</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Landing gear: Stable, no damage</div>
+                    </div>
+                </div>
+
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-battery-full"></i> Batteries</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Aircraft battery: Fully charged, no swelling/damage</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Aircraft battery: Within cycle limit</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Controller battery: Fully charged</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Spare batteries available and charged</div>
+                    </div>
+                </div>
+
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-gamepad"></i> Controller & App</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Controller powered on and linked</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Control sticks functional (full range of motion)</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">App connected, video feed confirmed</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Firmware: Aircraft and controller up to date</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">GPS: Strong signal (≥12 satellites)</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Home point: Set correctly</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">RTH altitude: Set appropriately for terrain</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Failsafe settings: Verified</div>
+                    </div>
+                </div>
+
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-map-marker-alt"></i> Site/Area</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Launch/landing area clear of obstacles</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Bystanders briefed or cleared from area</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Hazards identified and marked</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Emergency procedures reviewed with crew</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Communications check completed</div>
+                    </div>
+                </div>
+
+                <div class="qa-checklist-section">
+                    <div class="qa-checklist-title"><i class="fas fa-check-double"></i> Final Checks</div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Compass calibration: Completed (if required)</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Flight mode: Correct for operation</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">SD card: Inserted, sufficient space</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text">Mission parameters reviewed</div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>CREW BRIEFING COMPLETE</strong></div>
+                    </div>
+                    <div class="qa-checklist-item">
+                        <div class="qa-checklist-checkbox"></div>
+                        <div class="qa-checklist-text"><strong>CLEARED FOR TAKEOFF</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Checklist Usage</h4>
+                    <p>Click each item to mark as complete. All items must be checked before takeoff. Any NO-GO item requires resolution before flight.</p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    setupChecklistInteractivity();
+}
 
 // Console welcome message
 console.log('%cSSAR RPOC Web Tool', 'font-size: 20px; font-weight: bold; color: #1e3a5f;');

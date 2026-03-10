@@ -171,6 +171,27 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Quick Access Modal -->
+    <div id="quick-access-overlay" class="quick-access-overlay hidden">
+        <div class="quick-access-modal">
+            <div class="quick-access-header">
+                <div class="quick-access-title">
+                    <i class="fas fa-bolt"></i>
+                    <span id="quick-access-title-text">Quick Access</span>
+                </div>
+                <button id="close-quick-access" class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="quick-access-content" class="quick-access-content">
+                <!-- Content loaded dynamically -->
+            </div>
+            <div class="quick-access-footer">
+                <button id="quick-access-back" class="qa-back-btn hidden">
+                    <i class="fas fa-arrow-left"></i> Back to Procedures
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/content.js"></script>
     <script src="js/app.js"></script>
