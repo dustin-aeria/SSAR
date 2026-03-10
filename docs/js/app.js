@@ -612,6 +612,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 showFlyAwayScript();
             } else if (jumpConfig.handler === 'showPreFlightChecklist') {
                 showPreFlightChecklist();
+            } else if (jumpConfig.handler === 'showIMSAFEChecklist') {
+                showIMSAFEChecklist();
             } else if (jumpConfig.handler === 'showRegulationsReference') {
                 showRegulationsReference();
             }
