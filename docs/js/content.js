@@ -588,6 +588,58 @@ When 24-hour ATC notification is not possible:
 | O02 | CFIT | Medium | Low |
 | O05 | Third party injury | High | Medium |
 
+### 4.6 Reactive Risk Management
+
+Root cause analysis process for all incidents:
+
+| Step | Action |
+|------|--------|
+| 1 | RECEIVE incident report |
+| 2 | CLASSIFY severity |
+| 3 | INVESTIGATE using 5-Why methodology |
+| 4 | DETERMINE root cause category |
+| 5 | ASSIGN corrective action |
+| 6 | IMPLEMENT correction |
+| 7 | VERIFY effectiveness |
+| 8 | CLOSE with AE approval |
+
+**Root Cause Categories:** Lack of Training, Equipment Failure, Procedural Gap, Human Factors, Environmental, Design Deficiency
+
+### 4.7 Proactive Hazard Registry
+
+Master Hazard Registry maintained with:
+
+| Field | Description |
+|-------|-------------|
+| Hazard ID | Unique identifier |
+| Description | Clear hazard description |
+| Likelihood | Probability (1-5) |
+| Severity | Impact rating (1-5) |
+| Initial Risk | Pre-mitigation level |
+| Mitigation | Control measures |
+| Residual Risk | Post-mitigation level |
+| Status | Open/Closed/Monitoring |
+| Owner | Responsible person |
+
+**Hazard Sources:** Incident Reports, Safety Observations, Training Events, Inspections, Manufacturer Notices, Regulatory Updates
+
+### 4.8 Change Management
+
+Before any significant change, conduct Change Risk Assessment:
+
+| Trigger | Examples |
+|---------|----------|
+| New Equipment | New aircraft, payload, controller |
+| New Operations | BVLOS expansion, night ops, new area |
+| New Regulations | TC updates, SFOC changes |
+| Modified Procedures | SOP revisions, checklist changes |
+
+**Change Approval Authority:**
+- Low Risk: Chief Pilot
+- Medium Risk: Chief Pilot + Safety Manager
+- High Risk: Accountable Executive
+- Extreme Risk: Not Approved
+
 ---
 
 ## 5. Detect and Avoid
@@ -634,20 +686,44 @@ The RPAS shall give way to all manned aircraft.
 
 ### 7.1 Internal Audit Schedule
 
-| Audit Area | Frequency |
-|------------|-----------|
-| Operations Compliance | Quarterly |
-| Maintenance Program | Quarterly |
-| Training Program | Semi-annual |
-| Full SMS Audit | Annual |
+| Audit Area | Frequency | Auditor |
+|------------|-----------|---------|
+| Operations Compliance | Quarterly | Chief Pilot |
+| Maintenance Program | Quarterly | Designated Auditor |
+| Training Program | Semi-annual | Chief Instructor |
+| Safety Reporting | Semi-annual | Safety Manager |
+| SORA Compliance | Annual | External (if possible) |
+| Full SMS Audit | Annual | AE + External |
 
-### 7.2 Corrective Action Timelines
+### 7.2 Audit Process
 
-| Finding Level | Corrective Action |
-|---------------|-------------------|
-| Critical | 7 days |
-| Major | 30 days |
-| Minor | 90 days |
+| Step | Action |
+|------|--------|
+| 1 | PLAN - Develop audit scope |
+| 2 | NOTIFY - Inform auditees |
+| 3 | CONDUCT - Execute using checklist |
+| 4 | DOCUMENT - Record findings |
+| 5 | REPORT - Present to management |
+| 6 | FOLLOW-UP - Verify corrections |
+
+### 7.3 Finding Classifications
+
+| Classification | Definition | Timeline |
+|----------------|------------|----------|
+| **Critical** | Immediate safety risk | Immediate |
+| **Major** | Significant non-compliance | 30 days |
+| **Minor** | Minor non-compliance | 90 days |
+| **Observation** | Improvement opportunity | Discretion |
+
+### 7.4 Corrective Action Process
+
+**IDENTIFY -> DOCUMENT -> CONTAIN -> INVESTIGATE -> CORRECT -> VERIFY -> CLOSE**
+
+| Finding | Containment | Correction |
+|---------|-------------|------------|
+| Critical | Immediate | 7 days |
+| Major | 24 hours | 30 days |
+| Minor | As needed | 90 days |
 
 ---
 
@@ -821,13 +897,48 @@ Has final authority over safe operation of the aircraft during flight.
 
 **Chief Pilot: Dustin Wales**
 
-Responsibilities:
-- Day-to-day RPAS operations management
-- Flight authorization
-- Pilot qualification verification
-- Currency monitoring
+### 5.2 Chief Pilot Qualifications
 
-### 5.2 Flight Reviewer
+| Requirement | Standard |
+|-------------|----------|
+| RPAS Certificate | Valid TC Advanced Certificate |
+| Flight Hours | Minimum 100 hours |
+| Experience | 2+ years as SSAR RPAS pilot |
+| Endorsements | All Standard Scenarios |
+| Trainer Status | Certified SSAR trainer |
+
+### 5.3 Chief Pilot Responsibilities
+
+**Operations Management:**
+- Flight authorization and GO/NO-GO decisions
+- Mission oversight and resource allocation
+- Weather-related operational decisions
+
+**Pilot Management:**
+- Qualification verification and currency monitoring
+- Performance review and fitness assessment
+- Discipline for SOP violations
+
+**Safety Responsibilities:**
+- Medium-level risk acceptance authority
+- Hazard management and incident investigation
+- SPI monitoring and trend reporting
+
+**Training Oversight:**
+- Training program supervision
+- Trainer evaluation and standards calibration
+- Curriculum review and approval
+
+### 5.4 Chief Pilot Authority
+
+| Authority | Scope |
+|-----------|-------|
+| Approve Operations | Authorize flights based on risk |
+| Deny Operations | Refuse flights exceeding acceptable risk |
+| Ground Pilots | Suspend pilot authorization for cause |
+| Ground Aircraft | Remove aircraft from service |
+
+### 5.5 Flight Reviewer
 
 | Item | Details |
 |------|---------|
@@ -902,25 +1013,59 @@ Responsibilities:
 
 ### 8.1 Insurance Requirements - CAR 901.06
 
-| MTOW Category | Minimum Coverage |
-|---------------|------------------|
-| Up to 1 kg | $100,000 |
-| 1 kg to 5 kg | $100,000 |
-| 5 kg to 25 kg | $500,000 |
+| MTOW Category | Minimum | SSAR Recommended |
+|---------------|---------|------------------|
+| Up to 1 kg | $100,000 | $1,000,000 |
+| 1 kg to 5 kg | $100,000 | $2,000,000 |
+| 5 kg to 25 kg | $500,000 | $2,000,000 |
 
 ### 8.2 SSAR Aircraft Coverage
 
-| Aircraft | MTOM | Minimum Required |
-|----------|------|------------------|
-| DJI M30T | 3.77 kg | $100,000 |
-| DJI Matrice 4TD | 2.3 kg | $100,000 |
+| Aircraft | MTOM | Category | Minimum |
+|----------|------|----------|---------|
+| DJI M30T | 3.77 kg | 1-5 kg | $100,000 |
+| DJI Matrice 4TD | 2.3 kg | 1-5 kg | $100,000 |
 
-### 8.3 Incident Response
+### 8.3 Operations That Must Be Covered
 
-- Do NOT admit fault
-- Document all facts
-- Notify insurer within 24 hours
-- Report to Chief Pilot immediately
+| Operation | Verification |
+|-----------|--------------|
+| BVLOS Operations | Written confirmation |
+| High Altitude (>400' AGL) | Written confirmation |
+| Search and Rescue Support | Written confirmation |
+| Night Operations | No exclusion |
+| Standard Scenarios | Coverage verified |
+
+### 8.4 Incident Response Protocol
+
+**At Scene:**
+1. SAFETY FIRST - Secure scene
+2. DO NOT ADMIT FAULT
+3. DOCUMENT - Photos, video, witnesses
+4. NOTIFY Chief Pilot immediately
+5. PRESERVE evidence and flight logs
+
+**Within 24 Hours:**
+- Notify insurer via claims hotline
+- Complete incident report
+- Submit to Chief Pilot
+
+### 8.5 Claims Process
+
+| Step | Action | Timeline |
+|------|--------|----------|
+| 1 | Report to insurer | Within 24 hours |
+| 2 | Submit incident report | Within 24 hours |
+| 3 | Provide documentation | Within 7 days |
+| 4 | Cooperate with adjuster | As required |
+| 5 | Do not dispose equipment | Until claim closed |
+
+### 8.6 Annual Insurance Review
+
+- Policy renewal (30 days before expiry)
+- Coverage adequacy review
+- Fleet changes notification
+- Operations changes notification
 
 ---
 
@@ -1100,7 +1245,38 @@ Foundation Training builds core competencies in aircraft handling, site surveys,
 | Flight Hours | Minimum 50 hours logged |
 | Operational Experience | Minimum 1 year as SSAR pilot |
 | Certification | All Standard Scenario endorsements |
-| Training | Complete SSAR Train-the-Trainer module |
+| Training | Complete Train-the-Trainer module |
+| Risk Proficiency | Demonstrated hazard/risk identification |
+| Currency | Maintain 2 hours/month flight time |
+
+### 7.2 Train-the-Trainer Module (8 hours)
+
+| Module | Duration | Content |
+|--------|----------|---------|
+| Adult Learning | 2 hours | Andragogy, learning styles, motivation |
+| Instructional Techniques | 2 hours | Tell-Show-Do-Review method |
+| Assessment Techniques | 2 hours | Evaluation methods, observation skills |
+| Feedback Delivery | 1 hour | SBI Model (Situation-Behavior-Impact) |
+| Documentation | 1 hour | Records requirements, retention |
+| Practical Exercise | 2 hours | Teaching demonstration with evaluation |
+
+### 7.3 Trainer Authority
+
+Trainers may:
+- Evaluate and sign off pilots for progression
+- Place pilots on training hold
+- Require additional training or scenarios
+- Ground pilots for safety concerns
+- Recommend pilots for Flight Reviewer designation
+
+### 7.4 Flight Reviewer Requirements
+
+| Requirement | Standard |
+|-------------|----------|
+| Trainer Status | 12+ months as certified trainer |
+| Pilots Trained | Minimum 5 pilots to operational status |
+| Flight Hours | Minimum 100 hours total |
+| AE Designation | Written designation required |
 
 ---
 
@@ -1394,21 +1570,39 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 
 ### 6.1 Firmware Update Policy
 
-- Maintain current stable versions
-- No beta/experimental firmware for SAR
-- Test before operational deployment
-- Maintain update logs
+| Policy | Requirement |
+|--------|-------------|
+| Version Standard | Current stable versions only |
+| Beta Restriction | NOT authorized for SAR |
+| Testing | Required before deployment |
+| Documentation | Update logs maintained |
+| Approval | Chief Pilot approval required |
 
-### 6.2 Firmware Update Procedure
+### 6.2 Firmware Components to Track
 
-1. Check DJI release notes
-2. Review changes for safety items
-3. Download firmware
-4. Update in controlled environment
-5. Verify successful update
-6. Conduct test flight if needed
-7. Record in firmware log
-8. Brief pilots on changes
+**DJI M30T:** Aircraft, Remote Controller, TB30 Battery, BS30 Station, DJI Pilot 2 App
+
+**DJI M4TD:** Aircraft, Remote Controller, Battery, DJI Pilot 2 App
+
+### 6.3 Post-Update Verification (CRITICAL)
+
+> Firmware updates frequently reset safety parameters!
+
+**Always Verify After Update:**
+- [ ] RTH altitude setting
+- [ ] Geofence settings
+- [ ] Failsafe settings (lost link)
+- [ ] Maximum altitude settings
+- [ ] Obstacle avoidance settings
+
+### 6.4 Update Decision Matrix
+
+| Update Type | Risk | Testing | Approval |
+|-------------|------|---------|----------|
+| Safety/security critical | High | Full test flight | Chief Pilot |
+| Flight controller | High | Full test flight | Chief Pilot |
+| Feature additions | Medium | Ground test | Chief Pilot |
+| App updates only | Low | Verify settings | PIC |
 
 ---
 
@@ -1424,7 +1618,25 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 | Monthly | Complete diagnostic, sensor calibration |
 | Annual | Comprehensive inspection, service |
 
-### 7.2 Records Retention
+### 7.2 Defect Categories
+
+| Category | Code | Impact | Timeline |
+|----------|------|--------|----------|
+| **A - Grounding** | DEF-A | Aircraft GROUNDED | Before flight |
+| **B - Limitation** | DEF-B | Operational restriction | 7 days |
+| **C - Monitor** | DEF-C | Enhanced monitoring | 30 days |
+| **D - Cosmetic** | DEF-D | No operational impact | Next maintenance |
+
+### 7.3 Equipment Status Tags
+
+| Tag | Status | Action |
+|-----|--------|--------|
+| **GREEN** | SERVICEABLE | Normal operations |
+| **YELLOW** | LIMITED | Fly with restrictions |
+| **RED** | GROUNDED | DO NOT FLY |
+| **WHITE** | MAINTENANCE | Not available |
+
+### 7.4 Records Retention
 
 | Record Type | Retention Period |
 |-------------|------------------|
@@ -1432,6 +1644,7 @@ Foundation Training (4-6 weeks) -> Foundation Flight Review -> Advanced Training
 | Battery Records | Life of battery + 2 years |
 | Maintenance Actions | 2 years minimum |
 | Defect Reports | 5 years |
+| Firmware Records | Life of aircraft |
 
 ---
 
