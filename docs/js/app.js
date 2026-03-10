@@ -538,6 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 showFlyAwayScript();
             } else if (jumpConfig.handler === 'showPreFlightChecklist') {
                 showPreFlightChecklist();
+            } else if (jumpConfig.handler === 'showRegulationsReference') {
+                showRegulationsReference();
             }
             return;
         }
@@ -694,7 +696,7 @@ var QUICK_ACCESS = {
     'emergency-procedures': { type: 'modal', handler: 'showEmergencyProcedures' },
     'fly-away': { type: 'modal', handler: 'showFlyAwayScript' },
     'pre-flight': { type: 'modal', handler: 'showPreFlightChecklist' },
-    'weather-minimums': { type: 'jump', section: 'operations', search: 'Weather Minimum' }
+    'regulations': { type: 'modal', handler: 'showRegulationsReference' }
 };
 
 // ========================================
@@ -2616,6 +2618,226 @@ function showPreFlightChecklist() {
     `;
 
     setupChecklistInteractivity();
+}
+
+// ========================================
+// REGULATIONS QUICK REFERENCE
+// ========================================
+
+function showRegulationsReference() {
+    openQuickAccess('CAR Part IX Quick Reference');
+    qaBackBtn.classList.add('hidden');
+
+    qaContent.innerHTML = `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon info"><i class="fas fa-balance-scale"></i></div>
+                <div class="qa-procedure-title">CAR PART IX QUICK REFERENCE</div>
+                <div class="qa-procedure-subtitle">Common regulatory questions for RPAS pilots</div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+                <span style="background: var(--success-green); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-certificate" style="margin-right: 6px;"></i>SSAR operates under RPOC
+                </span>
+                <span style="background: var(--accent-blue); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-route" style="margin-right: 6px;"></i>STSC-003 & STSC-004
+                </span>
+            </div>
+
+            <h3 style="color: var(--primary-blue); margin: 24px 0 16px; font-size: 1.1rem; border-bottom: 2px solid var(--accent-blue); padding-bottom: 8px;">
+                <i class="fas fa-id-card" style="margin-right: 8px;"></i>
+                Basic vs Advanced Pilot Certificate
+            </h3>
+
+            <table class="qa-reference-table">
+                <tr>
+                    <th style="width: 35%;">Capability</th>
+                    <th style="width: 32%; background: #5dade2;">Basic Operations</th>
+                    <th style="width: 33%; background: #27ae60;">Advanced Operations</th>
+                </tr>
+                <tr>
+                    <td><strong>Controlled Airspace</strong></td>
+                    <td style="background: rgba(231, 76, 60, 0.15); color: var(--danger-red); font-weight: 600;">NOT PERMITTED</td>
+                    <td style="background: rgba(39, 174, 96, 0.15); color: var(--success-green);">Permitted with authorization</td>
+                </tr>
+                <tr>
+                    <td><strong>Over Bystanders</strong></td>
+                    <td style="background: rgba(231, 76, 60, 0.15); color: var(--danger-red); font-weight: 600;">NOT PERMITTED</td>
+                    <td style="background: rgba(39, 174, 96, 0.15); color: var(--success-green);">Permitted (with limits)</td>
+                </tr>
+                <tr>
+                    <td><strong>Distance from Airports</strong><br><small>(Controlled Airspace)</small></td>
+                    <td>Must stay outside controlled airspace entirely</td>
+                    <td>Can enter with NAV CANADA authorization</td>
+                </tr>
+                <tr>
+                    <td><strong>Distance from Airports</strong><br><small>(Uncontrolled - No CZ)</small></td>
+                    <td>3 NM (5.6 km) horizontal</td>
+                    <td>3 NM (5.6 km) horizontal<br><small>Or closer with authorization</small></td>
+                </tr>
+                <tr>
+                    <td><strong>Distance from Heliports</strong></td>
+                    <td>2 NM (3.7 km) horizontal</td>
+                    <td>2 NM (3.7 km) horizontal<br><small>Or closer with authorization</small></td>
+                </tr>
+                <tr>
+                    <td><strong>Max Altitude</strong></td>
+                    <td>400 ft AGL</td>
+                    <td>400 ft AGL<br><small>(Higher with SFOC/RPOC)</small></td>
+                </tr>
+                <tr>
+                    <td><strong>Exam Required</strong></td>
+                    <td>Small Basic Exam</td>
+                    <td>Small Advanced Exam</td>
+                </tr>
+                <tr>
+                    <td><strong>Flight Review</strong></td>
+                    <td>Not required</td>
+                    <td>Required (in-person)</td>
+                </tr>
+            </table>
+
+            <h3 style="color: var(--primary-blue); margin: 32px 0 16px; font-size: 1.1rem; border-bottom: 2px solid var(--accent-blue); padding-bottom: 8px;">
+                <i class="fas fa-building" style="margin-right: 8px;"></i>
+                RPOC Privileges (What SSAR Can Do)
+            </h3>
+
+            <table class="qa-reference-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th style="background: var(--warning-orange);">STSC-003 (High Alt VLOS)</th>
+                    <th style="background: var(--success-green);">STSC-004 (BVLOS)</th>
+                </tr>
+                <tr>
+                    <td><strong>Max Altitude</strong></td>
+                    <td style="font-weight: 600;">1000 ft AGL</td>
+                    <td style="font-weight: 600;">400 ft AGL</td>
+                </tr>
+                <tr>
+                    <td><strong>Visual Requirements</strong></td>
+                    <td>VLOS required</td>
+                    <td style="background: rgba(39, 174, 96, 0.15); color: var(--success-green); font-weight: 600;">BVLOS permitted</td>
+                </tr>
+                <tr>
+                    <td><strong>ATC Notification</strong></td>
+                    <td style="background: rgba(231, 76, 60, 0.15); font-weight: 600;">Required (24 hrs)</td>
+                    <td>Not required</td>
+                </tr>
+                <tr>
+                    <td><strong>Population Density</strong></td>
+                    <td>Any (per ATC)</td>
+                    <td>&lt;25 people/km²</td>
+                </tr>
+                <tr>
+                    <td><strong>Use Case</strong></td>
+                    <td>High altitude reconnaissance</td>
+                    <td>Extended range SAR, time-critical ops</td>
+                </tr>
+            </table>
+
+            <h3 style="color: var(--primary-blue); margin: 32px 0 16px; font-size: 1.1rem; border-bottom: 2px solid var(--accent-blue); padding-bottom: 8px;">
+                <i class="fas fa-ruler" style="margin-right: 8px;"></i>
+                Key Distance & Altitude Rules
+            </h3>
+
+            <div class="ep-card-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+                <div style="background: var(--bg-tertiary); padding: 20px; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">400'</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Max altitude AGL<br>(standard ops)</div>
+                </div>
+                <div style="background: var(--bg-tertiary); padding: 20px; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">3 NM</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Min distance from airports<br>(5.6 km)</div>
+                </div>
+                <div style="background: var(--bg-tertiary); padding: 20px; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">2 NM</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Min distance from heliports<br>(3.7 km)</div>
+                </div>
+                <div style="background: var(--bg-tertiary); padding: 20px; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-blue);">100'</div>
+                    <div style="font-size: 0.9rem; color: var(--text-secondary);">Min horizontal from people<br>(30m, Advanced only)</div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary-blue); margin: 32px 0 16px; font-size: 1.1rem; border-bottom: 2px solid var(--accent-blue); padding-bottom: 8px;">
+                <i class="fas fa-question-circle" style="margin-right: 8px;"></i>
+                Common Questions
+            </h3>
+
+            <div style="margin-bottom: 16px;">
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
+                    <strong style="color: var(--primary-blue);">Q: Can I fly near an airport?</strong>
+                    <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
+                        <strong>Basic:</strong> Stay outside controlled airspace and 3 NM from airports.<br>
+                        <strong>Advanced:</strong> Can request authorization via NAV Drone to fly closer or in controlled airspace.<br>
+                        <strong>RPOC (SSAR):</strong> Per Standard Scenario conditions and ATC coordination.
+                    </p>
+                </div>
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
+                    <strong style="color: var(--primary-blue);">Q: Can I fly over people?</strong>
+                    <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
+                        <strong>Basic:</strong> No, never over bystanders.<br>
+                        <strong>Advanced:</strong> Yes, but must maintain 100' (30m) horizontal distance from anyone not involved in the operation.<br>
+                        <strong>RPOC (SSAR):</strong> Controlled ground area must be established (M1 mitigation).
+                    </p>
+                </div>
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
+                    <strong style="color: var(--primary-blue);">Q: Can I fly BVLOS?</strong>
+                    <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
+                        <strong>Basic/Advanced:</strong> No, VLOS required at all times.<br>
+                        <strong>RPOC with STSC-004:</strong> Yes, BVLOS permitted in sparsely populated areas (&lt;25 people/km²) up to 400' AGL.
+                    </p>
+                </div>
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
+                    <strong style="color: var(--primary-blue);">Q: Can I fly above 400 feet?</strong>
+                    <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
+                        <strong>Basic/Advanced:</strong> No, 400' AGL is the limit.<br>
+                        <strong>RPOC with STSC-003:</strong> Yes, up to 1000' AGL with 24-hour ATC notification.
+                    </p>
+                </div>
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
+                    <strong style="color: var(--primary-blue);">Q: What's the visibility requirement?</strong>
+                    <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
+                        <strong>All operations:</strong> Must be able to see the RPAS at all times (VLOS) unless operating under STSC-004 BVLOS.<br>
+                        <strong>Weather:</strong> VFR conditions required. No flight in cloud, fog, or IMC.
+                    </p>
+                </div>
+                <div style="background: var(--bg-tertiary); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px;">
+                    <strong style="color: var(--primary-blue);">Q: Alcohol/Cannabis restrictions?</strong>
+                    <p style="margin: 8px 0 0; color: var(--text-secondary); font-size: 0.95rem;">
+                        <strong>CAR 901.19-901.22:</strong> No flying within 12 hours of consuming alcohol. No flying with BAC above 0.02%. No flying within 28 days of cannabis use that could impair. Zero tolerance for impairment.
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary-blue); margin: 32px 0 16px; font-size: 1.1rem; border-bottom: 2px solid var(--accent-blue); padding-bottom: 8px;">
+                <i class="fas fa-gavel" style="margin-right: 8px;"></i>
+                Key CAR Part IX References
+            </h3>
+
+            <table class="qa-reference-table" style="font-size: 0.9rem;">
+                <tr><th>CAR Section</th><th>Subject</th></tr>
+                <tr><td>901.01-901.03</td><td>Definitions, Registration, Marking</td></tr>
+                <tr><td>901.17-901.18</td><td>Right of Way, Proximity to Aircraft</td></tr>
+                <tr><td>901.19-901.22</td><td>Fitness for Duty, Alcohol, Cannabis</td></tr>
+                <tr><td>901.24-901.27</td><td>Airspace, Distance from Aerodromes, Site Survey</td></tr>
+                <tr><td>901.29</td><td>Pre-flight Requirements</td></tr>
+                <tr><td>901.34-901.35</td><td>Weather Minimums, Icing Conditions</td></tr>
+                <tr><td>901.49</td><td>Incident/Accident Reporting</td></tr>
+                <tr><td>901.54-901.66</td><td>Pilot Certificate Requirements</td></tr>
+                <tr><td>901.217-901.223</td><td>RPOC Requirements</td></tr>
+            </table>
+
+            <div class="qa-info-box">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>SSAR Pilots</h4>
+                    <p>As an RPOC operator, SSAR operates under organizational approvals (Standard Scenarios) rather than individual pilot certificates. All SSAR pilots must still hold a valid Advanced certificate and be endorsed for STSC-003/004 by the Chief Pilot.</p>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 // Console welcome message
