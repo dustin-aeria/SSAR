@@ -389,13 +389,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function enhanceChecklists() {
         var cells = contentArea.querySelectorAll('td');
+        var isAdminSection = currentSection === 'admin';
 
         cells.forEach(function(cell) {
             var text = cell.textContent.trim();
 
-            // Replace [ ] with actual checkbox
+            // Replace [ ] with actual checkbox (interactive in admin section)
             if (text === '[ ]') {
-                cell.innerHTML = '<input type="checkbox" disabled>';
+                if (isAdminSection) {
+                    cell.innerHTML = '<input type="checkbox" class="compliance-checkbox" onclick="this.parentElement.parentElement.classList.toggle(\'completed-row\')">';
+                } else {
+                    cell.innerHTML = '<input type="checkbox" disabled>';
+                }
                 cell.style.textAlign = 'center';
             } else if (text === '[x]' || text === '[X]' || text === '[✓]') {
                 cell.innerHTML = '<input type="checkbox" checked disabled>';
@@ -404,7 +409,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Style cells that contain checkboxes
             if (cell.textContent.includes('[ ]')) {
-                cell.innerHTML = cell.innerHTML.replace(/\[ \]/g, '<input type="checkbox" disabled style="margin-right: 5px;">');
+                if (isAdminSection) {
+                    cell.innerHTML = cell.innerHTML.replace(/\[ \]/g, '<input type="checkbox" class="compliance-checkbox" style="margin-right: 5px;">');
+                } else {
+                    cell.innerHTML = cell.innerHTML.replace(/\[ \]/g, '<input type="checkbox" disabled style="margin-right: 5px;">');
+                }
+            }
+        });
+
+        // Also handle list items with checkboxes (- [ ] format)
+        var listItems = contentArea.querySelectorAll('li');
+        listItems.forEach(function(li) {
+            var html = li.innerHTML;
+            if (html.startsWith('[ ]')) {
+                if (isAdminSection) {
+                    li.innerHTML = '<input type="checkbox" class="compliance-checkbox" style="margin-right: 8px;" onclick="this.parentElement.classList.toggle(\'completed-item\')">' + html.substring(4);
+                    li.style.cursor = 'pointer';
+                    li.style.padding = '8px 0';
+                } else {
+                    li.innerHTML = '<input type="checkbox" disabled style="margin-right: 8px;">' + html.substring(4);
+                }
+            } else if (html.startsWith('[x]') || html.startsWith('[X]')) {
+                li.innerHTML = '<input type="checkbox" checked disabled style="margin-right: 8px;">' + html.substring(4);
+            }
+        });
+
+        // Highlight current month in admin calendar
+        if (isAdminSection) {
+            highlightCurrentMonth();
+        }
+    }
+
+    function highlightCurrentMonth() {
+        var months = ['January', 'February', 'March', 'April', 'May', 'June',
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+        var currentMonth = months[new Date().getMonth()];
+
+        var cells = contentArea.querySelectorAll('td');
+        cells.forEach(function(cell) {
+            if (cell.textContent.includes('**' + currentMonth + '**') ||
+                cell.innerHTML.includes('<strong>' + currentMonth + '</strong>')) {
+                cell.parentElement.classList.add('current-month');
             }
         });
     }

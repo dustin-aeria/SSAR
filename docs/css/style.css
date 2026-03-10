@@ -1838,3 +1838,163 @@ td:contains("[ ]"), td:contains("[x]"), td:contains("[X]") {
     color: white;
     border-color: var(--accent-blue);
 }
+
+/* ========================================
+   COMPLIANCE TRACKER STYLES
+   ======================================== */
+
+/* Compliance status colors */
+.content-area td:first-child:contains("Monthly"),
+.content-area th:contains("Monthly") {
+    border-left: 4px solid var(--success-green);
+}
+
+.content-area td:first-child:contains("Quarterly"),
+.content-area th:contains("Quarterly") {
+    border-left: 4px solid var(--caution-yellow);
+}
+
+.content-area td:first-child:contains("Semi-Annual"),
+.content-area th:contains("Semi-Annual") {
+    border-left: 4px solid var(--warning-orange);
+}
+
+.content-area td:first-child:contains("Annual"),
+.content-area th:contains("Annual") {
+    border-left: 4px solid var(--danger-red);
+}
+
+/* Compliance checkbox styling */
+.compliance-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--success-green);
+}
+
+/* Status indicators */
+.status-due {
+    background: var(--warning-orange-bg) !important;
+    border-left: 4px solid var(--warning-orange);
+}
+
+.status-overdue {
+    background: var(--danger-red-bg) !important;
+    border-left: 4px solid var(--danger-red);
+}
+
+.status-complete {
+    background: var(--success-green-bg) !important;
+    border-left: 4px solid var(--success-green);
+}
+
+/* Calendar month headers */
+.content-area td strong:first-child {
+    color: var(--primary-blue);
+}
+
+/* Quick reference section */
+.content-area h3:contains("Quick Reference") {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 32px;
+}
+
+/* Compliance period badges */
+.compliance-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.compliance-badge.monthly {
+    background: var(--success-green);
+    color: white;
+}
+
+.compliance-badge.quarterly {
+    background: var(--caution-yellow);
+    color: var(--text-primary);
+}
+
+.compliance-badge.semi-annual {
+    background: var(--warning-orange);
+    color: white;
+}
+
+.compliance-badge.annual {
+    background: var(--danger-red);
+    color: white;
+}
+
+/* Admin section specific table styling */
+.content-area table td:has(input[type="checkbox"]) {
+    text-align: center;
+    width: 60px;
+}
+
+/* Highlight current month row */
+.current-month {
+    background: var(--info-blue-bg) !important;
+    font-weight: 600;
+}
+
+/* Completed row/item styling */
+.completed-row {
+    background: var(--success-green-bg) !important;
+}
+
+.completed-row td {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.completed-row td:first-child {
+    text-decoration: none;
+    opacity: 1;
+}
+
+.completed-item {
+    background: var(--success-green-bg);
+    border-radius: 4px;
+    padding: 8px 12px !important;
+}
+
+.completed-item::after {
+    content: " ✓";
+    color: var(--success-green);
+    font-weight: bold;
+}
+
+/* Current month highlight */
+.current-month {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0.08) 100%) !important;
+    border-left: 4px solid var(--accent-blue) !important;
+}
+
+.current-month td:first-child {
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+/* Compliance tracker print styles */
+@media print {
+    .compliance-checkbox {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .status-complete,
+    .status-due,
+    .status-overdue,
+    .completed-row,
+    .current-month {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

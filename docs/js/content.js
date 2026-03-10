@@ -7083,6 +7083,528 @@ Complete within 2-3 minutes for urgent SAR deployment:
 **END OF FORMS & MAINTENANCE MANUAL**
 
 *This document is part of the SSAR RPAS Operator Certificate (RPOC) documentation package.*`
+    },
+
+    admin: {
+        title: "Admin & Compliance",
+        icon: "fa-calendar-check",
+        docCount: "Tracker",
+        content: `# RPOC Compliance Tracker
+
+## Administrative Compliance Management
+
+---
+
+| Document | ADMIN-TRACKER |
+|----------|---------------|
+| Version | 1.0 |
+| Effective | March 2026 |
+| Review Date | March 2027 |
+| Reference | CAR Part IX, Standard 922, RPOC Conditions |
+
+---
+
+## Table of Contents
+
+1. [Compliance Calendar Overview](#1-compliance-calendar-overview)
+2. [Monthly Obligations](#2-monthly-obligations)
+3. [Quarterly Obligations](#3-quarterly-obligations)
+4. [Semi-Annual Obligations](#4-semi-annual-obligations)
+5. [Annual Obligations](#5-annual-obligations)
+6. [Pilot Currency Requirements](#6-pilot-currency-requirements)
+7. [Document Review Schedule](#7-document-review-schedule)
+8. [Audit Schedule](#8-audit-schedule)
+9. [Training Recurrency](#9-training-recurrency)
+10. [Equipment Maintenance Schedule](#10-equipment-maintenance-schedule)
+11. [Reporting Requirements](#11-reporting-requirements)
+12. [Record Retention](#12-record-retention)
+
+---
+
+## 1. Compliance Calendar Overview
+
+### 1.1 Purpose
+
+This section provides a comprehensive tracking system for all RPOC compliance obligations required under CAR Part IX, Transport Canada Standard 922, and SSAR internal policies.
+
+> **IMPORTANT**: Missing compliance deadlines may result in loss of operating privileges, pilot currency lapses, or regulatory non-compliance.
+
+### 1.2 Compliance Categories
+
+| Category | Color Code | Frequency |
+|----------|------------|-----------|
+| Per-Flight | Blue | Every operation |
+| Monthly | Green | Every 30 days |
+| Quarterly | Yellow | Every 3 months |
+| Semi-Annual | Orange | Every 6 months |
+| Annual | Red | Every 12 months |
+
+### 1.3 Key Compliance Dates (SSAR Cycle)
+
+| Month | Key Activities |
+|-------|----------------|
+| **January** | Q1 Safety Meeting, Q4 Audit Review |
+| **February** | Training Currency Check |
+| **March** | ANNUAL: Document Reviews, Proficiency Checks, Insurance Renewal |
+| **April** | Q2 Safety Meeting |
+| **May** | Spring Drone Summit |
+| **June** | Semi-Annual Management Review |
+| **July** | Q3 Safety Meeting, Mid-Year Audit |
+| **August** | Training Currency Check |
+| **September** | Fall Drone Summit |
+| **October** | Q4 Safety Meeting |
+| **November** | Cold Weather Training, Insurance Review |
+| **December** | Annual Safety Review, Semi-Annual Management Review |
+
+---
+
+## 2. Monthly Obligations
+
+### 2.1 Safety Performance Indicators (SPI) Review
+
+| Indicator | Target | Responsible |
+|-----------|--------|-------------|
+| Airprox Incidents | 0 | Chief Pilot |
+| Injuries | 0 | Chief Pilot |
+| Fly-Away Events | 0 | Chief Pilot |
+| Loss of Control Events | 0 | Chief Pilot |
+| Airspace Infractions | 0 | Chief Pilot |
+| Maintenance Overdue | 0 | Maintenance Manager |
+| Training Currency Lapses | 0 | Chief Instructor |
+| Safety Reports Submitted | Track monthly | Safety Officer |
+
+> **Due:** Last working day of each month
+> **Output:** SPI Status Report to AE
+
+### 2.2 Flight Hour Minimums
+
+| Requirement | Standard | Evidence |
+|-------------|----------|----------|
+| Flight hours per aircraft type | 1 hour minimum | AirData logs |
+| Active trainer flight hours | 2 hours minimum | Training records |
+
+### 2.3 Monthly Checklist
+
+- [ ] SPI Review completed
+- [ ] Flight hour minimums verified (all active pilots)
+- [ ] Equipment status verified (CLEAR/LOCKOUT tags current)
+- [ ] Battery health checks completed
+- [ ] Firmware update monitoring documented
+
+---
+
+## 3. Quarterly Obligations
+
+### 3.1 Q1 (January-March)
+
+| Obligation | Due | Responsible | Status |
+|------------|-----|-------------|--------|
+| Safety Meeting | January | Chief Pilot | [ ] |
+| Operations Compliance Audit | March | Chief Pilot | [ ] |
+| Maintenance Records Audit | March | Designated Auditor | [ ] |
+| Scenario Training (1 drill minimum) | Q1 End | Chief Instructor | [ ] |
+| Trainer Activity Verification | Q1 End | Operations Manager | [ ] |
+
+### 3.2 Q2 (April-June)
+
+| Obligation | Due | Responsible | Status |
+|------------|-----|-------------|--------|
+| Safety Meeting | April | Chief Pilot | [ ] |
+| Operations Compliance Audit | June | Chief Pilot | [ ] |
+| Maintenance Records Audit | June | Designated Auditor | [ ] |
+| Semi-Annual Management Review | June | AE + Chief Pilot | [ ] |
+| Training Program Audit | June | Chief Instructor | [ ] |
+| Safety Reporting Audit | June | Safety Officer | [ ] |
+| Scenario Training (1 drill minimum) | Q2 End | Chief Instructor | [ ] |
+
+### 3.3 Q3 (July-September)
+
+| Obligation | Due | Responsible | Status |
+|------------|-----|-------------|--------|
+| Safety Meeting | July | Chief Pilot | [ ] |
+| Operations Compliance Audit | September | Chief Pilot | [ ] |
+| Maintenance Records Audit | September | Designated Auditor | [ ] |
+| Scenario Training (1 drill minimum) | Q3 End | Chief Instructor | [ ] |
+| Fall Drone Summit | September | All Pilots | [ ] |
+
+### 3.4 Q4 (October-December)
+
+| Obligation | Due | Responsible | Status |
+|------------|-----|-------------|--------|
+| Safety Meeting | October | Chief Pilot | [ ] |
+| Operations Compliance Audit | December | Chief Pilot | [ ] |
+| Maintenance Records Audit | December | Designated Auditor | [ ] |
+| Semi-Annual Management Review | December | AE + Chief Pilot | [ ] |
+| Training Program Audit | December | Chief Instructor | [ ] |
+| Safety Reporting Audit | December | Safety Officer | [ ] |
+| Scenario Training (1 drill minimum) | Q4 End | Chief Instructor | [ ] |
+| Cold Weather Training | November | Chief Instructor | [ ] |
+| Annual Safety Review | December | Full Team | [ ] |
+
+---
+
+## 4. Semi-Annual Obligations
+
+### 4.1 Management Review (June & December)
+
+| Review Element | Required Content |
+|----------------|------------------|
+| SPI Trends | 6-month trend analysis |
+| Incident Summary | All incidents, root causes, corrective actions |
+| Audit Findings | Status of all open findings |
+| Training Status | All pilot currency, proficiency checks |
+| Resource Review | Equipment, personnel, budget |
+| Improvement Actions | Documented with deadlines |
+
+> **Output:** Management Review Report signed by AE
+
+### 4.2 Training & Safety Audits (June & December)
+
+| Audit Type | Scope | Auditor |
+|------------|-------|---------|
+| Training Program | Records, currency, competency verification | Chief Instructor |
+| Safety Reporting | Reports processing, trend analysis | Safety Officer |
+
+### 4.3 STSC Currency Requirements (Every 6 Months)
+
+| Scenario | Currency Requirement | Deadline |
+|----------|----------------------|----------|
+| STSC-003 (High Altitude) | 1 operation above 400' AGL | 6 months from last op |
+| STSC-004 (BVLOS) | 1 BVLOS operation (min 2 NM) | 6 months from last op |
+
+> **WARNING:** Loss of STSC currency requires re-endorsement by Chief Pilot
+
+---
+
+## 5. Annual Obligations
+
+### 5.1 March Annual Cycle (Primary)
+
+| Obligation | Deadline | Responsible |
+|------------|----------|-------------|
+| **Operations Manual Review** | March 31 | Chief Pilot |
+| **Safety Manual Review** | March 31 | Chief Pilot |
+| **People & Equipment Manual Review** | March 31 | Chief Pilot |
+| **Training Manual Review** | March 31 | Chief Instructor |
+| **Forms & Maintenance Manual Review** | March 31 | Maintenance Manager |
+| **RPOC Renewal/Review** | Per TC validity | AE |
+| **Insurance Renewal** | 30 days before expiry | AE |
+| **Full SMS Audit** | March | External/Safety Manager |
+| **SORA Compliance Review** | March | External if possible |
+
+### 5.2 Pilot Annual Requirements
+
+| Requirement | Content | Duration |
+|-------------|---------|----------|
+| Annual Proficiency Check | Knowledge test, practical flight, emergency scenarios | ~2 hours |
+| Recurrent Ground Training | Updates, incidents, refresher | 4 hours |
+| SORA Refresher | SORA updates and review | 2 hours |
+| Human Factors Refresher | HF training review | 1 hour |
+| Emergency Procedures Practical | Hands-on emergency training | 2 hours |
+
+### 5.3 Equipment Annual Requirements
+
+| Requirement | Aircraft | Responsible |
+|-------------|----------|-------------|
+| Annual Maintenance Review | All aircraft | Maintenance Manager |
+| Firmware Audit | All aircraft, controllers, batteries | Chief Pilot |
+| Battery Retirement Assessment | All batteries | Maintenance Manager |
+| Full Functional Flight Test | All aircraft | Maintenance Manager |
+
+### 5.4 Annual Checklist
+
+- [ ] All manual reviews completed and signed
+- [ ] All pilot proficiency checks completed
+- [ ] Annual ground training delivered (4 hours)
+- [ ] SORA refresher completed (2 hours)
+- [ ] Human factors refresher completed (1 hour)
+- [ ] Emergency procedures practical completed (2 hours)
+- [ ] Full SMS audit completed
+- [ ] SORA compliance review completed
+- [ ] Insurance renewed
+- [ ] All equipment annual maintenance completed
+- [ ] Hazard registry annual review completed
+- [ ] Annual safety report published
+
+---
+
+## 6. Pilot Currency Requirements
+
+### 6.1 General Currency (All Pilots)
+
+| Requirement | Period | Standard | Consequence of Lapse |
+|-------------|--------|----------|----------------------|
+| Flight Currency | 90 days | 3 flights | Supervised flights required |
+| Aircraft Type Currency | 90 days | 1 flight per type | Cannot fly that type |
+| Monthly Hours | 30 days | 1 hour per type | Currency at risk |
+
+### 6.2 STSC Endorsement Currency
+
+| Endorsement | Period | Standard | Consequence of Lapse |
+|-------------|--------|----------|----------------------|
+| STSC-003 | 6 months | 1 high-altitude op | Re-endorsement required |
+| STSC-004 | 6 months | 1 BVLOS op (2+ NM) | Re-endorsement required |
+
+### 6.3 Loss of Currency Reinstatement
+
+| Lapse Duration | Reinstatement Requirement |
+|----------------|---------------------------|
+| 90 days - 6 months | 2 supervised flights with certified trainer |
+| Over 6 months | Complete full Advanced Training program |
+
+### 6.4 Trainer Currency
+
+| Requirement | Period | Standard |
+|-------------|--------|----------|
+| Flight Hours | Monthly | 2 hours minimum |
+| Training Activity | Quarterly | Conduct training at least once |
+| All Pilot Recurrency | Annual | Maintain all requirements |
+| Trainer Evaluation | 24 months | Operations Manager evaluation |
+
+---
+
+## 7. Document Review Schedule
+
+### 7.1 Annual Document Reviews (March Cycle)
+
+| Document | Owner | Reviewer | Approver |
+|----------|-------|----------|----------|
+| Operations Manual | Chief Pilot | AE | AE + Chief Pilot |
+| Safety & Emergency Manual | Chief Pilot | AE | AE + Chief Pilot |
+| People & Equipment Manual | Chief Pilot | AE | AE + Chief Pilot |
+| Training Manual | Chief Instructor | Chief Pilot | AE |
+| Forms & Maintenance Manual | Maintenance Manager | Chief Pilot | AE |
+
+### 7.2 Biennial Reviews (Every 2 Years)
+
+| Document | Next Review |
+|----------|-------------|
+| Checklists | March 2028 |
+| Forms | March 2028 |
+| Site Survey Templates | March 2028 |
+
+### 7.3 As-Required Reviews
+
+| Trigger | Documents Affected |
+|---------|-------------------|
+| Regulatory Change | All affected manuals |
+| Incident/Accident | Relevant procedures |
+| New Equipment | Operations Manual, MCM |
+| New Scenarios | Operations Manual, Training Manual |
+
+---
+
+## 8. Audit Schedule
+
+### 8.1 Internal Audit Program
+
+| Audit Type | Frequency | Q1 | Q2 | Q3 | Q4 |
+|------------|-----------|----|----|----|----|
+| Operations Compliance | Quarterly | Mar | Jun | Sep | Dec |
+| Maintenance Records | Quarterly | Mar | Jun | Sep | Dec |
+| Training Program | Semi-Annual | - | Jun | - | Dec |
+| Safety Reporting | Semi-Annual | - | Jun | - | Dec |
+| Full SMS Audit | Annual | Mar | - | - | - |
+| SORA Compliance | Annual | Mar | - | - | - |
+
+### 8.2 Audit Finding Resolution Timelines
+
+| Category | Description | Resolution Timeline |
+|----------|-------------|---------------------|
+| Critical | Immediate safety risk | Immediate containment, 7 days resolution |
+| Major | Significant non-compliance | 30 days |
+| Minor | Minor deviation | 90 days |
+| Observation | Improvement opportunity | Next review cycle |
+
+### 8.3 Audit Records
+
+| Record | Retention |
+|--------|-----------|
+| Audit Reports | 5 years |
+| Finding Closure Evidence | 5 years |
+| Corrective Action Plans | 5 years |
+
+---
+
+## 9. Training Recurrency
+
+### 9.1 Annual Training Calendar
+
+| Month | Training Activity | Audience | Hours |
+|-------|------------------|----------|-------|
+| January | Q4 Scenario Debrief | All pilots | 2 |
+| February | Currency Flight Sessions | As needed | Varies |
+| March | Annual Proficiency Checks | All pilots | 2 each |
+| March | Recurrent Ground Training | All pilots | 4 |
+| April | SORA Refresher | All pilots | 2 |
+| May | Spring Drone Summit | All pilots | 8 |
+| June | Emergency Procedures Practical | All pilots | 2 |
+| July | Mid-Year Currency Check | All pilots | 1 |
+| August | Human Factors Refresher | All pilots | 1 |
+| September | Fall Drone Summit | All pilots | 8 |
+| October | Scenario Training | All pilots | 2-3 |
+| November | Cold Weather Training | All pilots | 2 |
+| December | Year-End Review | All pilots | 2 |
+
+### 9.2 Training Hour Requirements Summary
+
+| Training Type | Annual Hours | Notes |
+|---------------|--------------|-------|
+| Recurrent Ground | 4 | Mandatory |
+| SORA Refresher | 2 | Mandatory |
+| Human Factors | 1 | Mandatory |
+| Emergency Practical | 2 | Mandatory |
+| Drone Summits | 16 | 2 x 8-hour events |
+| Scenario Training | 8-12 | Quarterly |
+| Currency Flights | As needed | Per pilot status |
+| **TOTAL MINIMUM** | **33+ hours** | Per pilot annually |
+
+---
+
+## 10. Equipment Maintenance Schedule
+
+### 10.1 Time-Based Maintenance
+
+| Interval | Inspection Type | Aircraft |
+|----------|-----------------|----------|
+| Weekly | Detailed inspection | All active |
+| Monthly | Full system diagnostic | All |
+| 50 Hours | Detailed inspection, propeller evaluation | Per aircraft |
+| 100 Hours | Component review, sensor calibration | Per aircraft |
+| 200 Hours | Comprehensive inspection, motor assessment | Per aircraft |
+| Annual | Full system review, firmware audit | All |
+
+### 10.2 Event-Based Maintenance
+
+| Event | Required Action |
+|-------|-----------------|
+| Hard Landing | Full inspection before next flight |
+| Firmware Update | Functional Flight Test required |
+| Component Replacement | Return to Service authorization |
+| Any Anomaly | Defect report + assessment |
+
+### 10.3 Battery Maintenance
+
+| Check | Frequency | Action |
+|-------|-----------|--------|
+| Cycle Count | Per charge | Track in spreadsheet |
+| Capacity Check | Monthly | Record percentage |
+| Physical Inspection | Weekly | Check for swelling, damage |
+| Retirement Assessment | When >400 cycles or <70% capacity | Document and dispose properly |
+
+---
+
+## 11. Reporting Requirements
+
+### 11.1 Immediate Reporting (Within Hours)
+
+| Event | Report To | Contact |
+|-------|-----------|---------|
+| Injury requiring medical attention | TSB | 1-800-387-3557 |
+| Collision/near-collision with manned aircraft | TSB + TC | 1-800-387-3557 |
+| Fly-away into controlled airspace | FIC Kamloops | 1-866-541-4101 |
+| Property damage >$25,000 | TSB | 1-800-387-3557 |
+
+### 11.2 24-Hour Reporting
+
+| Event | Report To | Method |
+|-------|-----------|--------|
+| Internal incident (any) | Operations Manager | Incident Report Form |
+| Equipment malfunction | Chief Pilot | Defect Report |
+| Insurance claim | Insurer | Per policy |
+
+### 11.3 7-Day Reporting
+
+| Event | Report To | Output |
+|-------|-----------|--------|
+| Root cause analysis | AE | Investigation Report |
+| Corrective actions | Safety Manager | Action Plan |
+
+### 11.4 Regulatory Reporting Reference
+
+| Regulation | Requirement |
+|------------|-------------|
+| CAR 901.49 | Incident/accident analysis retention (12 months min) |
+| CAR 901.48 | Flight log retention (2 years) |
+| CAR 901.222 | Training record retention (employment + 2 years) |
+
+---
+
+## 12. Record Retention
+
+### 12.1 Retention Periods
+
+| Record Type | Retention Period | Storage |
+|-------------|------------------|---------|
+| RPOC Certificate | Permanent | Secure digital + backup |
+| Flight Logs | 2 years minimum | AirData + backup |
+| Maintenance Records | Aircraft life + 2 years | Digital + paper |
+| Training Records | Employment + 2 years | Secure file |
+| Proficiency Check Records | 5 years | Secure file |
+| Incident/Accident Reports | 12 months minimum | Digital |
+| Defect Reports | 5 years | Digital |
+| Safety/Audit Reports | 5 years | Digital |
+| Battery Records | Battery life + 2 years | Spreadsheet |
+| Site Survey Records | 24 months | Digital |
+| Endorsement Records | Duration + 2 years | With pilot record |
+| Hazard Registry | 5 years minimum | Digital |
+| Insurance Documentation | Policy term + 3 years | Digital + paper |
+
+### 12.2 Record Storage Locations
+
+| Record Type | Primary Location | Backup Location |
+|-------------|------------------|-----------------|
+| Flight Logs | AirData Cloud | Local backup |
+| Training Records | SSAR Secure Drive | Encrypted backup |
+| Maintenance Logs | SSAR Secure Drive | Paper copies |
+| Incident Reports | SSAR Secure Drive | Encrypted backup |
+| Certificates | SSAR Secure Drive | Physical copies |
+
+---
+
+## Quick Reference: Compliance Due Dates
+
+### Per-Flight Requirements
+- Pre-flight inspection
+- Post-launch systems check (MANDATORY)
+- Post-flight inspection
+- IMSAFE self-assessment
+- Flight briefing/debrief
+
+### Every 30 Days
+- [ ] SPI Review (last day of month)
+- [ ] Flight hour minimums verified
+- [ ] Battery health checks
+
+### Every 90 Days
+- [ ] Flight currency (3 flights)
+- [ ] Aircraft type currency (1 flight per type)
+- [ ] Audits (Operations, Maintenance)
+
+### Every 6 Months
+- [ ] STSC-003 currency (1 high-alt op)
+- [ ] STSC-004 currency (1 BVLOS op)
+- [ ] Management Review (June, December)
+- [ ] Training & Safety Audits
+
+### Every 12 Months
+- [ ] Document reviews (all manuals)
+- [ ] Proficiency checks (all pilots)
+- [ ] Ground training (4 hours)
+- [ ] Full SMS audit
+- [ ] SORA compliance review
+- [ ] Insurance renewal
+- [ ] Annual maintenance (all equipment)
+
+---
+
+> **Note:** This compliance tracker should be reviewed and updated at each Management Review. The Chief Pilot is responsible for maintaining overall compliance status.
+
+---
+
+**END OF ADMIN & COMPLIANCE TRACKER**
+
+*This document is part of the SSAR RPAS Operator Certificate (RPOC) documentation package.*`
     }
 };
 
