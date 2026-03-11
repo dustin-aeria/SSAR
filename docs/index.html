@@ -49,13 +49,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header class="main-header">
         <div class="header-content">
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="logo-section">
@@ -68,6 +68,7 @@
             <div class="header-actions">
                 <div class="search-container">
                     <i class="fas fa-search"></i>
+                    <label for="search-input" class="visually-hidden">Search policies</label>
                     <input type="text" id="search-input" placeholder="Search policies...">
                     <kbd>Ctrl+K</kbd>
                 </div>
@@ -226,7 +227,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top hidden">
+    <button id="back-to-top" class="back-to-top hidden" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -270,7 +271,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('sw.js')
                     .then((registration) => {
                         console.log('SW registered:', registration.scope);
 

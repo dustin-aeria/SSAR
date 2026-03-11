@@ -1,7 +1,7 @@
 // SSAR RPOC Web Application
 // Main application logic with enhanced visual styling
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const contentArea = document.getElementById('content-area');
     const tocContent = document.getElementById('toc-content');
@@ -37,39 +37,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Set up event listeners
         setupEventListeners();
+
+        // Set up keyboard navigation for nav items
+        setupKeyboardNavigation();
     }
 
     function setupEventListeners() {
         // Mobile menu toggle
         if (menuToggle && sidebar) {
             // Create overlay element
-            var overlay = document.createElement('div');
+            const overlay = document.createElement('div');
             overlay.className = 'sidebar-overlay';
             document.body.appendChild(overlay);
 
-            menuToggle.addEventListener('click', function() {
+            menuToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('open');
                 overlay.classList.toggle('active');
-                document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+                const isOpen = sidebar.classList.contains('open');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             });
 
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', () => {
                 sidebar.classList.remove('open');
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         }
 
         // Navigation clicks
-        navItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                var section = item.dataset.section;
+        navItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const section = item.dataset.section;
                 setActiveNav(item);
                 loadSection(section);
                 // Close mobile menu after selection
                 if (sidebar) {
                     sidebar.classList.remove('open');
-                    var overlay = document.querySelector('.sidebar-overlay');
+                    const overlay = document.querySelector('.sidebar-overlay');
                     if (overlay) overlay.classList.remove('active');
                     document.body.style.overflow = '';
                 }
@@ -77,9 +83,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Quick links
-        quickLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                var jumpId = link.dataset.jump;
+        quickLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                const jumpId = link.dataset.jump;
                 handleQuickJump(jumpId);
             });
         });
@@ -88,13 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('click', openSearch);
         searchInput.addEventListener('focus', openSearch);
         closeSearch.addEventListener('click', closeSearchModal);
-        searchOverlay.addEventListener('click', function(e) {
+        searchOverlay.addEventListener('click', (e) => {
             if (e.target === searchOverlay) closeSearchModal();
         });
         searchModalInput.addEventListener('input', handleSearch);
 
         // Keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', (e) => {
             if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                 e.preventDefault();
                 openSearch();
@@ -108,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', toggleTheme);
 
         // Print button
-        printBtn.addEventListener('click', function() { window.print(); });
+        printBtn.addEventListener('click', () => { window.print(); });
 
         // Back to top
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTop.classList.remove('hidden');
             } else {
@@ -119,17 +125,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        backToTop.addEventListener('click', function() {
+        backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // TOC scroll spy
-        var mainContent = document.querySelector('.main-content');
+        const mainContent = document.querySelector('.main-content');
         mainContent.addEventListener('scroll', updateTocHighlight);
     }
 
+    // Keyboard navigation support for nav items
+    function setupKeyboardNavigation() {
+        // Add tabindex and role to all nav items
+        const allNavItems = document.querySelectorAll('.nav-item');
+        allNavItems.forEach((item) => {
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('role', 'button');
+
+            // Handle Enter and Space key presses
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
+        });
+    }
+
     function setActiveNav(activeItem) {
-        navItems.forEach(function(item) { item.classList.remove('active'); });
+        navItems.forEach((item) => { item.classList.remove('active'); });
         activeItem.classList.add('active');
     }
 
@@ -141,6 +165,11 @@ document.addEventListener('DOMContentLoaded', function() {
             contentArea.innerHTML = '<p>Section not found.</p>';
             return;
         }
+
+        // Configure marked options
+        // Note: Marked v9+ removed built-in sanitizer. Content is trusted (internal SSAR content only).
+        // If user-supplied content is ever rendered, add DOMPurify or similar sanitization.
+        marked.setOptions({ breaks: true, gfm: true });
 
         // Parse markdown and render
         var html = marked.parse(section.content);
@@ -171,124 +200,154 @@ document.addEventListener('DOMContentLoaded', function() {
         addSectionIcons();
     }
 
+    // Optimized lookup tables for cell color coding
+    const EXACT_MATCH_CLASSES = {
+        // Risk levels
+        'EXTREME': 'risk-extreme',
+        'HIGH': 'risk-high',
+        'HIGH PRIORITY': 'risk-high',
+        'MEDIUM': 'risk-medium',
+        'MODERATE': 'risk-medium',
+        'LOW': 'risk-low',
+        'LOW PRIORITY': 'risk-low',
+        // Status colors
+        'GREEN': 'status-green',
+        'SERVICEABLE': 'status-green',
+        'CURRENT': 'status-green',
+        'PASS': 'status-green',
+        'CLEAR': 'status-green',
+        'YELLOW': 'status-yellow',
+        'LIMITED': 'status-yellow',
+        'CAUTION': 'status-yellow',
+        'DUE WITHIN 30 DAYS': 'status-yellow',
+        'ORANGE': 'status-orange',
+        'WARNING': 'status-orange',
+        'RED': 'status-red',
+        'GROUNDED': 'status-red',
+        'LOCKOUT': 'status-red',
+        'EXPIRED': 'status-red',
+        'FAIL': 'status-red',
+        'NO-GO': 'status-red',
+        // GO/NO-GO
+        'GO': 'go-indicator',
+        'NOGO': 'nogo-indicator',
+        // Categories
+        'A': 'category-a',
+        'A - GROUNDING': 'category-a',
+        'DEF-A': 'category-a',
+        'B': 'category-b',
+        'B - LIMITATION': 'category-b',
+        'DEF-B': 'category-b',
+        'C': 'category-c',
+        'C - MONITOR': 'category-c',
+        'DEF-C': 'category-c',
+        'D': 'category-d',
+        'D - COSMETIC': 'category-d',
+        'DEF-D': 'category-d',
+        // Ratings
+        '4': 'rating-4',
+        '4 - EXEMPLARY': 'rating-4',
+        '3': 'rating-3',
+        '3 - COMPETENT': 'rating-3',
+        '2': 'rating-2',
+        '2 - DEVELOPING': 'rating-2',
+        '1': 'rating-1',
+        '1 - UNSATISFACTORY': 'rating-1',
+        // SAIL levels
+        'SAIL I': 'sail-1',
+        'SAIL 1': 'sail-1',
+        'SAIL II': 'sail-2',
+        'SAIL 2': 'sail-2',
+        'SAIL III': 'sail-3',
+        'SAIL 3': 'sail-3',
+        'SAIL IV': 'sail-4',
+        'SAIL 4': 'sail-4',
+        'SAIL V': 'sail-5',
+        'SAIL 5': 'sail-5',
+        'SAIL VI': 'sail-6',
+        'SAIL 6': 'sail-6'
+    };
+
+    const PARTIAL_MATCH_CLASSES = [
+        { pattern: 'EXTREME', className: 'risk-extreme' },
+        { pattern: 'HIGH RISK', className: 'risk-high' },
+        { pattern: 'MEDIUM RISK', className: 'risk-medium' },
+        { pattern: 'LOW RISK', className: 'risk-low' },
+        { pattern: 'CATEGORY A', className: 'category-a' },
+        { pattern: 'CATEGORY B', className: 'category-b' },
+        { pattern: 'CATEGORY C', className: 'category-c' },
+        { pattern: 'CATEGORY D', className: 'category-d' },
+        { pattern: 'EXEMPLARY', className: 'rating-4' },
+        { pattern: 'MEETS STANDARD', className: 'rating-3' },
+        { pattern: 'BELOW STANDARD', className: 'rating-2' },
+        { pattern: 'UNSATISFACTORY', className: 'rating-1' }
+    ];
+
+    const ROW_COLOR_MAP = {
+        'GREEN': 'rgba(39, 174, 96, 0.1)',
+        'YELLOW': 'rgba(241, 196, 15, 0.1)',
+        'RED': 'rgba(231, 76, 60, 0.1)',
+        'WHITE': 'rgba(200, 200, 200, 0.2)'
+    };
+
     function colorCodeTables() {
-        var tables = contentArea.querySelectorAll('table');
+        const tables = contentArea.querySelectorAll('table');
 
-        tables.forEach(function(table) {
-            var cells = table.querySelectorAll('td');
+        tables.forEach((table) => {
+            const cells = table.querySelectorAll('td');
 
-            cells.forEach(function(cell) {
-                var text = cell.textContent.trim().toUpperCase();
+            cells.forEach((cell) => {
+                const text = cell.textContent.trim().toUpperCase();
 
-                // Risk Level Coloring
-                if (text === 'EXTREME' || text.includes('EXTREME')) {
-                    cell.classList.add('risk-extreme');
-                } else if (text === 'HIGH' || text.includes('HIGH RISK') || text === 'HIGH PRIORITY') {
-                    cell.classList.add('risk-high');
-                } else if (text === 'MEDIUM' || text.includes('MEDIUM RISK') || text === 'MODERATE') {
-                    cell.classList.add('risk-medium');
-                } else if (text === 'LOW' || text.includes('LOW RISK') || text === 'LOW PRIORITY') {
-                    cell.classList.add('risk-low');
+                // Try exact match first (faster)
+                if (EXACT_MATCH_CLASSES[text]) {
+                    cell.classList.add(EXACT_MATCH_CLASSES[text]);
+                    return; // Early exit on match
                 }
 
-                // Status Color Indicators
-                if (text === 'GREEN' || text === 'SERVICEABLE' || text === 'CURRENT' || text === 'PASS' || text === 'CLEAR') {
-                    cell.classList.add('status-green');
-                } else if (text === 'YELLOW' || text === 'LIMITED' || text === 'CAUTION' || text === 'DUE WITHIN 30 DAYS') {
-                    cell.classList.add('status-yellow');
-                } else if (text === 'ORANGE' || text === 'WARNING') {
-                    cell.classList.add('status-orange');
-                } else if (text === 'RED' || text === 'GROUNDED' || text === 'LOCKOUT' || text === 'EXPIRED' || text === 'FAIL' || text === 'NO-GO') {
-                    cell.classList.add('status-red');
-                }
-
-                // GO/NO-GO Indicators
-                if (text === 'GO') {
-                    cell.classList.add('go-indicator');
-                } else if (text === 'NO-GO' || text === 'NOGO') {
-                    cell.classList.add('nogo-indicator');
-                }
-
-                // Category Indicators (A, B, C, D for defects)
-                if (text === 'A' || text === 'A - GROUNDING' || text.includes('CATEGORY A') || text === 'DEF-A') {
-                    cell.classList.add('category-a');
-                } else if (text === 'B' || text === 'B - LIMITATION' || text.includes('CATEGORY B') || text === 'DEF-B') {
-                    cell.classList.add('category-b');
-                } else if (text === 'C' || text === 'C - MONITOR' || text.includes('CATEGORY C') || text === 'DEF-C') {
-                    cell.classList.add('category-c');
-                } else if (text === 'D' || text === 'D - COSMETIC' || text.includes('CATEGORY D') || text === 'DEF-D') {
-                    cell.classList.add('category-d');
-                }
-
-                // Rating Scale (1-4)
-                if (text === '4' || text === '4 - EXEMPLARY' || text.includes('EXEMPLARY')) {
-                    cell.classList.add('rating-4');
-                } else if (text === '3' || text === '3 - COMPETENT' || text.includes('MEETS STANDARD')) {
-                    cell.classList.add('rating-3');
-                } else if (text === '2' || text === '2 - DEVELOPING' || text.includes('BELOW STANDARD')) {
-                    cell.classList.add('rating-2');
-                } else if (text === '1' || text === '1 - UNSATISFACTORY' || text.includes('UNSATISFACTORY')) {
-                    cell.classList.add('rating-1');
-                }
-
-                // SAIL Levels
-                if (text === 'SAIL I' || text === 'SAIL 1') cell.classList.add('sail-1');
-                else if (text === 'SAIL II' || text === 'SAIL 2') cell.classList.add('sail-2');
-                else if (text === 'SAIL III' || text === 'SAIL 3') cell.classList.add('sail-3');
-                else if (text === 'SAIL IV' || text === 'SAIL 4') cell.classList.add('sail-4');
-                else if (text === 'SAIL V' || text === 'SAIL 5') cell.classList.add('sail-5');
-                else if (text === 'SAIL VI' || text === 'SAIL 6') cell.classList.add('sail-6');
-
-                // Weather Conditions
-                if (text.includes('<10 M/S') || text.includes('NONE') || text.includes('>5 KM') || text.includes('>500')) {
-                    // Could be a GO condition in weather table
+                // Try partial matches
+                for (const { pattern, className } of PARTIAL_MATCH_CLASSES) {
+                    if (text.includes(pattern)) {
+                        cell.classList.add(className);
+                        return; // Early exit on first match
+                    }
                 }
             });
 
             // Check for weather tables and apply row styling
-            var headerCells = table.querySelectorAll('th');
-            var isWeatherTable = false;
-            headerCells.forEach(function(th) {
-                if (th.textContent.includes('GO') || th.textContent.includes('CAUTION') || th.textContent.includes('NO-GO')) {
+            const headerCells = table.querySelectorAll('th');
+            let isWeatherTable = false;
+            const headerMap = {};
+
+            headerCells.forEach((th, idx) => {
+                const thText = th.textContent.toUpperCase();
+                if (thText === 'GO' || thText === 'CAUTION' || thText === 'NO-GO') {
                     isWeatherTable = true;
+                    headerMap[idx] = thText === 'GO' ? 'weather-go' :
+                                     thText === 'CAUTION' ? 'weather-caution' : 'weather-nogo';
                 }
             });
 
             if (isWeatherTable) {
-                var rows = table.querySelectorAll('tr');
-                rows.forEach(function(row) {
-                    var cells = row.querySelectorAll('td');
-                    cells.forEach(function(cell, idx) {
-                        var headerRow = table.querySelector('tr');
-                        var headers = headerRow.querySelectorAll('th');
-                        if (headers[idx]) {
-                            var headerText = headers[idx].textContent.toUpperCase();
-                            if (headerText === 'GO') {
-                                cell.classList.add('weather-go');
-                            } else if (headerText === 'CAUTION') {
-                                cell.classList.add('weather-caution');
-                            } else if (headerText === 'NO-GO') {
-                                cell.classList.add('weather-nogo');
-                            }
+                table.querySelectorAll('tr').forEach((row) => {
+                    row.querySelectorAll('td').forEach((cell, idx) => {
+                        if (headerMap[idx]) {
+                            cell.classList.add(headerMap[idx]);
                         }
                     });
                 });
             }
 
             // Color code tag rows in Equipment Status Tags table
-            var rows = table.querySelectorAll('tr');
-            rows.forEach(function(row) {
-                var firstCell = row.querySelector('td:first-child');
+            table.querySelectorAll('tr').forEach((row) => {
+                const firstCell = row.querySelector('td:first-child');
                 if (firstCell) {
-                    var text = firstCell.textContent.trim().toUpperCase();
-                    if (text.includes('GREEN')) {
-                        row.style.background = 'rgba(39, 174, 96, 0.1)';
-                    } else if (text.includes('YELLOW')) {
-                        row.style.background = 'rgba(241, 196, 15, 0.1)';
-                    } else if (text.includes('RED')) {
-                        row.style.background = 'rgba(231, 76, 60, 0.1)';
-                    } else if (text.includes('WHITE')) {
-                        row.style.background = 'rgba(200, 200, 200, 0.2)';
+                    const text = firstCell.textContent.trim().toUpperCase();
+                    for (const [key, color] of Object.entries(ROW_COLOR_MAP)) {
+                        if (text.includes(key)) {
+                            row.style.background = color;
+                            break;
+                        }
                     }
                 }
             });
@@ -296,94 +355,80 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function enhanceBlockquotes() {
-        var blockquotes = contentArea.querySelectorAll('blockquote');
+        const blockquotes = contentArea.querySelectorAll('blockquote');
 
-        blockquotes.forEach(function(bq) {
-            var text = bq.textContent.toUpperCase();
+        blockquotes.forEach((bq) => {
+            const text = bq.textContent.toUpperCase();
 
             // Critical/Important callouts
-            if (text.includes('CRITICAL') || text.includes('IMPORTANT') || text.includes('MANDATORY')) {
+            if (text.includes('CRITICAL') || text.includes('IMPORTANT') || text.includes('MANDATORY') ||
+                text.includes('NO-GO') || text.includes('DO NOT FLY')) {
                 bq.classList.add('critical');
-                bq.style.borderLeftColor = '#e74c3c';
-                bq.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.03) 100%)';
             }
             // Warning callouts
             else if (text.includes('WARNING') || text.includes('CAUTION')) {
                 bq.classList.add('warning');
-                bq.style.borderLeftColor = '#f39c12';
-                bq.style.background = 'linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(243, 156, 18, 0.03) 100%)';
             }
             // Note callouts
             else if (text.includes('NOTE:') || text.startsWith('NOTE')) {
                 bq.classList.add('note');
             }
-            // Any "NO-GO" mentions
-            else if (text.includes('NO-GO') || text.includes('DO NOT FLY')) {
-                bq.classList.add('critical');
-                bq.style.borderLeftColor = '#e74c3c';
-                bq.style.background = 'linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.03) 100%)';
-            }
         });
     }
 
     function styleEmergencySections() {
-        var headings = contentArea.querySelectorAll('h2, h3, h4');
+        const headings = contentArea.querySelectorAll('h2, h3, h4');
 
-        headings.forEach(function(heading) {
-            var text = heading.textContent.toUpperCase();
+        headings.forEach((heading) => {
+            const text = heading.textContent.toUpperCase();
+
+            // Skip if already has icon
+            if (heading.innerHTML.includes('fa-')) return;
 
             // Emergency-related headings
             if (text.includes('EMERGENCY') || text.includes('FLY-AWAY') || text.includes('FLYAWAY') ||
                 text.includes('CRASH') || text.includes('INCIDENT') || text.includes('ACCIDENT')) {
                 heading.classList.add('emergency-heading');
                 heading.style.color = '#e74c3c';
-
-                // Add icon if not already present
-                if (!heading.innerHTML.includes('fa-')) {
-                    heading.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>' + heading.innerHTML;
-                }
+                heading.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>' + heading.innerHTML;
             }
-
             // Checklist/Procedure headings
-            if (text.includes('CHECKLIST') || text.includes('PROCEDURE') || text.includes('PROTOCOL')) {
-                if (!heading.innerHTML.includes('fa-')) {
-                    heading.innerHTML = '<i class="fas fa-clipboard-check" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
-                }
+            else if (text.includes('CHECKLIST') || text.includes('PROCEDURE') || text.includes('PROTOCOL')) {
+                heading.innerHTML = '<i class="fas fa-clipboard-check" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
             }
-
             // Training headings
-            if (text.includes('TRAINING') || text.includes('ASSESSMENT') || text.includes('COMPETENCY')) {
-                if (!heading.innerHTML.includes('fa-')) {
-                    heading.innerHTML = '<i class="fas fa-graduation-cap" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
-                }
+            else if (text.includes('TRAINING') || text.includes('ASSESSMENT') || text.includes('COMPETENCY')) {
+                heading.innerHTML = '<i class="fas fa-graduation-cap" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
             }
-
             // Maintenance headings
-            if (text.includes('MAINTENANCE') || text.includes('INSPECTION')) {
-                if (!heading.innerHTML.includes('fa-')) {
-                    heading.innerHTML = '<i class="fas fa-tools" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
-                }
+            else if (text.includes('MAINTENANCE') || text.includes('INSPECTION')) {
+                heading.innerHTML = '<i class="fas fa-tools" style="margin-right: 8px; color: #3498db;"></i>' + heading.innerHTML;
+            }
+            // Quick Reference headings (applying class for CSS)
+            else if (text.includes('QUICK REFERENCE')) {
+                heading.classList.add('quick-reference-heading');
             }
         });
     }
 
     function styleMnemonics() {
         // Find tables that look like mnemonics (DESCEND, IMSAFE, etc.)
-        var tables = contentArea.querySelectorAll('table');
+        const tables = contentArea.querySelectorAll('table');
+        const knownMnemonics = ['DESCEND', 'IMSAFE', 'DECIDE', 'OODA', 'PAVE', 'SAFETY'];
 
-        tables.forEach(function(table) {
-            var rows = table.querySelectorAll('tr');
-            var isMnemonic = true;
-            var letters = '';
+        tables.forEach((table) => {
+            const rows = table.querySelectorAll('tr');
+            let isMnemonic = true;
+            let letters = '';
 
             // Check if first column contains single letters that spell something
-            rows.forEach(function(row, idx) {
+            rows.forEach((row, idx) => {
                 if (idx === 0) return; // Skip header
-                var firstCell = row.querySelector('td:first-child');
+                const firstCell = row.querySelector('td:first-child');
                 if (firstCell) {
-                    var text = firstCell.textContent.trim();
+                    const text = firstCell.textContent.trim();
                     // Check for letter or bold letter pattern
-                    var letterMatch = text.match(/^\*?\*?([A-Z])\*?\*?$/);
+                    const letterMatch = text.match(/^\*?\*?([A-Z])\*?\*?$/);
                     if (letterMatch) {
                         letters += letterMatch[1];
                     } else if (text.length === 1 && /[A-Z]/.test(text)) {
@@ -394,15 +439,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Known mnemonics
-            var knownMnemonics = ['DESCEND', 'IMSAFE', 'DECIDE', 'OODA', 'PAVE', 'SAFETY'];
             if (knownMnemonics.includes(letters) || (letters.length >= 4 && letters.length <= 10 && isMnemonic)) {
                 table.classList.add('mnemonic-table');
 
                 // Style the letter cells
-                rows.forEach(function(row, idx) {
+                rows.forEach((row, idx) => {
                     if (idx === 0) return;
-                    var firstCell = row.querySelector('td:first-child');
+                    const firstCell = row.querySelector('td:first-child');
                     if (firstCell) {
                         firstCell.style.background = 'rgba(231, 76, 60, 0.15)';
                         firstCell.style.color = '#e74c3c';
@@ -417,49 +460,68 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function enhanceChecklists() {
-        var cells = contentArea.querySelectorAll('td');
-        var isAdminSection = currentSection === 'admin';
+        const cells = contentArea.querySelectorAll('td');
+        const isAdminSection = currentSection === 'admin';
+        let checkboxCounter = 0;
 
-        cells.forEach(function(cell) {
-            var text = cell.textContent.trim();
+        cells.forEach((cell) => {
+            const text = cell.textContent.trim();
+
+            // Add checklist-cell class for styling
+            if (text === '[ ]' || text === '[x]' || text === '[X]' || text === '[✓]') {
+                cell.classList.add('checklist-cell');
+            }
 
             // Replace [ ] with actual checkbox (interactive in admin section)
             if (text === '[ ]') {
+                checkboxCounter++;
+                const checkboxId = `checkbox-${checkboxCounter}`;
                 if (isAdminSection) {
-                    cell.innerHTML = '<input type="checkbox" class="compliance-checkbox" onclick="this.parentElement.parentElement.classList.toggle(\'completed-row\')">';
+                    cell.innerHTML = `<input type="checkbox" id="${checkboxId}" class="compliance-checkbox" aria-label="Checklist item ${checkboxCounter}" onclick="this.parentElement.parentElement.classList.toggle('completed-row')">`;
                 } else {
-                    cell.innerHTML = '<input type="checkbox" disabled>';
+                    cell.innerHTML = `<input type="checkbox" id="${checkboxId}" disabled aria-label="Checklist item ${checkboxCounter}">`;
                 }
                 cell.style.textAlign = 'center';
             } else if (text === '[x]' || text === '[X]' || text === '[✓]') {
-                cell.innerHTML = '<input type="checkbox" checked disabled>';
+                checkboxCounter++;
+                const checkboxId = `checkbox-${checkboxCounter}`;
+                cell.innerHTML = `<input type="checkbox" id="${checkboxId}" checked disabled aria-label="Checklist item ${checkboxCounter} (completed)">`;
                 cell.style.textAlign = 'center';
             }
 
-            // Style cells that contain checkboxes
+            // Style cells that contain inline checkboxes
             if (cell.textContent.includes('[ ]')) {
                 if (isAdminSection) {
-                    cell.innerHTML = cell.innerHTML.replace(/\[ \]/g, '<input type="checkbox" class="compliance-checkbox" style="margin-right: 5px;">');
+                    cell.innerHTML = cell.innerHTML.replace(/\[ \]/g, () => {
+                        checkboxCounter++;
+                        return `<input type="checkbox" class="compliance-checkbox" aria-label="Inline checklist item ${checkboxCounter}" style="margin-right: 5px;">`;
+                    });
                 } else {
-                    cell.innerHTML = cell.innerHTML.replace(/\[ \]/g, '<input type="checkbox" disabled style="margin-right: 5px;">');
+                    cell.innerHTML = cell.innerHTML.replace(/\[ \]/g, () => {
+                        checkboxCounter++;
+                        return `<input type="checkbox" disabled aria-label="Inline checklist item ${checkboxCounter}" style="margin-right: 5px;">`;
+                    });
                 }
             }
         });
 
         // Also handle list items with checkboxes (- [ ] format)
-        var listItems = contentArea.querySelectorAll('li');
-        listItems.forEach(function(li) {
-            var html = li.innerHTML;
+        const listItems = contentArea.querySelectorAll('li');
+        listItems.forEach((li) => {
+            const html = li.innerHTML;
             if (html.startsWith('[ ]')) {
+                checkboxCounter++;
+                const labelText = html.substring(4).replace(/<[^>]*>/g, '').trim().substring(0, 50);
                 if (isAdminSection) {
-                    li.innerHTML = '<input type="checkbox" class="compliance-checkbox" style="margin-right: 8px;" onclick="this.parentElement.classList.toggle(\'completed-item\')">' + html.substring(4);
+                    li.innerHTML = `<input type="checkbox" class="compliance-checkbox" aria-label="${labelText}" style="margin-right: 8px;" onclick="this.parentElement.classList.toggle('completed-item')">` + html.substring(4);
                     li.style.cursor = 'pointer';
                     li.style.padding = '8px 0';
                 } else {
-                    li.innerHTML = '<input type="checkbox" disabled style="margin-right: 8px;">' + html.substring(4);
+                    li.innerHTML = `<input type="checkbox" disabled aria-label="${labelText}" style="margin-right: 8px;">` + html.substring(4);
                 }
             } else if (html.startsWith('[x]') || html.startsWith('[X]')) {
-                li.innerHTML = '<input type="checkbox" checked disabled style="margin-right: 8px;">' + html.substring(4);
+                const labelText = html.substring(4).replace(/<[^>]*>/g, '').trim().substring(0, 50);
+                li.innerHTML = `<input type="checkbox" checked disabled aria-label="${labelText} (completed)" style="margin-right: 8px;">` + html.substring(4);
             }
         });
 
@@ -470,79 +532,75 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function highlightCurrentMonth() {
-        var months = ['January', 'February', 'March', 'April', 'May', 'June',
-                      'July', 'August', 'September', 'October', 'November', 'December'];
-        var currentMonth = months[new Date().getMonth()];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const currentMonth = months[new Date().getMonth()];
 
-        var cells = contentArea.querySelectorAll('td');
-        cells.forEach(function(cell) {
+        const cells = contentArea.querySelectorAll('td');
+        cells.forEach((cell) => {
             if (cell.textContent.includes('**' + currentMonth + '**') ||
                 cell.innerHTML.includes('<strong>' + currentMonth + '</strong>')) {
                 cell.parentElement.classList.add('current-month');
             }
+
+            // Also apply compliance period classes based on content
+            const text = cell.textContent.trim().toUpperCase();
+            if (text.includes('MONTHLY')) {
+                cell.classList.add('compliance-monthly');
+            } else if (text.includes('QUARTERLY')) {
+                cell.classList.add('compliance-quarterly');
+            } else if (text.includes('SEMI-ANNUAL')) {
+                cell.classList.add('compliance-semi-annual');
+            } else if (text.includes('ANNUAL')) {
+                cell.classList.add('compliance-annual');
+            }
         });
     }
 
+    // Icon mapping for section headers
+    const SECTION_ICON_MAP = [
+        { patterns: ['INTRODUCTION', 'PURPOSE', 'OVERVIEW'], icon: 'fa-info-circle' },
+        { patterns: ['REGULATORY', 'COMPLIANCE', 'CAR '], icon: 'fa-balance-scale' },
+        { patterns: ['AIRCRAFT', 'FLEET', 'EQUIPMENT'], icon: 'fa-plane' },
+        { patterns: ['WEATHER', 'ENVIRONMENTAL'], icon: 'fa-cloud-sun' },
+        { patterns: ['COMMUNICATION'], icon: 'fa-comments' },
+        { patterns: ['SAFETY', 'SMS', 'HAZARD'], icon: 'fa-shield-alt' },
+        { patterns: ['BATTERY'], icon: 'fa-battery-full' },
+        { patterns: ['FIRMWARE', 'SOFTWARE'], icon: 'fa-microchip' },
+        { patterns: ['INSURANCE', 'LIABILITY'], icon: 'fa-file-contract' },
+        { patterns: ['RECORD', 'DOCUMENTATION', 'DOCUMENT CONTROL'], icon: 'fa-folder-open' },
+        { patterns: ['QUICK REFERENCE', 'REFERENCE CARD'], icon: 'fa-bolt' },
+        { patterns: ['CONTACT'], icon: 'fa-phone' },
+        { patterns: ['SCENARIO', 'STSC', 'STANDARD SCENARIO'], icon: 'fa-route' },
+        { patterns: ['SITE SURVEY', 'FLIGHT PLANNING'], icon: 'fa-map-marked-alt' },
+        { patterns: ['SEARCH', 'SAR'], icon: 'fa-search-location' },
+        { patterns: ['PERSONNEL', 'ORGANIZATION', 'PEOPLE'], icon: 'fa-users' },
+        { patterns: ['CHIEF PILOT', 'FLIGHT REVIEWER'], icon: 'fa-user-tie' },
+        { patterns: ['PPE', 'PROTECTIVE'], icon: 'fa-hard-hat' },
+        { patterns: ['TESTING', 'AIRWORTHINESS'], icon: 'fa-check-double' },
+        { patterns: ['DEFECT'], icon: 'fa-exclamation-circle' },
+        { patterns: ['VISUAL OBSERVER', ' VO '], icon: 'fa-eye' },
+        { patterns: ['TRAINER', 'INSTRUCTOR'], icon: 'fa-chalkboard-teacher' },
+        { patterns: ['CURRICULUM', 'PROGRESSION'], icon: 'fa-sitemap' },
+        { patterns: ['RECURRENCY', 'CURRENCY'], icon: 'fa-redo' }
+    ];
+
     function addSectionIcons() {
         // Add icons to main section headers based on content
-        var h2s = contentArea.querySelectorAll('h2');
+        const h2s = contentArea.querySelectorAll('h2');
 
-        h2s.forEach(function(h2) {
-            var text = h2.textContent.toUpperCase();
-            var icon = '';
+        h2s.forEach((h2) => {
+            // Skip if already has icon
+            if (h2.innerHTML.includes('fa-')) { return; }
 
-            if (text.includes('INTRODUCTION') || text.includes('PURPOSE') || text.includes('OVERVIEW')) {
-                icon = 'fa-info-circle';
-            } else if (text.includes('REGULATORY') || text.includes('COMPLIANCE') || text.includes('CAR ')) {
-                icon = 'fa-balance-scale';
-            } else if (text.includes('AIRCRAFT') || text.includes('FLEET') || text.includes('EQUIPMENT')) {
-                icon = 'fa-plane';
-            } else if (text.includes('WEATHER') || text.includes('ENVIRONMENTAL')) {
-                icon = 'fa-cloud-sun';
-            } else if (text.includes('COMMUNICATION')) {
-                icon = 'fa-comments';
-            } else if (text.includes('SAFETY') || text.includes('SMS') || text.includes('HAZARD')) {
-                icon = 'fa-shield-alt';
-            } else if (text.includes('BATTERY')) {
-                icon = 'fa-battery-full';
-            } else if (text.includes('FIRMWARE') || text.includes('SOFTWARE')) {
-                icon = 'fa-microchip';
-            } else if (text.includes('INSURANCE') || text.includes('LIABILITY')) {
-                icon = 'fa-file-contract';
-            } else if (text.includes('RECORD') || text.includes('DOCUMENTATION') || text.includes('DOCUMENT CONTROL')) {
-                icon = 'fa-folder-open';
-            } else if (text.includes('QUICK REFERENCE') || text.includes('REFERENCE CARD')) {
-                icon = 'fa-bolt';
-            } else if (text.includes('CONTACT')) {
-                icon = 'fa-phone';
-            } else if (text.includes('SCENARIO') || text.includes('STSC') || text.includes('STANDARD SCENARIO')) {
-                icon = 'fa-route';
-            } else if (text.includes('SITE SURVEY') || text.includes('FLIGHT PLANNING')) {
-                icon = 'fa-map-marked-alt';
-            } else if (text.includes('SEARCH') || text.includes('SAR')) {
-                icon = 'fa-search-location';
-            } else if (text.includes('PERSONNEL') || text.includes('ORGANIZATION') || text.includes('PEOPLE')) {
-                icon = 'fa-users';
-            } else if (text.includes('CHIEF PILOT') || text.includes('FLIGHT REVIEWER')) {
-                icon = 'fa-user-tie';
-            } else if (text.includes('PPE') || text.includes('PROTECTIVE')) {
-                icon = 'fa-hard-hat';
-            } else if (text.includes('TESTING') || text.includes('AIRWORTHINESS')) {
-                icon = 'fa-check-double';
-            } else if (text.includes('DEFECT')) {
-                icon = 'fa-exclamation-circle';
-            } else if (text.includes('VISUAL OBSERVER') || text.includes(' VO ')) {
-                icon = 'fa-eye';
-            } else if (text.includes('TRAINER') || text.includes('INSTRUCTOR')) {
-                icon = 'fa-chalkboard-teacher';
-            } else if (text.includes('CURRICULUM') || text.includes('PROGRESSION')) {
-                icon = 'fa-sitemap';
-            } else if (text.includes('RECURRENCY') || text.includes('CURRENCY')) {
-                icon = 'fa-redo';
-            }
+            const text = h2.textContent.toUpperCase();
 
-            if (icon && !h2.innerHTML.includes('fa-')) {
-                h2.innerHTML = '<i class="fas ' + icon + '" style="margin-right: 10px; color: #3498db;"></i>' + h2.innerHTML;
+            // Find matching icon
+            for (const { patterns, icon } of SECTION_ICON_MAP) {
+                if (patterns.some(pattern => text.includes(pattern))) {
+                    h2.innerHTML = `<i class="fas ${icon}" style="margin-right: 10px; color: #3498db;"></i>` + h2.innerHTML;
+                    return;
+                }
             }
         });
     }
@@ -552,34 +610,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
 
     function buildTOC() {
-        var headings = contentArea.querySelectorAll('h2, h3');
-        var tocHTML = '<ul>';
+        const headings = contentArea.querySelectorAll('h2, h3');
+        let tocHTML = '<ul>';
 
-        headings.forEach(function(heading, index) {
-            var id = 'heading-' + index;
+        headings.forEach((heading, index) => {
+            const id = 'heading-' + index;
             heading.id = id;
 
-            var level = heading.tagName.toLowerCase();
+            const level = heading.tagName.toLowerCase();
             // Get text without icons
-            var text = heading.textContent;
+            const text = heading.textContent;
 
-            tocHTML += '<li><a href="#' + id + '" class="toc-' + level + '">' + text + '</a></li>';
+            tocHTML += `<li><a href="#${id}" class="toc-${level}">${text}</a></li>`;
         });
 
         tocHTML += '</ul>';
         tocContent.innerHTML = tocHTML;
 
         // Add click handlers
-        tocContent.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function(e) {
+        tocContent.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                var targetId = link.getAttribute('href').slice(1);
-                var target = document.getElementById(targetId);
+                const targetId = link.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
                 if (target) {
                     // Calculate position accounting for fixed header (64px + 16px buffer)
-                    var headerOffset = 80;
-                    var elementPosition = target.getBoundingClientRect().top;
-                    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
                     window.scrollTo({
                         top: offsetPosition,
@@ -591,54 +649,52 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateTocHighlight() {
-        var headings = contentArea.querySelectorAll('h2, h3');
-        var tocLinks = tocContent.querySelectorAll('a');
-        var scrollTop = window.scrollY;
+        const headings = contentArea.querySelectorAll('h2, h3');
+        const tocLinks = tocContent.querySelectorAll('a');
+        const scrollTop = window.scrollY;
 
-        var activeIndex = 0;
-        headings.forEach(function(heading, index) {
+        let activeIndex = 0;
+        headings.forEach((heading, index) => {
             if (heading.offsetTop <= scrollTop + 100) {
                 activeIndex = index;
             }
         });
 
-        tocLinks.forEach(function(link, index) {
+        tocLinks.forEach((link, index) => {
             link.classList.toggle('active', index === activeIndex);
         });
     }
 
     function handleQuickJump(jumpId) {
-        var jumpConfig = QUICK_ACCESS[jumpId];
-        if (!jumpConfig) return;
+        const jumpConfig = QUICK_ACCESS[jumpId];
+        if (!jumpConfig) { return; }
 
         // Check if this is a modal-type quick access
         if (jumpConfig.type === 'modal') {
             // Call the appropriate modal handler
-            if (jumpConfig.handler === 'showEmergencyProcedures') {
-                showEmergencyProcedures();
-            } else if (jumpConfig.handler === 'showFlyAwayScript') {
-                showFlyAwayScript();
-            } else if (jumpConfig.handler === 'showPreFlightChecklist') {
-                showPreFlightChecklist();
-            } else if (jumpConfig.handler === 'showIMSAFEChecklist') {
-                showIMSAFEChecklist();
-            } else if (jumpConfig.handler === 'showRegulationsReference') {
-                showRegulationsReference();
+            const handlers = {
+                'showEmergencyProcedures': showEmergencyProcedures,
+                'showFlyAwayScript': showFlyAwayScript,
+                'showPreFlightChecklist': showPreFlightChecklist,
+                'showIMSAFEChecklist': showIMSAFEChecklist,
+                'showRegulationsReference': showRegulationsReference
+            };
+            if (handlers[jumpConfig.handler]) {
+                handlers[jumpConfig.handler]();
             }
             return;
         }
 
         // Legacy jump behavior for weather minimums, etc.
-        var navItem = document.querySelector('[data-section="' + jumpConfig.section + '"]');
+        const navItem = document.querySelector(`[data-section="${jumpConfig.section}"]`);
         if (navItem) {
             setActiveNav(navItem);
             loadSection(jumpConfig.section);
 
             // Wait for render then scroll to relevant content
-            setTimeout(function() {
-                var headings = contentArea.querySelectorAll('h2, h3, h4');
-                for (var i = 0; i < headings.length; i++) {
-                    var heading = headings[i];
+            setTimeout(() => {
+                const headings = contentArea.querySelectorAll('h2, h3, h4');
+                for (const heading of headings) {
                     if (heading.textContent.toLowerCase().includes(jumpConfig.search.toLowerCase())) {
                         heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         break;
@@ -660,27 +716,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleSearch() {
-        var query = searchModalInput.value.trim().toLowerCase();
+        const query = searchModalInput.value.trim().toLowerCase();
 
         if (query.length < 2) {
             searchResults.innerHTML = '<p class="search-hint">Type at least 2 characters to search...</p>';
             return;
         }
 
-        var results = [];
+        const results = [];
 
         // Search through all sections
-        Object.keys(RPOC_CONTENT).forEach(function(sectionKey) {
-            var section = RPOC_CONTENT[sectionKey];
-            var content = section.content;
+        Object.keys(RPOC_CONTENT).forEach((sectionKey) => {
+            const section = RPOC_CONTENT[sectionKey];
+            const content = section.content;
 
             // Split into paragraphs/sections
-            var paragraphs = content.split('\n\n');
-            var currentHeading = '';
+            const paragraphs = content.split('\n\n');
+            let currentHeading = '';
 
-            paragraphs.forEach(function(para) {
+            paragraphs.forEach((para) => {
                 // Track headings
-                var headingMatch = para.match(/^#{1,4}\s+(.+)$/m);
+                const headingMatch = para.match(/^#{1,4}\s+(.+)$/m);
                 if (headingMatch) {
                     currentHeading = headingMatch[1];
                 }
@@ -702,23 +758,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        var resultsHTML = '';
-        results.slice(0, 15).forEach(function(result) {
-            var excerpt = highlightText(result.text, query);
-            resultsHTML += '<div class="search-result-item" data-section="' + result.section + '" data-heading="' + result.heading + '">' +
-                '<div class="search-result-section"><i class="fas fa-book" style="margin-right: 5px;"></i>' + result.sectionTitle + '</div>' +
-                '<div class="search-result-title">' + result.heading + '</div>' +
-                '<div class="search-result-excerpt">' + excerpt + '</div>' +
-                '</div>';
+        let resultsHTML = '';
+        results.slice(0, 15).forEach((result) => {
+            const excerpt = highlightText(result.text, query);
+            resultsHTML += `<div class="search-result-item" data-section="${result.section}" data-heading="${result.heading}">
+                <div class="search-result-section"><i class="fas fa-book" style="margin-right: 5px;"></i>${result.sectionTitle}</div>
+                <div class="search-result-title">${result.heading}</div>
+                <div class="search-result-excerpt">${excerpt}</div>
+            </div>`;
         });
 
         searchResults.innerHTML = resultsHTML;
 
         // Add click handlers to results
-        searchResults.querySelectorAll('.search-result-item').forEach(function(item) {
-            item.addEventListener('click', function() {
-                var section = item.dataset.section;
-                var heading = item.dataset.heading;
+        searchResults.querySelectorAll('.search-result-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const section = item.dataset.section;
+                const heading = item.dataset.heading;
                 closeSearchModal();
                 navigateToResult(section, heading);
             });
@@ -726,22 +782,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function highlightText(text, query) {
-        var regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+        const regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
         return text.replace(regex, '<mark>$1</mark>').substring(0, 200) + '...';
     }
 
     function navigateToResult(sectionKey, headingText) {
         // Switch to section
-        var navItem = document.querySelector('[data-section="' + sectionKey + '"]');
+        const navItem = document.querySelector(`[data-section="${sectionKey}"]`);
         if (navItem) {
             setActiveNav(navItem);
             loadSection(sectionKey);
 
             // Scroll to heading
-            setTimeout(function() {
-                var headings = contentArea.querySelectorAll('h1, h2, h3, h4');
-                for (var i = 0; i < headings.length; i++) {
-                    var heading = headings[i];
+            setTimeout(() => {
+                const headings = contentArea.querySelectorAll('h1, h2, h3, h4');
+                for (const heading of headings) {
                     if (heading.textContent.includes(headingText)) {
                         heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         // Highlight briefly
@@ -749,7 +804,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         heading.style.borderRadius = '4px';
                         heading.style.padding = '4px 8px';
                         heading.style.marginLeft = '-8px';
-                        setTimeout(function() {
+                        setTimeout(() => {
                             heading.style.backgroundColor = '';
                             heading.style.padding = '';
                             heading.style.marginLeft = '';

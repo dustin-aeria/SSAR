@@ -1,6 +1,6 @@
 # SSAR RPOC Reorganization Progress Tracker
 
-**Last Updated:** 2026-03-09
+**Last Updated:** 2026-03-11
 **Status:** COMPLETE
 
 ## Project Overview
@@ -118,3 +118,54 @@ Reorganizing 42 SSAR RPAS policy documents from 9 categories into 4 consolidated
 - Preserving ALL tables, procedures, and regulatory references
 - Improving organization and adding cross-references
 - Adding regulatory citations where missing
+
+---
+
+## Web Tool Technical Improvements
+
+**Last Updated:** 2026-03-11
+**Status:** IN PROGRESS
+
+### Phase 1 - Quick Wins (Critical Fixes) - COMPLETE
+- [x] Fix PWA manifest paths for GitHub Pages (A5)
+- [x] Fix service worker registration path (Q8)
+- [x] Pin Marked.js CDN version to 9.1.6 (DEP2)
+- [x] Add Marked security documentation (C1)
+- [x] Add aria-label to back-to-top button (X7)
+- [x] Add aria-expanded to menu toggle (X1)
+- [x] Add visually-hidden search label (X2)
+- [x] Add defer to script tags (P4/P5)
+
+### Phase 2 - Medium Effort (Code Quality) - COMPLETE
+- [x] Modernize to ES6 syntax (Q1) - var->const/let, arrow functions
+- [x] Add keyboard navigation & focus styles (X3/X4)
+- [x] Remove invalid CSS selectors :has/:contains (Q6) - replaced with JS classes
+- [x] Optimize colorCodeTables function (P6) - lookup table approach
+- [x] Fix checkbox accessibility (X6) - added aria-labels
+- [x] Add ESLint/Prettier configuration (D2)
+
+### Phase 3 - Large Refactors (Architecture) - PLANNED
+- [ ] Implement lazy loading for content (P1)
+- [ ] Split app.js into modules (A1)
+- [ ] Extract HTML templates (Q2/P2)
+- [ ] Add build system - Vite (D1)
+- [ ] Separate content from code (A2)
+- [ ] Add test coverage (D3)
+
+### Files Modified
+| File | Changes |
+|------|---------|
+| `docs/manifest.json` | Fixed start_url and scope for GitHub Pages |
+| `docs/index.html` | SW path, accessibility attrs, pinned marked.js, defer |
+| `docs/js/app.js` | ES6 modernization, keyboard nav, optimized functions |
+| `docs/css/style.css` | Focus styles, removed invalid selectors, visually-hidden |
+| `.eslintrc.json` | NEW - ESLint configuration |
+| `.prettierrc` | NEW - Prettier configuration |
+
+### Verification Checklist
+- [ ] PWA installs correctly on GitHub Pages
+- [ ] Service worker registers without errors
+- [ ] Console shows no errors
+- [ ] Screen reader announces controls properly
+- [ ] Keyboard navigation works throughout
+- [ ] No invalid CSS warnings in browser

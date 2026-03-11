@@ -2,12 +2,12 @@
   "name": "SSAR RPAS Policy Manual",
   "short_name": "SSAR RPOC",
   "description": "Squamish Search and Rescue - RPAS Operator Certificate Policy & Operations Manual",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#2B5A9C",
   "theme_color": "#2B5A9C",
   "orientation": "any",
-  "scope": "/",
+  "scope": "./",
   "icons": [
     {
       "src": "logo.png",
