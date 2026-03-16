@@ -122,19 +122,19 @@ SSAR is authorized to conduct the following operations under this RPOC:
 
 ### 2.5 Authorized Pilots
 
-The following pilots are authorized under this RPOC (all hold valid Advanced RPAS Pilot Certificates):
+The following pilots are authorized under this RPOC:
 
-| Name | Certificate # | Role | Qualified Aircraft |
-|------|---------------|------|-------------------|
-| Dustin Wales | [Certificate #] | Chief Pilot/AE | M30T, M4TD |
-| Pilot 2 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 3 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 4 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 5 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 6 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 7 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 8 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 9 | [Certificate #] | PIC | M30T, M4TD |
+| Name | Certification Level | Certificate # | TC Account # | Issue Date | Role | Qualified Aircraft |
+|------|---------------------|---------------|--------------|------------|------|-------------------|
+| Dustin Wales | Level 1 Complex + Flight Reviewer | PC1903576891 | TC1903552955 | Feb 14, 2026 | Chief Pilot/AE | M30T, M4TD |
+| Michael Adams | Advanced Operations | PC2513272613 | TC2513024438 | July 29, 2025 | PIC | M30T, M4TD |
+| Angela Wagner | Advanced Operations | PC2513172525 | TC2513124614 | July 25, 2025 | PIC | M30T, M4TD |
+| David Thanh | Advanced Operations | PC2205100242 | TC2205126300 | July 25, 2025 | PIC | M30T, M4TD |
+| Jacob Lagercrantz | Advanced Operations | PC2203399477 | TC2203224990 | Nov 6, 2024 | PIC | M30T, M4TD |
+| Philip Bonham | Advanced Operations | PC2329738112 | TC2329778786 | July 25, 2025 | PIC | M30T, M4TD |
+| Michael Rafferty | Advanced Operations | PC2515374690 | TC2515327209 | July 25, 2025 | PIC | M30T, M4TD |
+| Jeffrey Fielding | Advanced Operations | PC2406844456 | TC2406887625 | July 25, 2025 | PIC | M30T, M4TD |
+| Michelle Bech | Advanced Operations | PC2307121179 | TC2307156150 | July 27, 2025 | PIC | M30T, M4TD |
 
 ### 2.6 Operating Area
 
