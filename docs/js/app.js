@@ -112,6 +112,34 @@ document.addEventListener('DOMContentLoaded', () => {
         'WHITE': 'rgba(200, 200, 200, 0.2)'
     };
 
+    // Icon mapping for section headers
+    const SECTION_ICON_MAP = [
+        { patterns: ['INTRODUCTION', 'PURPOSE', 'OVERVIEW'], icon: 'fa-info-circle' },
+        { patterns: ['REGULATORY', 'COMPLIANCE', 'CAR '], icon: 'fa-balance-scale' },
+        { patterns: ['AIRCRAFT', 'FLEET', 'EQUIPMENT'], icon: 'fa-plane' },
+        { patterns: ['WEATHER', 'ENVIRONMENTAL'], icon: 'fa-cloud-sun' },
+        { patterns: ['COMMUNICATION'], icon: 'fa-comments' },
+        { patterns: ['SAFETY', 'SMS', 'HAZARD'], icon: 'fa-shield-alt' },
+        { patterns: ['BATTERY'], icon: 'fa-battery-full' },
+        { patterns: ['FIRMWARE', 'SOFTWARE'], icon: 'fa-microchip' },
+        { patterns: ['INSURANCE', 'LIABILITY'], icon: 'fa-file-contract' },
+        { patterns: ['RECORD', 'DOCUMENTATION', 'DOCUMENT CONTROL'], icon: 'fa-folder-open' },
+        { patterns: ['QUICK REFERENCE', 'REFERENCE CARD'], icon: 'fa-bolt' },
+        { patterns: ['CONTACT'], icon: 'fa-phone' },
+        { patterns: ['SCENARIO', 'STSC', 'STANDARD SCENARIO'], icon: 'fa-route' },
+        { patterns: ['SITE SURVEY', 'FLIGHT PLANNING'], icon: 'fa-map-marked-alt' },
+        { patterns: ['SEARCH', 'SAR'], icon: 'fa-search-location' },
+        { patterns: ['PERSONNEL', 'ORGANIZATION', 'PEOPLE'], icon: 'fa-users' },
+        { patterns: ['CHIEF PILOT', 'FLIGHT REVIEWER'], icon: 'fa-user-tie' },
+        { patterns: ['PPE', 'PROTECTIVE'], icon: 'fa-hard-hat' },
+        { patterns: ['TESTING', 'AIRWORTHINESS'], icon: 'fa-check-double' },
+        { patterns: ['DEFECT'], icon: 'fa-exclamation-circle' },
+        { patterns: ['VISUAL OBSERVER', ' VO '], icon: 'fa-eye' },
+        { patterns: ['TRAINER', 'INSTRUCTOR'], icon: 'fa-chalkboard-teacher' },
+        { patterns: ['CURRICULUM', 'PROGRESSION'], icon: 'fa-sitemap' },
+        { patterns: ['RECURRENCY', 'CURRENCY'], icon: 'fa-redo' }
+    ];
+
     // Initialize
     init();
 
@@ -556,34 +584,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // Icon mapping for section headers
-    const SECTION_ICON_MAP = [
-        { patterns: ['INTRODUCTION', 'PURPOSE', 'OVERVIEW'], icon: 'fa-info-circle' },
-        { patterns: ['REGULATORY', 'COMPLIANCE', 'CAR '], icon: 'fa-balance-scale' },
-        { patterns: ['AIRCRAFT', 'FLEET', 'EQUIPMENT'], icon: 'fa-plane' },
-        { patterns: ['WEATHER', 'ENVIRONMENTAL'], icon: 'fa-cloud-sun' },
-        { patterns: ['COMMUNICATION'], icon: 'fa-comments' },
-        { patterns: ['SAFETY', 'SMS', 'HAZARD'], icon: 'fa-shield-alt' },
-        { patterns: ['BATTERY'], icon: 'fa-battery-full' },
-        { patterns: ['FIRMWARE', 'SOFTWARE'], icon: 'fa-microchip' },
-        { patterns: ['INSURANCE', 'LIABILITY'], icon: 'fa-file-contract' },
-        { patterns: ['RECORD', 'DOCUMENTATION', 'DOCUMENT CONTROL'], icon: 'fa-folder-open' },
-        { patterns: ['QUICK REFERENCE', 'REFERENCE CARD'], icon: 'fa-bolt' },
-        { patterns: ['CONTACT'], icon: 'fa-phone' },
-        { patterns: ['SCENARIO', 'STSC', 'STANDARD SCENARIO'], icon: 'fa-route' },
-        { patterns: ['SITE SURVEY', 'FLIGHT PLANNING'], icon: 'fa-map-marked-alt' },
-        { patterns: ['SEARCH', 'SAR'], icon: 'fa-search-location' },
-        { patterns: ['PERSONNEL', 'ORGANIZATION', 'PEOPLE'], icon: 'fa-users' },
-        { patterns: ['CHIEF PILOT', 'FLIGHT REVIEWER'], icon: 'fa-user-tie' },
-        { patterns: ['PPE', 'PROTECTIVE'], icon: 'fa-hard-hat' },
-        { patterns: ['TESTING', 'AIRWORTHINESS'], icon: 'fa-check-double' },
-        { patterns: ['DEFECT'], icon: 'fa-exclamation-circle' },
-        { patterns: ['VISUAL OBSERVER', ' VO '], icon: 'fa-eye' },
-        { patterns: ['TRAINER', 'INSTRUCTOR'], icon: 'fa-chalkboard-teacher' },
-        { patterns: ['CURRICULUM', 'PROGRESSION'], icon: 'fa-sitemap' },
-        { patterns: ['RECURRENCY', 'CURRENCY'], icon: 'fa-redo' }
-    ];
 
     function addSectionIcons() {
         // Add icons to main section headers based on content
