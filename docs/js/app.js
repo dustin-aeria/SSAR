@@ -22,6 +22,96 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSection = 'operations';
     let isDarkMode = localStorage.getItem('darkMode') === 'true';
 
+    // Optimized lookup tables for cell color coding (must be defined before init)
+    const EXACT_MATCH_CLASSES = {
+        // Risk levels
+        'EXTREME': 'risk-extreme',
+        'HIGH': 'risk-high',
+        'HIGH PRIORITY': 'risk-high',
+        'MEDIUM': 'risk-medium',
+        'MODERATE': 'risk-medium',
+        'LOW': 'risk-low',
+        'LOW PRIORITY': 'risk-low',
+        // Status colors
+        'GREEN': 'status-green',
+        'SERVICEABLE': 'status-green',
+        'CURRENT': 'status-green',
+        'PASS': 'status-green',
+        'CLEAR': 'status-green',
+        'YELLOW': 'status-yellow',
+        'LIMITED': 'status-yellow',
+        'CAUTION': 'status-yellow',
+        'DUE WITHIN 30 DAYS': 'status-yellow',
+        'ORANGE': 'status-orange',
+        'WARNING': 'status-orange',
+        'RED': 'status-red',
+        'GROUNDED': 'status-red',
+        'LOCKOUT': 'status-red',
+        'EXPIRED': 'status-red',
+        'FAIL': 'status-red',
+        'NO-GO': 'status-red',
+        // GO/NO-GO
+        'GO': 'go-indicator',
+        'NOGO': 'nogo-indicator',
+        // Categories
+        'A': 'category-a',
+        'A - GROUNDING': 'category-a',
+        'DEF-A': 'category-a',
+        'B': 'category-b',
+        'B - LIMITATION': 'category-b',
+        'DEF-B': 'category-b',
+        'C': 'category-c',
+        'C - MONITOR': 'category-c',
+        'DEF-C': 'category-c',
+        'D': 'category-d',
+        'D - COSMETIC': 'category-d',
+        'DEF-D': 'category-d',
+        // Ratings
+        '4': 'rating-4',
+        '4 - EXEMPLARY': 'rating-4',
+        '3': 'rating-3',
+        '3 - COMPETENT': 'rating-3',
+        '2': 'rating-2',
+        '2 - DEVELOPING': 'rating-2',
+        '1': 'rating-1',
+        '1 - UNSATISFACTORY': 'rating-1',
+        // SAIL levels
+        'SAIL I': 'sail-1',
+        'SAIL 1': 'sail-1',
+        'SAIL II': 'sail-2',
+        'SAIL 2': 'sail-2',
+        'SAIL III': 'sail-3',
+        'SAIL 3': 'sail-3',
+        'SAIL IV': 'sail-4',
+        'SAIL 4': 'sail-4',
+        'SAIL V': 'sail-5',
+        'SAIL 5': 'sail-5',
+        'SAIL VI': 'sail-6',
+        'SAIL 6': 'sail-6'
+    };
+
+    const PARTIAL_MATCH_CLASSES = [
+        { pattern: 'EXTREME', className: 'risk-extreme' },
+        { pattern: 'HIGH RISK', className: 'risk-high' },
+        { pattern: 'MEDIUM RISK', className: 'risk-medium' },
+        { pattern: 'LOW RISK', className: 'risk-low' },
+        { pattern: 'CATEGORY A', className: 'category-a' },
+        { pattern: 'CATEGORY B', className: 'category-b' },
+        { pattern: 'CATEGORY C', className: 'category-c' },
+        { pattern: 'CATEGORY D', className: 'category-d' },
+        { pattern: 'EXEMPLARY', className: 'rating-4' },
+        { pattern: 'MEETS STANDARD', className: 'rating-3' },
+        { pattern: 'BELOW STANDARD', className: 'rating-2' },
+        { pattern: 'UNSATISFACTORY', className: 'rating-1' }
+    ];
+
+    const ROW_COLOR_MAP = {
+        'GREEN': 'rgba(39, 174, 96, 0.1)',
+        'YELLOW': 'rgba(241, 196, 15, 0.1)',
+        'RED': 'rgba(231, 76, 60, 0.1)',
+        'WHITE': 'rgba(200, 200, 200, 0.2)'
+    };
+
     // Initialize
     init();
 
@@ -199,96 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
         enhanceChecklists();
         addSectionIcons();
     }
-
-    // Optimized lookup tables for cell color coding
-    const EXACT_MATCH_CLASSES = {
-        // Risk levels
-        'EXTREME': 'risk-extreme',
-        'HIGH': 'risk-high',
-        'HIGH PRIORITY': 'risk-high',
-        'MEDIUM': 'risk-medium',
-        'MODERATE': 'risk-medium',
-        'LOW': 'risk-low',
-        'LOW PRIORITY': 'risk-low',
-        // Status colors
-        'GREEN': 'status-green',
-        'SERVICEABLE': 'status-green',
-        'CURRENT': 'status-green',
-        'PASS': 'status-green',
-        'CLEAR': 'status-green',
-        'YELLOW': 'status-yellow',
-        'LIMITED': 'status-yellow',
-        'CAUTION': 'status-yellow',
-        'DUE WITHIN 30 DAYS': 'status-yellow',
-        'ORANGE': 'status-orange',
-        'WARNING': 'status-orange',
-        'RED': 'status-red',
-        'GROUNDED': 'status-red',
-        'LOCKOUT': 'status-red',
-        'EXPIRED': 'status-red',
-        'FAIL': 'status-red',
-        'NO-GO': 'status-red',
-        // GO/NO-GO
-        'GO': 'go-indicator',
-        'NOGO': 'nogo-indicator',
-        // Categories
-        'A': 'category-a',
-        'A - GROUNDING': 'category-a',
-        'DEF-A': 'category-a',
-        'B': 'category-b',
-        'B - LIMITATION': 'category-b',
-        'DEF-B': 'category-b',
-        'C': 'category-c',
-        'C - MONITOR': 'category-c',
-        'DEF-C': 'category-c',
-        'D': 'category-d',
-        'D - COSMETIC': 'category-d',
-        'DEF-D': 'category-d',
-        // Ratings
-        '4': 'rating-4',
-        '4 - EXEMPLARY': 'rating-4',
-        '3': 'rating-3',
-        '3 - COMPETENT': 'rating-3',
-        '2': 'rating-2',
-        '2 - DEVELOPING': 'rating-2',
-        '1': 'rating-1',
-        '1 - UNSATISFACTORY': 'rating-1',
-        // SAIL levels
-        'SAIL I': 'sail-1',
-        'SAIL 1': 'sail-1',
-        'SAIL II': 'sail-2',
-        'SAIL 2': 'sail-2',
-        'SAIL III': 'sail-3',
-        'SAIL 3': 'sail-3',
-        'SAIL IV': 'sail-4',
-        'SAIL 4': 'sail-4',
-        'SAIL V': 'sail-5',
-        'SAIL 5': 'sail-5',
-        'SAIL VI': 'sail-6',
-        'SAIL 6': 'sail-6'
-    };
-
-    const PARTIAL_MATCH_CLASSES = [
-        { pattern: 'EXTREME', className: 'risk-extreme' },
-        { pattern: 'HIGH RISK', className: 'risk-high' },
-        { pattern: 'MEDIUM RISK', className: 'risk-medium' },
-        { pattern: 'LOW RISK', className: 'risk-low' },
-        { pattern: 'CATEGORY A', className: 'category-a' },
-        { pattern: 'CATEGORY B', className: 'category-b' },
-        { pattern: 'CATEGORY C', className: 'category-c' },
-        { pattern: 'CATEGORY D', className: 'category-d' },
-        { pattern: 'EXEMPLARY', className: 'rating-4' },
-        { pattern: 'MEETS STANDARD', className: 'rating-3' },
-        { pattern: 'BELOW STANDARD', className: 'rating-2' },
-        { pattern: 'UNSATISFACTORY', className: 'rating-1' }
-    ];
-
-    const ROW_COLOR_MAP = {
-        'GREEN': 'rgba(39, 174, 96, 0.1)',
-        'YELLOW': 'rgba(241, 196, 15, 0.1)',
-        'RED': 'rgba(231, 76, 60, 0.1)',
-        'WHITE': 'rgba(200, 200, 200, 0.2)'
-    };
 
     function colorCodeTables() {
         const tables = contentArea.querySelectorAll('table');
