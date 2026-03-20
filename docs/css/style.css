@@ -505,12 +505,14 @@ body {
 .document-content {
     flex: 1;
     padding: 32px 48px;
-    max-width: 900px;
     background: var(--bg-secondary);
+    min-width: 0; /* Allow flex shrinking */
 }
 
 .content-area {
     background: var(--bg-secondary);
+    max-width: 1200px; /* Readable line length but uses more space */
+    margin: 0 auto; /* Center content on very wide screens */
 }
 
 /* Loading State */
@@ -591,14 +593,19 @@ body {
    ENHANCED TABLE STYLES
    ======================================== */
 
+/* Table wrapper for horizontal scroll on mobile */
+.content-area .table-wrapper {
+    overflow-x: auto;
+    margin: 24px 0;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
 .content-area table {
     width: 100%;
     border-collapse: collapse;
-    margin: 24px 0;
     font-size: 0.9rem;
-    box-shadow: var(--shadow-sm);
-    border-radius: 8px;
-    overflow: hidden;
+    min-width: 500px; /* Ensure tables don't get too squished */
 }
 
 .content-area th {
