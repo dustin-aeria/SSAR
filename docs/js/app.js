@@ -6,7 +6,7 @@ const SUPABASE_URL = 'https://falrucbgwtpnzvodmytu.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZhbHJ1Y2Jnd3Rwbnp2b2RteXR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMDYwMDcsImV4cCI6MjA4OTU4MjAwN30.hErSxGCeHDLFZu_9tYb0dKjz7bVgg_w10vKAYDwtqvI';
 
 // Initialize Supabase client
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Content cache (populated from Supabase)
 let contentCache = {};
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadContentFromSupabase() {
         try {
-            const { data, error } = await supabase
+            const { data, error } = await supabaseClient
                 .from('rpoc_content')
                 .select('*')
                 .eq('status', 'active');
