@@ -84,18 +84,22 @@ All SSAR RPAS operations shall comply with:
 
 | Specification | Value |
 |---------------|-------|
-| RPOC Number | [To be assigned upon approval] |
-| Effective Date | [To be determined] |
-| Issued To | Squamish Search and Rescue |
+| RPOC Number | **OC2607502737** |
+| Date of Issue | March 16, 2026 |
+| Valid Until | Valid until suspended |
+| Issued By | Transport Canada, Ottawa |
+| Regulatory Authority | CAR 901.214 |
 
-### 2.2 Applicant Information
+### 2.2 Operator Information
 
 | Field | Information |
 |-------|-------------|
-| Organization Name | Squamish Search and Rescue |
-| City/Province | Squamish, British Columbia |
+| RPAS Operator | Squamish Search and Rescue - Squamish Search and Rescue Society |
+| Operating Name | Squamish Search and Rescue |
 | Accountable Executive | Dustin Wales |
-| Emergency Contact | Dustin Wales |
+| Email | dustin@aeria.ai |
+| Telephone | 604-849-2345 |
+| Address | PO Box 1666, Garibaldi Highlands, BC V0N 1T0 |
 
 ### 2.3 Accountable Executive Accountability - CAR 901.217
 
