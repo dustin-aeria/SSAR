@@ -532,6 +532,14 @@ body {
 }
 
 /* Markdown Content Styles */
+/* Scroll offset for fixed header */
+.content-area h1[id],
+.content-area h2[id],
+.content-area h3[id],
+.content-area h4[id] {
+    scroll-margin-top: 80px;
+}
+
 .content-area h1,
 .content-area h2,
 .content-area h3,

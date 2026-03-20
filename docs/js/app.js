@@ -728,15 +728,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetId = link.getAttribute('href').slice(1);
                 const target = document.getElementById(targetId);
                 if (target) {
-                    // Calculate position accounting for fixed header (64px + 16px buffer)
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    // Use scrollIntoView with offset via CSS scroll-margin
+                    target.style.scrollMarginTop = '80px';
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                    // Update active state
+                    tocContent.querySelectorAll('a').forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
                 }
             });
         });
