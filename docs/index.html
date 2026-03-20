@@ -73,6 +73,9 @@
                     <input type="text" id="search-input" placeholder="Search policies...">
                     <kbd>Ctrl+K</kbd>
                 </div>
+                <button id="edit-btn" class="header-btn" title="Edit Current Section">
+                    <i class="fas fa-edit"></i>
+                </button>
                 <button id="print-btn" class="header-btn" title="Print Current Section">
                     <i class="fas fa-print"></i>
                 </button>
@@ -256,6 +259,44 @@
     <!-- Scripts -->
     <script src="js/content.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- Edit Modal -->
+    <div id="edit-overlay" class="edit-overlay">
+        <div class="edit-modal">
+            <div class="edit-header">
+                <h2 id="edit-title">Edit Section</h2>
+                <div class="edit-header-actions">
+                    <button id="edit-preview-toggle" class="edit-btn" title="Toggle Preview">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <button id="edit-save" class="edit-btn edit-btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button id="edit-close" class="edit-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="edit-toolbar">
+                <button type="button" data-action="bold" title="Bold"><i class="fas fa-bold"></i></button>
+                <button type="button" data-action="italic" title="Italic"><i class="fas fa-italic"></i></button>
+                <span class="toolbar-divider"></span>
+                <button type="button" data-action="h2" title="Heading 2"><i class="fas fa-heading"></i>2</button>
+                <button type="button" data-action="h3" title="Heading 3"><i class="fas fa-heading"></i>3</button>
+                <span class="toolbar-divider"></span>
+                <button type="button" data-action="ul" title="Bullet List"><i class="fas fa-list-ul"></i></button>
+                <button type="button" data-action="ol" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+                <span class="toolbar-divider"></span>
+                <button type="button" data-action="table" title="Insert Table"><i class="fas fa-table"></i></button>
+                <button type="button" data-action="link" title="Insert Link"><i class="fas fa-link"></i></button>
+                <button type="button" data-action="hr" title="Horizontal Rule"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="edit-body">
+                <textarea id="edit-content" placeholder="Enter markdown content..."></textarea>
+                <div id="edit-preview" class="edit-preview"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Copyright Footer -->
     <footer class="copyright-footer">

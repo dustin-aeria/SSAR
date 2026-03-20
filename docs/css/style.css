@@ -2397,3 +2397,199 @@ body {
         print-color-adjust: exact !important;
     }
 }
+
+/* ========================================
+   EDIT MODAL STYLES
+   ======================================== */
+
+.edit-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    padding: 20px;
+    overflow: auto;
+}
+
+.edit-overlay.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.edit-modal {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.edit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    border-radius: 12px 12px 0 0;
+}
+
+.edit-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.edit-header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.edit-btn:hover {
+    background: var(--bg-secondary);
+}
+
+.edit-btn-primary {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+.edit-btn-primary:hover {
+    background: var(--primary-blue-light);
+}
+
+.edit-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    flex-wrap: wrap;
+}
+
+.edit-toolbar button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.edit-toolbar button:hover {
+    background: var(--bg-tertiary);
+    color: var(--primary-blue);
+}
+
+.toolbar-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--border-color);
+    margin: 0 8px;
+}
+
+.edit-body {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#edit-content {
+    flex: 1;
+    padding: 20px;
+    border: none;
+    resize: none;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    outline: none;
+    min-height: 500px;
+}
+
+#edit-content::placeholder {
+    color: var(--text-muted);
+}
+
+.edit-preview {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    display: none;
+}
+
+.edit-preview.active {
+    display: block;
+}
+
+.edit-body.preview-mode #edit-content {
+    display: none;
+}
+
+.edit-body.preview-mode .edit-preview {
+    display: block;
+    flex: 1;
+    border-left: none;
+}
+
+.edit-body.split-mode #edit-content,
+.edit-body.split-mode .edit-preview {
+    display: block;
+    width: 50%;
+}
+
+/* Edit button in header */
+#edit-btn {
+    background: var(--success-green);
+    color: white;
+}
+
+#edit-btn:hover {
+    background: var(--ssar-forest-light);
+}
+
+/* Saving indicator */
+.edit-saving {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.edit-saving .edit-btn-primary i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

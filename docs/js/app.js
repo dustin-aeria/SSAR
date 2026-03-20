@@ -28,10 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTop = document.getElementById('back-to-top');
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.querySelector('.sidebar');
+    const editBtn = document.getElementById('edit-btn');
+    const editOverlay = document.getElementById('edit-overlay');
+    const editContent = document.getElementById('edit-content');
+    const editPreview = document.getElementById('edit-preview');
+    const editTitle = document.getElementById('edit-title');
+    const editSave = document.getElementById('edit-save');
+    const editClose = document.getElementById('edit-close');
+    const editPreviewToggle = document.getElementById('edit-preview-toggle');
+    const editBody = document.querySelector('.edit-body');
 
     // State
     let currentSection = 'operations';
     let isDarkMode = localStorage.getItem('darkMode') === 'true';
+    let isEditing = false;
+    let editViewMode = 'edit'; // 'edit', 'preview', 'split'
 
     // Optimized lookup tables for cell color coding (must be defined before init)
     const EXACT_MATCH_CLASSES = {
@@ -278,6 +289,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Print button
         printBtn.addEventListener('click', () => { window.print(); });
+
+        // Edit button
+        if (editBtn) {
+            editBtn.addEventListener('click', openEditor);
+        }
+
+        // Edit modal events
+        if (editClose) {
+            editClose.addEventListener('click', closeEditor);
+        }
+
+        if (editSave) {
+            editSave.addEventListener('click', saveContent);
+        }
+
+        if (editPreviewToggle) {
+            editPreviewToggle.addEventListener('click', toggleEditPreview);
+        }
+
+        if (editOverlay) {
+            editOverlay.addEventListener('click', (e) => {
+                if (e.target === editOverlay) {
+                    closeEditor();
+                }
+            });
+        }
+
+        // Edit toolbar buttons
+        document.querySelectorAll('.edit-toolbar button[data-action]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                handleToolbarAction(btn.dataset.action);
+            });
+        });
 
         // Back to top
         window.addEventListener('scroll', () => {
@@ -878,6 +922,196 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.removeAttribute('data-theme');
             themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
         }
+    }
+
+    // ========================================
+    // EDIT FUNCTIONALITY
+    // ========================================
+
+    function openEditor() {
+        const section = contentCache[currentSection];
+        if (!section) {
+            alert('No section loaded to edit.');
+            return;
+        }
+
+        editTitle.textContent = `Edit: ${section.title}`;
+        editContent.value = section.content;
+        editOverlay.classList.add('active');
+        isEditing = true;
+        document.body.style.overflow = 'hidden';
+
+        // Update preview
+        updateEditPreview();
+    }
+
+    function closeEditor() {
+        editOverlay.classList.remove('active');
+        isEditing = false;
+        document.body.style.overflow = '';
+    }
+
+    function toggleEditPreview() {
+        if (editViewMode === 'edit') {
+            editViewMode = 'split';
+            editBody.classList.add('split-mode');
+            editBody.classList.remove('preview-mode');
+            editPreviewToggle.innerHTML = '<i class="fas fa-columns"></i> Split';
+        } else if (editViewMode === 'split') {
+            editViewMode = 'preview';
+            editBody.classList.remove('split-mode');
+            editBody.classList.add('preview-mode');
+            editPreviewToggle.innerHTML = '<i class="fas fa-edit"></i> Edit';
+        } else {
+            editViewMode = 'edit';
+            editBody.classList.remove('split-mode', 'preview-mode');
+            editPreviewToggle.innerHTML = '<i class="fas fa-eye"></i> Preview';
+        }
+        updateEditPreview();
+    }
+
+    function updateEditPreview() {
+        if (editViewMode !== 'edit') {
+            marked.setOptions({ breaks: true, gfm: true });
+            editPreview.innerHTML = marked.parse(editContent.value);
+        }
+    }
+
+    // Update preview on content change
+    if (editContent) {
+        editContent.addEventListener('input', () => {
+            if (editViewMode !== 'edit') {
+                updateEditPreview();
+            }
+        });
+    }
+
+    async function saveContent() {
+        const content = editContent.value;
+
+        // Show saving state
+        editSave.innerHTML = '<i class="fas fa-spinner"></i> Saving...';
+        editSave.disabled = true;
+
+        try {
+            const { data, error } = await supabaseClient
+                .from('rpoc_content')
+                .update({
+                    content: content,
+                    updated_at: new Date().toISOString(),
+                    updated_by: 'web-editor'
+                })
+                .eq('section_key', currentSection)
+                .select();
+
+            if (error) throw error;
+
+            // Update local cache
+            contentCache[currentSection].content = content;
+
+            // Reload the section to show changes
+            loadSection(currentSection);
+
+            // Close editor
+            closeEditor();
+
+            // Show success message
+            showNotification('Content saved successfully!', 'success');
+
+        } catch (err) {
+            console.error('Save failed:', err);
+            showNotification('Failed to save: ' + err.message, 'error');
+        } finally {
+            editSave.innerHTML = '<i class="fas fa-save"></i> Save';
+            editSave.disabled = false;
+        }
+    }
+
+    function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+            <span>${message}</span>
+        `;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: ${type === 'success' ? '#27ae60' : '#e74c3c'};
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10001;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        `;
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
+    }
+
+    function handleToolbarAction(action) {
+        const textarea = editContent;
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const text = textarea.value;
+        const selectedText = text.substring(start, end);
+
+        let insertion = '';
+        let cursorOffset = 0;
+
+        switch (action) {
+            case 'bold':
+                insertion = `**${selectedText || 'bold text'}**`;
+                cursorOffset = selectedText ? insertion.length : 2;
+                break;
+            case 'italic':
+                insertion = `*${selectedText || 'italic text'}*`;
+                cursorOffset = selectedText ? insertion.length : 1;
+                break;
+            case 'h2':
+                insertion = `## ${selectedText || 'Heading'}`;
+                cursorOffset = insertion.length;
+                break;
+            case 'h3':
+                insertion = `### ${selectedText || 'Heading'}`;
+                cursorOffset = insertion.length;
+                break;
+            case 'ul':
+                insertion = `- ${selectedText || 'List item'}`;
+                cursorOffset = insertion.length;
+                break;
+            case 'ol':
+                insertion = `1. ${selectedText || 'List item'}`;
+                cursorOffset = insertion.length;
+                break;
+            case 'table':
+                insertion = `\n| Column 1 | Column 2 | Column 3 |\n|----------|----------|----------|\n| Cell 1   | Cell 2   | Cell 3   |\n`;
+                cursorOffset = insertion.length;
+                break;
+            case 'link':
+                insertion = `[${selectedText || 'link text'}](url)`;
+                cursorOffset = selectedText ? insertion.length - 1 : 1;
+                break;
+            case 'hr':
+                insertion = `\n\n---\n\n`;
+                cursorOffset = insertion.length;
+                break;
+        }
+
+        const newText = text.substring(0, start) + insertion + text.substring(end);
+        textarea.value = newText;
+        textarea.focus();
+        textarea.setSelectionRange(start + cursorOffset, start + cursorOffset);
+
+        updateEditPreview();
     }
 });
 
