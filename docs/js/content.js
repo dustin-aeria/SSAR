@@ -97,7 +97,7 @@ All SSAR RPAS operations shall comply with:
 | RPAS Operator | Squamish Search and Rescue - Squamish Search and Rescue Society |
 | Operating Name | Squamish Search and Rescue |
 | Accountable Executive | Dustin Wales |
-| Email | dustin@aeria.ai |
+| Email | dustin.wales@squamishsar.org |
 | Telephone | 604-849-2345 |
 | Address | PO Box 1666, Garibaldi Highlands, BC V0N 1T0 |
 
