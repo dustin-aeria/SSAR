@@ -1,6 +1,17 @@
 // SSAR RPOC Web Application
 // Main application logic with enhanced visual styling
 
+// Supabase Configuration
+const SUPABASE_URL = 'https://falrucbgwtpnzvodmytu.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZhbHJ1Y2Jnd3Rwbnp2b2RteXR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwMDYwMDcsImV4cCI6MjA4OTU4MjAwN30.hErSxGCeHDLFZu_9tYb0dKjz7bVgg_w10vKAYDwtqvI';
+
+// Initialize Supabase client
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+// Content cache (populated from Supabase)
+let contentCache = {};
+let contentLoaded = false;
+
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const contentArea = document.getElementById('content-area');
@@ -143,12 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize
     init();
 
-    function init() {
+    async function init() {
         // Apply saved theme
         if (isDarkMode) {
             document.documentElement.setAttribute('data-theme', 'dark');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
+
+        // Load content from Supabase
+        await loadContentFromSupabase();
 
         // Load initial section
         loadSection(currentSection);
@@ -158,6 +172,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Set up keyboard navigation for nav items
         setupKeyboardNavigation();
+    }
+
+    async function loadContentFromSupabase() {
+        try {
+            const { data, error } = await supabase
+                .from('rpoc_content')
+                .select('*')
+                .eq('status', 'active');
+
+            if (error) throw error;
+
+            // Build content cache from Supabase data
+            data.forEach(row => {
+                contentCache[row.section_key] = {
+                    title: row.title,
+                    icon: row.icon,
+                    docCount: row.doc_count,
+                    content: row.content
+                };
+            });
+
+            contentLoaded = true;
+            console.log('Content loaded from Supabase:', Object.keys(contentCache));
+        } catch (err) {
+            console.warn('Failed to load from Supabase, using static fallback:', err.message);
+            // Fallback to static content if available
+            if (typeof RPOC_CONTENT !== 'undefined') {
+                contentCache = RPOC_CONTENT;
+                contentLoaded = true;
+            }
+        }
     }
 
     function setupEventListeners() {
@@ -277,11 +322,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loadSection(sectionKey) {
         currentSection = sectionKey;
-        var section = RPOC_CONTENT[sectionKey];
+        var section = contentCache[sectionKey];
 
         if (!section) {
-            contentArea.innerHTML = '<p>Section not found.</p>';
-            return;
+            // Fallback to static content if cache miss
+            if (typeof RPOC_CONTENT !== 'undefined' && RPOC_CONTENT[sectionKey]) {
+                section = RPOC_CONTENT[sectionKey];
+            } else {
+                contentArea.innerHTML = '<p>Section not found.</p>';
+                return;
+            }
         }
 
         // Configure marked options
@@ -725,9 +775,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const results = [];
 
-        // Search through all sections
-        Object.keys(RPOC_CONTENT).forEach((sectionKey) => {
-            const section = RPOC_CONTENT[sectionKey];
+        // Search through all sections (use cache, fallback to static)
+        const searchContent = contentLoaded ? contentCache : (typeof RPOC_CONTENT !== 'undefined' ? RPOC_CONTENT : {});
+        Object.keys(searchContent).forEach((sectionKey) => {
+            const section = searchContent[sectionKey];
             const content = section.content;
 
             // Split into paragraphs/sections

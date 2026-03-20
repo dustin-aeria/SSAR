@@ -1,5 +1,5 @@
 // SSAR RPOC Service Worker
-const CACHE_NAME = 'ssar-rpoc-v4';
+const CACHE_NAME = 'ssar-rpoc-v5';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache immediately on install
