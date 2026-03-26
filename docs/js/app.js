@@ -728,9 +728,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetId = link.getAttribute('href').slice(1);
                 const target = document.getElementById(targetId);
                 if (target) {
-                    // Use scrollIntoView with offset via CSS scroll-margin
-                    target.style.scrollMarginTop = '80px';
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Calculate position accounting for fixed header
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
 
                     // Update active state
                     tocContent.querySelectorAll('a').forEach(l => l.classList.remove('active'));
@@ -989,6 +995,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function saveContent() {
         const content = editContent.value;
 
+        // Save current scroll position
+        const savedScrollY = window.scrollY;
+
         // Show saving state
         editSave.innerHTML = '<i class="fas fa-spinner"></i> Saving...';
         editSave.disabled = true;
@@ -1014,6 +1023,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Close editor
             closeEditor();
+
+            // Restore scroll position after content loads
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    window.scrollTo(0, savedScrollY);
+                }, 50);
+            });
 
             // Show success message
             showNotification('Content saved successfully!', 'success');
@@ -1276,6 +1292,124 @@ function closeQuickAccess() {
     qaBackBtn.classList.add('hidden');
     qaCurrentView = 'main';
 }
+
+// ========================================
+// RESIZABLE PANELS
+// ========================================
+
+(function initResizablePanels() {
+    const sidebar = document.querySelector('.sidebar');
+    const tocSidebar = document.querySelector('.toc-sidebar');
+    const resizeSidebar = document.getElementById('resize-sidebar');
+    const resizeToc = document.getElementById('resize-toc');
+    const mainContent = document.querySelector('.main-content');
+
+    let isResizing = false;
+    let currentHandle = null;
+    let startX = 0;
+    let startWidth = 0;
+
+    // Load saved widths from localStorage
+    const savedSidebarWidth = localStorage.getItem('sidebarWidth');
+    const savedTocWidth = localStorage.getItem('tocWidth');
+
+    if (savedSidebarWidth && sidebar) {
+        sidebar.style.width = savedSidebarWidth + 'px';
+        document.documentElement.style.setProperty('--sidebar-width', savedSidebarWidth + 'px');
+        if (resizeSidebar) resizeSidebar.style.left = savedSidebarWidth + 'px';
+        if (mainContent) mainContent.style.marginLeft = savedSidebarWidth + 'px';
+    }
+
+    if (savedTocWidth && tocSidebar) {
+        tocSidebar.style.width = savedTocWidth + 'px';
+        document.documentElement.style.setProperty('--toc-width', savedTocWidth + 'px');
+    }
+
+    function startResize(e, handle, element, cssVar, minWidth, maxWidth) {
+        isResizing = true;
+        currentHandle = handle;
+        startX = e.clientX;
+        startWidth = element.offsetWidth;
+
+        handle.classList.add('dragging');
+        document.body.classList.add('resizing');
+
+        document.addEventListener('mousemove', doResize);
+        document.addEventListener('mouseup', stopResize);
+
+        function doResize(e) {
+            if (!isResizing) return;
+
+            const diff = e.clientX - startX;
+            let newWidth = startWidth + diff;
+
+            // Clamp to min/max
+            newWidth = Math.max(minWidth, Math.min(maxWidth, newWidth));
+
+            element.style.width = newWidth + 'px';
+            document.documentElement.style.setProperty(cssVar, newWidth + 'px');
+
+            // Update related elements
+            if (element === sidebar) {
+                if (resizeSidebar) resizeSidebar.style.left = newWidth + 'px';
+                if (mainContent) mainContent.style.marginLeft = newWidth + 'px';
+            }
+        }
+
+        function stopResize() {
+            isResizing = false;
+            handle.classList.remove('dragging');
+            document.body.classList.remove('resizing');
+
+            document.removeEventListener('mousemove', doResize);
+            document.removeEventListener('mouseup', stopResize);
+
+            // Save to localStorage
+            if (element === sidebar) {
+                localStorage.setItem('sidebarWidth', element.offsetWidth);
+            } else if (element === tocSidebar) {
+                localStorage.setItem('tocWidth', element.offsetWidth);
+            }
+        }
+    }
+
+    // Sidebar resize
+    if (resizeSidebar && sidebar) {
+        resizeSidebar.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            startResize(e, resizeSidebar, sidebar, '--sidebar-width', 180, 400);
+        });
+    }
+
+    // TOC resize
+    if (resizeToc && tocSidebar) {
+        resizeToc.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            startResize(e, resizeToc, tocSidebar, '--toc-width', 150, 350);
+        });
+    }
+
+    // Double-click to reset
+    if (resizeSidebar) {
+        resizeSidebar.addEventListener('dblclick', () => {
+            const defaultWidth = 280;
+            sidebar.style.width = defaultWidth + 'px';
+            document.documentElement.style.setProperty('--sidebar-width', defaultWidth + 'px');
+            resizeSidebar.style.left = defaultWidth + 'px';
+            if (mainContent) mainContent.style.marginLeft = defaultWidth + 'px';
+            localStorage.removeItem('sidebarWidth');
+        });
+    }
+
+    if (resizeToc) {
+        resizeToc.addEventListener('dblclick', () => {
+            const defaultWidth = 220;
+            tocSidebar.style.width = defaultWidth + 'px';
+            document.documentElement.style.setProperty('--toc-width', defaultWidth + 'px');
+            localStorage.removeItem('tocWidth');
+        });
+    }
+})();
 
 // ========================================
 // EMERGENCY PROCEDURES - Card Selection

@@ -434,6 +434,76 @@ body {
     min-height: calc(100vh - var(--header-height));
 }
 
+/* ========================================
+   RESIZABLE PANELS
+   ======================================== */
+
+.resize-handle {
+    width: 5px;
+    background: transparent;
+    cursor: col-resize;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 10;
+    transition: background 0.15s ease;
+}
+
+.resize-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 40px;
+    background: var(--border-color);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.resize-handle:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.resize-handle:hover::after {
+    opacity: 1;
+}
+
+.resize-handle.dragging {
+    background: rgba(52, 152, 219, 0.2);
+}
+
+.resize-handle.dragging::after {
+    opacity: 1;
+    background: var(--accent-blue);
+}
+
+/* Sidebar resize handle */
+.resize-sidebar {
+    position: fixed;
+    left: var(--sidebar-width);
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+}
+
+/* TOC resize handle */
+.resize-toc {
+    height: calc(100vh - var(--header-height));
+    position: sticky;
+    top: var(--header-height);
+}
+
+/* Prevent text selection while dragging */
+body.resizing {
+    user-select: none;
+    cursor: col-resize !important;
+}
+
+body.resizing * {
+    cursor: col-resize !important;
+}
+
 /* Table of Contents Sidebar */
 .toc-sidebar {
     position: sticky;
