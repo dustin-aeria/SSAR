@@ -1149,6 +1149,107 @@ if (qaBackBtn) {
     });
 }
 
+// Download button handler
+var qaDownloadBtn = document.getElementById('qa-download-btn');
+if (qaDownloadBtn) {
+    qaDownloadBtn.addEventListener('click', downloadQuickAccessContent);
+}
+
+function downloadQuickAccessContent() {
+    var title = qaTitleText.textContent || 'SSAR Document';
+    var content = qaContent.innerHTML;
+
+    // Create print window with professional styling
+    var printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>${title} - SSAR RPOC</title>
+            <style>
+                * { box-sizing: border-box; }
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                    padding: 40px;
+                    max-width: 900px;
+                    margin: 0 auto;
+                    color: #1a1a2e;
+                    line-height: 1.6;
+                }
+                .header {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                    margin-bottom: 24px;
+                    padding-bottom: 16px;
+                    border-bottom: 2px solid #1e3a5f;
+                }
+                .header img { height: 50px; }
+                .header-text h1 { margin: 0; font-size: 18px; color: #1e3a5f; }
+                .header-text p { margin: 4px 0 0; font-size: 12px; color: #666; }
+                h2, h3 { color: #1e3a5f; margin-top: 24px; }
+                h3 { font-size: 14px; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+                table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12px; }
+                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; vertical-align: top; }
+                th { background: #f5f6fa; font-weight: 600; }
+                ul { margin: 4px 0; padding-left: 20px; }
+                li { margin-bottom: 2px; }
+                .qa-procedure-header { margin-bottom: 24px; }
+                .qa-procedure-title { font-size: 20px; font-weight: 700; color: #1e3a5f; }
+                .qa-procedure-subtitle { font-size: 12px; color: #666; margin-top: 4px; }
+                .qa-procedure-icon { display: none; }
+                .sail-level, .sail-status {
+                    display: inline-block;
+                    padding: 2px 8px;
+                    border-radius: 3px;
+                    font-size: 10px;
+                    font-weight: 600;
+                }
+                .sail-status.met { background: #d5f5e3; color: #1e8449; }
+                .sail-status.partial { background: #eee; color: #666; }
+                .sail-level { background: #f5f6fa; color: #333; }
+                .qa-info-box, .qa-warning-box {
+                    padding: 12px;
+                    margin: 16px 0;
+                    border-left: 3px solid #1e3a5f;
+                    background: #f8f9fa;
+                }
+                .qa-warning-box { border-color: #666; }
+                .footer {
+                    margin-top: 40px;
+                    padding-top: 16px;
+                    border-top: 1px solid #ddd;
+                    font-size: 10px;
+                    color: #666;
+                    text-align: center;
+                }
+                @media print {
+                    body { padding: 20px; }
+                    .no-print { display: none; }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <div class="header-text">
+                    <h1>SSAR RPAS Operator Certificate</h1>
+                    <p>${title}</p>
+                </div>
+            </div>
+            ${content}
+            <div class="footer">
+                <p>Squamish Search and Rescue - RPAS Policy Manual | Generated: ${new Date().toLocaleDateString()}</p>
+                <p>CONFIDENTIAL - This document is the property of Squamish Search and Rescue</p>
+            </div>
+            <script>
+                window.onload = function() { window.print(); }
+            </script>
+        </body>
+        </html>
+    `);
+    printWindow.document.close();
+}
+
 // Close on overlay click
 if (qaOverlay) {
     qaOverlay.addEventListener('click', function(e) {
@@ -3592,21 +3693,15 @@ function showSAILAssessment() {
                 </div>
             </div>
 
-            <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
-                <span style="background: var(--success-green); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
-                    <i class="fas fa-check-circle" style="margin-right: 6px;"></i>MET - Fully Compliant
-                </span>
-                <span style="background: #f39c12; color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
-                    <i class="fas fa-exclamation-circle" style="margin-right: 6px;"></i>PARTIAL - Action Required
-                </span>
-                <span style="background: var(--danger-red); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
-                    <i class="fas fa-times-circle" style="margin-right: 6px;"></i>GAP - Not Compliant
-                </span>
+            <div style="display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-secondary);">
+                <span><i class="fas fa-check" style="margin-right: 6px; color: #1e8449;"></i><strong>MET</strong> - Compliant</span>
+                <span><i class="fas fa-minus" style="margin-right: 6px; color: #666;"></i><strong>PARTIAL</strong> - Pending</span>
+                <span><i class="fas fa-times" style="margin-right: 6px; color: #922b21;"></i><strong>GAP</strong> - Required</span>
             </div>
 
             <!-- THREAT BARRIERS (Ground Risk) -->
-            <h3 style="margin: 24px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
-                <i class="fas fa-shield-alt" style="margin-right: 8px;"></i>THREAT BARRIERS - Technical Issue with UAS
+            <h3 style="margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.95rem;">
+                THREAT BARRIERS - Technical Issue with UAS
             </h3>
 
             <div style="overflow-x: auto;">
@@ -3756,8 +3851,8 @@ function showSAILAssessment() {
             </div>
 
             <!-- THREAT BARRIERS (Human Error) -->
-            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
-                <i class="fas fa-user-shield" style="margin-right: 8px;"></i>THREAT BARRIERS - Human Error
+            <h3 style="margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.95rem;">
+                THREAT BARRIERS - Human Error
             </h3>
 
             <div style="overflow-x: auto;">
@@ -3855,8 +3950,8 @@ function showSAILAssessment() {
             </div>
 
             <!-- THREAT BARRIERS (Adverse Operating Conditions) -->
-            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
-                <i class="fas fa-cloud-sun-rain" style="margin-right: 8px;"></i>THREAT BARRIERS - Adverse Operating Conditions
+            <h3 style="margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.95rem;">
+                THREAT BARRIERS - Adverse Operating Conditions
             </h3>
 
             <div style="overflow-x: auto;">
@@ -3928,8 +4023,8 @@ function showSAILAssessment() {
             </div>
 
             <!-- ASSURANCE & INTEGRITY -->
-            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
-                <i class="fas fa-clipboard-check" style="margin-right: 8px;"></i>ASSURANCE & INTEGRITY REQUIREMENTS
+            <h3 style="margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.95rem;">
+                ASSURANCE & INTEGRITY REQUIREMENTS
             </h3>
 
             <div style="overflow-x: auto;">
@@ -3987,49 +4082,44 @@ function showSAILAssessment() {
             </div>
 
             <!-- SUMMARY -->
-            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--success-green); color: var(--success-green);">
-                <i class="fas fa-chart-pie" style="margin-right: 8px;"></i>COMPLIANCE SUMMARY
+            <h3 style="margin: 32px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); color: var(--text-primary); font-size: 0.95rem;">
+                COMPLIANCE SUMMARY
             </h3>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
-                <div style="background: rgba(39, 174, 96, 0.1); border: 2px solid var(--success-green); border-radius: 12px; padding: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--success-green);">20</div>
-                    <div style="font-weight: 600; color: var(--text-primary);">FULLY MET</div>
-                    <div style="font-size: 0.85rem; color: var(--text-secondary);">OSOs with complete evidence</div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;">
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--text-primary);">20</div>
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase;">Compliant</div>
                 </div>
-                <div style="background: rgba(243, 156, 18, 0.1); border: 2px solid #f39c12; border-radius: 12px; padding: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: #f39c12;">1</div>
-                    <div style="font-weight: 600; color: var(--text-primary);">PARTIAL</div>
-                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Insurance details pending</div>
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--text-primary);">1</div>
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase;">Pending</div>
                 </div>
-                <div style="background: rgba(231, 76, 60, 0.1); border: 2px solid var(--danger-red); border-radius: 12px; padding: 20px; text-align: center;">
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--danger-red);">0</div>
-                    <div style="font-weight: 600; color: var(--text-primary);">GAPS</div>
-                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Critical items missing</div>
+                <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--text-primary);">0</div>
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase;">Gaps</div>
                 </div>
             </div>
 
             <!-- ACTION ITEMS -->
-            <div class="qa-warning-box" style="margin-top: 24px; background: rgba(243, 156, 18, 0.1); border-color: #f39c12;">
-                <i class="fas fa-tasks" style="color: #f39c12;"></i>
+            <div class="qa-info-box" style="margin-top: 24px;">
+                <i class="fas fa-clipboard-list"></i>
                 <div class="qa-info-box-content">
-                    <h4 style="color: #f39c12;">Remaining Action Item</h4>
-                    <ol style="margin: 12px 0 0 0; padding-left: 20px;">
-                        <li><strong>OSO#23 - Insurance:</strong> Document insurance policy details and coverage amounts in Section 8.3</li>
-                    </ol>
+                    <h4>Pending Item</h4>
+                    <p style="margin: 8px 0 0;"><strong>OSO#23 - Insurance:</strong> Document insurance policy details and coverage amounts in Section 8.3</p>
                 </div>
             </div>
 
             <!-- COMPLETED ITEMS -->
-            <div class="qa-info-box" style="margin-top: 16px; background: rgba(39, 174, 96, 0.1); border-color: var(--success-green);">
-                <i class="fas fa-check-circle" style="color: var(--success-green);"></i>
+            <div class="qa-info-box" style="margin-top: 12px;">
+                <i class="fas fa-check"></i>
                 <div class="qa-info-box-content">
-                    <h4 style="color: var(--success-green);">Recently Completed</h4>
-                    <ul style="margin: 12px 0 0 0; padding-left: 20px;">
-                        <li><strong>OSO#06 - C3 Link:</strong> C3 Link Specification added (Section 8.9)</li>
-                        <li><strong>OSO#11 - Adverse Conditions:</strong> Test Protocol created (Section 10.8)</li>
-                        <li><strong>OSO#17 - HMI Evaluation:</strong> HMI Assessment documented (Section 2.9.1)</li>
-                        <li><strong>OSO#24 - Third-Party Audit:</strong> Aeria Solutions Ltd engaged (Section 7.9)</li>
+                    <h4>Recently Documented</h4>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem;">
+                        <li>OSO#06 - C3 Link Specification (Section 8.9)</li>
+                        <li>OSO#11 - Adverse Conditions Test Protocol (Section 10.8)</li>
+                        <li>OSO#17 - HMI Evaluation (Section 2.9.1)</li>
+                        <li>OSO#24 - Third-Party Audit Program (Section 7.9)</li>
                     </ul>
                 </div>
             </div>

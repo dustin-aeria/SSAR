@@ -2289,7 +2289,7 @@ body {
 }
 
 /* ========================================
-   SAIL ASSESSMENT STYLES
+   SAIL ASSESSMENT STYLES (Professional)
    ======================================== */
 
 .sail-assessment-table {
@@ -2310,81 +2310,123 @@ body {
     margin-bottom: 4px;
 }
 
-/* SAIL Level badges */
+/* SAIL Level badges - Muted professional colors */
 .sail-level {
     display: inline-block;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .sail-level.low {
-    background: rgba(52, 152, 219, 0.15);
-    color: #2980b9;
-    border: 1px solid rgba(52, 152, 219, 0.3);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
 }
 
 .sail-level.medium {
-    background: rgba(243, 156, 18, 0.15);
-    color: #d68910;
-    border: 1px solid rgba(243, 156, 18, 0.3);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .sail-level.high {
-    background: rgba(231, 76, 60, 0.15);
-    color: #c0392b;
-    border: 1px solid rgba(231, 76, 60, 0.3);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-weight: 700;
 }
 
-/* SAIL Status badges */
+/* SAIL Status badges - Professional indicators */
 .sail-status {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 .sail-status.met {
-    background: var(--success-green);
-    color: white;
+    background: rgba(39, 174, 96, 0.12);
+    color: #1e8449;
+    border: 1px solid rgba(39, 174, 96, 0.3);
 }
 
 .sail-status.partial {
-    background: #f39c12;
-    color: white;
+    background: rgba(127, 127, 127, 0.12);
+    color: #666;
+    border: 1px solid rgba(127, 127, 127, 0.3);
 }
 
 .sail-status.gap {
-    background: var(--danger-red);
-    color: white;
+    background: rgba(192, 57, 43, 0.12);
+    color: #922b21;
+    border: 1px solid rgba(192, 57, 43, 0.3);
 }
 
 .sail-status i {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
 /* Dark mode adjustments for SAIL */
-[data-theme="dark"] .sail-level.low {
-    background: rgba(52, 152, 219, 0.25);
-    color: #5dade2;
-}
-
-[data-theme="dark"] .sail-level.medium {
-    background: rgba(243, 156, 18, 0.25);
-    color: #f5b041;
-}
-
+[data-theme="dark"] .sail-level.low,
+[data-theme="dark"] .sail-level.medium,
 [data-theme="dark"] .sail-level.high {
-    background: rgba(231, 76, 60, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .sail-status.met {
+    background: rgba(39, 174, 96, 0.15);
+    color: #58d68d;
+    border-color: rgba(39, 174, 96, 0.3);
+}
+
+[data-theme="dark"] .sail-status.partial {
+    background: rgba(170, 170, 170, 0.15);
+    color: #aaa;
+    border-color: rgba(170, 170, 170, 0.3);
+}
+
+[data-theme="dark"] .sail-status.gap {
+    background: rgba(231, 76, 60, 0.15);
     color: #ec7063;
+    border-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Quick Access Header Actions */
+.quick-access-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qa-header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.qa-header-btn:hover {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
 }
 
 /* Print button in modal */
