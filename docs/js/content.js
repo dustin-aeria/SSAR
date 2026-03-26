@@ -971,6 +971,91 @@ Air traffic expected from:
 - Pre-operation communication with flight schools and commercial operators when needed
 - Two-way communication capabilities required (cellular, radio, or SSAR network); tested via signal check before ops
 
+### 8.9 C3 Link Specification (OSO#06)
+
+#### 8.9.1 Purpose
+
+This section documents the Command, Control, and Communication (C3) link specifications for all SSAR RPAS to meet SAIL IV OSO#06 requirements for adequate C3 link performance.
+
+#### 8.9.2 C3 Link Components
+
+| Component | Function | Requirement |
+|-----------|----------|-------------|
+| Command Link | Control inputs to aircraft | Bi-directional, low latency |
+| Control Link | Flight commands and modes | Reliable, redundant |
+| Telemetry Link | Aircraft status to GCS | Real-time, continuous |
+| Payload Link | Camera/sensor data | High bandwidth (video) |
+
+#### 8.9.3 Aircraft C3 Specifications
+
+**DJI Matrice 30T**
+
+| Parameter | Specification | Operational Limit |
+|-----------|---------------|-------------------|
+| Control System | O3 Enterprise | - |
+| Operating Frequency | 2.4 GHz / 5.8 GHz (auto-switching) | Per ISED regulations |
+| Max Transmission Range | 15 km (unobstructed) | Operational: per VLOS/BVLOS limits |
+| Video Transmission | 1080p @ 30fps | Minimum for SAR ops |
+| Latency | <200ms (typical 120ms) | Max acceptable: 500ms |
+| Redundancy | Dual antenna, frequency hopping | Required |
+| Lost Link Action | Configurable (RTH, Hover, Land) | Set to RTH |
+| Signal Strength Warning | <30% signal | Initiate return |
+
+**DJI Matrice 4TD**
+
+| Parameter | Specification | Operational Limit |
+|-----------|---------------|-------------------|
+| Control System | O4 Enterprise | - |
+| Operating Frequency | 2.4 GHz / 5.8 GHz (auto-switching) | Per ISED regulations |
+| Max Transmission Range | 20 km (unobstructed) | Operational: per VLOS/BVLOS limits |
+| Video Transmission | 1080p @ 60fps / 4K | Minimum 1080p for SAR |
+| Latency | <130ms (typical) | Max acceptable: 500ms |
+| Redundancy | Quad antenna, frequency hopping | Required |
+| Lost Link Action | Configurable (RTH, Hover, Land) | Set to RTH |
+| Signal Strength Warning | <30% signal | Initiate return |
+
+#### 8.9.4 Link Performance Requirements
+
+| Condition | Minimum Requirement | Action if Not Met |
+|-----------|---------------------|-------------------|
+| Signal strength | >30% at all times | Return to higher signal area |
+| Video latency | <500ms | Reduce range, return |
+| Control response | <1 second | Land immediately |
+| Link quality | Stable (no dropouts >2 sec) | Return and troubleshoot |
+
+#### 8.9.5 Terrain and Environmental Factors
+
+| Factor | Impact on C3 Link | Mitigation |
+|--------|-------------------|------------|
+| Mountains/ridges | Signal blocking | Maintain line of sight to GCS |
+| Dense forest | Signal attenuation | Increase altitude, reposition GCS |
+| Urban areas | RF interference | Monitor signal quality, frequency hop |
+| Weather (rain/snow) | Minor attenuation | Account for reduced range |
+| Distance | Signal degradation | Stay within tested limits |
+
+#### 8.9.6 Lost Link Procedures
+
+| Condition | Aircraft Response | Crew Action |
+|-----------|-------------------|-------------|
+| Signal loss <10 sec | Hover in place | Attempt to regain signal |
+| Signal loss 10-30 sec | Begin RTH | Move to recovery position |
+| Signal loss >30 sec | Continue RTH | Prepare for autonomous landing |
+| Battery critical during RTH | Auto-land | Monitor via backup means |
+
+#### 8.9.7 C3 Link Verification
+
+**Pre-Flight Check:**
+- [ ] Signal strength >80% at GCS location
+- [ ] Video feed clear and stable
+- [ ] Control inputs responsive
+- [ ] RTH altitude and location set
+- [ ] Lost link actions configured
+
+**In-Flight Monitoring:**
+- Monitor signal strength continuously
+- Note any signal degradation areas
+- Record link issues in flight log
+
 ---
 
 ## 9. Environmental Operations
@@ -1142,6 +1227,106 @@ To mitigate battery failure and plastic brittleness in cold environments:
 - **Pre-Flight Sources:** Pilots must utilize reliable aviation weather sources (e.g., Environment Canada Aviation Weather, NAV CANADA flight planning, or Windy.com with aviation overlays)
 - **On-Site Monitoring:** For extended operations, on-site real-time monitoring (e.g., anemometer) is required
 - **Decision Authority:** The Pilot in Command (PIC) has the final authority to cancel or suspend operations due to weather, regardless of mission urgency
+
+### 10.8 Adverse Conditions Test Protocol (OSO#11)
+
+#### 10.8.1 Purpose
+
+This section establishes the testing protocol to verify aircraft and crew capability to operate in adverse conditions as required by SAIL IV OSO#11. The protocol ensures that procedures for handling deteriorating conditions are validated through controlled testing.
+
+#### 10.8.2 Adverse Conditions Categories
+
+| Category | Conditions | Aircraft Impact |
+|----------|------------|-----------------|
+| **Wind** | Sustained >8 m/s, Gusts >12 m/s | Control degradation, position hold affected |
+| **Temperature** | <0°C or >35°C | Battery performance, electronics |
+| **Precipitation** | Light rain, Snow | Sensor obstruction, ingress |
+| **Visibility** | Reduced (haze, smoke) | Visual tracking, sensor range |
+| **Combined** | Multiple factors | Cumulative degradation |
+
+#### 10.8.3 Test Protocol - Wind Conditions
+
+| Test | Condition | Aircraft Response | Pass Criteria |
+|------|-----------|-------------------|---------------|
+| W-01 | Sustained 8 m/s | Position hold | Maintains position ±5m |
+| W-02 | Sustained 10 m/s | RTH execution | Successful return |
+| W-03 | Gust 12 m/s | Emergency land | Controlled descent |
+| W-04 | Cross-wind hover | Stability | Level attitude maintained |
+
+**Test Procedure:**
+1. Monitor wind speed with calibrated anemometer
+2. Conduct test at safe altitude (>30m AGL)
+3. Verify position hold accuracy via GPS telemetry
+4. Document aircraft behavior and any anomalies
+5. Test RTH function under wind load
+
+#### 10.8.4 Test Protocol - Cold Weather Conditions
+
+| Test | Condition | Aircraft Response | Pass Criteria |
+|------|-----------|-------------------|---------------|
+| C-01 | 0°C ambient | Normal operations | All functions nominal |
+| C-02 | Battery pre-heated | Launch and climb | Normal power output |
+| C-03 | Extended hover (5 min) | Battery monitoring | Voltage stable |
+| C-04 | -10°C ambient | Cold-start procedure | Successful startup |
+
+**Test Procedure:**
+1. Pre-heat batteries per SOP
+2. Conduct warm-up hover (1 min)
+3. Monitor battery temperature and voltage
+4. Document flight time vs. standard conditions
+5. Inspect for ice accumulation post-flight
+
+#### 10.8.5 Test Protocol - Reduced Visibility
+
+| Test | Condition | Aircraft Response | Pass Criteria |
+|------|-----------|-------------------|---------------|
+| V-01 | Dawn/Dusk | Visual tracking | Strobes visible at 500m |
+| V-02 | Light haze | Position awareness | GPS/telemetry reliable |
+| V-03 | Sensor performance | Camera/thermal | Adequate image quality |
+
+**Test Procedure:**
+1. Establish baseline visibility with reference target
+2. Confirm anti-collision lighting visible
+3. Verify sensor performance at expected range
+4. Document any degradation
+
+#### 10.8.6 Test Protocol - System Degradation
+
+| Test | Simulated Condition | Expected Response | Pass Criteria |
+|------|---------------------|-------------------|---------------|
+| D-01 | Signal degradation | RTH warning | Automatic alert at 30% |
+| D-02 | GPS degradation | ATTI mode entry | Controlled flight maintained |
+| D-03 | Battery critical | Forced landing | Safe descent executed |
+
+**Test Procedure:**
+1. Fly to edge of signal range
+2. Monitor telemetry warnings
+3. Verify automatic safety responses
+4. Document system behavior
+
+#### 10.8.7 Test Documentation
+
+| Element | Requirement |
+|---------|-------------|
+| Test date and location | Recorded |
+| Aircraft serial number | Recorded |
+| Ambient conditions | Measured and recorded |
+| Test pilot | Named and signed |
+| Results | Pass/Fail with notes |
+| Anomalies | Detailed description |
+
+#### 10.8.8 Annual Verification Schedule
+
+| Test Category | Frequency | Season |
+|---------------|-----------|--------|
+| Wind tolerance | Annual | Fall (Oct-Nov) |
+| Cold weather | Annual | Winter (Dec-Jan) |
+| Visibility/lighting | Annual | Winter (Dec) |
+| System degradation | Annual | Any season |
+
+#### 10.8.9 Test Records Retention
+
+All adverse conditions test records shall be retained for 5 years and made available for third-party audit review per Section 7.9.
 
 ---
 
@@ -3091,6 +3276,71 @@ SSAR commits to continuous improvement through:
 | Quarterly Status | Quarterly | Chief Pilot |
 | As-needed | As required | As appropriate |
 
+### 7.9 Third-Party Audit Program
+
+#### 7.9.1 Purpose
+
+Per SAIL IV OSO#24 requirements, SSAR maintains a third-party audit program to provide independent verification of operations, safety management, and regulatory compliance. Third-party audits supplement internal quality assurance to ensure objectivity.
+
+#### 7.9.2 Designated Third-Party Auditor
+
+| Organization | Aeria Solutions Ltd |
+|--------------|---------------------|
+| Type | Licensed RPOC Operator |
+| Location | Squamish, BC (local) |
+| Qualifications | Transport Canada RPOC holder, industry experience |
+| Contact | Via SSAR Accountable Executive |
+
+#### 7.9.3 Audit Scope
+
+| Audit Area | Scope | OSO Reference |
+|------------|-------|---------------|
+| Operations Manual | Procedures, checklists, compliance | OSO#01 |
+| Safety Management | SMS effectiveness, reporting culture | OSO#01, OSO#08 |
+| Training Program | Records, competency assessment, currency | OSO#09 |
+| Maintenance Program | Records, airworthiness, defect tracking | OSO#03, OSO#07 |
+| SORA Compliance | OSO evidence, risk assessment validity | All OSOs |
+| Equipment Standards | C3 link, HMI, flight envelope protection | OSO#06, OSO#17, OSO#18 |
+
+#### 7.9.4 Audit Schedule
+
+| Audit Type | Frequency | Duration | Deliverable |
+|------------|-----------|----------|-------------|
+| Full RPOC Audit | Annual | 1-2 days | Formal audit report |
+| SORA/OSO Review | Annual (with full audit) | Included | OSO compliance matrix |
+| Follow-up Audit | As required | 0.5 days | Finding closure verification |
+
+#### 7.9.5 Audit Process
+
+| Step | Action | Responsible | Timeline |
+|------|--------|-------------|----------|
+| 1 | Schedule audit with Aeria Solutions Ltd | Accountable Executive | 30 days prior |
+| 2 | Provide documentation package to auditor | Chief Pilot | 14 days prior |
+| 3 | Conduct entrance meeting | AE + Auditor | Day of audit |
+| 4 | Execute audit per agreed scope | Auditor | Per schedule |
+| 5 | Conduct exit meeting with preliminary findings | Auditor | End of audit |
+| 6 | Receive formal audit report | Auditor | Within 14 days |
+| 7 | Develop corrective action plan | Chief Pilot | Within 14 days |
+| 8 | Submit corrective actions to auditor | Chief Pilot | Per timeline |
+| 9 | Verification of closure | Auditor | Per timeline |
+
+#### 7.9.6 Documentation Requirements
+
+| Document | Purpose | Retention |
+|----------|---------|-----------|
+| Audit Agreement | Terms and scope | Duration of relationship |
+| Audit Reports | Findings and observations | 5 years |
+| Corrective Action Records | Response to findings | 5 years |
+| Closure Evidence | Verification of corrections | 5 years |
+
+#### 7.9.7 Auditor Independence
+
+The third-party auditor must:
+- Not have been involved in creating the procedures being audited
+- Have no financial interest in SSAR operations beyond audit fees
+- Maintain confidentiality of SSAR proprietary information
+- Provide objective, evidence-based findings
+
 ---
 
 ## 8. Emergency Contacts
@@ -3489,6 +3739,62 @@ All pilots qualified for SAR operations must complete training on time-critical 
 - Situational awareness
 - CRM principles
 - Fatigue recognition
+
+### 2.9.1 Human-Machine Interface (HMI) Evaluation (OSO#17)
+
+#### Purpose
+
+This section documents the Human-Machine Interface evaluation for SSAR RPAS operations per SAIL IV OSO#17 requirements. The evaluation ensures that the aircraft systems and ground control interface are designed to support safe crew operations and minimize human error.
+
+#### HMI Evaluation Criteria
+
+| Criteria | Requirement | SSAR Assessment |
+|----------|-------------|-----------------|
+| **Display Readability** | Clear, unambiguous display of critical flight data | Met - DJI RC Plus/Pro controllers have high-visibility screens |
+| **Warning Systems** | Audible and visual alerts for critical conditions | Met - Multi-modal warnings (visual, audible, haptic) |
+| **Control Layout** | Intuitive, accessible controls for normal and emergency ops | Met - Standard RC layout, emergency functions accessible |
+| **Information Priority** | Critical information prominently displayed | Met - Battery, altitude, signal strength always visible |
+| **Workload Management** | Interface does not overload operator during high-tempo ops | Met - Automation reduces workload; key data summarized |
+
+#### DJI RC Plus Controller HMI Assessment
+
+| Interface Element | Function | Usability Rating |
+|-------------------|----------|------------------|
+| Main display | Flight telemetry, video feed | High - 7" high-bright screen |
+| Physical sticks | Primary flight control | High - Standard RC Pro layout |
+| Function buttons | Mode changes, camera control | Medium - Requires familiarity |
+| Emergency stop | Immediate motor stop | High - Clearly marked, accessible |
+| RTH button | Return to home activation | High - Dedicated, prominent |
+| Audio alerts | Warning annunciation | High - Clear, distinguishable tones |
+| Haptic feedback | Control confirmation | Medium - Present but subtle |
+
+#### Pilot App Interface (DJI Pilot 2)
+
+| Feature | Function | Evaluation |
+|---------|----------|------------|
+| Map overlay | Airspace, geofences, flight path | Clear, intuitive |
+| Telemetry display | Aircraft status, sensors | Comprehensive, readable |
+| Warning messages | Alerts and notifications | Prominent, actionable |
+| Camera controls | Gimbal, zoom, recording | Accessible, logical layout |
+| Settings access | Configuration menus | Adequate for pre-flight |
+
+#### HMI Risk Mitigations
+
+| Risk | Mitigation |
+|------|------------|
+| Display glare | Anti-glare hood provided; operate from shaded position |
+| Cold weather touch | Gloves compatible; physical buttons available |
+| Information overload | Pre-flight setup reduces in-flight configuration |
+| Unfamiliar interface | Standardized aircraft types; regular training |
+
+#### Periodic HMI Review
+
+| Review Element | Frequency | Responsible |
+|----------------|-----------|-------------|
+| Controller firmware | After each update | Chief Pilot |
+| New aircraft integration | Before operational use | Chief Pilot |
+| Incident-based review | After HMI-related event | Safety Manager |
+| Annual assessment | Yearly | Chief Pilot |
 
 ### 2.10 Competency-Based Assessment
 

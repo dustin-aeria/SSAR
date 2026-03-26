@@ -770,7 +770,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 'showPreFlightChecklist': showPreFlightChecklist,
                 'showIMSAFEChecklist': showIMSAFEChecklist,
                 'showRegulationsReference': showRegulationsReference,
-                'showTrainingCalendar': showTrainingCalendar
+                'showTrainingCalendar': showTrainingCalendar,
+                'showSAILAssessment': showSAILAssessment
             };
             if (handlers[jumpConfig.handler]) {
                 handlers[jumpConfig.handler]();
@@ -1121,7 +1122,8 @@ var QUICK_ACCESS = {
     'pre-flight': { type: 'modal', handler: 'showPreFlightChecklist' },
     'imsafe': { type: 'modal', handler: 'showIMSAFEChecklist' },
     'regulations': { type: 'modal', handler: 'showRegulationsReference' },
-    'calendar': { type: 'modal', handler: 'showTrainingCalendar' }
+    'calendar': { type: 'modal', handler: 'showTrainingCalendar' },
+    'sail-assessment': { type: 'modal', handler: 'showSAILAssessment' }
 };
 
 // ========================================
@@ -3560,6 +3562,486 @@ function showTrainingCalendar() {
                 <div class="qa-info-box-content">
                     <h4>Park Authorization</h4>
                     <p>Field exercises at Murrin Park, Shannon Falls, and Sea to Sky areas require park authorization letters to be obtained in advance.</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// ========================================
+// SAIL IV ASSESSMENT
+// ========================================
+
+function showSAILAssessment() {
+    openQuickAccess('SAIL IV Compliance Assessment');
+    qaBackBtn.classList.add('hidden');
+
+    qaContent.innerHTML = `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon success"><i class="fas fa-certificate"></i></div>
+                <div class="qa-procedure-title">SORA SAIL IV OSO ASSESSMENT</div>
+                <div class="qa-procedure-subtitle">Specific Assurance and Integrity Level IV - Operational Safety Objectives</div>
+            </div>
+
+            <div class="qa-info-box" style="margin-bottom: 24px;">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>SAIL IV Classification</h4>
+                    <p>SSAR operations qualify for SAIL IV under SORA v2.5 due to operations above 400' AGL (up to 1000' AGL per STSC-003). This assessment documents compliance with all applicable Operational Safety Objectives (OSOs) with required robustness levels.</p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+                <span style="background: var(--success-green); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-check-circle" style="margin-right: 6px;"></i>MET - Fully Compliant
+                </span>
+                <span style="background: #f39c12; color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-exclamation-circle" style="margin-right: 6px;"></i>PARTIAL - Action Required
+                </span>
+                <span style="background: var(--danger-red); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-times-circle" style="margin-right: 6px;"></i>GAP - Not Compliant
+                </span>
+            </div>
+
+            <!-- THREAT BARRIERS (Ground Risk) -->
+            <h3 style="margin: 24px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
+                <i class="fas fa-shield-alt" style="margin-right: 8px;"></i>THREAT BARRIERS - Technical Issue with UAS
+            </h3>
+
+            <div style="overflow-x: auto;">
+                <table class="qa-reference-table sail-assessment-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">OSO#</th>
+                            <th style="width: 220px;">Requirement</th>
+                            <th style="width: 80px;">Level</th>
+                            <th style="width: 260px;">SSAR Evidence</th>
+                            <th style="width: 80px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">01</td>
+                            <td><strong>Ensure operator competence</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Adequate procedures, checklists, and training</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Operations Manual - SOPs and Checklists</li>
+                                    <li>Training Program - Competency Progression</li>
+                                    <li>Personnel Manual - Qualifications</li>
+                                    <li>Annual recurrency requirements</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">02</td>
+                            <td><strong>UAS manufactured by competent entity</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Design organization with adequate processes</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>DJI manufacturer standards (ISO 9001)</li>
+                                    <li>Fleet inventory with manufacturer specs</li>
+                                    <li>CE/FCC compliance documentation</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">03</td>
+                            <td><strong>UAS maintained by competent entity</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Maintenance organization with adequate processes</span></td>
+                            <td style="text-align: center;"><span class="sail-level low">LOW</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Equipment Manual - Maintenance Procedures</li>
+                                    <li>Airworthiness Standards</li>
+                                    <li>Defect Classification System</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">04</td>
+                            <td><strong>UAS developed to design standards</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Product development per industry standards</span></td>
+                            <td style="text-align: center;"><span class="sail-level low">LOW</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>DJI Enterprise product development</li>
+                                    <li>Manufacturer design assurance</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">05</td>
+                            <td><strong>UAS designed for limited crash effects</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Frangibility, parachute, energy absorption</span></td>
+                            <td style="text-align: center;"><span class="sail-level low">LOW</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Aircraft specifications: &lt;25kg MTOW</li>
+                                    <li>Frangible design characteristics</li>
+                                    <li>Max speed limitations documented</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">06</td>
+                            <td><strong>C3 link performance for operation</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Adequate control link specifications</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Operations Manual - Communication Systems</li>
+                                    <li>C3 Link Specification (Section 8.9)</li>
+                                    <li>Lost Link Procedures documented</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">07</td>
+                            <td><strong>Inspection of UAS</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Pre-flight and periodic inspections</span></td>
+                            <td style="text-align: center;"><span class="sail-level low">LOW</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Pre-Flight Checklist procedures</li>
+                                    <li>Equipment Manual - Inspection requirements</li>
+                                    <li>Airworthiness verification</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">08</td>
+                            <td><strong>Operational procedures for deterioration</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Procedures for off-nominal conditions</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Emergency Procedures Manual</li>
+                                    <li>Contingency Response procedures</li>
+                                    <li>Fly-Away Script</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">09</td>
+                            <td><strong>Remote crew trained for emergencies</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Training for abnormal/emergency procedures</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Training Program - Emergency procedures</li>
+                                    <li>Annual recurrency training</li>
+                                    <li>Competency assessment requirements</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">10</td>
+                            <td><strong>Safe recovery from technical issue</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Recovery systems and procedures</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Emergency Procedures - Recovery protocols</li>
+                                    <li>RTH (Return to Home) procedures</li>
+                                    <li>Lost link contingencies</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- THREAT BARRIERS (Human Error) -->
+            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
+                <i class="fas fa-user-shield" style="margin-right: 8px;"></i>THREAT BARRIERS - Human Error
+            </h3>
+
+            <div style="overflow-x: auto;">
+                <table class="qa-reference-table sail-assessment-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">OSO#</th>
+                            <th style="width: 220px;">Requirement</th>
+                            <th style="width: 80px;">Level</th>
+                            <th style="width: 260px;">SSAR Evidence</th>
+                            <th style="width: 80px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">12</td>
+                            <td><strong>UAS designed to manage flight path</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Flight path control, autopilot functions</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>DJI flight controller capabilities</li>
+                                    <li>GPS/GNSS positioning systems</li>
+                                    <li>Autopilot mode documentation</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">13</td>
+                            <td><strong>External services supporting safe ops</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Weather, NOTAMs, ATC coordination</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Weather assessment procedures</li>
+                                    <li>NOTAM checking requirements</li>
+                                    <li>NAV CANADA coordination</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">16</td>
+                            <td><strong>Multi-crew coordination</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">CRM procedures for crew operations</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Personnel Manual - Role definitions</li>
+                                    <li>Visual Observer procedures</li>
+                                    <li>Crew communication protocols</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">17</td>
+                            <td><strong>Human Factors considered</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">HMI design evaluation</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>IMSAFE Checklist</li>
+                                    <li>Crew fatigue management</li>
+                                    <li>HMI Evaluation (Section 2.9.1)</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">19</td>
+                            <td><strong>Safe recovery from human error</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Ability to recover from crew mistakes</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Emergency Procedures - Recovery</li>
+                                    <li>Crew resource management</li>
+                                    <li>CRM training requirements</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">21</td>
+                            <td><strong>Adequate situational awareness</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Information to crew for safe ops</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Site Survey & Planning requirements</li>
+                                    <li>Visual Observer procedures</li>
+                                    <li>Real-time telemetry monitoring</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- THREAT BARRIERS (Adverse Operating Conditions) -->
+            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
+                <i class="fas fa-cloud-sun-rain" style="margin-right: 8px;"></i>THREAT BARRIERS - Adverse Operating Conditions
+            </h3>
+
+            <div style="overflow-x: auto;">
+                <table class="qa-reference-table sail-assessment-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">OSO#</th>
+                            <th style="width: 220px;">Requirement</th>
+                            <th style="width: 80px;">Level</th>
+                            <th style="width: 260px;">SSAR Evidence</th>
+                            <th style="width: 80px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">11</td>
+                            <td><strong>Procedures to handle adverse conditions</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Weather, environment limitations</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Weather Assessment procedures</li>
+                                    <li>GO/NO-GO criteria</li>
+                                    <li>Adverse Conditions Test Protocol (Section 10.8)</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">14</td>
+                            <td><strong>Operational volume definition</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Flight geography and containment</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Site Survey procedures</li>
+                                    <li>Geofencing requirements</li>
+                                    <li>Operational area definition</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">18</td>
+                            <td><strong>Automatic flight envelope protection</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Geo-caging, altitude limits</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>DJI GEO system compliance</li>
+                                    <li>Altitude limit configuration</li>
+                                    <li>Geofencing procedures</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">20</td>
+                            <td><strong>Adequate containment function</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Ground risk buffer implementation</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Site Survey - buffer zones</li>
+                                    <li>Controlled ground area procedures</li>
+                                    <li>VO positioning requirements</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ASSURANCE & INTEGRITY -->
+            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue);">
+                <i class="fas fa-clipboard-check" style="margin-right: 8px;"></i>ASSURANCE & INTEGRITY REQUIREMENTS
+            </h3>
+
+            <div style="overflow-x: auto;">
+                <table class="qa-reference-table sail-assessment-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">OSO#</th>
+                            <th style="width: 220px;">Requirement</th>
+                            <th style="width: 80px;">Level</th>
+                            <th style="width: 260px;">SSAR Evidence</th>
+                            <th style="width: 80px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">22</td>
+                            <td><strong>Definition of controllable ground area</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Procedures for ground risk mitigation</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Site Survey procedures</li>
+                                    <li>Flight planning requirements</li>
+                                    <li>Ground personnel coordination</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">23</td>
+                            <td><strong>Insurance/financial coverage</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Adequate liability coverage</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Insurance documentation</li>
+                                    <li><em style="color: #f39c12;">Policy details to be documented</em></li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status partial"><i class="fas fa-exclamation"></i> PARTIAL</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700; text-align: center;">24</td>
+                            <td><strong>Third-party audit</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Independent verification of operations</span></td>
+                            <td style="text-align: center;"><span class="sail-level medium">MEDIUM</span></td>
+                            <td>
+                                <ul style="margin: 0; padding-left: 16px; font-size: 0.9rem;">
+                                    <li>Third-party auditor: Aeria Solutions Ltd</li>
+                                    <li>Third-Party Audit Program (Section 7.9)</li>
+                                    <li>Annual audit schedule established</li>
+                                </ul>
+                            </td>
+                            <td style="text-align: center;"><span class="sail-status met"><i class="fas fa-check"></i> MET</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SUMMARY -->
+            <h3 style="margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--success-green); color: var(--success-green);">
+                <i class="fas fa-chart-pie" style="margin-right: 8px;"></i>COMPLIANCE SUMMARY
+            </h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div style="background: rgba(39, 174, 96, 0.1); border: 2px solid var(--success-green); border-radius: 12px; padding: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--success-green);">20</div>
+                    <div style="font-weight: 600; color: var(--text-primary);">FULLY MET</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">OSOs with complete evidence</div>
+                </div>
+                <div style="background: rgba(243, 156, 18, 0.1); border: 2px solid #f39c12; border-radius: 12px; padding: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #f39c12;">1</div>
+                    <div style="font-weight: 600; color: var(--text-primary);">PARTIAL</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Insurance details pending</div>
+                </div>
+                <div style="background: rgba(231, 76, 60, 0.1); border: 2px solid var(--danger-red); border-radius: 12px; padding: 20px; text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--danger-red);">0</div>
+                    <div style="font-weight: 600; color: var(--text-primary);">GAPS</div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Critical items missing</div>
+                </div>
+            </div>
+
+            <!-- ACTION ITEMS -->
+            <div class="qa-warning-box" style="margin-top: 24px; background: rgba(243, 156, 18, 0.1); border-color: #f39c12;">
+                <i class="fas fa-tasks" style="color: #f39c12;"></i>
+                <div class="qa-info-box-content">
+                    <h4 style="color: #f39c12;">Remaining Action Item</h4>
+                    <ol style="margin: 12px 0 0 0; padding-left: 20px;">
+                        <li><strong>OSO#23 - Insurance:</strong> Document insurance policy details and coverage amounts in Section 8.3</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- COMPLETED ITEMS -->
+            <div class="qa-info-box" style="margin-top: 16px; background: rgba(39, 174, 96, 0.1); border-color: var(--success-green);">
+                <i class="fas fa-check-circle" style="color: var(--success-green);"></i>
+                <div class="qa-info-box-content">
+                    <h4 style="color: var(--success-green);">Recently Completed</h4>
+                    <ul style="margin: 12px 0 0 0; padding-left: 20px;">
+                        <li><strong>OSO#06 - C3 Link:</strong> C3 Link Specification added (Section 8.9)</li>
+                        <li><strong>OSO#11 - Adverse Conditions:</strong> Test Protocol created (Section 10.8)</li>
+                        <li><strong>OSO#17 - HMI Evaluation:</strong> HMI Assessment documented (Section 2.9.1)</li>
+                        <li><strong>OSO#24 - Third-Party Audit:</strong> Aeria Solutions Ltd engaged (Section 7.9)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="qa-info-box" style="margin-top: 16px;">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Reference Documents</h4>
+                    <p><strong>SORA v2.5 Main Body</strong> - Table 14: SAIL to OSO Mapping<br>
+                    <strong>SORA Annex E</strong> - OSO Integrity and Assurance Criteria<br>
+                    <strong>STSC-003</strong> - High Altitude VLOS Operations (up to 1000' AGL)<br>
+                    <strong>STSC-004</strong> - Low-Risk BVLOS Operations (up to 400' AGL)</p>
                 </div>
             </div>
         </div>

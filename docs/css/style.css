@@ -2288,6 +2288,105 @@ body {
     font-size: 0.85rem;
 }
 
+/* ========================================
+   SAIL ASSESSMENT STYLES
+   ======================================== */
+
+.sail-assessment-table {
+    font-size: 0.9rem;
+}
+
+.sail-assessment-table td {
+    vertical-align: top;
+    padding: 12px !important;
+}
+
+.sail-assessment-table ul {
+    margin: 0;
+    padding-left: 16px;
+}
+
+.sail-assessment-table li {
+    margin-bottom: 4px;
+}
+
+/* SAIL Level badges */
+.sail-level {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sail-level.low {
+    background: rgba(52, 152, 219, 0.15);
+    color: #2980b9;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.sail-level.medium {
+    background: rgba(243, 156, 18, 0.15);
+    color: #d68910;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+.sail-level.high {
+    background: rgba(231, 76, 60, 0.15);
+    color: #c0392b;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+/* SAIL Status badges */
+.sail-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sail-status.met {
+    background: var(--success-green);
+    color: white;
+}
+
+.sail-status.partial {
+    background: #f39c12;
+    color: white;
+}
+
+.sail-status.gap {
+    background: var(--danger-red);
+    color: white;
+}
+
+.sail-status i {
+    font-size: 0.75rem;
+}
+
+/* Dark mode adjustments for SAIL */
+[data-theme="dark"] .sail-level.low {
+    background: rgba(52, 152, 219, 0.25);
+    color: #5dade2;
+}
+
+[data-theme="dark"] .sail-level.medium {
+    background: rgba(243, 156, 18, 0.25);
+    color: #f5b041;
+}
+
+[data-theme="dark"] .sail-level.high {
+    background: rgba(231, 76, 60, 0.25);
+    color: #ec7063;
+}
+
 /* Print button in modal */
 .qa-print-btn {
     display: flex;
