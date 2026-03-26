@@ -769,7 +769,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 'showFlyAwayScript': showFlyAwayScript,
                 'showPreFlightChecklist': showPreFlightChecklist,
                 'showIMSAFEChecklist': showIMSAFEChecklist,
-                'showRegulationsReference': showRegulationsReference
+                'showRegulationsReference': showRegulationsReference,
+                'showTrainingCalendar': showTrainingCalendar
             };
             if (handlers[jumpConfig.handler]) {
                 handlers[jumpConfig.handler]();
@@ -1119,7 +1120,8 @@ var QUICK_ACCESS = {
     'fly-away': { type: 'modal', handler: 'showFlyAwayScript' },
     'pre-flight': { type: 'modal', handler: 'showPreFlightChecklist' },
     'imsafe': { type: 'modal', handler: 'showIMSAFEChecklist' },
-    'regulations': { type: 'modal', handler: 'showRegulationsReference' }
+    'regulations': { type: 'modal', handler: 'showRegulationsReference' },
+    'calendar': { type: 'modal', handler: 'showTrainingCalendar' }
 };
 
 // ========================================
@@ -3386,6 +3388,178 @@ function showRegulationsReference() {
                 <div class="qa-info-box-content">
                     <h4>SSAR Pilots</h4>
                     <p>As an RPOC operator, SSAR operates under organizational approvals (Standard Scenarios) rather than individual pilot certificates. All SSAR pilots must still hold a valid Advanced certificate and be endorsed for STSC-003/004 by the Chief Pilot.</p>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// ========================================
+// TRAINING CALENDAR
+// ========================================
+
+function showTrainingCalendar() {
+    openQuickAccess('Yearly Training Calendar');
+    qaBackBtn.classList.add('hidden');
+
+    qaContent.innerHTML = `
+        <div class="qa-procedure">
+            <div class="qa-procedure-header">
+                <div class="qa-procedure-icon info"><i class="fas fa-calendar-alt"></i></div>
+                <div class="qa-procedure-title">SSAR RPAS TEAM TRAINING CALENDAR</div>
+                <div class="qa-procedure-subtitle">Yearly training schedule and competency development</div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+                <span style="background: var(--danger-red); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-exclamation-circle" style="margin-right: 6px;"></i>Mandatory
+                </span>
+                <span style="background: var(--success-green); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-certificate" style="margin-right: 6px;"></i>Recurrency
+                </span>
+                <span style="background: var(--accent-blue); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                    <i class="fas fa-route" style="margin-right: 6px;"></i>Field Exercise
+                </span>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="qa-reference-table training-calendar-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 90px;">Month</th>
+                            <th style="width: 250px;">Training</th>
+                            <th style="width: 200px;">Competencies</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="calendar-mandatory">
+                            <td rowspan="2" style="font-weight: 700; background: rgba(52, 152, 219, 0.1);"><i class="fas fa-snowflake" style="margin-right: 6px; color: var(--accent-blue);"></i>January</td>
+                            <td><strong>SOP & Manual Review</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">SORA refresher, Human Factors</span></td>
+                            <td>Regulations, safety management</td>
+                            <td><span class="cal-badge mandatory">Mandatory</span><br>Location: SAR Compound<br><em>Self-study option: 2hrs logged</em></td>
+                        </tr>
+                        <tr class="calendar-mandatory">
+                            <td><strong>Annual Recurrency</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Ground training & Emergency Procedures</span></td>
+                            <td>Knowledge test, practical flight</td>
+                            <td><span class="cal-badge recurrency">Recurrency</span><br>Location: SAR Compound<br><em>Signed off by Drone Team Trainer</em></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: 700; background: rgba(52, 152, 219, 0.1);"><i class="fas fa-snowflake" style="margin-right: 6px; color: var(--accent-blue);"></i>February</td>
+                            <td><strong>Indoor Complex Flying</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Obstacles, hide and seek</span></td>
+                            <td>Precision flying, box hunting, overlap & handoff</td>
+                            <td>Location: SAR Compound<br><em>Practice with SSAR drones</em></td>
+                        </tr>
+                        <tr class="calendar-mandatory">
+                            <td><strong>Annual Recurrency</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Ground training & Emergency Procedures</span></td>
+                            <td>Knowledge test, practical flight</td>
+                            <td><span class="cal-badge recurrency">Recurrency</span><br>Location: SAR Compound</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: 700; background: rgba(39, 174, 96, 0.1);"><i class="fas fa-leaf" style="margin-right: 6px; color: var(--success-green);"></i>March</td>
+                            <td><strong>Chief Face Flight</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Light assistance operations</span></td>
+                            <td>Proximity flying, night ops, dual-sensor, BVLOS</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Murrin Parking Lot<br><em>Park authorization required</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dense Canopy Search</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Hidden subjects, low-light & night</span></td>
+                            <td>Thermal signatures, hidden subject detection</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Murrin Park<br><em>BVLOS, park authorization required</em></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: 700; background: rgba(39, 174, 96, 0.1);"><i class="fas fa-leaf" style="margin-right: 6px; color: var(--success-green);"></i>April</td>
+                            <td><strong>Grid Patterns & Canopy Search</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Light/microphone integration</span></td>
+                            <td>Motion-based search, lost person profiles, below-canopy</td>
+                            <td>Location: Compound Forest<br><em>Possible GSAR integration</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Riverbank & Shoreline</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Water proximity operations</span></td>
+                            <td>Water ops, current awareness</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Squamish River</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: 700; background: rgba(39, 174, 96, 0.1);"><i class="fas fa-sun" style="margin-right: 6px; color: #f39c12;"></i>May</td>
+                            <td><strong>Canyon Search</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Aircraft: Neo</span></td>
+                            <td>Confined space ops, signal management</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Squamish Canyon<br><em>After hours coordination</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rope Rescue Integration</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">High angle scenario, plum lines</span></td>
+                            <td>Multi-team coordination</td>
+                            <td>Location: TBA</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: 700; background: rgba(241, 196, 15, 0.1);"><i class="fas fa-sun" style="margin-right: 6px; color: #f39c12;"></i>June</td>
+                            <td><strong>Gondola Flight</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Extended range operations</span></td>
+                            <td>BVLOS flight, 400ft AGL</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Sea to Sky Parking<br><em>Park authorization required</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Waterfall & Steep Terrain</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Challenging terrain ops</span></td>
+                            <td>Proximity flying, reconnaissance</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Shannon Falls<br><em>Park authorization required</em></td>
+                        </tr>
+                        <tr style="background: rgba(200, 200, 200, 0.1);">
+                            <td colspan="4" style="text-align: center; font-style: italic; color: var(--text-secondary); padding: 12px;">
+                                <i class="fas fa-umbrella-beach" style="margin-right: 8px;"></i>July & August — Summer Break / Operational Standby
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: 700; background: rgba(230, 126, 34, 0.1);"><i class="fas fa-leaf" style="margin-right: 6px; color: #e67e22;"></i>September</td>
+                            <td><strong>Alpine Reconnaissance</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Cold weather prep, battery care</span></td>
+                            <td>High altitude recon, weather assessment, BVLOS</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Sky Pilot / Elfin / Tantalus<br><em>400ft AGL flight</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mutual Aid - Whistler</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Large area search</span></td>
+                            <td>Multi-drone ops, CalTopo mapping, grid search</td>
+                            <td><span class="cal-badge field">Field</span><br><em>Flying with other teams</em></td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: 700; background: rgba(230, 126, 34, 0.1);"><i class="fas fa-leaf" style="margin-right: 6px; color: #e67e22;"></i>October</td>
+                            <td><strong>Advanced Night Operations</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">BVLOS at night</span></td>
+                            <td>Night nav, infrastructural light navigation</td>
+                            <td>Location: SAR Compound<br><em>Fly with Neo</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year in Review</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Planning session</span></td>
+                            <td>Lessons learned, next year planning</td>
+                            <td>Location: SAR Compound</td>
+                        </tr>
+                        <tr class="calendar-mandatory">
+                            <td rowspan="2" style="font-weight: 700; background: rgba(52, 152, 219, 0.1);"><i class="fas fa-snowflake" style="margin-right: 6px; color: var(--accent-blue);"></i>November</td>
+                            <td><strong>Annual Recurrency</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Ground training & Emergency Procedures</span></td>
+                            <td>Knowledge test, practical flight</td>
+                            <td><span class="cal-badge recurrency">Recurrency</span><br>Location: SAR Compound<br><em>Signed off by Drone Team Trainer</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Integrated GSAR Exercise</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Live tasking</span></td>
+                            <td>Comms, decision-making, live ops</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: SAR Compound</td>
+                        </tr>
+                        <tr style="background: rgba(200, 200, 200, 0.1);">
+                            <td style="font-weight: 700;"><i class="fas fa-snowflake" style="margin-right: 6px; color: var(--accent-blue);"></i>December</td>
+                            <td colspan="3" style="text-align: center; font-style: italic; color: var(--text-secondary); padding: 12px;">
+                                <i class="fas fa-gifts" style="margin-right: 8px;"></i>Holiday Break / Operational Standby
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="qa-info-box" style="margin-top: 24px;">
+                <i class="fas fa-info-circle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Training Requirements</h4>
+                    <p>Members unable to attend mandatory training can complete <strong>2 hours of self-study</strong> logged in the SSAR database. Annual recurrency must be signed off by a Drone Team Trainer.</p>
+                </div>
+            </div>
+
+            <div class="qa-warning-box" style="margin-top: 16px;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Park Authorization</h4>
+                    <p>Field exercises at Murrin Park, Shannon Falls, and Sea to Sky areas require park authorization letters to be obtained in advance.</p>
                 </div>
             </div>
         </div>
