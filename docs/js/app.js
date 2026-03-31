@@ -38,11 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const editPreviewToggle = document.getElementById('edit-preview-toggle');
     const editBody = document.querySelector('.edit-body');
 
+    // Admin Login Elements
+    const adminLoginOverlay = document.getElementById('admin-login-overlay');
+    const adminLoginClose = document.getElementById('admin-login-close');
+    const adminEmail = document.getElementById('admin-email');
+    const adminPassword = document.getElementById('admin-password');
+    const adminLoginSubmit = document.getElementById('admin-login-submit');
+    const adminLoginError = document.getElementById('admin-login-error');
+    const adminLogoutBtn = document.getElementById('admin-logout-btn');
+
     // State
     let currentSection = 'operations';
     let isDarkMode = localStorage.getItem('darkMode') === 'true';
     let isEditing = false;
     let editViewMode = 'edit'; // 'edit', 'preview', 'split'
+    let isAuthenticated = false;
 
     // Optimized lookup tables for cell color coding (must be defined before init)
     const EXACT_MATCH_CLASSES = {
@@ -171,6 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.setAttribute('data-theme', 'dark');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
+
+        // Check authentication status
+        await checkAuth();
 
         // Load content from Supabase
         await loadContentFromSupabase();
@@ -306,6 +319,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (editPreviewToggle) {
             editPreviewToggle.addEventListener('click', toggleEditPreview);
+        }
+
+        // Admin login events
+        if (adminLoginClose) {
+            adminLoginClose.addEventListener('click', closeAdminLogin);
+        }
+
+        if (adminLoginSubmit) {
+            adminLoginSubmit.addEventListener('click', handleAdminLogin);
+        }
+
+        if (adminLogoutBtn) {
+            adminLogoutBtn.addEventListener('click', handleAdminLogout);
+        }
+
+        // Login form - handle Enter key
+        if (adminPassword) {
+            adminPassword.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    handleAdminLogin();
+                }
+            });
+        }
+
+        if (adminEmail) {
+            adminEmail.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    adminPassword.focus();
+                }
+            });
         }
 
         if (editOverlay) {
@@ -934,7 +977,90 @@ document.addEventListener('DOMContentLoaded', () => {
     // EDIT FUNCTIONALITY
     // ========================================
 
+    // ========================================
+    // AUTHENTICATION FUNCTIONS
+    // ========================================
+
+    async function checkAuth() {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        isAuthenticated = !!session;
+        updateEditButtonVisibility();
+        return isAuthenticated;
+    }
+
+    function updateEditButtonVisibility() {
+        if (editBtn) {
+            editBtn.style.display = isAuthenticated ? 'flex' : 'none';
+        }
+    }
+
+    function openAdminLogin() {
+        adminLoginOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        adminEmail.focus();
+    }
+
+    function closeAdminLogin() {
+        adminLoginOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        adminEmail.value = '';
+        adminPassword.value = '';
+        adminLoginError.style.display = 'none';
+    }
+
+    async function handleAdminLogin() {
+        const email = adminEmail.value.trim();
+        const password = adminPassword.value;
+
+        if (!email || !password) {
+            showLoginError('Please enter both email and password');
+            return;
+        }
+
+        adminLoginSubmit.disabled = true;
+        adminLoginSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+
+        try {
+            const { data, error } = await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+            if (error) throw error;
+
+            isAuthenticated = true;
+            updateEditButtonVisibility();
+            closeAdminLogin();
+            alert('Login successful! You can now edit content.');
+
+        } catch (error) {
+            showLoginError(error.message || 'Login failed. Please check your credentials.');
+        } finally {
+            adminLoginSubmit.disabled = false;
+            adminLoginSubmit.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+        }
+    }
+
+    async function handleAdminLogout() {
+        await supabaseClient.auth.signOut();
+        isAuthenticated = false;
+        updateEditButtonVisibility();
+        closeAdminLogin();
+        alert('Logged out successfully.');
+    }
+
+    function showLoginError(message) {
+        adminLoginError.textContent = message;
+        adminLoginError.style.display = 'block';
+    }
+
     function openEditor() {
+        // Check authentication first
+        if (!isAuthenticated) {
+            openAdminLogin();
+            return;
+        }
+
         const section = contentCache[currentSection];
         if (!section) {
             alert('No section loaded to edit.');
