@@ -989,8 +989,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateEditButtonVisibility() {
+        // Keep edit button visible - clicking it will prompt login if needed
         if (editBtn) {
-            editBtn.style.display = isAuthenticated ? 'flex' : 'none';
+            if (isAuthenticated) {
+                editBtn.style.opacity = '1';
+                editBtn.title = 'Edit Current Section';
+            } else {
+                editBtn.style.opacity = '0.6';
+                editBtn.title = 'Login to Edit';
+            }
         }
     }
 
