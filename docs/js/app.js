@@ -3043,243 +3043,102 @@ function showPreFlightChecklist() {
         <div class="qa-procedure">
             <div class="qa-procedure-header">
                 <div class="qa-procedure-icon info"><i class="fas fa-clipboard-check"></i></div>
-                <div class="qa-procedure-title">PRE-FLIGHT CHECKLIST</div>
-                <div class="qa-procedure-subtitle">Complete before every flight - Click items to check off</div>
+                <div class="qa-procedure-title">STANDARD PRE-FLIGHT CHECKLIST</div>
+                <div class="qa-procedure-subtitle">Section 12.8.1 - VO reads callout, PIC responds</div>
             </div>
 
-            <div class="qa-checklist">
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-file-alt"></i> Documentation</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Pilot certificate and ID available</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">RPOC documentation accessible</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Site survey completed</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">NOTAM check completed</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Airspace authorization confirmed (if required)</div>
-                    </div>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-user-check"></i> Crew Fitness (IMSAFE)</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>I</strong>llness - No illness affecting performance</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>M</strong>edication - No impairing medications</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>S</strong>tress - Stress levels manageable</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>A</strong>lcohol - No alcohol in past 12 hours, BAC 0.00</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>F</strong>atigue - Adequately rested</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>E</strong>motion - Emotionally fit for duty</div>
-                    </div>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-cloud-sun"></i> Weather</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Current weather checked and within limits</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Wind speed: ≤15 m/s (M30T) / ≤12 m/s (M4TD)</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Visibility: ≥3 km (VLOS minimum)</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Temperature: -20°C to +45°C</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">No precipitation / icing conditions</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Forecast checked for mission duration</div>
-                    </div>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-drone"></i> Aircraft Inspection</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Frame and arms: No cracks, damage, or loose components</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Propellers: No chips, cracks, or damage; securely mounted</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Motors: Spin freely, no debris or obstructions</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Gimbal: Moves freely, camera lens clean</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Sensors: Clean and unobstructed (all directions)</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Antennas: Properly positioned and undamaged</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Landing gear: Stable, no damage</div>
-                    </div>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-battery-full"></i> Batteries</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Aircraft battery: Fully charged, no swelling/damage</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Aircraft battery: Within cycle limit</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Controller battery: Fully charged</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Spare batteries available and charged</div>
-                    </div>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-gamepad"></i> Controller & App</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Controller powered on and linked</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Control sticks functional (full range of motion)</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">App connected, video feed confirmed</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Firmware: Aircraft and controller up to date</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">GPS: Strong signal (≥12 satellites)</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Home point: Set correctly</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">RTH altitude: Set appropriately for terrain</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Failsafe settings: Verified</div>
-                    </div>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-map-marker-alt"></i> Site/Area</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Launch/landing area clear of obstacles</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Bystanders briefed or cleared from area</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Hazards identified and marked</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Emergency procedures reviewed with crew</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Communications check completed</div>
-                    </div>
-                </div>
-
-                <div class="qa-checklist-section">
-                    <div class="qa-checklist-title"><i class="fas fa-check-double"></i> Final Checks</div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Compass calibration: Completed (if required)</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Flight mode: Correct for operation</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">SD card: Inserted, sufficient space</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text">Mission parameters reviewed</div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>CREW BRIEFING COMPLETE</strong></div>
-                    </div>
-                    <div class="qa-checklist-item">
-                        <div class="qa-checklist-checkbox"></div>
-                        <div class="qa-checklist-text"><strong>CLEARED FOR TAKEOFF</strong></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="qa-info-box">
+            <div class="qa-info-box" style="margin-bottom: 20px;">
                 <i class="fas fa-info-circle"></i>
                 <div class="qa-info-box-content">
                     <h4>Checklist Usage</h4>
-                    <p>Click each item to mark as complete. All items must be checked before takeoff. Any NO-GO item requires resolution before flight.</p>
+                    <p>The Visual Observer (VO) reads the <strong>Callout</strong>, the Pilot in Command (PIC) performs the check and states the <strong>Response</strong>.</p>
+                </div>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="qa-reference-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px; text-align: center;">#</th>
+                            <th style="width: 200px;">VO Callout</th>
+                            <th style="width: 250px;">PIC Response</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">1</td>
+                            <td><strong>"Wind and Weather"</strong></td>
+                            <td>"<strong>[Speed] m/s, Within Limits</strong>"</td>
+                            <td>Verify against aircraft limits</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">2</td>
+                            <td><strong>"Air Vehicle Batteries"</strong></td>
+                            <td>"<strong>[N]%</strong>"</td>
+                            <td>Must be &gt;90% for operational flight</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">3</td>
+                            <td><strong>"Ground Control Batteries"</strong></td>
+                            <td>"<strong>[N]%</strong>"</td>
+                            <td>Must be &gt;50%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">4</td>
+                            <td><strong>"Ground Control Application"</strong></td>
+                            <td>"<strong>Ready</strong>, <strong>[N] Satellites</strong>"</td>
+                            <td>Minimum 10 satellites</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">5</td>
+                            <td><strong>"Payload Check"</strong></td>
+                            <td><em>Test gimbal movement</em> "<strong>Working</strong>"</td>
+                            <td>Full range of motion</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">6</td>
+                            <td><strong>"Failsafe Settings"</strong></td>
+                            <td>"RTH at <strong>[N] meters</strong>"</td>
+                            <td>Must clear highest terrain</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">7</td>
+                            <td><strong>"SD Card Check"</strong></td>
+                            <td><em>Check space/recording</em> "<strong>Recording</strong>"</td>
+                            <td>Verify recording active</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">8</td>
+                            <td><strong>"Area and Airspace"</strong></td>
+                            <td><em>Conduct visual scan</em> "<strong>Clear</strong>"</td>
+                            <td>360° scan for traffic</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: 700;">9</td>
+                            <td><strong>"Cleared for Takeoff"</strong></td>
+                            <td>"<strong>CLEAR</strong>"</td>
+                            <td>Final confirmation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="qa-info-box" style="margin-top: 20px;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div class="qa-info-box-content">
+                    <h4>Abbreviated Pre-Flight Checklist (Rapid Launch)</h4>
+                    <p>Use <strong>ONLY</strong> for urgent re-deployments (e.g., hot battery swaps) where site conditions have NOT changed:</p>
+                    <ol style="margin: 8px 0 0 20px; padding: 0;">
+                        <li>"Air Vehicle Batteries" → "[N]%"</li>
+                        <li>"Ground Control Batteries" → "[N]%"</li>
+                        <li>"Area and Airspace" → "Clear"</li>
+                        <li>"Cleared for Takeoff" → "CLEAR"</li>
+                    </ol>
                 </div>
             </div>
         </div>
     `;
-
-    setupChecklistInteractivity();
 }
 
 // ========================================
