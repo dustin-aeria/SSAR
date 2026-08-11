@@ -1,14 +1,14 @@
-# SSAR People & Equipment Manual
+# S2S SAR Drone Program - People & Equipment Manual
 
-## Squamish Search and Rescue - RPAS Operations Program
+## Sea to Sky Corridor Search and Rescue - Regional Drone Program
 
 ---
 
 | Document | PEQ-MANUAL |
 |----------|------------|
-| Version | 1.0 |
-| Effective | March 2026 |
-| Review Date | March 2027 |
+| Version | 2.0 |
+| Effective | August 2026 |
+| Review Date | August 2027 |
 | Regulatory Reference | CAR 901.217-901.220, Standard 922 |
 
 ---
@@ -31,19 +31,19 @@
 
 ### 1.1 Purpose
 
-To define the specific duties, authority, and accountability of all personnel within the Squamish Search and Rescue (SSAR) RPAS program. This policy ensures clear chains of command and compliance with Canadian Aviation Regulations (CARs) Part IX and applicable Special Flight Operations Certificates (SFOC).
+To define the specific duties, authority, and accountability of all personnel within the the S2S SAR Drone Program RPAS program. This policy ensures clear chains of command and compliance with Canadian Aviation Regulations (CARs) Part IX and applicable Special Flight Operations Certificates (SFOC).
 
 ### 1.2 Governance Context
 
-> **Note:** While the organizational structure below reflects the internal chain of command specific to the SSAR RPAS program, Squamish Search and Rescue operates within a broader Search and Rescue governance framework. SSAR is overseen by a Board and operates under incident command, call-out management, and leadership structures that may vary depending on the operational context, phase of decision-making, and incident command system (ICS) activation.
+> **Note:** While the organizational structure below reflects the internal chain of command specific to the Program RPAS program, the S2S SAR Drone Program operates within a broader Search and Rescue governance framework. the Program is overseen by a Board and operates under incident command, call-out management, and leadership structures that may vary depending on the operational context, phase of decision-making, and incident command system (ICS) activation.
 >
-> The hierarchy presented in this section applies solely to roles, responsibilities, and authority within the RPAS program itself, and is intended to clarify accountability, regulatory compliance, and operational control for RPAS activities. It does not supersede, replace, or redefine SSAR's overall organizational governance or incident command authorities.
+> The hierarchy presented in this section applies solely to roles, responsibilities, and authority within the RPAS program itself, and is intended to clarify accountability, regulatory compliance, and operational control for RPAS activities. It does not supersede, replace, or redefine the Program's overall organizational governance or incident command authorities.
 
 ### 1.3 Organizational Hierarchy
 
 | Level | Role | Reports To | Primary Accountability |
 |-------|------|------------|------------------------|
-| 1 | Accountable Executive (AE) | — | Ultimate financial, legal, and regulatory responsibility for the SSAR RPAS Program |
+| 1 | Accountable Executive (AE) | Per Organization | Ultimate financial, legal, and regulatory responsibility for the Program RPAS Program |
 | 2 | Operations Manager | Accountable Executive | Day-to-day coordination and safety of RPAS operations |
 | 2 | Maintenance Manager | Accountable Executive | Airworthiness, maintenance control, and RPAS equipment readiness |
 | 3 | Pilot in Command (PIC) | Operations Manager | Safe conduct of flight operations and regulatory compliance during missions |
@@ -116,21 +116,21 @@ Assists the PIC in maintaining safety and situational awareness.
 
 ### 2.1 Purpose
 
-This section establishes the pilot training program for SSAR RPAS operations, including Standard Scenario qualifications per CAR 901.220 and SORA competency requirements.
+This section establishes the pilot training program for Program RPAS operations, including Standard Scenario qualifications per CAR 901.220 and SORA competency requirements.
 
 ### 2.2 Training Program Structure
 
 | Level | Operations | Requirements |
 |-------|------------|--------------|
-| Basic | VLOS <400' AGL | TC Basic exam + SSAR Foundation |
-| Advanced | VLOS + controlled airspace | TC Advanced exam + SSAR Advanced |
-| Level 1 Complex | STSC-003 / STSC-004 | TC L1C exam + SSAR Standard Scenario |
+| Basic | VLOS <400' AGL | TC Basic exam + the Program Foundation |
+| Advanced | VLOS + controlled airspace | TC Advanced exam + the Program Advanced |
+| Level 1 Complex | STSC-003 / STSC-004 | TC L1C exam + the Program Standard Scenario |
 
 ### 2.3 Foundation Training
 
 #### 2.3.1 Purpose
 
-To establish the Foundation Training program for SSAR RPAS operators. This training builds core competencies in aircraft handling, site surveys, team dynamics, and procedural execution, preparing pilots for operational deployments under the SSAR Special Flight Operations Certificate (SFOC).
+To establish the Foundation Training program for Program RPAS operators. This training builds core competencies in aircraft handling, site surveys, team dynamics, and procedural execution, preparing pilots for operational deployments under the Program Special Flight Operations Certificate (SFOC).
 
 #### 2.3.2 Foundation Training Objectives
 
@@ -176,13 +176,13 @@ Upon completion of Foundation Training, trainees will be able to:
 
 #### 2.3.6 Foundation Progression Outcome
 
-> Upon successful completion of Foundation Training and flight review, pilots are authorized to operate the training aircraft they were trained on under the SSAR SFOC. Pilots may then progress to Advanced Training for operational equipment authorization.
+> Upon successful completion of Foundation Training and flight review, pilots are authorized to operate the training aircraft they were trained on under the Program SFOC. Pilots may then progress to Advanced Training for operational equipment authorization.
 
 ### 2.4 Advanced Training
 
 #### 2.4.1 Purpose
 
-To establish the Advanced Training program for SSAR RPAS operators. This training develops expertise with operational aircraft and prepares pilots for complex missions, including simulated special operations, night flying, terrain-based searching, and Extended/Beyond Visual Line of Sight (EVLOS/BVLOS) operations.
+To establish the Advanced Training program for Program RPAS operators. This training develops expertise with operational aircraft and prepares pilots for complex missions, including simulated special operations, night flying, terrain-based searching, and Extended/Beyond Visual Line of Sight (EVLOS/BVLOS) operations.
 
 #### 2.4.2 Advanced Training Objectives
 
@@ -198,7 +198,7 @@ Upon completion of Advanced Training, pilots will be able to:
 #### 2.4.3 Prerequisite Requirements
 
 - Successful completion of Foundation Training and flight review
-- Current authorization to operate training drones under SSAR SFOC
+- Current authorization to operate training drones under the Program SFOC
 - Fitness for duty (medical, mental, and fatigue management requirements met)
 
 #### 2.4.4 Advanced Training Requirements
@@ -228,7 +228,7 @@ Upon completion of Advanced Training, pilots will be able to:
 
 #### 2.4.6 Advanced Progression Outcome
 
-> Upon successful completion of Advanced Training and trainer sign-off, pilots are cleared to operate the specific RPAS type in live operational missions under the SSAR SFOC. Additional RPAS types require separate Advanced Training and sign-off.
+> Upon successful completion of Advanced Training and trainer sign-off, pilots are cleared to operate the specific RPAS type in live operational missions under the Program SFOC. Additional RPAS types require separate Advanced Training and sign-off.
 
 ### 2.5 SORA Competency Training
 
@@ -280,7 +280,7 @@ All pilots qualified for SAR operations must complete training on time-critical 
 
 #### 2.8.1 Learning Objectives
 
-- Understand 24-hour ATC notification requirements for STSC-003
+- Understand SFOC conditions for STSC-003, including required ATS coordination
 - Recognize when time-critical SAR activation requires STSC-004 fallback
 - Apply scenario selection decision matrix during Rapid Site Survey
 - Plan and execute effective search under 400' AGL constraint
@@ -289,7 +289,7 @@ All pilots qualified for SAR operations must complete training on time-critical 
 
 | Module (30 min each) | Content |
 |----------------------|---------|
-| Regulatory Framework | STSC-003 ATC timeline requirements; STSC-004 parameters; legal implications |
+| Regulatory Framework | Operating authority selection (certificate / RPOC Division VI / SFOC); STSC SFOC conditions; legal implications |
 | Scenario Selection | Assessing notification feasibility; decision matrix; Rapid Site Survey integration |
 | Terrain-Following Operations | Contour search patterns; consistent AGL in variable terrain; RTH planning; obstacle awareness |
 | Sub-400' Search Effectiveness | Thermal detection at 80-120m AGL; modified track spacing; search pattern adaptation |
@@ -342,7 +342,7 @@ All pilots qualified for SAR operations must complete training on time-critical 
 **Criteria for Advancement:**
 - **Attendance:** 100% attendance in all four Foundation Classes (no more than one excused absence per class)
 - **Engagement:** Active participation in classroom discussions, practical exercises, and scenario-based drills
-- **Knowledge:** Demonstrated understanding of RPAS Operations Manual procedures and SSAR protocols
+- **Knowledge:** Demonstrated understanding of RPAS Operations Manual procedures and the Program protocols
 - **Practical Competency:** Safe and controlled execution of required flight maneuvers
 
 | Outcome | Action |
@@ -385,7 +385,7 @@ All pilots qualified for SAR operations must complete training on time-critical 
 
 ### 2.14 Training Records
 
-Per CAR 901.222, maintain records of:
+Per CAR 901.223, maintain records of:
 - All training completed with dates and durations
 - Assessment results
 - Instructor/examiner details
@@ -521,7 +521,7 @@ Pilots must successfully complete the following scenarios:
 
 ### 4.1 Introduction
 
-This section establishes the pilot competency records system for SSAR RPAS operations per CAR 901.220.
+This section establishes the pilot competency records system for Program RPAS operations per CAR 901.220.
 
 ### 4.2 Qualification Structure
 
@@ -550,7 +550,7 @@ This section establishes the pilot competency records system for SSAR RPAS opera
 
 - Personal information
 - Transport Canada credentials
-- SSAR qualification status
+- the Program qualification status
 - Aircraft authorizations
 - Standard Scenario endorsements
 - Currency status
@@ -620,7 +620,7 @@ Annual proficiency checks include:
 
 #### 4.8.1 STSC-003 Endorsement Requirements
 
-- Advanced Pilot License
+- Advanced Pilot Certificate (CAR 901.64)
 - Minimum 10 flight hours
 - Ground training completed
 - Practical assessment passed
@@ -649,7 +649,7 @@ Annual proficiency checks include:
 
 ### 5.1 Chief Pilot Designation
 
-**Chief Pilot: Dustin Wales**
+**Chief Pilot: appointed per Organization. Required credentials: Level 1 Complex pilot certificate (CAR 901.90); Flight Reviewer rating (CAR 901.176) recommended.**
 **Designation Date:** March 2026
 **Reports To:** Accountable Executive
 **Alternate:** [Designated Deputy Chief Pilot when appointed]
@@ -662,9 +662,9 @@ The Chief Pilot must meet and maintain the following minimum qualifications:
 |-------------|----------|----------|
 | RPAS Certificate | Valid Transport Canada Advanced RPAS Operator Certificate | TC Certificate |
 | Flight Hours | Minimum 100 hours total RPAS flight time | AirData logs |
-| Operational Experience | Minimum 2 years as operational SSAR RPAS pilot | Personnel records |
+| Operational Experience | Minimum 2 years as operational Program RPAS pilot | Personnel records |
 | Scenario Endorsements | All Standard Scenario endorsements (STSC-003, STSC-004) | Endorsement records |
-| Trainer Status | Certified SSAR RPAS Trainer | Designation letter |
+| Trainer Status | Certified Program RPAS Trainer | Designation letter |
 | SMS Knowledge | Completed SMS training, demonstrated competency | Training records |
 | Regulatory Knowledge | Expert knowledge of CARs Part IX, Standard 922 | Assessment |
 | Leadership | Demonstrated leadership capability | AE assessment |
@@ -812,7 +812,7 @@ The Chief Pilot must escalate to the Accountable Executive when:
 
 | Level | Title | Requirements |
 |-------|-------|--------------|
-| 1 | Pilot (Basic Operations) | Advanced RPAS Certificate, SSAR orientation, type training |
+| 1 | Pilot (Basic Operations) | Advanced RPAS Certificate, the Program orientation, type training |
 | 2 | Pilot (Standard Scenario) | Stage 1 + SS training + endorsement |
 | 3 | Senior Pilot | All SS endorsements + 50 hours |
 | 4 | Flight Reviewer | Stage 3 + instructor training + AE designation |
@@ -823,8 +823,8 @@ The Chief Pilot must escalate to the Accountable Executive when:
 
 | Item | Details |
 |------|---------|
-| Flight Reviewer | Dustin Wales |
-| Designation Number | SSAR-FR-2026-001 |
+| Flight Reviewer | Per Organization; pilot certificate endorsed with Flight Reviewer rating (CAR 901.176) |
+| Affiliation | Declared training provider per CAR 901.175 and Standard 921 |
 | Authorization Scope | All assessments, all endorsements |
 
 #### 5.4.2 Flight Reviewer Responsibilities
@@ -837,7 +837,7 @@ The Chief Pilot must escalate to the Accountable Executive when:
 
 ### 5.5 Chief Instructor Role
 
-**Chief Instructor: Dustin Wales**
+**Chief Instructor: appointed per Organization. Required credentials: Flight Reviewer rating (CAR 901.176); for Level 1 Complex ground school delivery, meets chief ground instructor requirements (CAR 901.183).**
 
 Responsible for:
 - Training program management
@@ -926,7 +926,7 @@ Before any flight, the PIC shall verify:
 
 ### 6.1 Purpose
 
-To ensure the physical safety, visibility, and professional identification of SSAR RPAS crew members during operations. This policy mandates the minimum protective gear required to mitigate environmental hazards and manage public interaction.
+To ensure the physical safety, visibility, and professional identification of Program RPAS crew members during operations. This policy mandates the minimum protective gear required to mitigate environmental hazards and manage public interaction.
 
 ### 6.2 Basic PPE Requirements
 
@@ -934,8 +934,8 @@ All crew members must be equipped with the following minimum PPE for every opera
 
 | PPE Item | Requirements |
 |----------|--------------|
-| SSAR Attire | Crew members must wear approved SSAR uniform/attire to ensure easy identification by other agencies and the public. |
-| High-Visibility Vest | A designated "Drone Team" or "RPAS Crew" or "SSAR Garment" vest must be worn to distinguish the flight crew from the general public. |
+| the Program Attire | Crew members must wear approved the Program uniform/attire to ensure easy identification by other agencies and the public. |
+| High-Visibility Vest | A designated "Drone Team" or "RPAS Crew" or "the Program Garment" vest must be worn to distinguish the flight crew from the general public. |
 | Eye Protection | Tinted lenses for bright conditions. |
 | Hand Protection | Work gloves are mandatory during site clearing, equipment assembly, and teardown. Optional for pilot during flight unless required for thermal protection. Must allow tactile dexterity if worn during flight. |
 
@@ -955,7 +955,7 @@ Additional PPE may be required based on the specific environment or mission prof
 
 ### 7.1 Purpose - Equipment Testing
 
-To ensure the operational reliability and airworthiness of all SSAR RPAS equipment. This policy mandates a systematic testing regimen to verify that all systems function within manufacturer specifications and regulatory requirements (CAR 901.29) prior to operational deployment.
+To ensure the operational reliability and airworthiness of all Program RPAS equipment. This policy mandates a systematic testing regimen to verify that all systems function within manufacturer specifications and regulatory requirements (CAR 901.29) prior to operational deployment.
 
 ### 7.2 Testing Triggers
 
@@ -1017,14 +1017,14 @@ All testing must follow a "Crawl, Walk, Run" progression:
 
 ### 7.6 Airworthiness Standards
 
-**Safety Assurance Declaration:** SSAR operates only RPAS for which the manufacturer has provided a safety assurance declaration to the Minister of Transport (CAR 901.76) for the intended operational environment (e.g., Controlled Airspace, Near People)
+**Safety Assurance Declaration:** the Program operates only RPAS for which the manufacturer has provided a safety assurance declaration to the Minister of Transport (CAR 901.194 and Standard 922) for the intended operational environment (e.g., Controlled Airspace, Near People)
 
 **Operational Suitability:** Only RPAS suitable for the specific mission profile are permitted. For Advanced Operations or flights under an SFOC, pilots must verify the aircraft is listed as eligible on the Transport Canada list
 
 ### 7.7 Registration and Markings
 
-- **Registration:** All SSAR RPAS must be registered with Transport Canada (CAR 901.02)
-- **Marking Placement:** The unique registration number must be affixed to a permanent part of the RPAS's external structure - clearly visible, legible, and contrasted with the background (CAR 901.03)
+- **Registration:** All Program RPAS must be registered with Transport Canada (CAR 900.13)
+- **Marking Placement:** The unique registration number must be affixed to a permanent part of the RPAS's external structure - clearly visible, legible, and contrasted with the background (CAR 900.14)
 - **Maintenance of Markings:** Registration markings must be inspected regularly. If a marking becomes faded, damaged, or obscured, it must be restored to compliant standards immediately
 
 ### 7.8 Maintenance Regimen
@@ -1033,9 +1033,9 @@ Maintenance shall be performed in accordance with the manufacturer's maintenance
 
 | Area | Requirement |
 |------|-------------|
-| Tracking System | SSAR utilizes AirData to track flight hours and maintenance cycles |
+| Tracking System | the Program utilizes AirData to track flight hours and maintenance cycles |
 | Firmware/Software | Updates applied per manufacturer recommendations. Updates must be verified for stability before deploying the RPAS into an active search mission |
-| Mandatory Actions | SSAR will monitor for and immediately comply with any mandatory manufacturer safety notices or airworthiness directives |
+| Mandatory Actions | the Program will monitor for and immediately comply with any mandatory manufacturer safety notices or airworthiness directives |
 
 ### 7.9 Operational Inspections
 
@@ -1057,24 +1057,24 @@ Maintenance shall be performed in accordance with the manufacturer's maintenance
 
 ### 8.1 Purpose
 
-This policy establishes insurance requirements and liability management procedures for SSAR RPAS operations to ensure adequate coverage for all authorized operations including Standard Scenarios, and to protect SSAR, its members, and third parties.
+This policy establishes insurance requirements and liability management procedures for Program RPAS operations to ensure adequate coverage for all authorized operations including Standard Scenarios, and to protect the Program, its members, and third parties.
 
-### 8.2 Insurance Requirements - CAR 901.06
+### 8.2 Insurance Requirements (Program Policy)
 
 Per Canadian Aviation Regulations, operators must maintain liability insurance:
 
-| MTOW Category | Minimum Coverage | SSAR Recommended |
+| MTOW Category | Minimum Coverage | the Program Recommended |
 |---------------|------------------|------------------|
 | Up to 1 kg | $100,000 | $1,000,000 |
 | 1 kg to 5 kg | $100,000 | $2,000,000 |
 | 5 kg to 25 kg | $500,000 | $2,000,000 |
 | Over 25 kg | $1,000,000 | $5,000,000 |
 
-> **Note:** SSAR maintains coverage significantly exceeding minimum regulatory requirements due to SAR operational complexity and public safety responsibility.
+> **Note:** the Program maintains coverage significantly exceeding minimum regulatory requirements due to SAR operational complexity and public safety responsibility.
 
-### 8.3 SSAR Aircraft Coverage
+### 8.3 the Program Aircraft Coverage
 
-| Aircraft | MTOM | Category | Minimum Required | SSAR Actual |
+| Aircraft | MTOM | Category | Minimum Required | the Program Actual |
 |----------|------|----------|------------------|-------------|
 | DJI M30T | 3.77 kg | 1-5 kg | $100,000 | [Policy Amount] |
 | DJI Matrice 4TD | 2.3 kg | 1-5 kg | $100,000 | [Policy Amount] |
@@ -1084,8 +1084,8 @@ Per Canadian Aviation Regulations, operators must maintain liability insurance:
 #### 8.4.1 Aircraft Covered
 
 The insurance policy must cover:
-- All RPAS owned by the SSAR RPAS Program
-- All RPAS operated under SSAR authority
+- All RPAS owned by the Program RPAS Program
+- All RPAS operated under the Program authority
 - Attached payloads and accessories
 - Ground control stations and support equipment
 
@@ -1111,7 +1111,7 @@ The insurance policy must explicitly cover (not exclude):
 |------|---------------------|
 | Canada | Primary coverage |
 | British Columbia | Primary operating area |
-| SSAR Operational Boundary | Explicit coverage confirmation |
+| the Program Operational Boundary | Explicit coverage confirmation |
 | Adjacent areas (mutual aid) | Coverage verified |
 
 ### 8.5 Coverage Types
@@ -1129,17 +1129,17 @@ The insurance policy must explicitly cover (not exclude):
 
 The following common exclusions must be reviewed and addressed:
 
-| Common Exclusion | SSAR Status | Mitigation |
+| Common Exclusion | the Program Status | Mitigation |
 |------------------|-------------|------------|
 | BVLOS operations | Covered by endorsement | Obtain written confirmation |
 | Operations above 400' AGL | Covered by endorsement | Obtain written confirmation |
-| Commercial operations | SSAR is non-profit SAR | Confirm SAR support covered |
+| Commercial operations | the Program is non-profit SAR | Confirm SAR support covered |
 | War/terrorism | Standard exclusion | Accept (standard) |
 | Nuclear | Standard exclusion | Accept (standard) |
 | Intentional acts | Standard exclusion | Accept (standard) |
 | Criminal acts | Standard exclusion | Accept (standard) |
 | Night operations | Must not be excluded | Verify coverage |
-| Unregistered aircraft | Must comply with CAR 901.02 | Maintain registration |
+| Unregistered aircraft | Must comply with CAR 900.13 | Maintain registration |
 | Uncertified pilots | Must comply with training | Maintain pilot records |
 
 ### 8.7 Documentation Requirements
@@ -1175,7 +1175,7 @@ Before each operation, the PIC must verify:
 | Insurance Current | Certificate expiry date not exceeded |
 | Coverage Adequate | Operation type covered by policy |
 | Geographic Coverage | Operating location covered |
-| Aircraft Registered | Registration current per CAR 901.02 |
+| Aircraft Registered | Registration current per CAR 900.13 |
 | Pilot Qualified | Meets policy requirements |
 
 #### 8.8.2 Operational Liability Mitigation
@@ -1272,8 +1272,8 @@ Complete annually or upon policy change:
 
 | Role | Name | Date |
 |------|------|------|
-| Accountable Executive | Dustin Wales | 2026-03-09 |
-| Chief Pilot | Dustin Wales | 2026-03-09 |
+| Accountable Executive | Appointed per Organization | Per Organization |
+| Chief Pilot | Appointed per Organization | Per Organization |
 
 Signatures on file. Original signed document retained per QAP-001.
 
@@ -1282,6 +1282,11 @@ Signatures on file. Original signed document retained per QAP-001.
 | Date | Version | Description of Change | Approved By |
 |------|---------|----------------------|-------------|
 | 2026-03-09 | 1.0 | Initial consolidated People & Equipment Manual | Dustin Wales |
+| 2026-08-11 | 2.0 | Regulatory update (CARs Jan 2026, SORA v2.5); S2S rebrand; multi-organization generalization | Dustin Wales |
+
+**Document Author:** Dustin Wales
+
+**Questions, updates, inquiries:** Dustin Wales, 604-849-2345
 | | | | |
 | | | | |
 
@@ -1310,4 +1315,4 @@ This consolidated People & Equipment Manual incorporates content from the follow
 
 **END OF PEOPLE & EQUIPMENT MANUAL**
 
-*This document is part of the SSAR RPAS Operator Certificate (RPOC) documentation package.*
+*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*

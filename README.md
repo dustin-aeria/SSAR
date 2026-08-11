@@ -1,12 +1,14 @@
-# SSAR RPAS Operator Certificate (RPOC)
+# S2S SAR Drone Program
 
-**Squamish Search and Rescue - RPAS Operations Program**
+**Sea to Sky Corridor Search and Rescue - Regional Drone Program**
 
-This repository contains the official RPAS Operator Certificate (RPOC) documentation for Squamish Search and Rescue, compliant with Canadian Aviation Regulations Part IX, Transport Canada Standard 922, and JARUS SORA v2.5.
+This repository contains the shared RPAS program documentation for the S2S SAR Drone Program (the participating Sea to Sky corridor search and rescue organizations). It serves as common program policy and supports each participating organization's RPAS Operator Certificate (RPOC) and SFOC applications. The Canadian Aviation Regulations Part IX are the governing authority; Transport Canada Standards 921/922/923 and JARUS SORA v2.5 are applied on top of the CARs, which prevail where they differ.
+
+**Core Operating Rule: Fly within the parameters your pilot certificate allows. Operations beyond those parameters require a valid SFOC held by your organization, and only pilots granted privileges under that SFOC may conduct them, in accordance with its conditions.**
 
 ## Live Web Tool
 
-**[View the RPOC Web Tool](https://dustin-aeria.github.io/SSAR/)**
+**[View the RPOC Web Tool](https://ssarrpas.ca)**
 
 The interactive web tool provides searchable access to all policy manuals with quick reference to emergency procedures and critical contacts.
 
@@ -35,14 +37,17 @@ The interactive web tool provides searchable access to all policy manuals with q
 | **CAR 901.219** | Training Program | Training Manual (complete) |
 | **CAR 901.220** | Person Responsible for Maintenance | People Manual - Chief Pilot |
 | **CAR 901.221** | Maintenance Control Manual | Forms Manual (complete) |
-| **CAR 901.222** | Records Retention | All manuals include retention requirements |
+| **CAR 901.222** | Designation of Pilot-in-Command (Division VI) | Operations Manual Sections 2.3, 5.3 |
+| **CAR 901.223** | Records Retention | All manuals include retention requirements |
 | **CAR 901.27** | Site Survey | Operations Manual Section 6 |
-| **CAR 901.29** | Fatigue Management | Training Manual Section 2.2 |
-| **CAR 901.19** | Fitness for Duty | Training Manual Section 2.3-2.4 |
+| **CAR 901.19** | Fitness of Crew Members (incl. fatigue) | Training Manual Sections 2.2-2.4 |
+| **CAR 901.29** | RPAS Serviceability | Forms Manual Section 3; pre-flight checklists |
+
 | **CAR 901.35** | Weather/Icing | Operations Manual Section 10 |
 | **Standard 922** | RPAS Safety Assurance | Safety Manual Section 3 (SORA) |
-| **STSC-003** | High Altitude VLOS | Operations Manual Section 5.2 |
-| **STSC-004** | Low-Risk BVLOS | Operations Manual Section 5.3 |
+| **CAR 901.87-901.96** | Level 1 Complex BVLOS (under RPOC) | Operations Manual Section 5.3 |
+| **STSC-003** (SFOC) | High Altitude VLOS | Operations Manual Section 5.4 |
+| **STSC-004** (SFOC) | Low-Risk BVLOS, Advanced pilots | Operations Manual Section 5.5 |
 
 ---
 
@@ -57,14 +62,20 @@ The interactive web tool provides searchable access to all policy manuals with q
 
 ## Key Personnel
 
-| Role | Name | Responsibilities |
+Each participating organization appoints its own Accountable Executive and Person Responsible for RPAS Maintenance for its RPOC. Program roles are defined by required credentials, not named individuals:
+
+| Role | Required Credentials | Responsibilities |
 |------|------|------------------|
-| Accountable Executive | Dustin Wales | Overall RPAS program accountability |
-| Chief Pilot | Dustin Wales | Day-to-day operations, pilot management |
-| Flight Reviewer | Dustin Wales (SSAR-FR-2026-001) | Assessments, endorsements |
-| Safety Manager | Dustin Wales | Hazard registry, audits, safety reporting |
+| Accountable Executive | Appointed per organization (CAR 106.02, 901.218(2)) | Overall RPAS program accountability |
+| Chief Pilot | Level 1 Complex certificate; Flight Reviewer rating recommended | Day-to-day operations, pilot management |
+| Flight Reviewer | Pilot certificate endorsed per CAR 901.176; declared provider affiliation (CAR 901.175) | Assessments, endorsements |
+| Safety Manager | Appointed per organization | Hazard registry, audits, safety reporting |
 
 ---
+
+## Document Author and Contact
+
+**Author:** Dustin Wales. For any questions, updates, or inquiries about this documentation: **Dustin Wales, 604-849-2345**.
 
 ## Emergency Contacts
 
@@ -79,35 +90,45 @@ The interactive web tool provides searchable access to all policy manuals with q
 
 ---
 
-## Standard Scenario Quick Reference
+## Operating Authority Quick Reference
 
-### STSC-003 - High Altitude VLOS
-| Parameter | Value |
-|-----------|-------|
-| Max Altitude | 1000' AGL |
-| ATC Notification | **Required (24 hours)** |
-| Visual | VLOS maintained |
-| Use Case | High altitude reconnaissance |
-
-### STSC-004 - Low-Risk BVLOS
+### Level 1 Complex BVLOS (under Organization RPOC)
 | Parameter | Value |
 |-----------|-------|
 | Max Altitude | 400' AGL |
-| ATC Notification | Not required |
 | Visual | BVLOS permitted |
-| Population | <25 people/km² |
-| Use Case | Extended range search, time-critical SAR |
+| Airspace | Uncontrolled only |
+| Ground | Sparsely populated (5 to 25 people/km²) or 1+ km from populated areas |
+| Weather | 3 SM visibility, clear of cloud (CAR 901.34(3)) |
+| Extras | Anti-collision lights on (CAR 901.38.1); 5+ NM from listed aerodromes (CAR 901.47(3)); PIC designated (CAR 901.222) |
+| Pilot | Level 1 Complex certificate |
+| ATS Coordination | Not required |
+
+### STSC-003 - High Altitude VLOS (requires valid SFOC)
+| Parameter | Value |
+|-----------|-------|
+| Max Altitude | 1000' AGL |
+| ATS Coordination | **Required per SFOC conditions** |
+| Visual | VLOS maintained |
+| Pilot | Advanced or higher, granted under the SFOC |
+| Use Case | High altitude reconnaissance |
+
+### STSC-004 - Low-Risk BVLOS (requires valid SFOC)
+| Parameter | Value |
+|-----------|-------|
+| Max Altitude | 400' AGL |
+| ATS Coordination | Not required |
+| Visual | BVLOS permitted |
+| Pilot | Advanced, granted under the SFOC |
+| Use Case | Extended range search by Advanced pilots |
 
 ### Time-Critical SAR Operations
 
-When 24-hour ATC notification is NOT possible:
-- Use **STSC-004 parameters only**
-- Maximum altitude: **400' AGL** (non-negotiable)
-- BVLOS permitted
-- No ATC notification required
-- Thermal search effectiveness maintained at 80-120m AGL
+> **Fly within the parameters your pilot certificate allows, or under a valid SFOC if one is held and its conditions can be met before launch.**
 
----
+- Level 1 Complex pilots: BVLOS to 400' AGL under the RPOC, immediate launch, no ATS coordination in uncontrolled airspace
+- Advanced pilots: certificate privileges, plus STSC envelopes only where the organization's SFOC is valid, the pilot is granted, and its conditions are met
+- Thermal search effectiveness maintained at 80-120m AGL, within the 400' limit
 
 ## Key Procedures Quick Reference
 
@@ -161,11 +182,11 @@ Each manual includes:
 
 | Item | Value |
 |------|-------|
-| Version | 1.0 |
-| Effective Date | March 2026 |
-| Review Date | March 2027 |
-| Last Updated | 2026-03-09 |
-| Source Documents | 42 original policies consolidated |
+| Version | 2.0 |
+| Effective Date | August 2026 |
+| Review Date | August 2027 |
+| Last Updated | 2026-08-11 |
+| Source Documents | 42 original policies consolidated; v2.0 regulatory update (CARs Jan 2026 consolidation, SORA v2.5, multi-organization) |
 
 ---
 
@@ -180,6 +201,6 @@ This documentation package is designed for Transport Canada RPOC audit and inclu
 
 ---
 
-*This documentation is part of the SSAR RPAS Operator Certificate (RPOC) package for Transport Canada approval.*
+*This documentation is part of the S2S SAR Drone Program RPOC package for Transport Canada approval.*
 
 *Prepared with assistance from Claude AI (Anthropic) under human direction and review.*

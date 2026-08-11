@@ -1,7 +1,7 @@
 {
-  "name": "SSAR RPAS Policy Manual",
-  "short_name": "SSAR RPOC",
-  "description": "Squamish Search and Rescue - RPAS Operator Certificate Policy & Operations Manual",
+  "name": "S2S SAR Drone Program Policy Manual",
+  "short_name": "S2S SAR Drone Program RPOC",
+  "description": "S2S SAR Drone Program - RPAS Operator Certificate Policy & Operations Manual",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#2B5A9C",

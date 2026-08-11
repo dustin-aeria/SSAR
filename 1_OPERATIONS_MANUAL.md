@@ -1,14 +1,14 @@
-# SSAR RPAS Operations Manual
+# S2S SAR Drone Program - Operations Manual
 
-## Squamish Search and Rescue - RPAS Operations Program
+## Sea to Sky Corridor Search and Rescue - Regional Drone Program
 
 ---
 
 | Document | OPS-MANUAL |
 |----------|------------|
-| Version | 1.0 |
-| Effective | March 2026 |
-| Review Date | March 2027 |
+| Version | 2.0 |
+| Effective | August 2026 |
+| Review Date | August 2027 |
 | Regulatory Reference | CAR 901.217-901.223, Standard 922, STSC-003, STSC-004 |
 
 ---
@@ -19,7 +19,7 @@
 2. [RPAS Operator Certificate (RPOC)](#2-rpas-operator-certificate-rpoc)
 3. [Concept of Operations (CONOPS)](#3-concept-of-operations-conops)
 4. [Authorized Aircraft](#4-authorized-aircraft)
-5. [Standard Scenario Operations](#5-standard-scenario-operations)
+5. [Operating Authority and Standard Scenario Operations](#5-operating-authority-and-standard-scenario-operations)
 6. [Site Survey and Flight Planning](#6-site-survey-and-flight-planning)
 7. [Search Operations](#7-search-operations)
 8. [Communications](#8-communications)
@@ -36,24 +36,31 @@
 
 ### 1.1 Purpose
 
-This Operations Manual establishes the operating standards, procedures, and requirements for all Remotely Piloted Aircraft Systems (RPAS) operations conducted by Squamish Search and Rescue (SSAR). This manual serves as the primary operational reference document for the SSAR RPAS Operator Certificate (RPOC).
+This Operations Manual establishes the operating standards, procedures, and requirements for all Remotely Piloted Aircraft Systems (RPAS) operations conducted by the S2S SAR Drone Program. This manual serves as the primary operational reference document for the Program RPAS Operator Certificate (RPOC).
 
 ### 1.2 Scope
 
-This manual applies to all RPAS operations conducted under SSAR authority, including:
-- Visual Line of Sight (VLOS) operations
-- High Altitude VLOS operations (STSC-003) - up to 1000' AGL
-- Low-Risk Beyond Visual Line of Sight operations (STSC-004) - up to 400' AGL
-- Extended Visual Line of Sight (EVLOS) operations
+This manual applies to all RPAS operations conducted under the S2S SAR Drone Program by its participating Sea to Sky corridor search and rescue organizations. In this manual, "the Program" means the shared S2S SAR Drone Program, and "the Organization" means the participating search and rescue organization conducting the operation. Operations covered include:
+
+- Visual Line of Sight (VLOS) operations, including Extended VLOS and sheltered operations (CARs Part IX, Division V)
+- Level 1 Complex Operations: low-risk BVLOS under an RPAS Operator Certificate (CARs Part IX, Division VI)
+- High Altitude VLOS operations above 400' AGL up to 1000' AGL (STSC-003), where the Organization holds a valid SFOC
+- Low-Risk BVLOS by Advanced pilots (STSC-004), where the Organization holds a valid SFOC
 
 ### 1.3 Regulatory Compliance
 
-All SSAR RPAS operations shall comply with:
-- **Canadian Aviation Regulations Part IX** (CAR 901.217-901.223)
-- **Standard 922** - RPAS Safety Assurance
-- **STSC-003** - High Altitude VLOS Standard Scenario
-- **STSC-004** - Low-Risk BVLOS Standard Scenario
-- All applicable Special Flight Operations Certificate (SFOC) conditions
+The Canadian Aviation Regulations are the governing authority for all Program operations. JARUS SORA methodology is applied on top of, and never in place of, the CARs; where the two differ, the CARs prevail. All Program RPAS operations shall comply with:
+
+- **Canadian Aviation Regulations Part IX**, including the General Operating and Flight Rules (CAR 901.11 to 901.51), Advanced Operations (Division V), Level 1 Complex Operations (Division VI, CAR 901.87 to 901.96), the RPAS Operator Certificate requirements (Division XII, CAR 901.213 to 901.223), and Special Flight Operations (Subpart 3, CAR 903.01 to 903.04)
+- **Standard 921** (Pilot Certification), **Standard 922** (RPAS Safety Assurance), and **Standard 923** (Vision-Based Detect and Avoid)
+- **AC 903-001** (RPAS Operational Risk Assessment and Standard Scenarios STSC-001 to STSC-005) and **AC 901-002** (RPOC Manual Development)
+- **JARUS SORA v2.5** methodology, applied as supporting risk assessment practice under the CARs
+- The conditions of the RPAS Operator Certificate held by the Organization
+- The conditions of any valid SFOC held by the Organization
+
+#### 1.3.1 Core Operating Rule
+
+> **Fly within the parameters your pilot certificate allows. Operations beyond those parameters require a valid SFOC held by your Organization, and only pilots granted privileges under that SFOC may conduct them, in accordance with its conditions.**
 
 ### 1.4 Related Documents
 
@@ -69,68 +76,73 @@ All SSAR RPAS operations shall comply with:
 
 ---
 
-## 2. RPAS Operator Certificate (RPOC)
+## 2. Operating Certificates and Authority
 
-### 2.1 Certificate Information
+### 2.1 Certificate Structure
 
-| Specification | Value |
-|---------------|-------|
-| RPOC Number | [To be assigned upon approval] |
-| Effective Date | [To be determined] |
-| Issued To | Squamish Search and Rescue |
+Each participating organization holds its own certificates. This shared documentation supports each Organization's RPOC and SFOC applications and serves as common program policy; certificates themselves are issued to, and held by, each Organization individually.
 
-### 2.2 Applicant Information
+| Certificate | Held By | Purpose |
+|-------------|---------|---------|
+| RPAS Operator Certificate (RPOC), CAR 901.214 | Each Organization | Required for Level 1 Complex (Division VI) BVLOS operations |
+| SFOC-RPAS, CAR 903.03 | Each Organization (as required) | Operations beyond certificate privileges (e.g. STSC-003, STSC-004 for Advanced pilots) |
+| Pilot Certificates, CAR 901.55 / 901.64 / 901.90 | Individual pilots | Basic, Advanced, or Level 1 Complex privileges |
 
-| Field | Information |
-|-------|-------------|
-| Organization Name | Squamish Search and Rescue |
-| City/Province | Squamish, British Columbia |
-| Accountable Executive | Dustin Wales |
-| Emergency Contact | Dustin Wales |
+### 2.2 Certificate Register (Per Organization)
 
-### 2.3 Accountable Executive Accountability - CAR 901.217
+Each Organization maintains its own certificate register internally and references this documentation when applying. The register records, at minimum:
 
-**Accountable Executive: Dustin Wales**
+| Record | Detail |
+|--------|--------|
+| RPOC | Number, issue date, Accountable Executive named on application (CAR 901.214) |
+| SFOC(s) | Number, validity period, authorized operations, pilots granted privileges (CAR 903.03/903.04) |
+| Standard 922 Declarations | RPAS models and declarations relied upon (CAR 901.95, 901.194) |
+| ATS Authorizations | Any standing authorizations for controlled airspace (CAR 901.71) |
 
-In accordance with CAR 901.217, the Accountable Executive:
+The register is made available to Transport Canada on request (CAR 901.217(4), 901.221(2)) and reviewed at least annually.
 
-1. **Has overall responsibility** for operations authorized under the RPOC, including compliance with Canadian Aviation Regulations, RPOC conditions, and organizational policies
+### 2.3 Accountable Executive Accountability - CAR 901.217 and 901.218
 
-2. **Is accountable to Transport Canada** for all RPAS operations conducted under the authority of this RPOC
+Each Organization appoints an Accountable Executive (CAR 106.02, CAR 901.218(2)) who:
 
+1. **Has overall responsibility** for operations authorized under the Organization's RPOC, including compliance with the Canadian Aviation Regulations, RPOC conditions, and Program policies
+2. **Is accountable to Transport Canada** for all RPAS operations conducted under the authority of that RPOC
 3. **Ensures adequate resources** are available for safe operations, maintenance, training, and safety management
-
 4. **Maintains authority** to suspend operations, ground aircraft, or restrict pilot privileges when safety concerns arise
+5. **Controls the safety processes** required by CAR 901.218 and cannot delegate this accountability
 
-5. **Is directly responsible** for the effectiveness of the Safety Management System and cannot delegate this accountability
+Each Organization also appoints a Person Responsible for RPAS Maintenance (CAR 901.220) and designates a Pilot-in-Command for every Level 1 Complex (Division VI) operation (CAR 901.222).
 
 ### 2.4 Authorized Operations
 
-SSAR is authorized to conduct the following operations under this RPOC:
-- Visual Line of Sight (VLOS) operations
-- High Altitude VLOS operations (STSC-003) - up to 1000' AGL
-- Low-Risk Beyond Visual Line of Sight operations (STSC-004)
+Operations available to Program pilots depend on the pilot certificate held and the certificates held by their Organization:
 
-### 2.5 Authorized Pilots
+| Pilot Certificate | Under Organization RPOC | Under Organization SFOC (if held and granted) |
+|-------------------|-------------------------|-----------------------------------------------|
+| Advanced (CAR 901.64) | VLOS / EVLOS / sheltered operations per Division V, max 400' AGL | STSC-003 High Altitude VLOS to 1000' AGL; STSC-004 Low-Risk BVLOS per SFOC conditions |
+| Level 1 Complex (CAR 901.90) | All Advanced privileges, plus Division VI BVLOS: uncontrolled airspace, max 400' AGL, over sparsely populated areas or at least 1 km from populated areas | STSC-003 High Altitude VLOS to 1000' AGL per SFOC conditions |
 
-The following pilots are authorized under this RPOC (all hold valid Advanced RPAS Pilot Certificates):
+### 2.5 Pilot Certification Requirements
 
-| Name | Certificate # | Role | Qualified Aircraft |
-|------|---------------|------|-------------------|
-| Dustin Wales | [Certificate #] | Chief Pilot/AE | M30T, M4TD |
-| Pilot 2 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 3 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 4 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 5 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 6 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 7 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 8 | [Certificate #] | PIC | M30T, M4TD |
-| Pilot 9 | [Certificate #] | PIC | M30T, M4TD |
+There is no standing roster in this shared documentation; each Organization records its authorized pilots internally (CAR 901.223). A person is a certified pilot under the Program, and may act as PIC, when all of the following are met:
+
+| Requirement | Standard |
+|-------------|----------|
+| Pilot Certificate | Advanced Operations (CAR 901.64) or Level 1 Complex Operations (CAR 901.90) |
+| Recency | Met within the preceding 24 months (CAR 901.65 / 901.91) |
+| Program Training | Foundation and aircraft type training completed, competency assessment passed (Training Manual) |
+| Authorization | Signed off by the Organization's Chief Pilot and recorded per CAR 901.223 |
+
+Additional privileges:
+
+- **Division VI BVLOS (under the Organization's RPOC):** requires the Level 1 Complex certificate (CAR 901.89) and a designated PIC for the operation (CAR 901.222)
+- **STSC-003 / STSC-004 (under the Organization's valid SFOC):** requires the pilot to be granted privileges under that SFOC and to comply with its conditions
+- **Visual Observers:** for EVLOS, the VO must hold a pilot certificate (CAR 901.75); for BVLOS, the VO must be trained per Standard 923 and Training Manual Section 6
 
 ### 2.6 Operating Area
 
-- Sea to Sky Corridor, British Columbia
-- Squamish Search and Rescue jurisdiction
+- Sea to Sky Corridor, British Columbia (the full corridor and surrounding terrain)
+- Each Organization's search and rescue jurisdiction
 - Provincial parks and wilderness areas in the region
 - Operations may be conducted throughout British Columbia as required for SAR missions, subject to appropriate airspace authorizations
 
@@ -140,14 +152,15 @@ The following pilots are authorized under this RPOC (all hold valid Advanced RPA
 
 ### 3.1 Preamble
 
-This Concept of Operations outlines RPAS operations conducted by Squamish Search and Rescue (SSAR), based out of Squamish, British Columbia. This document is integral to SSAR Special Flight Operation Certificate (SFOC) application for:
+This Concept of Operations outlines RPAS operations conducted under the S2S SAR Drone Program by its participating Sea to Sky corridor search and rescue organizations, operating throughout the Sea to Sky Corridor of British Columbia. This document supports each Organization's RPOC and, where applicable, SFOC applications, covering:
 
-- **(STSC-003)** VLOS operation of a small RPA (>250g up to 25kg) in uncontrolled airspace above 400' AGL up to 1000' AGL
-- **(STSC-004)** BVLOS operation of a small RPA (>250g up to 25kg) over low-risk ground areas using visual observer DAA
+- **Level 1 Complex Operations (CAR 901.87):** BVLOS operation of a small RPA in uncontrolled airspace, max 400' AGL, over sparsely populated areas, conducted under the Organization's RPOC by Level 1 Complex pilots
+- **(STSC-003)** VLOS operation of a small RPA (>250g up to 25kg) in uncontrolled airspace above 400' AGL up to 1000' AGL, under the Organization's valid SFOC
+- **(STSC-004)** BVLOS operation of a small RPA (>250g up to 25kg) over low-risk ground areas using visual observer DAA, by Advanced pilots under the Organization's valid SFOC
 
 ### 3.2 Public Good and Objective
 
-Squamish Search and Rescue is a first responder non-profit providing 24/7 SAR services in and around Squamish, British Columbia. The primary objective is to conduct safe and effective BVLOS RPAS flights supporting SSAR operations.
+the S2S SAR Drone Program is a first responder non-profit providing 24/7 SAR services in and around Squamish, British Columbia. The primary objective is to conduct safe and effective BVLOS RPAS flights supporting the Program operations.
 
 | Objective | Performance Criteria |
 |-----------|---------------------|
@@ -163,7 +176,7 @@ Squamish Search and Rescue is a first responder non-profit providing 24/7 SAR se
 | Parameter | Detail |
 |-----------|--------|
 | Type of Operation | Visual Line-of-Sight (VLOS) operations above 400 ft AGL |
-| Operational Area | Anywhere within SSAR boundary; minimum distance per CAR Part 901 |
+| Operational Area | Anywhere within the Program boundary; minimum distance per CAR Part 901 |
 | Altitude | Limited by VLOS; RPA must descend below 400 ft AGL or enter Atypical Airspace within one minute |
 | Airspace | Uncontrolled only; ≥2 NM horizontal and 500 ft vertical from controlled airspace |
 | Risk Assessment | Assigned SORA SAIL II |
@@ -183,7 +196,7 @@ Squamish Search and Rescue is a first responder non-profit providing 24/7 SAR se
 ### 3.4 Team Composition
 
 #### Pilot In Command (PIC)
-- Validate maintenance; comply with regulations and SFOC constraints
+- Validate maintenance; comply with regulations, certificate privileges, and the conditions of any applicable SFOC
 - Monitor RPAS; plan operations; conduct Rapid Site Survey briefings
 - Communicate to authorities; prepare incident/accident reports
 
@@ -195,11 +208,11 @@ Squamish Search and Rescue is a first responder non-profit providing 24/7 SAR se
 
 | Stage | Description | Allowed Operations | Progression Criteria |
 |-------|-------------|-------------------|---------------------|
-| 1 | Basic License & Onboarding | Sub-250g RPAS flights | 20 training flights; complete SSAR Manuals |
+| 1 | Basic License & Onboarding | Sub-250g RPAS flights | 20 training flights; complete the Program Manuals |
 | 2 | Advanced License Training | VLOS <400 ft AGL | Advanced License; 20 additional flights |
 | 3 | BVLOS Training & Operations | BVLOS under supervision | 20 BVLOS flights; supervisor sign-off |
 | 4 | High-Altitude Training | High altitude under supervision | 20 high-altitude flights; supervisor sign-off |
-| 6 | Full SFOC Operator Approval | All SFOC-permitted operations | All stages complete; final sign-off |
+| 6 | Full Operator Privileges | All operations permitted by certificates held and any valid SFOC | All stages complete; final sign-off |
 
 ### 3.6 Operational Constraints (NO-GO)
 
@@ -209,7 +222,7 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 - Operator fatigue or anxiety; unmanaged launch/land site contamination
 - Risk of conflict with any airspace user
 - Battery less than 90% full
-- Missing access to SSAR manuals (Ops Manual, CONOPS, Site Survey, SFOC)
+- Missing access to the Program manuals (Ops Manual, CONOPS, Site Survey, and any applicable SFOC)
 
 > **WITHOUT THESE DOCUMENTS READILY AVAILABLE - DO NOT FLY.**
 
@@ -225,7 +238,7 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 | Priority | Area | Description |
 |----------|------|-------------|
 | 1 | Bystander Safety | Safety to bystanders (uninformed persons and manned aircraft). Must not put at risk the larger environment. |
-| 2 | Adherence to Regulations | CARs Part IX, SFOC requirements, SSAR Operational Procedures. |
+| 2 | Adherence to Regulations | CARs Part IX, certificate privileges and SFOC conditions, and Program Operational Procedures. |
 | 3 | RPAS Preservation | Ensure safe return to maintain future operational availability. |
 | 4 | Subject Finding | Identifying, locating and assisting persons in need - the ultimate measure of mission success. |
 
@@ -283,14 +296,14 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 
 ### 3.10 Operational Safety Objectives (OSO) Reference
 
-| OSO # | Topic | SSAR Evidence |
+| OSO # | Topic | the Program Evidence |
 |-------|-------|---------------|
 | 1 | Operator Competency | Comprehensive Ops Manual; all pilots advanced certified |
-| 3 | Maintenance | Strictly per SSAR Ops Manual; AirData secondary check |
+| 3 | Maintenance | Strictly per the Program Ops Manual; AirData secondary check |
 | 7 | Pre-Flight Inspection | Detailed in Ops Manual; included in AirData portal |
 | 8,11,14,21 | Operational Procedures | Ops Manual and CONOPS; regular review meetings |
 | 9,15,22 | Crew Training | All operators trained on JARUS SORA and OSOs |
-| 16 | Multi-crew Coordination | SSAR Ops Manual crew communication procedures |
+| 16 | Multi-crew Coordination | the Program Ops Manual crew communication procedures |
 | 17 | Crew Fitness | Ops Manual fitness requirements; Rapid Site Survey fit-for-duty |
 | 23 | Environmental Limits | Manufacturer limitations per Ops Manual |
 
@@ -357,98 +370,139 @@ All authorized RPAS must be capable of:
 
 ---
 
-## 5. Standard Scenario Operations
+## 5. Operating Authority and Standard Scenario Operations
 
-### 5.1 Standard Scenario Overview
+### 5.1 Operating Authority Framework
 
-| Parameter | STSC-003 | STSC-004 |
-|-----------|----------|----------|
-| Operation Type | High Altitude VLOS | Low-Risk BVLOS |
-| Visibility | VLOS maintained | BVLOS permitted |
-| Max Altitude | 1000' AGL | 400' AGL |
-| Population | ATC coordinated area | <25 people/km² |
-| Airspace | Class G only | Class G only |
-| ATC Coordination | REQUIRED | Not required |
-| Pilot Certificate | Advanced Pilot License | Level 1 Complex Pilot License |
+> **Core Operating Rule: Fly within the parameters your pilot certificate allows. Operations beyond those parameters require a valid SFOC held by your Organization, and only pilots granted privileges under that SFOC may conduct them, in accordance with its conditions.**
 
-### 5.2 STSC-003 High Altitude VLOS Procedures
+| Operation | Authority | Pilot Requirement |
+|-----------|-----------|-------------------|
+| VLOS / EVLOS / sheltered, max 400' AGL | Pilot certificate (Divisions IV / V) | Advanced or Level 1 Complex |
+| Low-Risk BVLOS, max 400' AGL, uncontrolled airspace | Organization RPOC (Division VI) | Level 1 Complex |
+| Low-Risk BVLOS by Advanced pilots (STSC-004) | Organization's valid SFOC | Advanced, named or granted under the SFOC |
+| High Altitude VLOS above 400' to 1000' AGL (STSC-003) | Organization's valid SFOC | Advanced or Level 1 Complex, granted under the SFOC |
 
-STSC-003 operates within a maximum altitude of 1000' AGL. Standard operations are conducted at 400' AGL using terrain-following profiles. The 1000' AGL ceiling accommodates Return-to-Home (RTH) emergency scenarios in mountainous terrain where terrain-following cannot be maintained.
+STSC-003 and STSC-004 are Transport Canada standard scenarios (AC 903-001, Appendix D) used by participating organizations to apply for and operate under SFOCs. Where no valid SFOC is held, those envelopes are not available and operations are limited to certificate privileges.
 
-#### 5.2.1 STSC-003 Operational Limitations
+### 5.2 Scenario Parameters
+
+| Parameter | Level 1 Complex BVLOS (RPOC) | STSC-003 (SFOC) | STSC-004 (SFOC) |
+|-----------|------------------------------|-----------------|-----------------|
+| Operation Type | Low-Risk BVLOS | High Altitude VLOS | Low-Risk BVLOS |
+| Visibility | BVLOS permitted | VLOS maintained | BVLOS permitted |
+| Max Altitude | 400' AGL | 1000' AGL | 400' AGL |
+| Ground Environment | Sparsely populated (more than 5, up to 25 people/km²) or at least 1 km from a populated area (CAR 901.87) | Per SFOC conditions | Sparsely populated per SFOC conditions |
+| Airspace | Uncontrolled only | Uncontrolled (Class G) | Uncontrolled (Class G) |
+| Aerodrome Standoff | At least 5 NM from listed aerodromes (CAR 901.47(3)) | Per SFOC conditions | At least 5 NM from listed aerodromes |
+| ATS Coordination | Not required | Required per SFOC conditions | Not required |
+| Pilot Certificate | Level 1 Complex | Advanced or higher, granted under SFOC | Advanced or higher, granted under SFOC |
+
+### 5.3 Level 1 Complex BVLOS Operations (Division VI, under RPOC)
+
+#### 5.3.1 Regulatory Conditions
+
+- Pilot holds a Level 1 Complex pilot certificate (CAR 901.89, 901.90) and meets recency (CAR 901.91)
+- Operation conducted by, or on behalf of, an RPAS operator holding a valid RPOC (CAR 901.88)
+- A Pilot-in-Command is designated for the operation (CAR 901.222)
+- Maximum altitude 400' AGL (CAR 901.25); uncontrolled airspace only
+- Ground environment: over a sparsely populated area (more than 5, up to 25 people/km²) or at a distance of at least 1 km from a populated area (more than 5 people/km²) for small RPA; medium RPA require at least 1 km from any populated area (CAR 901.87)
+- Weather: ground visibility at least 3 SM and clear of cloud (CAR 901.34(3))
+- Anti-collision lights on: white, flashing 40 to 100 cycles per minute, visible 1 mile in all directions (CAR 901.38.1)
+- At least 5 NM from any aerodrome listed in the CFS or Water Aerodrome Supplement (CAR 901.47(3))
+- Standard 922 declaration in place for the RPAS model (CAR 901.95); the Program uses visual observer detect and avoid in accordance with Standard 923, which satisfies CAR 901.95(2) in lieu of a 922.10 DAA declaration
+- The Organization's RPAS Operations Manual immediately available to crew (CAR 901.30(2))
+
+#### 5.3.2 Program Operating Limits
+
+- Maximum distance: 2 km from PIC, or as authorized in the mission plan
+- Visual observers deployed in accordance with Standard 923 detection volume requirements
+- Lost link procedures pre-programmed and briefed
+
+### 5.4 STSC-003 High Altitude VLOS Procedures (SFOC Required)
+
+STSC-003 operations may only be conducted where the Organization holds a valid SFOC authorizing them, by pilots granted privileges under that SFOC. STSC-003 operates within a maximum altitude of 1000' AGL. Standard operations are conducted at 400' AGL using terrain-following profiles. The 1000' AGL ceiling accommodates Return-to-Home (RTH) emergency scenarios in mountainous terrain where terrain-following cannot be maintained.
+
+#### 5.4.1 STSC-003 Operational Limitations
 
 - Maximum altitude: 1000' AGL
 - Minimum weather: 3 SM visibility, clear of cloud
 - Daylight operations only (unless night ops approved)
 - VLOS maintained at all times
-- ATC notification required before operations
+- ATS coordination completed in accordance with the SFOC conditions before operations
 
-#### 5.2.2 ATC Coordination Protocol
+#### 5.4.2 ATS Coordination Protocol
 
-> **MANDATORY: All STSC-003 operations require ATC coordination per Standard 922.**
+> **MANDATORY: All STSC-003 operations require ATS coordination as a condition of the SFOC.**
 
-##### Coordination Timeline
+##### Coordination Timeline (per SFOC conditions)
 
 | Timing | Action | Method |
 |--------|--------|--------|
-| 24+ hours prior | Initial notification to appropriate ATC unit | Phone or online portal |
+| Advance notice per SFOC | Initial notification to appropriate ATS unit | Phone or online portal |
 | 12 hours prior | Confirm operation details | Phone/email confirmation |
-| 1 hour prior | Activation notification | Phone to ATC |
-| At completion | Termination notification | Phone to ATC |
+| 1 hour prior | Activation notification | Phone to ATS unit |
+| At completion | Termination notification | Phone to ATS unit |
 
-> **IMPORTANT:** STSC-003 requires minimum 24-hour advance ATC notification. If SAR activation does not permit this, operations MUST be conducted under STSC-004 parameters (max 400' AGL, BVLOS permitted, no ATC required). See Section 5.5.
+> If the coordination required by the SFOC cannot be completed, STSC-003 privileges are not available for that mission. Operate within certificate privileges instead (Section 5.1).
 
-##### ATC Units
+##### ATS Units
 
-| Airspace | ATC Unit | Contact | Frequency |
+| Airspace | ATS Unit | Contact | Frequency |
 |----------|----------|---------|-----------|
 | Class G | Vancouver FIC | 1-866-WXBRIEF | 126.7 MHz |
 | Class E (>700' AGL) | Vancouver Centre | (604) 775-8800 | 132.35 MHz |
 | Within 5 NM CYSE | Squamish FSS | Coordinate via FIC | 122.2 MHz |
 | Helicopter Ops | Local heli ops | Via SAR tasking | As assigned |
 
-#### 5.2.3 Altitude Band Procedures
+#### 5.4.3 Altitude Band Procedures
 
 | Altitude Band | Requirements | Additional Procedures |
 |---------------|--------------|----------------------|
 | Surface - 400' AGL | Standard VLOS | Normal operations |
-| 400' - 700' AGL | ATC coordination required | Enhanced VO positioning |
-| 700' - 1000' AGL | ATC coordination mandatory | Active radio communication, monitoring 126.7 |
+| 400' - 700' AGL | ATS coordination required | Enhanced VO positioning |
+| 700' - 1000' AGL | ATS coordination mandatory | Active radio communication, monitoring 126.7 |
 
-#### 5.2.4 Emergency Descent Procedure
+#### 5.4.4 Emergency Descent Procedure
 
 1. **IMMEDIATELY** initiate descent
 2. **DESCEND** at max safe rate
 3. **TARGET** altitude below 400' AGL
 4. **MAINTAIN** horizontal position or move away from traffic
 
-### 5.3 STSC-004 Low-Risk BVLOS Procedures
+### 5.5 STSC-004 Low-Risk BVLOS Procedures (SFOC, Advanced Pilots)
 
-#### 5.3.1 STSC-004 Operational Limitations
+STSC-004 provides the SFOC pathway for Advanced pilots to conduct low-risk BVLOS where the Organization holds a valid SFOC authorizing it. Level 1 Complex pilots conduct the equivalent envelope under the Organization's RPOC (Section 5.3) and do not require the SFOC.
+
+#### 5.5.1 STSC-004 Operational Limitations
 
 - Maximum altitude: 400' AGL
 - Maximum distance: 2 km from PIC (or as authorized)
-- Minimum weather: 3 SM visibility
-- Sparsely populated areas only
-- Visual observers deployed as required
+- Minimum weather: 3 SM visibility, clear of cloud
+- Sparsely populated areas only (more than 5, up to 25 people/km²), verified by site survey
+- Visual observers deployed per SFOC and Standard 923
+- Anti-collision lights on (CAR 901.38.1)
+- At least 5 NM from listed aerodromes (CAR 901.47(3))
 - Lost link procedures must be pre-programmed
 
-#### 5.3.2 Pre-Flight Requirements
+#### 5.5.2 Pre-Flight Requirements
 
-- Verify operating area <25 people/km²
-- Establish controlled ground area (M1)
+- Verify ground environment meets the sparsely populated definition (more than 5, up to 25 people/km²)
+- Establish ground observation of the area (SORA mitigation M1(C))
 - Confirm weather within limits
 - Set RTH altitude and parameters
 - Verify C2 link margin adequate
 
-#### 5.3.3 Ground Risk Buffer
+#### 5.5.3 Ground Risk Buffer
+
+Per CAR 900.01 the operational volume comprises the flight geography, the contingency volume, and the ground risk buffer; the buffer must be at least equal to the planned maximum altitude (1:1).
 
 | Aircraft | Max Speed | Glide Ratio | Max Alt | Calc. GRB | Applied GRB |
 |----------|-----------|-------------|---------|-----------|-------------|
 | DJI M30T | 23 m/s | ~1:1 | 400' | ~37m | 50m |
 | DJI M4TD | 21 m/s | ~1:1 | 400' | ~34m | 50m |
 
-#### 5.3.4 Lost Link Behavior - DJI M30T
+#### 5.5.4 Lost Link Behavior - DJI M30T
 
 | Duration | Behavior | PIC Action |
 |----------|----------|------------|
@@ -458,7 +512,7 @@ STSC-003 operates within a maximum altitude of 1000' AGL. Standard operations ar
 | >30 seconds | Auto-RTH at preset altitude | Prepare for landing |
 | Link restored | PIC control resumed | Assess and continue/abort |
 
-#### 5.3.5 Weather Minimums for BVLOS
+#### 5.5.5 Weather Minimums for BVLOS (CAR 901.34(3))
 
 | Parameter | Minimum | Maximum |
 |-----------|---------|---------|
@@ -468,7 +522,7 @@ STSC-003 operates within a maximum altitude of 1000' AGL. Standard operations ar
 | Temperature | -20°C | +45°C |
 | Precipitation | None | - |
 
-### 5.4 GPS Failure Procedures
+### 5.6 GPS Failure Procedures
 
 > **CRITICAL: GPS failure requires immediate response.**
 
@@ -479,63 +533,45 @@ STSC-003 operates within a maximum altitude of 1000' AGL. Standard operations ar
 5. **FLY** back to operator position
 6. **LAND** as soon as practical
 
-### 5.5 Time-Critical SAR Operations
+### 5.7 Time-Critical SAR Operations
 
-#### 5.5.1 Understanding Time Constraints
+#### 5.7.1 Selecting Authority Under Time Pressure
 
-When SAR activation does not permit 24-hour ATC notification (required for STSC-003 operations above 400' AGL), all operations shall be conducted under STSC-004 parameters. This ensures legal compliance while maintaining operational effectiveness.
+When a SAR activation arrives, the PIC identifies the operating authority available now and flies within it. There is no notification decision tree: fly within the parameters your certificate allows, or under a valid SFOC if one is held and its conditions (including any ATS coordination) can be met before launch.
 
-| 24-Hour Notice Available | 24-Hour Notice NOT Available |
-|--------------------------|------------------------------|
-| STSC-003 or STSC-004 may be selected based on mission requirements | Operations MUST be conducted under STSC-004 only |
-| High-altitude VLOS (400-1000' AGL) permitted with ATC coordination | Maximum altitude 400' AGL; BVLOS permitted |
-| Standard scenario selection per OPS-001 | Terrain-following flight profiles; Class G only; no ATC notification required |
+| Authority Available | Capability |
+|---------------------|------------|
+| Pilot certificate only | VLOS / EVLOS / sheltered per Division V; L1C pilots may also fly Division VI BVLOS under the Organization's RPOC, max 400' AGL |
+| Valid SFOC, conditions met | Add STSC-003 high altitude VLOS (to 1000' AGL) and/or STSC-004 BVLOS for Advanced pilots, per the SFOC |
 
-#### 5.5.2 Scenario Selection Process
+#### 5.7.2 Operational Effectiveness at 400' AGL
 
-When SSAR receives a SAR activation, the PIC must immediately assess notification timeline feasibility:
-
-1. **Step 1:** Determine if 24-hour ATC notification can be completed before operations commence
-2. **Step 2:** If YES - select appropriate scenario (STSC-003 or STSC-004) based on mission requirements
-3. **Step 3:** If NO - operations are restricted to STSC-004 parameters only
-
-#### 5.5.3 STSC-004 as Time-Critical Fallback
-
-> STSC-004 provides a legally compliant operational capability for time-critical SAR missions:
-> - Maximum altitude 400' AGL (terrain-following permitted)
-> - BVLOS permitted
-> - ATC notification not required (Class G, sub-400')
-> - Population density must verify <25 people/km²
-
-#### 5.5.4 Operational Effectiveness Under STSC-004
-
-- Optimal thermal detection altitude (80-120m AGL) falls within STSC-004 limits
+- Optimal thermal detection altitude (80-120m AGL) falls within the 400' AGL limit
 - Terrain-following search patterns are well-suited to mountainous SAR environments
-- PIC must verify notification timeline during Rapid Site Survey
+- Level 1 Complex BVLOS under the RPOC requires no ATS coordination in uncontrolled airspace, supporting immediate launch
 
-#### 5.5.5 Terrain-Following Operations
+#### 5.7.3 Terrain-Following Operations
 
 - Maintain consistent AGL following natural terrain contours
 - Optimal thermal search: 80-120 meters (260-400 feet) AGL
 - Use contour search patterns in mountainous terrain
 - RTH altitude must be set above highest terrain in operating area
 
-#### 5.5.6 Time-Critical Pre-Flight Checklist
+#### 5.7.4 Time-Critical Pre-Flight Checklist
 
-- [ ] SAR activation timeline assessed
-- [ ] 24-hour ATC notice feasibility determined
-- [ ] If NO 24-hour notice: STSC-004 parameters confirmed
-- [ ] Maximum altitude set to 400' AGL
+- [ ] Operating authority identified (certificate privileges / RPOC Division VI / valid SFOC)
+- [ ] If SFOC privileges used: SFOC valid, pilot granted, conditions (including ATS coordination) met
+- [ ] Maximum altitude set per authority selected
 - [ ] Terrain-following flight plan briefed
 - [ ] Crew briefed on operational constraints
 
-### 5.6 Crew Configuration
+### 5.8 Crew Configuration
 
 | Operation Type | Minimum Crew | Recommended |
 |----------------|--------------|-------------|
 | VLOS <400' AGL | PIC + 1 VO | PIC + 1 VO + 1 Assist |
 | STSC-003 up to 1000' | PIC + 2 VO | PIC + 2 VOs + 1 Assist |
-| STSC-004 BVLOS | PIC + 1 VO | PIC + 1 VO + 1 Assist |
+| BVLOS (Division VI or STSC-004) | PIC + 1 VO | PIC + 1 VO + 1 Assist |
 
 ---
 
@@ -543,7 +579,7 @@ When SSAR receives a SAR activation, the PIC must immediately assess notificatio
 
 ### 6.1 Purpose - CAR 901.27
 
-To ensure that all SSAR RPAS operations are planned effectively to mitigate risk and ensure compliance with CARs 901.27 (Site Survey) and 901.24 (Pre-flight Information).
+To ensure that all Program RPAS operations are planned effectively to mitigate risk and ensure compliance with CARs 901.27 (Site Survey) and 901.24 (Pre-flight Information).
 
 ### 6.2 Site Survey Types
 
@@ -568,7 +604,7 @@ Prior to takeoff, the PIC must conduct a site survey assessing:
 
 ### 6.4 The Rapid Site Survey (Emergency Call-Outs)
 
-For time-critical SAR missions where a desktop study is impossible, the PIC must complete the SSAR Rapid Site Survey on-site.
+For time-critical SAR missions where a desktop study is impossible, the PIC must complete the Program Rapid Site Survey on-site.
 
 **Format:** Digital (EFB/Tablet) or laminated checklist in the Operations Kit
 
@@ -579,20 +615,17 @@ For time-critical SAR missions where a desktop study is impossible, the PIC must
 
 > **Go/No-Go:** If the Rapid Survey reveals risks that cannot be mitigated (e.g., icing, non-cooperative bystanders), the operation is a No-Go.
 
-#### 6.4.1 Scenario Selection for Time-Critical Operations
+#### 6.4.1 Operating Authority Selection for Time-Critical Operations
 
-During the Rapid Site Survey, the PIC must determine scenario selection based on notification timeline:
+During the Rapid Site Survey, the PIC identifies the operating authority available and flies within it (Core Operating Rule, Section 1.3.1):
 
-**Step 1 - Assess Notification Timeline:** Can 24-hour ATC notification be completed before operations commence?
+| Authority | Availability Check | Capability |
+|-----------|--------------------|------------|
+| Pilot certificate (Division IV/V) | Always available to certified, current pilots | VLOS / EVLOS / sheltered, max 400' AGL |
+| Organization RPOC (Division VI) | Pilot holds Level 1 Complex certificate; Division VI conditions met (Section 5.3.1) | BVLOS, max 400' AGL, uncontrolled airspace, no ATS coordination required |
+| Organization SFOC | SFOC valid, pilot granted privileges, all SFOC conditions (including ATS coordination) can be met before launch | STSC-003 high altitude VLOS to 1000' AGL; STSC-004 BVLOS for Advanced pilots |
 
-| If YES (24-hour notice available) | If NO (time-critical SAR activation) |
-|-----------------------------------|--------------------------------------|
-| STSC-003 (High Altitude VLOS 400-1000' AGL) may be selected | Operations MUST be conducted under STSC-004 parameters ONLY |
-| STSC-004 (BVLOS under 400' AGL) remains available | Maximum altitude: 400' AGL; BVLOS: Permitted |
-| Complete ATC coordination per Section 5.2.2 | ATC notification: Not required (Class G, sub-400') |
-| | Terrain-following flight profiles required; brief crew on altitude constraints |
-
-> **This scenario selection is a mandatory element of the Rapid Site Survey for all SAR callouts.**
+> **This authority selection is a mandatory element of the Rapid Site Survey for all SAR callouts.**
 
 ### 6.5 Flight Authorization and Filing
 
@@ -607,10 +640,10 @@ During the Rapid Site Survey, the PIC must determine scenario selection based on
 ### 6.6 Record Keeping
 
 - **Documentation:** The Site Survey (Standard or Rapid) is a legal document
-- **Retention:** Records retained for 24 months per SSAR standards (exceeding CAR 901.27)
+- **Retention:** Records retained for 24 months per the Program standards (exceeding CAR 901.27)
 - **Review:** Post-mission, update survey with actual conditions to aid future operations
 
-### 6.7 SSAR Rapid Site Survey Checklist
+### 6.7 Program Rapid Site Survey Checklist
 
 #### 1. Crew Fitness & Roles
 - [ ] PIC and VO designated and fit for duty (IMSAFE)
@@ -633,10 +666,11 @@ During the Rapid Site Survey, the PIC must determine scenario selection based on
 - [ ] Nearest Hospital: [Location]
 - [ ] Lost Link: RTH Altitude set to [Height] (Clear of trees?)
 
-#### 5. Scenario Selection (Time-Critical)
-- [ ] 24-hour ATC notification feasible? (If NO, STSC-004 only)
-- [ ] If STSC-004: Maximum altitude set to 400' AGL
-- [ ] If STSC-004: Terrain-following profile briefed
+#### 5. Operating Authority (Time-Critical)
+- [ ] Authority identified: certificate privileges / RPOC Division VI (L1C pilot) / valid SFOC
+- [ ] If SFOC privileges used: pilot granted, all SFOC conditions (incl. ATS coordination) met
+- [ ] Maximum altitude set per authority selected (400' AGL unless SFOC permits higher)
+- [ ] Terrain-following profile briefed
 - [ ] Crew briefed on operational constraints
 
 **Decision:** [ ] GO    [ ] NO-GO
@@ -647,11 +681,11 @@ During the Rapid Site Survey, the PIC must determine scenario selection based on
 
 #### 6.8.1 Description of Broad Operating Area
 
-The SSAR region primarily encompasses the Squamish River Watershed. This area begins at Clendinning Provincial Park, following Clendinning Creek to the Elaho Valley, continuing through the Squamish River, and ultimately reaching Howe Sound, extending to Anvil Island. The surrounding mountainous terrain is also included.
+The the Program region primarily encompasses the Squamish River Watershed. This area begins at Clendinning Provincial Park, following Clendinning Creek to the Elaho Valley, continuing through the Squamish River, and ultimately reaching Howe Sound, extending to Anvil Island. The surrounding mountainous terrain is also included.
 
 #### 6.8.2 Topography and Geography
 
-The SSAR boundary is situated in the Sea-to-Sky Corridor of British Columbia, near the town of Squamish. The region is characterized by diverse and rugged natural landscape, positioned between the Coast Mountains to the east and Howe Sound to the west.
+The the Program boundary is situated in the Sea-to-Sky Corridor of British Columbia, near the town of Squamish. The region is characterized by diverse and rugged natural landscape, positioned between the Coast Mountains to the east and Howe Sound to the west.
 
 - **Mountainous Terrain:** Coast Mountains with steep, rocky slopes; elevations exceeding 2,000 metres
 - **Valleys and River Systems:** Deep valleys following river systems like the Squamish River
@@ -660,7 +694,7 @@ The SSAR boundary is situated in the Sea-to-Sky Corridor of British Columbia, ne
 
 #### 6.8.3 Population Density
 
-The SSAR region corresponds to the Squamish-Lillooet Regional District census district with a population density of 3.1 people/km² (including four municipalities: Squamish, Whistler, Pemberton, Lillooet). Municipalities are excluded from operational requirements, making the effective density even lower.
+The the Program region corresponds to the Squamish-Lillooet Regional District census district with a population density of 3.1 people/km² (including four municipalities: Squamish, Whistler, Pemberton, Lillooet). Municipalities are excluded from operational requirements, making the effective density even lower.
 
 - **Gatherings of People:** Highly unlikely during SAR operations; if identified, planning includes 100' minimum mitigation
 - **Security Measures:** Launch/land location secured with signage, high-visibility pylons, and VO acting as barrier
@@ -701,7 +735,7 @@ The SSAR region corresponds to the Squamish-Lillooet Regional District census di
 
 | Hazard | Risk | Mitigation |
 |--------|------|------------|
-| Recreational Areas | Popular spots (Stawamus Chief, Shannon Falls) may have unexpected persons | SSAR maintains 100' minimum separation from uninvolved persons. |
+| Recreational Areas | Popular spots (Stawamus Chief, Shannon Falls) may have unexpected persons | the Program maintains 100' minimum separation from uninvolved persons. |
 | Aircraft Traffic | Low-flying helicopters/planes for tourism, firefighting, or rescue | ROC-A certified pilots maintain airspace awareness at all times. SAR helicopters have direct comms with RPAS team. |
 
 #### 6.9.6 Wildlife Hazards
@@ -724,7 +758,7 @@ The SSAR region corresponds to the Squamish-Lillooet Regional District census di
 
 ### 7.1 Purpose and Scope
 
-This section establishes standard operating procedures for RPAS search operations conducted by Squamish Search and Rescue, covering search pattern execution, coordination protocols, and integration with ground teams.
+This section establishes standard operating procedures for RPAS search operations conducted by the S2S SAR Drone Program, covering search pattern execution, coordination protocols, and integration with ground teams.
 
 ### 7.2 Search Starting Point (All Patterns)
 
@@ -867,7 +901,7 @@ Include in briefing:
 
 ### 8.1 Purpose
 
-To establish the communication protocols required to ensure the safety, coordination, and regulatory compliance of SSAR RPAS operations. This policy ensures effective Crew Resource Management (CRM) and reliable information flow during all phases of flight.
+To establish the communication protocols required to ensure the safety, coordination, and regulatory compliance of Program RPAS operations. This policy ensures effective Crew Resource Management (CRM) and reliable information flow during all phases of flight.
 
 ### 8.2 Communication Equipment
 
@@ -930,7 +964,7 @@ To eliminate misunderstandings, crew members must use "Read-back/Hear-back" prot
 
 #### 8.8.1 Airspace Classification
 
-All operations within the SSAR boundary are in Class G airspace. Overlapping controlled airspace:
+All operations within the Program boundary are in Class G airspace. Overlapping controlled airspace:
 
 | Location | Airspace Class | Altitude Range |
 |----------|---------------|----------------|
@@ -939,7 +973,7 @@ All operations within the SSAR boundary are in Class G airspace. Overlapping con
 | North of Squamish to Cloudburst/Garibaldi | Class E | 700' AGL to 9500' MSL |
 | North of Garibaldi Lake to Daisy Lake | Class C | 9501' to 12,500' MSL |
 
-**Known Routes:** V321 at 11,000' (N/S) and T606 at 10,500' (NE/SW) cross over the SSAR area.
+**Known Routes:** V321 at 11,000' (N/S) and T606 at 10,500' (NE/SW) cross over the Program area.
 
 #### 8.8.2 Air Traffic Awareness
 
@@ -956,7 +990,7 @@ Air traffic expected from:
 - ROC-A radio actively monitored during all operations
 - ADS-B In notifications monitored for situational awareness
 - Pre-operation communication with flight schools and commercial operators when needed
-- Two-way communication capabilities required (cellular, radio, or SSAR network); tested via signal check before ops
+- Two-way communication capabilities required (cellular, radio, or the Program network); tested via signal check before ops
 
 ---
 
@@ -1073,7 +1107,7 @@ Report the following environmental incidents:
 
 ### 10.1 Purpose
 
-To establish the minimum meteorological conditions required for safe RPAS operations. This policy ensures compliance with Canadian Aviation Regulations (CARs) Part IX (specifically 901.34 and 901.35) and defines the environmental limits for SSAR equipment.
+To establish the minimum meteorological conditions required for safe RPAS operations. This policy ensures compliance with Canadian Aviation Regulations (CARs) Part IX (specifically 901.34 and 901.35) and defines the environmental limits for the Program equipment.
 
 ### 10.2 General Operational Limits
 
@@ -1136,7 +1170,7 @@ To mitigate battery failure and plastic brittleness in cold environments:
 
 ### 11.1 Purpose
 
-To establish a standardized, sequential workflow for Complex and Extended Range SSAR RPAS operations. This policy ensures consistency in flight execution, reduces human error during high-stress missions, and ensures compliance with Canadian Aviation Regulations (CARs) 901.23 and the specific requirements for Level 1 Complex (Low-Risk BVLOS) and EVLOS.
+To establish a standardized, sequential workflow for Complex and Extended Range Program RPAS operations. This policy ensures consistency in flight execution, reduces human error during high-stress missions, and ensures compliance with Canadian Aviation Regulations (CARs) 901.23 and the specific requirements for Level 1 Complex (Low-Risk BVLOS) and EVLOS.
 
 ### 11.2 Scope
 
@@ -1187,14 +1221,17 @@ Used to search riverbeds or long trails where one pilot cannot see the entire ar
 
 ### 11.5 Level 1 Complex Procedures (Low-Risk BVLOS)
 
-Used for long-range searches in the backcountry without an SFOC.
+Conducted under the Organization's RPOC by Level 1 Complex certified pilots (CARs Division VI); no SFOC is required within Division VI limits. Advanced pilots may conduct the equivalent envelope only under a valid SFOC (STSC-004).
 
 #### 11.5.1 Level 1 Pre-Flight Validation
 
-- **Population Check:** Confirm via Site Survey that population density is <25 people/km²
-- **Visibility Check:** Confirm Ground Visibility is >3 Statute Miles (4.8 km)
-- **Airspace:** Confirm Class G Airspace (or SFOC held for Controlled)
-- **Detect & Avoid:** Confirm ADS-B In (e.g., DJI AirSense) is active and audio is audible
+- **Population Check:** Confirm via Site Survey that the area is sparsely populated (more than 5, up to 25 people/km²) or the route remains at least 1 km from any populated area (CAR 901.87)
+- **Visibility Check:** Confirm Ground Visibility is at least 3 Statute Miles and operation remains clear of cloud (CAR 901.34(3))
+- **Airspace:** Confirm uncontrolled airspace (BVLOS in controlled airspace requires an SFOC)
+- **Aerodrome Standoff:** Confirm at least 5 NM from any aerodrome listed in the CFS or Water Aerodrome Supplement (CAR 901.47(3))
+- **Anti-Collision Lights:** Confirm installed and ON (white, 40-100 flashes/min, visible 1 mile, CAR 901.38.1)
+- **PIC Designation:** Confirm a Pilot-in-Command is designated for the operation (CAR 901.222)
+- **Detect & Avoid:** Visual observer DAA per Standard 923; confirm ADS-B In (e.g., DJI AirSense) is active and audio is audible
 
 #### 11.5.2 BVLOS Launch Flow
 
@@ -1230,11 +1267,11 @@ You may fly closer than 30m to a non-participating person/building IF an obstacl
 
 ### 12.1 Purpose
 
-To establish a standardized, sequential workflow for all SSAR RPAS operations. This section ensures consistency in flight execution, reduces human error during high-stress missions, and ensures compliance with Canadian Aviation Regulations (CARs) 901.23 (Procedures for Normal Operations).
+To establish a standardized, sequential workflow for all Program RPAS operations. This section ensures consistency in flight execution, reduces human error during high-stress missions, and ensures compliance with Canadian Aviation Regulations (CARs) 901.23 (Procedures for Normal Operations).
 
 ### 12.2 Scope
 
-This section applies to every flight operation conducted by SSAR, including:
+This section applies to every flight operation conducted by the Program, including:
 - **Operational Flights:** Active search and rescue tasks
 - **Training Flights:** Proficiency checks and practice scenarios
 - **Maintenance Flights:** Functional tests and system validations
@@ -1253,7 +1290,7 @@ Before leaving for any operation, complete the following:
 | 2 | **Airworthiness:** Confirm equipment meets "Pre-Operation" maintenance requirements (no visible damage, no open defects) | [ ] Complete |
 | 3 | **Battery Status:** Ensure all flight batteries and controller batteries are fully charged (>90%) and properly stored | [ ] Complete |
 | 4 | **Software Currency:** Verify flight control app, firmware, and navigation databases are current | [ ] Complete |
-| 5 | **Documentation:** Pack all required documents - Certificates, SFOC copy, Emergency Procedures card, Site Survey forms | [ ] Complete |
+| 5 | **Documentation:** Pack all required documents - Certificates, any applicable SFOC copy, Emergency Procedures card, Site Survey forms | [ ] Complete |
 | 6 | **Support Equipment:** Verify landing pad, pylons, signage, anemometer, and fire extinguisher are packed | [ ] Complete |
 
 ### 12.4 On-Site: Team Briefing & Rapid VO Training
@@ -1562,12 +1599,12 @@ Conduct a brief team debrief before departing the site:
 | Emergency Services | Critical situation | 911 |
 | Squamish General Hospital | Closest medical facility | 38140 Behrner Drive, Squamish |
 
-### 13.3 Aerodromes in SSAR Area
+### 13.3 Aerodromes in the Program Area
 
 | Name | Code | Type | Radio | Phone | Location |
 |------|------|------|-------|-------|----------|
-| Vancouver Intl | CYVR | International | 124.6 | 604-207-7022 | South/Above SSAR |
-| Vancouver Harbour | CYHC | Seaplane Base | 126.8 | 604-328-4340 | South of SSAR |
+| Vancouver Intl | CYVR | International | 124.6 | 604-207-7022 | South/Above the Program |
+| Vancouver Harbour | CYHC | Seaplane Base | 126.8 | 604-328-4340 | South of the Program |
 | Squamish Municipal | CYSE | Airport | 122.8 | 604-892-5217 | Squamish Municipality |
 | Green Lake Whistler | CAE5 | Seaplane Base | n/a | 604-932-6615 | Whistler |
 
@@ -1592,8 +1629,8 @@ Conduct a brief team debrief before departing the site:
 
 | Role | Name | Date |
 |------|------|------|
-| Accountable Executive | Dustin Wales | 2026-03-09 |
-| Chief Pilot | Dustin Wales | 2026-03-09 |
+| Accountable Executive | Appointed per Organization | Per Organization |
+| Chief Pilot | Appointed per Organization | Per Organization |
 
 Signatures on file. Original signed document retained per QAP-001.
 
@@ -1602,6 +1639,11 @@ Signatures on file. Original signed document retained per QAP-001.
 | Date | Version | Description of Change | Approved By |
 |------|---------|----------------------|-------------|
 | 2026-03-09 | 1.0 | Initial consolidated Operations Manual | Dustin Wales |
+| 2026-08-11 | 2.0 | Regulatory update (CARs Jan 2026, SORA v2.5); S2S rebrand; multi-organization generalization | Dustin Wales |
+
+**Document Author:** Dustin Wales
+
+**Questions, updates, inquiries:** Dustin Wales, 604-849-2345
 | | | | |
 | | | | |
 
@@ -1627,4 +1669,4 @@ This consolidated Operations Manual incorporates content from the following sour
 
 **END OF OPERATIONS MANUAL**
 
-*This document is part of the SSAR RPAS Operator Certificate (RPOC) documentation package.*
+*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*

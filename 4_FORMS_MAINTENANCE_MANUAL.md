@@ -1,14 +1,14 @@
-# SSAR Forms & Maintenance Manual
+# S2S SAR Drone Program - Forms & Maintenance Manual
 
-## Squamish Search and Rescue - RPAS Operations Program
+## Sea to Sky Corridor Search and Rescue - Regional Drone Program
 
 ---
 
 | Document | MNT-MANUAL |
 |----------|------------|
-| Version | 1.0 |
-| Effective | March 2026 |
-| Review Date | March 2027 |
+| Version | 2.0 |
+| Effective | August 2026 |
+| Review Date | August 2027 |
 | Regulatory Reference | CAR 901.221, Standard 922 |
 
 ---
@@ -32,7 +32,7 @@
 
 ### 1.1 Introduction
 
-This Maintenance Control Manual (MCM) establishes the maintenance requirements, procedures, and standards for all RPAS operated under SSAR's RPOC. This manual ensures compliance with CAR 901.221.
+This Maintenance Control Manual (MCM) establishes the maintenance requirements, procedures, and standards for all RPAS operated under the Program's RPOC. This manual ensures compliance with CAR 901.221.
 
 ### 1.2 Approved Aircraft
 
@@ -45,7 +45,7 @@ This Maintenance Control Manual (MCM) establishes the maintenance requirements, 
 
 | Accountable Executive | Chief Pilot | RPAS Pilots | DJI Authorized Service |
 |----------------------|-------------|-------------|------------------------|
-| Dustin Wales | Dustin Wales | Pre/Post Flight | Complex Repairs |
+| Appointed per Organization | Person Responsible for RPAS Maintenance (CAR 901.220) | Pre/Post Flight | Complex Repairs |
 
 ### 1.4 Scheduled Maintenance
 
@@ -69,7 +69,7 @@ This Maintenance Control Manual (MCM) establishes the maintenance requirements, 
 
 | Level | Authorization | Tasks |
 |-------|---------------|-------|
-| Level 1 | All SSAR pilots | Pre/post-flight, propellers, batteries |
+| Level 1 | All the Program pilots | Pre/post-flight, propellers, batteries |
 | Level 2 | Chief Pilot authorized | Firmware, calibration, return to service |
 
 ### 1.7 Records Retention
@@ -123,7 +123,7 @@ This Maintenance Control Manual (MCM) establishes the maintenance requirements, 
 
 ### 3.1 Purpose
 
-This section establishes pre-flight and post-flight inspection requirements for SSAR RPAS operations in compliance with MCM-001.
+This section establishes pre-flight and post-flight inspection requirements for Program RPAS operations in compliance with MCM-001.
 
 ### 3.2 DJI M30T Pre-Flight Inspection
 
@@ -246,14 +246,14 @@ When RTK required:
 | Item | Check | Initial |
 |------|-------|---------|
 | SAR activation timeline assessed | [ ] | |
-| 24-hour ATC notification feasibility determined | [ ] | |
+| Operating authority identified (certificate / RPOC Division VI / valid SFOC) | [ ] | |
 | **If YES - ATC notification possible:** | | |
 | Proceed to STSC-003 or STSC-004 checklist as appropriate | [ ] | |
 | **If NO - Time-critical operation:** | | |
 | Maximum altitude confirmed: 400' AGL | [ ] | |
 | Terrain-following flight plan prepared | [ ] | |
 | RTH altitude set above highest terrain | [ ] | |
-| Crew briefed: "Time-critical operation. STSC-004 parameters apply. Max altitude 400 feet AGL." | [ ] | |
+| Crew briefed: "Time-critical operation. Operating under [certificate / RPOC / SFOC] limits. Max altitude 400 feet AGL unless a valid SFOC permits higher." | [ ] | |
 | Thermal search altitude planned: 80-120 meters AGL | [ ] | |
 | Proceed to STSC-004 BVLOS Checklist | [ ] | |
 
@@ -710,7 +710,7 @@ If a firmware update causes operational issues:
 
 ### 7.1 Purpose
 
-To ensure the operational reliability and airworthiness of all SSAR RPAS equipment. This section mandates a systematic testing regimen to verify that all systems function within manufacturer specifications and regulatory requirements (CAR 901.29) prior to operational deployment.
+To ensure the operational reliability and airworthiness of all Program RPAS equipment. This section mandates a systematic testing regimen to verify that all systems function within manufacturer specifications and regulatory requirements (CAR 901.29) prior to operational deployment.
 
 ### 7.2 Testing Philosophy - "Crawl, Walk, Run"
 
@@ -1058,7 +1058,7 @@ The following defects require immediate grounding - NO FLIGHT PERMITTED:
 
 #### 8.2.6 Defect Report Form
 
-| SSAR RPAS DEFECT REPORT | |
+| Program RPAS DEFECT REPORT | |
 |-------------------------|---|
 | **Defect ID:** | DEF-[YEAR]-[NUMBER] |
 | **Date Discovered:** | |
@@ -1156,7 +1156,7 @@ Each aircraft maintains a Technical Log containing:
 
 | Maintenance Level | Authorization | Return to Service Authority |
 |-------------------|---------------|-----------------------------|
-| Level 1 | All SSAR pilots | Pre/post-flight, propellers, batteries - PIC may RTS |
+| Level 1 | All the Program pilots | Pre/post-flight, propellers, batteries - PIC may RTS |
 | Level 2 | Chief Pilot authorized | Firmware, calibration, minor repairs - Chief Pilot RTS |
 | Level 3 | DJI Authorized Service | Major repairs, warranty work - Service Center RTS |
 
@@ -1168,8 +1168,8 @@ Each aircraft maintains a Technical Log containing:
 
 | Role | Name | Date |
 |------|------|------|
-| Accountable Executive | Dustin Wales | 2026-03-09 |
-| Chief Pilot | Dustin Wales | 2026-03-09 |
+| Accountable Executive | Appointed per Organization | Per Organization |
+| Chief Pilot | Appointed per Organization | Per Organization |
 
 Signatures on file. Original signed document retained per QAP-001.
 
@@ -1178,6 +1178,11 @@ Signatures on file. Original signed document retained per QAP-001.
 | Date | Version | Description of Change | Approved By |
 |------|---------|----------------------|-------------|
 | 2026-03-09 | 1.0 | Initial consolidated Forms & Maintenance Manual | Dustin Wales |
+| 2026-08-11 | 2.0 | Regulatory update (CARs Jan 2026, SORA v2.5); S2S rebrand; multi-organization generalization | Dustin Wales |
+
+**Document Author:** Dustin Wales
+
+**Questions, updates, inquiries:** Dustin Wales, 604-849-2345
 | | | | |
 | | | | |
 
@@ -1206,7 +1211,7 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 #### 10.1.1 Fly-Away Communication Script
 
 **Step 1 - Initial Contact:**
-> "FIC Kamloops, this is [PILOT NAME] with Squamish Search and Rescue RPAS Operations. We are experiencing a fly-away emergency."
+> "FIC Kamloops, this is [PILOT NAME] with the S2S SAR Drone Program RPAS Operations. We are experiencing a fly-away emergency."
 
 **Step 2 - Provide Details:**
 > - "Aircraft type: DJI [M30T/M4TD]"
@@ -1273,8 +1278,8 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 
 | Airspace | Max RPAS Altitude | Notes |
 |----------|-------------------|-------|
-| Time-Critical SAR (no ATC) | 400' AGL | STSC-004 parameters |
-| STSC-003 (with 24hr ATC notice) | Up to 1000' AGL | ATC notification required |
+| Time-Critical SAR (certificate / RPOC) | 400' AGL | No ATS coordination required in uncontrolled airspace |
+| STSC-003 (valid SFOC) | Up to 1000' AGL | ATS coordination per SFOC conditions |
 | STSC-004 BVLOS | 400' AGL | Low-risk corridor operations |
 | Near airports (controlled) | 0' without authorization | Requires specific authorization |
 | Near heliports | 0' without coordination | Direct coordination required |
@@ -1343,4 +1348,4 @@ Complete within 2-3 minutes for urgent SAR deployment:
 
 **END OF FORMS & MAINTENANCE MANUAL**
 
-*This document is part of the SSAR RPAS Operator Certificate (RPOC) documentation package.*
+*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*

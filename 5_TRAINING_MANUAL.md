@@ -1,14 +1,14 @@
-# SSAR RPAS Training Program Manual
+# S2S SAR Drone Program - Training Manual
 
-## Squamish Search and Rescue - RPAS Operations Program
+## Sea to Sky Corridor Search and Rescue - Regional Drone Program
 
 ---
 
 | Document | TRN-MANUAL |
 |----------|------------|
-| Version | 1.0 |
-| Effective | March 2026 |
-| Review Date | March 2027 |
+| Version | 2.0 |
+| Effective | August 2026 |
+| Review Date | August 2027 |
 | Regulatory Reference | CAR 901.220, 901.56, 901.65, 901.66, Standard 922 |
 
 ---
@@ -26,8 +26,9 @@
 9. [Competency Assessment](#9-competency-assessment)
 10. [Recurrency Training](#10-recurrency-training)
 11. [Operational Training Program](#11-operational-training-program)
-12. [Training Records](#12-training-records)
-13. [Document Control](#13-document-control)
+12. [Program Awareness Training](#12-program-awareness-training-all-sar-members)
+13. [Training Records](#13-training-records)
+14. [Document Control](#14-document-control)
 
 ---
 
@@ -35,11 +36,11 @@
 
 ### 1.1 Purpose
 
-This Training Program Manual establishes the comprehensive training requirements, pathways, and assessment standards for all SSAR RPAS operations personnel. This manual ensures compliance with CAR 901.220 (Training Program Requirements) and provides a structured progression from initial training through operational deployment and ongoing proficiency.
+This Training Program Manual establishes the comprehensive training requirements, pathways, and assessment standards for all Program RPAS operations personnel. This manual ensures compliance with CAR 901.220 (Training Program Requirements) and provides a structured progression from initial training through operational deployment and ongoing proficiency.
 
 ### 1.2 Training Philosophy
 
-SSAR's training philosophy is built on three principles:
+The Program's training philosophy is built on three principles:
 
 1. **Safety First:** No operational pressure justifies compromising training standards
 2. **Competency-Based Progression:** Advancement is based on demonstrated skill, not time served
@@ -50,8 +51,8 @@ SSAR's training philosophy is built on three principles:
 | Level | Title | Operations Authorized | Requirements |
 |-------|-------|----------------------|--------------|
 | Trainee | Pilot Under Training | Training aircraft only (supervised) | Enrolled in Foundation Training |
-| Stage 1 | Pilot (Basic) | VLOS <400' AGL | TC Basic + SSAR Foundation |
-| Stage 2 | Pilot (Advanced) | VLOS + controlled airspace | TC Advanced + SSAR Advanced |
+| Stage 1 | Pilot (Basic) | VLOS <400' AGL | TC Basic + the Program Foundation |
+| Stage 2 | Pilot (Advanced) | VLOS + controlled airspace | TC Advanced + the Program Advanced |
 | Stage 3 | Standard Scenario | STSC-003 / STSC-004 | TC L1C + SS endorsement |
 | Stage 4 | Senior Pilot | All authorized operations | All endorsements + 50 hours |
 | Stage 5 | Flight Reviewer | Conduct assessments | Stage 4 + Trainer certification |
@@ -73,13 +74,13 @@ All training complies with:
 | Requirement | Standard |
 |-------------|----------|
 | Age | Minimum 18 years |
-| Compliance | Strict adherence to SSAR RPAS Manual and CARs |
+| Compliance | Strict adherence to Program RPAS Manual and CARs |
 | Fitness for Duty | Physically and mentally fit to perform designated role |
 | Medical Condition | Must not operate if any illness, injury, or stress impairs ability |
 
-### 2.2 Fatigue Management - CAR 901.29
+### 2.2 Fatigue Management - CAR 901.19
 
-SSAR enforces the following duty limitations (exceeding CAR 901.29 minimums):
+The Program enforces the following duty limitations (in support of CAR 901.19(1)(a), fitness of crew members):
 
 | Requirement | Standard |
 |-------------|----------|
@@ -115,7 +116,7 @@ Before every operation, all crew members must complete the IMSAFE self-assessmen
 
 | Certification | Requirement |
 |---------------|-------------|
-| Basic Operations | Required for all pilots (including Micro-RPAS <250g per SSAR standards) |
+| Basic Operations | Required for all pilots (including Micro-RPAS <250g per the Program standards) |
 | Advanced Operations | Required for controlled airspace, near people, or SFOC operations |
 | Recency | Maintain per CAR 901.56/901.65 |
 | Certificate Access | Physical or digital access during all operations (CAR 901.66) |
@@ -125,7 +126,7 @@ Before every operation, all crew members must complete the IMSAFE self-assessmen
 
 | Operation Type | Certification Requirement |
 |----------------|--------------------------|
-| Standard VLOS | SSAR Field VO Training module (minimum) |
+| Standard VLOS | the Program Field VO Training module (minimum) |
 | EVLOS Operations | Valid RPAS Pilot Certificate (Basic or Advanced) |
 
 #### 2.5.3 Emergency Medical
@@ -138,13 +139,13 @@ Before every operation, all crew members must complete the IMSAFE self-assessmen
 
 ### 3.1 Purpose
 
-Foundation Training builds core competencies in aircraft handling, site surveys, team dynamics, and procedural execution, preparing pilots for operational deployments under the SSAR RPOC.
+Foundation Training builds core competencies in aircraft handling, site surveys, team dynamics, and procedural execution, preparing pilots for operational deployments under the Program RPOC.
 
 ### 3.2 Prerequisites
 
 - Minimum 18 years of age
-- SSAR member in good standing
-- Completed SSAR orientation
+- the Program member in good standing
+- Completed the Program orientation
 - Transport Canada Basic or Advanced RPAS Certificate (or enrolled)
 
 ### 3.3 Learning Objectives
@@ -172,7 +173,7 @@ Upon completion of Foundation Training, trainees will be able to:
 **Duration:** 3 hours (1.5 hours ground, 1.5 hours practical)
 
 #### Ground School Topics
-- SSAR RPAS program overview and mission
+- Program RPAS program overview and mission
 - Canadian Aviation Regulations Part IX overview
 - RPAS components and systems
 - Team roles and responsibilities
@@ -408,7 +409,7 @@ If a trainee does not meet the required standard:
 
 ### 3.11 Foundation Progression Outcome
 
-> Upon successful completion of Foundation Training and flight review, pilots are authorized to operate the training aircraft they were trained on under the SSAR RPOC. Pilots may then progress to Advanced Training for operational equipment authorization.
+> Upon successful completion of Foundation Training and flight review, pilots are authorized to operate the training aircraft they were trained on under the Program RPOC. Pilots may then progress to Advanced Training for operational equipment authorization.
 
 ---
 
@@ -421,7 +422,7 @@ Advanced Training develops expertise with operational aircraft (DJI M30T, DJI Ma
 ### 4.2 Prerequisites
 
 - Successful completion of Foundation Training and Flight Review
-- Current authorization to operate training aircraft under SSAR RPOC
+- Current authorization to operate training aircraft under the Program RPOC
 - Transport Canada Advanced RPAS Certificate
 - Fitness for duty (medical, mental, fatigue management requirements met)
 
@@ -495,7 +496,7 @@ The trainer will review flight logs (AirData) to verify:
 
 ### 4.8 Advanced Progression Outcome
 
-> Upon successful completion of Advanced Training and trainer sign-off, pilots are cleared to operate the specific RPAS type in live operational missions under the SSAR RPOC. Additional RPAS types require separate Advanced Training and sign-off.
+> Upon successful completion of Advanced Training and trainer sign-off, pilots are cleared to operate the specific RPAS type in live operational missions under the Program RPOC. Additional RPAS types require separate Advanced Training and sign-off.
 
 ---
 
@@ -548,7 +549,7 @@ The trainer will review flight logs (AirData) to verify:
 All pilots qualified for SAR operations must complete training on time-critical scenario selection.
 
 #### Learning Objectives
-- Understand 24-hour ATC notification requirements for STSC-003
+- Understand SFOC conditions for STSC-003, including required ATS coordination
 - Recognize when time-critical SAR activation requires STSC-004 fallback
 - Apply scenario selection decision matrix during Rapid Site Survey
 - Plan and execute effective search under 400' AGL constraint
@@ -557,7 +558,7 @@ All pilots qualified for SAR operations must complete training on time-critical 
 
 | Module | Duration | Content |
 |--------|----------|---------|
-| Regulatory Framework | 30 min | STSC-003 ATC timeline requirements; STSC-004 parameters; legal implications |
+| Regulatory Framework | 30 min | Operating authority selection (certificate / RPOC Division VI / SFOC); STSC SFOC conditions; legal implications |
 | Scenario Selection | 30 min | Assessing notification feasibility; decision matrix; Rapid Site Survey integration |
 | Terrain-Following Operations | 30 min | Contour search patterns; consistent AGL in variable terrain; RTH planning |
 | Sub-400' Search Effectiveness | 30 min | Thermal detection at 80-120m AGL; modified track spacing; pattern adaptation |
@@ -587,7 +588,7 @@ Required for all Visual Observers conducting VLOS operations.
 
 ### 6.2 Rapid VO Training (On-Site)
 
-For non-RPAS SSAR members acting as VO during operations:
+For non-RPAS the Program members acting as VO during operations:
 
 | Item | Training Point |
 |------|----------------|
@@ -610,18 +611,18 @@ VOs participating in Extended Visual Line of Sight operations must:
 
 ### 7.1 Certified Trainer Requirements
 
-Only personnel meeting the following criteria may serve as certified SSAR RPAS trainers:
+Only personnel meeting the following criteria may serve as certified Program RPAS trainers:
 
 | Requirement | Standard | Verification |
 |-------------|----------|--------------|
-| Flight Hours | Minimum 50 hours logged flight time on SSAR operational equipment | AirData logs |
-| Operational Experience | Minimum 1 year as operational SSAR RPAS pilot | Personnel records |
+| Flight Hours | Minimum 50 hours logged flight time on the Program operational equipment | AirData logs |
+| Operational Experience | Minimum 1 year as operational Program RPAS pilot | Personnel records |
 | Certification | Valid Advanced RPAS Operator Certificate | TC certificate |
 | Scenario Endorsements | All Standard Scenario endorsements (STSC-003, STSC-004) | Endorsement records |
 | Risk Proficiency | Demonstrated proficiency in risk/hazard identification and control | Practical assessment |
-| Training | Complete SSAR Train-the-Trainer module | Training record |
+| Training | Complete the Program Train-the-Trainer module | Training record |
 | Currency | Maintain trainer recurrency requirements | Currency tracking |
-| Character | Good standing within SSAR, no serious safety violations | AE review |
+| Character | Good standing within the Program, no serious safety violations | AE review |
 
 ### 7.2 Train-the-Trainer Module
 
@@ -646,7 +647,7 @@ Only personnel meeting the following criteria may serve as certified SSAR RPAS t
 | Motivation Factors | 30 min | Intrinsic vs extrinsic motivation, relevance, competence, autonomy |
 | Barriers to Learning | 30 min | Prior experience (positive/negative), anxiety, time pressure, physical factors |
 
-**Practical Exercise:** Identify learning style preferences of current SSAR pilots; design approach for each type.
+**Practical Exercise:** Identify learning style preferences of current the Program pilots; design approach for each type.
 
 #### 7.2.2 Module 2: Instructional Techniques (2 hours)
 
@@ -1023,7 +1024,7 @@ Every quarter, pilots must complete:
 
 ### 11.1 Purpose
 
-Once pilots complete Foundation and Advanced Training and are operationally certified, they enter the Operational Training Program. This ongoing training maintains proficiency, develops specialized SAR skills, and ensures readiness for the full range of SSAR RPAS mission profiles.
+Once pilots complete Foundation and Advanced Training and are operationally certified, they enter the Operational Training Program. This ongoing training maintains proficiency, develops specialized SAR skills, and ensures readiness for the full range of Program RPAS mission profiles.
 
 ### 11.2 Training Cadence
 
@@ -1142,11 +1143,84 @@ Each training session is documented with:
 
 ---
 
-## 12. Training Records
+## 12. Program Awareness Training (All SAR Members)
+
+### 12.1 Purpose and Audience
+
+This module is for SAR members who are NOT part of the drone program. It creates awareness of what the Program does, how RPAS integrate into SAR tasks, and how every member can help keep operations safe and effective. It is not pilot or visual observer certification; those are covered in Sections 3 to 6.
+
+### 12.2 Delivery
+
+| Item | Standard |
+|------|----------|
+| Format | 30 to 45 minute briefing (team night, new member intake, or field demo) |
+| Frequency | New member orientation, plus a refresher at least every 24 months |
+| Instructor | Any Program pilot; content based on this section |
+| Records | Attendance recorded per CAR 901.223 and the Organization's training records (Section 13) |
+
+### 12.3 Module Content
+
+#### 12.3.1 Why Drones in SAR
+
+- Reconnaissance and situational awareness (zoom and thermal imaging)
+- Rapid area search, terrain-following patterns, subject marking and overwatch
+- Payload delivery where authorized (communications, warmth, first aid)
+- Testing new technologies safely and setting a benchmark for SAR RPAS use
+
+#### 12.3.2 The Rules in Plain Language
+
+- Drones are aircraft; Transport Canada regulates them under CARs Part IX
+- Pilot certificates set what a pilot may fly: Basic, Advanced, and Level 1 Complex (low-risk BVLOS under the Organization's RPAS Operator Certificate)
+- Operations beyond certificate privileges need a Special Flight Operations Certificate (SFOC) held by the Organization
+- **Core Operating Rule: pilots fly within the parameters their certificate allows, or under a valid SFOC when one is held and its conditions are met**
+- Emergency security perimeters and advertised events have SAR carve-outs (CAR 900.08(2), 901.41(2)); the crew, not bystanders, makes those calls
+
+#### 12.3.3 The Flight Team
+
+- **Pilot in Command (PIC):** flies the aircraft and owns the go/no-go decision
+- **Visual Observer (VO):** watches the airspace and ground, calls traffic and hazards
+- **Communications:** handles radio traffic so the PIC and VO can focus
+- **Sterile cockpit:** when the crew is heads-down, hold non-urgent questions
+
+#### 12.3.4 How You Can Help
+
+- Perimeter: help keep bystanders and vehicles out of the launch and recovery zone
+- Eyes and ears: if you see or hear an aircraft, call it out with a clock bearing ("traffic, three o'clock, low")
+- Radio discipline: keep the working channel clear during launch, landing, and emergencies
+- DESCEND calls: if you hear "DESCEND, DESCEND, DESCEND," clear the area below the aircraft and stay clear
+- Hazard reporting: wires, dogs, people entering the area, changing weather; tell the VO
+- Ground team coordination: your presence in the search area supports the risk assessment (ground observation); follow crew direction on where to hold
+
+#### 12.3.5 What Not To Do
+
+- Do not fly personal drones on a task; only Program aircraft under Program authority
+- Do not approach a launching, landing, or landed aircraft until props are stopped and the PIC clears you
+- Do not stand under the flight path or in the recovery zone
+- Do not handle Program kit or batteries unless asked
+- Do not distract the crew during flight operations
+
+#### 12.3.6 Rapid VO Tasking (Awareness Level)
+
+A member may be asked to assist as an additional lookout under direct crew supervision. If tasked:
+
+- [ ] Core duties reviewed: airspace watch, sterile cockpit, callout phrasing
+- [ ] Site-specific risks and controls reviewed
+- [ ] Urgent airspace risks highlighted: aircraft conflict and the emergency descend protocol
+- [ ] Member confirms comfort with responsibilities
+
+Full VO qualification requires Section 6 training; awareness-level tasking is supplemental eyes only and never replaces the qualified VO.
+
+### 12.4 Awareness Quick Card
+
+A one-page version of 12.3.4 and 12.3.5 is issued to all members and posted with team resources.
+
+---
+
+## 13. Training Records
 
 ### 12.1 Required Records
 
-Per CAR 901.222, maintain records of:
+Per CAR 901.223, maintain records of:
 - All training completed with dates and durations
 - Assessment results and scores
 - Instructor/examiner details
@@ -1193,14 +1267,14 @@ Per CAR 901.222, maintain records of:
 
 ---
 
-## 13. Document Control
+## 14. Document Control
 
 ### 13.1 Document Approval
 
 | Role | Name | Date |
 |------|------|------|
-| Accountable Executive | Dustin Wales | 2026-03-09 |
-| Chief Pilot | Dustin Wales | 2026-03-09 |
+| Accountable Executive | Appointed per Organization | Per Organization |
+| Chief Pilot | Appointed per Organization | Per Organization |
 
 Signatures on file. Original signed document retained per QAP-001.
 
@@ -1209,6 +1283,11 @@ Signatures on file. Original signed document retained per QAP-001.
 | Date | Version | Description of Change | Approved By |
 |------|---------|----------------------|-------------|
 | 2026-03-09 | 1.0 | Initial Training Program Manual | Dustin Wales |
+| 2026-08-11 | 2.0 | Regulatory update; S2S rebrand; Program Awareness Training added | Dustin Wales |
+
+**Document Author:** Dustin Wales
+
+**Questions, updates, inquiries:** Dustin Wales, 604-849-2345
 | | | | |
 
 ### 13.3 Document Sources
@@ -1234,4 +1313,4 @@ This Training Program Manual incorporates content from the following source docu
 
 **END OF TRAINING PROGRAM MANUAL**
 
-*This document is part of the SSAR RPAS Operator Certificate (RPOC) documentation package.*
+*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*
