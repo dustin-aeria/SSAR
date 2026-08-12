@@ -313,3 +313,281 @@ An occurrence involving a medium RPA meets the reporting criteria of CAR 901.49 
 | 4.1 to 4.3 Maintenance, checklists, records | Forms | Not started |
 
 *This draft is for review. On approval the sections above are spliced into the manual suite, content.js, and the SQL sync.*
+
+---
+
+# PART C: Site Survey Additions
+
+To be added to the Master Site Survey (6_SITE_SURVEY_MASTER.md).
+
+## 2.1 Flight Profiles (revised payload paragraph)
+
+Replace the existing payload delivery paragraph with the following, which ties the profile to the authority that permits it:
+
+> **Payload delivery:** Carriage and release of supplies or equipment to a subject or team, conducted with a medium RPA under Operations Manual Section 8, or with a small RPA equipped with a manufacturer-declared release mechanism under Sections 5 and 7. The flight launches from a prepared site and proceeds to the delivery location, where the load is set down by landing or lowered by winch. Free-drop release is not authorized without specific Chief Pilot approval. Medium RPA operations are limited to an operating weight of 150 kg including payload, require a current Standard 922 declaration for the model and operation, and maintain the separations and visibility limits of Operations Manual 8.5.
+
+## 3.5 Launch and Delivery Site Requirements (new subsection)
+
+Medium RPA impose site requirements the current survey does not contemplate. The Rapid Site Survey confirms these on scene.
+
+| Requirement | Standard |
+|-------------|----------|
+| Launch area | Clear area accommodating the aircraft with arms and propellers unfolded, plus the manufacturer's propeller safe distance (3.5 m for the FlyCart 30), plus room for the loading party to work clear of the rotor arc |
+| Surface | Firm and level, capable of supporting the loaded aircraft; loose snow, deep duff, and unconsolidated scree are unsuitable; loose debris cleared to prevent rotor wash projectiles |
+| Rotor wash | Significantly greater than the small fleet. Assess for loose gear, tarps, tents, and casualty care in progress within the wash radius |
+| Approach and departure | Clear paths in at least two directions where terrain allows, accounting for the reduced climb performance of a loaded aircraft |
+| Cordon | Sized to the separation required by Operations Manual 8.5 (500 ft from uninvolved persons for VLOS unless the Division V declaration permits closer) |
+| Delivery site | Clear of overhead obstruction for the descent; ground party positioned outside the descent footprint; for winch operations, clear of canopy and wires that could entangle the cable |
+| Alternate landing sites | At least one identified before launch, per the aircraft's alternate landing site function where provided |
+
+## 4.9 Hazards Specific to Medium RPA Operations (new subsection)
+
+- **Mass and energy:** An aircraft of 95 kg to 150 kg presents a fundamentally different hazard from the small fleet. Cordons, abort decisions, and the treatment of any incident scene are sized accordingly.
+- **Battery systems:** The battery packs are large and carry a significant thermal hazard if damaged. A damaged pack is not approached, is not moved, and is isolated until it can be assessed.
+- **Suspended loads:** A load on a line is a hazard to anyone beneath it for the whole flight, not only at the delivery point. The flight path is planned to avoid overflight of persons wherever the terrain allows.
+- **Parachute footprint:** Where a parachute deploys, the descent is wind-dependent and the aircraft may land well displaced from the point of deployment. The footprint is estimated from the manufacturer's descent rate and the wind on the day.
+- **Reduced weather envelope:** The CAR 901.34(2) relationship between ground visibility and permitted distance, which applies to medium RPA only, will frequently bind before the general BVLOS weather minima do.
+- **Site scarcity in corridor terrain:** Suitable launch areas for an aircraft of this size are far less common in Sea to Sky terrain than for the small fleet. Candidate sites near likely tasking areas are worth pre-identifying and recording in Appendix A as the survey matures.
+
+## 7.7 Airspace Considerations for Medium RPA (new subsection)
+
+Airspace treatment is unchanged in principle, with three additions:
+
+- Medium RPA BVLOS must remain at least 1 km from any populated area for the entire operational volume including the ground risk buffer (CAR 901.87(a)). In the corridor this confines BVLOS delivery to backcountry and alpine terrain.
+- Where the FlyCart 100 or a comparable aircraft is equipped with ADS-B, it is used for situational awareness in addition to, and not in place of, visual observers.
+- The larger aircraft is more conspicuous to other airspace users, which is an advantage worth noting when coordinating with heli-ski, flight training, or industrial operators before an operation.
+
+---
+
+# PART D: Training and Competency Sections
+
+## D.1 Training Manual, new Section 4.9: Medium RPA and Payload Delivery Training
+
+### 4.9.1 Prerequisites
+
+| Requirement | Standard |
+|-------------|----------|
+| Certificate | Advanced (CAR 901.64), or Level 1 Complex (CAR 901.90) where BVLOS delivery is intended |
+| Program standing | Foundation and Advanced Training complete; current on at least one Program aircraft |
+| Flight hours | Minimum 25 hours total Program flight time before commencing medium RPA training |
+| Recommendation | Chief Pilot endorsement to enter the medium RPA stream |
+
+### 4.9.2 Ground School (minimum 8 hours)
+
+| Module | Duration | Content |
+|--------|----------|---------|
+| Regulatory framework | 90 min | Medium RPA definition and the 150 kg ceiling; operating weight including payload; Division V and VI authority; the declaration requirement; CAR 901.26(b) separation; CAR 901.34(2) visibility relationship; payload rules at 901.43 and 901.50 |
+| Aircraft systems | 120 min | Airframe, propulsion, battery system and charging, positioning and RTK, obstacle sensing, parachute system, FPV and camera, alternate landing sites |
+| Weight, balance and performance | 90 min | Operating weight calculation; centre of gravity; altitude and temperature derating; endurance and range with and without load; the changed performance of the return leg after release |
+| Delivery systems | 90 min | Cargo mode loading and securing; winch operation per the manufacturer's manual; swing control; cut-cable protection and when it is justified; multi-drop systems where fitted |
+| Risk and emergencies | 90 min | The payload SORA assessment in outline (Safety Manual 3.11); load swing; entanglement; parachute deployment and footprint; forced landing with cargo; battery thermal hazard; cordon sizing |
+| Site and crew | 60 min | Launch and delivery site standards; crew roles including loadmaster; ground party coordination and release calls; abort criteria |
+
+### 4.9.3 Flight Training Progression
+
+Each stage is completed to the Chief Pilot's satisfaction before the next begins. Stages 1 to 4 are conducted in benign terrain before any mountain operation.
+
+| Stage | Content | Minimum |
+|-------|---------|---------|
+| 1. Handling, unloaded | Takeoff, hover, basic manoeuvring, landing, RTH, alternate landing site use | 5 flights |
+| 2. Handling, light load | As stage 1 at approximately one third of maximum payload; hover check discipline | 5 flights |
+| 3. Handling, full load | As stage 1 at maximum planned payload for the conditions; performance and endurance observed against calculation | 5 flights |
+| 4. Delivery, method-specific | Cargo land-and-release and, where used, winch delivery to a marked site with a ground party | 5 deliveries of each method used |
+| 5. Emergency drills | Simulated load swing recovery, simulated entanglement decision, lost link with load, forced landing site selection | Each drill demonstrated |
+| 6. Mountain and operational | Delivery in representative terrain with a full crew, from tasking through to load receipt | 3 complete missions |
+
+### 4.9.4 Competency Standard
+
+The candidate demonstrates:
+
+- Correct calculation of operating weight, including payload and safety equipment, with an independent check by the loadmaster
+- Correct determination of authority and confirmation of the declaration before flight
+- Correct application of the separation and visibility limits, including the 901.34(2) relationship
+- Stable handling with a load, with no divergent swing
+- Correct and timely abort decisions when criteria are met
+- Clear communication with the ground party through the delivery sequence
+- Sound emergency decision making, particularly the cut-cable judgment
+
+Assessment is by a Flight Reviewer or the Chief Pilot, recorded per CAR 901.223.
+
+### 4.9.5 Currency
+
+| Requirement | Interval |
+|-------------|----------|
+| Delivery flight in the type flown | At least one every 90 days |
+| Emergency drill set | At least annually |
+| Ground school refresh | On any change to the aircraft, the delivery system, or the regulatory framework |
+
+A pilot current on the M30T or M4TD is **not** thereby current on a medium RPA. Currency is per type and per delivery method.
+
+## D.2 People and Equipment Manual, new Section 1.6: Loadmaster
+
+### Role
+
+The Loadmaster is responsible for everything about the payload: what it is, what it weighs, how it is secured, and whether the aircraft is safe to fly with it.
+
+### Required credentials
+
+| Requirement | Standard |
+|-------------|----------|
+| Program standing | Trained Program member; Visual Observer qualification recommended |
+| Training | Medium RPA ground school modules on weight and balance, delivery systems, and site and crew (Training Manual 4.9.2) |
+| Assessment | Practical assessment on load preparation, weight verification, and securing, signed off by the Chief Pilot |
+| Currency | Participation in at least one delivery operation or drill every 12 months |
+
+### Responsibilities
+
+1. Confirms the payload contents are permitted under CAR 901.43(1) and Program policy
+2. Determines payload weight by measurement, not estimate, and states it to the PIC
+3. Confirms total operating weight is within the aircraft limit for the conditions and at or below 150 kg
+4. Secures the load so it cannot shift, and confirms centre of gravity within limits
+5. Controls the loading area and keeps persons clear of the rotor arc during loading
+6. Confirms the load is released and the aircraft is clear before the aircraft departs the delivery point where the loadmaster is present
+7. Records the payload details for the delivery log
+
+The Loadmaster has the authority to stop a loading operation and to refuse a load that cannot be verified or safely secured.
+
+## D.3 People and Equipment Manual, Section 3.7 addition: Medium RPA Competency Records
+
+Add to the type competency table:
+
+| Competency | Standard | Assessed by | Date | Expiry |
+|------------|----------|-------------|------|--------|
+| Medium RPA type training (specify type) | Training Manual 4.9 | Chief Pilot or Flight Reviewer | | 24 months |
+| Payload delivery, cargo method | Training Manual 4.9.3 stage 4 | Chief Pilot or Flight Reviewer | | 24 months |
+| Payload delivery, winch method | Training Manual 4.9.3 stage 4 | Chief Pilot or Flight Reviewer | | 24 months |
+| Loadmaster | People Manual 1.6 | Chief Pilot | | 24 months |
+
+## D.4 Training Manual, Section 12 addition: Awareness Training for Payload Operations
+
+Add to Program Awareness Training under 12.3.4 and 12.3.5:
+
+**What is different about the big aircraft.** The Program may operate delivery aircraft weighing 95 kg to 150 kg fully loaded, far larger than the search drones most members have seen. They are louder, their rotor wash is strong enough to move loose gear and disturb casualty care, and the cordon around them is much larger.
+
+**How to help.**
+
+- Stay outside the cordon at all times unless the crew tasks you to assist
+- Secure loose gear, tarps, and tent flies before launch or landing near your position
+- If a load is being lowered on a line, never stand under it and never reach for it until the crew calls it clear
+- Only handle a delivered load when the crew or ground party tells you to
+- If you hear the call for a parachute deployment, move away from the area beneath the aircraft immediately and keep clear; the aircraft may land well away from where it started descending
+
+**What not to do.**
+
+- Do not approach a landed delivery aircraft until the props are stopped and the PIC clears you
+- Do not attempt to steady, guide, or catch a suspended load
+- Do not handle the battery packs
+- If the aircraft is damaged in any way, keep clear and keep others clear; the batteries present a fire hazard and are not to be approached
+
+---
+
+# PART E: Maintenance, Checklists and Records
+
+## E.1 Forms and Maintenance Manual, Section 1 addition: Medium RPA in the Maintenance Program
+
+Medium RPA are entered in the Organization's aircraft register and maintained under the Maintenance Control Manual on the same basis as any other registered aircraft (CAR 901.221). Before a medium RPA is tasked, the Person Responsible for RPAS Maintenance establishes and records:
+
+| Item | Source |
+|------|--------|
+| Inspection schedule and intervals | Manufacturer's maintenance program provided under CAR 901.200(a) |
+| Component life limits, including propellers, motors, and batteries | Manufacturer's documentation |
+| Delivery system maintenance: cargo latches, winch mechanism, cable, hook | Manufacturer's documentation |
+| Cable inspection criteria and retirement standard | Manufacturer's documentation; cable is inspected before and after every winch operation |
+| Parachute inspection and repack interval | Manufacturer's documentation. **Where the parachute is claimed as an M2 mitigation in the risk assessment, this maintenance is mandatory, not optional, because the risk assessment depends on the system being serviceable** |
+| Battery handling, charging, storage, and retirement | Manufacturer's documentation, adapted from the small-fleet procedures of Section 5 |
+| Mandatory actions | Manufacturer notifications under CAR 901.200(b) |
+
+## E.2 Forms and Maintenance Manual, Section 3 addition: Medium RPA Pre-Flight Inspection
+
+Additional items over the standard pre-flight:
+
+- [ ] Arms fully unfolded and locked; arm-lock warning clear in the control application
+- [ ] Propellers unfolded, undamaged, and secure; no delamination at the blade roots
+- [ ] Landing gear secure and undamaged; no cracking at attachment points
+- [ ] Battery packs seated and latched; voltage and capacity difference between packs within the manufacturer's tolerance
+- [ ] Cargo box latches functional, or winch mechanism free and cable spooled correctly
+- [ ] Winch cable inspected full length for kinks, birdcaging, broken strands, and heat damage
+- [ ] Hook and any counterweight secure and undamaged
+- [ ] Parachute installed, within its repack interval, pin and bridle correct, deployment path unobstructed
+- [ ] Obstacle sensing and positioning systems report serviceable
+- [ ] Registration number clearly visible (CAR 900.14)
+
+## E.3 Forms and Maintenance Manual, Section 4 addition: Payload Delivery Mission Checklist
+
+### Load Card (completed by the Loadmaster before every delivery)
+
+| Field | Entry |
+|-------|-------|
+| Aircraft | |
+| Payload description | |
+| Payload weight (measured) | |
+| Aircraft empty weight including batteries | |
+| **Total operating weight** | |
+| Manufacturer limit for altitude and temperature today | |
+| Within 150 kg Part IX ceiling | [ ] Yes |
+| Prohibited categories checked (CAR 901.43(1)) | [ ] Yes |
+| Load secured, centre of gravity confirmed | [ ] Yes |
+| Delivery method | [ ] Cargo land-and-release  [ ] Winch  [ ] Other (Chief Pilot approval attached) |
+| Loadmaster signature | |
+| PIC acknowledgement of stated weight | |
+
+### Delivery Sequence Callouts
+
+| Call | By | Response |
+|------|----|----------|
+| "Load secure, weight [X] kilograms" | Loadmaster | PIC: "Weight [X], within limits" |
+| "Delivery site clear" | Ground party | PIC: "Copy, commencing approach" |
+| "Below clear" | Ground party or VO | PIC: "Copy, descending" |
+| "Load down" | Ground party | PIC: "Copy, releasing" |
+| "Clear of load" | PIC | Ground party: "Copy, load received" |
+| "DESCEND, DESCEND, DESCEND" | Any crew member | PIC executes emergency descent |
+| "ABORT" | Any crew member | PIC discontinues the delivery |
+
+## E.4 Forms and Maintenance Manual, Section 8 addition: Delivery Log
+
+Retained for 12 months per CAR 901.223(1)(a), with the maintenance record retained 24 months per 901.223(1)(e).
+
+| Field |
+|-------|
+| Date and task number |
+| Aircraft registration and type |
+| PIC, VO, Loadmaster, ground party lead |
+| Operating authority relied upon (certificate, RPOC Division VI, SFOC number) |
+| Payload description and weight |
+| Delivery method |
+| Delivery location (coordinates) |
+| Flight time |
+| Outcome and any anomalies |
+| Cut-cable protection used (yes/no; if yes, aircraft grounded pending inspection) |
+| Parachute deployed (yes/no; if yes, incident procedures per CAR 901.49) |
+
+## E.5 Web Tool
+
+On approval, add to the quick access panel:
+
+- A payload delivery emergency card covering load swing, entanglement and the cut-cable decision, parachute deployment, and forced landing with cargo
+- The delivery sequence callouts from E.3
+
+---
+
+# Completion Status
+
+| Deliverable | Manual | Status |
+|-------------|--------|--------|
+| 1.1 Weight class and authority | Operations 8.1 to 8.5 | Drafted (Part A) |
+| 1.2 Payload SORA assessment | Safety 3.11 | Drafted (Part B) |
+| 2.1 Operating procedures | Operations 8.6 to 8.9 | Drafted (Part A) |
+| 2.2 Emergency procedures | Safety 3.11.10 | Drafted (Part B) |
+| 2.3 Crew configuration | Operations 8.7 | Drafted (Part A) |
+| 2.4 Site survey additions | Site Survey 2.1, 3.5, 4.9, 7.7 | Drafted (Part C) |
+| 3.1 Type training syllabus | Training 4.9 | Drafted (Part D) |
+| 3.2 Competency and currency | Training 4.9.4, People 3.7 | Drafted (Part D) |
+| 3.3 Loadmaster role | People 1.6 | Drafted (Part D) |
+| 3.4 Awareness training update | Training 12 | Drafted (Part D) |
+| 4.1 Maintenance program | Forms 1, 3 | Drafted (Part E) |
+| 4.2 Checklists | Forms 3, 4 | Drafted (Part E) |
+| 4.3 Records | Forms 8 | Drafted (Part E) |
+| 1.3 SFOC package | n/a | **Contingent on Phase 0.1 declaration answer** |
+| Phase 5 validation | n/a | **Operational, not documentation** |
+
+All documentation deliverables in the implementation plan are now drafted. Two items remain open by design: the SFOC package, which is only needed if no Standard 922 declaration covers the intended operation, and Phase 5 validation, which is flight and exercise work rather than drafting.
