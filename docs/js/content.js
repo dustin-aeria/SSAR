@@ -36,8 +36,9 @@ const RPOC_CONTENT = {
 10. [Weather Minimums](#10-weather-minimums)
 11. [Advanced Procedures](#11-advanced-procedures)
 12. [General Flight Procedures](#12-general-flight-procedures)
-13. [Emergency Contacts](#13-emergency-contacts)
-14. [Document Control](#14-document-control)
+13. [Payload Delivery Operations](#13-payload-delivery-operations)
+14. [Emergency Contacts](#14-emergency-contacts)
+15. [Document Control](#15-document-control)
 
 ---
 
@@ -1019,6 +1020,8 @@ Air traffic expected from:
 - Pre-operation communication with flight schools and commercial operators when needed
 - Two-way communication capabilities required (cellular, radio, or the Program network); tested via signal check before ops
 
+---
+
 ### 8.9 C3 Link Specification (OSO#06)
 
 #### 8.9.1 Purpose
@@ -1103,6 +1106,8 @@ This section documents the Command, Control, and Communication (C3) link specifi
 - Monitor signal strength continuously
 - Note any signal degradation areas
 - Record link issues in flight log
+
+---
 
 ---
 
@@ -1276,11 +1281,13 @@ To mitigate battery failure and plastic brittleness in cold environments:
 - **On-Site Monitoring:** For extended operations, on-site real-time monitoring (e.g., anemometer) is required
 - **Decision Authority:** The Pilot in Command (PIC) has the final authority to cancel or suspend operations due to weather, regardless of mission urgency
 
-### 10.8 Adverse Conditions Test Protocol (OSO#11)
+---
+
+### 10.8 Adverse Conditions Test Protocol (OSO#23 and OSO#24)
 
 #### 10.8.1 Purpose
 
-This section establishes the testing protocol to verify aircraft and crew capability to operate in adverse conditions as required by SAIL IV OSO#11. The protocol ensures that procedures for handling deteriorating conditions are validated through controlled testing.
+This section establishes the testing protocol to verify aircraft and crew capability to operate in adverse conditions as required by SAIL IV OSO#23/#24. The protocol ensures that procedures for handling deteriorating conditions are validated through controlled testing.
 
 #### 10.8.2 Adverse Conditions Categories
 
@@ -1375,6 +1382,8 @@ This section establishes the testing protocol to verify aircraft and crew capabi
 #### 10.8.9 Test Records Retention
 
 All adverse conditions test records shall be retained for 5 years and made available for third-party audit review per Section 7.9.
+
+---
 
 ---
 
@@ -1792,7 +1801,161 @@ Conduct a brief team debrief before departing the site:
 
 ---
 
-## 13. Emergency Contacts
+## 13. Payload Delivery Operations
+
+> **STATUS: PROVISIONAL.** This capability is documented but not yet authorized for operational use. Before any payload delivery operation is conducted, the Chief Pilot must confirm that a current Standard 922 declaration exists for the aircraft model and the intended operation (13.4), and the validation program of the implementation plan must be complete. Until both are satisfied, this Section is reference material only.
+
+### 13.1 Purpose and Scope
+
+Payload delivery is the carriage and release of equipment or supplies to a subject or team by RPAS. Typical Program applications are resupply to a stranded but stable subject (shelter, warmth, water, food, radio, medical kit), equipment ferry to a technical rescue site, and repeat delivery runs where helicopter support is unavailable or grounded by weather or darkness.
+
+This Section applies to any delivery conducted with a **medium remotely piloted aircraft**, defined by CAR 900.01 as an aircraft with an operating weight of more than 25 kg and not more than 150 kg. Delivery using a small RPA (250 g to 25 kg) with a manufacturer-declared release mechanism is conducted under the general provisions of Sections 5 and 7 and does not require this Section, though 13.6 to 13.9 remain sound practice.
+
+### 13.2 Operating Weight and the 150 kg Ceiling
+
+**Operating weight** is the weight of the aircraft at any point during the flight, **including any payload and any safety equipment** carried or connected (CAR 900.01). Class is therefore determined by the loaded aircraft, not the empty aircraft.
+
+> **Program rule: operations are planned and flown so that operating weight never exceeds 150 kg.** An aircraft configured or loaded above 150 kg falls outside CARs Part IX Subpart 1 entirely, requires a Special Flight Operations Certificate under CAR 903.01(a), and is not authorized by this documentation.
+
+Reference types:
+
+| Aircraft | Empty weight | Maximum takeoff weight | Class |
+|----------|--------------|------------------------|-------|
+| DJI FlyCart 30 | Approximately 65 kg with two batteries | 95 kg | Medium RPA |
+| DJI FlyCart 100 | 55.2 kg with lifting system; 60.2 kg with winch, excluding batteries | 149.9 kg configuration. A 170 kg performance specification exists and **must not be used**, as it exceeds the Part IX ceiling | Medium RPA at or below 150 kg |
+
+Payload capacity is reduced by altitude and temperature. Load planning uses the manufacturer's derating tables for the conditions on the day, not the sea-level maximum.
+
+### 13.3 Operating Authority
+
+The Core Operating Rule applies unchanged: fly within the parameters your pilot certificate allows, or under a valid SFOC held by your Organization.
+
+| Operation | Division | Authority | Pilot certificate | Reference |
+|-----------|----------|-----------|-------------------|-----------|
+| VLOS, uncontrolled airspace, 500 ft or more from uninvolved persons | V | Pilot certificate, plus declaration per 13.4 | Advanced or Level 1 Complex | CAR 901.62(d) |
+| VLOS, uncontrolled airspace, less than 500 ft but at least 100 ft from uninvolved persons | V | Pilot certificate, plus declaration per 13.4 | Advanced or Level 1 Complex | CAR 901.62(e) |
+| VLOS, less than 100 ft from uninvolved persons | V | Pilot certificate, plus declaration per 13.4 | Advanced or Level 1 Complex | CAR 901.62(f) |
+| VLOS in controlled airspace | V | Pilot certificate, plus ATS authorization and declaration | Advanced or Level 1 Complex | CAR 901.62(g), 901.71 |
+| BVLOS, uncontrolled airspace, at least 1 km from any populated area | VI | Organization RPOC | Level 1 Complex | CAR 901.87(a) |
+| BVLOS over a sparsely populated area, or less than 1 km from a populated area | Not available to medium RPA | Small aircraft only | n/a | CAR 901.87(b) |
+
+Two points differ from small-aircraft operations and are easy to get wrong:
+
+1. **Medium RPA BVLOS is more restricted, not less.** The sparsely populated allowance in 901.87(b) is available to small aircraft only. A medium aircraft flying BVLOS must remain at least 1 km from any populated area (more than 5 people per km²) for the whole flight, including the ground risk buffer.
+2. **No new pilot certificate is required.** The Advanced certificate covers aircraft up to 150 kg; TP 15263, referenced by CAR 901.64, applies to aircraft from 250 g up to and including 150 kg. Program type training and competency sign-off remain mandatory regardless (Section 2.5).
+
+### 13.4 Declaration Requirement
+
+No Division V medium RPA operation listed in 13.3 may be conducted unless a declaration has been made to the Minister under CAR 901.194 in respect of that model and each applicable technical requirement of Standard 922 (CAR 901.69(e) to (h)). Division VI BVLOS carries the equivalent requirement under CAR 901.95.
+
+For the closest-proximity operations, CAR 901.69(f) and (g), the declaration is valid only if an acceptance letter was issued for that model under CAR 901.196 within the preceding two years (CAR 901.194(3)).
+
+> **Before any delivery operation, the Chief Pilot confirms that a current declaration exists covering the specific aircraft model and the specific operation intended.** Where no applicable declaration exists, the operation requires an SFOC. Declaration status for each registered aircraft is recorded in the Organization's certificate register (Section 2.2).
+
+### 13.5 Additional Regulatory Limits for Medium RPA
+
+| Limit | Requirement | Reference |
+|-------|-------------|-----------|
+| Separation from uninvolved persons | VLOS operations remain at least 500 ft (152.4 m) horizontally, at any altitude, from any person not involved, unless conducted under Division V with the applicable declaration | CAR 901.26(b) |
+| Reduced visibility | Where ground visibility is 4 statute miles or less, a medium RPA VLOS operation is limited to a distance of no more than **half the ground visibility** | CAR 901.34(2) |
+| BVLOS weather | Ground visibility at least 3 SM and clear of cloud | CAR 901.34(3) |
+| Maximum altitude | 400 ft AGL unless a valid SFOC or an ATS authorization under 901.71(2) permits higher | CAR 901.25 |
+| Line-attached payload | A payload attached by a line is prohibited **unless** the operation is conducted in accordance with the operating manuals applicable to the system | CAR 901.43(1)(d) |
+| Hazardous payload | No payload that could create a hazard to aviation safety or cause injury to persons | CAR 901.43(1)(c) |
+| Dropping objects | No creating a hazard to persons or property on the surface by dropping an object from an aircraft in flight | CAR 901.50 |
+| PIC designation | A PIC is designated for each Division VI operation | CAR 901.222 |
+
+The visibility rule at 901.34(2) deserves emphasis because it has no small-aircraft equivalent and will frequently be the binding constraint in corridor conditions. At 4 SM visibility the aircraft may not be operated beyond 2 SM. In valley fog or falling snow it may reduce the usable envelope to a few hundred metres.
+
+### 13.6 Delivery Methods
+
+| Method | Description | Regulatory treatment | Program status |
+|--------|-------------|----------------------|----------------|
+| Cargo box, land and release | Aircraft lands, ground party or subject unloads, aircraft departs | Standard payload carriage | **Preferred where a landing site exists** |
+| Winch | Cargo lowered on a cable, releasing automatically on touchdown | Permitted only when conducted per the operating manuals (CAR 901.43(1)(d)) | Permitted, procedure at 13.8.6 |
+| Free drop | Payload released in flight to fall to the ground | Engages CAR 901.50; the Program cannot assure that a dropped object will not create a hazard | **Not authorized** without a documented justification and Chief Pilot approval for the specific mission |
+
+### 13.7 Crew Configuration
+
+Delivery operations require a larger crew than search operations. Minimum crew:
+
+| Role | Responsibility |
+|------|----------------|
+| Pilot in Command | Flies the aircraft; go/no-go; final release authority |
+| Visual Observer | Airspace and ground watch; maintains VLOS where required |
+| Loadmaster | Payload weight, securing, and centre of gravity; confirms load figures to the PIC; supervises loading area |
+| Ground party (at delivery site) | Confirms the delivery site is clear, receives the load, confirms release, keeps persons clear |
+
+Where the delivery site cannot be attended by a ground party, the delivery is treated as a release into an unattended area and the site must be confirmed clear by the crew before release.
+
+### 13.8 Normal Procedures
+
+#### 13.8.1 Mission Planning
+
+- [ ] Confirm the mission is within the documented mission set (13.1); if not, Chief Pilot approval required
+- [ ] Confirm operating authority available (13.3) and current declaration (13.4)
+- [ ] Calculate operating weight including payload, batteries, and safety equipment; confirm at or below 150 kg and within the manufacturer's limit for altitude and temperature
+- [ ] Confirm route maintains at least 1 km from any populated area if BVLOS
+- [ ] Confirm forecast visibility against CAR 901.34(2) and (3)
+- [ ] Identify launch site, delivery site, and at least one alternate landing site
+- [ ] Confirm ground party communications
+
+#### 13.8.2 Launch Site
+
+- [ ] Area adequate for the aircraft's footprint with propellers unfolded, plus the manufacturer's propeller safe distance (3.5 m for the FlyCart 30)
+- [ ] Surface firm and level; loose debris cleared
+- [ ] Approach and departure paths clear of wires, canopy, and terrain
+- [ ] Cordon established at the separation required by 13.5; uninvolved persons excluded
+- [ ] Signage and visual observer positioned to prevent approach
+
+#### 13.8.3 Loading
+
+- [ ] Payload contents recorded and checked against the prohibited categories (CAR 901.43(1))
+- [ ] Payload secured so it cannot shift in flight
+- [ ] Weight confirmed by the loadmaster and stated to the PIC
+- [ ] Centre of gravity within limits; weight and centre-of-gravity detection confirms a balanced load where the system provides it
+- [ ] Cargo box latched, or winch hook engaged and load stable
+
+#### 13.8.4 Flight
+
+- [ ] Hover check at low altitude before departure; confirm handling with the load
+- [ ] Climb and cruise per the profile planned; avoid abrupt manoeuvres with a slung load
+- [ ] Monitor for load swing; where the system provides swing control, confirm it is active
+- [ ] Monitor battery margin against the return requirement, remembering that a delivered load changes the aircraft's performance for the return leg
+
+#### 13.8.5 Delivery
+
+- [ ] Confirm delivery site clear of persons not involved, and that the ground party is in position and ready
+- [ ] Confirm the area below the aircraft is clear before descent or release
+- [ ] Ground party confirms readiness by the agreed call
+- [ ] Release or land per the method selected
+- [ ] Confirm release complete and the aircraft is clear of the load before departing
+- [ ] Ground party confirms receipt
+
+#### 13.8.6 Winch Operations
+
+Winch operations are conducted **strictly in accordance with the manufacturer's operating manual**, which is the condition on which CAR 901.43(1)(d) permits them at all. In particular:
+
+- Cable descent and retraction speeds per the manual
+- Swing control engaged where provided
+- Cable length appropriate to the terrain and the hover height; never exceeding the manual's maximum
+- The cut-cable function is used only where the load is entangled or the aircraft is otherwise endangered. Cutting is a last resort; the falling load must be considered before the cut is made
+- After any use of cut-cable protection, the aircraft is grounded pending manufacturer-specified inspection or service
+
+### 13.9 Abort Criteria
+
+The delivery is aborted, and the load returned or the flight terminated at a safe location, if any of the following occurs:
+
+- Uninvolved persons enter the launch, flight, or delivery area and cannot be cleared
+- Load swing that cannot be controlled
+- Weather deteriorates below the limits of 13.5, including the CAR 901.34(2) visibility relationship
+- Ground party loses communications or cannot confirm the site is clear
+- Battery margin falls below that required for return plus reserve
+- Any aircraft warning affecting propulsion, positioning, or the payload system
+
+---
+
+## 14. Emergency Contacts
 
 ### 13.1 Aviation Stakeholders
 
@@ -1802,7 +1965,7 @@ Conduct a brief team debrief before departing the site:
 | Sea To Sky Air | Fixed Wing | 604-898-1975 |
 | Black Tusk Helicopter | Helicopter | 604-898-4800 |
 
-### 13.2 Emergency Contacts
+### 14.2 Emergency Contacts
 
 | Contact | When | Phone |
 |---------|------|-------|
@@ -1813,7 +1976,7 @@ Conduct a brief team debrief before departing the site:
 | Whistler Health Care Centre | Medical facility, central corridor | 4380 Lorimer Road, Whistler |
 | Pemberton Health Centre | Medical facility, northern corridor | 1403 Portage Road, Pemberton |
 
-### 13.3 Aerodromes in the Program Area
+### 14.3 Aerodromes in the Program Area
 
 | Name | Code | Type | Radio | Phone | Location |
 |------|------|------|-------|-------|----------|
@@ -1823,7 +1986,7 @@ Conduct a brief team debrief before departing the site:
 | Green Lake Whistler | CAE5 | Seaplane Base | n/a | 604-932-6615 | Whistler |
 | Pemberton Regional | CYPS | Airport | [Verify in CFS] | [Verify] | Pemberton |
 
-### 13.4 Emergency Fly-Away Call Script
+### 14.4 Emergency Fly-Away Call Script
 
 **Call FIC Kamloops: 1-866-541-4101**
 
@@ -1838,7 +2001,7 @@ Conduct a brief team debrief before departing the site:
 
 ---
 
-## 14. Document Control
+## 15. Document Control
 
 ### 14.1 Document Approval
 
@@ -1912,6 +2075,21 @@ This consolidated Operations Manual incorporates content from the following sour
 
 1. [Safety Management System](#1-safety-management-system)
 2. [Emergency Procedures](#2-emergency-procedures)
+   - 2.4 System Failure Procedures
+   - 2.5 GPS Failure Procedures
+   - 2.6 Loss of Control Procedures
+   - 2.7 Fly-Away (Critical Emergency)
+   - 2.8 Emergency Landing
+   - 2.9 Battery Emergency
+   - 2.9A Icing Conditions
+   - 2.9B Fire Emergency
+   - 2.9C Injury Response
+   - 2.10 Traffic Conflict / DESCEND Protocol
+   - 2.11 CFIT Prevention
+   - 2.12 Inadvertent IMC Entry
+   - 2.13 Flight Termination and Crash
+   - 2.14 Time-Critical SAR Operations
+   - 2.15 Post-Emergency Actions
 3. [SORA Documentation](#3-sora-documentation)
 4. [Hazard Identification and Risk Assessment](#4-hazard-identification-and-risk-assessment)
 5. [Detect and Avoid](#5-detect-and-avoid)
@@ -2260,7 +2438,7 @@ A fly-away is when the aircraft does not respond to any control inputs and flies
 
 ### 2.8 Emergency Landing
 
-An emergency landing is a procedure where the RPAS is brought down safely as quickly as possible due to an unforeseen issue or potential hazard.
+An emergency landing is a procedure where the RPAS is brought down safely as quickly as possible due to an unforeseen issue or potential hazard. This is done to prevent accidents or further complications.
 
 #### 2.8.1 Emergency Landing Procedure
 
@@ -2284,6 +2462,8 @@ An emergency landing is a procedure where the RPAS is brought down safely as qui
 | 5 | Accessible for recovery |
 
 > **NOTE:** In emergency conditions, a water landing may be preferable to risking injury to persons. Water (where people are not present) is recognized as a safe scuttle option.
+
+---
 
 ### 2.9 Battery Emergency
 
@@ -2838,6 +3018,133 @@ Per SORA v2.5 Table 14, the following robustness levels apply at SAIL II. L = lo
 
 ---
 
+### 3.11 Risk Assessment: Payload Delivery with Medium RPA
+
+> **STATUS: PROVISIONAL.** Payload delivery is documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+#### 3.11.1 Scope and Relationship to Section 3
+
+Sections 3.1 to 3.10 assess Program operations conducted with small RPA in the 1 m, 25 m/s class. **Those assessments do not extend to medium RPA.** A FlyCart-class aircraft differs in characteristic dimension and mass by enough to change the intrinsic ground risk, the containment requirement, and potentially the SAIL. This Section is a separate SORA 2.5 assessment for payload delivery and is read alongside, not in place of, Section 3.
+
+#### 3.11.2 Step 1: Operational Description
+
+| Element | Description |
+|---------|-------------|
+| Operation | Carriage and release of supplies or equipment to a subject or team during a SAR tasking |
+| Aircraft | Medium RPA, reference types DJI FlyCart 30 and FlyCart 100 (Operations Manual 13.2) |
+| Environment | Sea to Sky corridor backcountry and alpine; remote to lightly populated terrain; municipalities excluded |
+| Altitude | 400 ft AGL maximum |
+| Visual | VLOS under Division V, or BVLOS under Division VI at least 1 km from any populated area |
+| Airspace | Uncontrolled (Class G) |
+| Operational volume | Flight geography plus contingency volume plus ground risk buffer per CAR 900.01, buffer at least 1:1 with planned maximum altitude |
+
+#### 3.11.3 Step 2: Intrinsic Ground Risk Class
+
+SORA 2.5 Table 2 is entered on maximum characteristic dimension (for a multi-rotor, the maximum distance between blade tips) and maximum speed, taking the leftmost column matching both.
+
+| Aircraft | Max dimension | Max speed | Column |
+|----------|---------------|-----------|--------|
+| DJI FlyCart 30 | Approximately 2.8 m unfolded | 20 m/s | **3 m / 35 m/s** |
+| DJI FlyCart 100 | Approximately 3.9 m tip to tip | 20 m/s | **8 m / 75 m/s** by the default method (see 3.11.9) |
+
+Intrinsic GRC from Table 2, 3 m column:
+
+| Population density in the iGRC footprint | iGRC (3 m column) |
+|------------------------------------------|-------------------|
+| Controlled ground area | 1 |
+| Fewer than 5 people/km² (remote) | **3** |
+| Fewer than 50 people/km² (lightly populated) | **4** |
+| Fewer than 500 people/km² | 5 |
+
+Program planning cases: remote alpine and backcountry delivery, the expected majority of taskings, gives **iGRC 3**; lightly populated valley terrain outside municipalities gives **iGRC 4**.
+
+#### 3.11.4 Step 3: Final GRC
+
+Mitigations are applied in the numerical sequence of SORA 2.5 Table 5.
+
+**M1(A) sheltering: NOT APPLIED.** The credit requires that the aircraft would not be expected to penetrate a standard dwelling. A 95 kg to 150 kg aircraft would.
+
+**M1(B) operational restrictions: NOT APPLIED** as a primary claim, though the restriction to SAR taskings in remote terrain would support it if substantiated to medium robustness under Annex B.
+
+**M1(C) ground observation, low robustness, minus 1: APPLIED.** As in 3.5.2, SAR ground presence provides observation with radio communication to the crew and clear abort criteria. For delivery the case is stronger than for search, because the delivery site is attended by a ground party who confirms it is clear before release.
+
+**M2 effects of impact dynamics reduced, medium robustness, minus 1: APPLIED, subject to evidence.** Both reference types carry an integrated parachute designed to deploy at low altitude at maximum takeoff weight. Claiming it at medium robustness requires the evidence set out in SORA Annex B: manufacturer data on deployment envelope and descent rate, evidence the system is installed and serviceable, and parachute inspection and repack in the maintenance program. **If that evidence is not assembled, M2 is not claimed and the final GRC is one higher throughout.**
+
+Where a mitigation changes descent behaviour, the ground risk buffer is re-evaluated. A parachute descent has a different, wind-dependent footprint; the buffer is sized on the manufacturer's descent rate and the wind limit for the day, and never smaller than the 1:1 minimum required by CAR 900.01.
+
+| Scenario | iGRC | M1(C) | M2 | Final GRC |
+|----------|------|-------|----|-----------|
+| Remote terrain, fewer than 5 people/km², parachute evidence in place | 3 | -1 | -1 | **1** |
+| Remote terrain, fewer than 5 people/km², no M2 claim | 3 | -1 | 0 | **2** |
+| Lightly populated, fewer than 50 people/km², parachute evidence in place | 4 | -1 | -1 | **2** |
+| Lightly populated, fewer than 50 people/km², no M2 claim | 4 | -1 | 0 | **3** |
+
+#### 3.11.5 Steps 4 and 5: Air Risk
+
+Uncontrolled, non-airport, rural, below 400 ft AGL gives an **initial ARC-b** as in 3.6. For VLOS delivery the strategic mitigation of SORA 2.5 Section 4.5.4 would reduce the ARC by one class, but cannot reduce it to ARC-a. The **residual ARC is ARC-b** for both VLOS and BVLOS delivery.
+
+#### 3.11.6 Step 6: TMPR
+
+From SORA 2.5 Table 6, residual ARC-b gives a **Low TMPR at low robustness**. For VLOS delivery this is satisfied by the see-and-avoid deconfliction scheme with visual observers, noting the Annex D caveat that an observer is not assumed to detect traffic beyond 2 NM. For BVLOS delivery it is satisfied by visual observer detect and avoid per Standard 923, which also satisfies CAR 901.95(2) in lieu of a Standard 922.10 declaration.
+
+#### 3.11.7 Step 7: SAIL
+
+From SORA 2.5 Table 7, final GRC against residual ARC-b:
+
+| Scenario | Final GRC | Residual ARC | **SAIL** |
+|----------|-----------|--------------|----------|
+| Remote terrain, M2 claimed | 1 | b | **II** |
+| Remote terrain, no M2 | 2 | b | **II** |
+| Lightly populated, M2 claimed | 2 | b | **II** |
+| Lightly populated, no M2 | 3 | b | **II** |
+
+All four cases reach **SAIL II**, so the OSO set of Section 3.8 carries across unchanged. The margin should not be taken for granted: terrain in the fewer than 5,000 people/km² band, which describes the edges of the corridor communities, would give a final GRC of 4 and **SAIL III**. The SAIL II result depends on operating in genuinely remote terrain.
+
+#### 3.11.8 Step 8: Containment
+
+Adjacent area lateral limit: distance flown in 3 minutes at maximum speed. At 20 m/s this is 3.6 km, less than the 5 km minimum, so **5 km applies**.
+
+Sheltering is not assumed applicable for the adjacent area, for the same reason M1(A) is not claimed. SORA 2.5 Table 10 (3 m UA without shelter assumption) applies:
+
+| Adjacent area average population density | Assemblies within 1 km | Containment at SAIL II |
+|------------------------------------------|------------------------|------------------------|
+| No upper limit | More than 400k | Out of scope |
+| Fewer than 50,000 people/km² | 40k to 400k | High |
+| Fewer than 5,000 people/km² | Fewer than 40k | Medium |
+| Fewer than 500 people/km² | Fewer than 40k | **Low** |
+
+Sea to Sky adjacent areas relevant to backcountry delivery are far below 500 people/km² on average, and outdoor assemblies of 40,000 people do not occur within 1 km of the areas contemplated. **Containment robustness: LOW**, subject to these operational limits being verified during the site survey for each mission:
+
+| Operational limit | Basis |
+|-------------------|-------|
+| Adjacent area average population density below 500 people/km² | Table 10 column selected |
+| No outdoor assembly exceeding 40,000 people within 1 km of the operational volume | Table 10 column selected |
+
+Low robustness containment is met by the operational volume definition, pre-programmed lost link and return behaviour, the parachute where fitted, and the emergency procedures of Section 2 as extended by 3.11.10.
+
+#### 3.11.9 The FlyCart 100 Exception
+
+By the default method the FlyCart 100, at approximately 3.9 m between blade tips, does not fit the 3 m column and falls into the **8 m column**, which raises the intrinsic GRC by one across every density band and changes containment to Table 11, where SAIL II containment is Low only below 50 people/km², Medium below 500, and High below 5,000.
+
+This is conservative in a way SORA anticipates. The 8 m column assumes a maximum speed of 75 m/s; the FlyCart 100 flies at 20 m/s, so the impact energy driving the column assignment is substantially overstated. SORA 2.5 Section 4.2.4 provides for this under "Non-typical cases", allowing the iGRC to be calculated using the model in Annex F Section 1.8 and the column matching actual risk to be selected.
+
+**Recommendation:** if the FlyCart 100 is adopted, run the Annex F Section 1.8 calculation rather than accepting the 8 m column, and present the result to Transport Canada. Until that calculation is done, plan FlyCart 100 operations on the conservative 8 m column figures.
+
+#### 3.11.10 Emergency Procedures Specific to Payload Operations
+
+| Situation | Immediate actions |
+|-----------|-------------------|
+| Load swing developing | Reduce speed; avoid control inputs that amplify the oscillation; confirm swing control active; if divergent, descend and land or set the load down at the nearest safe point |
+| Winch cable entangled | Attempt controlled release per the manual; if the aircraft is endangered, use cut-cable protection, having first confirmed the area below is clear; ground the aircraft afterward pending inspection |
+| Loss of link with a load aboard | Aircraft executes pre-programmed lost link behaviour; ground party and all crew clear the return path and the area beneath it; treat the load as a falling hazard until the aircraft is recovered |
+| Parachute deployment | Announce; clear all persons from the descent footprint, which is wind-dependent and can be substantially displaced from the aircraft's position at deployment; treat aircraft and load as a single hazard until secured |
+| Forced landing with cargo | Select the landing point for the combined mass; expect the aircraft not to be recoverable by hand; secure a cordon commensurate with a 95 kg to 150 kg aircraft |
+| Any incident involving the aircraft | Cordon substantially larger than for small aircraft; batteries of this size present a significant thermal hazard if damaged; do not approach a damaged battery pack |
+
+An occurrence involving a medium RPA meets the reporting criteria of CAR 901.49 on the same terms as any other aircraft, and operations cease until analysis and corrective action are complete.
+
+---
+
 ## 4. Hazard Identification and Risk Assessment
 
 ### 4.1 Purpose
@@ -2953,7 +3260,7 @@ The Program uses the JARUS SORA framework for systematic risk assessment:
 
 ### 4.6 Reactive Risk Management (Incident-Based)
 
-All incidents reported via Section 6 (Incident Reporting) are analyzed to determine root cause and implement corrective actions.
+All incidents reported via Section 6 (Incident Reporting) are analyzed to determine root cause and implement corrective actions. This reactive process ensures learning from events that have already occurred.
 
 #### 4.6.1 Root Cause Analysis Process
 
@@ -2979,9 +3286,21 @@ All incidents reported via Section 6 (Incident Reporting) are analyzed to determ
 | Environmental | Weather exceeded limits, unexpected conditions | Weather assessment procedure update, limit revision |
 | Design Deficiency | Aircraft limitation, software bug | Manufacturer notification, operational limitation |
 
+#### 4.6.3 Investigation Documentation
+
+All investigations must document:
+- Incident description and timeline
+- Environmental conditions at time of occurrence
+- Equipment involved (serial numbers, firmware versions)
+- Personnel involved
+- Evidence collected (flight logs, video, witness statements)
+- Root cause determination with supporting rationale
+- Corrective actions with owners and deadlines
+- Safety Manager and AE sign-off
+
 ### 4.7 Proactive Risk Management (The Hazard Registry)
 
-The Program maintains a Master Hazard Registry to proactively identify and manage hazards before they cause incidents.
+The Program maintains a Master Hazard Registry to proactively identify and manage hazards before they cause incidents. This aligns with SMS Pillar 2 (Safety Risk Management) and COR Element 2 (Hazard Identification).
 
 #### 4.7.1 Hazard Registry Structure
 
@@ -3020,7 +3339,9 @@ Hazards are identified through multiple channels:
 
 #### 4.7.3 Hazard Registry Workflow
 
-**IDENTIFY → ASSESS → MITIGATE → DOCUMENT → MONITOR → REVIEW**
+'''
+IDENTIFY → ASSESS → MITIGATE → DOCUMENT → MONITOR → REVIEW
+'''
 
 **Step 1 - IDENTIFY:** Any crew member may submit a hazard identification via the Safety Report form or direct communication to Safety Manager.
 
@@ -3065,6 +3386,30 @@ Change management is mandatory when:
 | 8 | **MONITOR** effectiveness post-implementation | Safety Manager | Monitoring Report |
 | 9 | **UPDATE** Hazard Registry with any new hazards | Safety Manager | Registry Update |
 
+#### 4.8.3 Change Assessment Questions
+
+The Change Risk Assessment must address:
+
+1. **What is changing?** Clear description of the proposed change
+2. **Why is the change needed?** Operational, regulatory, or safety driver
+3. **What could go wrong?** Identification of potential failure modes
+4. **How likely is failure?** Probability assessment
+5. **What are the consequences?** Severity assessment
+6. **Are current SOPs sufficient?** Gap analysis
+7. **What additional controls are needed?** Mitigation development
+8. **Who needs to know?** Communication plan
+9. **Who needs training?** Training requirements
+10. **How will effectiveness be verified?** Monitoring plan
+
+#### 4.8.4 Change Approval Authority
+
+| Risk Level Introduced | Approval Authority | Additional Requirements |
+|----------------------|-------------------|------------------------|
+| Low | Chief Pilot | Document decision |
+| Medium | Chief Pilot + Safety Manager | Risk assessment documented |
+| High | Accountable Executive | Full change package, board notification if required |
+| Extreme | Not Approved | Change not permitted without significant redesign |
+
 #### 4.8.3 Change Approval Authority
 
 | Risk Level Introduced | Approval Authority | Additional Requirements |
@@ -3082,6 +3427,16 @@ Change management is mandatory when:
 - **Approval:** Accountable Executive for new High/Extreme risks
 - **Retention:** Hazard Registry records retained for minimum 5 years
 - **Audit:** Internal audit of Hazard Registry annually per Section 1.4.3
+
+#### 4.9.1 Hazard Status Definitions
+
+| Status | Definition | Action Required |
+|--------|------------|-----------------|
+| **Open** | Newly identified, awaiting assessment | Complete assessment within 7 days |
+| **In Progress** | Mitigations being developed/implemented | Complete implementation per timeline |
+| **Closed** | Risk reduced to acceptable level, controls verified | Annual review only |
+| **Monitoring** | Controls in place, ongoing monitoring required | Track SPIs, review quarterly |
+| **Archived** | No longer applicable (equipment retired, procedure eliminated) | Retain record, no active management |
 
 ---
 
@@ -3243,6 +3598,56 @@ Report to Operations Manager:
 - **Corrective Action:** Specific measures must be implemented to prevent recurrence
 - **Log Entry:** The incident must be logged in the Program records (AirData or Physical Log)
 
+### 6.8 Investigation Form
+
+#### RPAS Incident/Accident Investigation Form
+
+**Section 1 - RPAS Information**
+
+| Field | Information |
+|-------|-------------|
+| Type/Model: | |
+| Registration #: | |
+| Weight Category: | [ ] <250g  [ ] 250g-25kg  [ ] >25kg |
+
+**Section 2 - Occurrence Details**
+
+| Field | Information |
+|-------|-------------|
+| Date/Time: | |
+| Location (Lat/Long): | |
+| Pilot in Command: | |
+| Visual Observer: | |
+| SFOC Number (if applicable): | |
+
+**Section 3 - Impact Assessment**
+
+| Question | Response |
+|----------|----------|
+| Injuries? | [ ] No  [ ] Yes (Describe & Contact TSB) |
+| Collision with Manned Aircraft? | [ ] No  [ ] Yes (Contact TSB) |
+| Property Damage? | [ ] No  [ ] Yes (Describe below) |
+| RPAS Damage? | [ ] Minor  [ ] Major/Destroyed |
+
+**Section 4 - Narrative Description**
+
+(Describe the sequence of events, weather conditions, and control inputs leading to the event)
+
+**Section 5 - Root Cause Analysis**
+
+(Why did this happen? e.g., Mechanical failure, Pilot error, Signal interference)
+
+**Section 6 - Corrective Actions**
+
+(What will be done to prevent recurrence?)
+
+### 6.9 Record Keeping
+
+- **Duration:** In compliance with CAR 901.49(2), records of the incident analysis and corrective actions must be retained for a minimum of 12 months from the date of creation
+- **Availability:** These records must be made available to the Minister of Transport upon request
+
+---
+
 ### 6.8 Record Keeping
 
 - **Duration:** In compliance with CAR 901.49(2), records of the incident analysis and corrective actions must be retained for a minimum of 12 months from the date of creation
@@ -3338,6 +3743,99 @@ Each controlled document includes:
 | OPS-09 | Flight logs accurate and complete | 901.223 | [ ] | |
 | OPS-10 | Emergency procedures available | 901.217 | [ ] | |
 
+#### 7.5.4 Training Program Audit Checklist
+
+| Ref | Audit Item | CAR Reference | Compliant | Finding |
+|-----|------------|---------------|-----------|---------|
+| TRN-01 | Training program documented | 901.219 | [ ] | |
+| TRN-02 | All pilots have valid TC certificates | 901.54-66 | [ ] | |
+| TRN-03 | Flight currency maintained (90-day) | 901.56 | [ ] | |
+| TRN-04 | Annual proficiency check completed | TRN-301 | [ ] | |
+| TRN-05 | Standard Scenario endorsements current | 901.220 | [ ] | |
+| TRN-06 | Training records complete and accessible | 901.223 | [ ] | |
+| TRN-07 | Trainers meet qualification requirements | TRN-301 | [ ] | |
+| TRN-08 | Recurrency training completed on time | 901.219 | [ ] | |
+| TRN-09 | Competency assessments documented | 901.219 | [ ] | |
+| TRN-10 | Human factors training current | 901.219 | [ ] | |
+
+#### 7.5.5 Maintenance Program Audit Checklist
+
+| Ref | Audit Item | CAR Reference | Compliant | Finding |
+|-----|------------|---------------|-----------|---------|
+| MNT-01 | MCM current and accessible | 901.221 | [ ] | |
+| MNT-02 | PRM designated and qualified | 901.220 | [ ] | |
+| MNT-03 | Pre-flight inspections completed | 901.29 | [ ] | |
+| MNT-04 | Maintenance schedule followed | MCM-001 | [ ] | |
+| MNT-05 | Defects recorded and tracked | MCM-001 | [ ] | |
+| MNT-06 | Aircraft registration current | 900.13 | [ ] | |
+| MNT-07 | Markings visible and compliant | 900.14 | [ ] | |
+| MNT-08 | Firmware versions documented | MCM-001 | [ ] | |
+| MNT-09 | Battery records maintained | MCM-001 | [ ] | |
+| MNT-10 | Maintenance records retained (24 months) | 901.48 | [ ] | |
+
+#### 7.5.6 Safety Management Audit Checklist
+
+| Ref | Audit Item | CAR Reference | Compliant | Finding |
+|-----|------------|---------------|-----------|---------|
+| SMS-01 | Safety policy current and communicated | 901.218 | [ ] | |
+| SMS-02 | Hazard registry maintained | 901.218 | [ ] | |
+| SMS-03 | Risk assessments completed | 901.218 | [ ] | |
+| SMS-04 | Safety reports investigated | 901.218 | [ ] | |
+| SMS-05 | Corrective actions tracked to closure | 901.218 | [ ] | |
+| SMS-06 | SPIs monitored and reported | SMS-001 | [ ] | |
+| SMS-07 | Safety meetings conducted | SMS-001 | [ ] | |
+| SMS-08 | Non-punitive reporting protected | 901.218 | [ ] | |
+| SMS-09 | Change management applied | SMS-001 | [ ] | |
+| SMS-10 | Management review conducted | 901.218 | [ ] | |
+
+#### 7.5.7 Annual System Audit
+
+Once per year, the Safety Manager (or an external auditor/peer from another SAR group) shall conduct a Full System Audit covering all program areas.
+
+**Audit Scope - Sample Review:**
+- Flight Logs (AirData) vs. Site Surveys (Did we do a survey for every flight?)
+- Training Records (Are certifications current?)
+- Maintenance Logs (Was the firmware update tested?)
+- Hazard Registry (Are hazards actively managed?)
+- Incident Reports (Were corrective actions completed?)
+
+**Sample Size:** Minimum 10% of flights in the audit period, or 10 flights, whichever is greater.
+
+> **COR Alignment:** This audit also serves as the annual maintenance audit for the COR Safety Program.
+
+#### 7.5.8 Audit Findings Classification
+
+| Classification | Definition | Action Required | Timeline |
+|----------------|------------|-----------------|----------|
+| **Critical** | Immediate safety risk or regulatory violation | Stop operations, immediate corrective action | Immediate |
+| **Major** | Significant non-compliance affecting safety | Corrective action plan required | Within 30 days |
+| **Minor** | Minor non-compliance, low safety impact | Corrective action at next opportunity | Within 90 days |
+| **Observation** | Improvement opportunity, not non-compliance | Consider at next review | At discretion |
+
+#### 7.5.9 Audit Report Template
+
+| Program RPAS INTERNAL AUDIT REPORT | |
+|---------------------------------|---|
+| **Audit Number:** | AUD-[YEAR]-[NUMBER] |
+| **Audit Type:** | [ ] Operations  [ ] Training  [ ] Maintenance  [ ] SMS  [ ] Full System |
+| **Audit Date(s):** | |
+| **Auditor(s):** | |
+| **Audit Scope:** | |
+| **Documents Reviewed:** | |
+| **Personnel Interviewed:** | |
+| **Previous Audit Findings Status:** | |
+
+| Finding # | Classification | Description | Evidence | CAP Required |
+|-----------|----------------|-------------|----------|--------------|
+| | | | | |
+| | | | | |
+
+| **Audit Summary:** | |
+| **Total Findings:** | Critical: ___  Major: ___  Minor: ___  Observations: ___ |
+| **Overall Compliance:** | [ ] Satisfactory  [ ] Needs Improvement  [ ] Unsatisfactory |
+| **Auditor Signature:** | _________________________ Date: _________ |
+| **AE Review:** | _________________________ Date: _________ |
+
 #### 7.5.4 Audit Findings Classification
 
 | Classification | Definition | Action Required | Timeline |
@@ -3359,6 +3857,14 @@ Each controlled document includes:
 | Major | 24 hours | 30 days |
 | Minor | As needed | 90 days |
 
+#### 7.6.2 Findings and Corrective Actions
+
+| Step | Description |
+|------|-------------|
+| Non-Compliance | Any gap found (e.g., "Pilot A is missing their ROC-A copy") is logged as a "Finding" |
+| Corrective Action Plan | A specific plan with a due date is created to fix the finding (e.g., "Pilot A will upload ROC-A by Friday") |
+| Closure | The Accountable Executive signs off on the audit once all CAPs are closed |
+
 ### 7.7 Continuous Improvement
 
 The Program commits to continuous improvement through:
@@ -3374,6 +3880,8 @@ The Program commits to continuous improvement through:
 | Full Management Review | Annual | AE, Chief Pilot |
 | Quarterly Status | Quarterly | Chief Pilot |
 | As-needed | As required | As appropriate |
+
+---
 
 ### 7.9 Third-Party Audit Program
 
@@ -3649,6 +4157,35 @@ Assists the PIC in maintaining safety and situational awareness.
 
 ---
 
+### 1.6 Loadmaster
+
+> **STATUS: PROVISIONAL.** This role supports payload delivery operations, which are documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+The Loadmaster is responsible for everything about the payload: what it is, what it weighs, how it is secured, and whether the aircraft is safe to fly with it.
+
+**Required credentials**
+
+| Requirement | Standard |
+|-------------|----------|
+| Program standing | Trained Program member; Visual Observer qualification recommended |
+| Training | Medium RPA ground school modules on weight and balance, delivery systems, and site and crew (Training Manual 4.9.2) |
+| Assessment | Practical assessment on load preparation, weight verification, and securing, signed off by the Chief Pilot |
+| Currency | Participation in at least one delivery operation or drill every 12 months |
+
+**Responsibilities**
+
+1. Confirms the payload contents are permitted under CAR 901.43(1) and Program policy
+2. Determines payload weight by measurement, not estimate, and states it to the PIC
+3. Confirms total operating weight is within the aircraft limit for the conditions and at or below 150 kg
+4. Secures the load so it cannot shift, and confirms centre of gravity within limits
+5. Controls the loading area and keeps persons clear of the rotor arc during loading
+6. Confirms the load is released and the aircraft clear before the aircraft departs the delivery point where the loadmaster is present
+7. Records the payload details for the delivery log
+
+The Loadmaster has the authority to stop a loading operation and to refuse a load that cannot be verified or safely secured.
+
+---
+
 ## 2. Pilot Training Program
 
 ### 2.1 Purpose
@@ -3846,11 +4383,11 @@ All pilots qualified for SAR operations must complete training on time-critical 
 - CRM principles
 - Fatigue recognition
 
-### 2.9.1 Human-Machine Interface (HMI) Evaluation (OSO#17)
+### 2.9.1 Human-Machine Interface (HMI) Evaluation (OSO#20)
 
 #### Purpose
 
-This section documents the Human-Machine Interface evaluation for Program RPAS operations per SAIL IV OSO#17 requirements. The evaluation ensures that the aircraft systems and ground control interface are designed to support safe crew operations and minimize human error.
+This section documents the Human-Machine Interface evaluation for Program RPAS operations per SORA v2.5 OSO#20 (human machine interface evaluation), required at low robustness for SAIL II operations. The evaluation ensures that the aircraft systems and ground control interface are designed to support safe crew operations and minimize human error.
 
 #### HMI Evaluation Criteria
 
@@ -4176,6 +4713,10 @@ This section establishes the pilot competency records system for Program RPAS op
 | M30T type training | | | |
 | M4TD type training | | | |
 | Other type training (specify) | | | |
+| Medium RPA type training (specify type) | | | |
+| Payload delivery, cargo method | | | |
+| Payload delivery, winch method | | | |
+| Loadmaster | | | |
 | STSC-003 training | | | |
 | STSC-004 BVLOS training | | | |
 | Emergency procedures | | | |
@@ -4412,9 +4953,9 @@ The Chief Pilot must escalate to the Accountable Executive when:
 | 3 | Senior Pilot | All SS endorsements + 50 hours |
 | 4 | Flight Reviewer | Stage 3 + instructor training + AE designation |
 
-### 5.8 Flight Reviewer
+### 5.4 Flight Reviewer
 
-#### 5.8.1 Current Designation
+#### 5.4.1 Current Designation
 
 | Item | Details |
 |------|---------|
@@ -4422,7 +4963,7 @@ The Chief Pilot must escalate to the Accountable Executive when:
 | Affiliation | Declared training provider per CAR 901.175 and Standard 921 |
 | Authorization Scope | All assessments, all endorsements |
 
-#### 5.8.2 Flight Reviewer Responsibilities
+#### 5.4.2 Flight Reviewer Responsibilities
 
 - Conduct initial qualification assessments
 - Conduct annual proficiency checks
@@ -4430,7 +4971,7 @@ The Chief Pilot must escalate to the Accountable Executive when:
 - Conduct currency restoration assessments
 - Issue aircraft type authorizations
 
-### 5.9 Chief Instructor Role
+### 5.5 Chief Instructor Role
 
 **Chief Instructor: appointed per Organization. Required credentials: Flight Reviewer rating (CAR 901.176); for Level 1 Complex ground school delivery, meets chief ground instructor requirements (CAR 901.183).**
 
@@ -4440,7 +4981,7 @@ Responsible for:
 - Instructor oversight
 - Regulatory compliance of training
 
-### 5.10 Currency Requirements - CAR 901.220
+### 5.6 Currency Requirements - CAR 901.220
 
 | Requirement | Period | Criteria |
 |-------------|--------|----------|
@@ -4462,7 +5003,7 @@ Before any flight, the PIC shall verify:
 
 > **Pilots shall not conduct operations if any required currency has lapsed.**
 
-### 5.11 Annual Proficiency Check
+### 5.7 Annual Proficiency Check
 
 | Element | Method | Duration |
 |---------|--------|----------|
@@ -4473,9 +5014,9 @@ Before any flight, the PIC shall verify:
 | Normal operations | Flight | 30 min |
 | Emergency response | Simulated | 15 min |
 
-### 5.12 Examiner Standards
+### 5.8 Examiner Standards
 
-#### 5.12.1 STSC-003 Assessment
+#### 5.8.1 STSC-003 Assessment
 
 **Knowledge:**
 - STSC-003 requirements and limitations
@@ -4490,7 +5031,7 @@ Before any flight, the PIC shall verify:
 - Traffic avoidance
 - Emergency descent
 
-#### 5.12.2 STSC-004 Assessment
+#### 5.8.2 STSC-004 Assessment
 
 **Knowledge:**
 - STSC-004 requirements
@@ -4505,13 +5046,13 @@ Before any flight, the PIC shall verify:
 - Simulated lost link response
 - RTH execution
 
-### 5.13 Pass Criteria
+### 5.9 Pass Criteria
 
 - All elements minimum score of 2
 - Overall average 3.0 or higher
 - No critical failures
 
-### 5.14 Failed Assessment
+### 5.10 Failed Assessment
 
 > Upon failed assessment: privileges suspended immediately, deficiencies documented, remedial training required, re-check minimum 7 days later.
 
@@ -4913,7 +5454,8 @@ This consolidated People & Equipment Manual incorporates content from the follow
 
 **END OF PEOPLE & EQUIPMENT MANUAL**
 
-*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*`
+*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*
+`
     },
 
     training: {
@@ -5422,6 +5964,69 @@ The trainer will review flight logs (AirData) to verify:
 
 ---
 
+### 4.9 Medium RPA and Payload Delivery Training
+
+> **STATUS: PROVISIONAL.** Payload delivery is documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+#### 4.9.1 Prerequisites
+
+| Requirement | Standard |
+|-------------|----------|
+| Certificate | Advanced (CAR 901.64), or Level 1 Complex (CAR 901.90) where BVLOS delivery is intended |
+| Program standing | Foundation and Advanced Training complete; current on at least one Program aircraft |
+| Flight hours | Minimum 25 hours total Program flight time before commencing medium RPA training |
+| Endorsement | Chief Pilot endorsement to enter the medium RPA stream |
+
+#### 4.9.2 Ground School (minimum 8 hours)
+
+| Module | Duration | Content |
+|--------|----------|---------|
+| Regulatory framework | 90 min | Medium RPA definition and the 150 kg ceiling; operating weight including payload; Division V and VI authority; the declaration requirement; CAR 901.26(b) separation; CAR 901.34(2) visibility relationship; payload rules at 901.43 and 901.50 |
+| Aircraft systems | 120 min | Airframe, propulsion, battery system and charging, positioning and RTK, obstacle sensing, parachute system, FPV and camera, alternate landing sites |
+| Weight, balance and performance | 90 min | Operating weight calculation; centre of gravity; altitude and temperature derating; endurance and range with and without load; the changed performance of the return leg after release |
+| Delivery systems | 90 min | Cargo mode loading and securing; winch operation per the manufacturer's manual; swing control; cut-cable protection and when it is justified |
+| Risk and emergencies | 90 min | The payload SORA assessment in outline (Safety Manual 3.11); load swing; entanglement; parachute deployment and footprint; forced landing with cargo; battery thermal hazard; cordon sizing |
+| Site and crew | 60 min | Launch and delivery site standards; crew roles including loadmaster; ground party coordination and release calls; abort criteria |
+
+#### 4.9.3 Flight Training Progression
+
+Each stage is completed to the Chief Pilot's satisfaction before the next begins. Stages 1 to 4 are conducted in benign terrain before any mountain operation.
+
+| Stage | Content | Minimum |
+|-------|---------|---------|
+| 1. Handling, unloaded | Takeoff, hover, basic manoeuvring, landing, RTH, alternate landing site use | 5 flights |
+| 2. Handling, light load | As stage 1 at approximately one third of maximum payload; hover check discipline | 5 flights |
+| 3. Handling, full load | As stage 1 at maximum planned payload for the conditions; performance and endurance observed against calculation | 5 flights |
+| 4. Delivery, method-specific | Cargo land-and-release and, where used, winch delivery to a marked site with a ground party | 5 deliveries of each method used |
+| 5. Emergency drills | Simulated load swing recovery, simulated entanglement decision, lost link with load, forced landing site selection | Each drill demonstrated |
+| 6. Mountain and operational | Delivery in representative terrain with a full crew, from tasking through to load receipt | 3 complete missions |
+
+#### 4.9.4 Competency Standard
+
+The candidate demonstrates:
+
+- Correct calculation of operating weight, including payload and safety equipment, with an independent check by the loadmaster
+- Correct determination of authority and confirmation of the declaration before flight
+- Correct application of the separation and visibility limits, including the CAR 901.34(2) relationship
+- Stable handling with a load, with no divergent swing
+- Correct and timely abort decisions when criteria are met
+- Clear communication with the ground party through the delivery sequence
+- Sound emergency decision making, particularly the cut-cable judgment
+
+Assessment is by a Flight Reviewer or the Chief Pilot, recorded per CAR 901.223.
+
+#### 4.9.5 Currency
+
+| Requirement | Interval |
+|-------------|----------|
+| Delivery flight in the type flown | At least one every 90 days |
+| Emergency drill set | At least annually |
+| Ground school refresh | On any change to the aircraft, the delivery system, or the regulatory framework |
+
+A pilot current on the M30T or M4TD is **not** thereby current on a medium RPA. Currency is per type and per delivery method.
+
+---
+
 ## 5. Standard Scenario Training
 
 ### 5.1 STSC-003 High Altitude VLOS Training
@@ -5787,7 +6392,7 @@ Flight Reviewers are senior trainers authorized to conduct formal proficiency as
 
 ### 8.1 Pathway Overview
 
-\`\`\`
+'''
 Foundation Training (4-6 weeks)
         ↓
 Foundation Flight Review
@@ -5801,7 +6406,7 @@ Operational Authorization
 Standard Scenario Training (optional progression)
         ↓
 Senior Pilot / Flight Reviewer (experience-based)
-\`\`\`
+'''
 
 ### 8.2 Foundation Training Progression
 
@@ -6134,6 +6739,26 @@ A member may be asked to assist as an additional lookout under direct crew super
 
 Full VO qualification requires Section 6 training; awareness-level tasking is supplemental eyes only and never replaces the qualified VO.
 
+
+#### 12.3.7 Payload Delivery Aircraft
+
+The Program may operate delivery aircraft weighing 95 kg to 150 kg fully loaded, far larger than the search drones most members have seen. They are louder, their rotor wash is strong enough to move loose gear and disturb casualty care, and the cordon around them is much larger.
+
+**How to help.**
+
+- Stay outside the cordon at all times unless the crew tasks you to assist
+- Secure loose gear, tarps, and tent flies before launch or landing near your position
+- If a load is being lowered on a line, never stand under it and never reach for it until the crew calls it clear
+- Only handle a delivered load when the crew or ground party tells you to
+- If you hear a call for parachute deployment, move away from the area beneath the aircraft immediately and keep clear; the aircraft may land well away from where it started descending
+
+**What not to do.**
+
+- Do not approach a landed delivery aircraft until the props are stopped and the PIC clears you
+- Do not attempt to steady, guide, or catch a suspended load
+- Do not handle the battery packs
+- If the aircraft is damaged in any way, keep clear and keep others clear; the batteries present a fire hazard and are not to be approached
+
 ### 12.4 Awareness Quick Card
 
 A one-page version of 12.3.4 and 12.3.5 is issued to all members and posted with team resources.
@@ -6238,7 +6863,8 @@ This Training Program Manual incorporates content from the following source docu
 
 **END OF TRAINING PROGRAM MANUAL**
 
-*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*`
+*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*
+`
     },
 
     forms: {
@@ -6333,6 +6959,87 @@ For any other registered aircraft, the equivalent specifications, pre-flight ins
 | Battery Records | Life of battery + 2 years |
 | Maintenance Actions | 2 years minimum |
 | Defect Reports | 5 years |
+
+---
+
+
+### 1.6 Medium RPA in the Maintenance Program
+
+> **STATUS: PROVISIONAL.** Payload delivery is documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+Medium RPA are entered in the Organization's aircraft register and maintained under this Maintenance Control Manual on the same basis as any other registered aircraft (CAR 901.221). Before a medium RPA is tasked, the Person Responsible for RPAS Maintenance establishes and records:
+
+| Item | Source |
+|------|--------|
+| Inspection schedule and intervals | Manufacturer's maintenance program provided under CAR 901.200(a) |
+| Component life limits, including propellers, motors, and batteries | Manufacturer's documentation |
+| Delivery system maintenance: cargo latches, winch mechanism, cable, hook | Manufacturer's documentation |
+| Cable inspection criteria and retirement standard | Manufacturer's documentation; cable inspected before and after every winch operation |
+| Parachute inspection and repack interval | Manufacturer's documentation. **Where the parachute is claimed as an M2 mitigation in Safety Manual 3.11.4, this maintenance is mandatory, because the risk assessment depends on the system being serviceable** |
+| Battery handling, charging, storage, and retirement | Manufacturer's documentation, adapted from the small-fleet procedures of Section 5 |
+| Mandatory actions | Manufacturer notifications under CAR 901.200(b) |
+
+#### 1.6.1 Medium RPA Pre-Flight Inspection (additional items)
+
+- [ ] Arms fully unfolded and locked; arm-lock warning clear in the control application
+- [ ] Propellers unfolded, undamaged, and secure; no delamination at the blade roots
+- [ ] Landing gear secure and undamaged; no cracking at attachment points
+- [ ] Battery packs seated and latched; voltage and capacity difference between packs within the manufacturer's tolerance
+- [ ] Cargo box latches functional, or winch mechanism free and cable spooled correctly
+- [ ] Winch cable inspected full length for kinks, birdcaging, broken strands, and heat damage
+- [ ] Hook and any counterweight secure and undamaged
+- [ ] Parachute installed, within its repack interval, pin and bridle correct, deployment path unobstructed
+- [ ] Obstacle sensing and positioning systems report serviceable
+- [ ] Registration number clearly visible (CAR 900.14)
+
+#### 1.6.2 Payload Delivery Load Card
+
+Completed by the Loadmaster before every delivery.
+
+| Field | Entry |
+|-------|-------|
+| Aircraft | |
+| Payload description | |
+| Payload weight (measured) | |
+| Aircraft empty weight including batteries | |
+| **Total operating weight** | |
+| Manufacturer limit for altitude and temperature today | |
+| Within 150 kg Part IX ceiling | [ ] Yes |
+| Prohibited categories checked (CAR 901.43(1)) | [ ] Yes |
+| Load secured, centre of gravity confirmed | [ ] Yes |
+| Delivery method | [ ] Cargo land-and-release  [ ] Winch  [ ] Other (Chief Pilot approval attached) |
+| Loadmaster signature | |
+| PIC acknowledgement of stated weight | |
+
+#### 1.6.3 Delivery Sequence Callouts
+
+| Call | By | Response |
+|------|----|----------|
+| "Load secure, weight [X] kilograms" | Loadmaster | PIC: "Weight [X], within limits" |
+| "Delivery site clear" | Ground party | PIC: "Copy, commencing approach" |
+| "Below clear" | Ground party or VO | PIC: "Copy, descending" |
+| "Load down" | Ground party | PIC: "Copy, releasing" |
+| "Clear of load" | PIC | Ground party: "Copy, load received" |
+| "DESCEND, DESCEND, DESCEND" | Any crew member | PIC executes emergency descent |
+| "ABORT" | Any crew member | PIC discontinues the delivery |
+
+#### 1.6.4 Delivery Log
+
+Retained 12 months per CAR 901.223(1)(a); associated maintenance records 24 months per 901.223(1)(e).
+
+| Field |
+|-------|
+| Date and task number |
+| Aircraft registration and type |
+| PIC, VO, Loadmaster, ground party lead |
+| Operating authority relied upon (certificate, RPOC Division VI, SFOC number) |
+| Payload description and weight |
+| Delivery method |
+| Delivery location (coordinates) |
+| Flight time |
+| Outcome and any anomalies |
+| Cut-cable protection used (yes/no; if yes, aircraft grounded pending inspection) |
+| Parachute deployed (yes/no; if yes, incident procedures per CAR 901.49) |
 
 ---
 
@@ -7547,13 +8254,13 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 
 Complete within 2-3 minutes for urgent SAR deployment:
 
-| # | Check | Details |
-|---|-------|---------|
-| **1** | **AIRSPACE** | Check for controlled airspace, NOTAMs, nearby airports/heliports |
-| **2** | **HAZARDS** | Identify power lines, towers, tall structures, moving equipment |
-| **3** | **TERRAIN** | Assess slopes, obstacles, landing zone clearance (min 3m radius) |
-| **4** | **PEOPLE** | Identify bystanders, establish safety perimeter (30m minimum) |
-| **5** | **WEATHER** | Wind speed/direction, visibility, precipitation, temperature |
+| # | Check | Details | ✓ |
+|---|-------|---------|---|
+| **1** | **AIRSPACE** | Check for controlled airspace, NOTAMs, nearby airports/heliports | [ ] |
+| **2** | **HAZARDS** | Identify power lines, towers, tall structures, moving equipment | [ ] |
+| **3** | **TERRAIN** | Assess slopes, obstacles, landing zone clearance (min 3m radius) | [ ] |
+| **4** | **PEOPLE** | Identify bystanders, establish safety perimeter (30m minimum) | [ ] |
+| **5** | **WEATHER** | Wind speed/direction, visibility, precipitation, temperature | [ ] |
 
 #### 10.3.1 Rapid Survey Decision Matrix
 
@@ -7603,7 +8310,8 @@ Complete within 2-3 minutes for urgent SAR deployment:
 
 **END OF FORMS & MAINTENANCE MANUAL**
 
-*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*`
+*This document is part of the Program RPAS Operator Certificate (RPOC) documentation package.*
+`
     },
 
     admin: {
@@ -8193,7 +8901,7 @@ The region is described in three sub-regions reflecting the response areas of th
 
 **Reconnaissance:** VLOS and BVLOS reconnaissance flights launch from a safe site near the presumed location of the subject. The RPA is navigated in a search pattern tailored to the geography of the subject's environment, such as following a drainage where a subject is lost in riverine terrain, or contouring a slope in mountainous terrain. On locating the subject the RPA marks the location and maintains visual contact until further instructions are received and approval is given to return to the launch site.
 
-**Payload delivery:** Using RPAS equipped with manufacturer-declared release mechanisms, the flight launches and proceeds directly to the known location of the subject. The RPA hovers above the subject at a safe altitude and releases the package. After confirming successful delivery the RPA returns to the launch site.
+**Payload delivery:** Carriage and release of supplies or equipment to a subject or team, conducted with a medium RPA under Operations Manual Section 13, or with a small RPA equipped with a manufacturer-declared release mechanism under Sections 5 and 7. The flight launches from a prepared site and proceeds to the delivery location, where the load is set down by landing or lowered by winch. Free-drop release is not authorized without specific Chief Pilot approval. Medium RPA operations are limited to an operating weight of 150 kg including payload, require a current Standard 922 declaration for the model and operation, and maintain the separations and visibility limits of Operations Manual 13.5.
 
 **Authority:** Flight profiles are conducted within the parameters the pilot's certificate allows, or under a valid SFOC held by the Organization where one applies (Operations Manual Section 5).
 
@@ -8228,6 +8936,25 @@ The region is situated in the Sea to Sky corridor of British Columbia, positione
 - **Forested areas:** Dense temperate rainforest in the south and central corridors with coniferous and deciduous cover, transitioning to drier interior forest types in the northern and eastern portions of the northern corridor
 - **Water bodies:** Howe Sound, Daisy Lake, Green Lake, Alta Lake, Cheakamus Lake, Lillooet Lake, Birkenhead Lake, Duffey and Joffre lakes, and numerous rivers and creeks
 - **Agricultural land:** Pemberton Meadows and the Lillooet valley bottom contain active agricultural operations, including seasonal aerial application activity
+
+---
+
+
+### 3.5 Launch and Delivery Site Requirements (Medium RPA)
+
+Medium RPA used for payload delivery (Operations Manual Section 13) impose site requirements the small fleet does not. The Rapid Site Survey confirms these on scene.
+
+| Requirement | Standard |
+|-------------|----------|
+| Launch area | Clear area accommodating the aircraft with arms and propellers unfolded, plus the manufacturer's propeller safe distance (3.5 m for the FlyCart 30), plus room for the loading party to work clear of the rotor arc |
+| Surface | Firm and level, capable of supporting the loaded aircraft; loose snow, deep duff, and unconsolidated scree are unsuitable; loose debris cleared to prevent rotor wash projectiles |
+| Rotor wash | Significantly greater than the small fleet. Assess for loose gear, tarps, tents, and casualty care in progress within the wash radius |
+| Approach and departure | Clear paths in at least two directions where terrain allows, accounting for the reduced climb performance of a loaded aircraft |
+| Cordon | Sized to the separation required by Operations Manual 13.5 |
+| Delivery site | Clear of overhead obstruction for the descent; ground party positioned outside the descent footprint; for winch operations, clear of canopy and wires that could entangle the cable |
+| Alternate landing sites | At least one identified before launch, per the aircraft's alternate landing site function where provided |
+
+Suitable launch areas for an aircraft of this size are far less common in Sea to Sky terrain than for the small fleet. Candidate sites near likely tasking areas are recorded in Appendix A as the survey matures.
 
 ---
 
@@ -8286,6 +9013,17 @@ The following hazards are present within the region. Controls listed are minimum
 - **Signal interference:** Rugged terrain and dense vegetation interfere with GNSS and C2 signals, risking loss of control.
 - **Battery drain:** Cold temperatures at higher altitudes cause faster battery drain, reducing flight time and increasing the risk of the RPA running out of power before returning.
 - **Control:** Maintain awareness of link status through the telemetry feed. The PIC is trained to take frequent battery readings; if abnormal drain occurs, flight time is managed accordingly.
+
+---
+
+
+### 4.9 Hazards Specific to Medium RPA Operations
+
+- **Mass and energy:** An aircraft of 95 kg to 150 kg presents a fundamentally different hazard from the small fleet. Cordons, abort decisions, and the treatment of any incident scene are sized accordingly.
+- **Battery systems:** The battery packs are large and carry a significant thermal hazard if damaged. A damaged pack is not approached, is not moved, and is isolated until it can be assessed.
+- **Suspended loads:** A load on a line is a hazard to anyone beneath it for the whole flight, not only at the delivery point. The flight path avoids overflight of persons wherever terrain allows.
+- **Parachute footprint:** Where a parachute deploys, the descent is wind-dependent and the aircraft may land well displaced from the point of deployment. The footprint is estimated from the manufacturer's descent rate and the wind on the day.
+- **Reduced weather envelope:** The CAR 901.34(2) relationship between ground visibility and permitted distance, which applies to medium RPA only, will frequently bind before the general BVLOS weather minima do.
 
 ---
 
@@ -8424,6 +9162,15 @@ Each Organization maintains current contacts for the heli-ski, flight training, 
 
 ---
 
+
+### 7.7 Airspace Considerations for Medium RPA
+
+- Medium RPA BVLOS must remain at least 1 km from any populated area for the entire operational volume including the ground risk buffer (CAR 901.87(a)). In the corridor this confines BVLOS delivery to backcountry and alpine terrain.
+- Where a delivery aircraft is equipped with ADS-B, it is used for situational awareness in addition to, and not in place of, visual observers.
+- The larger aircraft is more conspicuous to other airspace users, which is worth noting when coordinating with heli-ski, flight training, or industrial operators before an operation.
+
+---
+
 ## 8. Emergency Preparedness
 
 ### 8.1 RPAS Emergency Notification
@@ -8436,7 +9183,7 @@ In the event of an RPAS emergency the following are informed immediately.
 | Emergency in the direction of controlled airspace | Vancouver International (CYVR): 604-207-7022 |
 | Critical situation, injury | 911 |
 
-During a fly-away, follow the fly-away script (Operations Manual Section 13.4).
+During a fly-away, follow the fly-away script (Operations Manual Section 14.4).
 
 ### 8.2 Medical Emergency Plan
 
@@ -8474,7 +9221,7 @@ The following items require confirmation against primary sources before this sur
 - **Appendix B:** Terrain and elevation reference models
 - **Appendix C:** VNC extracts and frequency card
 - **Appendix D:** Population density map extracts (AC 903-001 Appendix G methodology)
-- **Appendix E:** Emergency fly-away script (see Operations Manual Section 13.4)
+- **Appendix E:** Emergency fly-away script (see Operations Manual Section 14.4)
 
 ---
 

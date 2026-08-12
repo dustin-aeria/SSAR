@@ -500,6 +500,69 @@ The trainer will review flight logs (AirData) to verify:
 
 ---
 
+### 4.9 Medium RPA and Payload Delivery Training
+
+> **STATUS: PROVISIONAL.** Payload delivery is documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+#### 4.9.1 Prerequisites
+
+| Requirement | Standard |
+|-------------|----------|
+| Certificate | Advanced (CAR 901.64), or Level 1 Complex (CAR 901.90) where BVLOS delivery is intended |
+| Program standing | Foundation and Advanced Training complete; current on at least one Program aircraft |
+| Flight hours | Minimum 25 hours total Program flight time before commencing medium RPA training |
+| Endorsement | Chief Pilot endorsement to enter the medium RPA stream |
+
+#### 4.9.2 Ground School (minimum 8 hours)
+
+| Module | Duration | Content |
+|--------|----------|---------|
+| Regulatory framework | 90 min | Medium RPA definition and the 150 kg ceiling; operating weight including payload; Division V and VI authority; the declaration requirement; CAR 901.26(b) separation; CAR 901.34(2) visibility relationship; payload rules at 901.43 and 901.50 |
+| Aircraft systems | 120 min | Airframe, propulsion, battery system and charging, positioning and RTK, obstacle sensing, parachute system, FPV and camera, alternate landing sites |
+| Weight, balance and performance | 90 min | Operating weight calculation; centre of gravity; altitude and temperature derating; endurance and range with and without load; the changed performance of the return leg after release |
+| Delivery systems | 90 min | Cargo mode loading and securing; winch operation per the manufacturer's manual; swing control; cut-cable protection and when it is justified |
+| Risk and emergencies | 90 min | The payload SORA assessment in outline (Safety Manual 3.11); load swing; entanglement; parachute deployment and footprint; forced landing with cargo; battery thermal hazard; cordon sizing |
+| Site and crew | 60 min | Launch and delivery site standards; crew roles including loadmaster; ground party coordination and release calls; abort criteria |
+
+#### 4.9.3 Flight Training Progression
+
+Each stage is completed to the Chief Pilot's satisfaction before the next begins. Stages 1 to 4 are conducted in benign terrain before any mountain operation.
+
+| Stage | Content | Minimum |
+|-------|---------|---------|
+| 1. Handling, unloaded | Takeoff, hover, basic manoeuvring, landing, RTH, alternate landing site use | 5 flights |
+| 2. Handling, light load | As stage 1 at approximately one third of maximum payload; hover check discipline | 5 flights |
+| 3. Handling, full load | As stage 1 at maximum planned payload for the conditions; performance and endurance observed against calculation | 5 flights |
+| 4. Delivery, method-specific | Cargo land-and-release and, where used, winch delivery to a marked site with a ground party | 5 deliveries of each method used |
+| 5. Emergency drills | Simulated load swing recovery, simulated entanglement decision, lost link with load, forced landing site selection | Each drill demonstrated |
+| 6. Mountain and operational | Delivery in representative terrain with a full crew, from tasking through to load receipt | 3 complete missions |
+
+#### 4.9.4 Competency Standard
+
+The candidate demonstrates:
+
+- Correct calculation of operating weight, including payload and safety equipment, with an independent check by the loadmaster
+- Correct determination of authority and confirmation of the declaration before flight
+- Correct application of the separation and visibility limits, including the CAR 901.34(2) relationship
+- Stable handling with a load, with no divergent swing
+- Correct and timely abort decisions when criteria are met
+- Clear communication with the ground party through the delivery sequence
+- Sound emergency decision making, particularly the cut-cable judgment
+
+Assessment is by a Flight Reviewer or the Chief Pilot, recorded per CAR 901.223.
+
+#### 4.9.5 Currency
+
+| Requirement | Interval |
+|-------------|----------|
+| Delivery flight in the type flown | At least one every 90 days |
+| Emergency drill set | At least annually |
+| Ground school refresh | On any change to the aircraft, the delivery system, or the regulatory framework |
+
+A pilot current on the M30T or M4TD is **not** thereby current on a medium RPA. Currency is per type and per delivery method.
+
+---
+
 ## 5. Standard Scenario Training
 
 ### 5.1 STSC-003 High Altitude VLOS Training
@@ -1211,6 +1274,26 @@ A member may be asked to assist as an additional lookout under direct crew super
 - [ ] Member confirms comfort with responsibilities
 
 Full VO qualification requires Section 6 training; awareness-level tasking is supplemental eyes only and never replaces the qualified VO.
+
+
+#### 12.3.7 Payload Delivery Aircraft
+
+The Program may operate delivery aircraft weighing 95 kg to 150 kg fully loaded, far larger than the search drones most members have seen. They are louder, their rotor wash is strong enough to move loose gear and disturb casualty care, and the cordon around them is much larger.
+
+**How to help.**
+
+- Stay outside the cordon at all times unless the crew tasks you to assist
+- Secure loose gear, tarps, and tent flies before launch or landing near your position
+- If a load is being lowered on a line, never stand under it and never reach for it until the crew calls it clear
+- Only handle a delivered load when the crew or ground party tells you to
+- If you hear a call for parachute deployment, move away from the area beneath the aircraft immediately and keep clear; the aircraft may land well away from where it started descending
+
+**What not to do.**
+
+- Do not approach a landed delivery aircraft until the props are stopped and the PIC clears you
+- Do not attempt to steady, guide, or catch a suspended load
+- Do not handle the battery packs
+- If the aircraft is damaged in any way, keep clear and keep others clear; the batteries present a fire hazard and are not to be approached
 
 ### 12.4 Awareness Quick Card
 

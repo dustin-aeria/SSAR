@@ -112,6 +112,35 @@ Assists the PIC in maintaining safety and situational awareness.
 
 ---
 
+### 1.6 Loadmaster
+
+> **STATUS: PROVISIONAL.** This role supports payload delivery operations, which are documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+The Loadmaster is responsible for everything about the payload: what it is, what it weighs, how it is secured, and whether the aircraft is safe to fly with it.
+
+**Required credentials**
+
+| Requirement | Standard |
+|-------------|----------|
+| Program standing | Trained Program member; Visual Observer qualification recommended |
+| Training | Medium RPA ground school modules on weight and balance, delivery systems, and site and crew (Training Manual 4.9.2) |
+| Assessment | Practical assessment on load preparation, weight verification, and securing, signed off by the Chief Pilot |
+| Currency | Participation in at least one delivery operation or drill every 12 months |
+
+**Responsibilities**
+
+1. Confirms the payload contents are permitted under CAR 901.43(1) and Program policy
+2. Determines payload weight by measurement, not estimate, and states it to the PIC
+3. Confirms total operating weight is within the aircraft limit for the conditions and at or below 150 kg
+4. Secures the load so it cannot shift, and confirms centre of gravity within limits
+5. Controls the loading area and keeps persons clear of the rotor arc during loading
+6. Confirms the load is released and the aircraft clear before the aircraft departs the delivery point where the loadmaster is present
+7. Records the payload details for the delivery log
+
+The Loadmaster has the authority to stop a loading operation and to refuse a load that cannot be verified or safely secured.
+
+---
+
 ## 2. Pilot Training Program
 
 ### 2.1 Purpose
@@ -308,6 +337,62 @@ All pilots qualified for SAR operations must complete training on time-critical 
 - Situational awareness
 - CRM principles
 - Fatigue recognition
+
+### 2.9.1 Human-Machine Interface (HMI) Evaluation (OSO#20)
+
+#### Purpose
+
+This section documents the Human-Machine Interface evaluation for Program RPAS operations per SORA v2.5 OSO#20 (human machine interface evaluation), required at low robustness for SAIL II operations. The evaluation ensures that the aircraft systems and ground control interface are designed to support safe crew operations and minimize human error.
+
+#### HMI Evaluation Criteria
+
+| Criteria | Requirement | the Program Assessment |
+|----------|-------------|-----------------|
+| **Display Readability** | Clear, unambiguous display of critical flight data | Met - DJI RC Plus/Pro controllers have high-visibility screens |
+| **Warning Systems** | Audible and visual alerts for critical conditions | Met - Multi-modal warnings (visual, audible, haptic) |
+| **Control Layout** | Intuitive, accessible controls for normal and emergency ops | Met - Standard RC layout, emergency functions accessible |
+| **Information Priority** | Critical information prominently displayed | Met - Battery, altitude, signal strength always visible |
+| **Workload Management** | Interface does not overload operator during high-tempo ops | Met - Automation reduces workload; key data summarized |
+
+#### DJI RC Plus Controller HMI Assessment
+
+| Interface Element | Function | Usability Rating |
+|-------------------|----------|------------------|
+| Main display | Flight telemetry, video feed | High - 7" high-bright screen |
+| Physical sticks | Primary flight control | High - Standard RC Pro layout |
+| Function buttons | Mode changes, camera control | Medium - Requires familiarity |
+| Emergency stop | Immediate motor stop | High - Clearly marked, accessible |
+| RTH button | Return to home activation | High - Dedicated, prominent |
+| Audio alerts | Warning annunciation | High - Clear, distinguishable tones |
+| Haptic feedback | Control confirmation | Medium - Present but subtle |
+
+#### Pilot App Interface (DJI Pilot 2)
+
+| Feature | Function | Evaluation |
+|---------|----------|------------|
+| Map overlay | Airspace, geofences, flight path | Clear, intuitive |
+| Telemetry display | Aircraft status, sensors | Comprehensive, readable |
+| Warning messages | Alerts and notifications | Prominent, actionable |
+| Camera controls | Gimbal, zoom, recording | Accessible, logical layout |
+| Settings access | Configuration menus | Adequate for pre-flight |
+
+#### HMI Risk Mitigations
+
+| Risk | Mitigation |
+|------|------------|
+| Display glare | Anti-glare hood provided; operate from shaded position |
+| Cold weather touch | Gloves compatible; physical buttons available |
+| Information overload | Pre-flight setup reduces in-flight configuration |
+| Unfamiliar interface | Standardized aircraft types; regular training |
+
+#### Periodic HMI Review
+
+| Review Element | Frequency | Responsible |
+|----------------|-----------|-------------|
+| Controller firmware | After each update | Chief Pilot |
+| New aircraft integration | Before operational use | Chief Pilot |
+| Incident-based review | After HMI-related event | Safety Manager |
+| Annual assessment | Yearly | Chief Pilot |
 
 ### 2.10 Competency-Based Assessment
 
@@ -583,6 +668,10 @@ This section establishes the pilot competency records system for Program RPAS op
 | M30T type training | | | |
 | M4TD type training | | | |
 | Other type training (specify) | | | |
+| Medium RPA type training (specify type) | | | |
+| Payload delivery, cargo method | | | |
+| Payload delivery, winch method | | | |
+| Loadmaster | | | |
 | STSC-003 training | | | |
 | STSC-004 BVLOS training | | | |
 | Emergency procedures | | | |

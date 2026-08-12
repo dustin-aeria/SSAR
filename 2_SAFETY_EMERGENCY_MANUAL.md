@@ -960,6 +960,133 @@ Per SORA v2.5 Table 14, the following robustness levels apply at SAIL II. L = lo
 
 ---
 
+### 3.11 Risk Assessment: Payload Delivery with Medium RPA
+
+> **STATUS: PROVISIONAL.** Payload delivery is documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+#### 3.11.1 Scope and Relationship to Section 3
+
+Sections 3.1 to 3.10 assess Program operations conducted with small RPA in the 1 m, 25 m/s class. **Those assessments do not extend to medium RPA.** A FlyCart-class aircraft differs in characteristic dimension and mass by enough to change the intrinsic ground risk, the containment requirement, and potentially the SAIL. This Section is a separate SORA 2.5 assessment for payload delivery and is read alongside, not in place of, Section 3.
+
+#### 3.11.2 Step 1: Operational Description
+
+| Element | Description |
+|---------|-------------|
+| Operation | Carriage and release of supplies or equipment to a subject or team during a SAR tasking |
+| Aircraft | Medium RPA, reference types DJI FlyCart 30 and FlyCart 100 (Operations Manual 13.2) |
+| Environment | Sea to Sky corridor backcountry and alpine; remote to lightly populated terrain; municipalities excluded |
+| Altitude | 400 ft AGL maximum |
+| Visual | VLOS under Division V, or BVLOS under Division VI at least 1 km from any populated area |
+| Airspace | Uncontrolled (Class G) |
+| Operational volume | Flight geography plus contingency volume plus ground risk buffer per CAR 900.01, buffer at least 1:1 with planned maximum altitude |
+
+#### 3.11.3 Step 2: Intrinsic Ground Risk Class
+
+SORA 2.5 Table 2 is entered on maximum characteristic dimension (for a multi-rotor, the maximum distance between blade tips) and maximum speed, taking the leftmost column matching both.
+
+| Aircraft | Max dimension | Max speed | Column |
+|----------|---------------|-----------|--------|
+| DJI FlyCart 30 | Approximately 2.8 m unfolded | 20 m/s | **3 m / 35 m/s** |
+| DJI FlyCart 100 | Approximately 3.9 m tip to tip | 20 m/s | **8 m / 75 m/s** by the default method (see 3.11.9) |
+
+Intrinsic GRC from Table 2, 3 m column:
+
+| Population density in the iGRC footprint | iGRC (3 m column) |
+|------------------------------------------|-------------------|
+| Controlled ground area | 1 |
+| Fewer than 5 people/km² (remote) | **3** |
+| Fewer than 50 people/km² (lightly populated) | **4** |
+| Fewer than 500 people/km² | 5 |
+
+Program planning cases: remote alpine and backcountry delivery, the expected majority of taskings, gives **iGRC 3**; lightly populated valley terrain outside municipalities gives **iGRC 4**.
+
+#### 3.11.4 Step 3: Final GRC
+
+Mitigations are applied in the numerical sequence of SORA 2.5 Table 5.
+
+**M1(A) sheltering: NOT APPLIED.** The credit requires that the aircraft would not be expected to penetrate a standard dwelling. A 95 kg to 150 kg aircraft would.
+
+**M1(B) operational restrictions: NOT APPLIED** as a primary claim, though the restriction to SAR taskings in remote terrain would support it if substantiated to medium robustness under Annex B.
+
+**M1(C) ground observation, low robustness, minus 1: APPLIED.** As in 3.5.2, SAR ground presence provides observation with radio communication to the crew and clear abort criteria. For delivery the case is stronger than for search, because the delivery site is attended by a ground party who confirms it is clear before release.
+
+**M2 effects of impact dynamics reduced, medium robustness, minus 1: APPLIED, subject to evidence.** Both reference types carry an integrated parachute designed to deploy at low altitude at maximum takeoff weight. Claiming it at medium robustness requires the evidence set out in SORA Annex B: manufacturer data on deployment envelope and descent rate, evidence the system is installed and serviceable, and parachute inspection and repack in the maintenance program. **If that evidence is not assembled, M2 is not claimed and the final GRC is one higher throughout.**
+
+Where a mitigation changes descent behaviour, the ground risk buffer is re-evaluated. A parachute descent has a different, wind-dependent footprint; the buffer is sized on the manufacturer's descent rate and the wind limit for the day, and never smaller than the 1:1 minimum required by CAR 900.01.
+
+| Scenario | iGRC | M1(C) | M2 | Final GRC |
+|----------|------|-------|----|-----------|
+| Remote terrain, fewer than 5 people/km², parachute evidence in place | 3 | -1 | -1 | **1** |
+| Remote terrain, fewer than 5 people/km², no M2 claim | 3 | -1 | 0 | **2** |
+| Lightly populated, fewer than 50 people/km², parachute evidence in place | 4 | -1 | -1 | **2** |
+| Lightly populated, fewer than 50 people/km², no M2 claim | 4 | -1 | 0 | **3** |
+
+#### 3.11.5 Steps 4 and 5: Air Risk
+
+Uncontrolled, non-airport, rural, below 400 ft AGL gives an **initial ARC-b** as in 3.6. For VLOS delivery the strategic mitigation of SORA 2.5 Section 4.5.4 would reduce the ARC by one class, but cannot reduce it to ARC-a. The **residual ARC is ARC-b** for both VLOS and BVLOS delivery.
+
+#### 3.11.6 Step 6: TMPR
+
+From SORA 2.5 Table 6, residual ARC-b gives a **Low TMPR at low robustness**. For VLOS delivery this is satisfied by the see-and-avoid deconfliction scheme with visual observers, noting the Annex D caveat that an observer is not assumed to detect traffic beyond 2 NM. For BVLOS delivery it is satisfied by visual observer detect and avoid per Standard 923, which also satisfies CAR 901.95(2) in lieu of a Standard 922.10 declaration.
+
+#### 3.11.7 Step 7: SAIL
+
+From SORA 2.5 Table 7, final GRC against residual ARC-b:
+
+| Scenario | Final GRC | Residual ARC | **SAIL** |
+|----------|-----------|--------------|----------|
+| Remote terrain, M2 claimed | 1 | b | **II** |
+| Remote terrain, no M2 | 2 | b | **II** |
+| Lightly populated, M2 claimed | 2 | b | **II** |
+| Lightly populated, no M2 | 3 | b | **II** |
+
+All four cases reach **SAIL II**, so the OSO set of Section 3.8 carries across unchanged. The margin should not be taken for granted: terrain in the fewer than 5,000 people/km² band, which describes the edges of the corridor communities, would give a final GRC of 4 and **SAIL III**. The SAIL II result depends on operating in genuinely remote terrain.
+
+#### 3.11.8 Step 8: Containment
+
+Adjacent area lateral limit: distance flown in 3 minutes at maximum speed. At 20 m/s this is 3.6 km, less than the 5 km minimum, so **5 km applies**.
+
+Sheltering is not assumed applicable for the adjacent area, for the same reason M1(A) is not claimed. SORA 2.5 Table 10 (3 m UA without shelter assumption) applies:
+
+| Adjacent area average population density | Assemblies within 1 km | Containment at SAIL II |
+|------------------------------------------|------------------------|------------------------|
+| No upper limit | More than 400k | Out of scope |
+| Fewer than 50,000 people/km² | 40k to 400k | High |
+| Fewer than 5,000 people/km² | Fewer than 40k | Medium |
+| Fewer than 500 people/km² | Fewer than 40k | **Low** |
+
+Sea to Sky adjacent areas relevant to backcountry delivery are far below 500 people/km² on average, and outdoor assemblies of 40,000 people do not occur within 1 km of the areas contemplated. **Containment robustness: LOW**, subject to these operational limits being verified during the site survey for each mission:
+
+| Operational limit | Basis |
+|-------------------|-------|
+| Adjacent area average population density below 500 people/km² | Table 10 column selected |
+| No outdoor assembly exceeding 40,000 people within 1 km of the operational volume | Table 10 column selected |
+
+Low robustness containment is met by the operational volume definition, pre-programmed lost link and return behaviour, the parachute where fitted, and the emergency procedures of Section 2 as extended by 3.11.10.
+
+#### 3.11.9 The FlyCart 100 Exception
+
+By the default method the FlyCart 100, at approximately 3.9 m between blade tips, does not fit the 3 m column and falls into the **8 m column**, which raises the intrinsic GRC by one across every density band and changes containment to Table 11, where SAIL II containment is Low only below 50 people/km², Medium below 500, and High below 5,000.
+
+This is conservative in a way SORA anticipates. The 8 m column assumes a maximum speed of 75 m/s; the FlyCart 100 flies at 20 m/s, so the impact energy driving the column assignment is substantially overstated. SORA 2.5 Section 4.2.4 provides for this under "Non-typical cases", allowing the iGRC to be calculated using the model in Annex F Section 1.8 and the column matching actual risk to be selected.
+
+**Recommendation:** if the FlyCart 100 is adopted, run the Annex F Section 1.8 calculation rather than accepting the 8 m column, and present the result to Transport Canada. Until that calculation is done, plan FlyCart 100 operations on the conservative 8 m column figures.
+
+#### 3.11.10 Emergency Procedures Specific to Payload Operations
+
+| Situation | Immediate actions |
+|-----------|-------------------|
+| Load swing developing | Reduce speed; avoid control inputs that amplify the oscillation; confirm swing control active; if divergent, descend and land or set the load down at the nearest safe point |
+| Winch cable entangled | Attempt controlled release per the manual; if the aircraft is endangered, use cut-cable protection, having first confirmed the area below is clear; ground the aircraft afterward pending inspection |
+| Loss of link with a load aboard | Aircraft executes pre-programmed lost link behaviour; ground party and all crew clear the return path and the area beneath it; treat the load as a falling hazard until the aircraft is recovered |
+| Parachute deployment | Announce; clear all persons from the descent footprint, which is wind-dependent and can be substantially displaced from the aircraft's position at deployment; treat aircraft and load as a single hazard until secured |
+| Forced landing with cargo | Select the landing point for the combined mass; expect the aircraft not to be recoverable by hand; secure a cordon commensurate with a 95 kg to 150 kg aircraft |
+| Any incident involving the aircraft | Cordon substantially larger than for small aircraft; batteries of this size present a significant thermal hazard if damaged; do not approach a damaged battery pack |
+
+An occurrence involving a medium RPA meets the reporting criteria of CAR 901.49 on the same terms as any other aircraft, and operations cease until analysis and corrective action are complete.
+
+---
+
 ## 4. Hazard Identification and Risk Assessment
 
 ### 4.1 Purpose
@@ -1225,6 +1352,15 @@ The Change Risk Assessment must address:
 | High | Accountable Executive | Full change package, board notification if required |
 | Extreme | Not Approved | Change not permitted without significant redesign |
 
+#### 4.8.3 Change Approval Authority
+
+| Risk Level Introduced | Approval Authority | Additional Requirements |
+|----------------------|-------------------|------------------------|
+| Low | Chief Pilot | Document decision |
+| Medium | Chief Pilot + Safety Manager | Risk assessment documented |
+| High | Accountable Executive | Full change package, board notification if required |
+| Extreme | Not Approved | Change not permitted without significant redesign |
+
 ### 4.9 Hazard Register Maintenance
 
 - **Review frequency:** Annual or after any incident
@@ -1454,6 +1590,13 @@ Report to Operations Manager:
 
 ---
 
+### 6.8 Record Keeping
+
+- **Duration:** In compliance with CAR 901.49(2), records of the incident analysis and corrective actions must be retained for a minimum of 12 months from the date of creation
+- **Availability:** These records must be made available to the Minister of Transport upon request
+
+---
+
 ## 7. Quality Assurance Program
 
 ### 7.1 Introduction
@@ -1635,6 +1778,15 @@ Once per year, the Safety Manager (or an external auditor/peer from another SAR 
 | **Auditor Signature:** | _________________________ Date: _________ |
 | **AE Review:** | _________________________ Date: _________ |
 
+#### 7.5.4 Audit Findings Classification
+
+| Classification | Definition | Action Required | Timeline |
+|----------------|------------|-----------------|----------|
+| **Critical** | Immediate safety risk or regulatory violation | Stop operations, immediate corrective action | Immediate |
+| **Major** | Significant non-compliance affecting safety | Corrective action plan required | Within 30 days |
+| **Minor** | Minor non-compliance, low safety impact | Corrective action at next opportunity | Within 90 days |
+| **Observation** | Improvement opportunity, not non-compliance | Consider at next review | At discretion |
+
 ### 7.6 Corrective Action Process
 
 **Process:** IDENTIFY -> DOCUMENT -> CONTAIN -> INVESTIGATE -> CORRECT -> VERIFY -> CLOSE
@@ -1670,6 +1822,73 @@ The Program commits to continuous improvement through:
 | Full Management Review | Annual | AE, Chief Pilot |
 | Quarterly Status | Quarterly | Chief Pilot |
 | As-needed | As required | As appropriate |
+
+---
+
+### 7.9 Third-Party Audit Program
+
+#### 7.9.1 Purpose
+
+Per SAIL IV OSO#24 requirements, the Program maintains a third-party audit program to provide independent verification of operations, safety management, and regulatory compliance. Third-party audits supplement internal quality assurance to ensure objectivity.
+
+#### 7.9.2 Designated Third-Party Auditor
+
+| Organization | Aeria Solutions Ltd |
+|--------------|---------------------|
+| Type | Licensed RPOC Operator |
+| Location | Sea to Sky corridor, BC (local) |
+| Qualifications | Transport Canada RPOC holder, industry experience |
+| Contact | Via the Program Accountable Executive |
+
+#### 7.9.3 Audit Scope
+
+| Audit Area | Scope | OSO Reference |
+|------------|-------|---------------|
+| Operations Manual | Procedures, checklists, compliance | OSO#01 |
+| Safety Management | SMS effectiveness, reporting culture | OSO#01, OSO#08 |
+| Training Program | Records, competency assessment, currency | OSO#09 |
+| Maintenance Program | Records, airworthiness, defect tracking | OSO#03, OSO#07 |
+| SORA Compliance | OSO evidence, risk assessment validity | All OSOs |
+| Equipment Standards | C3 link, HMI, flight envelope protection | OSO#06, OSO#17, OSO#18 |
+
+#### 7.9.4 Audit Schedule
+
+| Audit Type | Frequency | Duration | Deliverable |
+|------------|-----------|----------|-------------|
+| Full RPOC Audit | Annual | 1-2 days | Formal audit report |
+| SORA/OSO Review | Annual (with full audit) | Included | OSO compliance matrix |
+| Follow-up Audit | As required | 0.5 days | Finding closure verification |
+
+#### 7.9.5 Audit Process
+
+| Step | Action | Responsible | Timeline |
+|------|--------|-------------|----------|
+| 1 | Schedule audit with Aeria Solutions Ltd | Accountable Executive | 30 days prior |
+| 2 | Provide documentation package to auditor | Chief Pilot | 14 days prior |
+| 3 | Conduct entrance meeting | AE + Auditor | Day of audit |
+| 4 | Execute audit per agreed scope | Auditor | Per schedule |
+| 5 | Conduct exit meeting with preliminary findings | Auditor | End of audit |
+| 6 | Receive formal audit report | Auditor | Within 14 days |
+| 7 | Develop corrective action plan | Chief Pilot | Within 14 days |
+| 8 | Submit corrective actions to auditor | Chief Pilot | Per timeline |
+| 9 | Verification of closure | Auditor | Per timeline |
+
+#### 7.9.6 Documentation Requirements
+
+| Document | Purpose | Retention |
+|----------|---------|-----------|
+| Audit Agreement | Terms and scope | Duration of relationship |
+| Audit Reports | Findings and observations | 5 years |
+| Corrective Action Records | Response to findings | 5 years |
+| Closure Evidence | Verification of corrections | 5 years |
+
+#### 7.9.7 Auditor Independence
+
+The third-party auditor must:
+- Not have been involved in creating the procedures being audited
+- Have no financial interest in the Program operations beyond audit fees
+- Maintain confidentiality of the Program proprietary information
+- Provide objective, evidence-based findings
 
 ---
 

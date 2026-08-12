@@ -60,7 +60,7 @@ The region is described in three sub-regions reflecting the response areas of th
 
 **Reconnaissance:** VLOS and BVLOS reconnaissance flights launch from a safe site near the presumed location of the subject. The RPA is navigated in a search pattern tailored to the geography of the subject's environment, such as following a drainage where a subject is lost in riverine terrain, or contouring a slope in mountainous terrain. On locating the subject the RPA marks the location and maintains visual contact until further instructions are received and approval is given to return to the launch site.
 
-**Payload delivery:** Using RPAS equipped with manufacturer-declared release mechanisms, the flight launches and proceeds directly to the known location of the subject. The RPA hovers above the subject at a safe altitude and releases the package. After confirming successful delivery the RPA returns to the launch site.
+**Payload delivery:** Carriage and release of supplies or equipment to a subject or team, conducted with a medium RPA under Operations Manual Section 13, or with a small RPA equipped with a manufacturer-declared release mechanism under Sections 5 and 7. The flight launches from a prepared site and proceeds to the delivery location, where the load is set down by landing or lowered by winch. Free-drop release is not authorized without specific Chief Pilot approval. Medium RPA operations are limited to an operating weight of 150 kg including payload, require a current Standard 922 declaration for the model and operation, and maintain the separations and visibility limits of Operations Manual 13.5.
 
 **Authority:** Flight profiles are conducted within the parameters the pilot's certificate allows, or under a valid SFOC held by the Organization where one applies (Operations Manual Section 5).
 
@@ -95,6 +95,25 @@ The region is situated in the Sea to Sky corridor of British Columbia, positione
 - **Forested areas:** Dense temperate rainforest in the south and central corridors with coniferous and deciduous cover, transitioning to drier interior forest types in the northern and eastern portions of the northern corridor
 - **Water bodies:** Howe Sound, Daisy Lake, Green Lake, Alta Lake, Cheakamus Lake, Lillooet Lake, Birkenhead Lake, Duffey and Joffre lakes, and numerous rivers and creeks
 - **Agricultural land:** Pemberton Meadows and the Lillooet valley bottom contain active agricultural operations, including seasonal aerial application activity
+
+---
+
+
+### 3.5 Launch and Delivery Site Requirements (Medium RPA)
+
+Medium RPA used for payload delivery (Operations Manual Section 13) impose site requirements the small fleet does not. The Rapid Site Survey confirms these on scene.
+
+| Requirement | Standard |
+|-------------|----------|
+| Launch area | Clear area accommodating the aircraft with arms and propellers unfolded, plus the manufacturer's propeller safe distance (3.5 m for the FlyCart 30), plus room for the loading party to work clear of the rotor arc |
+| Surface | Firm and level, capable of supporting the loaded aircraft; loose snow, deep duff, and unconsolidated scree are unsuitable; loose debris cleared to prevent rotor wash projectiles |
+| Rotor wash | Significantly greater than the small fleet. Assess for loose gear, tarps, tents, and casualty care in progress within the wash radius |
+| Approach and departure | Clear paths in at least two directions where terrain allows, accounting for the reduced climb performance of a loaded aircraft |
+| Cordon | Sized to the separation required by Operations Manual 13.5 |
+| Delivery site | Clear of overhead obstruction for the descent; ground party positioned outside the descent footprint; for winch operations, clear of canopy and wires that could entangle the cable |
+| Alternate landing sites | At least one identified before launch, per the aircraft's alternate landing site function where provided |
+
+Suitable launch areas for an aircraft of this size are far less common in Sea to Sky terrain than for the small fleet. Candidate sites near likely tasking areas are recorded in Appendix A as the survey matures.
 
 ---
 
@@ -153,6 +172,17 @@ The following hazards are present within the region. Controls listed are minimum
 - **Signal interference:** Rugged terrain and dense vegetation interfere with GNSS and C2 signals, risking loss of control.
 - **Battery drain:** Cold temperatures at higher altitudes cause faster battery drain, reducing flight time and increasing the risk of the RPA running out of power before returning.
 - **Control:** Maintain awareness of link status through the telemetry feed. The PIC is trained to take frequent battery readings; if abnormal drain occurs, flight time is managed accordingly.
+
+---
+
+
+### 4.9 Hazards Specific to Medium RPA Operations
+
+- **Mass and energy:** An aircraft of 95 kg to 150 kg presents a fundamentally different hazard from the small fleet. Cordons, abort decisions, and the treatment of any incident scene are sized accordingly.
+- **Battery systems:** The battery packs are large and carry a significant thermal hazard if damaged. A damaged pack is not approached, is not moved, and is isolated until it can be assessed.
+- **Suspended loads:** A load on a line is a hazard to anyone beneath it for the whole flight, not only at the delivery point. The flight path avoids overflight of persons wherever terrain allows.
+- **Parachute footprint:** Where a parachute deploys, the descent is wind-dependent and the aircraft may land well displaced from the point of deployment. The footprint is estimated from the manufacturer's descent rate and the wind on the day.
+- **Reduced weather envelope:** The CAR 901.34(2) relationship between ground visibility and permitted distance, which applies to medium RPA only, will frequently bind before the general BVLOS weather minima do.
 
 ---
 
@@ -291,6 +321,15 @@ Each Organization maintains current contacts for the heli-ski, flight training, 
 
 ---
 
+
+### 7.7 Airspace Considerations for Medium RPA
+
+- Medium RPA BVLOS must remain at least 1 km from any populated area for the entire operational volume including the ground risk buffer (CAR 901.87(a)). In the corridor this confines BVLOS delivery to backcountry and alpine terrain.
+- Where a delivery aircraft is equipped with ADS-B, it is used for situational awareness in addition to, and not in place of, visual observers.
+- The larger aircraft is more conspicuous to other airspace users, which is worth noting when coordinating with heli-ski, flight training, or industrial operators before an operation.
+
+---
+
 ## 8. Emergency Preparedness
 
 ### 8.1 RPAS Emergency Notification
@@ -303,7 +342,7 @@ In the event of an RPAS emergency the following are informed immediately.
 | Emergency in the direction of controlled airspace | Vancouver International (CYVR): 604-207-7022 |
 | Critical situation, injury | 911 |
 
-During a fly-away, follow the fly-away script (Operations Manual Section 13.4).
+During a fly-away, follow the fly-away script (Operations Manual Section 14.4).
 
 ### 8.2 Medical Emergency Plan
 
@@ -341,7 +380,7 @@ The following items require confirmation against primary sources before this sur
 - **Appendix B:** Terrain and elevation reference models
 - **Appendix C:** VNC extracts and frequency card
 - **Appendix D:** Population density map extracts (AC 903-001 Appendix G methodology)
-- **Appendix E:** Emergency fly-away script (see Operations Manual Section 13.4)
+- **Appendix E:** Emergency fly-away script (see Operations Manual Section 14.4)
 
 ---
 

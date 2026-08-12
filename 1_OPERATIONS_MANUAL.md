@@ -27,8 +27,9 @@
 10. [Weather Minimums](#10-weather-minimums)
 11. [Advanced Procedures](#11-advanced-procedures)
 12. [General Flight Procedures](#12-general-flight-procedures)
-13. [Emergency Contacts](#13-emergency-contacts)
-14. [Document Control](#14-document-control)
+13. [Payload Delivery Operations](#13-payload-delivery-operations)
+14. [Emergency Contacts](#14-emergency-contacts)
+15. [Document Control](#15-document-control)
 
 ---
 
@@ -1012,6 +1013,95 @@ Air traffic expected from:
 
 ---
 
+### 8.9 C3 Link Specification (OSO#06)
+
+#### 8.9.1 Purpose
+
+This section documents the Command, Control, and Communication (C3) link specifications for all Program RPAS to meet SAIL IV OSO#06 requirements for adequate C3 link performance.
+
+#### 8.9.2 C3 Link Components
+
+| Component | Function | Requirement |
+|-----------|----------|-------------|
+| Command Link | Control inputs to aircraft | Bi-directional, low latency |
+| Control Link | Flight commands and modes | Reliable, redundant |
+| Telemetry Link | Aircraft status to GCS | Real-time, continuous |
+| Payload Link | Camera/sensor data | High bandwidth (video) |
+
+#### 8.9.3 Aircraft C3 Specifications
+
+**DJI Matrice 30T**
+
+| Parameter | Specification | Operational Limit |
+|-----------|---------------|-------------------|
+| Control System | O3 Enterprise | - |
+| Operating Frequency | 2.4 GHz / 5.8 GHz (auto-switching) | Per ISED regulations |
+| Max Transmission Range | 15 km (unobstructed) | Operational: per VLOS/BVLOS limits |
+| Video Transmission | 1080p @ 30fps | Minimum for SAR ops |
+| Latency | <200ms (typical 120ms) | Max acceptable: 500ms |
+| Redundancy | Dual antenna, frequency hopping | Required |
+| Lost Link Action | Configurable (RTH, Hover, Land) | Set to RTH |
+| Signal Strength Warning | <30% signal | Initiate return |
+
+**DJI Matrice 4TD**
+
+| Parameter | Specification | Operational Limit |
+|-----------|---------------|-------------------|
+| Control System | O4 Enterprise | - |
+| Operating Frequency | 2.4 GHz / 5.8 GHz (auto-switching) | Per ISED regulations |
+| Max Transmission Range | 20 km (unobstructed) | Operational: per VLOS/BVLOS limits |
+| Video Transmission | 1080p @ 60fps / 4K | Minimum 1080p for SAR |
+| Latency | <130ms (typical) | Max acceptable: 500ms |
+| Redundancy | Quad antenna, frequency hopping | Required |
+| Lost Link Action | Configurable (RTH, Hover, Land) | Set to RTH |
+| Signal Strength Warning | <30% signal | Initiate return |
+
+#### 8.9.4 Link Performance Requirements
+
+| Condition | Minimum Requirement | Action if Not Met |
+|-----------|---------------------|-------------------|
+| Signal strength | >30% at all times | Return to higher signal area |
+| Video latency | <500ms | Reduce range, return |
+| Control response | <1 second | Land immediately |
+| Link quality | Stable (no dropouts >2 sec) | Return and troubleshoot |
+
+#### 8.9.5 Terrain and Environmental Factors
+
+| Factor | Impact on C3 Link | Mitigation |
+|--------|-------------------|------------|
+| Mountains/ridges | Signal blocking | Maintain line of sight to GCS |
+| Dense forest | Signal attenuation | Increase altitude, reposition GCS |
+| Urban areas | RF interference | Monitor signal quality, frequency hop |
+| Weather (rain/snow) | Minor attenuation | Account for reduced range |
+| Distance | Signal degradation | Stay within tested limits |
+
+#### 8.9.6 Lost Link Procedures
+
+| Condition | Aircraft Response | Crew Action |
+|-----------|-------------------|-------------|
+| Signal loss <10 sec | Hover in place | Attempt to regain signal |
+| Signal loss 10-30 sec | Begin RTH | Move to recovery position |
+| Signal loss >30 sec | Continue RTH | Prepare for autonomous landing |
+| Battery critical during RTH | Auto-land | Monitor via backup means |
+
+#### 8.9.7 C3 Link Verification
+
+**Pre-Flight Check:**
+- [ ] Signal strength >80% at GCS location
+- [ ] Video feed clear and stable
+- [ ] Control inputs responsive
+- [ ] RTH altitude and location set
+- [ ] Lost link actions configured
+
+**In-Flight Monitoring:**
+- Monitor signal strength continuously
+- Note any signal degradation areas
+- Record link issues in flight log
+
+---
+
+---
+
 ## 9. Environmental Operations
 
 ### 9.1 Purpose and Scope
@@ -1181,6 +1271,110 @@ To mitigate battery failure and plastic brittleness in cold environments:
 - **Pre-Flight Sources:** Pilots must utilize reliable aviation weather sources (e.g., Environment Canada Aviation Weather, NAV CANADA flight planning, or Windy.com with aviation overlays)
 - **On-Site Monitoring:** For extended operations, on-site real-time monitoring (e.g., anemometer) is required
 - **Decision Authority:** The Pilot in Command (PIC) has the final authority to cancel or suspend operations due to weather, regardless of mission urgency
+
+---
+
+### 10.8 Adverse Conditions Test Protocol (OSO#23 and OSO#24)
+
+#### 10.8.1 Purpose
+
+This section establishes the testing protocol to verify aircraft and crew capability to operate in adverse conditions as required by SAIL IV OSO#23/#24. The protocol ensures that procedures for handling deteriorating conditions are validated through controlled testing.
+
+#### 10.8.2 Adverse Conditions Categories
+
+| Category | Conditions | Aircraft Impact |
+|----------|------------|-----------------|
+| **Wind** | Sustained >8 m/s, Gusts >12 m/s | Control degradation, position hold affected |
+| **Temperature** | <0°C or >35°C | Battery performance, electronics |
+| **Precipitation** | Light rain, Snow | Sensor obstruction, ingress |
+| **Visibility** | Reduced (haze, smoke) | Visual tracking, sensor range |
+| **Combined** | Multiple factors | Cumulative degradation |
+
+#### 10.8.3 Test Protocol - Wind Conditions
+
+| Test | Condition | Aircraft Response | Pass Criteria |
+|------|-----------|-------------------|---------------|
+| W-01 | Sustained 8 m/s | Position hold | Maintains position ±5m |
+| W-02 | Sustained 10 m/s | RTH execution | Successful return |
+| W-03 | Gust 12 m/s | Emergency land | Controlled descent |
+| W-04 | Cross-wind hover | Stability | Level attitude maintained |
+
+**Test Procedure:**
+1. Monitor wind speed with calibrated anemometer
+2. Conduct test at safe altitude (>30m AGL)
+3. Verify position hold accuracy via GPS telemetry
+4. Document aircraft behavior and any anomalies
+5. Test RTH function under wind load
+
+#### 10.8.4 Test Protocol - Cold Weather Conditions
+
+| Test | Condition | Aircraft Response | Pass Criteria |
+|------|-----------|-------------------|---------------|
+| C-01 | 0°C ambient | Normal operations | All functions nominal |
+| C-02 | Battery pre-heated | Launch and climb | Normal power output |
+| C-03 | Extended hover (5 min) | Battery monitoring | Voltage stable |
+| C-04 | -10°C ambient | Cold-start procedure | Successful startup |
+
+**Test Procedure:**
+1. Pre-heat batteries per SOP
+2. Conduct warm-up hover (1 min)
+3. Monitor battery temperature and voltage
+4. Document flight time vs. standard conditions
+5. Inspect for ice accumulation post-flight
+
+#### 10.8.5 Test Protocol - Reduced Visibility
+
+| Test | Condition | Aircraft Response | Pass Criteria |
+|------|-----------|-------------------|---------------|
+| V-01 | Dawn/Dusk | Visual tracking | Strobes visible at 500m |
+| V-02 | Light haze | Position awareness | GPS/telemetry reliable |
+| V-03 | Sensor performance | Camera/thermal | Adequate image quality |
+
+**Test Procedure:**
+1. Establish baseline visibility with reference target
+2. Confirm anti-collision lighting visible
+3. Verify sensor performance at expected range
+4. Document any degradation
+
+#### 10.8.6 Test Protocol - System Degradation
+
+| Test | Simulated Condition | Expected Response | Pass Criteria |
+|------|---------------------|-------------------|---------------|
+| D-01 | Signal degradation | RTH warning | Automatic alert at 30% |
+| D-02 | GPS degradation | ATTI mode entry | Controlled flight maintained |
+| D-03 | Battery critical | Forced landing | Safe descent executed |
+
+**Test Procedure:**
+1. Fly to edge of signal range
+2. Monitor telemetry warnings
+3. Verify automatic safety responses
+4. Document system behavior
+
+#### 10.8.7 Test Documentation
+
+| Element | Requirement |
+|---------|-------------|
+| Test date and location | Recorded |
+| Aircraft serial number | Recorded |
+| Ambient conditions | Measured and recorded |
+| Test pilot | Named and signed |
+| Results | Pass/Fail with notes |
+| Anomalies | Detailed description |
+
+#### 10.8.8 Annual Verification Schedule
+
+| Test Category | Frequency | Season |
+|---------------|-----------|--------|
+| Wind tolerance | Annual | Fall (Oct-Nov) |
+| Cold weather | Annual | Winter (Dec-Jan) |
+| Visibility/lighting | Annual | Winter (Dec) |
+| System degradation | Annual | Any season |
+
+#### 10.8.9 Test Records Retention
+
+All adverse conditions test records shall be retained for 5 years and made available for third-party audit review per Section 7.9.
+
+---
 
 ---
 
@@ -1598,7 +1792,161 @@ Conduct a brief team debrief before departing the site:
 
 ---
 
-## 13. Emergency Contacts
+## 13. Payload Delivery Operations
+
+> **STATUS: PROVISIONAL.** This capability is documented but not yet authorized for operational use. Before any payload delivery operation is conducted, the Chief Pilot must confirm that a current Standard 922 declaration exists for the aircraft model and the intended operation (13.4), and the validation program of the implementation plan must be complete. Until both are satisfied, this Section is reference material only.
+
+### 13.1 Purpose and Scope
+
+Payload delivery is the carriage and release of equipment or supplies to a subject or team by RPAS. Typical Program applications are resupply to a stranded but stable subject (shelter, warmth, water, food, radio, medical kit), equipment ferry to a technical rescue site, and repeat delivery runs where helicopter support is unavailable or grounded by weather or darkness.
+
+This Section applies to any delivery conducted with a **medium remotely piloted aircraft**, defined by CAR 900.01 as an aircraft with an operating weight of more than 25 kg and not more than 150 kg. Delivery using a small RPA (250 g to 25 kg) with a manufacturer-declared release mechanism is conducted under the general provisions of Sections 5 and 7 and does not require this Section, though 13.6 to 13.9 remain sound practice.
+
+### 13.2 Operating Weight and the 150 kg Ceiling
+
+**Operating weight** is the weight of the aircraft at any point during the flight, **including any payload and any safety equipment** carried or connected (CAR 900.01). Class is therefore determined by the loaded aircraft, not the empty aircraft.
+
+> **Program rule: operations are planned and flown so that operating weight never exceeds 150 kg.** An aircraft configured or loaded above 150 kg falls outside CARs Part IX Subpart 1 entirely, requires a Special Flight Operations Certificate under CAR 903.01(a), and is not authorized by this documentation.
+
+Reference types:
+
+| Aircraft | Empty weight | Maximum takeoff weight | Class |
+|----------|--------------|------------------------|-------|
+| DJI FlyCart 30 | Approximately 65 kg with two batteries | 95 kg | Medium RPA |
+| DJI FlyCart 100 | 55.2 kg with lifting system; 60.2 kg with winch, excluding batteries | 149.9 kg configuration. A 170 kg performance specification exists and **must not be used**, as it exceeds the Part IX ceiling | Medium RPA at or below 150 kg |
+
+Payload capacity is reduced by altitude and temperature. Load planning uses the manufacturer's derating tables for the conditions on the day, not the sea-level maximum.
+
+### 13.3 Operating Authority
+
+The Core Operating Rule applies unchanged: fly within the parameters your pilot certificate allows, or under a valid SFOC held by your Organization.
+
+| Operation | Division | Authority | Pilot certificate | Reference |
+|-----------|----------|-----------|-------------------|-----------|
+| VLOS, uncontrolled airspace, 500 ft or more from uninvolved persons | V | Pilot certificate, plus declaration per 13.4 | Advanced or Level 1 Complex | CAR 901.62(d) |
+| VLOS, uncontrolled airspace, less than 500 ft but at least 100 ft from uninvolved persons | V | Pilot certificate, plus declaration per 13.4 | Advanced or Level 1 Complex | CAR 901.62(e) |
+| VLOS, less than 100 ft from uninvolved persons | V | Pilot certificate, plus declaration per 13.4 | Advanced or Level 1 Complex | CAR 901.62(f) |
+| VLOS in controlled airspace | V | Pilot certificate, plus ATS authorization and declaration | Advanced or Level 1 Complex | CAR 901.62(g), 901.71 |
+| BVLOS, uncontrolled airspace, at least 1 km from any populated area | VI | Organization RPOC | Level 1 Complex | CAR 901.87(a) |
+| BVLOS over a sparsely populated area, or less than 1 km from a populated area | Not available to medium RPA | Small aircraft only | n/a | CAR 901.87(b) |
+
+Two points differ from small-aircraft operations and are easy to get wrong:
+
+1. **Medium RPA BVLOS is more restricted, not less.** The sparsely populated allowance in 901.87(b) is available to small aircraft only. A medium aircraft flying BVLOS must remain at least 1 km from any populated area (more than 5 people per km²) for the whole flight, including the ground risk buffer.
+2. **No new pilot certificate is required.** The Advanced certificate covers aircraft up to 150 kg; TP 15263, referenced by CAR 901.64, applies to aircraft from 250 g up to and including 150 kg. Program type training and competency sign-off remain mandatory regardless (Section 2.5).
+
+### 13.4 Declaration Requirement
+
+No Division V medium RPA operation listed in 13.3 may be conducted unless a declaration has been made to the Minister under CAR 901.194 in respect of that model and each applicable technical requirement of Standard 922 (CAR 901.69(e) to (h)). Division VI BVLOS carries the equivalent requirement under CAR 901.95.
+
+For the closest-proximity operations, CAR 901.69(f) and (g), the declaration is valid only if an acceptance letter was issued for that model under CAR 901.196 within the preceding two years (CAR 901.194(3)).
+
+> **Before any delivery operation, the Chief Pilot confirms that a current declaration exists covering the specific aircraft model and the specific operation intended.** Where no applicable declaration exists, the operation requires an SFOC. Declaration status for each registered aircraft is recorded in the Organization's certificate register (Section 2.2).
+
+### 13.5 Additional Regulatory Limits for Medium RPA
+
+| Limit | Requirement | Reference |
+|-------|-------------|-----------|
+| Separation from uninvolved persons | VLOS operations remain at least 500 ft (152.4 m) horizontally, at any altitude, from any person not involved, unless conducted under Division V with the applicable declaration | CAR 901.26(b) |
+| Reduced visibility | Where ground visibility is 4 statute miles or less, a medium RPA VLOS operation is limited to a distance of no more than **half the ground visibility** | CAR 901.34(2) |
+| BVLOS weather | Ground visibility at least 3 SM and clear of cloud | CAR 901.34(3) |
+| Maximum altitude | 400 ft AGL unless a valid SFOC or an ATS authorization under 901.71(2) permits higher | CAR 901.25 |
+| Line-attached payload | A payload attached by a line is prohibited **unless** the operation is conducted in accordance with the operating manuals applicable to the system | CAR 901.43(1)(d) |
+| Hazardous payload | No payload that could create a hazard to aviation safety or cause injury to persons | CAR 901.43(1)(c) |
+| Dropping objects | No creating a hazard to persons or property on the surface by dropping an object from an aircraft in flight | CAR 901.50 |
+| PIC designation | A PIC is designated for each Division VI operation | CAR 901.222 |
+
+The visibility rule at 901.34(2) deserves emphasis because it has no small-aircraft equivalent and will frequently be the binding constraint in corridor conditions. At 4 SM visibility the aircraft may not be operated beyond 2 SM. In valley fog or falling snow it may reduce the usable envelope to a few hundred metres.
+
+### 13.6 Delivery Methods
+
+| Method | Description | Regulatory treatment | Program status |
+|--------|-------------|----------------------|----------------|
+| Cargo box, land and release | Aircraft lands, ground party or subject unloads, aircraft departs | Standard payload carriage | **Preferred where a landing site exists** |
+| Winch | Cargo lowered on a cable, releasing automatically on touchdown | Permitted only when conducted per the operating manuals (CAR 901.43(1)(d)) | Permitted, procedure at 13.8.6 |
+| Free drop | Payload released in flight to fall to the ground | Engages CAR 901.50; the Program cannot assure that a dropped object will not create a hazard | **Not authorized** without a documented justification and Chief Pilot approval for the specific mission |
+
+### 13.7 Crew Configuration
+
+Delivery operations require a larger crew than search operations. Minimum crew:
+
+| Role | Responsibility |
+|------|----------------|
+| Pilot in Command | Flies the aircraft; go/no-go; final release authority |
+| Visual Observer | Airspace and ground watch; maintains VLOS where required |
+| Loadmaster | Payload weight, securing, and centre of gravity; confirms load figures to the PIC; supervises loading area |
+| Ground party (at delivery site) | Confirms the delivery site is clear, receives the load, confirms release, keeps persons clear |
+
+Where the delivery site cannot be attended by a ground party, the delivery is treated as a release into an unattended area and the site must be confirmed clear by the crew before release.
+
+### 13.8 Normal Procedures
+
+#### 13.8.1 Mission Planning
+
+- [ ] Confirm the mission is within the documented mission set (13.1); if not, Chief Pilot approval required
+- [ ] Confirm operating authority available (13.3) and current declaration (13.4)
+- [ ] Calculate operating weight including payload, batteries, and safety equipment; confirm at or below 150 kg and within the manufacturer's limit for altitude and temperature
+- [ ] Confirm route maintains at least 1 km from any populated area if BVLOS
+- [ ] Confirm forecast visibility against CAR 901.34(2) and (3)
+- [ ] Identify launch site, delivery site, and at least one alternate landing site
+- [ ] Confirm ground party communications
+
+#### 13.8.2 Launch Site
+
+- [ ] Area adequate for the aircraft's footprint with propellers unfolded, plus the manufacturer's propeller safe distance (3.5 m for the FlyCart 30)
+- [ ] Surface firm and level; loose debris cleared
+- [ ] Approach and departure paths clear of wires, canopy, and terrain
+- [ ] Cordon established at the separation required by 13.5; uninvolved persons excluded
+- [ ] Signage and visual observer positioned to prevent approach
+
+#### 13.8.3 Loading
+
+- [ ] Payload contents recorded and checked against the prohibited categories (CAR 901.43(1))
+- [ ] Payload secured so it cannot shift in flight
+- [ ] Weight confirmed by the loadmaster and stated to the PIC
+- [ ] Centre of gravity within limits; weight and centre-of-gravity detection confirms a balanced load where the system provides it
+- [ ] Cargo box latched, or winch hook engaged and load stable
+
+#### 13.8.4 Flight
+
+- [ ] Hover check at low altitude before departure; confirm handling with the load
+- [ ] Climb and cruise per the profile planned; avoid abrupt manoeuvres with a slung load
+- [ ] Monitor for load swing; where the system provides swing control, confirm it is active
+- [ ] Monitor battery margin against the return requirement, remembering that a delivered load changes the aircraft's performance for the return leg
+
+#### 13.8.5 Delivery
+
+- [ ] Confirm delivery site clear of persons not involved, and that the ground party is in position and ready
+- [ ] Confirm the area below the aircraft is clear before descent or release
+- [ ] Ground party confirms readiness by the agreed call
+- [ ] Release or land per the method selected
+- [ ] Confirm release complete and the aircraft is clear of the load before departing
+- [ ] Ground party confirms receipt
+
+#### 13.8.6 Winch Operations
+
+Winch operations are conducted **strictly in accordance with the manufacturer's operating manual**, which is the condition on which CAR 901.43(1)(d) permits them at all. In particular:
+
+- Cable descent and retraction speeds per the manual
+- Swing control engaged where provided
+- Cable length appropriate to the terrain and the hover height; never exceeding the manual's maximum
+- The cut-cable function is used only where the load is entangled or the aircraft is otherwise endangered. Cutting is a last resort; the falling load must be considered before the cut is made
+- After any use of cut-cable protection, the aircraft is grounded pending manufacturer-specified inspection or service
+
+### 13.9 Abort Criteria
+
+The delivery is aborted, and the load returned or the flight terminated at a safe location, if any of the following occurs:
+
+- Uninvolved persons enter the launch, flight, or delivery area and cannot be cleared
+- Load swing that cannot be controlled
+- Weather deteriorates below the limits of 13.5, including the CAR 901.34(2) visibility relationship
+- Ground party loses communications or cannot confirm the site is clear
+- Battery margin falls below that required for return plus reserve
+- Any aircraft warning affecting propulsion, positioning, or the payload system
+
+---
+
+## 14. Emergency Contacts
 
 ### 13.1 Aviation Stakeholders
 
@@ -1608,7 +1956,7 @@ Conduct a brief team debrief before departing the site:
 | Sea To Sky Air | Fixed Wing | 604-898-1975 |
 | Black Tusk Helicopter | Helicopter | 604-898-4800 |
 
-### 13.2 Emergency Contacts
+### 14.2 Emergency Contacts
 
 | Contact | When | Phone |
 |---------|------|-------|
@@ -1619,7 +1967,7 @@ Conduct a brief team debrief before departing the site:
 | Whistler Health Care Centre | Medical facility, central corridor | 4380 Lorimer Road, Whistler |
 | Pemberton Health Centre | Medical facility, northern corridor | 1403 Portage Road, Pemberton |
 
-### 13.3 Aerodromes in the Program Area
+### 14.3 Aerodromes in the Program Area
 
 | Name | Code | Type | Radio | Phone | Location |
 |------|------|------|-------|-------|----------|
@@ -1629,7 +1977,7 @@ Conduct a brief team debrief before departing the site:
 | Green Lake Whistler | CAE5 | Seaplane Base | n/a | 604-932-6615 | Whistler |
 | Pemberton Regional | CYPS | Airport | [Verify in CFS] | [Verify] | Pemberton |
 
-### 13.4 Emergency Fly-Away Call Script
+### 14.4 Emergency Fly-Away Call Script
 
 **Call FIC Kamloops: 1-866-541-4101**
 
@@ -1644,7 +1992,7 @@ Conduct a brief team debrief before departing the site:
 
 ---
 
-## 14. Document Control
+## 15. Document Control
 
 ### 14.1 Document Approval
 

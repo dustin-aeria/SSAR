@@ -89,6 +89,87 @@ For any other registered aircraft, the equivalent specifications, pre-flight ins
 
 ---
 
+
+### 1.6 Medium RPA in the Maintenance Program
+
+> **STATUS: PROVISIONAL.** Payload delivery is documented but not yet authorized for operational use. See Operations Manual Section 13.
+
+Medium RPA are entered in the Organization's aircraft register and maintained under this Maintenance Control Manual on the same basis as any other registered aircraft (CAR 901.221). Before a medium RPA is tasked, the Person Responsible for RPAS Maintenance establishes and records:
+
+| Item | Source |
+|------|--------|
+| Inspection schedule and intervals | Manufacturer's maintenance program provided under CAR 901.200(a) |
+| Component life limits, including propellers, motors, and batteries | Manufacturer's documentation |
+| Delivery system maintenance: cargo latches, winch mechanism, cable, hook | Manufacturer's documentation |
+| Cable inspection criteria and retirement standard | Manufacturer's documentation; cable inspected before and after every winch operation |
+| Parachute inspection and repack interval | Manufacturer's documentation. **Where the parachute is claimed as an M2 mitigation in Safety Manual 3.11.4, this maintenance is mandatory, because the risk assessment depends on the system being serviceable** |
+| Battery handling, charging, storage, and retirement | Manufacturer's documentation, adapted from the small-fleet procedures of Section 5 |
+| Mandatory actions | Manufacturer notifications under CAR 901.200(b) |
+
+#### 1.6.1 Medium RPA Pre-Flight Inspection (additional items)
+
+- [ ] Arms fully unfolded and locked; arm-lock warning clear in the control application
+- [ ] Propellers unfolded, undamaged, and secure; no delamination at the blade roots
+- [ ] Landing gear secure and undamaged; no cracking at attachment points
+- [ ] Battery packs seated and latched; voltage and capacity difference between packs within the manufacturer's tolerance
+- [ ] Cargo box latches functional, or winch mechanism free and cable spooled correctly
+- [ ] Winch cable inspected full length for kinks, birdcaging, broken strands, and heat damage
+- [ ] Hook and any counterweight secure and undamaged
+- [ ] Parachute installed, within its repack interval, pin and bridle correct, deployment path unobstructed
+- [ ] Obstacle sensing and positioning systems report serviceable
+- [ ] Registration number clearly visible (CAR 900.14)
+
+#### 1.6.2 Payload Delivery Load Card
+
+Completed by the Loadmaster before every delivery.
+
+| Field | Entry |
+|-------|-------|
+| Aircraft | |
+| Payload description | |
+| Payload weight (measured) | |
+| Aircraft empty weight including batteries | |
+| **Total operating weight** | |
+| Manufacturer limit for altitude and temperature today | |
+| Within 150 kg Part IX ceiling | [ ] Yes |
+| Prohibited categories checked (CAR 901.43(1)) | [ ] Yes |
+| Load secured, centre of gravity confirmed | [ ] Yes |
+| Delivery method | [ ] Cargo land-and-release  [ ] Winch  [ ] Other (Chief Pilot approval attached) |
+| Loadmaster signature | |
+| PIC acknowledgement of stated weight | |
+
+#### 1.6.3 Delivery Sequence Callouts
+
+| Call | By | Response |
+|------|----|----------|
+| "Load secure, weight [X] kilograms" | Loadmaster | PIC: "Weight [X], within limits" |
+| "Delivery site clear" | Ground party | PIC: "Copy, commencing approach" |
+| "Below clear" | Ground party or VO | PIC: "Copy, descending" |
+| "Load down" | Ground party | PIC: "Copy, releasing" |
+| "Clear of load" | PIC | Ground party: "Copy, load received" |
+| "DESCEND, DESCEND, DESCEND" | Any crew member | PIC executes emergency descent |
+| "ABORT" | Any crew member | PIC discontinues the delivery |
+
+#### 1.6.4 Delivery Log
+
+Retained 12 months per CAR 901.223(1)(a); associated maintenance records 24 months per 901.223(1)(e).
+
+| Field |
+|-------|
+| Date and task number |
+| Aircraft registration and type |
+| PIC, VO, Loadmaster, ground party lead |
+| Operating authority relied upon (certificate, RPOC Division VI, SFOC number) |
+| Payload description and weight |
+| Delivery method |
+| Delivery location (coordinates) |
+| Flight time |
+| Outcome and any anomalies |
+| Cut-cable protection used (yes/no; if yes, aircraft grounded pending inspection) |
+| Parachute deployed (yes/no; if yes, incident procedures per CAR 901.49) |
+
+---
+
 ## 2. Aircraft Specifications
 
 Specifications for the reference types follow. Specifications for any other registered aircraft are recorded in the Organization's aircraft register in this same format, drawn from the manufacturer's flight manual.
