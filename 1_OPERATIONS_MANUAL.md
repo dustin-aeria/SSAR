@@ -138,7 +138,7 @@ Additional privileges:
 
 - **Division VI BVLOS (under the Organization's RPOC):** requires the Level 1 Complex certificate (CAR 901.89) and a designated PIC for the operation (CAR 901.222)
 - **STSC-003 / STSC-004 (under the Organization's valid SFOC):** requires the pilot to be granted privileges under that SFOC and to comply with its conditions
-- **Visual Observers:** for EVLOS, the VO must hold a pilot certificate (CAR 901.75); for BVLOS, the VO must be trained per Standard 923 and Training Manual Section 6
+- **Visual Observers:** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). Under the Organization's RPOC, the qualification required is simply that the person has been trained under the Program training program (CAR 901.219). A trained VO may be used on any operation where a VO is required or where an extra set of eyes is useful. Two regulatory exceptions apply: for **extended VLOS** operations the VO must additionally hold a pilot certificate (CAR 901.75), and for **BVLOS** operations where visual observer detect and avoid is relied upon, the VO must be trained in accordance with Standard 923 (CAR 901.95(2))
 
 ### 2.6 Operating Area
 
@@ -1411,7 +1411,7 @@ Used to search riverbeds or long trails where one pilot cannot see the entire ar
 
 #### 11.4.1 EVLOS Pre-Flight Setup
 
-- **Crew Certs:** Confirm ALL Visual Observers (VOs) hold a valid Basic or Advanced Pilot Certificate
+- **Crew Certs:** Confirm all Visual Observers are trained under the Program training program. For EVLOS only, confirm each VO also holds a pilot certificate (CAR 901.75)
 - **Sector Planning:** Divide the flight path into Sectors (e.g., Sector A = Pilot, Sector B = VO 1)
 - **Visual Overlap:** Sector A and Sector B must overlap to ensure continuous sight during handover
 - **Comms Check:** Verify reliable 2-way radio communication between Pilot and all VOs (Latency/Dropout = NO GO)

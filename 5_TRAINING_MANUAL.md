@@ -50,12 +50,14 @@ The Program's training philosophy is built on three principles:
 
 | Level | Title | Operations Authorized | Requirements |
 |-------|-------|----------------------|--------------|
-| Trainee | Pilot Under Training | Training aircraft only (supervised) | Enrolled in Foundation Training |
-| Stage 1 | Pilot (Basic) | VLOS <400' AGL | TC Basic + the Program Foundation |
-| Stage 2 | Pilot (Advanced) | VLOS + controlled airspace | TC Advanced + the Program Advanced |
-| Stage 3 | Standard Scenario | STSC-003 / STSC-004 | TC L1C + SS endorsement |
-| Stage 4 | Senior Pilot | All authorized operations | All endorsements complete |
-| Stage 5 | Flight Reviewer | Conduct assessments | Stage 4 + Trainer certification |
+| Trainee | Pilot Under Training | Training flights only, under the direct supervision of a certified Program pilot (CAR 901.54(2), 901.63(2), 901.89(2)) | Enrolled in the Program training stream |
+| Basic | Basic Pilot | Whatever a TC Basic certificate allows: VLOS, uncontrolled airspace, at least 100 ft from uninvolved persons (CAR 901.53). Program SAR basic training applies | TC Basic certificate (CAR 901.55) plus Program basic training complete |
+| Advanced | Advanced Pilot | Whatever a TC Advanced certificate allows: VLOS in controlled airspace, closer to uninvolved persons, EVLOS and sheltered operations, and medium RPA VLOS per Division V (CAR 901.62). Program SAR advanced permissions apply | TC Advanced certificate (CAR 901.64) plus Program advanced training complete |
+| SFOC | SFOC Pilot | Standard scenario and standing SFOC operations. The limits are those written into the SFOC itself | Advanced level complete, plus Program training for the standard scenarios and standing SFOCs held, plus granted privileges under that SFOC |
+| L1C | Level 1 Complex Pilot | Whatever a TC Level 1 Complex certificate allows: BVLOS under the Organization RPOC per Division VI (CAR 901.87) | TC Level 1 Complex certificate (CAR 901.90) plus Program training for BVLOS operations |
+| Flight Reviewer | Program Flight Reviewer | Conducts internal Program flight reviews and competency sign-offs. **This is an internal Program role, not a Transport Canada Flight Reviewer rating.** A TC flight review for certificate issue (CAR 901.64(c), 901.90(e)) must be conducted by a person holding the TC flight reviewer rating under CAR 901.176 and affiliated with a declared training provider (CAR 901.175) | Advanced or L1C level, plus Program instructor training, plus Chief Pilot appointment |
+
+Progression is sequential: a member moves up when the previous level is complete and both the member and the trainer are satisfied they are ready. The Program levels describe what a member has been trained and signed off to do. They never extend what a pilot certificate or SFOC allows; the Core Operating Rule governs (Operations Manual 1.3.1).
 
 > **How progression works.** A member moves to the next stage when they have completed the previous stage and both they and the trainer are satisfied they are ready. There are no hour minimums or elapsed-time gates between stages, because readiness varies by person and by aircraft and cannot be tracked usefully by the clock. Where this manual lists modules, drills, or flights, they are things to be trained on and demonstrated, repeated as many times as competence requires, not a quota to be counted off.
 
@@ -911,19 +913,21 @@ Flight Reviewers are senior trainers authorized to conduct formal proficiency as
 ### 8.1 Pathway Overview
 
 ```
-Foundation Training (4-6 weeks)
+Foundation Training
         ↓
 Foundation Flight Review
         ↓
-Advanced Training (4-8 weeks per aircraft type)
+Advanced Training (per aircraft type)
         ↓
 Trainer Sign-Off
         ↓
 Operational Authorization
         ↓
-Standard Scenario Training (optional progression)
+SFOC Training (standard scenarios and standing SFOCs held)
         ↓
-Senior Pilot / Flight Reviewer (experience-based)
+L1C Training (BVLOS under the Organization RPOC)
+        ↓
+Program Flight Reviewer (internal appointment)
 ```
 
 ### 8.2 Foundation Training Progression
@@ -949,23 +953,25 @@ Senior Pilot / Flight Reviewer (experience-based)
 | Outcome | Action |
 |---------|--------|
 | Successful | Written sign-off for aircraft type; cleared for live ops |
-| Unsuccessful | Written feedback; scheduled remediation (min 2 hours) |
+| Unsuccessful | Written feedback; remediation scheduled with the trainer |
 
 ### 8.4 Hold Points
 
 | Hold Point | Trigger | Resolution |
 |------------|---------|------------|
 | Foundation Hold | Does not meet Flight Review standards | Feedback, additional practice, reassessment when the trainee and trainer agree readiness is met |
-| Advanced Hold | Does not meet trainer sign-off standards | Written feedback, additional scenarios/hours (min 2 hours), re-evaluation |
+| Advanced Hold | Does not meet trainer sign-off standards | Written feedback, additional scenarios or practice, re-evaluation when ready |
 | Recurring Hold | Fails reassessment twice | Operations Manager meeting to assess program suitability |
 
 ### 8.5 Expected Timeline
 
-| Phase | Duration |
-|-------|----------|
-| Foundation Training | 4-6 weeks (one class per week + flight review prep) |
-| Advanced Training | 4-8 weeks per aircraft type |
-| **Total Time to Operational** | **8-14 weeks** for a single aircraft type |
+| Phase | Completion |
+|-------|------------|
+| Foundation Training | Classes complete and Foundation Flight Review passed |
+| Advanced Training | Type training complete and trainer sign-off obtained, per aircraft type |
+| **Operational** | When both phases are complete for at least one aircraft type and the Chief Pilot authorizes the member |
+
+Time to operational varies by member and by how often the Program trains. There is no fixed schedule; readiness is the standard.
 
 ---
 

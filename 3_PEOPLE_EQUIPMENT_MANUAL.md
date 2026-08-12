@@ -103,6 +103,15 @@ Has final authority over the safe operation of the aircraft during flight.
 
 Assists the PIC in maintaining safety and situational awareness.
 
+**Qualification.** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). Under the Organization's RPOC, the qualification is simply that the person has been trained under the Program training program (CAR 901.219). No pilot certificate is required to act as a VO on an ordinary operation. A trained VO may be used on any operation where a VO is required, and equally where an extra set of eyes is simply useful.
+
+Two exceptions come from the regulations rather than from Program policy:
+
+| Operation | Additional requirement |
+|-----------|------------------------|
+| Extended VLOS (Division V) | The VO must also hold a pilot certificate (Basic, Advanced, or L1C) and remain within 2 NM of the aircraft (CAR 901.75) |
+| BVLOS relying on visual observer detect and avoid | The VO must be trained in accordance with Standard 923 (CAR 901.95(2)) |
+
 | Area | Responsibility |
 |------|----------------|
 | Visual Line of Sight | Maintaining a clear visual line of sight with the RPAS during operations |
@@ -151,9 +160,12 @@ This section establishes the pilot training program for Program RPAS operations,
 
 | Level | Operations | Requirements |
 |-------|------------|--------------|
-| Basic | VLOS <400' AGL | TC Basic exam + the Program Foundation |
-| Advanced | VLOS + controlled airspace | TC Advanced exam + the Program Advanced |
-| Level 1 Complex | STSC-003 / STSC-004 | TC L1C exam + the Program Standard Scenario |
+| Trainee | Training flights under direct supervision only | Enrolled in the Program training stream |
+| Basic | Whatever the TC Basic certificate allows; Program SAR basic training applies | TC Basic exam plus Program basic training |
+| Advanced | Whatever the TC Advanced certificate allows; Program SAR advanced permissions apply | TC Advanced exam plus Program advanced training |
+| SFOC | Standard scenarios and standing SFOCs; SFOC limits apply | Advanced level plus Program SFOC training plus granted privileges under the SFOC |
+| L1C | Whatever the TC Level 1 Complex certificate allows (Division VI BVLOS under the RPOC) | TC L1C exam plus Program BVLOS training |
+| Flight Reviewer | Internal Program flight reviews and sign-offs (not a TC Flight Reviewer rating) | Advanced or L1C level plus Program instructor training plus Chief Pilot appointment |
 
 ### 2.3 Foundation Training
 
@@ -611,13 +623,14 @@ This section establishes the pilot competency records system for Program RPAS op
 
 ### 4.2 Qualification Structure
 
-| Stage | Title | Requirements |
+| Level | Title | Requirements |
 |-------|-------|--------------|
-| Trainee | Pilot Under Training | In training program |
-| Stage 1 | Pilot (Basic) | Advanced cert, orientation, type training |
-| Stage 2 | Standard Scenario | Stage 1 + SS training + endorsement |
-| Stage 3 | Senior Pilot | All endorsements complete |
-| Stage 4 | Flight Reviewer | Stage 3 + instructor training + designation |
+| Trainee | Pilot Under Training | Enrolled in the Program training stream; flies only under direct supervision |
+| Basic | Basic Pilot | TC Basic certificate; Program basic training and orientation complete |
+| Advanced | Advanced Pilot | TC Advanced certificate; Program advanced training complete; type training on aircraft flown |
+| SFOC | SFOC Pilot | Advanced level; trained on the standard scenarios and standing SFOCs the Organization holds; granted privileges under that SFOC |
+| L1C | Level 1 Complex Pilot | TC Level 1 Complex certificate; Program BVLOS training complete |
+| Flight Reviewer | Program Flight Reviewer (internal) | Advanced or L1C level; Program instructor training; Chief Pilot appointment. Not a Transport Canada Flight Reviewer rating |
 
 ### 4.3 Participation and Currency
 
@@ -898,10 +911,12 @@ The Chief Pilot must escalate to the Accountable Executive when:
 
 | Level | Title | Requirements |
 |-------|-------|--------------|
-| 1 | Pilot (Basic Operations) | Advanced RPAS Certificate, the Program orientation, type training |
-| 2 | Pilot (Standard Scenario) | Stage 1 + SS training + endorsement |
-| 3 | Senior Pilot | All SS endorsements + 50 hours |
-| 4 | Flight Reviewer | Stage 3 + instructor training + AE designation |
+| Trainee | Pilot Under Training | Enrolled in the Program training stream; flies only under direct supervision |
+| Basic | Basic Pilot | TC Basic certificate; Program basic training and orientation complete |
+| Advanced | Advanced Pilot | TC Advanced certificate; Program advanced training complete; type training on aircraft flown |
+| SFOC | SFOC Pilot | Advanced level; trained on the standard scenarios and standing SFOCs the Organization holds; granted privileges under that SFOC |
+| L1C | Level 1 Complex Pilot | TC Level 1 Complex certificate; Program BVLOS training complete |
+| Flight Reviewer | Program Flight Reviewer (internal) | Advanced or L1C level; Program instructor training; Chief Pilot appointment. Not a Transport Canada Flight Reviewer rating |
 
 ### 5.4 Flight Reviewer
 
