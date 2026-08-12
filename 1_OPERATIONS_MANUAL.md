@@ -523,13 +523,13 @@ Per CAR 900.01 the operational volume comprises the flight geography, the contin
 
 #### 5.5.4 Lost Link Behavior - DJI M30T
 
-| Duration | Behavior | PIC Action |
-|----------|----------|------------|
-| 0-3 seconds | Warning displayed, continues flight | Attempt reconnection |
-| 3-10 seconds | Hover in place | Move to better signal area |
-| 10-30 seconds | Begin RTH if not restored | Monitor telemetry |
-| >30 seconds | Auto-RTH at preset altitude | Prepare for landing |
-| Link restored | PIC control resumed | Assess and continue/abort |
+| Behavior | PIC Action |
+|----------|------------|
+| Warning displayed, continues flight | Attempt reconnection |
+| Hover in place | Move to better signal area |
+| Begin RTH if not restored | Monitor telemetry |
+| Auto-RTH at preset altitude | Prepare for landing |
+| PIC control resumed | Assess and continue/abort |
 
 #### 5.5.5 Weather Minimums for BVLOS (CAR 901.34(3))
 
@@ -1511,14 +1511,14 @@ Upon arrival at the operational site, conduct the following briefing:
 
 #### 12.4.1 Team Briefing Agenda
 
-| Topic | Content | Duration |
-|-------|---------|----------|
-| **Objectives** | Discuss operational goals, search areas, and expected outcomes | 2 min |
-| **Roles** | Assign Pilot in Command (PIC) and Visual Observer (VO) | 1 min |
-| **Safety** | Review emergency escape routes, nearest medical facility, and "Lost Link" procedures | 2 min |
-| **Airspace** | Confirm airspace classification, NOTAMs, and any active restrictions | 1 min |
-| **Weather** | Current conditions, forecast, and decision criteria | 1 min |
-| **Communications** | Confirm radio channels, callsigns, and backup communication methods | 1 min |
+| Topic | Content |
+|-------|---------|
+| **Objectives** | Discuss operational goals, search areas, and expected outcomes |
+| **Roles** | Assign Pilot in Command (PIC) and Visual Observer (VO) |
+| **Safety** | Review emergency escape routes, nearest medical facility, and "Lost Link" procedures |
+| **Airspace** | Confirm airspace classification, NOTAMs, and any active restrictions |
+| **Weather** | Current conditions, forecast, and decision criteria |
+| **Communications** | Confirm radio channels, callsigns, and backup communication methods |
 
 #### 12.4.2 Rapid VO Training (Mandatory for All VOs)
 

@@ -1853,11 +1853,11 @@ Per SAIL IV OSO#24 requirements, the Program maintains a third-party audit progr
 
 #### 7.9.4 Audit Schedule
 
-| Audit Type | Frequency | Duration | Deliverable |
-|------------|-----------|----------|-------------|
-| Full RPOC Audit | Annual | 1-2 days | Formal audit report |
-| SORA/OSO Review | Annual (with full audit) | Included | OSO compliance matrix |
-| Follow-up Audit | As required | 0.5 days | Finding closure verification |
+| Audit Type | Frequency | Deliverable |
+|------------|-----------|-------------|
+| Full RPOC Audit | Annual | Formal audit report |
+| SORA/OSO Review | Annual (with full audit) | OSO compliance matrix |
+| Follow-up Audit | As required | Finding closure verification |
 
 #### 7.9.5 Audit Process
 

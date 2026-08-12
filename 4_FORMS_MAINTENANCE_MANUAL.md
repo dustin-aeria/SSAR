@@ -832,7 +832,6 @@ Equipment testing is **MANDATORY** under the following conditions:
 ### 7.4 Phase 1: Ground Checks
 
 **Location:** Safe, controlled environment
-**Duration:** 10-15 minutes
 **Personnel:** PIC minimum
 
 #### 7.4.1 Pre-Power Inspection
@@ -871,7 +870,6 @@ Equipment testing is **MANDATORY** under the following conditions:
 ### 7.5 Phase 2: Hover & Basic Handling
 
 **Location:** Open area, controlled ground, clear sky
-**Duration:** 5-10 minutes
 **Personnel:** PIC + VO recommended
 
 #### 7.5.1 Launch and Hover Test
@@ -900,7 +898,6 @@ Equipment testing is **MANDATORY** under the following conditions:
 ### 7.6 Phase 3: Systems & Sensors
 
 **Location:** Open area with soft obstacles (cones, people at safe distance)
-**Duration:** 10-15 minutes
 **Personnel:** PIC + VO + soft target person
 
 #### 7.6.1 Obstacle Avoidance Test
@@ -936,7 +933,6 @@ Equipment testing is **MANDATORY** under the following conditions:
 ### 7.7 Phase 4: Emergency Logic
 
 **Location:** Open area, minimum 200m x 200m clear
-**Duration:** 10-15 minutes
 **Personnel:** PIC + VO
 
 #### 7.7.1 Return-to-Home Test

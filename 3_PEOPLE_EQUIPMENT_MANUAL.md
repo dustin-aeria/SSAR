@@ -234,7 +234,7 @@ Upon completion of Advanced Training, pilots will be able to:
 
 **Aircraft-Specific Training:** Complete type-specific training on each RPAS type the pilot will operate. Type training is required for every aircraft in the Organization's register, whether or not it is one of the reference types documented in this suite (currently the DJI M30T and DJI Matrice 4TD).
 
-**Flight Hours:** Log a minimum of 5 hours of flight time per RPAS type. Hours may include:
+**Flight Hours:** Log a sufficient flight time on each RPAS type for the Chief Pilot to be satisfied with the pilot's competence. Hours may include:
 - Supervised flights with a certified trainer
 - AirData-logged unsupervised flights conducted under VLOS, below 400 feet, in safe and legal conditions
 - Unsupervised flights must be clearly identifiable as training and reviewed by a certified trainer via AirData
@@ -284,27 +284,26 @@ Upon completion of Advanced Training, pilots will be able to:
 
 ### 2.6 STSC-003 High Altitude Training
 
-| Topic | Duration | Competency |
-|-------|----------|------------|
-| ATC Coordination Procedures | 3 hours | ATC-01: Proper coordination execution |
-| High Altitude Weather | 2 hours | WX-01: Altitude weather assessment |
-| Airspace and Traffic | 2 hours | AS-01: Traffic identification |
-| Emergency Procedures | 2 hours | EM-01: Emergency descent execution |
-| SORA for High Altitude | 3 hours | SORA module completion |
+| Topic | Competency |
+|-------|------------|
+| ATC Coordination Procedures | ATC-01: Proper coordination execution |
+| High Altitude Weather | WX-01: Altitude weather assessment |
+| Airspace and Traffic | AS-01: Traffic identification |
+| Emergency Procedures | EM-01: Emergency descent execution |
+| SORA for High Altitude | SORA module completion |
 
 ### 2.7 STSC-004 BVLOS Training
 
-| Topic | Duration | Competency |
-|-------|----------|------------|
-| SORA for BVLOS | 4 hours | Complete SORA module |
-| Lost Link Procedures | 2 hours | LL-01: Lost link response |
-| Navigation Without VLOS | 3 hours | NAV-01: Telemetry navigation |
-| Emergency Procedures BVLOS | 3 hours | EM-02: BVLOS emergencies |
-| Population Density Assessment | 2 hours | PD-01: Area assessment |
-| Controlled Ground Area | 2 hours | CGA-01: M1 implementation |
+| Topic | Competency |
+|-------|------------|
+| SORA for BVLOS | Complete SORA module |
+| Lost Link Procedures | LL-01: Lost link response |
+| Navigation Without VLOS | NAV-01: Telemetry navigation |
+| Emergency Procedures BVLOS | EM-02: BVLOS emergencies |
+| Population Density Assessment | PD-01: Area assessment |
+| Controlled Ground Area | CGA-01: M1 implementation |
 
-### 2.8 Time-Critical SAR Operations Training (2 hours)
-
+### 2.8 Time-Critical SAR Operations Training
 All pilots qualified for SAR operations must complete training on time-critical scenario selection.
 
 #### 2.8.1 Learning Objectives
@@ -329,8 +328,7 @@ All pilots qualified for SAR operations must complete training on time-critical 
 - **Practical demonstration:** Execute terrain-following search under 400' AGL
 - **Crew briefing:** Deliver time-critical operations brief to simulated crew
 
-### 2.9 Human Factors Training (4 hours)
-
+### 2.9 Human Factors Training
 - IMSAFE checklist
 - Stress recognition
 - Decision-making models (DECIDE, OODA)
@@ -433,7 +431,7 @@ This section documents the Human-Machine Interface evaluation for Program RPAS o
 | Outcome | Action |
 |---------|--------|
 | Successful | Authorization to operate training aircraft |
-| Unsuccessful | Additional practice + reassessment within 14 days |
+| Unsuccessful | Additional practice + reassessment when the trainee and trainer agree readiness is met |
 
 #### 2.11.2 Advanced Training Progression
 
@@ -446,35 +444,38 @@ This section documents the Human-Machine Interface evaluation for Program RPAS o
 
 | Hold Point | Details |
 |------------|---------|
-| Foundation Hold | Trainee does not meet Flight Review standards. Feedback provided; additional practice (min 1 week); reassessment within 14 days. |
-| Advanced Hold | Pilot does not meet trainer sign-off standards. Written feedback; additional scenarios or flight hours (min 2 hours); re-evaluation scheduled. |
+| Foundation Hold | Trainee does not meet Flight Review standards. Feedback provided; additional practice; reassessment when the trainee and trainer agree readiness is met. |
+| Advanced Hold | Pilot does not meet trainer sign-off standards. Written feedback; additional scenarios or flight practice; re-evaluation scheduled. |
 | Recurring Hold | If trainee fails reassessment twice, Operations Manager meets with trainee to assess program suitability. |
 
 #### 2.11.4 Timeline
 
 > **Expected timeline:** Foundation Training 4-6 weeks (one class per week + 1-2 weeks for flight review prep) -> Advanced Training 4-8 weeks per aircraft type -> Total Time to Operational: 8-14 weeks for a single aircraft type.
 
-### 2.12 Recurrency Training
+### 2.12 Program Participation Requirements
 
-| Requirement | Frequency | Content |
-|-------------|-----------|---------|
-| Currency flights | 90 days | 3 flights including 1 each VLOS/BVLOS |
-| Ground recurrency | Annual | 4 hours covering updates, incidents, refresher |
-| Practical recurrency | Annual | 2 hours emergency procedures |
-| SORA refresher | Annual | 2 hours SORA updates and review |
-| Human Factors | Annual | 1 hour HF refresher |
+The Program sets four participation requirements, detailed in Training Manual Section 10.1:
+
+| # | Requirement |
+|---|-------------|
+| 1 | Onboarding training completed before participating in Program operations (new members) |
+| 2 | Recurrent ground training, 2 hours per year |
+| 3 | 20 hours per year of drone team activity, counting training, activations, flight time, exercises, maintenance, and meetings |
+| 4 | 3 drone tasks per year, meaning participation in a tasking or realistic exercise in any crew role |
+
+These are separate from, and do not replace, the pilot certificate recency requirements of CAR 901.56, 901.65, and 901.91.
 
 ### 2.13 Ongoing Development
 
-> Pilots must participate in recurrent advanced training sessions and log at least 1 hour of flight time per month on each RPAS type to maintain operational currency. Failure to maintain currency will result in withdrawal of operational authorization until proficiency is re-established through additional training.
+> Pilots fly each RPAS type regularly enough to remain comfortable and competent on it. Where a pilot is rusty on a type, or the Chief Pilot judges them to be, they fly with a trainer before taking an operational tasking on that type. This is a competence judgment rather than a fixed interval.
 
 ### 2.14 Training Records
 
 Per CAR 901.223, maintain records of:
-- All training completed with dates and durations
+- All training completed, with dates
 - Assessment results
 - Instructor/examiner details
-- Qualifications achieved with expiry dates
+- Qualifications achieved, and certificate recency dates where regulatory
 - Recurrency training completion
 
 ---
@@ -615,19 +616,17 @@ This section establishes the pilot competency records system for Program RPAS op
 | Trainee | Pilot Under Training | In training program |
 | Stage 1 | Pilot (Basic) | Advanced cert, orientation, type training |
 | Stage 2 | Standard Scenario | Stage 1 + SS training + endorsement |
-| Stage 3 | Senior Pilot | All endorsements + 50 hours |
+| Stage 3 | Senior Pilot | All endorsements complete |
 | Stage 4 | Flight Reviewer | Stage 3 + instructor training + designation |
 
-### 4.3 Currency Requirements
+### 4.3 Participation and Currency
 
-| Requirement | Period | Criteria |
-|-------------|--------|----------|
-| General Flight | 90 days | 3 flights |
-| Aircraft Type | 90 days | 1 flight per type |
-| STSC-003 | 6 months | 1 high altitude operation |
-| STSC-004 | 6 months | 2 BVLOS operations (2NM) |
-| Annual Proficiency | 12 months | Flight Reviewer check |
-| Recurrent Training | 12 months | Training completion |
+| Item | Standard |
+|------|----------|
+| Program participation | The four requirements of Training Manual 10.1: onboarding (new members), 2 hours annual recurrent ground training, 20 hours annual drone team activity, 3 drone tasks per year |
+| Certificate recency | Per CAR 901.56, 901.65, or 901.91 as applicable to the certificate held, within the preceding 24 months |
+| Type competence | Pilot is comfortable and competent on each type flown, in the Chief Pilot's judgment. Where not, a flight with a trainer is required before operational tasking on that type |
+| Specialised operations | Same standard applies to BVLOS, high altitude, and payload delivery: demonstrated comfort with the operation rather than a fixed interval |
 
 ### 4.4 Records Maintained
 
@@ -642,10 +641,9 @@ This section establishes the pilot competency records system for Program RPAS op
 
 #### 4.4.2 Flight Time Summary
 
-- Total hours/flights
-- By aircraft type
+- Flights and hours by aircraft type, recorded for the Program activity total (Training Manual 10.1, requirement 3)
+- Taskings participated in, for requirement 4
 - By operation type
-- Rolling periods (90 days, 12 months)
 
 ### 4.5 Pilot Training Record Template
 
@@ -677,24 +675,21 @@ This section establishes the pilot competency records system for Program RPAS op
 | Emergency procedures | | | |
 | SAR operations training | | | |
 
-### 4.6 Currency Tracking Summary
+### 4.6 Annual Participation Summary
 
-| Aircraft | Last Flight | Flights (90 days) | Hours (90 days) | Status |
-|----------|-------------|-------------------|-----------------|--------|
-| DJI M30T | | | | |
-| DJI M4TD | | | | |
-| Other registered type | | | | |
-| Total | | | | |
+| Member | Onboarding complete | Recurrent ground training (2 hrs) | Drone team activity (20 hrs) | Drone tasks (3) | Certificate recency current |
+|--------|---------------------|-----------------------------------|------------------------------|-----------------|------------------------------|
+| | | | | | |
 
-**Status Legend:**
+**Status legend**
 
 | GREEN | YELLOW | RED |
 |-------|--------|-----|
-| Current | Due within 30 days | Expired |
+| All four Program requirements met and certificate recency current | Shortfall in one Program requirement; participation continues at Chief Pilot's discretion | Certificate recency lapsed, or Chief Pilot has stood the member down pending training |
 
 ### 4.7 Proficiency Check Records
 
-Annual proficiency checks include:
+Proficiency checks are conducted when the Chief Pilot considers one useful, when a member returns after a period away, and after any performance concern. They include:
 - **Ground evaluation:** Regulatory, airspace, weather, emergency, SMS knowledge
 - **Practical evaluation:** Pre-flight, normal operations, emergency procedures
 
@@ -752,8 +747,8 @@ The Chief Pilot must meet and maintain the following minimum qualifications:
 | Requirement | Standard | Evidence |
 |-------------|----------|----------|
 | RPAS Certificate | Valid Transport Canada Advanced RPAS Operator Certificate | TC Certificate |
-| Flight Hours | Minimum 100 hours total RPAS flight time | AirData logs |
-| Operational Experience | Minimum 2 years as operational Program RPAS pilot | Personnel records |
+| Experience | Substantial operational RPAS experience across the Program's aircraft types and operation types | Program activity records |
+| Operational Experience | Sustained service as an operational Program RPAS pilot, sufficient for the Accountable Executive to have confidence in the appointment | Personnel records |
 | Scenario Endorsements | All Standard Scenario endorsements (STSC-003, STSC-004) | Endorsement records |
 | Trainer Status | Certified Program RPAS Trainer | Designation letter |
 | SMS Knowledge | Completed SMS training, demonstrated competency | Training records |
@@ -815,7 +810,7 @@ The Chief Pilot is responsible for the day-to-day management of RPAS operations,
 | Training Program | Oversee training program delivery and effectiveness | Ongoing |
 | Trainer Supervision | Supervise and evaluate trainers | Ongoing |
 | Curriculum Review | Review and approve training curriculum changes | Annual / as needed |
-| Training Records | Ensure training records are complete and accurate | Quarterly audit |
+| Training Records | Ensure training records are complete and accurate | Reviewed at least annually |
 | Recurrency Enforcement | Ensure all pilots complete recurrency requirements | Ongoing |
 | Standards Calibration | Ensure consistent assessment standards across trainers | Semi-annual |
 
@@ -894,8 +889,8 @@ The Chief Pilot must escalate to the Accountable Executive when:
 | Operations Summary | Monthly | AE | Flight hours, missions, issues |
 | Pilot Currency Status | Monthly | AE | Currency status of all pilots |
 | Safety Summary | Monthly | AE | SPIs, incidents, hazards |
-| Training Progress | Quarterly | AE | Training pipeline, completions |
-| Equipment Status | Quarterly | AE | Fleet readiness, maintenance |
+| Training Progress | At least annually | AE | Training pipeline, completions |
+| Equipment Status | At least annually | AE | Fleet readiness, maintenance |
 | Regulatory Compliance | Semi-annual | AE | Compliance status, issues |
 | Annual Report | Annual | AE | Full program review |
 
@@ -936,38 +931,37 @@ Responsible for:
 - Instructor oversight
 - Regulatory compliance of training
 
-### 5.6 Currency Requirements - CAR 901.220
+### 5.6 Currency and Participation
 
-| Requirement | Period | Criteria |
-|-------------|--------|----------|
-| Flight Currency | 90 days | Minimum 3 flights |
-| Aircraft Type Currency | 90 days | 1 flight per type |
-| Annual Proficiency Check | 12 months | Pass check with Flight Reviewer |
-| Recurrent Training | 12 months | Complete required training |
-| STSC-003 Currency | 6 months | 1 high altitude operation |
-| STSC-004 Currency | 6 months | 1 BVLOS operation |
+| Requirement | Standard |
+|-------------|----------|
+| Certificate recency | Per CAR 901.56, 901.65, or 901.91 as applicable, within the preceding 24 months. This is regulatory and not discretionary |
+| Program participation | The four requirements of Training Manual 10.1 |
+| Type competence | Comfortable and competent on each type flown, in the Chief Pilot's judgment |
+| Specialised operations | Comfortable and competent with the specific operation (BVLOS, high altitude, payload delivery) before conducting it operationally |
 
-#### Currency Verification
+#### Pre-Flight Verification
 
-Before any flight, the PIC shall verify:
-- Personal currency
-- Aircraft type currency
-- Standard Scenario currency (if applicable)
-- Annual proficiency check current
-- Recurrent training current
+Before any flight, the PIC confirms:
 
-> **Pilots shall not conduct operations if any required currency has lapsed.**
+- Certificate held is appropriate to the operation, and recency is current per the CARs
+- They are comfortable and competent on the aircraft type and the operation intended
+- Any Organization authorization or SFOC privilege required for the operation is held
 
-### 5.7 Annual Proficiency Check
+> **A pilot who is not confident on the type or the operation does not fly it operationally until they have flown it with a trainer. Regulatory recency, once lapsed, is an absolute bar until restored.**
 
-| Element | Method | Duration |
-|---------|--------|----------|
-| Regulatory knowledge | Oral | 30 min |
-| SMS knowledge | Oral | 15 min |
-| Emergency procedures | Oral + demonstration | 30 min |
-| Pre-flight inspection | Demonstration | 15 min |
-| Normal operations | Flight | 30 min |
-| Emergency response | Simulated | 15 min |
+### 5.7 Proficiency Check
+
+Conducted when the Chief Pilot considers one useful, when a member returns after time away, and after any performance concern.
+
+| Element | Method |
+|---------|--------|
+| Regulatory knowledge | Oral |
+| SMS knowledge | Oral |
+| Emergency procedures | Oral + demonstration |
+| Pre-flight inspection | Demonstration |
+| Normal operations | Flight |
+| Emergency response | Simulated |
 
 ### 5.8 Examiner Standards
 

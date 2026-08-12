@@ -24,7 +24,7 @@
 7. [Trainer Qualifications](#7-trainer-qualifications)
 8. [Training Progression Pathway](#8-training-progression-pathway)
 9. [Competency Assessment](#9-competency-assessment)
-10. [Recurrency Training](#10-recurrency-training)
+10. [Program Participation and Currency](#10-program-participation-and-currency)
 11. [Operational Training Program](#11-operational-training-program)
 12. [Program Awareness Training](#12-program-awareness-training-all-sar-members)
 13. [Training Records](#13-training-records)
@@ -54,8 +54,10 @@ The Program's training philosophy is built on three principles:
 | Stage 1 | Pilot (Basic) | VLOS <400' AGL | TC Basic + the Program Foundation |
 | Stage 2 | Pilot (Advanced) | VLOS + controlled airspace | TC Advanced + the Program Advanced |
 | Stage 3 | Standard Scenario | STSC-003 / STSC-004 | TC L1C + SS endorsement |
-| Stage 4 | Senior Pilot | All authorized operations | All endorsements + 50 hours |
+| Stage 4 | Senior Pilot | All authorized operations | All endorsements complete |
 | Stage 5 | Flight Reviewer | Conduct assessments | Stage 4 + Trainer certification |
+
+> **How progression works.** A member moves to the next stage when they have completed the previous stage and both they and the trainer are satisfied they are ready. There are no hour minimums or elapsed-time gates between stages, because readiness varies by person and by aircraft and cannot be tracked usefully by the clock. Where this manual lists modules, drills, or flights, they are things to be trained on and demonstrated, repeated as many times as competence requires, not a quota to be counted off.
 
 ### 1.4 Regulatory Compliance
 
@@ -161,16 +163,15 @@ Upon completion of Foundation Training, trainees will be able to:
 
 ### 3.4 Foundation Training Modules
 
-| Module | Title | Duration | Content |
-|--------|-------|----------|---------|
-| **Class 1** | Introduction & Foundations | 3 hours | RPAS systems overview, team roles, regulations, basic flight skills introduction |
-| **Class 2** | Practical Application | 3 hours | Site survey deep dive, simplified flight planning, hands-on flying |
-| **Class 3** | Procedures & Role Play | 3 hours | Procedural execution, emergency response drills, crew resource management |
-| **Class 4** | Operational Readiness | 3 hours | AirData integration, NAV CANADA flight planning, realistic scenario execution |
+| Module | Title | Content |
+|--------|-------|---------|
+| **Class 1** | Introduction & Foundations | RPAS systems overview, team roles, regulations, basic flight skills introduction |
+| **Class 2** | Practical Application | Site survey deep dive, simplified flight planning, hands-on flying |
+| **Class 3** | Procedures & Role Play | Procedural execution, emergency response drills, crew resource management |
+| **Class 4** | Operational Readiness | AirData integration, NAV CANADA flight planning, realistic scenario execution |
 
 ### 3.5 Class 1: Introduction & Foundations
 
-**Duration:** 3 hours (1.5 hours ground, 1.5 hours practical)
 
 #### Ground School Topics
 - Program RPAS program overview and mission
@@ -193,7 +194,6 @@ Upon completion of Foundation Training, trainees will be able to:
 
 ### 3.6 Class 2: Practical Application
 
-**Duration:** 3 hours (1 hour ground, 2 hours practical)
 
 #### Ground School Topics
 - Site survey methodology (CAR 901.27)
@@ -215,7 +215,6 @@ Upon completion of Foundation Training, trainees will be able to:
 
 ### 3.7 Class 3: Procedures & Role Play
 
-**Duration:** 3 hours (1 hour ground, 2 hours practical)
 
 #### Ground School Topics
 - Emergency procedures overview
@@ -239,7 +238,6 @@ Upon completion of Foundation Training, trainees will be able to:
 
 ### 3.8 Class 4: Operational Readiness
 
-**Duration:** 3 hours (1 hour ground, 2 hours practical)
 
 #### Ground School Topics
 - AirData flight logging and review
@@ -402,7 +400,7 @@ The Flight Review is the culminating assessment for Foundation Training.
 If a trainee does not meet the required standard:
 1. Trainer provides specific feedback
 2. Additional practice scheduled (minimum 1 week)
-3. Reassessment within 14 days
+3. reassessment when the trainee and trainer agree readiness is met
 4. Trainee may revisit any Foundation class at trainer's discretion
 
 ---
@@ -490,7 +488,7 @@ The trainer will assess the pilot on:
 | Emergency Response | Appropriate reaction to simulated emergencies |
 
 The trainer will review flight logs (AirData) to verify:
-1. Completion of minimum 5 flight hours
+1. Chief Pilot satisfied with demonstrated handling competence
 2. Consistency of flight performance across sessions
 3. Appropriate progression through training scenarios
 
@@ -510,19 +508,18 @@ The trainer will review flight logs (AirData) to verify:
 |-------------|----------|
 | Certificate | Advanced (CAR 901.64), or Level 1 Complex (CAR 901.90) where BVLOS delivery is intended |
 | Program standing | Foundation and Advanced Training complete; current on at least one Program aircraft |
-| Flight hours | Minimum 25 hours total Program flight time before commencing medium RPA training |
+| Flight hours | Chief Pilot satisfied that the pilot is competent and comfortable on current Program aircraft|
 | Endorsement | Chief Pilot endorsement to enter the medium RPA stream |
 
-#### 4.9.2 Ground School (minimum 8 hours)
-
-| Module | Duration | Content |
-|--------|----------|---------|
-| Regulatory framework | 90 min | Medium RPA definition and the 150 kg ceiling; operating weight including payload; Division V and VI authority; the declaration requirement; CAR 901.26(b) separation; CAR 901.34(2) visibility relationship; payload rules at 901.43 and 901.50 |
-| Aircraft systems | 120 min | Airframe, propulsion, battery system and charging, positioning and RTK, obstacle sensing, parachute system, FPV and camera, alternate landing sites |
-| Weight, balance and performance | 90 min | Operating weight calculation; centre of gravity; altitude and temperature derating; endurance and range with and without load; the changed performance of the return leg after release |
-| Delivery systems | 90 min | Cargo mode loading and securing; winch operation per the manufacturer's manual; swing control; cut-cable protection and when it is justified |
-| Risk and emergencies | 90 min | The payload SORA assessment in outline (Safety Manual 3.11); load swing; entanglement; parachute deployment and footprint; forced landing with cargo; battery thermal hazard; cordon sizing |
-| Site and crew | 60 min | Launch and delivery site standards; crew roles including loadmaster; ground party coordination and release calls; abort criteria |
+#### 4.9.2 Ground School
+| Module | Content |
+|--------|---------|
+| Regulatory framework | Medium RPA definition and the 150 kg ceiling; operating weight including payload; Division V and VI authority; the declaration requirement; CAR 901.26(b) separation; CAR 901.34(2) visibility relationship; payload rules at 901.43 and 901.50 |
+| Aircraft systems | Airframe, propulsion, battery system and charging, positioning and RTK, obstacle sensing, parachute system, FPV and camera, alternate landing sites |
+| Weight, balance and performance | Operating weight calculation; centre of gravity; altitude and temperature derating; endurance and range with and without load; the changed performance of the return leg after release |
+| Delivery systems | Cargo mode loading and securing; winch operation per the manufacturer's manual; swing control; cut-cable protection and when it is justified |
+| Risk and emergencies | The payload SORA assessment in outline (Safety Manual 3.11); load swing; entanglement; parachute deployment and footprint; forced landing with cargo; battery thermal hazard; cordon sizing |
+| Site and crew | Launch and delivery site standards; crew roles including loadmaster; ground party coordination and release calls; abort criteria |
 
 #### 4.9.3 Flight Training Progression
 
@@ -530,10 +527,10 @@ Each stage is completed to the Chief Pilot's satisfaction before the next begins
 
 | Stage | Content | Minimum |
 |-------|---------|---------|
-| 1. Handling, unloaded | Takeoff, hover, basic manoeuvring, landing, RTH, alternate landing site use | 5 flights |
-| 2. Handling, light load | As stage 1 at approximately one third of maximum payload; hover check discipline | 5 flights |
-| 3. Handling, full load | As stage 1 at maximum planned payload for the conditions; performance and endurance observed against calculation | 5 flights |
-| 4. Delivery, method-specific | Cargo land-and-release and, where used, winch delivery to a marked site with a ground party | 5 deliveries of each method used |
+| 1. Handling, unloaded | Takeoff, hover, basic manoeuvring, landing, RTH, alternate landing site use | Repeated until competent |
+| 2. Handling, light load | As stage 1 at approximately one third of maximum payload; hover check discipline | Repeated until competent |
+| 3. Handling, full load | As stage 1 at maximum planned payload for the conditions; performance and endurance observed against calculation | Repeated until competent |
+| 4. Delivery, method-specific | Cargo land-and-release and, where used, winch delivery to a marked site with a ground party | Repeated until competent in each method used |
 | 5. Emergency drills | Simulated load swing recovery, simulated entanglement decision, lost link with load, forced landing site selection | Each drill demonstrated |
 | 6. Mountain and operational | Delivery in representative terrain with a full crew, from tasking through to load receipt | 3 complete missions |
 
@@ -551,13 +548,9 @@ The candidate demonstrates:
 
 Assessment is by a Flight Reviewer or the Chief Pilot, recorded per CAR 901.223.
 
-#### 4.9.5 Currency
+#### 4.9.5 Staying Current on Medium RPA
 
-| Requirement | Interval |
-|-------------|----------|
-| Delivery flight in the type flown | At least one every 90 days |
-| Emergency drill set | At least annually |
-| Ground school refresh | On any change to the aircraft, the delivery system, or the regulatory framework |
+Currency on a medium RPA is a matter of demonstrated comfort and competence, assessed by the Chief Pilot, not a fixed interval. A pilot who has not flown the type recently, or who is not confident on it, flies with a trainer before taking an operational delivery tasking. The emergency drill set is repeated whenever the Chief Pilot judges it useful, and always after any change to the aircraft or the delivery system.
 
 A pilot current on the M30T or M4TD is **not** thereby current on a medium RPA. Currency is per type and per delivery method.
 
@@ -567,15 +560,14 @@ A pilot current on the M30T or M4TD is **not** thereby current on a medium RPA. 
 
 ### 5.1 STSC-003 High Altitude VLOS Training
 
-**Duration:** 12 hours total
 
-| Topic | Duration | Competency Code |
-|-------|----------|-----------------|
-| ATC Coordination Procedures | 3 hours | ATC-01 |
-| High Altitude Weather | 2 hours | WX-01 |
-| Airspace and Traffic | 2 hours | AS-01 |
-| Emergency Procedures | 2 hours | EM-01 |
-| SORA for High Altitude | 3 hours | SORA-01 |
+| Topic | Competency Code |
+|-------|-----------------|
+| ATC Coordination Procedures | ATC-01 |
+| High Altitude Weather | WX-01 |
+| Airspace and Traffic | AS-01 |
+| Emergency Procedures | EM-01 |
+| SORA for High Altitude | SORA-01 |
 
 #### Learning Objectives
 - Execute proper ATC coordination per Standard 922
@@ -586,16 +578,15 @@ A pilot current on the M30T or M4TD is **not** thereby current on a medium RPA. 
 
 ### 5.2 STSC-004 BVLOS Training
 
-**Duration:** 16 hours total
 
-| Topic | Duration | Competency Code |
-|-------|----------|-----------------|
-| SORA for BVLOS | 4 hours | SORA-02 |
-| Lost Link Procedures | 2 hours | LL-01 |
-| Navigation Without VLOS | 3 hours | NAV-01 |
-| Emergency Procedures BVLOS | 3 hours | EM-02 |
-| Population Density Assessment | 2 hours | PD-01 |
-| Controlled Ground Area | 2 hours | CGA-01 |
+| Topic | Competency Code |
+|-------|-----------------|
+| SORA for BVLOS | SORA-02 |
+| Lost Link Procedures | LL-01 |
+| Navigation Without VLOS | NAV-01 |
+| Emergency Procedures BVLOS | EM-02 |
+| Population Density Assessment | PD-01 |
+| Controlled Ground Area | CGA-01 |
 
 #### Learning Objectives
 - Apply SORA methodology to BVLOS operations
@@ -607,7 +598,6 @@ A pilot current on the M30T or M4TD is **not** thereby current on a medium RPA. 
 
 ### 5.3 Time-Critical SAR Operations Training
 
-**Duration:** 2 hours
 
 All pilots qualified for SAR operations must complete training on time-critical scenario selection.
 
@@ -619,12 +609,12 @@ All pilots qualified for SAR operations must complete training on time-critical 
 
 #### Module Content
 
-| Module | Duration | Content |
-|--------|----------|---------|
-| Regulatory Framework | 30 min | Operating authority selection (certificate / RPOC Division VI / SFOC); STSC SFOC conditions; legal implications |
-| Scenario Selection | 30 min | Assessing notification feasibility; decision matrix; Rapid Site Survey integration |
-| Terrain-Following Operations | 30 min | Contour search patterns; consistent AGL in variable terrain; RTH planning |
-| Sub-400' Search Effectiveness | 30 min | Thermal detection at 80-120m AGL; modified track spacing; pattern adaptation |
+| Module | Content |
+|--------|---------|
+| Regulatory Framework | Operating authority selection (certificate / RPOC Division VI / SFOC); STSC SFOC conditions; legal implications |
+| Scenario Selection | Assessing notification feasibility; decision matrix; Rapid Site Survey integration |
+| Terrain-Following Operations | Contour search patterns; consistent AGL in variable terrain; RTH planning |
+| Sub-400' Search Effectiveness | Thermal detection at 80-120m AGL; modified track spacing; pattern adaptation |
 
 #### Assessment
 - Scenario-based evaluation: Correctly identify appropriate scenario given SAR activation details
@@ -637,7 +627,6 @@ All pilots qualified for SAR operations must complete training on time-critical 
 
 ### 6.1 Field VO Training Module
 
-**Duration:** 2 hours
 
 Required for all Visual Observers conducting VLOS operations.
 
@@ -678,7 +667,7 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 | Requirement | Standard | Verification |
 |-------------|----------|--------------|
-| Flight Hours | Minimum 50 hours logged flight time on the Program operational equipment | AirData logs |
+| Flight Hours | demonstrated competence on the Program operational equipment| AirData logs |
 | Operational Experience | Minimum 1 year as operational Program RPAS pilot | Personnel records |
 | Certification | Valid Advanced RPAS Operator Certificate | TC certificate |
 | Scenario Endorsements | All Standard Scenario endorsements (STSC-003, STSC-004) | Endorsement records |
@@ -689,13 +678,11 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 ### 7.2 Train-the-Trainer Module
 
-**Duration:** 8 hours (minimum)
 **Prerequisites:** Meet all Section 7.1 requirements except this module
 **Delivery:** Operations Manager or designated senior trainer
 **Assessment:** Practical teaching demonstration with evaluation
 
-#### 7.2.1 Module 1: Adult Learning Principles (2 hours)
-
+#### 7.2.1 Module 1: Adult Learning Principles
 **Learning Objectives:**
 - Understand how adults learn differently from children
 - Apply adult learning theory to RPAS training
@@ -703,17 +690,16 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 **Content:**
 
-| Topic | Duration | Key Points |
-|-------|----------|------------|
-| Andragogy vs Pedagogy | 30 min | Self-direction, experience-based, problem-centered, immediate application |
-| Learning Styles | 30 min | Visual, auditory, kinesthetic learners; adapting delivery |
-| Motivation Factors | 30 min | Intrinsic vs extrinsic motivation, relevance, competence, autonomy |
-| Barriers to Learning | 30 min | Prior experience (positive/negative), anxiety, time pressure, physical factors |
+| Topic | Key Points |
+|-------|------------|
+| Andragogy vs Pedagogy | Self-direction, experience-based, problem-centered, immediate application |
+| Learning Styles | Visual, auditory, kinesthetic learners; adapting delivery |
+| Motivation Factors | Intrinsic vs extrinsic motivation, relevance, competence, autonomy |
+| Barriers to Learning | Prior experience (positive/negative), anxiety, time pressure, physical factors |
 
 **Practical Exercise:** Identify learning style preferences of current the Program pilots; design approach for each type.
 
-#### 7.2.2 Module 2: Instructional Techniques (2 hours)
-
+#### 7.2.2 Module 2: Instructional Techniques
 **Learning Objectives:**
 - Structure effective training sessions
 - Demonstrate skills progressively
@@ -721,12 +707,12 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 **Content:**
 
-| Topic | Duration | Key Points |
-|-------|----------|------------|
-| Tell-Show-Do-Review | 30 min | Four-step instructional method for skill training |
-| Briefing Structure | 30 min | Objectives, content, assessment criteria, questions |
-| Demonstration Techniques | 30 min | Positioning, narration, pace, common errors to highlight |
-| Training Environment | 30 min | Distraction management, safety, equipment readiness |
+| Topic | Key Points |
+|-------|------------|
+| Tell-Show-Do-Review | Four-step instructional method for skill training |
+| Briefing Structure | Objectives, content, assessment criteria, questions |
+| Demonstration Techniques | Positioning, narration, pace, common errors to highlight |
+| Training Environment | Distraction management, safety, equipment readiness |
 
 **Tell-Show-Do-Review Method:**
 
@@ -737,8 +723,7 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 | **DO** | Observe and coach | Perform the skill with guidance |
 | **REVIEW** | Provide feedback, identify areas for improvement | Self-assess, ask questions |
 
-#### 7.2.3 Module 3: Assessment Techniques (2 hours)
-
+#### 7.2.3 Module 3: Assessment Techniques
 **Learning Objectives:**
 - Design fair, consistent assessments
 - Evaluate performance objectively
@@ -746,12 +731,12 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 **Content:**
 
-| Topic | Duration | Key Points |
-|-------|----------|------------|
-| Assessment Types | 30 min | Formative (during training), summative (end of training), practical, oral, written |
-| Competency Standards | 30 min | Using rating scales (1-4), defining "meets standard," calibrating assessors |
-| Observation Skills | 30 min | What to watch for, common errors, safety indicators |
-| Documentation | 30 min | Recording results, providing evidence, maintaining objectivity |
+| Topic | Key Points |
+|-------|------------|
+| Assessment Types | Formative (during training), summative (end of training), practical, oral, written |
+| Competency Standards | Using rating scales (1-4), defining "meets standard," calibrating assessors |
+| Observation Skills | What to watch for, common errors, safety indicators |
+| Documentation | Recording results, providing evidence, maintaining objectivity |
 
 **Assessment Best Practices:**
 
@@ -763,8 +748,7 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 | Be consistent | Apply same standard to all trainees |
 | Assess against standard | Compare to published standard, not to other trainees |
 
-#### 7.2.4 Module 4: Feedback Delivery (1 hour)
-
+#### 7.2.4 Module 4: Feedback Delivery
 **Learning Objectives:**
 - Deliver constructive feedback effectively
 - Handle difficult conversations professionally
@@ -772,11 +756,11 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 **Content:**
 
-| Topic | Duration | Key Points |
-|-------|----------|------------|
-| Feedback Principles | 20 min | Timely, specific, balanced, actionable |
-| The Feedback Model | 20 min | Situation-Behavior-Impact (SBI) model |
-| Difficult Conversations | 20 min | Underperformance, attitude issues, failure notification |
+| Topic | Key Points |
+|-------|------------|
+| Feedback Principles | Timely, specific, balanced, actionable |
+| The Feedback Model | Situation-Behavior-Impact (SBI) model |
+| Difficult Conversations | Underperformance, attitude issues, failure notification |
 
 **SBI Feedback Model:**
 
@@ -787,8 +771,7 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 | **Impact** | Explain the impact of the behavior | "This meant the VO wasn't prepared and couldn't clear the landing zone." |
 | **Forward** | Suggest improvement | "Next time, ensure the announcement is the first action before any control inputs." |
 
-#### 7.2.5 Module 5: Documentation Requirements (1 hour)
-
+#### 7.2.5 Module 5: Documentation Requirements
 **Learning Objectives:**
 - Complete all required training documentation
 - Maintain accurate, auditable records
@@ -811,8 +794,7 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 - Any deficiencies clearly described with remediation plan
 - Electronic records backed up; paper records secured
 
-#### 7.2.6 Module 6: Practical Teaching Exercise (2 hours)
-
+#### 7.2.6 Module 6: Practical Teaching Exercise
 **Learning Objectives:**
 - Demonstrate instructional competence
 - Receive feedback on teaching effectiveness
@@ -820,14 +802,14 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 **Exercise Structure:**
 
-| Phase | Duration | Activity |
-|-------|----------|----------|
-| Preparation | 30 min | Candidate prepares a 15-minute training segment on assigned topic |
-| Delivery | 20 min | Candidate delivers training to volunteer trainee(s) |
-| Assessment | 10 min | Assessor observes and documents performance |
-| Feedback | 20 min | Assessor provides detailed feedback using SBI model |
-| Discussion | 20 min | Review of overall readiness, areas for development |
-| Decision | 20 min | Pass/fail determination, certification issuance |
+| Phase | Activity |
+|-------|----------|
+| Preparation | Candidate prepares a 15-minute training segment on assigned topic |
+| Delivery | Candidate delivers training to volunteer trainee(s) |
+| Assessment | Assessor observes and documents performance |
+| Feedback | Assessor provides detailed feedback using SBI model |
+| Discussion | Review of overall readiness, areas for development |
+| Decision | Pass/fail determination, certification issuance |
 
 **Practical Assessment Criteria:**
 
@@ -856,9 +838,9 @@ Only personnel meeting the following criteria may serve as certified Program RPA
 
 | Requirement | Standard | Verification |
 |-------------|----------|--------------|
-| Flight Currency | Minimum 2 hours per month | AirData logs |
-| Training Activity | Conduct training at least quarterly | Training records |
-| Pilot Recurrency | Maintain all pilot recurrency requirements (Section 10) | Currency tracking |
+| Flight Currency | Flies regularly enough to remain competent, in the Chief Pilot's judgment | Program activity records |
+| Training Activity | Delivers training regularly enough to stay effective | Training records |
+| Program requirements | Meets the four Program participation requirements (Section 10.1) | Currency tracking |
 | Evaluation | Operations Manager evaluation every 24 months | Evaluation record |
 | Development | Attend at least one professional development activity annually | Training record |
 
@@ -870,7 +852,7 @@ Every 24 months, the Operations Manager evaluates each trainer on:
 |------|-------------------|
 | Training Effectiveness | Review of trainee outcomes, feedback from trainees |
 | Documentation Quality | Audit of training records for completeness and accuracy |
-| Currency Maintenance | Verification of flight hours and recurrency requirements |
+| Currency Maintenance | Verification of Program participation requirements and demonstrated competence |
 | Safety Record | Review of any safety incidents during training |
 | Professional Development | Evidence of continued learning and development |
 | Trainee Feedback | Anonymous feedback from trainees (if available) |
@@ -915,9 +897,9 @@ Flight Reviewers are senior trainers authorized to conduct formal proficiency as
 
 | Requirement | Standard |
 |-------------|----------|
-| Trainer Status | Current certified trainer for minimum 12 months |
-| Training Conducted | Successfully trained minimum 5 pilots to operational status |
-| Total Flight Hours | Minimum 100 hours |
+| Trainer Status | Established as a certified trainer, with a track record the Chief Pilot considers sufficient |
+| Training Conducted | Has trained pilots through to operational status |
+| Experience | Substantial operational flight experience across Program aircraft and operation types |
 | All Endorsements | Current STSC-003 and STSC-004 endorsements |
 | Additional Training | Complete Flight Reviewer standardization |
 | AE Designation | Written designation from Accountable Executive |
@@ -960,7 +942,7 @@ Senior Pilot / Flight Reviewer (experience-based)
 | Result | Action |
 |--------|--------|
 | Successful | Authorization to operate training aircraft |
-| Unsuccessful | Additional practice + reassessment within 14 days |
+| Unsuccessful | Additional practice + reassessment when the trainee and trainer agree readiness is met |
 
 ### 8.3 Advanced Training Progression
 
@@ -973,7 +955,7 @@ Senior Pilot / Flight Reviewer (experience-based)
 
 | Hold Point | Trigger | Resolution |
 |------------|---------|------------|
-| Foundation Hold | Does not meet Flight Review standards | Feedback, additional practice (min 1 week), reassessment within 14 days |
+| Foundation Hold | Does not meet Flight Review standards | Feedback, additional practice, reassessment when the trainee and trainer agree readiness is met |
 | Advanced Hold | Does not meet trainer sign-off standards | Written feedback, additional scenarios/hours (min 2 hours), re-evaluation |
 | Recurring Hold | Fails reassessment twice | Operations Manager meeting to assess program suitability |
 
@@ -1038,48 +1020,49 @@ Pilots must demonstrate competency in:
 
 ---
 
-## 10. Recurrency Training
+## 10. Program Participation and Currency
 
-### 10.1 Currency Requirements
+### 10.1 The Four Program Requirements
 
-| Requirement | Period | Standard |
-|-------------|--------|----------|
-| General Flight Currency | 90 days | Minimum 3 flights |
-| Aircraft Type Currency | 90 days | 1 flight per type |
-| **Monthly Flight Hours** | 30 days | **1 hour per aircraft type** |
-| STSC-003 Currency | 6 months | 1 high altitude operation |
-| STSC-004 Currency | 6 months | 1 BVLOS operation (min 2 NM) |
-| Annual Proficiency Check | 12 months | Flight Reviewer assessment |
-| Recurrent Ground Training | 12 months | 4 hours covering updates, incidents, refresher |
+The Program sets four participation requirements. Everything else in this manual is a list of things a member is trained on and demonstrates competence in, not a schedule to be tracked by the clock.
 
-### 10.2 Quarterly Scenario Training
+| # | Requirement | Applies to |
+|---|-------------|------------|
+| 1 | **Onboarding training** completed before participating in Program operations | New members |
+| 2 | **Recurrent ground training**, 2 hours per year | All Program members |
+| 3 | **20 hours per year of drone team activity**, counting training, activations, flight time, exercises, maintenance sessions, and meetings | All Program members |
+| 4 | **3 drone tasks per year**, meaning participation in a tasking or a realistic exercise in any crew role | All Program members |
 
-Every quarter, pilots must complete:
-- Minimum 1 emergency scenario drill
-- Review of any incidents/lessons learned from the quarter
-- Refresher on any procedural changes
+Members who do not meet these participate on a case-by-case basis at the Chief Pilot's discretion, which may include additional supervised activity before returning to operational tasking.
 
-### 10.3 Annual Proficiency Check
+### 10.2 Regulatory Recency (separate and mandatory)
 
-| Element | Method | Duration |
-|---------|--------|----------|
-| Regulatory knowledge | Oral | 30 min |
-| SMS knowledge | Oral | 15 min |
-| Emergency procedures | Oral + demonstration | 30 min |
-| Pre-flight inspection | Demonstration | 15 min |
-| Normal operations | Flight | 30 min |
-| Emergency response | Simulated | 15 min |
+The Program requirements above do not replace the recency requirements of the Canadian Aviation Regulations, which are set by Transport Canada and are not discretionary:
 
-### 10.4 Loss of Currency
+| Requirement | Standard |
+|-------------|----------|
+| Pilot certificate recency | Within the 24 months preceding a flight, the pilot has been issued a certificate, or completed an examination, flight review, or recurrent training activity per Standard 921 (CAR 901.56, 901.65, 901.91) |
+| Proof carried | Certificate and recency documentation easily accessible during operations (CAR 901.57, 901.66, 901.92) |
+| Records | Recency activity recorded and kept for at least 24 months |
 
-| Lapse Period | Reinstatement Requirement |
-|--------------|---------------------------|
-| 90 days - 6 months | 2 supervised flights with certified trainer |
-| **6 months+** | **Complete full Advanced Training program for aircraft type** |
+### 10.3 Staying Comfortable and Competent
+
+Beyond the four requirements, currency is a judgment, not a count. Pilots fly each aircraft type often enough to remain comfortable and competent on it. A pilot who feels rusty on a type, or whom the Chief Pilot judges to be rusty, flies with a trainer before taking an operational tasking on that type. This applies equally to specialised operations such as BVLOS, high altitude, or payload delivery: the standard is demonstrated comfort with the operation, not a date on a calendar.
+
+### 10.4 Recurrent Ground Training Content
+
+The 2 hours of annual recurrent ground training covers, as relevant in the year:
+
+- Regulatory changes and their effect on Program operations
+- Incidents, lessons learned, and any corrective actions taken
+- Procedural changes to this manual suite
+- Emergency procedure refresh
+- Human factors refresh
+- SORA and risk assessment refresh
 
 ### 10.5 Proficiency Concerns
 
-> If a trainer identifies significant performance issues during recurrent training (e.g., poor risk assessment, erratic control inputs), the pilot may be grounded pending additional training or medical/fitness evaluation.
+> If a trainer identifies significant performance issues during any training or operation (for example poor risk assessment or erratic control inputs), the pilot may be stood down from operational tasking pending additional training or a fitness evaluation. This is a competence judgment and does not depend on hours flown or time elapsed.
 
 ---
 
@@ -1093,10 +1076,10 @@ Once pilots complete Foundation and Advanced Training and are operationally cert
 
 | Requirement | Standard |
 |-------------|----------|
-| Training Frequency | Every 2 weeks |
-| Session Duration | 2-3 hours |
-| Annual Flight Hours | Minimum 20 hours |
-| Summit Events | 2 per year (Spring and Fall) |
+| Training frequency | Regular sessions through the year, scheduled by the Chief Pilot around Program needs and member availability |
+| Annual drone team activity | 20 hours per member, counting training, activations, flight time, exercises, maintenance, and meetings (Training Manual 10.1, requirement 3) |
+| Drone tasks | 3 per member per year, in any crew role (requirement 4) |
+| Summit events | Held as the Program finds useful, typically twice a year |
 
 ### 11.3 Scenario Training Categories
 
@@ -1339,7 +1322,7 @@ Per CAR 901.223, maintain records of:
 | STSC-004 BVLOS Training | | | |
 | Emergency Procedures | | | |
 | SAR Operations Training | | | |
-| Annual Proficiency Check | | | |
+| Proficiency check (as required) | | | |
 
 ### 12.3 Records Retention
 
