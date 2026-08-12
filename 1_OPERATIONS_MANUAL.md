@@ -160,7 +160,7 @@ This Concept of Operations outlines RPAS operations conducted under the S2S SAR 
 
 ### 3.2 Public Good and Objective
 
-the S2S SAR Drone Program is a first responder non-profit providing 24/7 SAR services in and around Squamish, British Columbia. The primary objective is to conduct safe and effective BVLOS RPAS flights supporting the Program operations.
+The S2S SAR Drone Program provides RPAS capability to the volunteer search and rescue organizations of the Sea to Sky corridor of British Columbia, each a first responder non-profit providing 24/7 SAR services in its own jurisdiction. The primary objective is to conduct safe and effective BVLOS RPAS flights supporting the Program operations.
 
 | Objective | Performance Criteria |
 |-----------|---------------------|
@@ -681,20 +681,20 @@ During the Rapid Site Survey, the PIC identifies the operating authority availab
 
 #### 6.8.1 Description of Broad Operating Area
 
-The the Program region primarily encompasses the Squamish River Watershed. This area begins at Clendinning Provincial Park, following Clendinning Creek to the Elaho Valley, continuing through the Squamish River, and ultimately reaching Howe Sound, extending to Anvil Island. The surrounding mountainous terrain is also included.
+The Program region spans the Sea to Sky corridor, comprising the combined search and rescue jurisdictions of the participating organizations. It extends from Howe Sound and its islands in the south, north through the Squamish River and Elaho watersheds to Clendinning Provincial Park, and continues through the Whistler and Pemberton valleys to the surrounding alpine and interior boundaries of the region. Each Organization's specific boundary is recorded in its own tasking area documentation; the surrounding mountainous terrain is included throughout.
 
 #### 6.8.2 Topography and Geography
 
-The the Program boundary is situated in the Sea-to-Sky Corridor of British Columbia, near the town of Squamish. The region is characterized by diverse and rugged natural landscape, positioned between the Coast Mountains to the east and Howe Sound to the west.
+The Program boundary is situated in the Sea to Sky corridor of British Columbia. The region is characterized by diverse and rugged natural landscape, positioned between the Coast Mountains to the east and Howe Sound to the west, and extending north through the Whistler and Pemberton valleys.
 
 - **Mountainous Terrain:** Coast Mountains with steep, rocky slopes; elevations exceeding 2,000 metres
-- **Valleys and River Systems:** Deep valleys following river systems like the Squamish River
+- **Valleys and River Systems:** Deep valleys following river systems including the Squamish, Cheakamus, Green, and Lillooet rivers
 - **Forested Areas:** Dense temperate rainforests with coniferous and deciduous trees
 - **Water Bodies:** Howe Sound and various lakes and rivers
 
 #### 6.8.3 Population Density
 
-The the Program region corresponds to the Squamish-Lillooet Regional District census district with a population density of 3.1 people/km² (including four municipalities: Squamish, Whistler, Pemberton, Lillooet). Municipalities are excluded from operational requirements, making the effective density even lower.
+The Program region corresponds to the Squamish-Lillooet Regional District census district, with a population density of 3.1 people/km² across its four municipalities (Squamish, Whistler, Pemberton, and Lillooet). Municipal areas are excluded from operations, making the effective density in the operating area lower still.
 
 - **Gatherings of People:** Highly unlikely during SAR operations; if identified, planning includes 100' minimum mitigation
 - **Security Measures:** Launch/land location secured with signage, high-visibility pylons, and VO acting as barrier
@@ -1597,7 +1597,9 @@ Conduct a brief team debrief before departing the site:
 | FIC Kamloops | Emergency in uncontrolled airspace | **1-866-541-4101** |
 | Vancouver Intl (CYVR) | Emergency in controlled airspace direction | 604-207-7022 |
 | Emergency Services | Critical situation | 911 |
-| Squamish General Hospital | Closest medical facility | 38140 Behrner Drive, Squamish |
+| Squamish General Hospital | Medical facility, southern corridor | 38140 Behrner Drive, Squamish |
+| Whistler Health Care Centre | Medical facility, central corridor | 4380 Lorimer Road, Whistler |
+| Pemberton Health Centre | Medical facility, northern corridor | 1403 Portage Road, Pemberton |
 
 ### 13.3 Aerodromes in the Program Area
 
@@ -1605,8 +1607,9 @@ Conduct a brief team debrief before departing the site:
 |------|------|------|-------|-------|----------|
 | Vancouver Intl | CYVR | International | 124.6 | 604-207-7022 | South/Above the Program |
 | Vancouver Harbour | CYHC | Seaplane Base | 126.8 | 604-328-4340 | South of the Program |
-| Squamish Municipal | CYSE | Airport | 122.8 | 604-892-5217 | Squamish Municipality |
+| Squamish Municipal | CYSE | Airport | 122.8 | 604-892-5217 | Squamish |
 | Green Lake Whistler | CAE5 | Seaplane Base | n/a | 604-932-6615 | Whistler |
+| Pemberton Regional | CYPS | Airport | [Verify in CFS] | [Verify] | Pemberton |
 
 ### 13.4 Emergency Fly-Away Call Script
 

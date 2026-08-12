@@ -1326,8 +1326,8 @@ Complete within 2-3 minutes for urgent SAR deployment:
 |---------|--------|-------------|
 | **FIC Kamloops (Direct)** | 250-376-7045 | Fly-away, airspace emergency |
 | **NAV CANADA** | 1-866-WXBRIEF | NOTAM, weather briefing |
-| **Squamish SAR Base** | [Insert Number] | SAR coordination |
-| **RCMP Squamish** | [Insert Number] | Ground emergency |
+| **Organization SAR Base** | [Insert Number] | SAR coordination |
+| **Local RCMP Detachment** | [Insert Number] | Ground emergency |
 | **BC Ambulance** | 911 | Medical emergency |
 
 ---

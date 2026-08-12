@@ -1441,8 +1441,8 @@ function downloadQuickAccessContent() {
             </div>
             ${content}
             <div class="footer">
-                <p>Squamish Search and Rescue - RPAS Policy Manual | Generated: ${new Date().toLocaleDateString()}</p>
-                <p>CONFIDENTIAL - This document is the property of Squamish Search and Rescue</p>
+                <p>S2S SAR Drone Program - RPAS Policy Manual | Generated: ${new Date().toLocaleDateString()}</p>
+                <p>CONFIDENTIAL - This document is the property of the S2S SAR Drone Program</p>
             </div>
             <script>
                 window.onload = function() { window.print(); }
@@ -3758,13 +3758,13 @@ function showTrainingCalendar() {
                         <tr>
                             <td><strong>Riverbank & Shoreline</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Water proximity operations</span></td>
                             <td>Water ops, current awareness</td>
-                            <td><span class="cal-badge field">Field</span><br>Location: Squamish River</td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Per host Organization</td>
                         </tr>
                         <tr>
                             <td rowspan="2" style="font-weight: 700; background: rgba(39, 174, 96, 0.1);"><i class="fas fa-sun" style="margin-right: 6px; color: #f39c12;"></i>May</td>
                             <td><strong>Canyon Search</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">Aircraft: Neo</span></td>
                             <td>Confined space ops, signal management</td>
-                            <td><span class="cal-badge field">Field</span><br>Location: Squamish Canyon<br><em>After hours coordination</em></td>
+                            <td><span class="cal-badge field">Field</span><br>Location: Per host Organization<br><em>After hours coordination</em></td>
                         </tr>
                         <tr>
                             <td><strong>Rope Rescue Integration</strong><br><span style="color: var(--text-secondary); font-size: 0.85rem;">High angle scenario, plum lines</span></td>
@@ -4020,6 +4020,6 @@ function showSAILAssessment() {
 
 // Console welcome message
 console.log('%cS2S RPOC Web Tool', 'font-size: 20px; font-weight: bold; color: #1e3a5f;');
-console.log('%cSquamish Search and Rescue - RPAS Policy Manual', 'font-size: 12px; color: #666;');
+console.log('%cS2S SAR Drone Program - RPAS Policy Manual', 'font-size: 12px; color: #666;');
 console.log('%cCAR Part IX Compliant | STSC-003 | STSC-004', 'font-size: 10px; color: #3498db;');
 console.log('%cVisual Enhancements Active', 'font-size: 10px; color: #27ae60;');

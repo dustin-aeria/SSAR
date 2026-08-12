@@ -31,7 +31,7 @@
 
 ### 1.1 Purpose
 
-To define the specific duties, authority, and accountability of all personnel within the the S2S SAR Drone Program RPAS program. This policy ensures clear chains of command and compliance with Canadian Aviation Regulations (CARs) Part IX and applicable Special Flight Operations Certificates (SFOC).
+To define the specific duties, authority, and accountability of all personnel within the S2S SAR Drone Program. This policy ensures clear chains of command and compliance with Canadian Aviation Regulations (CARs) Part IX and applicable Special Flight Operations Certificates (SFOC).
 
 ### 1.2 Governance Context
 

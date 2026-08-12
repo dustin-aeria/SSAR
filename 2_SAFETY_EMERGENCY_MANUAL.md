@@ -872,7 +872,7 @@ The Low TMPR for BVLOS is satisfied by visual observer detect and avoid conducte
 
 | Area | Classification | Risk | Buffer |
 |------|----------------|------|--------|
-| Squamish Municipality | Populated | Higher | No operations over urban |
+| Corridor municipalities (Squamish, Whistler, Pemberton) | Populated | Higher | No operations over urban areas |
 | Highway 99 | Linear infrastructure | Moderate | 100m minimum lateral |
 | BC Rail Corridor | Linear infrastructure | Low | 50m minimum lateral |
 | Wilderness Areas | Sparsely populated | Low | Standard GRB applies |
@@ -1066,8 +1066,9 @@ The Program uses the JARUS SORA framework for systematic risk assessment:
 |------|------------|------------|---------|----------------|
 | Squamish Municipality | 23,000 | 104 | 221/km² | Populated - Excluded |
 | Whistler Municipality | 13,000 | 161 | 81/km² | Populated - Excluded |
-| Squamish River Watershed | <500 | 1,200 | <0.5/km² | Sparsely Populated - Approved |
-| Sea-to-Sky Backcountry | <200 | 800 | <0.25/km² | Sparsely Populated - Approved |
+| Village of Pemberton and environs | 3,400 | 49 | 69/km² | Populated - Excluded |
+| Squamish, Cheakamus and Lillooet watersheds | <500 | 1,200 | <0.5/km² | Sparsely Populated - Approved |
+| Sea to Sky backcountry and alpine | <200 | 800 | <0.25/km² | Sparsely Populated - Approved |
 | Coastal Inlets | <100 | 400 | <0.25/km² | Sparsely Populated - Approved |
 
 *Data source: Statistics Canada Census 2021, BC Stats, local knowledge.*
@@ -1705,6 +1706,8 @@ The Program commits to continuous improvement through:
 |---------|-------|
 | Emergency Services | **911** |
 | Squamish General Hospital | 38140 Behrner Drive, Squamish |
+| Whistler Health Care Centre | 4380 Lorimer Road, Whistler |
+| Pemberton Health Centre | 1403 Portage Road, Pemberton |
 
 ---
 
