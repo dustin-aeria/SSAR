@@ -279,6 +279,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Search
         searchInput.addEventListener('click', openSearch);
+        const mobileSearchBtn = document.getElementById('mobile-search-btn');
+        if (mobileSearchBtn) mobileSearchBtn.addEventListener('click', openSearch);
         searchInput.addEventListener('focus', openSearch);
         closeSearch.addEventListener('click', closeSearchModal);
         searchOverlay.addEventListener('click', (e) => {

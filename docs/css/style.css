@@ -2868,3 +2868,211 @@ body.resizing * {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+
+/* ============================================
+   MOBILE LAYOUT CORRECTIONS
+   Appended last so these override earlier
+   mobile rules that caused header wrapping.
+   ============================================ */
+
+.mobile-only { display: none; }
+
+@media (max-width: 600px) {
+
+    /* --- Header: single row, title fills the space between
+       the burger and the action buttons, truncating if needed --- */
+    .header-content {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 6px;
+        padding: 0 10px;
+        padding-left: max(10px, env(safe-area-inset-left));
+        padding-right: max(10px, env(safe-area-inset-right));
+    }
+
+    .menu-toggle {
+        flex: 0 0 auto;
+        margin-right: 2px;
+        padding: 6px;
+    }
+
+    .logo-section {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .logo-text {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .logo-text h1,
+    .logo-section h1 {
+        font-size: 0.95rem;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .logo-text .subtitle,
+    .logo-section .subtitle {
+        display: none;
+    }
+
+    .header-logo {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        padding: 2px;
+    }
+
+    /* Inline search box replaced by an icon button */
+    .search-container {
+        display: none;
+    }
+
+    .mobile-only {
+        display: inline-flex;
+    }
+
+    .header-actions {
+        flex: 0 0 auto;
+        gap: 2px;
+        margin-left: auto;
+    }
+
+    .header-btn {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Printing from a phone is rare; reclaim the space */
+    #print-btn {
+        display: none;
+    }
+
+    /* --- Quick Access: compact full-screen sheet --- */
+    .quick-access-modal {
+        height: 100dvh;
+        max-height: 100dvh;
+    }
+
+    .quick-access-header {
+        padding: 10px 12px;
+        padding-top: max(10px, env(safe-area-inset-top));
+        gap: 8px;
+    }
+
+    .quick-access-title {
+        font-size: 1rem;
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .quick-access-title span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .quick-access-title i {
+        font-size: 1.1rem;
+    }
+
+    .quick-access-content {
+        padding: 12px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .quick-access-footer {
+        padding: 10px 12px;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    /* Compact the procedure cards inside Quick Access */
+    .qa-procedure-header {
+        padding: 12px;
+    }
+
+    .qa-procedure-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .qa-procedure-title {
+        font-size: 1.05rem;
+    }
+
+    .qa-procedure-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .qa-step,
+    .qa-info-box {
+        padding: 10px 12px;
+    }
+
+    .qa-step-number {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+
+    /* Wide reference tables scroll instead of squashing */
+    .qa-reference-table {
+        font-size: 0.78rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .qa-reference-table th,
+    .qa-reference-table td {
+        padding: 6px 8px;
+    }
+
+    /* --- Content tables and long strings --- */
+    .document-content table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.85rem;
+    }
+
+    .document-content pre,
+    .document-content code {
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    /* Comfortable tap targets in the sidebar */
+    .nav-item {
+        min-height: 44px;
+    }
+}
+
+/* Very narrow phones */
+@media (max-width: 380px) {
+    .logo-text h1,
+    .logo-section h1 {
+        font-size: 0.85rem;
+    }
+
+    .header-logo {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+    }
+
+    #theme-toggle {
+        display: none;
+    }
+}
