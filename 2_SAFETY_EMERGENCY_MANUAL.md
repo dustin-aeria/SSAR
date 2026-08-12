@@ -681,7 +681,7 @@ This section provides the complete Specific Operations Risk Assessment (SORA) re
 - **Level 1 Complex BVLOS (Division VI, under RPOC):** BVLOS up to 400' AGL over sparsely populated areas
 - **STSC-003 (under valid SFOC):** VLOS operations above 400' AGL up to 1000' AGL
 - **STSC-004 (under valid SFOC):** BVLOS operations in sparsely populated areas by Advanced pilots
-- **Aircraft:** DJI M30T and DJI Matrice 4TD ONLY
+- **Aircraft:** Any RPAS meeting the eligibility criteria of Operations Manual Section 4.1, within the mass and speed class assumed by this assessment. DJI M30T and DJI Matrice 4TD are the current reference types
 
 **Altitude Rationale:** Normal flight operations are conducted at 400' AGL using terrain-following profiles. The 1000' AGL maximum is established to accommodate Return-to-Home (RTH) emergency scenarios in the Program's mountainous operating environment, where terrain-following cannot be maintained and the RPAS must climb to safely clear obstacles during autonomous return.
 
@@ -934,7 +934,7 @@ Per SORA v2.5 Table 14, the following robustness levels apply at SAIL II. L = lo
 
 - Strict adherence to operational procedures in OPS-001
 - All flights conducted within Standard Scenario conditions
-- Only approved aircraft (M30T, M4TD) used
+- Only eligible aircraft used, per Operations Manual Section 4.1 (registered, declared where required, serviceable, within the assessed mass and speed class, and crew type-qualified)
 - Maintenance conducted per MCM-001
 - All crew qualified per TRN-301
 - SMS actively monitored per SMS-001

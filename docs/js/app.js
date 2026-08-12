@@ -381,9 +381,10 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // TOC scroll spy
-        const mainContent = document.querySelector('.main-content');
-        mainContent.addEventListener('scroll', updateTocHighlight);
+        // TOC scroll spy. The window is the scrolling element here, not
+        // .main-content, which is why the highlight previously never moved.
+        window.addEventListener('scroll', requestTocHighlight, { passive: true });
+        window.addEventListener('resize', requestTocHighlight, { passive: true });
     }
 
     // Keyboard navigation support for nav items
@@ -444,6 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Build table of contents
         buildTOC();
+        requestTocHighlight();
 
         // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -837,9 +839,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
 
-                    // Update active state
+                    // Update active state immediately; the spy takes over
+                    // again once the smooth scroll settles
                     tocContent.querySelectorAll('a').forEach(l => l.classList.remove('active'));
                     link.classList.add('active');
+                    setTimeout(requestTocHighlight, 700);
                 }
             });
         });
@@ -848,17 +852,61 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateTocHighlight() {
         const headings = contentArea.querySelectorAll('h2, h3');
         const tocLinks = tocContent.querySelectorAll('a');
-        const scrollTop = window.scrollY;
+        if (!headings.length || !tocLinks.length) { return; }
 
+        // Trigger line sits just below the fixed header
+        const triggerLine = 120;
         let activeIndex = 0;
+
         headings.forEach((heading, index) => {
-            if (heading.offsetTop <= scrollTop + 100) {
+            if (heading.getBoundingClientRect().top <= triggerLine) {
                 activeIndex = index;
             }
         });
 
+        // At the bottom of the page the last section is current, even if its
+        // heading never crosses the trigger line
+        const atBottom = (window.innerHeight + window.scrollY) >=
+            (document.documentElement.scrollHeight - 4);
+        if (atBottom) { activeIndex = headings.length - 1; }
+
+        let activeLink = null;
         tocLinks.forEach((link, index) => {
-            link.classList.toggle('active', index === activeIndex);
+            const isActive = index === activeIndex;
+            link.classList.toggle('active', isActive);
+            if (isActive) { activeLink = link; }
+        });
+
+        // Keep the highlighted entry visible without scrolling the page.
+        // The scrollbar may sit on an ancestor of .toc-content, so find it.
+        if (activeLink) {
+            let scroller = activeLink.parentElement;
+            while (scroller && scroller !== document.body) {
+                const canScroll = scroller.scrollHeight > scroller.clientHeight + 4;
+                const style = getComputedStyle(scroller).overflowY;
+                if (canScroll && (style === 'auto' || style === 'scroll')) { break; }
+                scroller = scroller.parentElement;
+            }
+            if (scroller && scroller !== document.body) {
+                const linkRect = activeLink.getBoundingClientRect();
+                const boxRect = scroller.getBoundingClientRect();
+                if (linkRect.top < boxRect.top + 20) {
+                    scroller.scrollTop -= (boxRect.top + 20 - linkRect.top);
+                } else if (linkRect.bottom > boxRect.bottom - 20) {
+                    scroller.scrollTop += (linkRect.bottom - boxRect.bottom + 20);
+                }
+            }
+        }
+    }
+
+    // Throttled to one update per animation frame
+    let tocSpyQueued = false;
+    function requestTocHighlight() {
+        if (tocSpyQueued) { return; }
+        tocSpyQueued = true;
+        requestAnimationFrame(() => {
+            tocSpyQueued = false;
+            updateTocHighlight();
         });
     }
 

@@ -27,7 +27,7 @@ const RPOC_CONTENT = {
 1. [Introduction and Regulatory Framework](#1-introduction-and-regulatory-framework)
 2. [RPAS Operator Certificate (RPOC)](#2-rpas-operator-certificate-rpoc)
 3. [Concept of Operations (CONOPS)](#3-concept-of-operations-conops)
-4. [Authorized Aircraft](#4-authorized-aircraft)
+4. [Aircraft](#4-aircraft)
 5. [Operating Authority and Standard Scenario Operations](#5-operating-authority-and-standard-scenario-operations)
 6. [Site Survey and Flight Planning](#6-site-survey-and-flight-planning)
 7. [Search Operations](#7-search-operations)
@@ -318,18 +318,36 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 
 ---
 
-## 4. Authorized Aircraft
+## 4. Aircraft
 
-### 4.1 Approved Aircraft
+### 4.1 Aircraft Eligibility
 
-> **AUTHORIZED AIRCRAFT - DJI M30T and DJI Matrice 4TD ONLY**
+The Program does not restrict operations to a fixed list of models. Any RPAS may be operated under this documentation provided it meets the eligibility criteria below and is entered in the Organization's aircraft register before use.
 
-| Aircraft | MTOM | Authorization |
-|----------|------|---------------|
-| DJI M30T | 3.77 kg | All operations |
-| DJI Matrice 4TD | 2.3 kg | All operations |
+| Criterion | Requirement |
+|-----------|-------------|
+| Registration | Registered with Transport Canada and marked with its registration number (CAR 900.13, 900.14) |
+| Safety assurance | For operations requiring it, covered by a manufacturer declaration under Standard 922 appropriate to the intended operation (CAR 901.194); for Division VI BVLOS, the declaration required by CAR 901.95 |
+| Mass and class | Within the mass and dimension limits assumed by the Program's risk assessment (small RPA up to 25 kg; the SORA assessment in the Safety Manual assumes a 1 m, 25 m/s class aircraft). Aircraft outside these assumptions require a revised risk assessment before use |
+| Serviceability | Maintained under the Organization's Maintenance Control Manual, serviceable and airworthy for the intended flight (CAR 901.29) |
+| Configuration | Equipped for the intended operation, including anti-collision lighting for BVLOS (CAR 901.38.1) and any equipment required by an applicable SFOC |
+| Crew qualification | Pilots hold current type-specific training and competency sign-off for that model (Training Manual Section 4) |
+| Suitability | Assessed by the Chief Pilot as suitable and safe for the intended operating environment |
 
-### 4.2 DJI Matrice 30T (M30T) Specifications
+Aircraft that do not meet a criterion above are not flown on Program operations. Where an Organization introduces a new type, the Chief Pilot records the eligibility assessment, adds the type to the aircraft register and maintenance program, and establishes type training before the aircraft is tasked.
+
+### 4.2 Current Reference Fleet
+
+The following aircraft are the models most widely used by SAR organizations at present and are documented in detail throughout this suite as the reference types. They are examples of eligible aircraft, not the limit of what may be flown.
+
+| Aircraft | MTOM | Notes |
+|----------|------|-------|
+| DJI M30T | 3.77 kg | Reference type; specifications and procedures documented below |
+| DJI Matrice 4TD | 2.3 kg | Reference type; specifications and procedures documented below |
+
+Where this documentation gives model-specific procedures, checklists, or figures for these types, the equivalent information for any other eligible aircraft is drawn from that aircraft's flight manual and recorded in the Organization's aircraft register.
+
+### 4.3 DJI Matrice 30T (M30T) Specifications
 
 | Specification | Value |
 |---------------|-------|
@@ -348,7 +366,7 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 | GNSS | GPS + GLONASS + Galileo + BeiDou |
 | RTK Support | Yes (with D-RTK 2 or Network RTK) |
 
-### 4.3 DJI Matrice 4TD (M4TD) Specifications
+### 4.4 DJI Matrice 4TD (M4TD) Specifications
 
 | Specification | Value |
 |---------------|-------|
@@ -2541,7 +2559,7 @@ This section provides the complete Specific Operations Risk Assessment (SORA) re
 - **Level 1 Complex BVLOS (Division VI, under RPOC):** BVLOS up to 400' AGL over sparsely populated areas
 - **STSC-003 (under valid SFOC):** VLOS operations above 400' AGL up to 1000' AGL
 - **STSC-004 (under valid SFOC):** BVLOS operations in sparsely populated areas by Advanced pilots
-- **Aircraft:** DJI M30T and DJI Matrice 4TD ONLY
+- **Aircraft:** Any RPAS meeting the eligibility criteria of Operations Manual Section 4.1, within the mass and speed class assumed by this assessment. DJI M30T and DJI Matrice 4TD are the current reference types
 
 **Altitude Rationale:** Normal flight operations are conducted at 400' AGL using terrain-following profiles. The 1000' AGL maximum is established to accommodate Return-to-Home (RTH) emergency scenarios in the Program's mountainous operating environment, where terrain-following cannot be maintained and the RPAS must climb to safely clear obstacles during autonomous return.
 
@@ -2794,7 +2812,7 @@ Per SORA v2.5 Table 14, the following robustness levels apply at SAIL II. L = lo
 
 - Strict adherence to operational procedures in OPS-001
 - All flights conducted within Standard Scenario conditions
-- Only approved aircraft (M30T, M4TD) used
+- Only eligible aircraft used, per Operations Manual Section 4.1 (registered, declared where required, serviceable, within the assessed mass and speed class, and crew type-qualified)
 - Maintenance conducted per MCM-001
 - All crew qualified per TRN-301
 - SMS actively monitored per SMS-001
