@@ -1068,33 +1068,58 @@ The 2 hours of annual recurrent ground training covers, as relevant in the year:
 
 ## 11. Operational Training Program
 
-### 11.1 Purpose
+### 11.1 Purpose and Status
 
-Once pilots complete Foundation and Advanced Training and are operationally certified, they enter the Operational Training Program. This ongoing training maintains proficiency, develops specialized SAR skills, and ensures readiness for the full range of Program RPAS mission profiles.
+Once pilots complete Foundation and Advanced Training and are operationally certified, they enter the Operational Training Program. This ongoing training maintains proficiency, develops specialised SAR skills, and keeps the fundamentals sharp through repetition.
 
-### 11.2 Training Cadence
+> **This program is a suggested structure for search and rescue drone teams across the Sea to Sky corridor.** Each participating Organization adapts it to its own terrain, aircraft, and membership. Sessions do not need a drill attached to be worthwhile, and drills may be added, swapped, or dropped to suit the team.
+>
+> Each Organization follows its own approvals and the applicable regulations. Some activities, such as BVLOS or night operations, may require specific regulatory authorization before being run in training. Training does not create authority that the pilot or the Organization does not otherwise hold (Operations Manual 1.3.1).
 
-| Requirement | Standard |
-|-------------|----------|
-| Training frequency | Regular sessions through the year, scheduled by the Chief Pilot around Program needs and member availability |
-| Annual drone team activity | 20 hours per member, counting training, activations, flight time, exercises, maintenance, and meetings (Training Manual 10.1, requirement 3) |
-| Drone tasks | 3 per member per year, in any crew role (requirement 4) |
-| Summit events | Held as the Program finds useful, typically twice a year |
+### 11.2 Core Skills Check (every session)
 
-### 11.3 Scenario Training Categories
+A short run through these fundamentals at the start or finish of each session. Directions for each are in Section 11.6.
 
-Operational training covers the following scenario categories:
+**Stick skills and airmanship**
 
-#### 11.3.1 Search Pattern Training
+- Manual orbit with the camera locked on
+- Figure eights at one height
+- Fixed heading flight
+- Nose-in approach and landing
+- No-stopping course
+- Slow and fast, both clean
+- The blended climb (the river drill)
 
-| Scenario Type | Description | Skills Developed |
-|---------------|-------------|------------------|
-| Grid Searches | Systematic grid patterns with light/microphone | Equipment gathering, checklist execution |
-| Expanding Square | Progressive outward search from datum point | Pattern discipline, coverage verification |
-| Linear Trail Searches | Following trails, roads, shorelines | Overlap, continuity, handoff procedures |
-| Terrain-Following | Contour searches in mountainous terrain | AGL maintenance, obstacle awareness |
+**Landing**
 
-#### 11.3.2 Environment-Specific Training
+- Alternate landing site practice
+- Landing under canopy
+- No-camera landing by eye, at changing distances from the pilot
+
+**Systems**
+
+- Failsafe and controller off
+
+### 11.3 Periodic Benchmark: NIST Open Lane
+
+The NIST Open Lane proficiency test is run on a regular schedule, for example at the start and end of each season or once a quarter. It is a standard, scored flight test built for public safety drone teams, so it produces real numbers to track each pilot's progress over time. Setup and directions are in 11.6.
+
+### 11.4 Session Themes
+
+Each theme pairs a mission focus with one hands-on drill. Environment notes are suggestions; use whatever terrain the Organization has access to.
+
+| # | Theme | Focus | Suggested drill | Environment |
+|---|-------|-------|-----------------|-------------|
+| 1 | High alpine flying | High-altitude reconnaissance, weather assessment, BVLOS, operations at higher altitudes AGL | Moving waypoint photo hunt | High alpine terrain, such as a local peak or alpine lake area |
+| 2 | Mutual aid with a neighbouring team | Flying alongside another team, coordinating several aircraft airborne at once, mapping multiple search areas in CalTopo, grid searching | Box hunt | A shared search area, ideally hosted with a neighbouring program |
+| 3 | Night operations | Flying at night, navigating by infrastructure lighting, reading thermal and infrared imagery; spatial awareness and thermal interpretation | Core skills check only | A site with some infrastructure lighting |
+| 4 | Joint operation with ground SAR | Working with a ground search team, live tasking, radio communications, decision making; systematic grid patterns using light and sound signals; searching light forest canopy | Core skills check only | Compound or training ground, alongside ground SAR members |
+| 5 | Recurrency and emergency procedures | Yearly review of mandatory items, emergency procedures and response, pre-flight inspection, normal operations; short verbal knowledge check plus a practical flight | Wall stop, using an old aircraft with sensors on | Compound or base |
+| 6 | Season review and planning | Review the season's tasks and lessons, plan next year's training, welcome new members, review equipment needs | RC truck chase, or a lighter team drill such as timed gate slalom, drone limbo, or relay race | Compound, or an informal spot suited to a social session |
+
+Themes 3 and 4 focus on the mission and the core skills check without a separate drill. Some teams also run a weekend daytime flight day around the season review.
+
+### 11.5 Environment and Aircraft Capability
 
 Aircraft are selected by capability, not by model. Any registered aircraft meeting the capability noted below may be used; the reference types are shown as current examples.
 
@@ -1109,85 +1134,133 @@ Aircraft are selected by capability, not by model. Any registered aircraft meeti
 | Alpine | High altitude reconnaissance, weather assessment | Wind and cold tolerance for the expected conditions | M30T, M4TD |
 | Steep Terrain/Cliffs | Proximity flying, face reconnaissance | Obstacle sensing; precise position hold | M30T, M4TD |
 
-#### 11.3.3 Night Operations Training
+### 11.6 Drill Directions
 
-| Scenario | Description | Skills Developed |
-|----------|-------------|------------------|
-| Low-Light Ops | Transition from daylight to darkness | Adaptation, thermal reliance |
-| Night Visual + Thermal | Dual-sensor searching | Sensor switching, confirmation techniques |
-| Urban Night Ops | Lost person scenarios in developed areas | Light management, motion detection |
-| Difficult Terrain Night | Night ops in challenging terrain | Spatial awareness, thermal interpretation |
+These drills build flying skill: smooth hands, smooth changes in the air, and real confidence in what the pilot and the aircraft can do. They assume pilots already know the Program's rules and procedures.
 
-#### 11.3.4 Integration Training
+**The main idea is blending.** A skilled pilot moves more than one control at once, smoothly, so the aircraft flies curves and diagonals instead of a staircase of separate moves. Most pilots do one thing at a time: up, stop, across, stop, camera, stop. This happens for two reasons: they think in single steps, and GPS hold lets them get away with it, because the aircraft just parks in the air while they fiddle. That habit of hovering to think is the exact habit these drills break. Most of them work by taking the crutch away and keeping the pilot moving.
 
-| Integration Type | Description | Coordination Required |
-|------------------|-------------|----------------------|
-| Ground SAR Coordination | Joint ops with ground searchers | Radio comms, tasking |
-| Rope Rescue Integration | High angle scenarios, plum lines | Safety protocols, positioning |
-| Live Tasking Exercises | Real-time decision making | Comms, ICS integration |
+#### 11.6.1 Coordination: moving more than one control at once
 
-#### 11.3.5 Specialized Scenarios
+**Manual orbit, camera locked on.** Builds smooth, coordinated turning while keeping the camera on one spot. It is also a real search move, looking at a point of interest from every side.
 
-| Scenario | Description | Application |
-|----------|-------------|-------------|
-| Paragliding Incidents | Face reconnaissance, subject location | Chief area, cliffs |
-| Waterfall/Falls Ops | Steep terrain near water features | Shannon Falls, Crooked Falls |
-| Frequent Call-Area Refreshers | Familiarization with common response areas | Murrin, Shannon Falls, etc. |
+*How to run it:* Place an object on the ground, such as a cone, a pack, or a person. The pilot flies a full circle around it, keeping the nose and camera pointed at it the whole way. Start wide and slow. When that looks clean, make it tighter and faster. Fly it by hand, not with auto-orbit, so the skill stays sharp.
 
-### 11.4 Seasonal Training Focus
+**Figure eights at one height.** Builds coordinated turns in both directions, plus holding a steady height while turning.
 
-| Season | Focus Areas |
-|--------|-------------|
-| **Winter (Jan-Feb)** | SOPs review, team goals, certifications, scenario integration with GSAR |
-| **Spring (Mar-May)** | Location familiarization, dense canopy, riverbank, canyon, rope rescue integration |
-| **Summer (Jun-Aug)** | Trail searches, steep terrain, proximity flying, alpine reconnaissance |
-| **Fall (Sep-Nov)** | Advanced night ops, integrated exercises, cold weather prep |
+*How to run it:* Pick two points and fly a smooth figure eight around them, keeping the same height throughout so the pilot works the height control while turning. There is no way to break this into stop-start moves, which is the point.
 
-### 11.5 Annual Summit Events
+#### 11.6.2 Orientation: flying when the nose is not pointed away from you
 
-#### Spring Drone Summit (May)
+**Fixed heading flight.** Builds comfort flying sideways and backward, so the pilot is not confused when the aircraft faces a different way.
 
-Full-day training event covering:
-1. Advanced SAR scenarios
-2. BCSARA-aligned tasking
-3. Inter-team knowledge sharing
-4. Multi-agency coordination exercises
+*How to run it:* Fly a square or a straight line while keeping the nose pointed in one fixed direction the whole time. The aircraft moves sideways and backward relative to the way it faces. It feels awkward at first, and that awkward feeling is the skill gap being closed.
 
-#### Fall Drone Summit (September)
+**Nose-in approach and landing.** Builds control when the aircraft is pointed back at the pilot and the left and right inputs feel reversed.
 
-Full-day training event covering:
-1. Complex SAR scenarios
-2. Night + terrain integration
-3. Standardization across operators
-4. Lessons learned review
+*How to run it:* Fly the aircraft toward yourself and land it while it faces you. The controls will feel backward. Practise until it feels normal. Once a pilot can do this, flying in open space feels easy.
 
-### 11.6 Cold Weather Training
+#### 11.6.3 Smoothness: the on-rails feel
 
-Annual cold weather refresher (November) covering:
-- Battery care in cold conditions
-- Aircraft operational limits
-- Operator readiness and PPE
-- Pre-heating procedures
-- Flight time de-rating
+**No-stopping course.** Builds the habit of always keeping the aircraft moving instead of parking it in the air.
 
-### 11.7 Training Attendance Requirements
+*How to run it:* Set a course the pilot must fly without ever stopping or hovering. If they need a moment to think, they slow into a gentle circle and keep moving. This breaks the stop-start habit directly.
 
-| Requirement | Standard |
-|-------------|----------|
-| Minimum Attendance | 75% of scheduled sessions |
-| Summit Attendance | At least 1 summit per year |
-| Make-up Training | Arrange with trainer within 30 days |
+**Slow and fast, both clean.** Builds smooth control at every speed, not just one comfortable pace.
 
-### 11.8 Training Documentation
+*How to run it:* Fly the same course twice, once fast but smooth, once as slow and controlled as possible. A simple test for smoothness: fly as if a full cup of coffee is sitting on top of the aircraft and you do not want to spill it.
+
+**The blended climb (the river drill).** Targets a skill many pilots struggle with: climbing, crossing, and adjusting the camera all at the same time, in one smooth motion.
+
+*How to run it:* Pick a low start point on one river bank (Point A) and a high finish across the river on the mountainside (Point B). The pilot flies one smooth diagonal line that climbs and crosses at the same time, and makes a camera adjustment somewhere in the middle without stopping. Going up first and then across, or stopping to move the camera, is a fail. Run it until the smooth version feels normal.
+
+#### 11.6.4 Proficiency test: NIST Open Lane
+
+**NIST bucket test.** A standard, scored flight test made for search and rescue and other public safety drone teams. Use it as the team's report card, run the same way every time so progress can be tracked across the year.
+
+*What you need:* A set of open-top buckets on stands, a 50 foot tape measure, and a stopwatch. It is cheap to build, works indoors or outdoors, and can be made harder as the team improves.
+
+*How to run it:* The pilot flies a set of ten short tests. Five are basic moves, such as landing, climbing straight up, and flying level. Five are function tests, such as circles and spirals. Each bucket has a letter inside it, and the pilot reads that letter through the camera while holding the aircraft steady over the bucket. Photograph each one so it can be scored fairly afterward. The score is based on how well the aircraft lines up with the target in each bucket. Reading the letter forces the pilot to fly, aim the camera, and hold position all at once, and the fixed scoring gives real numbers to compare. To build the lane, look up "NIST sUAS Standard Test Methods" or "NIST Open Lane."
+
+#### 11.6.5 Scenario and systems drills
+
+**Box hunt.** Builds creative flying and problem solving, instead of always defaulting to a straight grid.
+
+*How to run it:* Seal an object inside a box that has some openings. The pilot works out what is inside using only the aircraft and its camera. To see in, they have to fly into odd angles and positions they would not normally use.
+
+**Failsafe and controller off.** Builds real trust in what the aircraft does on its own when something goes wrong.
+
+*How to run it:* Set the failsafe to either return-to-home or hover. Fly out a safe distance. Turn the controller off, watch what the aircraft does, then turn the controller back on and reconnect. The pilot learns firsthand how the safety features behave.
+
+**Wall stop, old aircraft with sensors on.** Builds a real feel for where the obstacle sensors kick in and where their limits are.
+
+*How to run it:* Using an older aircraft with obstacle sensors turned on, fly straight at a wall at full speed and let the sensors stop it. The pilot needs to feel this to trust it and learn its limits. Use an aircraft you are willing to risk.
+
+**RC truck chase.** Builds smooth flying while tracking a moving target and dodging obstacles at the same time.
+
+*How to run it:* Drive an RC truck along forest trails. Pilots follow it with small aircraft, keeping it in view while flying around trees and staying on the path. To make it harder, add a second job while they fly, such as calling out what they see or switching between the normal and thermal camera. The flying is not allowed to pause while they do the second job.
+
+**Drone chases drone (tag).** Builds fast, smooth reactions to a target that moves in every direction, which is harder than a target on the ground.
+
+*How to run it:* One pilot flies an unpredictable path. The others stay in formation behind it, or tag it from behind. Because the target moves up, down, and sideways, the chasing pilots make constant small corrections and can never settle into a set pattern.
+
+**Moving waypoint photo hunt.** Builds fast decisions and smooth flying under time pressure, while managing the camera and the battery. One of the strongest drills.
+
+*How to run it:* Using EagleEye linked to CalTopo, drop a waypoint that shows up on every pilot's aircraft. Each pilot flies to it and takes a clear, obvious photo. How they frame the shot is up to them, but they have to get reasonably close.
+
+*The rules:*
+
+- When a new waypoint drops, they must leave the current one right away and go to the new one
+- The score is the number of clean photos they get
+- Add pressure with a limit: a set time, or land at 30 percent battery, or the round ends when the last waypoint is done
+- Run it as a competition between pilots
+
+**Precision payload drop.** Builds the skill behind dropping a rescue line, radio, or supplies to someone the pilot cannot reach on foot.
+
+*How to run it:* The pilot flies over a target and drops a beanbag or a dummy radio, trying to land it on the bullseye. Score by how close it lands. The drop happens while the aircraft is moving forward, not from a hover. It is harder than it sounds, because the drop is affected by height, wind, and the way the aircraft jumps up when the weight leaves it. Start with a target that stays still, then drop onto the moving RC truck, which is the same challenge as dropping supplies onto a moving boat.
+
+> Training drops use inert practice items only. Operational payload delivery is governed by Operations Manual Section 13, including the prohibition on free-drop release without Chief Pilot approval (13.6) and the payload rules of CAR 901.43 and 901.50.
+
+#### 11.6.6 Gamified and competitive drills
+
+**Timed gate slalom.** Builds speed and precision together, plus a smooth line through tight spaces.
+
+*How to run it:* Set up a course of hoops, gates, and cones. Pilots fly it against the clock, racing their own best time or head to head. To keep it clean, the run with the fewest gates missed beats the fastest sloppy run. Hang some gates up high so pilots also have to control their height.
+
+**Drone limbo.** Builds fine control of height and throttle, in a fun knockout format.
+
+*How to run it:* Set a bar for the aircraft to fly under. Everyone who clears it stays in. Lower the bar and go again until one pilot is left.
+
+**Relay race with hand-off.** Builds smooth flying under pressure while teammates watch, plus team energy.
+
+*How to run it:* Split into teams. Each pilot flies one leg of a course. Reaching your waypoint is the signal for the next pilot to launch and fly their leg. Good for a lighter or social training night.
+
+#### 11.6.7 Landing drills
+
+**Alternate landing site practice.** Builds thinking ahead about where to land in an emergency, and setting the aircraft up correctly to come home afterward.
+
+*How to run it:* The pilot picks emergency landing spots ahead of time. Trigger a pretend problem and have them land at one. Before taking off again, they set the home point correctly, to the controller and not the old launch pad, so the aircraft returns to the right place. This is the step most pilots forget.
+
+**Landing under canopy.** Builds smooth landing control when the aircraft is fighting the pilot.
+
+*How to run it:* Land at the edge of the forest, under branches, where the aircraft's own braking and sensors react in odd ways and work against the pilot. The pilot has to stay smooth and manage those reactions.
+
+**No-camera landing by eye.** Builds judging distance and height with your own eyes instead of the camera.
+
+*How to run it:* Turn the camera off and land on a target using only line of sight. Start with the target close, then move it farther away to make it harder. The goal is one clean approach with very little jerking or last-second correcting. This keeps manual landing sharp for times the pilot should not rely on automatic return-to-home.
+
+### 11.7 Training Documentation
 
 Each training session is documented with:
+
 - Date and location
-- Scenario type completed
-- Participants and roles
-- Flight hours logged
-- Skills demonstrated
-- Areas for improvement
-- Trainer sign-off
+- Theme and drills completed
+- Participants and crew roles filled
+- Aircraft flown
+- Hours contributing to each member's annual Program activity (Section 10.1)
+- Lessons learned or issues raised
+
+Records are retained per CAR 901.223.
 
 ---
 

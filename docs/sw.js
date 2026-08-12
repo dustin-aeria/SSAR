@@ -1,5 +1,5 @@
 // S2S SAR Drone Program Service Worker
-const CACHE_NAME = 's2s-rpoc-v22';
+const CACHE_NAME = 's2s-rpoc-v23';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache immediately on install
