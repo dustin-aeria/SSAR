@@ -1931,7 +1931,7 @@ function getFlyAwayProcedure() {
                 <i class="fas fa-info-circle"></i>
                 <div class="qa-info-box-content">
                     <h4>FIC Information to Provide</h4>
-                    <p>Aircraft: DJI M30T or M4TD • Last position/heading • Altitude AGL • Flight time remaining • Your contact info</p>
+                    <p>Aircraft make and model • Last position/heading • Altitude AGL • Flight time remaining • Your contact info</p>
                 </div>
             </div>
 
@@ -2109,7 +2109,7 @@ function getLostLinkProcedure() {
                 <i class="fas fa-info-circle"></i>
                 <div class="qa-info-box-content">
                     <h4>Pre-Configured Failsafe Actions</h4>
-                    <p>M30T/M4TD will automatically execute RTH after signal loss timeout (default 11 seconds)</p>
+                    <p>Most aircraft automatically execute RTH after a signal loss timeout (M30T/M4TD default 11 seconds; confirm the timeout for the type you are flying)</p>
                 </div>
             </div>
 
@@ -3241,12 +3241,12 @@ function showFlyAwayScript() {
             </div>
 
             <table class="qa-reference-table">
-                <tr><th>Information</th><th>M30T</th><th>M4TD</th></tr>
-                <tr><td>Color</td><td>Grey/Orange</td><td>Grey</td></tr>
-                <tr><td>Make/Model</td><td>DJI Matrice 30T</td><td>DJI Matrice 4TD</td></tr>
-                <tr><td>Weight</td><td>3,770 grams</td><td>2,300 grams</td></tr>
-                <tr><td>Max Flight Time</td><td>41 minutes</td><td>45 minutes</td></tr>
-                <tr><td>Max Speed</td><td>45 knots (82 km/h)</td><td>41 knots (76 km/h)</td></tr>
+                <tr><th>Information</th><th>M30T</th><th>M4TD</th><th>Other type</th></tr>
+                <tr><td>Color</td><td>Grey/Orange</td><td>Grey</td><td>Per aircraft</td></tr>
+                <tr><td>Make/Model</td><td>DJI Matrice 30T</td><td>DJI Matrice 4TD</td><td>From the register</td></tr>
+                <tr><td>Weight</td><td>3,770 grams</td><td>2,300 grams</td><td>From the register</td></tr>
+                <tr><td>Max Flight Time</td><td>41 minutes</td><td>45 minutes</td><td>From the register</td></tr>
+                <tr><td>Max Speed</td><td>45 knots (82 km/h)</td><td>41 knots (76 km/h)</td><td>From the register</td></tr>
             </table>
 
             <div class="qa-warning-box">

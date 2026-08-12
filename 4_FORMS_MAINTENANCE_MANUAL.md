@@ -34,12 +34,18 @@
 
 This Maintenance Control Manual (MCM) establishes the maintenance requirements, procedures, and standards for all RPAS operated under the Program's RPOC. This manual ensures compliance with CAR 901.221.
 
-### 1.2 Approved Aircraft
+### 1.2 Aircraft Covered by This Manual
+
+This manual applies to every aircraft entered in the Organization's aircraft register, not to a fixed list of models. Eligibility criteria for adding an aircraft are set out in Operations Manual Section 4.1. When a new type is registered, the Person Responsible for RPAS Maintenance establishes its maintenance schedule, inspection criteria, and component life limits from the manufacturer's documentation before the aircraft is tasked, and records them here alongside the reference types.
+
+The following are the current reference types, documented in detail in this manual because they are the models most widely used by SAR organizations at present. They are examples, not the limit of what may be operated.
 
 | Aircraft | MTOM | Max Flight | Op. Temp | IP Rating |
 |----------|------|------------|----------|-----------|
 | DJI M30T | 3.77 kg | 41 minutes | -20°C to 50°C | IP55 |
 | DJI Matrice 4TD | 2.3 kg | 42 minutes | -20°C to 45°C | IP54 |
+
+For any other registered aircraft, the equivalent specifications, pre-flight inspection, checklist, battery care, and firmware procedures are taken from that aircraft's flight manual and filed in the Organization's aircraft register in the same format used below.
 
 ### 1.3 Maintenance Organization
 
@@ -84,6 +90,8 @@ This Maintenance Control Manual (MCM) establishes the maintenance requirements, 
 ---
 
 ## 2. Aircraft Specifications
+
+Specifications for the reference types follow. Specifications for any other registered aircraft are recorded in the Organization's aircraft register in this same format, drawn from the manufacturer's flight manual.
 
 ### 2.1 DJI Matrice 30T (M30T)
 
@@ -888,7 +896,7 @@ Equipment testing is **MANDATORY** under the following conditions:
 | Field | Information |
 |-------|-------------|
 | **Date:** | |
-| **Aircraft:** | [ ] M30T  [ ] M4TD |
+| **Aircraft:** | [ ] M30T  [ ] M4TD  [ ] Other (specify): ____________ |
 | **Serial Number:** | |
 | **Firmware Version:** | |
 | **Test Technician:** | |
@@ -1214,7 +1222,7 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 > "FIC Kamloops, this is [PILOT NAME] with the S2S SAR Drone Program RPAS Operations. We are experiencing a fly-away emergency."
 
 **Step 2 - Provide Details:**
-> - "Aircraft type: DJI [M30T/M4TD]"
+> - "Aircraft type: [make and model]"
 > - "Last known position: [LAT/LONG or description]"
 > - "Last known altitude: [XXX] feet AGL"
 > - "Last known heading: [direction]"

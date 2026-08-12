@@ -3740,7 +3740,7 @@ Upon completion of Advanced Training, pilots will be able to:
 
 #### 2.4.4 Advanced Training Requirements
 
-**Aircraft-Specific Training:** Complete type-specific training on the assigned operational RPAS (e.g., DJI M30T, DJI Matrice 4TD).
+**Aircraft-Specific Training:** Complete type-specific training on each RPAS type the pilot will operate. Type training is required for every aircraft in the Organization's register, whether or not it is one of the reference types documented in this suite (currently the DJI M30T and DJI Matrice 4TD).
 
 **Flight Hours:** Log a minimum of 5 hours of flight time per RPAS type. Hours may include:
 - Supervised flights with a certified trainer
@@ -4015,7 +4015,7 @@ Pilots must demonstrate competency in:
 | JARUS SORA methodology | 80% | Written exam |
 | Airspace classification and procedures | 85% | Written exam |
 | Weather interpretation | 80% | Written + practical |
-| Aircraft systems (M30T, M4TD) | 85% | Written + practical |
+| Aircraft systems (each type flown) | 85% | Written + practical |
 | Emergency procedures | 90% | Written + practical |
 | Risk assessment | 80% | Scenario-based |
 | SMS principles | 80% | Written exam |
@@ -4165,7 +4165,7 @@ This section establishes the pilot competency records system for Program RPAS op
 | TC Pilot Certificate #: | |
 | Certificate Expiry: | |
 | Organization Join Date: | |
-| Aircraft Qualifications: | M30T [ ]    M4TD [ ] |
+| Aircraft Qualifications: | M30T [ ]    M4TD [ ]    Other (specify): ____________ |
 | Scenario Qualifications: | STSC-003 [ ]    STSC-004 [ ] |
 
 #### Training History
@@ -4175,6 +4175,7 @@ This section establishes the pilot competency records system for Program RPAS op
 | Initial ground school | | | |
 | M30T type training | | | |
 | M4TD type training | | | |
+| Other type training (specify) | | | |
 | STSC-003 training | | | |
 | STSC-004 BVLOS training | | | |
 | Emergency procedures | | | |
@@ -4186,6 +4187,7 @@ This section establishes the pilot competency records system for Program RPAS op
 |----------|-------------|-------------------|-----------------|--------|
 | DJI M30T | | | | |
 | DJI M4TD | | | | |
+| Other registered type | | | | |
 | Total | | | | |
 
 **Status Legend:**
@@ -4665,12 +4667,15 @@ Per Canadian Aviation Regulations, operators must maintain liability insurance:
 
 > **Note:** the Program maintains coverage significantly exceeding minimum regulatory requirements due to SAR operational complexity and public safety responsibility.
 
-### 8.3 the Program Aircraft Coverage
+### 8.3 Aircraft Coverage
 
-| Aircraft | MTOM | Category | Minimum Required | the Program Actual |
-|----------|------|----------|------------------|-------------|
+Every aircraft in the Organization's register must be covered before it is operated. Coverage is confirmed when a new type is added.
+
+| Aircraft | MTOM | Category | Minimum Required | Policy Actual |
+|----------|------|----------|------------------|---------------|
 | DJI M30T | 3.77 kg | 1-5 kg | $100,000 | [Policy Amount] |
 | DJI Matrice 4TD | 2.3 kg | 1-5 kg | $100,000 | [Policy Amount] |
+| [Other registered aircraft] | [MTOM] | [Category] | [Per category] | [Policy Amount] |
 
 ### 8.4 Policy Scope Requirements
 
@@ -5334,7 +5339,7 @@ If a trainee does not meet the required standard:
 
 ### 4.1 Purpose
 
-Advanced Training develops expertise with operational aircraft (DJI M30T, DJI Matrice 4TD) and prepares pilots for complex SAR missions including night operations, adverse weather, terrain-based searching, and EVLOS/BVLOS operations.
+Advanced Training develops expertise with the Organization's operational aircraft (the reference types documented in this suite are the DJI M30T and DJI Matrice 4TD; type training is required for whichever aircraft the pilot will fly) and prepares pilots for complex SAR missions including night operations, adverse weather, terrain-based searching, and EVLOS/BVLOS operations.
 
 ### 4.2 Prerequisites
 
@@ -5863,7 +5868,7 @@ Pilots must demonstrate competency in:
 | JARUS SORA methodology | 80% | Written exam |
 | Airspace classification | 85% | Written exam |
 | Weather interpretation | 80% | Written + practical |
-| Aircraft systems (M30T, M4TD) | 85% | Written + practical |
+| Aircraft systems (each type flown) | 85% | Written + practical |
 | Emergency procedures | 90% | Written + practical |
 
 ### 9.3 Flight Skills Assessment
@@ -5967,16 +5972,18 @@ Operational training covers the following scenario categories:
 
 #### 11.3.2 Environment-Specific Training
 
-| Environment | Training Focus | Equipment |
-|-------------|----------------|-----------|
-| Open Terrain | Basic patterns, altitude management | M30T, M4TD |
-| Light Canopy | Below-canopy searching, obstacle avoidance | M30T, M4TD |
-| Dense Canopy | Hidden subject detection, thermal signatures | M30T (thermal) |
-| Urban Areas | Motion-based searching, lost person profiles | M30T, M4TD |
-| Riverbank/Shoreline | Water proximity ops, current awareness | M30T, M4TD |
-| Canyon | Confined space operations, signal management | M30T, M4TD |
-| Alpine | High altitude reconnaissance, weather assessment | M30T, M4TD |
-| Steep Terrain/Cliffs | Proximity flying, face reconnaissance | M30T, M4TD |
+Aircraft are selected by capability, not by model. Any registered aircraft meeting the capability noted below may be used; the reference types are shown as current examples.
+
+| Environment | Training Focus | Required Aircraft Capability | Reference Types |
+|-------------|----------------|------------------------------|-----------------|
+| Open Terrain | Basic patterns, altitude management | Standard capability | M30T, M4TD |
+| Light Canopy | Below-canopy searching, obstacle avoidance | Obstacle sensing | M30T, M4TD |
+| Dense Canopy | Hidden subject detection, thermal signatures | Thermal payload and obstacle sensing | M30T, M4TD |
+| Urban Areas | Motion-based searching, lost person profiles | Zoom payload | M30T, M4TD |
+| Riverbank/Shoreline | Water proximity ops, current awareness | Weather sealing (IP rating) suited to spray and precipitation | M30T, M4TD |
+| Canyon | Confined space operations, signal management | Obstacle sensing; adequate C2 link margin | M30T, M4TD |
+| Alpine | High altitude reconnaissance, weather assessment | Wind and cold tolerance for the expected conditions | M30T, M4TD |
+| Steep Terrain/Cliffs | Proximity flying, face reconnaissance | Obstacle sensing; precise position hold | M30T, M4TD |
 
 #### 11.3.3 Night Operations Training
 
@@ -6155,7 +6162,7 @@ Per CAR 901.223, maintain records of:
 | TC Pilot Certificate # | |
 | Certificate Expiry | |
 | Organization Join Date | |
-| Aircraft Qualifications | M30T [ ] M4TD [ ] |
+| Aircraft Qualifications | M30T [ ] M4TD [ ] Other (specify): ____________ |
 | Scenario Qualifications | STSC-003 [ ] STSC-004 [ ] |
 
 #### Training History
@@ -6166,6 +6173,7 @@ Per CAR 901.223, maintain records of:
 | Foundation Flight Review | | | |
 | M30T Type Training | | | |
 | M4TD Type Training | | | |
+| Other Type Training (specify) | | | |
 | STSC-003 Training | | | |
 | STSC-004 BVLOS Training | | | |
 | Emergency Procedures | | | |
@@ -6273,12 +6281,18 @@ This Training Program Manual incorporates content from the following source docu
 
 This Maintenance Control Manual (MCM) establishes the maintenance requirements, procedures, and standards for all RPAS operated under the Program's RPOC. This manual ensures compliance with CAR 901.221.
 
-### 1.2 Approved Aircraft
+### 1.2 Aircraft Covered by This Manual
+
+This manual applies to every aircraft entered in the Organization's aircraft register, not to a fixed list of models. Eligibility criteria for adding an aircraft are set out in Operations Manual Section 4.1. When a new type is registered, the Person Responsible for RPAS Maintenance establishes its maintenance schedule, inspection criteria, and component life limits from the manufacturer's documentation before the aircraft is tasked, and records them here alongside the reference types.
+
+The following are the current reference types, documented in detail in this manual because they are the models most widely used by SAR organizations at present. They are examples, not the limit of what may be operated.
 
 | Aircraft | MTOM | Max Flight | Op. Temp | IP Rating |
 |----------|------|------------|----------|-----------|
 | DJI M30T | 3.77 kg | 41 minutes | -20°C to 50°C | IP55 |
 | DJI Matrice 4TD | 2.3 kg | 42 minutes | -20°C to 45°C | IP54 |
+
+For any other registered aircraft, the equivalent specifications, pre-flight inspection, checklist, battery care, and firmware procedures are taken from that aircraft's flight manual and filed in the Organization's aircraft register in the same format used below.
 
 ### 1.3 Maintenance Organization
 
@@ -6323,6 +6337,8 @@ This Maintenance Control Manual (MCM) establishes the maintenance requirements, 
 ---
 
 ## 2. Aircraft Specifications
+
+Specifications for the reference types follow. Specifications for any other registered aircraft are recorded in the Organization's aircraft register in this same format, drawn from the manufacturer's flight manual.
 
 ### 2.1 DJI Matrice 30T (M30T)
 
@@ -7127,7 +7143,7 @@ Equipment testing is **MANDATORY** under the following conditions:
 | Field | Information |
 |-------|-------------|
 | **Date:** | |
-| **Aircraft:** | [ ] M30T  [ ] M4TD |
+| **Aircraft:** | [ ] M30T  [ ] M4TD  [ ] Other (specify): ____________ |
 | **Serial Number:** | |
 | **Firmware Version:** | |
 | **Test Technician:** | |
@@ -7453,7 +7469,7 @@ When experiencing a fly-away or lost link emergency requiring ATC notification:
 > "FIC Kamloops, this is [PILOT NAME] with the S2S SAR Drone Program RPAS Operations. We are experiencing a fly-away emergency."
 
 **Step 2 - Provide Details:**
-> - "Aircraft type: DJI [M30T/M4TD]"
+> - "Aircraft type: [make and model]"
 > - "Last known position: [LAT/LONG or description]"
 > - "Last known altitude: [XXX] feet AGL"
 > - "Last known heading: [direction]"

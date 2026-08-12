@@ -417,7 +417,7 @@ If a trainee does not meet the required standard:
 
 ### 4.1 Purpose
 
-Advanced Training develops expertise with operational aircraft (DJI M30T, DJI Matrice 4TD) and prepares pilots for complex SAR missions including night operations, adverse weather, terrain-based searching, and EVLOS/BVLOS operations.
+Advanced Training develops expertise with the Organization's operational aircraft (the reference types documented in this suite are the DJI M30T and DJI Matrice 4TD; type training is required for whichever aircraft the pilot will fly) and prepares pilots for complex SAR missions including night operations, adverse weather, terrain-based searching, and EVLOS/BVLOS operations.
 
 ### 4.2 Prerequisites
 
@@ -946,7 +946,7 @@ Pilots must demonstrate competency in:
 | JARUS SORA methodology | 80% | Written exam |
 | Airspace classification | 85% | Written exam |
 | Weather interpretation | 80% | Written + practical |
-| Aircraft systems (M30T, M4TD) | 85% | Written + practical |
+| Aircraft systems (each type flown) | 85% | Written + practical |
 | Emergency procedures | 90% | Written + practical |
 
 ### 9.3 Flight Skills Assessment
@@ -1050,16 +1050,18 @@ Operational training covers the following scenario categories:
 
 #### 11.3.2 Environment-Specific Training
 
-| Environment | Training Focus | Equipment |
-|-------------|----------------|-----------|
-| Open Terrain | Basic patterns, altitude management | M30T, M4TD |
-| Light Canopy | Below-canopy searching, obstacle avoidance | M30T, M4TD |
-| Dense Canopy | Hidden subject detection, thermal signatures | M30T (thermal) |
-| Urban Areas | Motion-based searching, lost person profiles | M30T, M4TD |
-| Riverbank/Shoreline | Water proximity ops, current awareness | M30T, M4TD |
-| Canyon | Confined space operations, signal management | M30T, M4TD |
-| Alpine | High altitude reconnaissance, weather assessment | M30T, M4TD |
-| Steep Terrain/Cliffs | Proximity flying, face reconnaissance | M30T, M4TD |
+Aircraft are selected by capability, not by model. Any registered aircraft meeting the capability noted below may be used; the reference types are shown as current examples.
+
+| Environment | Training Focus | Required Aircraft Capability | Reference Types |
+|-------------|----------------|------------------------------|-----------------|
+| Open Terrain | Basic patterns, altitude management | Standard capability | M30T, M4TD |
+| Light Canopy | Below-canopy searching, obstacle avoidance | Obstacle sensing | M30T, M4TD |
+| Dense Canopy | Hidden subject detection, thermal signatures | Thermal payload and obstacle sensing | M30T, M4TD |
+| Urban Areas | Motion-based searching, lost person profiles | Zoom payload | M30T, M4TD |
+| Riverbank/Shoreline | Water proximity ops, current awareness | Weather sealing (IP rating) suited to spray and precipitation | M30T, M4TD |
+| Canyon | Confined space operations, signal management | Obstacle sensing; adequate C2 link margin | M30T, M4TD |
+| Alpine | High altitude reconnaissance, weather assessment | Wind and cold tolerance for the expected conditions | M30T, M4TD |
+| Steep Terrain/Cliffs | Proximity flying, face reconnaissance | Obstacle sensing; precise position hold | M30T, M4TD |
 
 #### 11.3.3 Night Operations Training
 
@@ -1238,7 +1240,7 @@ Per CAR 901.223, maintain records of:
 | TC Pilot Certificate # | |
 | Certificate Expiry | |
 | Organization Join Date | |
-| Aircraft Qualifications | M30T [ ] M4TD [ ] |
+| Aircraft Qualifications | M30T [ ] M4TD [ ] Other (specify): ____________ |
 | Scenario Qualifications | STSC-003 [ ] STSC-004 [ ] |
 
 #### Training History
@@ -1249,6 +1251,7 @@ Per CAR 901.223, maintain records of:
 | Foundation Flight Review | | | |
 | M30T Type Training | | | |
 | M4TD Type Training | | | |
+| Other Type Training (specify) | | | |
 | STSC-003 Training | | | |
 | STSC-004 BVLOS Training | | | |
 | Emergency Procedures | | | |

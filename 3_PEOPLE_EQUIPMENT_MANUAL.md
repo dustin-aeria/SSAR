@@ -203,7 +203,7 @@ Upon completion of Advanced Training, pilots will be able to:
 
 #### 2.4.4 Advanced Training Requirements
 
-**Aircraft-Specific Training:** Complete type-specific training on the assigned operational RPAS (e.g., DJI M30T, DJI Matrice 4TD).
+**Aircraft-Specific Training:** Complete type-specific training on each RPAS type the pilot will operate. Type training is required for every aircraft in the Organization's register, whether or not it is one of the reference types documented in this suite (currently the DJI M30T and DJI Matrice 4TD).
 
 **Flight Hours:** Log a minimum of 5 hours of flight time per RPAS type. Hours may include:
 - Supervised flights with a certified trainer
@@ -422,7 +422,7 @@ Pilots must demonstrate competency in:
 | JARUS SORA methodology | 80% | Written exam |
 | Airspace classification and procedures | 85% | Written exam |
 | Weather interpretation | 80% | Written + practical |
-| Aircraft systems (M30T, M4TD) | 85% | Written + practical |
+| Aircraft systems (each type flown) | 85% | Written + practical |
 | Emergency procedures | 90% | Written + practical |
 | Risk assessment | 80% | Scenario-based |
 | SMS principles | 80% | Written exam |
@@ -572,7 +572,7 @@ This section establishes the pilot competency records system for Program RPAS op
 | TC Pilot Certificate #: | |
 | Certificate Expiry: | |
 | Organization Join Date: | |
-| Aircraft Qualifications: | M30T [ ]    M4TD [ ] |
+| Aircraft Qualifications: | M30T [ ]    M4TD [ ]    Other (specify): ____________ |
 | Scenario Qualifications: | STSC-003 [ ]    STSC-004 [ ] |
 
 #### Training History
@@ -582,6 +582,7 @@ This section establishes the pilot competency records system for Program RPAS op
 | Initial ground school | | | |
 | M30T type training | | | |
 | M4TD type training | | | |
+| Other type training (specify) | | | |
 | STSC-003 training | | | |
 | STSC-004 BVLOS training | | | |
 | Emergency procedures | | | |
@@ -593,6 +594,7 @@ This section establishes the pilot competency records system for Program RPAS op
 |----------|-------------|-------------------|-----------------|--------|
 | DJI M30T | | | | |
 | DJI M4TD | | | | |
+| Other registered type | | | | |
 | Total | | | | |
 
 **Status Legend:**
@@ -1072,12 +1074,15 @@ Per Canadian Aviation Regulations, operators must maintain liability insurance:
 
 > **Note:** the Program maintains coverage significantly exceeding minimum regulatory requirements due to SAR operational complexity and public safety responsibility.
 
-### 8.3 the Program Aircraft Coverage
+### 8.3 Aircraft Coverage
 
-| Aircraft | MTOM | Category | Minimum Required | the Program Actual |
-|----------|------|----------|------------------|-------------|
+Every aircraft in the Organization's register must be covered before it is operated. Coverage is confirmed when a new type is added.
+
+| Aircraft | MTOM | Category | Minimum Required | Policy Actual |
+|----------|------|----------|------------------|---------------|
 | DJI M30T | 3.77 kg | 1-5 kg | $100,000 | [Policy Amount] |
 | DJI Matrice 4TD | 2.3 kg | 1-5 kg | $100,000 | [Policy Amount] |
+| [Other registered aircraft] | [MTOM] | [Category] | [Per category] | [Policy Amount] |
 
 ### 8.4 Policy Scope Requirements
 

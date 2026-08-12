@@ -51,7 +51,9 @@ The interactive web tool provides searchable access to all policy manuals with q
 
 ---
 
-## Authorized Aircraft
+## Aircraft
+
+Any RPAS may be operated under this documentation provided it meets the eligibility criteria in Operations Manual Section 4.1 (registered and marked, declared under Standard 922 where the operation requires it, within the mass and speed class assumed by the SORA assessment, serviceable under the MCM, correctly equipped, flown by a type-qualified pilot, and signed off by the Chief Pilot). The following are the current reference types, the models most widely used by SAR organizations at present and the ones documented in detail throughout this suite.
 
 | Aircraft | MTOM | Flight Time | Operating Temp | Wind Resistance | IP Rating |
 |----------|------|-------------|----------------|-----------------|-----------|
