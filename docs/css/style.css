@@ -144,8 +144,10 @@ body {
 .header-logo {
     width: 44px;
     height: 44px;
-    border-radius: 10px;
+    border-radius: 50%;
     object-fit: contain;
+    background: #ffffff;
+    padding: 3px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -1349,7 +1351,9 @@ body.resizing * {
 .copyright-logo {
     width: 28px;
     height: 28px;
-    border-radius: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 2px;
     flex-shrink: 0;
 }
 

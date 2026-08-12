@@ -1,5 +1,5 @@
 // S2S SAR Drone Program Service Worker
-const CACHE_NAME = 's2s-rpoc-v16';
+const CACHE_NAME = 's2s-rpoc-v17';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache immediately on install
@@ -10,7 +10,8 @@ const PRECACHE_ASSETS = [
   '/js/app.js',
   '/js/content.js',
   '/manifest.json',
-  '/icons/icon.svg',
+  '/icons/logo.png',
+  '/icons/icon-192.png',
   '/offline.html',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://cdn.jsdelivr.net/npm/marked/marked.min.js'
