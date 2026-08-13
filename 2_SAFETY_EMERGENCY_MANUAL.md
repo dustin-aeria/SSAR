@@ -684,6 +684,7 @@ This section provides the complete Specific Operations Risk Assessment (SORA) re
 - **Level 1 Complex BVLOS (Division VI, under RPOC):** BVLOS up to 400' AGL over sparsely populated areas
 - **STSC-003 (under valid SFOC):** VLOS operations above 400' AGL up to 1000' AGL
 - **STSC-004 (under valid SFOC):** BVLOS operations in sparsely populated areas by Advanced pilots
+- **Operation types:** Any operation supporting SAR activity, per Operations Manual 3.1. The assessments in this Section are driven by aircraft class, environment, and authority envelope rather than by mission type
 - **Aircraft:** Any RPAS meeting the eligibility criteria of Operations Manual Section 4.1, within the mass and speed class assumed by this assessment. DJI M30T and DJI Matrice 4TD are the current reference types
 
 **Altitude Rationale:** Normal flight operations are conducted at 400' AGL using terrain-following profiles. The 1000' AGL maximum is established to accommodate Return-to-Home (RTH) emergency scenarios in the Program's mountainous operating environment, where terrain-following cannot be maintained and the RPAS must climb to safely clear obstacles during autonomous return.

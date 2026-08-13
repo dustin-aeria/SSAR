@@ -3603,7 +3603,7 @@ function showRegulationsReference() {
                 </tr>
                 <tr>
                     <td><strong>Use Case</strong></td>
-                    <td>High altitude reconnaissance</td>
+                    <td>Any operation requiring altitude above 400' AGL</td>
                     <td>Extended range SAR, time-critical ops</td>
                 </tr>
             </table>

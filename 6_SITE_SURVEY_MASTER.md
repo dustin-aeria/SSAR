@@ -58,11 +58,17 @@ The region is described in three sub-regions reflecting the response areas of th
 
 ### 2.1 Description of Flight Profiles
 
-**Reconnaissance:** VLOS and BVLOS reconnaissance flights launch from a safe site near the presumed location of the subject. The RPA is navigated in a search pattern tailored to the geography of the subject's environment, such as following a drainage where a subject is lost in riverine terrain, or contouring a slope in mountainous terrain. On locating the subject the RPA marks the location and maintains visual contact until further instructions are received and approval is given to return to the launch site.
+The Program conducts any RPAS operation that supports SAR activity. The profiles below are the common shapes those operations take; the full list of operation types and their procedures is in Operations Manual 3.1.
+
+**Search and reconnaissance:** VLOS and BVLOS flights launch from a safe site near the presumed location of the subject. The RPA is navigated in a search pattern tailored to the geography of the subject's environment, such as following a drainage where a subject is lost in riverine terrain, or contouring a slope in mountainous terrain. On locating the subject the RPA marks the location and maintains visual contact until further instructions are received and approval is given to return to the launch site.
 
 **Payload delivery:** Carriage and release of supplies or equipment to a subject or team, conducted with a medium RPA under Operations Manual Section 13, or with a small RPA equipped with a manufacturer-declared release mechanism under Sections 5 and 7. The flight launches from a prepared site and proceeds to the delivery location, where the load is set down by landing or lowered by winch. Free-drop release is not authorized without specific Chief Pilot approval. Medium RPA operations are limited to an operating weight of 150 kg including payload, require a current Standard 922 declaration for the model and operation, and maintain the separations and visibility limits of Operations Manual 13.5.
 
-**Authority:** Flight profiles are conducted within the parameters the pilot's certificate allows, or under a valid SFOC held by the Organization where one applies (Operations Manual Section 5).
+**Overwatch and scene support:** Flights that maintain a view of a rescue in progress, track a subject, assess hazards or access routes for teams on the ground, support helicopter or technical rescue operations, or provide aerial lighting in low light. The aircraft holds or orbits over the area of interest and reports to SAR Management by the agreed communications path.
+
+**Other operation types:** Mapping and documentation, night operations, and training flights follow the same site, airspace, and hazard treatment set out in this survey. Any operation type not listed is planned using the closest profile above, with the Rapid Site Survey confirming the specific site on the day.
+
+**Authority:** All flight profiles are conducted within the parameters the pilot's certificate allows, or under a valid SFOC held by the Organization where one applies (Operations Manual Section 5). The operation type determines what the crew is trying to achieve; the authority envelope determines what they may do while achieving it.
 
 ---
 

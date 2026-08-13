@@ -115,7 +115,7 @@ Each participating organization appoints its own Accountable Executive and Perso
 | ATS Coordination | **Required per SFOC conditions** |
 | Visual | VLOS maintained |
 | Pilot | Advanced or higher, granted under the SFOC |
-| Use Case | High altitude reconnaissance |
+| Use Case | Any operation requiring altitude above 400' AGL, for example a field of view essential to the task or terrain clearance on return |
 
 ### STSC-004 - Low-Risk BVLOS (requires valid SFOC)
 | Parameter | Value |
@@ -124,7 +124,7 @@ Each participating organization appoints its own Accountable Executive and Perso
 | ATS Coordination | Not required |
 | Visual | BVLOS permitted |
 | Pilot | Advanced, granted under the SFOC |
-| Use Case | Extended range search by Advanced pilots |
+| Use Case | Any BVLOS operation by Advanced pilots within the SFOC envelope |
 
 ### Time-Critical SAR Operations
 

@@ -50,12 +50,15 @@ This Operations Manual establishes the operating standards, procedures, and requ
 
 ### 1.2 Scope
 
-This manual applies to all RPAS operations conducted under the S2S SAR Drone Program by its participating Sea to Sky corridor search and rescue organizations. In this manual, "the Program" means the shared S2S SAR Drone Program, and "the Organization" means the participating search and rescue organization conducting the operation. Operations covered include:
+This manual applies to **every RPAS operation conducted in support of search and rescue activity** under the S2S SAR Drone Program by its participating Sea to Sky corridor search and rescue organizations. In this manual, "the Program" means the shared S2S SAR Drone Program, and "the Organization" means the participating search and rescue organization conducting the operation.
+
+The manual is written to accommodate the full breadth of SAR operation types rather than a fixed list of missions. The operation types currently conducted or provided for are set out in Section 3.1, and new types are adopted under the same framework of authority, risk assessment, training, and procedure. The authority envelopes available across all of them are:
 
 - Visual Line of Sight (VLOS) operations, including Extended VLOS and sheltered operations (CARs Part IX, Division V)
 - Level 1 Complex Operations: low-risk BVLOS under an RPAS Operator Certificate (CARs Part IX, Division VI)
 - High Altitude VLOS operations above 400' AGL up to 1000' AGL (STSC-003), where the Organization holds a valid SFOC
 - Low-Risk BVLOS by Advanced pilots (STSC-004), where the Organization holds a valid SFOC
+- Medium RPA operations for payload delivery (Section 13)
 
 ### 1.3 Regulatory Compliance
 
@@ -165,22 +168,46 @@ Additional privileges:
 
 ### 3.1 Preamble
 
-This Concept of Operations outlines RPAS operations conducted under the S2S SAR Drone Program by its participating Sea to Sky corridor search and rescue organizations, operating throughout the Sea to Sky Corridor of British Columbia. This document supports each Organization's RPOC and, where applicable, SFOC applications, covering:
+This Concept of Operations outlines RPAS operations conducted under the S2S SAR Drone Program by its participating Sea to Sky corridor search and rescue organizations, operating throughout the Sea to Sky Corridor of British Columbia. It supports each Organization's RPOC and, where applicable, SFOC applications.
 
-- **Level 1 Complex Operations (CAR 901.87):** BVLOS operation of a small RPA in uncontrolled airspace, max 400' AGL, over sparsely populated areas, conducted under the Organization's RPOC by Level 1 Complex pilots
-- **(STSC-003)** VLOS operation of a small RPA (>250g up to 25kg) in uncontrolled airspace above 400' AGL up to 1000' AGL, under the Organization's valid SFOC
-- **(STSC-004)** BVLOS operation of a small RPA (>250g up to 25kg) over low-risk ground areas using visual observer DAA, by Advanced pilots under the Organization's valid SFOC
+**Scope.** The Program conducts any RPAS operation that supports search and rescue activity, using any aircraft eligible under Section 4.1, within the authority the pilot and Organization hold. The Program is not limited to a fixed list of mission types: as SAR practice and aircraft capability develop, new operation types are adopted under the same framework of authority, risk assessment, training, and procedure that governs the operations described here.
+
+**Operation types currently conducted or provided for**, each with its procedure in this manual:
+
+| Operation type | Procedure |
+|----------------|-----------|
+| Area search and subject location | Section 7 (Search Operations); flight profile 3.9.2 |
+| Scene overview and situational awareness | Section 7.7; flight profile 3.9.3 |
+| Subject overwatch and tracking | Sections 7 and 3.9.3 |
+| Hazard and terrain assessment for ground and air teams | Sections 7 and 9 (Environmental Operations) |
+| Support to helicopter and technical rescue operations | Sections 7.7 and 8 (Communications) |
+| Night and low-light operations, including aerial lighting | Sections 3.9.3 and 9 |
+| Mapping, imagery capture, and post-incident documentation | Section 7 |
+| Payload delivery to a subject or team | Section 13 (Payload Delivery Operations) |
+| Training, currency, and exercise flights | Training Manual |
+
+**Authority envelopes available**, which apply across every operation type above rather than defining separate missions:
+
+- **VLOS, EVLOS, and sheltered operations (CARs Division V):** conducted under the pilot's certificate
+- **Level 1 Complex Operations (CAR 901.87):** BVLOS in uncontrolled airspace, max 400' AGL, under the Organization's RPOC by Level 1 Complex pilots
+- **(STSC-003)** VLOS above 400' AGL up to 1000' AGL, under the Organization's valid SFOC
+- **(STSC-004)** BVLOS over low-risk ground areas using visual observer DAA, by Advanced pilots under the Organization's valid SFOC
+- **Medium RPA operations** for payload delivery, per Section 13
+
+The operation type determines what the crew is trying to achieve. The authority envelope determines what they are permitted to do while achieving it. Both must be satisfied for every flight (Core Operating Rule, 1.3.1).
 
 ### 3.2 Public Good and Objective
 
-The S2S SAR Drone Program provides RPAS capability to the volunteer search and rescue organizations of the Sea to Sky corridor of British Columbia, each a first responder non-profit providing 24/7 SAR services in its own jurisdiction. The primary objective is to conduct safe and effective BVLOS RPAS flights supporting the Program operations.
+The S2S SAR Drone Program provides RPAS capability to the volunteer search and rescue organizations of the Sea to Sky corridor of British Columbia, each a first responder non-profit providing 24/7 SAR services in its own jurisdiction. The primary objective is to conduct safe and effective RPAS operations of whatever type the SAR task requires, in support of saving lives and reducing risk to ground and air crews.
 
 | Objective | Performance Criteria |
 |-----------|---------------------|
-| Safe Operation | Zero incidents/near-misses; full adherence to checklists; successful emergency protocol execution |
-| Effective Reconnaissance | Successful identification and location of subjects; real-time data; minimal latency |
-| Situational Awareness | Flights launched to assess blind spots or unknown threats where insight was gained |
+| Safe Operation | Zero incidents and near-misses; full adherence to checklists; successful emergency protocol execution |
+| Mission Effectiveness | The operation achieves what the task required of it, whether locating a subject, informing a decision, supporting a rescue in progress, or delivering equipment |
+| Information to Decision Makers | Timely, accurate imagery and reporting to SAR Management, with minimal latency |
+| Risk Reduction | Ground and air crews exposed to less hazard because the aircraft was used in their place where practical |
 | Efficiency | Reduction in average mission time without compromising safety |
+| Adaptability | New operation types are adopted under the existing framework rather than requiring a parallel one |
 
 ### 3.3 Standard Scenario Scope
 
@@ -219,13 +246,16 @@ The S2S SAR Drone Program provides RPAS capability to the volunteer search and r
 
 ### 3.5 Pilot Staging Process
 
-| Stage | Description | Allowed Operations | Progression Criteria |
-|-------|-------------|-------------------|---------------------|
-| 1 | Basic License & Onboarding | Sub-250g RPAS flights | 20 training flights; complete the Program Manuals |
-| 2 | Advanced License Training | VLOS <400 ft AGL | Advanced License; 20 additional flights |
-| 3 | BVLOS Training & Operations | BVLOS under supervision | 20 BVLOS flights; supervisor sign-off |
-| 4 | High-Altitude Training | High altitude under supervision | 20 high-altitude flights; supervisor sign-off |
-| 6 | Full Operator Privileges | All operations permitted by certificates held and any valid SFOC | All stages complete; final sign-off |
+| Level | Description | Allowed Operations | Progression |
+|-------|-------------|-------------------|-------------|
+| Trainee | Onboarding and supervised training | Training flights under direct supervision | Enrolled in the Program training stream |
+| Basic | TC Basic certificate plus Program basic training | Whatever the Basic certificate allows | Trainee level complete; trainer satisfied |
+| Advanced | TC Advanced certificate plus Program advanced training | Whatever the Advanced certificate allows, across all operation types | Basic level complete; trainer satisfied |
+| SFOC | Trained on the standard scenarios and standing SFOCs held | Operations within the SFOC, per its conditions | Advanced level complete; granted under the SFOC |
+| L1C | TC Level 1 Complex certificate plus Program BVLOS training | Division VI BVLOS under the Organization RPOC | Advanced level complete; trainer satisfied |
+| Flight Reviewer | Internal Program appointment | Conducts Program flight reviews and sign-offs | Chief Pilot appointment |
+
+Progression is by demonstrated readiness rather than a flight count. Full detail is in the Training Manual.
 
 ### 3.6 Operational Constraints (NO-GO)
 
@@ -241,10 +271,10 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 
 ### 3.7 In-Field Rationale
 
-- **BVLOS:** Permitted when mission requires increased awareness beyond VLOS, with radio link intact
-- **High-Altitude (>400 ft AGL):** Authorized only when mission requires visibility essential to locating a subject
+- **BVLOS:** Permitted when the operation, of whatever type, requires reach or awareness beyond VLOS, with the command and control link intact and the authority for BVLOS held
+- **High-Altitude (>400 ft AGL):** Permitted only under a valid SFOC or ATS authorization, and only when the operation requires the altitude, for example for a field of view essential to the task or for terrain clearance on return
 
-> **Under no circumstances is an operator permitted to fly BVLOS or at high altitudes unless deemed essential for the SAR operation.**
+> **Under no circumstances is an operator permitted to fly BVLOS or at high altitude unless it is required by the SAR operation and the authority for it is held.**
 
 ### 3.8 Hierarchy of Operational Safety
 
@@ -267,7 +297,9 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 >
 > **CRITICAL: If ANY abnormality is detected, LAND IMMEDIATELY and troubleshoot.**
 
-#### 3.9.2 Reconnaissance Flight
+#### 3.9.2 Search Flight Profile
+
+Applies to area search, subject location, and any operation whose purpose is to find something. The same phase structure supports mapping and documentation flights.
 
 **Starting Point:** All flights begin at the Last Known Position (LKP) or reference markers identified by SAR Management. From the starting point, all search patterns work OUTWARD.
 
@@ -283,7 +315,9 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 | Return Flight | Orient toward launch; assess return path via live feed |
 | Land | Return at safe altitude; descend vertically to pad |
 
-#### 3.9.3 Situational Awareness Flight
+#### 3.9.3 Overwatch and Support Flight Profile
+
+Applies to scene overview, subject overwatch and tracking, hazard assessment for teams on the ground, support to helicopter and technical rescue operations, and night or low-light work including aerial lighting.
 
 **Scene Observation:**
 - Maintain visual overview of rescue site
@@ -306,6 +340,10 @@ Operations shall NOT proceed if ANY of the following conditions exist:
 | Scan | Fly transitionally to capture rescue team safety data |
 | Slow Exit | Return RPA to VLOS slowly |
 | Return & Land | Fly to launch; descend vertically to pad |
+
+#### 3.9.4 Other Operation Types
+
+Payload delivery has its own profile and procedures at Section 13. For any operation type not described above, the PIC builds the profile from the phase structure of 3.9.2 or 3.9.3, whichever fits the task, and confirms with the Chief Pilot where the operation is materially different from anything previously conducted. New profiles that prove useful are added to this Section so the Program's documented practice keeps pace with what it actually does.
 
 ### 3.10 Operational Safety Objectives (OSO) Reference
 
@@ -793,7 +831,7 @@ This section establishes standard operating procedures for RPAS search operation
 
 ### 7.2 Search Starting Point (All Patterns)
 
-All reconnaissance and search flights begin at the designated starting point identified by SAR Management:
+Search flights, and any operation tasked from a known reference, begin at the starting point identified by SAR Management:
 
 - Last Known Position (LKP) of the subject
 - Physical evidence location (e.g., subject's belongings, hat, pack)
@@ -882,7 +920,7 @@ Required documentation for all search operations:
 - Post-search debrief notes
 - Battery usage and swap times
 
-### 7.7 Situational Awareness Operations
+### 7.7 Overwatch and Scene Support Operations
 
 #### Scene Monitoring
 - Maintain aerial observation of rescue site
@@ -2732,6 +2770,7 @@ This section provides the complete Specific Operations Risk Assessment (SORA) re
 - **Level 1 Complex BVLOS (Division VI, under RPOC):** BVLOS up to 400' AGL over sparsely populated areas
 - **STSC-003 (under valid SFOC):** VLOS operations above 400' AGL up to 1000' AGL
 - **STSC-004 (under valid SFOC):** BVLOS operations in sparsely populated areas by Advanced pilots
+- **Operation types:** Any operation supporting SAR activity, per Operations Manual 3.1. The assessments in this Section are driven by aircraft class, environment, and authority envelope rather than by mission type
 - **Aircraft:** Any RPAS meeting the eligibility criteria of Operations Manual Section 4.1, within the mass and speed class assumed by this assessment. DJI M30T and DJI Matrice 4TD are the current reference types
 
 **Altitude Rationale:** Normal flight operations are conducted at 400' AGL using terrain-following profiles. The 1000' AGL maximum is established to accommodate Return-to-Home (RTH) emergency scenarios in the Program's mountainous operating environment, where terrain-following cannot be maintained and the RPAS must climb to safely clear obstacles during autonomous return.
@@ -8930,11 +8969,17 @@ The region is described in three sub-regions reflecting the response areas of th
 
 ### 2.1 Description of Flight Profiles
 
-**Reconnaissance:** VLOS and BVLOS reconnaissance flights launch from a safe site near the presumed location of the subject. The RPA is navigated in a search pattern tailored to the geography of the subject's environment, such as following a drainage where a subject is lost in riverine terrain, or contouring a slope in mountainous terrain. On locating the subject the RPA marks the location and maintains visual contact until further instructions are received and approval is given to return to the launch site.
+The Program conducts any RPAS operation that supports SAR activity. The profiles below are the common shapes those operations take; the full list of operation types and their procedures is in Operations Manual 3.1.
+
+**Search and reconnaissance:** VLOS and BVLOS flights launch from a safe site near the presumed location of the subject. The RPA is navigated in a search pattern tailored to the geography of the subject's environment, such as following a drainage where a subject is lost in riverine terrain, or contouring a slope in mountainous terrain. On locating the subject the RPA marks the location and maintains visual contact until further instructions are received and approval is given to return to the launch site.
 
 **Payload delivery:** Carriage and release of supplies or equipment to a subject or team, conducted with a medium RPA under Operations Manual Section 13, or with a small RPA equipped with a manufacturer-declared release mechanism under Sections 5 and 7. The flight launches from a prepared site and proceeds to the delivery location, where the load is set down by landing or lowered by winch. Free-drop release is not authorized without specific Chief Pilot approval. Medium RPA operations are limited to an operating weight of 150 kg including payload, require a current Standard 922 declaration for the model and operation, and maintain the separations and visibility limits of Operations Manual 13.5.
 
-**Authority:** Flight profiles are conducted within the parameters the pilot's certificate allows, or under a valid SFOC held by the Organization where one applies (Operations Manual Section 5).
+**Overwatch and scene support:** Flights that maintain a view of a rescue in progress, track a subject, assess hazards or access routes for teams on the ground, support helicopter or technical rescue operations, or provide aerial lighting in low light. The aircraft holds or orbits over the area of interest and reports to SAR Management by the agreed communications path.
+
+**Other operation types:** Mapping and documentation, night operations, and training flights follow the same site, airspace, and hazard treatment set out in this survey. Any operation type not listed is planned using the closest profile above, with the Rapid Site Survey confirming the specific site on the day.
+
+**Authority:** All flight profiles are conducted within the parameters the pilot's certificate allows, or under a valid SFOC held by the Organization where one applies (Operations Manual Section 5). The operation type determines what the crew is trying to achieve; the authority envelope determines what they may do while achieving it.
 
 ---
 
