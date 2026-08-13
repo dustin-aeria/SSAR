@@ -63,17 +63,20 @@ The Canadian Aviation Regulations are the governing authority for all Program op
 
 > **Fly within the parameters your pilot certificate allows. Operations beyond those parameters require a valid SFOC held by your Organization, and only pilots granted privileges under that SFOC may conduct them, in accordance with its conditions.**
 
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
+
 ### 1.4 Related Documents
 
 | Document Number | Document Title |
 |-----------------|----------------|
-| SMS-001 | Safety Management System Manual |
-| MCM-001 | Maintenance Control Manual |
-| ERP-001 | Emergency Response Procedures |
-| QAP-001 | Quality Assurance Program |
-| PCR-001 | Pilot Competency Records |
-| SOA-001 | SORA Documentation Package |
-| TRN-301 | Pilot Training Program |
+| Safety Manual (Safety Management System) | Safety Management System Manual |
+| Forms & Maintenance Manual 1 (Maintenance Control) | Maintenance Control Manual |
+| Safety Manual 2 (Emergency Procedures) | Emergency Response Procedures |
+| Safety Manual 7 (Quality Assurance Program) | Quality Assurance Program |
+| People & Equipment Manual 4 (Pilot Competency Records) | Pilot Competency Records |
+| Safety Manual 3 (SORA Documentation) | SORA Documentation Package |
+| Training Manual | Pilot Training Program |
 
 ---
 
@@ -138,7 +141,7 @@ Additional privileges:
 
 - **Division VI BVLOS (under the Organization's RPOC):** requires the Level 1 Complex certificate (CAR 901.89) and a designated PIC for the operation (CAR 901.222)
 - **STSC-003 / STSC-004 (under the Organization's valid SFOC):** requires the pilot to be granted privileges under that SFOC and to comply with its conditions
-- **Visual Observers:** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). Under the Organization's RPOC, the qualification required is simply that the person has been trained under the Program training program (CAR 901.219). A trained VO may be used on any operation where a VO is required or where an extra set of eyes is useful. Two regulatory exceptions apply: for **extended VLOS** operations the VO must additionally hold a pilot certificate (CAR 901.75), and for **BVLOS** operations where visual observer detect and avoid is relied upon, the VO must be trained in accordance with Standard 923 (CAR 901.95(2))
+- **Visual Observers:** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). **VOs apply to all operation types**, and the qualification is the same throughout: the person must be trained under this RPOC's training program (CAR 901.219). No pilot certificate is required to act as a VO. A trained VO may be used on any operation, whether a VO is required for that operation or simply useful. Two additional requirements come from the regulations for specific operations and sit on top of the RPOC training, they do not replace it: for extended VLOS the VO must also hold a pilot certificate and remain within 2 NM of the aircraft (CAR 901.75), and where BVLOS relies on visual observer detect and avoid, VO training must meet Standard 923 (CAR 901.95(2))
 
 ### 2.6 Operating Area
 
@@ -2001,7 +2004,7 @@ The delivery is aborted, and the load returned or the flight terminated at a saf
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 14.2 Amendment / Revision History
 
@@ -2016,23 +2019,10 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 14.3 Document Sources
+### Document History
 
-This consolidated Operations Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| SFOC-001 | RPAS Concept of Operations |
-| SFOC-001 | SFOC Application |
-| SFOC-003 | Site Survey Template |
-| OPS-001 | Standard Scenario Procedures |
-| OPS-102 | SOM Search Operations |
-| OPS-104 | Environmental Operations |
-| POL-001 | RPAS Operating Policy |
-| POL-005 | Communications |
-| POL-007 | Weather Minimums |
-| POL-011 | Site Survey Flight Planning |
-| PRO-103 | Advanced Procedures |
 
 ---
 

@@ -3915,7 +3915,7 @@ function showSAILAssessment() {
                             <td style="font-weight: 700; text-align: center;">16</td>
                             <td><strong>Multi crew coordination</strong></td>
                             <td style="text-align: center;"><span class="sail-level low">LOW</span></td>
-                            <td style="font-size: 0.9rem;">Crew briefings; POL-005 communications</td>
+                            <td style="font-size: 0.9rem;">Crew briefings; Operations Manual 8 (Communications)</td>
                             <td style="text-align: center;"><strong style="color: #1e8449;">MET</strong></td>
                         </tr>
                         <tr>

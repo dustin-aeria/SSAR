@@ -72,17 +72,20 @@ The Canadian Aviation Regulations are the governing authority for all Program op
 
 > **Fly within the parameters your pilot certificate allows. Operations beyond those parameters require a valid SFOC held by your Organization, and only pilots granted privileges under that SFOC may conduct them, in accordance with its conditions.**
 
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
+
 ### 1.4 Related Documents
 
 | Document Number | Document Title |
 |-----------------|----------------|
-| SMS-001 | Safety Management System Manual |
-| MCM-001 | Maintenance Control Manual |
-| ERP-001 | Emergency Response Procedures |
-| QAP-001 | Quality Assurance Program |
-| PCR-001 | Pilot Competency Records |
-| SOA-001 | SORA Documentation Package |
-| TRN-301 | Pilot Training Program |
+| Safety Manual (Safety Management System) | Safety Management System Manual |
+| Forms & Maintenance Manual 1 (Maintenance Control) | Maintenance Control Manual |
+| Safety Manual 2 (Emergency Procedures) | Emergency Response Procedures |
+| Safety Manual 7 (Quality Assurance Program) | Quality Assurance Program |
+| People & Equipment Manual 4 (Pilot Competency Records) | Pilot Competency Records |
+| Safety Manual 3 (SORA Documentation) | SORA Documentation Package |
+| Training Manual | Pilot Training Program |
 
 ---
 
@@ -147,7 +150,7 @@ Additional privileges:
 
 - **Division VI BVLOS (under the Organization's RPOC):** requires the Level 1 Complex certificate (CAR 901.89) and a designated PIC for the operation (CAR 901.222)
 - **STSC-003 / STSC-004 (under the Organization's valid SFOC):** requires the pilot to be granted privileges under that SFOC and to comply with its conditions
-- **Visual Observers:** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). Under the Organization's RPOC, the qualification required is simply that the person has been trained under the Program training program (CAR 901.219). A trained VO may be used on any operation where a VO is required or where an extra set of eyes is useful. Two regulatory exceptions apply: for **extended VLOS** operations the VO must additionally hold a pilot certificate (CAR 901.75), and for **BVLOS** operations where visual observer detect and avoid is relied upon, the VO must be trained in accordance with Standard 923 (CAR 901.95(2))
+- **Visual Observers:** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). **VOs apply to all operation types**, and the qualification is the same throughout: the person must be trained under this RPOC's training program (CAR 901.219). No pilot certificate is required to act as a VO. A trained VO may be used on any operation, whether a VO is required for that operation or simply useful. Two additional requirements come from the regulations for specific operations and sit on top of the RPOC training, they do not replace it: for extended VLOS the VO must also hold a pilot certificate and remain within 2 NM of the aircraft (CAR 901.75), and where BVLOS relies on visual observer detect and avoid, VO training must meet Standard 923 (CAR 901.95(2))
 
 ### 2.6 Operating Area
 
@@ -2010,7 +2013,7 @@ The delivery is aborted, and the load returned or the flight terminated at a saf
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 14.2 Amendment / Revision History
 
@@ -2025,23 +2028,10 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 14.3 Document Sources
+### Document History
 
-This consolidated Operations Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| SFOC-001 | RPAS Concept of Operations |
-| SFOC-001 | SFOC Application |
-| SFOC-003 | Site Survey Template |
-| OPS-001 | Standard Scenario Procedures |
-| OPS-102 | SOM Search Operations |
-| OPS-104 | Environmental Operations |
-| POL-001 | RPAS Operating Policy |
-| POL-005 | Communications |
-| POL-007 | Weather Minimums |
-| POL-011 | Site Survey Flight Planning |
-| PRO-103 | Advanced Procedures |
 
 ---
 
@@ -2099,6 +2089,9 @@ This consolidated Operations Manual incorporates content from the following sour
 9. [Document Control](#9-document-control)
 
 ---
+
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
 
 ## 1. Safety Management System
 
@@ -2348,7 +2341,7 @@ In any emergency, follow this priority sequence:
 | 6 | DESCEND - Reduce altitude to maintain VLOS |
 | 7 | RETURN - Fly aircraft back toward operator |
 | 8 | LAND - Land as soon as safely possible |
-| 9 | DOCUMENT - Record incident per POL-008 |
+| 9 | DOCUMENT - Record incident per Safety Manual 5 (Incident and Accident Reporting) |
 
 #### 2.5.3 ATTI Mode Flying Techniques
 
@@ -2842,11 +2835,11 @@ Per SORA v2.5 Table 5, tactical ground observation at low robustness provides a 
 
 | Criterion | SORA Requirement | Program Implementation | Evidence |
 |-----------|------------------|------------------------|----------|
-| Observation Method | Ground area observed for uninvolved persons | SAR perimeter and ground teams in operating area | SOP PRO-103 |
-| Coordination | Ground team aware | Briefed at SAR task | Checklist POL-002 |
-| Communication | Method to notify crew | Radio comms required | POL-005 |
-| Verification | Confirmed before flight | PIC verification | PRO-101 checklist |
-| Abort Criteria | Clear NO-GO conditions | Any unauthorized entry = abort | ERP-001 |
+| Observation Method | Ground area observed for uninvolved persons | SAR perimeter and ground teams in operating area | SOP Operations Manual 11 (Advanced Procedures) |
+| Coordination | Ground team aware | Briefed at SAR task | Checklist People & Equipment Manual 1 (Roles and Responsibilities) |
+| Communication | Method to notify crew | Radio comms required | Operations Manual 8 (Communications) |
+| Verification | Confirmed before flight | PIC verification | the pre-flight checklist (Operations Manual 12) |
+| Abort Criteria | Clear NO-GO conditions | Any unauthorized entry = abort | Safety Manual 2 (Emergency Procedures) |
 
 > **M1(C) Robustness Level: LOW - Reduction Applied: -1 to GRC**
 >
@@ -2900,7 +2893,7 @@ M2 (medium -1, high -2 per SORA v2.5 Table 5) is NOT APPLIED for the following d
 | Airspace Avoidance | Stay >2 NM from controlled airspace boundaries | NAV Drone planning tool |
 | Altitude Restriction | STSC-004: Max 400' AGL | Controller limit set |
 | Time Restriction | Avoid peak VFR traffic (10:00-16:00 clear days) | Mission planning |
-| ATS Coordination | STSC-003: coordination per SFOC conditions | OPS-001 procedure |
+| ATS Coordination | STSC-003: coordination per SFOC conditions | Operations Manual 5 (Operating Authority) procedure |
 | Electronic Conspicuity | ADS-B In awareness | AirSense enabled |
 
 
@@ -2963,7 +2956,7 @@ Per SORA v2.5 Table 14, the following robustness levels apply at SAIL II. L = lo
 | OSO#08 | Operational procedures defined, validated and adhered to | M | Operations Manual, checklists, QA audits |
 | OSO#09 | Remote crew trained and current | L | Training Manual; recency per CAR 901.91 |
 | OSO#13 | External services supporting UAS operations adequate | L | NAV Drone, weather services, FIC |
-| OSO#16 | Multi crew coordination | L | Crew briefing procedures, POL-005 |
+| OSO#16 | Multi crew coordination | L | Crew briefing procedures, Operations Manual 8 (Communications) |
 | OSO#17 | Remote crew fit to operate | L | CAR 901.19; fitness policy (Training Manual 2) |
 | OSO#18 | Automatic protection of the flight envelope | NR | - |
 | OSO#19 | Safe recovery from human error | NR | - |
@@ -2990,12 +2983,12 @@ Per SORA v2.5 Table 14, the following robustness levels apply at SAIL II. L = lo
 
 #### 3.9.3 Conditions for Risk Acceptance
 
-- Strict adherence to operational procedures in OPS-001
+- Strict adherence to operational procedures in Operations Manual 5 (Operating Authority)
 - All flights conducted within Standard Scenario conditions
 - Only eligible aircraft used, per Operations Manual Section 4.1 (registered, declared where required, serviceable, within the assessed mass and speed class, and crew type-qualified)
-- Maintenance conducted per MCM-001
-- All crew qualified per TRN-301
-- SMS actively monitored per SMS-001
+- Maintenance conducted per Forms & Maintenance Manual 1 (Maintenance Control)
+- All crew qualified per the Training Manual
+- SMS actively monitored per Safety Manual (Safety Management System)
 
 ### 3.10 STSC-003 Specific Assessment
 
@@ -3005,7 +2998,7 @@ Per SORA v2.5 Table 14, the following robustness levels apply at SAIL II. L = lo
 |-----------|---------------------|-----------------|
 | Altitude | Above 400' AGL up to 1000' AGL | Controller limited |
 | Visibility | VLOS maintained | Enhanced VOs for altitude |
-| ATC Coordination | Required per Standard 922 | OPS-001 Section 3 |
+| ATC Coordination | Required per Standard 922 | Operations Manual 5 (Operating Authority) Section 3 |
 | Airspace | May include controlled | Coordination procedure |
 | DAA | See and avoid maintained | VHF + ADS-B In + visual |
 
@@ -3149,7 +3142,7 @@ An occurrence involving a medium RPA meets the reporting criteria of CAR 901.49 
 
 ### 4.1 Purpose
 
-This section establishes the hazard identification and risk assessment procedures for Program RPAS operations, aligned with SMS-001 Pillar 2 and JARUS SORA methodology.
+This section establishes the hazard identification and risk assessment procedures for Program RPAS operations, aligned with Safety Manual (Safety Management System) Pillar 2 and JARUS SORA methodology.
 
 ### 4.2 Risk Assessment Methodology
 
@@ -3735,11 +3728,11 @@ Each controlled document includes:
 | OPS-01 | Site survey completed for each flight | 901.27 | [ ] | |
 | OPS-02 | Weather assessment documented | 901.34-35 | [ ] | |
 | OPS-03 | Crew fitness verified (IMSAFE) | 901.19 | [ ] | |
-| OPS-04 | Flight authorization obtained | OPS-001 | [ ] | |
+| OPS-04 | Flight authorization obtained | Operations Manual 5 (Operating Authority) | [ ] | |
 | OPS-05 | Airspace requirements met | 901.20-26 | [ ] | |
 | OPS-06 | VLOS/BVLOS parameters maintained | STSC-003/004 | [ ] | |
 | OPS-07 | Pre-flight inspection completed | 901.29 | [ ] | |
-| OPS-08 | Post-flight inspection completed | MCM-001 | [ ] | |
+| OPS-08 | Post-flight inspection completed | Forms & Maintenance Manual 1 (Maintenance Control) | [ ] | |
 | OPS-09 | Flight logs accurate and complete | 901.223 | [ ] | |
 | OPS-10 | Emergency procedures available | 901.217 | [ ] | |
 
@@ -3750,10 +3743,10 @@ Each controlled document includes:
 | TRN-01 | Training program documented | 901.219 | [ ] | |
 | TRN-02 | All pilots have valid TC certificates | 901.54-66 | [ ] | |
 | TRN-03 | Flight currency maintained (90-day) | 901.56 | [ ] | |
-| TRN-04 | Annual proficiency check completed | TRN-301 | [ ] | |
+| TRN-04 | Annual proficiency check completed | Training Manual | [ ] | |
 | TRN-05 | Standard Scenario endorsements current | 901.220 | [ ] | |
 | TRN-06 | Training records complete and accessible | 901.223 | [ ] | |
-| TRN-07 | Trainers meet qualification requirements | TRN-301 | [ ] | |
+| TRN-07 | Trainers meet qualification requirements | Training Manual | [ ] | |
 | TRN-08 | Recurrency training completed on time | 901.219 | [ ] | |
 | TRN-09 | Competency assessments documented | 901.219 | [ ] | |
 | TRN-10 | Human factors training current | 901.219 | [ ] | |
@@ -3765,12 +3758,12 @@ Each controlled document includes:
 | MNT-01 | MCM current and accessible | 901.221 | [ ] | |
 | MNT-02 | PRM designated and qualified | 901.220 | [ ] | |
 | MNT-03 | Pre-flight inspections completed | 901.29 | [ ] | |
-| MNT-04 | Maintenance schedule followed | MCM-001 | [ ] | |
-| MNT-05 | Defects recorded and tracked | MCM-001 | [ ] | |
+| MNT-04 | Maintenance schedule followed | Forms & Maintenance Manual 1 (Maintenance Control) | [ ] | |
+| MNT-05 | Defects recorded and tracked | Forms & Maintenance Manual 1 (Maintenance Control) | [ ] | |
 | MNT-06 | Aircraft registration current | 900.13 | [ ] | |
 | MNT-07 | Markings visible and compliant | 900.14 | [ ] | |
-| MNT-08 | Firmware versions documented | MCM-001 | [ ] | |
-| MNT-09 | Battery records maintained | MCM-001 | [ ] | |
+| MNT-08 | Firmware versions documented | Forms & Maintenance Manual 1 (Maintenance Control) | [ ] | |
+| MNT-09 | Battery records maintained | Forms & Maintenance Manual 1 (Maintenance Control) | [ ] | |
 | MNT-10 | Maintenance records retained (24 months) | 901.48 | [ ] | |
 
 #### 7.5.6 Safety Management Audit Checklist
@@ -3782,10 +3775,10 @@ Each controlled document includes:
 | SMS-03 | Risk assessments completed | 901.218 | [ ] | |
 | SMS-04 | Safety reports investigated | 901.218 | [ ] | |
 | SMS-05 | Corrective actions tracked to closure | 901.218 | [ ] | |
-| SMS-06 | SPIs monitored and reported | SMS-001 | [ ] | |
-| SMS-07 | Safety meetings conducted | SMS-001 | [ ] | |
+| SMS-06 | SPIs monitored and reported | Safety Manual (Safety Management System) | [ ] | |
+| SMS-07 | Safety meetings conducted | Safety Manual (Safety Management System) | [ ] | |
 | SMS-08 | Non-punitive reporting protected | 901.218 | [ ] | |
-| SMS-09 | Change management applied | SMS-001 | [ ] | |
+| SMS-09 | Change management applied | Safety Manual (Safety Management System) | [ ] | |
 | SMS-10 | Management review conducted | 901.218 | [ ] | |
 
 #### 7.5.7 Annual System Audit
@@ -3997,7 +3990,7 @@ The third-party auditor must:
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 9.2 Amendment / Revision History
 
@@ -4012,24 +4005,10 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 9.3 Document Sources
+### Document History
 
-This consolidated Safety & Emergency Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| PRO-102 | Emergency Procedures |
-| ERP-001 | Emergency Response Procedures |
-| SMS-001 | Safety Management System |
-| SOA-001 | SORA Documentation |
-| SAF-201 | Safety Policy & Objectives |
-| SAF-201 | Incident Reporting |
-| SAF-202 | Non-Punitive Reporting |
-| SAF-203 | Hazard ID & Risk Assessment |
-| SAF-204 | QA & Internal Audit |
-| POL-006 | Detect and Avoid |
-| POL-008 | Incident/Accident |
-| QAP-001 | Quality Assurance Program |
 
 ---
 
@@ -4071,6 +4050,9 @@ This consolidated Safety & Emergency Manual incorporates content from the follow
 9. [Document Control](#9-document-control)
 
 ---
+
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
 
 ## 1. Organizational Structure
 
@@ -4148,9 +4130,9 @@ Has final authority over the safe operation of the aircraft during flight.
 
 Assists the PIC in maintaining safety and situational awareness.
 
-**Qualification.** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). Under the Organization's RPOC, the qualification is simply that the person has been trained under the Program training program (CAR 901.219). No pilot certificate is required to act as a VO on an ordinary operation. A trained VO may be used on any operation where a VO is required, and equally where an extra set of eyes is simply useful.
+**Qualification.** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). **VOs apply to all operation types.** The qualification is the same throughout: trained under this RPOC's training program (CAR 901.219). No pilot certificate is required to act as a VO. A trained VO may be used on any operation, whether a VO is required for it or simply useful.
 
-Two exceptions come from the regulations rather than from Program policy:
+For two specific operations the regulations add a requirement on top of the RPOC training. These are additions, not alternatives:
 
 | Operation | Additional requirement |
 |-----------|------------------------|
@@ -5423,7 +5405,7 @@ Complete annually or upon policy change:
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 9.2 Amendment / Revision History
 
@@ -5438,26 +5420,10 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 9.3 Document Sources
+### Document History
 
-This consolidated People & Equipment Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| TRN-301 | Pilot Training Program |
-| TRN-302 | Training Foundation |
-| TRN-302 | Competency Assessment |
-| TRN-303 | Advanced Training |
-| TRN-303 | Training Records |
-| TRN-304 | Training Progression |
-| TRN-305 | Pilot Examiner Standards |
-| PCR-001 | Pilot Competency Records |
-| POL-002 | Roles & Responsibilities |
-| POL-003 | Chief Pilot Policy |
-| POL-004 | PPE |
-| POL-009 | Insurance & Liability |
-| POL-010 | Equipment Testing |
-| POL-012 | Airworthiness & Mandatory Events |
 
 ---
 
@@ -5543,6 +5509,9 @@ All training complies with:
 - **Standard 922** - RPAS Safety Assurance
 
 ---
+
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
 
 ## 2. Crew Competency Standards
 
@@ -6897,7 +6866,7 @@ Per CAR 901.223, maintain records of:
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 13.2 Amendment / Revision History
 
@@ -6911,24 +6880,10 @@ Signatures on file. Original signed document retained per QAP-001.
 **Questions, updates, inquiries:** Dustin Wales, 604-849-2345
 | | | | |
 
-### 13.3 Document Sources
+### Document History
 
-This Training Program Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| TRN-301 | Pilot Training Program |
-| TRN-302 | Training Foundation |
-| TRN-302 | Competency Assessment |
-| TRN-303 | Advanced Training |
-| TRN-303 | Training Records |
-| TRN-304 | Training Progression |
-| TRN-305 | Pilot Examiner Standards |
-| 301_RPASTraining | Training Policy (2025) |
-| 302_RPASTraining | Training Foundation (2025) |
-| 303_RPASTraining | Advanced Training (2025) |
-| 304_RPASTraining | Progression (2025) |
-| 305_RPASTraining | Recurrency (2025) |
 
 ---
 
@@ -7114,6 +7069,9 @@ Retained 12 months per CAR 901.223(1)(a); associated maintenance records 24 mont
 
 ---
 
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
+
 ## 2. Aircraft Specifications
 
 Specifications for the reference types follow. Specifications for any other registered aircraft are recorded in the Organization's aircraft register in this same format, drawn from the manufacturer's flight manual.
@@ -7156,7 +7114,7 @@ Specifications for the reference types follow. Specifications for any other regi
 
 ### 3.1 Purpose
 
-This section establishes pre-flight and post-flight inspection requirements for Program RPAS operations in compliance with MCM-001.
+This section establishes pre-flight and post-flight inspection requirements for Program RPAS operations in compliance with Forms & Maintenance Manual 1 (Maintenance Control).
 
 ### 3.2 DJI M30T Pre-Flight Inspection
 
@@ -8200,7 +8158,7 @@ Each aircraft maintains a Technical Log containing:
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 9.2 Amendment / Revision History
 
@@ -8215,17 +8173,10 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 9.3 Document Sources
+### Document History
 
-This consolidated Forms & Maintenance Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| CHK-001 | Mission Checklists |
-| PRO-101 | Pre-Flight & Post-Flight Procedures |
-| MCM-001 | Maintenance Control Manual |
-| MAINT-001 | Maintenance Records |
-| MNT-002 | Firmware Updates & Battery Care |
 
 ---
 

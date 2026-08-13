@@ -71,6 +71,9 @@ All training complies with:
 
 ---
 
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
+
 ## 2. Crew Competency Standards
 
 ### 2.1 General Crew Requirements
@@ -1424,7 +1427,7 @@ Per CAR 901.223, maintain records of:
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 13.2 Amendment / Revision History
 
@@ -1438,24 +1441,10 @@ Signatures on file. Original signed document retained per QAP-001.
 **Questions, updates, inquiries:** Dustin Wales, 604-849-2345
 | | | | |
 
-### 13.3 Document Sources
+### Document History
 
-This Training Program Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| TRN-301 | Pilot Training Program |
-| TRN-302 | Training Foundation |
-| TRN-302 | Competency Assessment |
-| TRN-303 | Advanced Training |
-| TRN-303 | Training Records |
-| TRN-304 | Training Progression |
-| TRN-305 | Pilot Examiner Standards |
-| 301_RPASTraining | Training Policy (2025) |
-| 302_RPASTraining | Training Foundation (2025) |
-| 303_RPASTraining | Advanced Training (2025) |
-| 304_RPASTraining | Progression (2025) |
-| 305_RPASTraining | Recurrency (2025) |
 
 ---
 

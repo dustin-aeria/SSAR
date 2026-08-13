@@ -4,6 +4,8 @@
 
 This repository contains the shared RPAS program documentation for the S2S SAR Drone Program (the participating Sea to Sky corridor search and rescue organizations). It serves as common program policy and supports each participating organization's RPAS Operator Certificate (RPOC) and SFOC applications. The Canadian Aviation Regulations Part IX are the governing authority; Transport Canada Standards 921/922/923 and JARUS SORA v2.5 are applied on top of the CARs, which prevail where they differ.
 
+**These manuals are the documentation itself, not a summary of documents held elsewhere.** Earlier standalone policies, procedures, and forms have been consolidated into this suite and are superseded. Cross-references point to sections within these manuals.
+
 **Core Operating Rule: Fly within the parameters your pilot certificate allows. Operations beyond those parameters require a valid SFOC held by your organization, and only pilots granted privileges under that SFOC may conduct them, in accordance with its conditions.**
 
 ## Live Web Tool
@@ -188,7 +190,7 @@ Each manual includes:
 | Effective Date | August 2026 |
 | Review Date | August 2027 |
 | Last Updated | 2026-08-11 |
-| Source Documents | 42 original policies consolidated; v2.0 regulatory update (CARs Jan 2026 consolidation, SORA v2.5, multi-organization) |
+| Consolidation | Supersedes 42 earlier standalone policies, which are no longer maintained separately |
 
 ---
 

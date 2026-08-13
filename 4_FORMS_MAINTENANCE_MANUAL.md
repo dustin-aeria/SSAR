@@ -170,6 +170,9 @@ Retained 12 months per CAR 901.223(1)(a); associated maintenance records 24 mont
 
 ---
 
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
+
 ## 2. Aircraft Specifications
 
 Specifications for the reference types follow. Specifications for any other registered aircraft are recorded in the Organization's aircraft register in this same format, drawn from the manufacturer's flight manual.
@@ -212,7 +215,7 @@ Specifications for the reference types follow. Specifications for any other regi
 
 ### 3.1 Purpose
 
-This section establishes pre-flight and post-flight inspection requirements for Program RPAS operations in compliance with MCM-001.
+This section establishes pre-flight and post-flight inspection requirements for Program RPAS operations in compliance with Forms & Maintenance Manual 1 (Maintenance Control).
 
 ### 3.2 DJI M30T Pre-Flight Inspection
 
@@ -1256,7 +1259,7 @@ Each aircraft maintains a Technical Log containing:
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 9.2 Amendment / Revision History
 
@@ -1271,17 +1274,10 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 9.3 Document Sources
+### Document History
 
-This consolidated Forms & Maintenance Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| CHK-001 | Mission Checklists |
-| PRO-101 | Pre-Flight & Post-Flight Procedures |
-| MCM-001 | Maintenance Control Manual |
-| MAINT-001 | Maintenance Records |
-| MNT-002 | Firmware Updates & Battery Care |
 
 ---
 

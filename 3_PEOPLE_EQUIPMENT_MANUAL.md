@@ -27,6 +27,9 @@
 
 ---
 
+
+> **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
+
 ## 1. Organizational Structure
 
 ### 1.1 Purpose
@@ -103,9 +106,9 @@ Has final authority over the safe operation of the aircraft during flight.
 
 Assists the PIC in maintaining safety and situational awareness.
 
-**Qualification.** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). Under the Organization's RPOC, the qualification is simply that the person has been trained under the Program training program (CAR 901.219). No pilot certificate is required to act as a VO on an ordinary operation. A trained VO may be used on any operation where a VO is required, and equally where an extra set of eyes is simply useful.
+**Qualification.** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). **VOs apply to all operation types.** The qualification is the same throughout: trained under this RPOC's training program (CAR 901.219). No pilot certificate is required to act as a VO. A trained VO may be used on any operation, whether a VO is required for it or simply useful.
 
-Two exceptions come from the regulations rather than from Program policy:
+For two specific operations the regulations add a requirement on top of the RPOC training. These are additions, not alternatives:
 
 | Operation | Additional requirement |
 |-----------|------------------------|
@@ -1378,7 +1381,7 @@ Complete annually or upon policy change:
 | Accountable Executive | Appointed per Organization | Per Organization |
 | Chief Pilot | Appointed per Organization | Per Organization |
 
-Signatures on file. Original signed document retained per QAP-001.
+Signatures on file. Original signed document retained per Safety Manual 7 (Quality Assurance Program).
 
 ### 9.2 Amendment / Revision History
 
@@ -1393,26 +1396,10 @@ Signatures on file. Original signed document retained per QAP-001.
 | | | | |
 | | | | |
 
-### 9.3 Document Sources
+### Document History
 
-This consolidated People & Equipment Manual incorporates content from the following source documents:
+This manual consolidates the Program's earlier standalone policies, procedures, and forms into a single document. **Those earlier documents are superseded: this manual is the authoritative source for the material it contains.** References throughout this suite point to sections of these manuals, not to separate documents held elsewhere.
 
-| Document ID | Document Title |
-|-------------|----------------|
-| TRN-301 | Pilot Training Program |
-| TRN-302 | Training Foundation |
-| TRN-302 | Competency Assessment |
-| TRN-303 | Advanced Training |
-| TRN-303 | Training Records |
-| TRN-304 | Training Progression |
-| TRN-305 | Pilot Examiner Standards |
-| PCR-001 | Pilot Competency Records |
-| POL-002 | Roles & Responsibilities |
-| POL-003 | Chief Pilot Policy |
-| POL-004 | PPE |
-| POL-009 | Insurance & Liability |
-| POL-010 | Equipment Testing |
-| POL-012 | Airworthiness & Mandatory Events |
 
 ---
 
