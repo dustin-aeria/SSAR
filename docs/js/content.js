@@ -5570,10 +5570,20 @@ Before every operation, all crew members must complete the IMSAFE self-assessmen
 
 #### 2.5.2 Visual Observer (VO)
 
-| Operation Type | Certification Requirement |
-|----------------|--------------------------|
-| Standard VLOS | the Program Field VO Training module (minimum) |
-| EVLOS Operations | Valid RPAS Pilot Certificate (Basic or Advanced) |
+**A visual observer applies to all operation types.** A VO may be used on any operation, whether one is required for that operation or simply useful to the crew.
+
+The certification requirement is the same throughout: **trained under this RPOC's training program** (CAR 901.219). No pilot certificate is required to act as a VO.
+
+| Requirement | Standard |
+|-------------|----------|
+| All operation types | Trained under this RPOC's training program: the Field VO Training Module (Section 6) |
+
+Two operations carry an additional requirement from the regulations. These are added on top of the RPOC training, not instead of it:
+
+| Operation | Additional requirement |
+|-----------|------------------------|
+| Extended VLOS | The VO must also hold a pilot certificate and remain within 2 NM of the aircraft (CAR 901.75) |
+| BVLOS relying on visual observer detect and avoid | VO training must meet Standard 923 (CAR 901.95(2)) |
 
 #### 2.5.3 Emergency Medical
 
@@ -6071,8 +6081,7 @@ All pilots qualified for SAR operations must complete training on time-critical 
 
 ### 6.1 Field VO Training Module
 
-
-Required for all Visual Observers conducting VLOS operations.
+**Required for all Visual Observers, on all operation types.** This module is the RPOC training that qualifies a person to act as a VO (CAR 901.219). No pilot certificate is required.
 
 #### Content
 - VO role and responsibilities
@@ -6084,7 +6093,7 @@ Required for all Visual Observers conducting VLOS operations.
 
 ### 6.2 Rapid VO Training (On-Site)
 
-For non-RPAS the Program members acting as VO during operations:
+A short on-site brief for Program members assisting as an additional set of eyes during an operation. This supplements, and does not replace, the Field VO Training Module of 6.1 for anyone acting as the qualified VO:
 
 | Item | Training Point |
 |------|----------------|
@@ -6093,13 +6102,17 @@ For non-RPAS the Program members acting as VO during operations:
 | Communication | "If you see anything, say 'TRAFFIC' and point. I'll handle the rest." |
 | Emergency | "If I say 'DESCEND,' step back immediately. The drone is coming down fast." |
 
-### 6.3 EVLOS Visual Observer Qualification
+### 6.3 Additional Requirements for Specific Operations
 
-VOs participating in Extended Visual Line of Sight operations must:
-- Hold valid RPAS Pilot Certificate (Basic or Advanced)
-- Complete EVLOS-specific training
-- Demonstrate visual handover protocol proficiency
-- Pass practical assessment
+The Field VO Training Module of 6.1 qualifies a VO for all operation types. Two operations carry an additional requirement from the regulations, added on top of that training:
+
+**Extended VLOS (CAR 901.75).** The VO must also:
+- Hold a valid RPAS pilot certificate (Basic, Advanced, or Level 1 Complex)
+- Remain within 2 NM of the aircraft, and within 1 NM of any other VO
+- Complete EVLOS-specific training, including the visual handover protocol
+- Demonstrate handover proficiency in a practical assessment
+
+**BVLOS relying on visual observer detect and avoid (CAR 901.95(2)).** VO training must meet Standard 923, covering the detection volume, scanning procedure, and the callout and avoidance actions required by that standard.
 
 ---
 
