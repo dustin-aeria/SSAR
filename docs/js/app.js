@@ -207,13 +207,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (error) throw error;
 
-            // Build content cache from Supabase data
+            // Build content cache from Supabase data.
+            // Where the static content.js copy is newer than the Supabase row
+            // (RPOC_CONTENT_UPDATED vs updated_at), show the static copy instead.
             data.forEach(row => {
+                const staticSection = (typeof RPOC_CONTENT !== 'undefined') ? RPOC_CONTENT[row.section_key] : null;
+                const staticIsNewer = !!staticSection
+                    && typeof RPOC_CONTENT_UPDATED !== 'undefined'
+                    && new Date(RPOC_CONTENT_UPDATED) > new Date(row.updated_at);
                 contentCache[row.section_key] = {
                     title: row.title,
                     icon: row.icon,
                     docCount: row.doc_count,
-                    content: row.content
+                    content: staticIsNewer ? staticSection.content : row.content
                 };
             });
 

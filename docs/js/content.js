@@ -1,6 +1,8 @@
 // the Program RPOC Content Data
 // Full comprehensive content from all 5 consolidated manuals
-// Generated: 2026-03-09 | Updated: 2026-08-11 (v2.0 regulatory update)
+// Generated: 2026-03-09 | Updated: 2026-11-23 (year-end review: BVLOS requires L1C, RTH and 400 ft AGL rule)
+// When this timestamp is newer than a section's Supabase updated_at, the site shows this copy.
+const RPOC_CONTENT_UPDATED = '2026-11-23T23:55:00Z';
 
 const RPOC_CONTENT = {
     operations: {
