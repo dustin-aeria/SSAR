@@ -48,7 +48,7 @@ The manual is written to accommodate the full breadth of SAR operation types rat
 - Visual Line of Sight (VLOS) operations, including Extended VLOS and sheltered operations (CARs Part IX, Division V)
 - Level 1 Complex Operations: low-risk BVLOS under an RPAS Operator Certificate (CARs Part IX, Division VI)
 - High Altitude VLOS operations above 400' AGL up to 1000' AGL (STSC-003), where the Organization holds a valid SFOC
-- Low-Risk BVLOS by Advanced pilots (STSC-004), where the Organization holds a valid SFOC
+- Low-Risk BVLOS with visual observer DAA (STSC-004), by Level 1 Complex pilots, where the Organization holds a valid SFOC
 - Medium RPA operations for payload delivery (Section 13)
 
 ### 1.3 Regulatory Compliance
@@ -65,6 +65,8 @@ The Canadian Aviation Regulations are the governing authority for all Program op
 #### 1.3.1 Core Operating Rule
 
 > **Fly within the parameters your pilot certificate allows. Operations beyond those parameters require a valid SFOC held by your Organization, and only pilots granted privileges under that SFOC may conduct them, in accordance with its conditions.**
+
+The Program permits each pilot the privileges of their pilot certificate and/or the Organization's SFOC, within its conditions.
 
 
 > **This manual is the documentation itself.** It supersedes the Program's earlier standalone policies, procedures, and forms, which are no longer maintained separately. References in this suite point to sections of these manuals, not to documents held elsewhere.
@@ -92,7 +94,7 @@ Each participating organization holds its own certificates. This shared document
 | Certificate | Held By | Purpose |
 |-------------|---------|---------|
 | RPAS Operator Certificate (RPOC), CAR 901.214 | Each Organization | Required for Level 1 Complex (Division VI) BVLOS operations |
-| SFOC-RPAS, CAR 903.03 | Each Organization (as required) | Operations beyond certificate privileges (e.g. STSC-003, STSC-004 for Advanced pilots) |
+| SFOC-RPAS, CAR 903.03 | Each Organization (as required) | Operations beyond certificate privileges (e.g. STSC-003 high altitude VLOS, STSC-004 BVLOS with visual observer DAA) |
 | Pilot Certificates, CAR 901.55 / 901.64 / 901.90 | Individual pilots | Basic, Advanced, or Level 1 Complex privileges |
 
 ### 2.2 Certificate Register (Per Organization)
@@ -126,8 +128,8 @@ Operations available to Program pilots depend on the pilot certificate held and 
 
 | Pilot Certificate | Under Organization RPOC | Under Organization SFOC (if held and granted) |
 |-------------------|-------------------------|-----------------------------------------------|
-| Advanced (CAR 901.64) | VLOS / EVLOS / sheltered operations per Division V, max 400' AGL | STSC-003 High Altitude VLOS to 1000' AGL; STSC-004 Low-Risk BVLOS per SFOC conditions |
-| Level 1 Complex (CAR 901.90) | All Advanced privileges, plus Division VI BVLOS: uncontrolled airspace, max 400' AGL, over sparsely populated areas or at least 1 km from populated areas | STSC-003 High Altitude VLOS to 1000' AGL per SFOC conditions |
+| Advanced (CAR 901.64) | VLOS / EVLOS / sheltered operations per Division V, max 400' AGL | STSC-003 High Altitude VLOS to 1000' AGL per SFOC conditions. No BVLOS: BVLOS requires Level 1 Complex |
+| Level 1 Complex (CAR 901.90) | All Advanced privileges, plus Division VI BVLOS: uncontrolled airspace, max 400' AGL, over sparsely populated areas or at least 1 km from populated areas | STSC-003 High Altitude VLOS to 1000' AGL; STSC-004 Low-Risk BVLOS; both per SFOC conditions |
 
 ### 2.5 Pilot Certification Requirements
 
@@ -143,7 +145,7 @@ There is no standing roster in this shared documentation; each Organization reco
 Additional privileges:
 
 - **Division VI BVLOS (under the Organization's RPOC):** requires the Level 1 Complex certificate (CAR 901.89) and a designated PIC for the operation (CAR 901.222)
-- **STSC-003 / STSC-004 (under the Organization's valid SFOC):** requires the pilot to be granted privileges under that SFOC and to comply with its conditions
+- **STSC-003 / STSC-004 (under the Organization's valid SFOC):** requires the pilot to be granted privileges under that SFOC and to comply with its conditions. STSC-004 also requires a Level 1 Complex certificate
 - **Visual Observers:** A visual observer is a crew member trained to assist the pilot in ensuring the safe conduct of a flight (CAR 900.01). **VOs apply to all operation types**, and the qualification is the same throughout: the person must be trained under this RPOC's training program (CAR 901.219). No pilot certificate is required to act as a VO. A trained VO may be used on any operation, whether a VO is required for that operation or simply useful. Two additional requirements come from the regulations for specific operations and sit on top of the RPOC training, they do not replace it: for extended VLOS the VO must also hold a pilot certificate and remain within 2 NM of the aircraft (CAR 901.75), and where BVLOS relies on visual observer detect and avoid, VO training must meet Standard 923 (CAR 901.95(2))
 
 ### 2.6 Operating Area
@@ -182,7 +184,7 @@ This Concept of Operations outlines RPAS operations conducted under the S2S SAR 
 - **VLOS, EVLOS, and sheltered operations (CARs Division V):** conducted under the pilot's certificate
 - **Level 1 Complex Operations (CAR 901.87):** BVLOS in uncontrolled airspace, max 400' AGL, under the Organization's RPOC by Level 1 Complex pilots
 - **(STSC-003)** VLOS above 400' AGL up to 1000' AGL, under the Organization's valid SFOC
-- **(STSC-004)** BVLOS over low-risk ground areas using visual observer DAA, by Advanced pilots under the Organization's valid SFOC
+- **(STSC-004)** BVLOS over low-risk ground areas using visual observer DAA, by Level 1 Complex pilots under the Organization's valid SFOC
 - **Medium RPA operations** for payload delivery, per Section 13
 
 The operation type determines what the crew is trying to achieve. The authority envelope determines what they are permitted to do while achieving it. Both must be satisfied for every flight (Core Operating Rule, 1.3.1).
@@ -440,10 +442,12 @@ All authorized RPAS must be capable of:
 |-----------|-----------|-------------------|
 | VLOS / EVLOS / sheltered, max 400' AGL | Pilot certificate (Divisions IV / V) | Advanced or Level 1 Complex |
 | Low-Risk BVLOS, max 400' AGL, uncontrolled airspace | Organization RPOC (Division VI) | Level 1 Complex |
-| Low-Risk BVLOS by Advanced pilots (STSC-004) | Organization's valid SFOC | Advanced, named or granted under the SFOC |
+| Low-Risk BVLOS with visual observer DAA (STSC-004) | Organization's valid SFOC | Level 1 Complex, granted under the SFOC |
 | High Altitude VLOS above 400' to 1000' AGL (STSC-003) | Organization's valid SFOC | Advanced or Level 1 Complex, granted under the SFOC |
 
 STSC-003 and STSC-004 are Transport Canada standard scenarios (AC 903-001, Appendix D) used by participating organizations to apply for and operate under SFOCs. Where no valid SFOC is held, those envelopes are not available and operations are limited to certificate privileges.
+
+> **BVLOS requires a Level 1 Complex pilot, whether under the Organization's RPOC or its SFOC (Transport Canada RPAS Flight Operations, 24 Nov 2025). No BVLOS operation is flown above 400' AGL: no certificate or SFOC held by the Program authorizes BVLOS and high altitude together.**
 
 ### 5.2 Scenario Parameters
 
@@ -456,7 +460,7 @@ STSC-003 and STSC-004 are Transport Canada standard scenarios (AC 903-001, Appen
 | Airspace | Uncontrolled only | Uncontrolled (Class G) | Uncontrolled (Class G) |
 | Aerodrome Standoff | At least 5 NM from listed aerodromes (CAR 901.47(3)) | Per SFOC conditions | At least 5 NM from listed aerodromes |
 | ATS Coordination | Not required | Required per SFOC conditions | Not required |
-| Pilot Certificate | Level 1 Complex | Advanced or higher, granted under SFOC | Advanced or higher, granted under SFOC |
+| Pilot Certificate | Level 1 Complex | Advanced or higher, granted under SFOC | Level 1 Complex, granted under SFOC |
 
 ### 5.3 Level 1 Complex BVLOS Operations (Division VI, under RPOC)
 
@@ -475,7 +479,7 @@ STSC-003 and STSC-004 are Transport Canada standard scenarios (AC 903-001, Appen
 
 #### 5.3.2 Program Operating Limits
 
-- Maximum distance: 2 km from PIC, or as authorized in the mission plan
+- Maximum distance: set by the PIC for each flight (CAR 901.28(c)) and recorded in the site survey
 - Visual observers deployed in accordance with Standard 923 detection volume requirements
 - Lost link procedures pre-programmed and briefed
 
@@ -530,14 +534,14 @@ STSC-003 operations may only be conducted where the Organization holds a valid S
 3. **TARGET** altitude below 400' AGL
 4. **MAINTAIN** horizontal position or move away from traffic
 
-### 5.5 STSC-004 Low-Risk BVLOS Procedures (SFOC, Advanced Pilots)
+### 5.5 STSC-004 Low-Risk BVLOS Procedures (SFOC)
 
-STSC-004 provides the SFOC pathway for Advanced pilots to conduct low-risk BVLOS where the Organization holds a valid SFOC authorizing it. Level 1 Complex pilots conduct the equivalent envelope under the Organization's RPOC (Section 5.3) and do not require the SFOC.
+STSC-004 covers low-risk BVLOS with visual observer DAA where the Organization holds a valid SFOC authorizing it. The pilot must hold a Level 1 Complex certificate and be granted privileges under the SFOC; Advanced pilots may not conduct BVLOS. Within Division VI limits, Level 1 Complex pilots can fly the same envelope under the Organization's RPOC (Section 5.3) without the SFOC.
 
 #### 5.5.1 STSC-004 Operational Limitations
 
 - Maximum altitude: 400' AGL
-- Maximum distance: 2 km from PIC (or as authorized)
+- Maximum distance: set by the PIC for each flight (CAR 901.28(c)), within SFOC conditions
 - Minimum weather: 3 SM visibility, clear of cloud
 - Sparsely populated areas only (more than 5, up to 25 people/km²), verified by site survey
 - Visual observers deployed per SFOC and Standard 923
@@ -550,7 +554,8 @@ STSC-004 provides the SFOC pathway for Advanced pilots to conduct low-risk BVLOS
 - Verify ground environment meets the sparsely populated definition (more than 5, up to 25 people/km²)
 - Establish ground observation of the area (SORA mitigation M1(C))
 - Confirm weather within limits
-- Set RTH altitude and parameters
+- Set RTH altitude and lost-link action so the aircraft stays at or below 400' AGL on the return path (Section 5.1)
+- Confirm the altitude reference: the flight display shows height above the takeoff point, not above the ground beneath the aircraft
 - Verify C2 link margin adequate
 
 #### 5.5.3 Ground Risk Buffer
@@ -584,14 +589,7 @@ Per CAR 900.01 the operational volume comprises the flight geography, the contin
 
 ### 5.6 GPS Failure Procedures
 
-> **CRITICAL: GPS failure requires immediate response.**
-
-1. **DO NOT PANIC** - maintain attitude control
-2. **SWITCH** between flight modes
-3. **CHANGE** altitude to maintain visual contact
-4. **NAVIGATE** using visual references and compass
-5. **FLY** back to operator position
-6. **LAND** as soon as practical
+Follow the Safety & Emergency Manual, Section 2.5 (GPS Failure Procedures), including 2.5.4 for GPS failure during BVLOS. The procedure is kept in one place.
 
 ### 5.7 Time-Critical SAR Operations
 
@@ -602,7 +600,7 @@ When a SAR activation arrives, the PIC identifies the operating authority availa
 | Authority Available | Capability |
 |---------------------|------------|
 | Pilot certificate only | VLOS / EVLOS / sheltered per Division V; L1C pilots may also fly Division VI BVLOS under the Organization's RPOC, max 400' AGL |
-| Valid SFOC, conditions met | Add STSC-003 high altitude VLOS (to 1000' AGL) and/or STSC-004 BVLOS for Advanced pilots, per the SFOC |
+| Valid SFOC, conditions met | Add STSC-003 high altitude VLOS (to 1000' AGL) and/or STSC-004 BVLOS for Level 1 Complex pilots, per the SFOC |
 
 #### 5.7.2 Operational Effectiveness at 400' AGL
 
@@ -615,7 +613,7 @@ When a SAR activation arrives, the PIC identifies the operating authority availa
 - Maintain consistent AGL following natural terrain contours
 - Optimal thermal search: 80-120 meters (260-400 feet) AGL
 - Use contour search patterns in mountainous terrain
-- RTH altitude must be set above highest terrain in operating area
+- RTH altitude must clear the highest terrain on the return path. On BVLOS flights it must also keep the aircraft at or below 400' AGL; if both can't be met, the leg is not flown BVLOS
 
 #### 5.7.4 Time-Critical Pre-Flight Checklist
 
@@ -683,7 +681,7 @@ During the Rapid Site Survey, the PIC identifies the operating authority availab
 |-----------|--------------------|------------|
 | Pilot certificate (Division IV/V) | Always available to certified, current pilots | VLOS / EVLOS / sheltered, max 400' AGL |
 | Organization RPOC (Division VI) | Pilot holds Level 1 Complex certificate; Division VI conditions met (Section 5.3.1) | BVLOS, max 400' AGL, uncontrolled airspace, no ATS coordination required |
-| Organization SFOC | SFOC valid, pilot granted privileges, all SFOC conditions (including ATS coordination) can be met before launch | STSC-003 high altitude VLOS to 1000' AGL; STSC-004 BVLOS for Advanced pilots |
+| Organization SFOC | SFOC valid, pilot granted privileges, all SFOC conditions (including ATS coordination) can be met before launch | STSC-003 high altitude VLOS to 1000' AGL; STSC-004 BVLOS for Level 1 Complex pilots |
 
 > **This authority selection is a mandatory element of the Rapid Site Survey for all SAR callouts.**
 
@@ -953,7 +951,7 @@ Include in briefing:
 - Maximum altitude constraint (400' AGL)
 - Terrain-following requirements
 - Modified search pattern parameters
-- RTH altitude above highest terrain
+- RTH altitude clears the highest terrain on the return path and stays at or below 400' AGL
 
 ---
 
@@ -1474,7 +1472,7 @@ Used to search riverbeds or long trails where one pilot cannot see the entire ar
 
 ### 11.5 Level 1 Complex Procedures (Low-Risk BVLOS)
 
-Conducted under the Organization's RPOC by Level 1 Complex certified pilots (CARs Division VI); no SFOC is required within Division VI limits. Advanced pilots may conduct the equivalent envelope only under a valid SFOC (STSC-004).
+Conducted under the Organization's RPOC by Level 1 Complex certified pilots (CARs Division VI); no SFOC is required within Division VI limits. Advanced pilots may not conduct BVLOS, including under the SFOC (Section 5.5).
 
 #### 11.5.1 Level 1 Pre-Flight Validation
 
@@ -1488,7 +1486,7 @@ Conducted under the Organization's RPOC by Level 1 Complex certified pilots (CAR
 
 #### 11.5.2 BVLOS Launch Flow
 
-- **RTH Setting:** Set Return-to-Home altitude higher than the tallest terrain feature in the entire mission area + buffer
+- **RTH Setting:** Set Return-to-Home altitude to clear the terrain on the return path while keeping the aircraft at or below 400' AGL. If the terrain makes both impossible, the leg is not flown BVLOS (Section 5.1)
 - **Loss of Link Logic:** Set to Return to Home (Not Hover)
 - **Monitoring:** Pilot focus shifts primarily to Telemetry & Map for navigation. Pilot must scan battery levels every 60 seconds
 
@@ -1651,7 +1649,7 @@ The VO reads the **Callout**, the PIC performs the check and states the **Respon
 | 3 | "Ground Control Batteries" | "**[N]%**" | Must be >50% |
 | 4 | "Ground Control Application" | "**Ready**, **[N] Satellites**" | Minimum 10 satellites |
 | 5 | "Payload Check" | *Test gimbal movement* "**Working**" | Full range of motion |
-| 6 | "Failsafe Settings" | "RTH at **[N] meters**" | Must clear highest terrain |
+| 6 | "Failsafe Settings" | "RTH at **[N] meters**" | Must clear terrain on the return path; at or below 400' AGL on BVLOS |
 | 7 | "SD Card Check" | *Check space/recording* "**Recording**" | Verify recording active |
 | 8 | "Area and Airspace" | *Conduct visual scan* "**Clear**" | 360° scan for traffic |
 | 9 | "Cleared for Takeoff" | "**CLEAR**" | Final confirmation |

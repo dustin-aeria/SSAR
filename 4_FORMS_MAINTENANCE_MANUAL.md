@@ -344,7 +344,7 @@ When RTK required:
 | **If NO - Time-critical operation:** | | |
 | Maximum altitude confirmed: 400' AGL | [ ] | |
 | Terrain-following flight plan prepared | [ ] | |
-| RTH altitude set above highest terrain | [ ] | |
+| RTH altitude clears terrain on the return path (at or below 400' AGL on BVLOS) | [ ] | |
 | Crew briefed: "Time-critical operation. Operating under [certificate / RPOC / SFOC] limits. Max altitude 400 feet AGL unless a valid SFOC permits higher." | [ ] | |
 | Thermal search altitude planned: 80-120 meters AGL | [ ] | |
 | Proceed to STSC-004 BVLOS Checklist | [ ] | |
@@ -374,7 +374,7 @@ When RTK required:
 | Waypoints verified | [ ] | |
 | Geofence configured | [ ] | |
 | Lost link procedure programmed | [ ] | |
-| RTH altitude appropriate for terrain | [ ] | |
+| RTH altitude clears terrain on the return path and stays at or below 400' AGL | [ ] | |
 | Visual observers positioned and briefed | [ ] | |
 | VO communication check completed | [ ] | |
 | Telemetry link tested | [ ] | |
@@ -963,7 +963,7 @@ Equipment testing is **MANDATORY** under the following conditions:
 
 | Setting | Verification Method | Required Setting |
 |---------|---------------------|------------------|
-| RTH Altitude | Check in app settings | Higher than tallest obstacle in area |
+| RTH Altitude | Check in app settings | Clears terrain on the return path; at or below 400' AGL on BVLOS |
 | Loss of Link Action | Check in app settings | Return to Home (NOT Hover) |
 | Low Battery Action | Check in app settings | RTH or Land |
 | Max Altitude | Check in app settings | Per operational requirements |

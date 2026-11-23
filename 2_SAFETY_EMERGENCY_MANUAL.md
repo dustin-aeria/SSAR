@@ -602,7 +602,7 @@ For mountain operations:
 |--------|
 | ALWAYS verify terrain elevation vs aircraft altitude |
 | Use terrain-following if available - set excessive margins if using base maps |
-| Set RTH altitude ABOVE the highest terrain in operating area |
+| Set RTH altitude ABOVE the highest terrain on the return path; on BVLOS, also at or below 400' AGL |
 | Monitor AGL vs MSL carefully |
 | Immediate climb if terrain closure detected |
 
@@ -683,7 +683,7 @@ This section provides the complete Specific Operations Risk Assessment (SORA) re
 
 - **Level 1 Complex BVLOS (Division VI, under RPOC):** BVLOS up to 400' AGL over sparsely populated areas
 - **STSC-003 (under valid SFOC):** VLOS operations above 400' AGL up to 1000' AGL
-- **STSC-004 (under valid SFOC):** BVLOS operations in sparsely populated areas by Advanced pilots
+- **STSC-004 (under valid SFOC):** BVLOS operations in sparsely populated areas by Level 1 Complex pilots
 - **Operation types:** Any operation supporting SAR activity, per Operations Manual 3.1. The assessments in this Section are driven by aircraft class, environment, and authority envelope rather than by mission type
 - **Aircraft:** Any RPAS meeting the eligibility criteria of Operations Manual Section 4.1, within the mass and speed class assumed by this assessment. DJI M30T and DJI Matrice 4TD are the current reference types
 
